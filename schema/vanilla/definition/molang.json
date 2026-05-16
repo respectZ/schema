@@ -1,0 +1,48 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/definition/molang.json",
+	"definitions": {
+		"string": {
+			"title": "Molang string",
+			"description": "A simple Molang expression represented as a string.",
+			"type": "string",
+			"default": ""
+		},
+		"versioned": {
+			"title": "Versioned Molang expression",
+			"description": "Molang expressions can be either a simple string or an object with an expression and version.",
+			"default": "",
+			"oneOf": [
+				{
+					"type": "string"
+				},
+				{
+					"type": "object",
+					"properties": {
+						"expression": {
+							"type": "string"
+						},
+						"version": {
+							"type": "integer",
+							"examples": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+						}
+					},
+					"required": ["expression", "version"]
+				}
+			]
+		},
+		"expression": {
+			"title": "Molang expression",
+			"description": "Molang expressions can be either a string, a number, or an object with an expression and version.",
+			"default": "",
+			"oneOf": [
+				{
+					"$ref": "#/definitions/string"
+				},
+				{
+					"type": "number"
+				}
+			]
+		}
+	}
+}
