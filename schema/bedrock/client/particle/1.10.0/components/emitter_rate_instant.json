@@ -1,15 +1,15 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "schema/bedrock/client/particle/1.10.0/components/emitter_rate_instant.json",
-  "title": "minecraft:emitter_rate_instant",
-  "description": "Emits all particles at once per loop.",
-  "type": "object",
-  "additionalProperties": false,
-  "properties": {
-    "num_particles": {
-      "description": "Number of particles to emit per loop.",
-      "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression",
-      "default": 10
-    }
-  }
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/particle/1.10.0/components/emitter_rate_instant.json",
+	"title": "minecraft:emitter_rate_instant",
+	"description": "Emits all particles at once per loop.",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"num_particles": {
+			"description": "Number of particles to emit per loop.",
+			"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression",
+			"default": 10
+		}
+	}
 }

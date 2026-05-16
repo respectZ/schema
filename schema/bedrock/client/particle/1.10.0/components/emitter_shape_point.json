@@ -1,29 +1,29 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "schema/bedrock/client/particle/1.10.0/components/emitter_shape_point.json",
-  "title": "minecraft:emitter_shape_point",
-  "description": "Emits particles from a point offset.",
-  "type": "object",
-  "additionalProperties": false,
-  "properties": {
-    "offset": {
-      "description": "Offset from the emitter.",
-      "type": "array",
-      "minItems": 3,
-      "maxItems": 3,
-      "default": [0, 0, 0],
-      "items": {
-        "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression"
-      }
-    },
-    "direction": {
-      "description": "Particle emission direction.",
-      "type": "array",
-      "minItems": 3,
-      "maxItems": 3,
-      "items": {
-        "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression"
-      }
-    }
-  }
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/particle/1.10.0/components/emitter_shape_point.json",
+	"title": "minecraft:emitter_shape_point",
+	"description": "Emits particles from a point offset.",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"offset": {
+			"description": "Offset from the emitter.",
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"default": [0, 0, 0],
+			"items": {
+				"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"
+			}
+		},
+		"direction": {
+			"description": "Particle emission direction.",
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"
+			}
+		}
+	}
 }

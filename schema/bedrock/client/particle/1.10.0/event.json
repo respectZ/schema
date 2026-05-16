@@ -3,7 +3,7 @@
 	"$id": "schema/bedrock/client/particle/1.10.0/event.json",
 	"properties": {
 		"expression": {
-			"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+			"$ref": "../../../../vanilla/definition/molang.json#/$defs/expression"
 		},
 		"log": { "type": "string", "default": "" },
 		"particle_effect": {
@@ -33,10 +33,10 @@
 					]
 				},
 				"effect": {
-					"$ref": "../../../../vanilla/client/identifiers.json#/definitions/particle_identifier"
+					"$ref": "../../../../vanilla/client/identifiers.json#/$defs/particle_identifier"
 				},
 				"pre_effect_expression": {
-					"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/expression"
 				}
 			}
 		},
@@ -67,7 +67,7 @@
 			"required": ["event_name"],
 			"properties": {
 				"event_name": {
-					"$ref": "../../../../vanilla/client/identifiers.json#/definitions/sound_event_identifier"
+					"$ref": "../../../../vanilla/client/identifiers.json#/$defs/sound_event_identifier"
 				}
 			}
 		}

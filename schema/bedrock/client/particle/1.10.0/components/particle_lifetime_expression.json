@@ -1,19 +1,19 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "schema/bedrock/client/particle/1.10.0/components/particle_lifetime_expression.json",
-  "title": "minecraft:particle_lifetime_expression",
-  "description": "Controls particle lifetime with expressions.",
-  "type": "object",
-  "additionalProperties": false,
-  "properties": {
-    "expiration_expression": {
-      "description": "Expire when non-zero.",
-      "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression",
-      "default": 0
-    },
-    "max_lifetime": {
-      "description": "Lifetime in seconds.",
-      "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression"
-    }
-  }
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/particle/1.10.0/components/particle_lifetime_expression.json",
+	"title": "minecraft:particle_lifetime_expression",
+	"description": "Controls particle lifetime with expressions.",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"expiration_expression": {
+			"description": "Expire when non-zero.",
+			"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression",
+			"default": 0
+		},
+		"max_lifetime": {
+			"description": "Lifetime in seconds.",
+			"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"
+		}
+	}
 }

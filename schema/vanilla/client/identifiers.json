@@ -1,7 +1,7 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"$id": "schema/vanilla/client/identifiers.json",
-	"definitions": {
+	"$defs": {
 		"particle_identifier": {
 			"anyOf": [
 				{ "type": "string", "maxLength": 256 },

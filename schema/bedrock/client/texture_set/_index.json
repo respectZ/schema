@@ -20,37 +20,37 @@
 				"color": {
 					"description": "Color layer texture reference or uniform RGBA value.",
 					"oneOf": [
-						{ "$ref": "#/definitions/texture_name" },
-						{ "$ref": "#/definitions/color_rgba_array" },
-						{ "$ref": "#/definitions/hex_rgba" }
+						{ "$ref": "#/$defs/texture_name" },
+						{ "$ref": "#/$defs/color_rgba_array" },
+						{ "$ref": "#/$defs/hex_rgba" }
 					]
 				},
 				"normal": {
 					"description": "Normal map texture reference.",
-					"$ref": "#/definitions/texture_name"
+					"$ref": "#/$defs/texture_name"
 				},
 				"heightmap": {
 					"description": "Heightmap texture reference or uniform value.",
 					"oneOf": [
-						{ "$ref": "#/definitions/texture_name" },
-						{ "$ref": "#/definitions/channel_value" },
-						{ "$ref": "#/definitions/hex_channel" }
+						{ "$ref": "#/$defs/texture_name" },
+						{ "$ref": "#/$defs/channel_value" },
+						{ "$ref": "#/$defs/hex_channel" }
 					]
 				},
 				"metalness_emissive_roughness": {
 					"description": "MER texture reference or uniform RGB value.",
 					"oneOf": [
-						{ "$ref": "#/definitions/texture_name" },
-						{ "$ref": "#/definitions/color_rgb_array" },
-						{ "$ref": "#/definitions/hex_rgb" }
+						{ "$ref": "#/$defs/texture_name" },
+						{ "$ref": "#/$defs/color_rgb_array" },
+						{ "$ref": "#/$defs/hex_rgb" }
 					]
 				},
 				"metalness_emissive_roughness_subsurface": {
 					"description": "MERS texture reference or uniform RGBA value.",
 					"oneOf": [
-						{ "$ref": "#/definitions/texture_name" },
-						{ "$ref": "#/definitions/color_rgba_array" },
-						{ "$ref": "#/definitions/hex_rgba" }
+						{ "$ref": "#/$defs/texture_name" },
+						{ "$ref": "#/$defs/color_rgba_array" },
+						{ "$ref": "#/$defs/hex_rgba" }
 					]
 				}
 			},
@@ -68,7 +68,7 @@
 			]
 		}
 	},
-	"definitions": {
+	"$defs": {
 		"texture_name": {
 			"type": "string",
 			"minLength": 1,
@@ -83,13 +83,13 @@
 			"type": "array",
 			"minItems": 3,
 			"maxItems": 3,
-			"items": { "$ref": "#/definitions/channel_value" }
+			"items": { "$ref": "#/$defs/channel_value" }
 		},
 		"color_rgba_array": {
 			"type": "array",
 			"minItems": 4,
 			"maxItems": 4,
-			"items": { "$ref": "#/definitions/channel_value" }
+			"items": { "$ref": "#/$defs/channel_value" }
 		},
 		"hex_rgb": {
 			"type": "string",

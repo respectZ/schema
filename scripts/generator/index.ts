@@ -1,6 +1,6 @@
+import path from "path/posix";
 import { createSchema, writeJson } from "../utils";
 import { generateClientPaths } from "./client";
-import path from "path/posix";
 import { generateClientIdentifiers } from "./client/identifiers";
 
 const entries: Entry[] = [
@@ -9,7 +9,7 @@ const entries: Entry[] = [
 		content: async () => {
 			const { texturePaths, soundPaths } = await generateClientPaths();
 			return {
-				definitions: {
+				$defs: {
 					texture_path: {
 						anyOf: [
 							{
@@ -41,7 +41,7 @@ const entries: Entry[] = [
 		content: async () => {
 			const { particleIdentifiers, soundEventIdentifiers } = await generateClientIdentifiers();
 			return {
-				definitions: {
+				$defs: {
 					particle_identifier: {
 						anyOf: [
 							{

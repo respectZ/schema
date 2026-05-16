@@ -1,135 +1,135 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "schema/bedrock/client/particle/1.10.0/components/particle_appearance_billboard.json",
-  "title": "minecraft:particle_appearance_billboard",
-  "description": "Renders particles as billboards.",
-  "type": "object",
-  "additionalProperties": false,
-  "properties": {
-    "size": {
-      "description": "Billboard width and height.",
-      "type": "array",
-      "minItems": 2,
-      "maxItems": 2,
-      "items": {
-        "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression"
-      }
-    },
-    "face_camera_mode": {
-      "description": "Billboard facing mode.",
-      "type": "string",
-      "enum": [
-        "rotate_xyz",
-        "rotate_y",
-        "lookat_xyz",
-        "lookat_y",
-        "direction_x",
-        "direction_y",
-        "direction_z",
-        "emitter_transform_xy",
-        "emitter_transform_xz",
-        "emitter_transform_yz"
-      ]
-    },
-    "direction": {
-      "description": "Direction source used by facing modes.",
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "mode": {
-          "type": "string",
-          "enum": ["derive_from_velocity", "custom_direction"]
-        },
-        "min_speed_threshold": {
-          "description": "Minimum speed for derive_from_velocity.",
-          "type": "number",
-          "default": 0.01
-        },
-        "custom_direction": {
-          "description": "Custom direction vector.",
-          "type": "array",
-          "minItems": 3,
-          "maxItems": 3,
-          "items": {
-            "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression"
-          }
-        }
-      }
-    },
-    "uv": {
-      "description": "UV settings or flipbook animation.",
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "texture_width": {
-          "type": "integer",
-          "default": 1
-        },
-        "texture_height": {
-          "type": "integer",
-          "default": 1
-        },
-        "uv": {
-          "type": "array",
-          "minItems": 2,
-          "maxItems": 2,
-          "items": {
-            "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression"
-          }
-        },
-        "uv_size": {
-          "type": "array",
-          "minItems": 2,
-          "maxItems": 2,
-          "items": {
-            "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression"
-          }
-        },
-        "flipbook": {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "base_UV": {
-              "type": "array",
-              "minItems": 2,
-              "maxItems": 2,
-              "items": {
-                "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression"
-              }
-            },
-            "size_UV": {
-              "type": "array",
-              "minItems": 2,
-              "maxItems": 2,
-              "items": {
-                "type": "number"
-              }
-            },
-            "step_UV": {
-              "type": "array",
-              "minItems": 2,
-              "maxItems": 2,
-              "items": {
-                "type": "number"
-              }
-            },
-            "frames_per_second": {
-              "type": "number"
-            },
-            "max_frame": {
-              "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression"
-            },
-            "stretch_to_lifetime": {
-              "type": "boolean",
-              "default": false
-            },
-            "loop": {
-              "type": "boolean",
-              "default": false
-            }
-          }
-        }
-      }
-    }
-  }
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/particle/1.10.0/components/particle_appearance_billboard.json",
+	"title": "minecraft:particle_appearance_billboard",
+	"description": "Renders particles as billboards.",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"size": {
+			"description": "Billboard width and height.",
+			"type": "array",
+			"minItems": 2,
+			"maxItems": 2,
+			"items": {
+				"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"
+			}
+		},
+		"face_camera_mode": {
+			"description": "Billboard facing mode.",
+			"type": "string",
+			"enum": [
+				"rotate_xyz",
+				"rotate_y",
+				"lookat_xyz",
+				"lookat_y",
+				"direction_x",
+				"direction_y",
+				"direction_z",
+				"emitter_transform_xy",
+				"emitter_transform_xz",
+				"emitter_transform_yz"
+			]
+		},
+		"direction": {
+			"description": "Direction source used by facing modes.",
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"mode": {
+					"type": "string",
+					"enum": ["derive_from_velocity", "custom_direction"]
+				},
+				"min_speed_threshold": {
+					"description": "Minimum speed for derive_from_velocity.",
+					"type": "number",
+					"default": 0.01
+				},
+				"custom_direction": {
+					"description": "Custom direction vector.",
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"
+					}
+				}
+			}
+		},
+		"uv": {
+			"description": "UV settings or flipbook animation.",
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"texture_width": {
+					"type": "integer",
+					"default": 1
+				},
+				"texture_height": {
+					"type": "integer",
+					"default": 1
+				},
+				"uv": {
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {
+						"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"
+					}
+				},
+				"uv_size": {
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {
+						"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"
+					}
+				},
+				"flipbook": {
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"base_UV": {
+							"type": "array",
+							"minItems": 2,
+							"maxItems": 2,
+							"items": {
+								"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"
+							}
+						},
+						"size_UV": {
+							"type": "array",
+							"minItems": 2,
+							"maxItems": 2,
+							"items": {
+								"type": "number"
+							}
+						},
+						"step_UV": {
+							"type": "array",
+							"minItems": 2,
+							"maxItems": 2,
+							"items": {
+								"type": "number"
+							}
+						},
+						"frames_per_second": {
+							"type": "number"
+						},
+						"max_frame": {
+							"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"
+						},
+						"stretch_to_lifetime": {
+							"type": "boolean",
+							"default": false
+						},
+						"loop": {
+							"type": "boolean",
+							"default": false
+						}
+					}
+				}
+			}
+		}
+	}
 }

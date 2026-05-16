@@ -1,19 +1,19 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "schema/bedrock/client/particle/1.10.0/components/particle_initial_speed.json",
-  "title": "minecraft:particle_initial_speed",
-  "description": "Starts the particle with a specified speed.",
-  "oneOf": [
-    {
-      "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression"
-    },
-    {
-      "type": "array",
-      "minItems": 3,
-      "maxItems": 3,
-      "items": {
-        "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression"
-      }
-    }
-  ]
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/particle/1.10.0/components/particle_initial_speed.json",
+	"title": "minecraft:particle_initial_speed",
+	"description": "Starts the particle with a specified speed.",
+	"oneOf": [
+		{
+			"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"
+		},
+		{
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"
+			}
+		}
+	]
 }

@@ -1,70 +1,70 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "schema/bedrock/client/particle/1.10.0/components/particle_motion_collision.json",
-  "title": "minecraft:particle_motion_collision",
-  "description": "Enables particle collisions with terrain.",
-  "type": "object",
-  "additionalProperties": false,
-  "properties": {
-    "enabled": {
-      "description": "Enable collisions when true or non-zero.",
-      "oneOf": [
-        {
-          "type": "boolean"
-        },
-        {
-          "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression"
-        }
-      ],
-      "default": true
-    },
-    "collision_drag": {
-      "description": "Speed reduction while in contact.",
-      "type": "number"
-    },
-    "coefficient_of_restitution": {
-      "description": "Bounce coefficient.",
-      "type": "number"
-    },
-    "collision_radius": {
-      "description": "Collision radius, must be <= 0.5 blocks.",
-      "type": "number",
-      "maximum": 0.5
-    },
-    "expire_on_contact": {
-      "description": "Expire when contact occurs.",
-      "type": "boolean"
-    },
-    "events": {
-      "description": "Collision-triggered events.",
-      "oneOf": [
-        {
-          "$ref": "#/$defs/collision_event"
-        },
-        {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/collision_event"
-          }
-        }
-      ]
-    }
-  },
-  "$defs": {
-    "collision_event": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["event"],
-      "properties": {
-        "event": {
-          "type": "string"
-        },
-        "min_speed": {
-          "description": "Minimum speed to trigger the event.",
-          "type": "number",
-          "default": 2
-        }
-      }
-    }
-  }
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/particle/1.10.0/components/particle_motion_collision.json",
+	"title": "minecraft:particle_motion_collision",
+	"description": "Enables particle collisions with terrain.",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"enabled": {
+			"description": "Enable collisions when true or non-zero.",
+			"oneOf": [
+				{
+					"type": "boolean"
+				},
+				{
+					"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"
+				}
+			],
+			"default": true
+		},
+		"collision_drag": {
+			"description": "Speed reduction while in contact.",
+			"type": "number"
+		},
+		"coefficient_of_restitution": {
+			"description": "Bounce coefficient.",
+			"type": "number"
+		},
+		"collision_radius": {
+			"description": "Collision radius, must be <= 0.5 blocks.",
+			"type": "number",
+			"maximum": 0.5
+		},
+		"expire_on_contact": {
+			"description": "Expire when contact occurs.",
+			"type": "boolean"
+		},
+		"events": {
+			"description": "Collision-triggered events.",
+			"oneOf": [
+				{
+					"$ref": "#/$defs/collision_event"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/collision_event"
+					}
+				}
+			]
+		}
+	},
+	"$defs": {
+		"collision_event": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["event"],
+			"properties": {
+				"event": {
+					"type": "string"
+				},
+				"min_speed": {
+					"description": "Minimum speed to trigger the event.",
+					"type": "number",
+					"default": 2
+				}
+			}
+		}
+	}
 }

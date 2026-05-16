@@ -34,7 +34,7 @@
 									"$ref": "./material.json"
 								},
 								"texture": {
-									"$ref": "../../../../vanilla/client/paths.json#/definitions/texture_path"
+									"$ref": "../../../../vanilla/client/paths.json#/$defs/texture_path"
 								}
 							}
 						}
@@ -47,16 +47,16 @@
 						"^variable.[a-zA-Z0-9_.]+": {
 							"oneOf": [
 								{
-									"$ref": "./curves.json#/definitions/linear"
+									"$ref": "./curves.json#/$defs/linear"
 								},
 								{
-									"$ref": "./curves.json#/definitions/bezier"
+									"$ref": "./curves.json#/$defs/bezier"
 								},
 								{
-									"$ref": "./curves.json#/definitions/catmull_rom"
+									"$ref": "./curves.json#/$defs/catmull_rom"
 								},
 								{
-									"$ref": "./curves.json#/definitions/bezier_chain"
+									"$ref": "./curves.json#/$defs/bezier_chain"
 								}
 							]
 						}

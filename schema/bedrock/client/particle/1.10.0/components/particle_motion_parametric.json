@@ -1,34 +1,34 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "schema/bedrock/client/particle/1.10.0/components/particle_motion_parametric.json",
-  "title": "minecraft:particle_motion_parametric",
-  "description": "Directly controls particle motion.",
-  "type": "object",
-  "additionalProperties": false,
-  "properties": {
-    "relative_position": {
-      "description": "Position relative to the emitter.",
-      "type": "array",
-      "minItems": 3,
-      "maxItems": 3,
-      "default": [0, 0, 0],
-      "items": {
-        "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression"
-      }
-    },
-    "direction": {
-      "description": "Particle direction.",
-      "type": "array",
-      "minItems": 3,
-      "maxItems": 3,
-      "items": {
-        "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression"
-      }
-    },
-    "rotation": {
-      "description": "Particle rotation.",
-      "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression",
-      "default": 0
-    }
-  }
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/particle/1.10.0/components/particle_motion_parametric.json",
+	"title": "minecraft:particle_motion_parametric",
+	"description": "Directly controls particle motion.",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"relative_position": {
+			"description": "Position relative to the emitter.",
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"default": [0, 0, 0],
+			"items": {
+				"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"
+			}
+		},
+		"direction": {
+			"description": "Particle direction.",
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"
+			}
+		},
+		"rotation": {
+			"description": "Particle rotation.",
+			"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression",
+			"default": 0
+		}
+	}
 }

@@ -1,18 +1,18 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "schema/bedrock/client/particle/1.10.0/components/emitter_initialization.json",
-  "title": "minecraft:emitter_initialization",
-  "description": "Runs Molang expressions during emitter creation and updates.",
-  "type": "object",
-  "additionalProperties": false,
-  "properties": {
-    "creation_expression": {
-      "description": "Executed once at emitter startup.",
-      "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression"
-    },
-    "per_update_expression": {
-      "description": "Executed once per emitter update.",
-      "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression"
-    }
-  }
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/particle/1.10.0/components/emitter_initialization.json",
+	"title": "minecraft:emitter_initialization",
+	"description": "Runs Molang expressions during emitter creation and updates.",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"creation_expression": {
+			"description": "Executed once at emitter startup.",
+			"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"
+		},
+		"per_update_expression": {
+			"description": "Executed once per emitter update.",
+			"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"
+		}
+	}
 }

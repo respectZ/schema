@@ -1,20 +1,20 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "schema/bedrock/client/particle/1.10.0/components/particle_initial_spin.json",
-  "title": "minecraft:particle_initial_spin",
-  "description": "Sets initial rotation and spin rate.",
-  "type": "object",
-  "additionalProperties": false,
-  "properties": {
-    "rotation": {
-      "description": "Initial rotation in degrees.",
-      "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression",
-      "default": 0
-    },
-    "rotation_rate": {
-      "description": "Spin rate in degrees per second.",
-      "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression",
-      "default": 0
-    }
-  }
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/particle/1.10.0/components/particle_initial_spin.json",
+	"title": "minecraft:particle_initial_spin",
+	"description": "Sets initial rotation and spin rate.",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"rotation": {
+			"description": "Initial rotation in degrees.",
+			"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression",
+			"default": 0
+		},
+		"rotation_rate": {
+			"description": "Spin rate in degrees per second.",
+			"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression",
+			"default": 0
+		}
+	}
 }

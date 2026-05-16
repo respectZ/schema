@@ -1,7 +1,7 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"$id": "schema/bedrock/client/particle/1.10.0/curves.json",
-	"definitions": {
+	"$defs": {
 		"linear": {
 			"type": "object",
 			"additionalProperties": false,
@@ -11,15 +11,15 @@
 					"const": "linear"
 				},
 				"horizontal_range": {
-					"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/expression"
 				},
 				"input": {
-					"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/expression"
 				},
 				"nodes": {
 					"type": "array",
 					"items": {
-						"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+						"$ref": "../../../../vanilla/definition/molang.json#/$defs/expression"
 					}
 				}
 			}
@@ -33,15 +33,15 @@
 					"const": "bezier"
 				},
 				"horizontal_range": {
-					"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/expression"
 				},
 				"input": {
-					"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/expression"
 				},
 				"nodes": {
 					"type": "array",
 					"items": {
-						"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+						"$ref": "../../../../vanilla/definition/molang.json#/$defs/expression"
 					}
 				}
 			}
@@ -55,15 +55,15 @@
 					"const": "catmull_rom"
 				},
 				"horizontal_range": {
-					"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/expression"
 				},
 				"input": {
-					"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/expression"
 				},
 				"nodes": {
 					"type": "array",
 					"items": {
-						"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+						"$ref": "../../../../vanilla/definition/molang.json#/$defs/expression"
 					}
 				}
 			}
@@ -77,10 +77,10 @@
 					"const": "bezier_chain"
 				},
 				"horizontal_range": {
-					"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/expression"
 				},
 				"input": {
-					"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/expression"
 				},
 				"nodes": {
 					"type": "object",
