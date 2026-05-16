@@ -1,43 +1,43 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "schema/bedrock/client/particle/1.10.0/components/emitter_local_space.json",
-  "title": "minecraft:emitter_local_space",
-  "description": "Specifies the emitter frame of reference when attached to an entity.",
-  "type": "object",
-  "additionalProperties": false,
-  "properties": {
-    "position": {
-      "description": "Simulate particles in entity space when true.",
-      "type": "boolean",
-      "default": false
-    },
-    "rotation": {
-      "description": "Simulate particle rotation in entity space when true.",
-      "type": "boolean",
-      "default": false
-    },
-    "velocity": {
-      "description": "Adds emitter velocity to initial particle velocity.",
-      "type": "boolean",
-      "default": false
-    }
-  },
-  "allOf": [
-    {
-      "if": {
-        "properties": {
-          "rotation": {
-            "const": true
-          },
-          "position": {
-            "const": false
-          }
-        },
-        "required": ["rotation", "position"]
-      },
-      "then": {
-        "not": {}
-      }
-    }
-  ]
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/particle/1.10.0/components/emitter_local_space.json",
+	"title": "minecraft:emitter_local_space",
+	"description": "Specifies the emitter frame of reference when attached to an entity.",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"position": {
+			"description": "Simulate particles in entity space when true.",
+			"type": "boolean",
+			"default": false
+		},
+		"rotation": {
+			"description": "Simulate particle rotation in entity space when true.",
+			"type": "boolean",
+			"default": false
+		},
+		"velocity": {
+			"description": "Adds emitter velocity to initial particle velocity.",
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"rotation": {
+						"const": true
+					},
+					"position": {
+						"const": false
+					}
+				},
+				"required": ["rotation", "position"]
+			},
+			"then": {
+				"not": {}
+			}
+		}
+	]
 }

@@ -1,58 +1,58 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "schema/bedrock/client/particle/1.10.0/components/particle_lifetime_events.json",
-  "title": "minecraft:particle_lifetime_events",
-  "description": "Triggers events during particle lifetime.",
-  "type": "object",
-  "additionalProperties": false,
-  "properties": {
-    "creation_event": {
-      "description": "Events fired on particle creation.",
-      "oneOf": [
-        {
-          "type": "string"
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      ]
-    },
-    "expiration_event": {
-      "description": "Events fired on particle expiration.",
-      "oneOf": [
-        {
-          "type": "string"
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      ]
-    },
-    "timeline": {
-      "description": "Time-based event triggers.",
-      "type": "object",
-      "additionalProperties": false,
-      "patternProperties": {
-        "^.*$": {
-          "oneOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          ]
-        }
-      }
-    }
-  }
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/particle/1.10.0/components/particle_lifetime_events.json",
+	"title": "minecraft:particle_lifetime_events",
+	"description": "Triggers events during particle lifetime.",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"creation_event": {
+			"description": "Events fired on particle creation.",
+			"oneOf": [
+				{
+					"type": "string"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				}
+			]
+		},
+		"expiration_event": {
+			"description": "Events fired on particle expiration.",
+			"oneOf": [
+				{
+					"type": "string"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				}
+			]
+		},
+		"timeline": {
+			"description": "Time-based event triggers.",
+			"type": "object",
+			"additionalProperties": false,
+			"patternProperties": {
+				"^.*$": {
+					"oneOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					]
+				}
+			}
+		}
+	}
 }

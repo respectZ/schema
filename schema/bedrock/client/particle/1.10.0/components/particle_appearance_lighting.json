@@ -1,9 +1,9 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "schema/bedrock/client/particle/1.10.0/components/particle_appearance_lighting.json",
-  "title": "minecraft:particle_appearance_lighting",
-  "description": "Enables lighting-based tinting for particles.",
-  "type": "object",
-  "additionalProperties": false,
-  "properties": {}
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/particle/1.10.0/components/particle_appearance_lighting.json",
+	"title": "minecraft:particle_appearance_lighting",
+	"description": "Enables lighting-based tinting for particles.",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {}
 }
