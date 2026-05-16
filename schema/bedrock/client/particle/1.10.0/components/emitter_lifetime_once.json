@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema/bedrock/client/particle/1.10.0/components/emitter_lifetime_once.json",
+  "title": "minecraft:emitter_lifetime_once",
+  "description": "Emitter runs once, then expires.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "active_time": {
+      "description": "Seconds the emitter emits.",
+      "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression",
+      "default": 10
+    }
+  }
+}

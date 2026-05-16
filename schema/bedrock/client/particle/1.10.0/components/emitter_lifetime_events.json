@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema/bedrock/client/particle/1.10.0/components/emitter_lifetime_events.json",
+  "title": "minecraft:emitter_lifetime_events",
+  "description": "Triggers events during emitter lifetime.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "creation_event": {
+      "description": "Events fired on emitter creation.",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "expiration_event": {
+      "description": "Events fired on emitter expiration.",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "timeline": {
+      "description": "Time-based event triggers per loop.",
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^.*$": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "travel_distance_events": {
+      "description": "Distance-based event triggers.",
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^.*$": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "looping_travel_distance_events": {
+      "description": "Looping distance-based event triggers.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["distance", "effects"],
+        "properties": {
+          "distance": {
+            "description": "Distance interval for triggering effects.",
+            "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression"
+          },
+          "effects": {
+            "description": "Events to trigger at the distance interval.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

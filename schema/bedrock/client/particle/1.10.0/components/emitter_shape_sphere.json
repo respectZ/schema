@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema/bedrock/client/particle/1.10.0/components/emitter_shape_sphere.json",
+  "title": "minecraft:emitter_shape_sphere",
+  "description": "Emits particles from a sphere.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "offset": {
+      "description": "Offset from the emitter.",
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "default": [0, 0, 0],
+      "items": {
+        "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression"
+      }
+    },
+    "radius": {
+      "description": "Sphere radius.",
+      "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression",
+      "default": 1
+    },
+    "surface_only": {
+      "description": "Emit only from the sphere surface.",
+      "type": "boolean",
+      "default": false
+    },
+    "direction": {
+      "description": "Particle emission direction.",
+      "oneOf": [
+        {
+          "enum": ["inwards", "outwards"]
+        },
+        {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression"
+          }
+        }
+      ]
+    }
+  }
+}

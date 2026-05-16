@@ -1,0 +1,75 @@
+{
+	"$schema": "https://json-schema.org/draft-07/schema#",
+	"$id": "schema/bedrock/client/particle/1.10.0/event.json",
+	"properties": {
+		"expression": {
+			"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+		},
+		"log": { "type": "string", "default": "" },
+		"particle_effect": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["effect", "type"],
+			"properties": {
+				"type": {
+					"type": "string",
+					"anyOf": [
+						{
+							"const": "particle",
+							"description": "Manually emits a particle on an emitter of \"effect\" type at the event location, creating the emitter if it doesn't already exist (be sure to use \"minecraft:emitter_rate_manual\" for the spawned emitter effect)."
+						},
+						{
+							"const": "particle_with_velocity",
+							"description": "Does the same as particle except the new particle will inherit the spawning particle's velocity."
+						},
+						{
+							"const": "emitter",
+							"description": "Create an emitter of \"effect\" type at the event's world position, in a fire-and-forget way."
+						},
+						{
+							"const": "emitter_bound",
+							"description": "The emitter will be bound to the same actor/locator."
+						}
+					]
+				},
+				"effect": {
+					"$ref": "../../../../vanilla/client/identifiers.json#/definitions/particle_identifier"
+				},
+				"pre_effect_expression": {
+					"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+				}
+			}
+		},
+		"randomize": {
+			"type": "array",
+			"description": "When using random, one element will be picked from the array based on the weight.",
+			"items": {
+				"allOf": [
+					{
+						"type": "object",
+						"additionalProperties": false,
+						"required": ["weight"],
+						"properties": { "weight": { "type": "number" } }
+					},
+					{ "$ref": "#" }
+				]
+			}
+		},
+		"sequence": {
+			"type": "array",
+			"description": "When sequence is specified, that array will execute in order, with every element executing when the event fires.",
+			"items": { "$ref": "#" }
+		},
+		"sound_effect": {
+			"description": "Sound effects specify the specific \"level sound event\" to be played when the event fires.",
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["event_name"],
+			"properties": {
+				"event_name": {
+					"$ref": "../../../../vanilla/client/identifiers.json#/definitions/sound_event_identifier"
+				}
+			}
+		}
+	}
+}

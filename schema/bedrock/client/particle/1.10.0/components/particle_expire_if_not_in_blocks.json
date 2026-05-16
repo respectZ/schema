@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema/bedrock/client/particle/1.10.0/components/particle_expire_if_not_in_blocks.json",
+  "title": "minecraft:particle_expire_if_not_in_blocks",
+  "description": "Expires particles when not inside listed blocks.",
+  "type": "array",
+  "items": {
+    "type": "string"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema/bedrock/client/particle/1.10.0/components/emitter_shape_entity_aabb.json",
+  "title": "minecraft:emitter_shape_entity_aabb",
+  "description": "Emits particles from the entity AABB or emitter point.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "surface_only": {
+      "description": "Emit only from the surface.",
+      "type": "boolean",
+      "default": false
+    },
+    "direction": {
+      "description": "Particle emission direction.",
+      "oneOf": [
+        {
+          "enum": ["inwards", "outwards"]
+        },
+        {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "default": [0, 0, 0],
+          "items": {
+            "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression"
+          }
+        }
+      ]
+    }
+  }
+}

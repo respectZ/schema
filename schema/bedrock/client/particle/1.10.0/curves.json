@@ -1,0 +1,119 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/particle/1.10.0/curves.json",
+	"definitions": {
+		"linear": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["type", "horizontal_range", "input", "nodes"],
+			"properties": {
+				"type": {
+					"const": "linear"
+				},
+				"horizontal_range": {
+					"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+				},
+				"input": {
+					"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+				},
+				"nodes": {
+					"type": "array",
+					"items": {
+						"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+					}
+				}
+			}
+		},
+		"bezier": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["type", "horizontal_range", "input", "nodes"],
+			"properties": {
+				"type": {
+					"const": "bezier"
+				},
+				"horizontal_range": {
+					"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+				},
+				"input": {
+					"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+				},
+				"nodes": {
+					"type": "array",
+					"items": {
+						"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+					}
+				}
+			}
+		},
+		"catmull_rom": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["type", "horizontal_range", "input", "nodes"],
+			"properties": {
+				"type": {
+					"const": "catmull_rom"
+				},
+				"horizontal_range": {
+					"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+				},
+				"input": {
+					"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+				},
+				"nodes": {
+					"type": "array",
+					"items": {
+						"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+					}
+				}
+			}
+		},
+		"bezier_chain": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["type", "horizontal_range", "input", "nodes"],
+			"properties": {
+				"type": {
+					"const": "bezier_chain"
+				},
+				"horizontal_range": {
+					"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+				},
+				"input": {
+					"$ref": "../../../../vanilla/definition/molang.json#/definitions/expression"
+				},
+				"nodes": {
+					"type": "object",
+					"additionalProperties": false,
+					"patternProperties": {
+						"^((\\d+)\\.)?(\\d+)$": {
+							"type": "object",
+							"additionalProperties": false,
+							"required": ["slope", "value"],
+							"properties": {
+								"left_slope": {
+									"type": "number"
+								},
+								"left_value": {
+									"type": "number"
+								},
+								"right_slope": {
+									"type": "number"
+								},
+								"right_value": {
+									"type": "number"
+								},
+								"slope": {
+									"type": "number"
+								},
+								"value": {
+									"type": "number"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

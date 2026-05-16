@@ -1,0 +1,80 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/particle/1.10.0/_index.json",
+	"title": "Minecraft Bedrock Particle Effect 1.10.0",
+	"type": "object",
+	"required": ["format_version", "particle_effect"],
+	"additionalProperties": false,
+	"properties": {
+		"format_version": {
+			"const": "1.10.0"
+		},
+		"particle_effect": {
+			"type": "object",
+			"description": "Root particle effect container.",
+			"additionalProperties": false,
+			"required": ["description", "components"],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "General particle effect metadata.",
+					"additionalProperties": false,
+					"required": ["identifier", "basic_render_parameters"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json"
+						},
+						"basic_render_parameters": {
+							"type": "object",
+							"description": "Basic render parameters like texture and material.",
+							"additionalProperties": false,
+							"required": ["material", "texture"],
+							"properties": {
+								"material": {
+									"$ref": "./material.json"
+								},
+								"texture": {
+									"$ref": "../../../../vanilla/client/paths.json#/definitions/texture_path"
+								}
+							}
+						}
+					}
+				},
+				"curves": {
+					"type": "object",
+					"additionalProperties": false,
+					"patternProperties": {
+						"^variable.[a-zA-Z0-9_.]+": {
+							"oneOf": [
+								{
+									"$ref": "./curves.json#/definitions/linear"
+								},
+								{
+									"$ref": "./curves.json#/definitions/bezier"
+								},
+								{
+									"$ref": "./curves.json#/definitions/catmull_rom"
+								},
+								{
+									"$ref": "./curves.json#/definitions/bezier_chain"
+								}
+							]
+						}
+					}
+				},
+				"events": {
+					"type": "object",
+					"patternProperties": {
+						".*": {
+							"$ref": "./event.json"
+						}
+					}
+				},
+				"components": {
+					"$ref": "./components/_index.json",
+					"description": "Particle and emitter components."
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema/bedrock/client/particle/1.10.0/components/emitter_rate_manual.json",
+  "title": "minecraft:emitter_rate_manual",
+  "description": "Emits particles only when triggered by the game.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "max_particles": {
+      "description": "Maximum number of active particles.",
+      "$ref": "../../../../../vanilla/definition/molang.json#/definitions/expression",
+      "default": 50
+    }
+  }
+}

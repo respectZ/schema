@@ -1,0 +1,12 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/particle/1.10.0/components/particle_lifetime_kill-plane.json",
+	"title": "minecraft:particle_lifetime_kill_plane",
+	"description": "Expires particles when crossing a plane. A*x + B*y + C*z + D = 0 with the parameters being [ A, B, C, D ]",
+	"type": "array",
+	"minItems": 4,
+	"maxItems": 4,
+	"items": {
+		"type": "number"
+	}
+}
