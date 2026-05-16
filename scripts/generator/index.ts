@@ -2,6 +2,7 @@ import path from "path/posix";
 import { createSchema, writeJson } from "../utils";
 import { generateClientPaths } from "./client";
 import { generateClientIdentifiers } from "./client/identifiers";
+import { generateClientLang } from "./client/lang";
 
 const entries: Entry[] = [
 	{
@@ -57,6 +58,22 @@ const entries: Entry[] = [
 						enum: soundEventIdentifiers,
 					},
 				},
+			};
+		},
+	},
+	{
+		filepath: "vanilla/client/lang_keys.json",
+		content: async () => {
+			const { langKeys } = await generateClientLang();
+			return {
+				anyOf: [
+					{
+						type: "string",
+					},
+					{
+						enum: langKeys,
+					},
+				],
 			};
 		},
 	},

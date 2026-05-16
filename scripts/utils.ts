@@ -76,12 +76,24 @@ export async function getBedrockFilepaths(options: GetBedrockFilepathsOptions): 
 	return files;
 }
 
+export async function getBedrockFile<U>(options: GetBedrockFileOptions<U>): Promise<U> {
+	const { pattern, type, transform } = options;
+	const searchPath = bedrockPath(type);
+	const glob = new Bun.Glob(path.join(searchPath, pattern));
+	for await (let file of glob.scan({ onlyFiles: true })) {
+		file = file.replace(/\\/g, "/");
+		const content = await Bun.file(file).text();
+		const result = transform(content);
+		return result;
+	}
+	throw new Error(`File not found: ${pattern}`);
+}
+
 export async function getBedrockJSON<T, U = string>(
 	options: GetBedrockJSONContentOptions<T, U>,
 ): Promise<U[]> {
 	const { pattern, type } = options;
 	const glob = new Bun.Glob(path.join(bedrockPath(type), pattern));
-	console.log(path.join(bedrockPath(type), pattern));
 	const results: U[] = [];
 	for await (let file of glob.scan({ onlyFiles: true })) {
 		const content = await readJson<T>(file);
@@ -97,6 +109,12 @@ export type GetBedrockFilepathsOptions = {
 	relative?: boolean;
 	sort?: boolean;
 	transform?: (filepath: string) => string;
+};
+
+export type GetBedrockFileOptions<U> = {
+	type: "bp" | "rp";
+	pattern: string;
+	transform: (content: string) => U;
 };
 
 export type GetBedrockJSONContentOptions<T, U> = {

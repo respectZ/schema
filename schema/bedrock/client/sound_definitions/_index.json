@@ -1,0 +1,112 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/client/sound_definitions/_index.json",
+	"title": "Minecraft Bedrock Sound Definitions",
+	"type": "object",
+	"additionalProperties": false,
+	"required": ["format_version", "sound_definitions"],
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"description": "Sound definitions format version.",
+			"default": "1.20.20"
+		},
+		"sound_definitions": {
+			"type": "object",
+			"description": "Sound event definitions keyed by event identifier.",
+			"additionalProperties": { "$ref": "#/$defs/sound_definition" }
+		}
+	},
+	"$defs": {
+		"float_range": {
+			"oneOf": [
+				{ "type": "number" },
+				{
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": { "type": "number" }
+				}
+			]
+		},
+		"sound_definition": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["sounds"],
+			"properties": {
+				"category": {
+					"type": "string",
+					"enum": [
+						"ambient",
+						"block",
+						"bottle",
+						"bucket",
+						"hostile",
+						"music",
+						"neutral",
+						"player",
+						"record",
+						"ui",
+						"weather"
+					]
+				},
+				"sounds": {
+					"type": "array",
+					"items": {
+						"oneOf": [
+							{
+								"$ref": "../../../vanilla/client/paths.json#/$defs/sound_path"
+							},
+							{ "$ref": "#/$defs/sound_entry" }
+						]
+					}
+				},
+				"min_distance": {
+					"type": ["number", "null"],
+					"minimum": 0
+				},
+				"max_distance": {
+					"type": ["number", "null"],
+					"minimum": 0
+				},
+				"subtitle": {
+					"$ref": "../../../vanilla/client/lang_keys.json"
+				},
+				"__use_legacy_max_distance": {
+					"anyOf": [
+						{
+							"type": "boolean"
+						},
+						{
+							"type": "string",
+							"enum": ["true", "false"]
+						}
+					]
+				}
+			}
+		},
+		"sound_entry": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["name"],
+			"properties": {
+				"name": {
+					"$ref": "../../../vanilla/client/paths.json#/$defs/sound_path"
+				},
+				"volume": { "$ref": "#/$defs/float_range" },
+				"pitch": { "$ref": "#/$defs/float_range" },
+				"weight": {
+					"type": "integer",
+					"minimum": 0
+				},
+				"is3D": { "type": "boolean" },
+				"stream": { "type": "boolean" },
+				"load_on_low_memory": {
+					"type": "boolean",
+					"deprecated": true,
+					"description": "Deprecated as of 1.16.0, as all sounds are now loaded on low memory devices."
+				}
+			}
+		}
+	}
+}
