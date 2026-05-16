@@ -1,14 +1,14 @@
-import { getBedrockFiles, getEnv } from "../../utils";
+import { getBedrockFilepaths } from "../../utils";
 
 export async function generateClientPaths() {
-	const texturePaths = await getBedrockFiles({
+	const texturePaths = await getBedrockFilepaths({
 		type: "rp",
 		pattern: "textures/**/*.{tga,png,jpg,jpeg}",
 		extension: false,
 		relative: true,
 		sort: true,
 	});
-	const soundPaths = await getBedrockFiles({
+	const soundPaths = await getBedrockFilepaths({
 		type: "rp",
 		pattern: "sounds/**/*.{fsb,ogg}",
 		extension: false,

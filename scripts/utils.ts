@@ -1,7 +1,7 @@
-import type { RootSchema } from "./types";
 import path from "path/posix";
-import JSONC from "tiny-jsonc";
 import prettier from "prettier";
+import JSONC from "tiny-jsonc";
+import type { RootSchema } from "./types";
 
 /**
  * Creates a JSON schema with the given filepath as the $id and the standard $schema URL.
@@ -55,7 +55,7 @@ function bedrockPath(type: "bp" | "rp") {
 	return path.join(bedrockPath, type === "bp" ? "behavior_pack" : "resource_pack");
 }
 
-export async function getBedrockFiles(options: GetBedrockFilesOptions): Promise<string[]> {
+export async function getBedrockFilepaths(options: GetBedrockFilepathsOptions): Promise<string[]> {
 	const { pattern, type, extension, relative, sort, transform } = options;
 	const searchPath = bedrockPath(type);
 	const glob = new Bun.Glob(path.join(searchPath, pattern));
@@ -90,7 +90,7 @@ export async function getBedrockJSON<T, U = string>(
 	return results;
 }
 
-export type GetBedrockFilesOptions = {
+export type GetBedrockFilepathsOptions = {
 	type: "bp" | "rp";
 	pattern: string;
 	extension?: boolean;
