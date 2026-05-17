@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/texture_list/_index.json",
+	"type": "array",
+	"items": {
+		"type": "string"
+	}
+}
