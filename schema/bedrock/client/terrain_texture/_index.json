@@ -1,0 +1,166 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/terrain_texture/_index.json",
+	"type": "object",
+	"additionalProperties": false,
+	"required": ["texture_data"],
+	"properties": {
+		"resource_pack_name": {
+			"type": "string",
+			"default": "pack.name"
+		},
+		"texture_name": {
+			"type": "string",
+			"const": "atlas.terrain"
+		},
+		"padding": {
+			"type": "integer",
+			"minimum": 0,
+			"default": 8
+		},
+		"num_mip_levels": {
+			"type": "integer",
+			"minimum": 0,
+			"default": 4
+		},
+		"texture_data": {
+			"type": "object",
+			"additionalProperties": {
+				"type": "object",
+				"unevaluatedProperties": false,
+				"required": ["textures"],
+				"properties": {
+					"additive": {
+						"type": "boolean",
+						"description": "Layers all of textures on top of each other."
+					},
+					"quad": {
+						"$ref": "#/$defs/quad"
+					},
+					"textures": {
+						"unevaluatedProperties": false,
+						"oneOf": [
+							{
+								"$ref": "#/$defs/texture_entry"
+							},
+							{
+								"type": "array",
+								"minItems": 1,
+								"items": {
+									"$ref": "#/$defs/texture_entry"
+								}
+							},
+							{
+								"type": "object",
+								"additionalProperties": false,
+								"required": ["variations"],
+								"properties": {
+									"variations": {
+										"type": "array",
+										"minItems": 1,
+										"items": {
+											"unevaluatedProperties": false,
+											"allOf": [
+												{
+													"$ref": "#/$defs/texture_entry"
+												},
+												{
+													"type": "object",
+													"required": ["weight"],
+													"properties": {
+														"weight": {
+															"type": "number",
+															"minimum": 0.05,
+															"maximum": 1000000
+														}
+													}
+												}
+											]
+										}
+									}
+								}
+							}
+						]
+					}
+				}
+			}
+		}
+	},
+	"$defs": {
+		"hex_color": {
+			"type": "string",
+			"description": "Hex string (#RRGGBB)",
+			"pattern": "^#?[0-9a-fA-F]{6}$"
+		},
+		"color": {
+			"oneOf": [
+				{
+					"type": "array",
+					"description": "RGB or RGBA array [0..255].",
+					"minItems": 3,
+					"maxItems": 4,
+					"items": {
+						"type": "integer",
+						"minimum": 0,
+						"maximum": 255
+					}
+				},
+				{
+					"$ref": "#/$defs/hex_color"
+				}
+			]
+		},
+		"quad": {
+			"description": "If set to true, only the first quadrant of the texture will be used.",
+			"oneOf": [
+				{
+					"type": "boolean"
+				},
+				{
+					"type": "number"
+				}
+			]
+		},
+		"texture_entry": {
+			"oneOf": [
+				{
+					"$ref": "../../../vanilla/client/paths.json#/$defs/texture_path"
+				},
+				{
+					"type": "object",
+					"required": ["path"],
+					"properties": {
+						"path": {
+							"$ref": "../../../vanilla/client/paths.json#/$defs/texture_path"
+						},
+						"overlay_color": {
+							"$ref": "#/$defs/hex_color"
+						},
+						"tint_color": {
+							"$ref": "#/$defs/color"
+						},
+						"tint_path": {
+							"deprecated": true,
+							"$ref": "../../../vanilla/client/paths.json#/$defs/texture_path"
+						},
+						"tint_base_color": {
+							"$ref": "#/$defs/color"
+						},
+						"mip_fade_color": {
+							"$ref": "#/$defs/color"
+						},
+						"mip_fade_amount": {
+							"type": "number"
+						},
+						"isotropic": {
+							"type": "boolean"
+						},
+						"quad": {
+							"$ref": "#/$defs/quad"
+						}
+					}
+				}
+			]
+		}
+	}
+}
