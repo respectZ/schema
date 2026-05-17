@@ -1,0 +1,335 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/shared/manifest/3/_index.json",
+	"title": "Minecraft Bedrock Pack Manifest 1",
+	"description": "The manifest.json file contains the basic information about a pack that Minecraft needs to identify it, including header metadata, modules, and optional dependencies, capabilities, and metadata.",
+	"type": "object",
+	"additionalProperties": false,
+	"required": ["format_version", "header", "modules"],
+	"properties": {
+		"format_version": {},
+		"header": {
+			"$ref": "#/$defs/header"
+		},
+		"modules": {
+			"type": "array",
+			"description": "Section containing information regarding the type of content that is being brought in.",
+			"items": {
+				"$ref": "#/$defs/module"
+			}
+		},
+		"dependencies": {
+			"type": "array",
+			"description": "Section containing definitions for any other packs that are required in order for this manifest.json file to work.",
+			"items": {
+				"$ref": "#/$defs/dependency"
+			}
+		},
+		"capabilities": {
+			"description": "Section containing optional features that can be enabled in Minecraft.",
+			"$ref": "#/$defs/capabilities"
+		},
+		"metadata": {
+			"description": "Section containing the metadata about the file such as authors and licensing information.",
+			"$ref": "#/$defs/metadata"
+		},
+		"settings": {
+			"description": "Optional settings screen entries for packs (preview feature).",
+			"$ref": "#/$defs/settings"
+		}
+	},
+	"$defs": {
+		"uuid": {
+			"type": "string",
+			"description": "UUID in the form xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.",
+			"pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+		},
+		"semver": {
+			"type": "string",
+			"description": "Semantic version string.",
+			"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-[0-9A-Za-z-.]+)?(?:\\+[0-9A-Za-z-.]+)?$"
+		},
+		"header": {
+			"type": "object",
+			"description": "Public-facing pack information.",
+			"additionalProperties": false,
+			"required": ["name", "uuid", "version", "min_engine_version"],
+			"properties": {
+				"name": {
+					"type": "string",
+					"description": "Name of the pack as it appears within Minecraft.",
+					"default": "pack.name"
+				},
+				"description": {
+					"type": "string",
+					"description": "Short description of the pack.",
+					"default": "pack.description"
+				},
+				"uuid": {
+					"$ref": "#/$defs/uuid"
+				},
+				"version": {
+					"$ref": "#/$defs/semver"
+				},
+				"min_engine_version": {
+					"description": "Minimum version of the game that this pack was written for.",
+					"$ref": "#/$defs/semver"
+				},
+				"base_game_version": {
+					"description": "Base game version required for world templates.",
+					"$ref": "#/$defs/semver"
+				},
+				"allow_random_seed": {
+					"type": "boolean",
+					"description": "World template option to allow random seed selection."
+				},
+				"lock_template_options": {
+					"type": "boolean",
+					"description": "World template option to lock world settings."
+				},
+				"pack_scope": {
+					"type": "string",
+					"description": "Scope for resource pack usage.",
+					"enum": ["world", "global", "any"]
+				}
+			}
+		},
+		"module": {
+			"type": "object",
+			"description": "Module definition describing a content type.",
+			"additionalProperties": false,
+			"required": ["type", "uuid", "version"],
+			"properties": {
+				"description": {
+					"type": "string",
+					"description": "Description of the module."
+				},
+				"type": {
+					"type": "string",
+					"description": "Type of module content.",
+					"enum": ["resources", "data", "world_template", "script", "client_data"]
+				},
+				"uuid": {
+					"$ref": "#/$defs/uuid"
+				},
+				"version": {
+					"$ref": "#/$defs/semver"
+				},
+				"language": {
+					"type": "string",
+					"description": "Script language for script modules.",
+					"enum": ["javascript"]
+				},
+				"entry": {
+					"type": "string",
+					"description": "Entry point file for script modules."
+				}
+			},
+			"allOf": [
+				{
+					"if": {
+						"required": ["type"],
+						"properties": {
+							"type": {
+								"const": "script"
+							}
+						}
+					},
+					"then": {
+						"required": ["language", "entry"]
+					}
+				}
+			]
+		},
+		"dependency": {
+			"description": "Dependency on another pack or built-in scripting module.",
+			"oneOf": [
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"required": ["uuid", "version"],
+					"properties": {
+						"uuid": {
+							"$ref": "#/$defs/uuid"
+						},
+						"version": {
+							"$ref": "#/$defs/semver"
+						}
+					}
+				},
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"required": ["module_name", "version"],
+					"properties": {
+						"module_name": {
+							"type": "string",
+							"description": "Built-in scripting module name.",
+							"enum": [
+								"@minecraft/debug-utilities",
+								"@minecraft/server",
+								"@minecraft/server-admin",
+								"@minecraft/server-editor",
+								"@minecraft/server-gametest",
+								"@minecraft/server-ui"
+							]
+						},
+						"version": {
+							"$ref": "#/$defs/semver"
+						}
+					}
+				}
+			]
+		},
+		"capabilities": {
+			"type": "array",
+			"description": "Optional capability flags for the pack.",
+			"uniqueItems": true,
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"const": "chemistry",
+						"description": "The pack can add, remove, or modify chemistry behavior."
+					},
+					{
+						"const": "editorExtension",
+						"description": "Indicates that this pack contains extensions for the Minecraft Editor."
+					},
+					{
+						"const": "experimental_custom_ui",
+						"description": "The pack can use HTML files to create custom UI, as well as use or modify the custom UI."
+					},
+					{
+						"const": "raytraced",
+						"description": "The pack uses Ray Tracing functionality and will enable the mode on supported devices."
+					},
+					{
+						"const": "pbr",
+						"description": "The pack is optimized to used with the Vibrant Visuals feature set with supported devices."
+					}
+				]
+			}
+		},
+		"metadata": {
+			"type": "object",
+			"description": "Metadata about the pack such as authors and licensing information.",
+			"additionalProperties": false,
+			"properties": {
+				"authors": {
+					"type": "array",
+					"description": "Name of the author(s) of the pack.",
+					"items": {
+						"type": "string"
+					}
+				},
+				"license": {
+					"type": "string",
+					"description": "License of the pack."
+				},
+				"generated_with": {
+					"type": "object",
+					"description": "Tools used to generate the manifest.",
+					"patternProperties": {
+						"^[a-zA-Z0-9_-]{1,32}$": {
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/semver"
+							}
+						}
+					},
+					"additionalProperties": false
+				},
+				"product_type": {
+					"type": "string",
+					"description": "Targeted context for this pack.",
+					"enum": ["addon"]
+				},
+				"url": {
+					"type": "string",
+					"description": "Home website of the pack."
+				}
+			}
+		},
+		"settings_label": {
+			"type": "object",
+			"description": "Read-only label for settings screen.",
+			"additionalProperties": false,
+			"required": ["type", "text"],
+			"properties": {
+				"type": {
+					"const": "label"
+				},
+				"text": {
+					"type": "string"
+				}
+			}
+		},
+		"settings_toggle": {
+			"type": "object",
+			"description": "Boolean toggle setting.",
+			"additionalProperties": false,
+			"required": ["type", "text", "name", "default"],
+			"properties": {
+				"type": {
+					"const": "toggle"
+				},
+				"text": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"default": {
+					"type": "boolean"
+				}
+			}
+		},
+		"settings_slider": {
+			"type": "object",
+			"description": "Slider setting for numeric range.",
+			"additionalProperties": false,
+			"required": ["type", "text", "name", "min", "max", "step", "default"],
+			"properties": {
+				"type": {
+					"const": "slider"
+				},
+				"text": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"min": {
+					"type": "number"
+				},
+				"max": {
+					"type": "number"
+				},
+				"step": {
+					"type": "number"
+				},
+				"default": {
+					"type": "number"
+				}
+			}
+		},
+		"settings": {
+			"type": "array",
+			"description": "Ordered list of settings entries.",
+			"items": {
+				"oneOf": [
+					{
+						"$ref": "#/$defs/settings_label"
+					},
+					{
+						"$ref": "#/$defs/settings_toggle"
+					},
+					{
+						"$ref": "#/$defs/settings_slider"
+					}
+				]
+			}
+		}
+	}
+}

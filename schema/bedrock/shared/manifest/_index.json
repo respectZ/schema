@@ -1,0 +1,56 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/shared/manifest/_index.json",
+	"title": "Minecraft Bedrock Pack Manifest",
+	"description": "The manifest.json file contains the basic information about a pack that Minecraft needs to identify it, including header metadata, modules, and optional dependencies, capabilities, and metadata.",
+	"type": "object",
+	"unevaluatedProperties": false,
+	"required": ["format_version"],
+	"allOf": [
+		{
+			"properties": {
+				"format_version": {
+					"type": "integer",
+					"description": "The syntax version used in the manifest file. This may be 1 for skin packs or 2 for resource, behavior, and world templates. Version 3 is a new update of the manifest currently in preview.",
+					"enum": [1, 2, 3]
+				}
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [1]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [2]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./2/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [3]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./3/_index.json"
+			}
+		}
+	]
+}
