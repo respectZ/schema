@@ -4,6 +4,8 @@ Provides JSON Schemas for Minecraft Bedrock Edition add-on development, with `fo
 
 ## generator
 
+Used for generating enums for vanilla identifiers and assets such as particle identifiers, sound paths, etc.
+
 Create an env file for the `bedrock-samples` path. Example:
 
 ```env
