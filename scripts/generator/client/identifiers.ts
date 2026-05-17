@@ -6,18 +6,33 @@ export async function generateClientIdentifiers() {
 		pattern: "particles/**/*.json",
 		transform: (content) => content.particle_effect.description.identifier,
 	});
-	const soundEventIdentifiers = await getBedrockJSON<Sounds, string[]>({
+	type SountEventResult = {
+		blocks: string[];
+		events: string[];
+	};
+	const [soundEventIdentifiers] = await getBedrockJSON<Sounds, SountEventResult>({
 		type: "rp",
 		pattern: "{sounds.json}",
 		transform: (content) => {
-			return Object.keys(content.individual_event_sounds.events)
+			const blocks = Object.keys(content.block_sounds);
+			const events = Object.keys(content.individual_event_sounds.events)
 				.concat(Object.keys(content.individual_named_sounds.sounds))
 				.concat(Object.keys(content.interactive_sounds.block_sounds));
+			return {
+				blocks,
+				events,
+			};
 		},
-	}).then((sounds) => sounds.flat());
+	});
+	const [soundIdentifiers] = await getBedrockJSON<SoundIdentifiers, string[]>({
+		type: "rp",
+		pattern: "sounds/{sound_definitions.json}",
+		transform: (content) => Object.keys(content.sound_definitions),
+	});
 	return {
 		particleIdentifiers,
 		soundEventIdentifiers,
+		soundIdentifiers,
 	};
 }
 
@@ -41,4 +56,8 @@ type Sounds = {
 	interactive_sounds: {
 		block_sounds: Record<string, unknown>;
 	};
+};
+
+type SoundIdentifiers = {
+	sound_definitions: Record<string, unknown>;
 };

@@ -1,0 +1,787 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/sounds/_index.json",
+	"title": "Minecraft Bedrock Sounds",
+	"description": "The sounds.json file defines sound events, entity sounds, block sounds, and interactive sounds for a resource pack.",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"block_sounds": {
+			"$ref": "#/$defs/block_sounds"
+		},
+		"entity_sounds": {
+			"$ref": "#/$defs/entity_sounds"
+		},
+		"individual_event_sounds": {
+			"$ref": "#/$defs/individual_event_sounds"
+		},
+		"individual_named_sounds": {
+			"$ref": "#/$defs/individual_named_sounds"
+		},
+		"interactive_sounds": {
+			"$ref": "#/$defs/interactive_sounds"
+		}
+	},
+	"$defs": {
+		"float_range": {
+			"oneOf": [
+				{
+					"type": "number"
+				},
+				{
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": { "type": "number" }
+				}
+			]
+		},
+		"sound_event": {
+			"description": "Defines a sound for a specific event.",
+			"oneOf": [
+				{
+					"type": "string",
+					"description": "The sound identifier to play for this event.",
+					"$ref": "../../../vanilla/client/identifiers.json#/$defs/sound_identifier"
+				},
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"sound": {
+							"description": "The sound identifier to play for this event.",
+							"$ref": "../../../vanilla/client/identifiers.json#/$defs/sound_identifier"
+						},
+						"pitch": {
+							"description": "Pitch multiplier for this sound. Can be a single value or a range [min, max]",
+							"$ref": "#/$defs/float_range"
+						},
+						"volume": {
+							"description": "Volume multiplier for this sound. Can be a single value or a range [min, max].",
+							"$ref": "#/$defs/float_range"
+						}
+					}
+				}
+			]
+		},
+		"entity_sound_definition": {
+			"type": "object",
+			"properties": {
+				"events": {
+					"type": "object",
+					"description": "Sounds for various entity events.",
+					"additionalProperties": false,
+					"properties": {
+						"activate": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"add.chest": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"admire": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"agitated": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"ambient": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"ambient.aggressive": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"ambient.baby": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"ambient.in.air": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"ambient.in.raid": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"ambient.in.water": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"ambient.pollinate": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"ambient.screamer": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"ambient.tame": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"ambient.worried": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"angry": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"armor": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"armor.equip_generic": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"armor.unequip_generic": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"attach": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"attack": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"attack.critical": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"attack.nodamage": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"attack.strong": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"boost": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"born": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"break.block": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"breathe": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"cant_breed": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"cast.spell": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"celebrate": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"charge": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"creaking_heart_spawn": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"dash_ready": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"deactivate": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"death": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"death.baby": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"death.in.water": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"death.mid.volume": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"death.min.volume": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"death.screamer": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"death.to.zombie": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"detach": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"disappeared": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"drink": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"drink.honey": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"drink.milk": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"eat": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"elderguardian.curse": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"explode": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"fall.big": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"fall.small": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"fang": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"fizz": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"flap": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"flop": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"fly": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"freeze": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"fuse": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"growl": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"haggle": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"haggle.no": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"haggle.yes": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"heartbeat": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"hurt": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"hurt.baby": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"hurt.in.water": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"hurt.reduced": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"hurt.screamer": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.blaze": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.bogged": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.breeze": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.camel_husk": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.cave_spider": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.creaking": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.creeper": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.drowned": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.elder_guardian": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.ender_dragon": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.enderman": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.endermite": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.evocation_illager": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.ghast": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.guardian": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.happy_ghast": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.husk": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.magma_cube": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.parched": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.phantom": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.pillager": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.polar_bear": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.ravager": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.shulker": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.silverfish": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.skeleton": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.slime": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.spider": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.stray": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.vex": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.vindication_illager": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.warden": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.witch": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.wither": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.wither_skeleton": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.wolf": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.zoglin": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.zombie": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.zombie_pigman": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"imitate.zombie_villager": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"irongolem.crack": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"irongolem.repair": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"jump": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"jump_to_block": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"land": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"listening": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"listening_angry": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"mad": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"mob.warning": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"nearby_close": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"nearby_closer": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"nearby_closest": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"panic": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"pant": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"plop": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"prepare.attack": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"prepare.summon": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"prepare.wololo": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"presneeze": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"purr": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"purreow": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"reappeared": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"reflect": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"retreat": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"roar": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"saddle": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"saddle_in_water": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"screech": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"shake": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"shoot": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"shulker.close": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"shulker.open": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"sleep": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"sneeze": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"spawn": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"splash": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"squish.big": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"squish.small": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"stare": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"step": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"step.baby": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"step_lava": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"step_sand": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"stun": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"swim": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"swoop": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"takeoff": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"teleport": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"tempt": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"throw": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"thunder": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"unfreeze": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"unsaddle": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"warn": {
+							"$ref": "#/$defs/sound_event"
+						},
+						"whine": {
+							"$ref": "#/$defs/sound_event"
+						}
+					}
+				},
+				"pitch": {
+					"description": "Pitch for this event sound.",
+					"$ref": "#/$defs/float_range"
+				},
+				"volume": {
+					"description": "Volume for this event sound.",
+					"$ref": "#/$defs/float_range"
+				}
+			}
+		},
+		"block_sounds": {
+			"type": "object",
+			"description": "Defines sounds that play when interacting with blocks (breaking, placing, stepping).",
+			"additionalProperties": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"base": {
+						"description": "Parent sound category to inherit sound settings from.",
+						"$ref": "../../../vanilla/client/identifiers.json#/$defs/block_sound_identifier"
+					},
+					"events": {
+						"type": "object",
+						"description": "Sound events for this block type (break, place, step, hit, fall, etc.).",
+						"additionalProperties": {
+							"$ref": "#/$defs/sound_event"
+						}
+					},
+					"pitch": {
+						"description": "Pitch multiplier for block sounds. Can be a single value or a range [min, max].",
+						"$ref": "#/$defs/float_range"
+					},
+					"volume": {
+						"description": "Volume multiplier for block sounds.",
+						"$ref": "#/$defs/float_range"
+					}
+				}
+			}
+		},
+		"entity_sounds": {
+			"type": "object",
+			"description": "Defines sounds for entities, including defaults and entity-specific overrides.",
+			"additionalProperties": false,
+			"properties": {
+				"defaults": {
+					"description": "Default sound settings that apply to all entities unless overridden.",
+					"$ref": "#/$defs/entity_sound_definition"
+				},
+				"entities": {
+					"type": "object",
+					"description": "Entity-specific sound configurations that override defaults.",
+					"additionalProperties": {
+						"description": "Sound configuration for a specific entity type.",
+						"unevaluatedProperties": false,
+						"allOf": [
+							{
+								"type": "object",
+								"properties": {
+									"__molang_version": {
+										"type": "number"
+									},
+									"variants": {
+										"type": "object",
+										"additionalProperties": false,
+										"description": "Defines sound variants based on entity properties.",
+										"properties": {
+											"key": {
+												"$ref": "../../../vanilla/definition/molang.json#/$defs/string"
+											},
+											"map": {
+												"type": "object",
+												"description": "Mapping of variant keys to their corresponding sound configurations.",
+												"additionalProperties": {
+													"additionalProperties": false,
+													"$ref": "#/$defs/entity_sound_definition"
+												}
+											}
+										}
+									}
+								}
+							},
+							{
+								"$ref": "#/$defs/entity_sound_definition"
+							}
+						]
+					}
+				}
+			}
+		},
+		"individual_event_sounds": {
+			"type": "object",
+			"description": "Defines individual sound events that can be triggered by various game actions.",
+			"additionalProperties": false,
+			"properties": {
+				"events": {
+					"type": "object",
+					"description": "A collection of event sound definitions keyed by event name.",
+					"additionalProperties": {
+						"$ref": "#/$defs/sound_event"
+					}
+				}
+			}
+		},
+		"individual_named_sounds": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"sounds": {
+					"type": "object",
+					"additionalProperties": {
+						"$ref": "#/$defs/sound_event"
+					}
+				}
+			}
+		},
+		"interactive_sounds": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"block_sounds": {
+					"$ref": "#/$defs/block_sounds"
+				},
+				"entities": {
+					"type": ["null"]
+				},
+				"entity_sounds": {
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"defaults": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"events": {
+									"type": "object",
+									"additionalProperties": false,
+									"properties": {
+										"fall": {
+											"type": "object",
+											"additionalProperties": false,
+											"properties": {
+												"default": {
+													"$ref": "#/$defs/sound_event"
+												}
+											}
+										},
+										"jump": {
+											"type": "object",
+											"additionalProperties": false,
+											"properties": {
+												"default": {
+													"$ref": "#/$defs/sound_event"
+												}
+											}
+										}
+									}
+								},
+								"pitch": {
+									"$ref": "#/$defs/float_range"
+								},
+								"volume": {
+									"$ref": "#/$defs/float_range"
+								}
+							}
+						},
+						"entities": {
+							"type": "object",
+							"additionalProperties": {
+								"type": "object",
+								"additionalProperties": false,
+								"properties": {
+									"events": {
+										"type": "object",
+										"additionalProperties": false,
+										"properties": {
+											"gallop": {
+												"type": "object",
+												"additionalProperties": false,
+												"properties": {
+													"default": {
+														"$ref": "#/$defs/sound_event"
+													}
+												}
+											},
+											"heavy.step": {
+												"type": "object",
+												"additionalProperties": false,
+												"properties": {
+													"default": {
+														"$ref": "#/$defs/sound_event"
+													}
+												}
+											},
+											"step": {
+												"type": "object",
+												"additionalProperties": false,
+												"properties": {
+													"default": {
+														"$ref": "#/$defs/sound_event"
+													},
+													"wood": {
+														"$ref": "#/$defs/sound_event"
+													}
+												}
+											}
+										}
+									},
+									"pitch": {
+										"$ref": "#/$defs/float_range"
+									},
+									"volume": {
+										"$ref": "#/$defs/float_range"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
