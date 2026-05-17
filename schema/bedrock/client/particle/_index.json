@@ -3,13 +3,6 @@
 	"$id": "schema/bedrock/client/particle/_index.json",
 	"title": "Minecraft Bedrock Particle Effect",
 	"type": "object",
-	"required": ["format_version", "particle_effect"],
-	"properties": {
-		"format_version": {
-			"type": "string",
-			"description": "Particle format version."
-		}
-	},
 	"$ref": "./1.10.0/_index.json",
 	"unevaluatedProperties": false
 }

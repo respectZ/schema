@@ -9,7 +9,8 @@
 		"format_version": {
 			"type": "string",
 			"description": "Texture set format version.",
-			"default": "1.16.100"
+			"default": "1.21.30",
+			"$ref": "../../../vanilla/definition/format_version.json"
 		},
 		"minecraft:texture_set": {
 			"type": "object",

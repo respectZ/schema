@@ -9,7 +9,8 @@
 		"format_version": {
 			"type": "string",
 			"description": "Sound definitions format version.",
-			"default": "1.20.20"
+			"default": "1.20.20",
+			"$ref": "../../../vanilla/definition/format_version.json"
 		},
 		"sound_definitions": {
 			"type": "object",
