@@ -1,0 +1,53 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/flipbook_textures/_index.json",
+	"title": "Minecraft Bedrock Flipbook Textures",
+	"description": "The flipbook_textures.json file defines animated textures for blocks. Each entry specifies a texture that cycles through frames at a specified rate. Located at textures/flipbook_textures.json in resource packs.",
+	"type": "array",
+	"items": {
+		"type": "object",
+		"description": "Defines an animated texture with frame timing.",
+		"additionalProperties": false,
+		"required": ["flipbook_texture", "atlas_tile", "ticks_per_frame"],
+		"properties": {
+			"flipbook_texture": {
+				"description": "Path to the texture file containing animation frames, stacked vertically.",
+				"$ref": "../../../vanilla/client/paths.json#/$defs/texture_path"
+			},
+			"atlas_tile": {
+				"description": "Texture name in terrain_texture.json that this animation applies to.",
+				"$ref": "../../../vanilla/client/identifiers.json#/$defs/terrain_texture_identifier"
+			},
+			"atlas_index": {
+				"type": "integer",
+				"description": "Index in the atlas for textures with variants.",
+				"default": 0
+			},
+			"atlas_tile_variant": {
+				"type": "integer",
+				"description": "Variant index for atlas tiles with multiple options."
+			},
+			"ticks_per_frame": {
+				"type": "integer",
+				"description": "Number of game ticks each frame is displayed.",
+				"default": 1
+			},
+			"frames": {
+				"type": "array",
+				"description": "Optional list of frame indices to play in order.",
+				"items": {
+					"type": "integer"
+				}
+			},
+			"replicate": {
+				"type": "integer",
+				"description": "How many times to replicate the texture frames."
+			},
+			"blend_frames": {
+				"type": "boolean",
+				"description": "If true, interpolate between frames.",
+				"default": true
+			}
+		}
+	}
+}
