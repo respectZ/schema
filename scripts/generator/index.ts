@@ -40,8 +40,12 @@ const entries: Entry[] = [
 	{
 		filepath: "vanilla/client/identifiers.json",
 		content: async () => {
-			const { particleIdentifiers, soundEventIdentifiers, soundIdentifiers } =
-				await generateClientIdentifiers();
+			const {
+				particleIdentifiers,
+				soundEventIdentifiers,
+				soundIdentifiers,
+				terrainTextureIdentifiers,
+			} = await generateClientIdentifiers();
 			return {
 				$defs: {
 					particle_identifier: {
@@ -77,6 +81,17 @@ const entries: Entry[] = [
 							},
 							{
 								enum: soundEventIdentifiers.blocks,
+							},
+						],
+					},
+					terrain_texture_identifier: {
+						anyOf: [
+							{
+								type: "string",
+								maxLength: 256,
+							},
+							{
+								enum: terrainTextureIdentifiers,
 							},
 						],
 					},

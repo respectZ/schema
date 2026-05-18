@@ -1,0 +1,246 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/blocks/_index.json",
+	"title": "Minecraft Bedrock Blocks Resource Definition",
+	"description": "The blocks.json file in a resource pack defines texture and sound mappings for blocks. Each block entry maps a block identifier to its visual and audio properties.",
+	"type": "object",
+	"required": ["format_version"],
+	"properties": {
+		"format_version": {
+			"description": "The format version of the blocks.json file. Can be an array like [1, 1, 0] or a string like '1.1.0'.",
+			"default": "1.21.40",
+			"oneOf": [
+				{
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"type": "integer",
+						"minimum": 0
+					}
+				},
+				{
+					"$ref": "../../../vanilla/definition/format_version.json"
+				}
+			]
+		}
+	},
+	"additionalProperties": {
+		"$ref": "#/$defs/block_entry"
+	},
+	"$defs": {
+		"block_entry": {
+			"type": "object",
+			"description": "Texture and sound configuration for a block.",
+			"additionalProperties": false,
+			"properties": {
+				"textures": {
+					"description": "Texture name or per-face texture map.",
+					"oneOf": [
+						{
+							"$ref": "../../../vanilla/client/identifiers.json#/$defs/terrain_texture_identifier"
+						},
+						{
+							"$ref": "#/$defs/texture_faces"
+						}
+					]
+				},
+				"carried_textures": {
+					"description": "Carried/inventory textures, same structure as textures.",
+					"oneOf": [
+						{
+							"$ref": "../../../vanilla/client/identifiers.json#/$defs/terrain_texture_identifier"
+						},
+						{
+							"$ref": "#/$defs/texture_faces"
+						}
+					]
+				},
+				"sound": {
+					"$ref": "../../../vanilla/client/identifiers.json#/$defs/block_sound_identifier",
+					"description": "Sound group to use for this block."
+				},
+				"sounds": {
+					"$ref": "../../../vanilla/client/identifiers.json#/$defs/block_sound_identifier",
+					"description": "Alias for sound group to use for this block."
+				},
+				"isotropic": {
+					"description": "Whether isotropic textures are used, either boolean or per-face map.",
+					"oneOf": [
+						{
+							"type": "boolean"
+						},
+						{
+							"$ref": "#/$defs/isotropic_faces"
+						}
+					]
+				},
+				"brightness_gamma": {
+					"type": "number",
+					"description": "Gamma correction value for the block's brightness."
+				},
+				"ambient_occlusion_exponent": {
+					"type": "number",
+					"description": "Ambient occlusion exponent for corner shading."
+				},
+				"blockshape": {
+					"deprecated": true,
+					"type": "string",
+					"description": "An older property for defining block shapes, now deprecated in favor of using block models. This property can't be used for custom blocks.",
+					"enum": [
+						"invisible",
+						"block",
+						"cross_texture",
+						"torch",
+						"fire",
+						"water",
+						"red_dust",
+						"rows",
+						"door",
+						"ladder",
+						"rail",
+						"stairs",
+						"fence",
+						"lever",
+						"cactus",
+						"bed",
+						"diode",
+						"iron_fence",
+						"stem",
+						"vine",
+						"fence_gate",
+						"chest",
+						"lilypad",
+						"brewing_stand",
+						"portal_frame",
+						"cocoa",
+						"tree",
+						"cobblestone_wall",
+						"double_plant",
+						"flower_pot",
+						"anvil",
+						"kelp",
+						"coral_fan",
+						"block_half",
+						"trapdoor",
+						"top_snow",
+						"tripwire",
+						"tripwire_hook",
+						"cauldron",
+						"repeater",
+						"comparator",
+						"hopper",
+						"slime_block",
+						"piston",
+						"beacon",
+						"chorus_plant",
+						"chorus_flower",
+						"dragon_egg",
+						"end_portal",
+						"end_rod",
+						"structure_void",
+						"skull",
+						"facing_block",
+						"command_block",
+						"terracotta",
+						"double_side_fence",
+						"frame",
+						"glow_frame",
+						"shulker_box",
+						"doublesided_cross_texture",
+						"doublesided_double_plant",
+						"doublesided_rows",
+						"element_block",
+						"chemistry_table",
+						"seagrass",
+						"sea_pickle",
+						"conduit",
+						"bubble_column",
+						"turtle_egg",
+						"barrier",
+						"camera_facing_sprite",
+						"sign",
+						"bamboo",
+						"bamboo_sapling",
+						"scaffolding",
+						"grindstone",
+						"bell",
+						"lantern",
+						"campfire",
+						"lectern",
+						"sweet_berry_bush",
+						"cartography_table",
+						"stonecutter_block",
+						"chain",
+						"sculk_sensor",
+						"azalea",
+						"flowering_azalea",
+						"glow_lichen",
+						"sculk_vein",
+						"sculk_shrieker"
+					]
+				}
+			}
+		},
+		"texture_faces": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"all": {
+					"$ref": "../../../vanilla/client/identifiers.json#/$defs/terrain_texture_identifier",
+					"description": "Texture for all faces."
+				},
+				"up": {
+					"$ref": "../../../vanilla/client/identifiers.json#/$defs/terrain_texture_identifier",
+					"description": "Texture for the top face."
+				},
+				"down": {
+					"$ref": "../../../vanilla/client/identifiers.json#/$defs/terrain_texture_identifier",
+					"description": "Texture for the bottom face."
+				},
+				"side": {
+					"$ref": "../../../vanilla/client/identifiers.json#/$defs/terrain_texture_identifier",
+					"description": "Texture for the side faces."
+				},
+				"north": {
+					"$ref": "../../../vanilla/client/identifiers.json#/$defs/terrain_texture_identifier",
+					"description": "Texture for the north face."
+				},
+				"south": {
+					"$ref": "../../../vanilla/client/identifiers.json#/$defs/terrain_texture_identifier",
+					"description": "Texture for the south face."
+				},
+				"east": {
+					"$ref": "../../../vanilla/client/identifiers.json#/$defs/terrain_texture_identifier",
+					"description": "Texture for the east face."
+				},
+				"west": {
+					"$ref": "../../../vanilla/client/identifiers.json#/$defs/terrain_texture_identifier",
+					"description": "Texture for the west face."
+				}
+			}
+		},
+		"isotropic_faces": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"all": {
+					"type": "boolean",
+					"description": "Apply isotropic setting to all faces."
+				},
+				"up": {
+					"type": "boolean",
+					"description": "Isotropic setting for the top face."
+				},
+				"down": {
+					"type": "boolean",
+					"description": "Isotropic setting for the bottom face."
+				},
+				"side": {
+					"type": "boolean",
+					"description": "Isotropic setting for the side faces."
+				}
+			}
+		}
+	}
+}

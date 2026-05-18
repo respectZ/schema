@@ -29,10 +29,16 @@ export async function generateClientIdentifiers() {
 		pattern: "sounds/{sound_definitions.json}",
 		transform: (content) => Object.keys(content.sound_definitions),
 	});
+	const [terrainTextureIdentifiers] = await getBedrockJSON<TextureAtlas, string[]>({
+		type: "rp",
+		pattern: "textures/{terrain_texture.json}",
+		transform: (content) => Object.keys(content.texture_data),
+	});
 	return {
 		particleIdentifiers,
 		soundEventIdentifiers,
 		soundIdentifiers,
+		terrainTextureIdentifiers,
 	};
 }
 
@@ -60,4 +66,8 @@ type Sounds = {
 
 type SoundIdentifiers = {
 	sound_definitions: Record<string, unknown>;
+};
+
+type TextureAtlas = {
+	texture_data: Record<string, unknown>;
 };
