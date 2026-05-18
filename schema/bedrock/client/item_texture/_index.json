@@ -1,0 +1,123 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/item_texture/_index.json",
+	"title": "Minecraft Bedrock Item Texture Atlas",
+	"description": "The item_texture.json file defines the texture atlas for item textures. It maps texture names to texture file paths, allowing items to reference textures by name. Located at textures/item_texture.json in resource packs.",
+	"type": "object",
+	"additionalProperties": false,
+	"required": ["texture_data"],
+	"properties": {
+		"resource_pack_name": {
+			"type": "string",
+			"description": "The name of the resource pack this atlas belongs to.",
+			"default": "pack.name"
+		},
+		"texture_name": {
+			"type": "string",
+			"description": "The name of the texture atlas. Typically 'atlas.items' for item textures.",
+			"const": "atlas.items"
+		},
+		"padding": {
+			"type": "integer",
+			"description": "The padding in pixels between textures in the atlas to prevent bleeding.",
+			"minimum": 0,
+			"default": 8
+		},
+		"num_mip_levels": {
+			"type": "integer",
+			"description": "The number of mipmap levels to generate for the atlas.",
+			"minimum": 0,
+			"default": 4
+		},
+		"texture_data": {
+			"type": "object",
+			"description": "A collection of texture definitions keyed by texture name.",
+			"additionalProperties": {
+				"$ref": "#/$defs/texture_entry"
+			}
+		},
+		"default_leather_color": {
+			"type": "string",
+			"description": "The default color for leather armor textures when undyed in hexadecimal RGB format (e.g., '#A06540').",
+			"$ref": "#/$defs/hex_color"
+		},
+		"default_leather_horse_armor_color": {
+			"type": "string",
+			"description": "The default color for leather horse armor textures when undyed in hexadecimal RGB format (e.g., '#A06540').",
+			"$ref": "#/$defs/hex_color"
+		}
+	},
+	"$defs": {
+		"hex_color": {
+			"type": "string",
+			"description": "A hexadecimal color string in the format '#RRGGBB'.",
+			"pattern": "^#([0-9a-fA-F]{6})$"
+		},
+		"color": {
+			"oneOf": [
+				{
+					"type": "array",
+					"description": "RGB or RGBA array [0..255].",
+					"minItems": 3,
+					"maxItems": 4,
+					"items": {
+						"type": "integer",
+						"minimum": 0,
+						"maximum": 255
+					}
+				},
+				{
+					"$ref": "#/$defs/hex_color"
+				}
+			]
+		},
+		"texture_entry": {
+			"type": "object",
+			"description": "Defines a texture that can be referenced by items.",
+			"additionalProperties": false,
+			"required": ["textures"],
+			"properties": {
+				"textures": {
+					"description": "Texture file path or array of paths for variants.",
+					"oneOf": [
+						{
+							"$ref": "../../../vanilla/client/paths.json#/$defs/texture_path"
+						},
+						{
+							"type": "array",
+							"minItems": 1,
+							"items": {
+								"oneOf": [
+									{
+										"$ref": "../../../vanilla/client/paths.json#/$defs/texture_path"
+									},
+									{
+										"$ref": "#/$defs/texture_entry_object"
+									}
+								]
+							}
+						}
+					]
+				}
+			}
+		},
+		"texture_entry_object": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["path"],
+			"properties": {
+				"path": {
+					"$ref": "../../../vanilla/client/paths.json#/$defs/texture_path"
+				},
+				"overlay_color": {
+					"description": "An optional color to apply as an overlay to the texture, specified as a hex string or RGB/RGBA array.",
+					"$ref": "#/$defs/color"
+				},
+				"tint_color": {
+					"description": "An optional color to apply as a tint to the texture, specified as a hex string or RGB/RGBA array.",
+					"$ref": "#/$defs/color"
+				}
+			}
+		}
+	}
+}
