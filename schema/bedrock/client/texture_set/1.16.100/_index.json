@@ -1,0 +1,93 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/texture_set/1.16.100/_index.json",
+	"title": "Minecraft Bedrock Texture Set",
+	"type": "object",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:texture_set"],
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"description": "Texture set format version."
+		},
+		"minecraft:texture_set": {
+			"type": "object",
+			"description": "Texture set layers for PBR rendering.",
+			"additionalProperties": false,
+			"required": ["color"],
+			"properties": {
+				"color": {
+					"description": "Color layer texture reference or uniform RGBA value.",
+					"oneOf": [
+						{ "$ref": "#/$defs/texture_name" },
+						{ "$ref": "#/$defs/color_rgba_array" },
+						{ "$ref": "#/$defs/hex_rgba" }
+					]
+				},
+				"normal": {
+					"description": "Normal map texture reference.",
+					"$ref": "#/$defs/texture_name"
+				},
+				"heightmap": {
+					"description": "Heightmap texture reference or uniform value.",
+					"oneOf": [
+						{ "$ref": "#/$defs/texture_name" },
+						{ "$ref": "#/$defs/channel_value" },
+						{ "$ref": "#/$defs/hex_channel" }
+					]
+				},
+				"metalness_emissive_roughness": {
+					"description": "MER texture reference or uniform RGB value.",
+					"oneOf": [
+						{ "$ref": "#/$defs/texture_name" },
+						{ "$ref": "#/$defs/color_rgb_array" },
+						{ "$ref": "#/$defs/hex_rgb" }
+					]
+				}
+			},
+			"allOf": [
+				{
+					"not": {
+						"required": ["normal", "heightmap"]
+					}
+				}
+			]
+		}
+	},
+	"$defs": {
+		"texture_name": {
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 256
+		},
+		"channel_value": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 255
+		},
+		"color_rgb_array": {
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": { "$ref": "#/$defs/channel_value" }
+		},
+		"color_rgba_array": {
+			"type": "array",
+			"minItems": 4,
+			"maxItems": 4,
+			"items": { "$ref": "#/$defs/channel_value" }
+		},
+		"hex_rgb": {
+			"type": "string",
+			"pattern": "^#?[0-9A-Fa-f]{6}$"
+		},
+		"hex_rgba": {
+			"type": "string",
+			"pattern": "^#?[0-9A-Fa-f]{8}$"
+		},
+		"hex_channel": {
+			"type": "string",
+			"pattern": "^#?[0-9A-Fa-f]{2}$"
+		}
+	}
+}
