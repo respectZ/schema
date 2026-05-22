@@ -1,3 +1,4 @@
+import { MinecraftBlockTypes } from "@minecraft/vanilla-data";
 import path from "path/posix";
 import { createSchema, writeJson } from "../utils";
 import { generateClientPaths } from "./client";
@@ -112,6 +113,27 @@ const entries: Entry[] = [
 						enum: langKeys,
 					},
 				],
+			};
+		},
+	},
+	{
+		filepath: "vanilla/server/identifiers.json",
+		content: async () => {
+			const blockIdentifiers = Object.values(MinecraftBlockTypes);
+			return {
+				$defs: {
+					block_identifier: {
+						anyOf: [
+							{
+								type: "string",
+								maxLength: 256,
+							},
+							{
+								enum: blockIdentifiers,
+							},
+						],
+					},
+				},
 			};
 		},
 	},
