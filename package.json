@@ -36,6 +36,16 @@
 			},
 			{
 				"fileMatch": [
+					"resource_pack/animation_controllers/**/*.{json,jsonc,json5}",
+					"*RP/animation_controllers/**/*.{json,jsonc,json5}",
+					"RP_*/animation_controllers/**/*.{json,jsonc,json5}",
+					"*rp/animation_controllers/**/*.{json,jsonc,json5}",
+					"rp_*/animation_controllers/**/*.{json,jsonc,json5}"
+				],
+				"url": "./schema/bedrock/client/animation_controller/_index.json"
+			},
+			{
+				"fileMatch": [
 					"resource_pack/block_culling/**/*.{json,jsonc,json5}",
 					"*RP/block_culling/**/*.{json,jsonc,json5}",
 					"RP_*/block_culling/**/*.{json,jsonc,json5}",

@@ -1,0 +1,112 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/animation_controller/1.8.0/_index.json",
+	"title": "Animation Controller",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"const": "1.8.0"
+		},
+		"animation_controllers": {
+			"type": "object",
+			"propertyNames": {
+				"pattern": "^controller\\.animation\\..+$"
+			},
+			"additionalProperties": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"initial_state": {
+						"type": "string"
+					},
+					"states": {
+						"type": "object",
+						"additionalProperties": {
+							"$ref": "#/$defs/state"
+						}
+					}
+				}
+			}
+		}
+	},
+	"$defs": {
+		"state": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"animations": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/animation"
+					}
+				},
+				"on_entry": {
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				"on_exit": {
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				"parameters": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"particle_effects": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/particle_effect"
+					}
+				},
+				"transitions": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"additionalProperties": {
+							"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+						}
+					}
+				}
+			}
+		},
+		"animation": {
+			"oneOf": [
+				{
+					"type": "string"
+				},
+				{
+					"type": "object",
+					"additionalProperties": {
+						"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+					}
+				}
+			]
+		},
+		"particle_effect": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["effect"],
+			"properties": {
+				"effect": {
+					"type": "string",
+					"description": "The name of a particle effect that should be played."
+				},
+				"locator": {
+					"type": "string",
+					"description": "The name of a locator on the actor where the effect should be located."
+				},
+				"pre_effect_script": {
+					"type": "string",
+					"description": "A Molang script that will be run when the particle emitter is initialized."
+				},
+				"bind_to_actor": {
+					"type": "boolean",
+					"description": "Set to false to have the effect spawned in the world without being bound to an actor (by default an effect is bound to the actor).",
+					"const": false
+				}
+			}
+		}
+	}
+}

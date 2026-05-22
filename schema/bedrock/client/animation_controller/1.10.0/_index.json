@@ -1,0 +1,172 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/animation_controller/1.10.0/_index.json",
+	"title": "Animation Controller",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"const": "1.10.0"
+		},
+		"animation_controllers": {
+			"type": "object",
+			"propertyNames": {
+				"pattern": "^controller\\.animation\\..+$"
+			},
+			"additionalProperties": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"initial_state": {
+						"type": "string"
+					},
+					"states": {
+						"type": "object",
+						"additionalProperties": {
+							"$ref": "#/$defs/state"
+						}
+					}
+				}
+			}
+		}
+	},
+	"$defs": {
+		"state": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"animations": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/animation"
+					}
+				},
+				"blend_via_shortest_path": {
+					"type": "boolean",
+					"description": "Determines whether to blend animations using the shortest path for rotational values.",
+					"const": true
+				},
+				"blend_transition": {
+					"oneOf": [
+						{
+							"type": "number",
+							"description": "A short-hand version of blend_out that simply sets the amount of time to fade out if the animation is interrupted."
+						},
+						{
+							"type": "object",
+							"description": "Specifies the cross-fade time in seconds when transitioning to another state.",
+							"propertyNames": {
+								"pattern": "^\\d+(\\.\\d+)?$"
+							},
+							"additionalProperties": {
+								"type": "number",
+								"description": "Mapping of time since the animation was canceled, to the blend value at that time.  A default key of time=0 to a blend value of 1.0 is provided if any other key is set and a blend value at time=0 hasn't already been set."
+							}
+						}
+					]
+				},
+				"on_entry": {
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				"on_exit": {
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				"particle_effects": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/particle_effect"
+					}
+				},
+				"sound_effects": {
+					"type": "array",
+					"description": "Collection of sounds to trigger on entry to this animation state.",
+					"items": {
+						"$ref": "#/$defs/sound_effect"
+					}
+				},
+				"transitions": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"additionalProperties": {
+							"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+						}
+					}
+				},
+				"variables": {
+					"type": "object",
+					"additionalProperties": {
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"input": {
+								"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+							},
+							"remap_curve": {
+								"type": "object",
+								"patternProperties": {
+									"^[0-9]*$": {
+										"type": "number"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"animation": {
+			"oneOf": [
+				{
+					"type": "string"
+				},
+				{
+					"type": "object",
+					"additionalProperties": {
+						"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+					}
+				}
+			]
+		},
+		"particle_effect": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["effect"],
+			"properties": {
+				"effect": {
+					"type": "string",
+					"description": "The name of a particle effect that should be played."
+				},
+				"locator": {
+					"type": "string",
+					"description": "The name of a locator on the actor where the effect should be located."
+				},
+				"pre_effect_script": {
+					"type": "string",
+					"description": "A Molang script that will be run when the particle emitter is initialized."
+				},
+				"bind_to_actor": {
+					"type": "boolean",
+					"description": "Set to false to have the effect spawned in the world without being bound to an actor (by default an effect is bound to the actor).",
+					"const": false
+				}
+			}
+		},
+		"sound_effect": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["effect"],
+			"properties": {
+				"effect": {
+					"type": "string",
+					"description": "Valid sound effect names should be listed in the entity's resource_definition json file."
+				},
+				"locator": {
+					"type": "string",
+					"description": "The name of a locator on the actor where the sound should originate from."
+				}
+			}
+		}
+	}
+}
