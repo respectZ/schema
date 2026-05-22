@@ -5,6 +5,10 @@
 	"type": "string",
 	"anyOf": [
 		{
+			"const": "particles_opaque",
+			"description": "Pixels will be fully opaque, regardless of color."
+		},
+		{
 			"const": "particles_alpha",
 			"description": "Pixels with an alpha of 0 will be fully transparent, colored pixels will always be opaque."
 		},
@@ -15,6 +19,9 @@
 		{
 			"const": "particles_add",
 			"description": "Enables color blending and transparency in colored pixels, uses an additive blend mode. This mode is useful for effects that need to 'glow' in some manner."
+		},
+		{
+			"type": "string"
 		}
 	]
 }
