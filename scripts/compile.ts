@@ -18,6 +18,10 @@ const RP_ENTRIES: JsonValidationEntry[] = [
 		url: "./schema/bedrock/shared/manifest/_index.json",
 	},
 	{
+		fileMatch: "block_culling/**/*.{json,jsonc,json5}",
+		url: "./schema/bedrock/client/block_culling/_index.json",
+	},
+	{
 		fileMatch: "blocks.{json,jsonc,json5}",
 		url: "./schema/bedrock/client/blocks/_index.json",
 	},
