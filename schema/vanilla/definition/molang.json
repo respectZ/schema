@@ -10,12 +10,9 @@
 		},
 		"versioned": {
 			"title": "Versioned Molang expression",
-			"description": "Molang expressions can be either a simple string or an object with an expression and version.",
+			"description": "A Molang expression with an associated version number.",
 			"default": "",
 			"oneOf": [
-				{
-					"type": "string"
-				},
 				{
 					"type": "object",
 					"properties": {
@@ -38,6 +35,9 @@
 			"oneOf": [
 				{
 					"$ref": "#/$defs/string"
+				},
+				{
+					"$ref": "#/$defs/versioned"
 				},
 				{
 					"type": "number"
