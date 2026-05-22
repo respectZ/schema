@@ -175,7 +175,14 @@
 							]
 						},
 						"version": {
-							"$ref": "#/$defs/semver"
+							"anyOf": [
+								{
+									"$ref": "#/$defs/semver"
+								},
+								{
+									"enum": ["beta"]
+								}
+							]
 						}
 					}
 				}
