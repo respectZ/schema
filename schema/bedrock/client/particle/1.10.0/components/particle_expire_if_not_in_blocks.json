@@ -5,6 +5,6 @@
 	"description": "Expires particles when not inside listed blocks.",
 	"type": "array",
 	"items": {
-		"type": "string"
+		"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
 	}
 }
