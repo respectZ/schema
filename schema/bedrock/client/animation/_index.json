@@ -1,0 +1,307 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/animation/_index.json",
+	"type": "object",
+	"additionalProperties": false,
+	"required": ["format_version", "animations"],
+	"properties": {
+		"format_version": {
+			"anyOf": [
+				{
+					"$ref": "../../../vanilla/definition/format_version.json"
+				},
+				{
+					"enum": ["1.8.0", "1.10.0"]
+				}
+			]
+		},
+		"animations": {
+			"type": "object",
+			"propertyNames": {
+				"pattern": "^animation\\..+$"
+			},
+			"additionalProperties": {
+				"$ref": "#/$defs/animation"
+			}
+		}
+	},
+	"$defs": {
+		"animation": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"loop": {
+					"description": "Should this animation stop, loop, or stay on the last frame when finished.",
+					"oneOf": [
+						{
+							"type": "boolean"
+						},
+						{
+							"enum": ["hold_on_last_frame"]
+						}
+					]
+				},
+				"start_delay": {
+					"description": "How long to wait in seconds before playing this animation.  Note that this expression is evaluated once before playing, and only re-evaluated if asked to play from the beginning again.  A looping animation should use 'loop_delay' if it wants a delay between loops.",
+					"$ref": "../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				"loop_delay": {
+					"description": "How long to wait in seconds before looping this animation.  Note that this expression is evaluated after each loop and on looping animation only.",
+					"$ref": "../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				"anim_time_update": {
+					"description": "How does time pass when playing the animation.  Defaults to \"query.anim_time + query.delta_time\" which means advance in seconds.",
+					"$ref": "../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				"blend_weight": {
+					"$ref": "../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				"override_previous_animation": {
+					"description": "Reset bones in this animation to the default pose before applying this animation.",
+					"type": "boolean"
+				},
+				"bones": {
+					"type": "object",
+					"additionalProperties": {
+						"$ref": "#/$defs/bone"
+					}
+				},
+				"particle_effects": {
+					"type": "object",
+					"propertyNames": {
+						"pattern": "^\\d+(\\.\\d+)?$"
+					},
+					"additionalProperties": {
+						"oneOf": [
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/$defs/particle_effect"
+								}
+							},
+							{
+								"$ref": "#/$defs/particle_effect"
+							}
+						]
+					}
+				},
+				"sound_effects": {
+					"type": "object",
+					"propertyNames": {
+						"pattern": "^\\d+(\\.\\d+)?$"
+					},
+					"additionalProperties": {
+						"oneOf": [
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/$defs/sound_effect"
+								}
+							},
+							{
+								"$ref": "#/$defs/sound_effect"
+							}
+						]
+					}
+				},
+				"timeline": {
+					"type": "object",
+					"propertyNames": {
+						"pattern": "^\\d+(\\.\\d+)?$"
+					},
+					"additionalProperties": {
+						"oneOf": [
+							{
+								"$ref": "../../../vanilla/definition/molang.json#/$defs/string"
+							},
+							{
+								"type": "array",
+								"items": {
+									"$ref": "../../../vanilla/definition/molang.json#/$defs/string"
+								}
+							}
+						]
+					}
+				},
+				"animation_length": {
+					"description": "Override calculated value (set as the max keyframe or event time) and set animation length in seconds.",
+					"type": "number"
+				}
+			}
+		},
+		"bone": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"relative_to": {
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"rotation": {
+							"description": "If set, makes the bone rotation relative to the entity instead of the bone's parent.",
+							"const": "entity"
+						}
+					}
+				},
+				"position": {
+					"$ref": "#/$defs/timeline"
+				},
+				"rotation": {
+					"$ref": "#/$defs/timeline_rotation"
+				},
+				"scale": {
+					"$ref": "#/$defs/timeline"
+				}
+			}
+		},
+		"timeline": {
+			"oneOf": [
+				{
+					"$ref": "#/$defs/keyframe"
+				},
+				{
+					"type": "object",
+					"propertyNames": {
+						"pattern": "^\\d+(\\.\\d+)?$"
+					},
+					"additionalProperties": {
+						"oneOf": [
+							{
+								"$ref": "#/$defs/keyframe"
+							},
+							{
+								"type": "object",
+								"additionalProperties": false,
+								"properties": {
+									"lerp_mode": {
+										"$ref": "#/$defs/lerp_mode"
+									},
+									"pre": {
+										"$ref": "#/$defs/keyframe"
+									},
+									"post": {
+										"$ref": "#/$defs/keyframe"
+									}
+								}
+							}
+						]
+					}
+				}
+			]
+		},
+		"timeline_rotation": {
+			"oneOf": [
+				{
+					"$ref": "#/$defs/keyframe"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "object",
+						"propertyNames": {
+							"pattern": "^[xyz]$"
+						},
+						"additionalProperties": {
+							"$ref": "../../../vanilla/definition/molang.json#/$defs/string"
+						}
+					}
+				},
+				{
+					"type": "object",
+					"propertyNames": {
+						"pattern": "^\\d+(\\.\\d+)?$"
+					},
+					"additionalProperties": {
+						"oneOf": [
+							{
+								"$ref": "#/$defs/keyframe"
+							},
+							{
+								"type": "object",
+								"additionalProperties": false,
+								"properties": {
+									"lerp_mode": {
+										"$ref": "#/$defs/lerp_mode"
+									},
+									"pre": {
+										"$ref": "#/$defs/keyframe"
+									},
+									"post": {
+										"$ref": "#/$defs/keyframe"
+									}
+								}
+							}
+						]
+					}
+				}
+			]
+		},
+		"keyframe": {
+			"oneOf": [
+				{
+					"$ref": "../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				{
+					"type": "number"
+				},
+				{
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"oneOf": [
+							{
+								"$ref": "../../../vanilla/definition/molang.json#/$defs/string"
+							},
+							{
+								"type": "number"
+							}
+						]
+					}
+				}
+			]
+		},
+		"lerp_mode": {
+			"enum": ["linear", "catmullrom"]
+		},
+		"particle_effect": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["effect"],
+			"properties": {
+				"effect": {
+					"type": "string",
+					"description": "The name of a particle effect that should be played."
+				},
+				"locator": {
+					"type": "string",
+					"description": "The name of a locator on the actor where the effect should be located."
+				},
+				"pre_effect_script": {
+					"type": "string",
+					"description": "A Molang script that will be run when the particle emitter is initialized."
+				},
+				"bind_to_actor": {
+					"type": "boolean",
+					"description": "Set to false to have the effect spawned in the world without being bound to an actor (by default an effect is bound to the actor).",
+					"const": false
+				}
+			}
+		},
+		"sound_effect": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["effect"],
+			"properties": {
+				"effect": {
+					"type": "string",
+					"description": "Valid sound effect names should be listed in the entity's resource_definition json file."
+				},
+				"locator": {
+					"type": "string",
+					"description": "The name of a locator on the actor where the sound should originate from."
+				}
+			}
+		}
+	}
+}
