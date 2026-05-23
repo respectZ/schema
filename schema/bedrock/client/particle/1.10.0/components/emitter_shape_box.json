@@ -4,6 +4,7 @@
 	"title": "minecraft:emitter_shape_box",
 	"description": "Emits particles from a box.",
 	"type": "object",
+	"required": ["half_dimensions"],
 	"additionalProperties": false,
 	"properties": {
 		"offset": {

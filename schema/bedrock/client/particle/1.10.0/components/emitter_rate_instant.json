@@ -5,6 +5,7 @@
 	"description": "Emits all particles at once per loop.",
 	"type": "object",
 	"additionalProperties": false,
+	"required": ["num_particles"],
 	"properties": {
 		"num_particles": {
 			"description": "Number of particles to emit per loop.",

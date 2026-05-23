@@ -4,6 +4,7 @@
 	"title": "minecraft:emitter_rate_steady",
 	"description": "Emits particles at a steady or Molang-controlled rate.",
 	"type": "object",
+	"required": ["max_particles", "spawn_rate"],
 	"additionalProperties": false,
 	"properties": {
 		"spawn_rate": {

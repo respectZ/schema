@@ -4,6 +4,7 @@
 	"title": "minecraft:emitter_rate_manual",
 	"description": "Emits particles only when triggered by the game.",
 	"type": "object",
+	"required": ["max_particles"],
 	"additionalProperties": false,
 	"properties": {
 		"max_particles": {

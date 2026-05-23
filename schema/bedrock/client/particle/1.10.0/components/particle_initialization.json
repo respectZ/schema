@@ -9,6 +9,10 @@
 		"per_render_expression": {
 			"description": "Molang expression executed for rendering.",
 			"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"
+		},
+		"per_update_expression": {
+			"description": "Molang expression executed for updating.",
+			"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"
 		}
 	}
 }

@@ -65,10 +65,8 @@
 				},
 				"events": {
 					"type": "object",
-					"patternProperties": {
-						".*": {
-							"$ref": "./event.json"
-						}
+					"additionalProperties": {
+						"$ref": "./event.json"
 					}
 				},
 				"components": {

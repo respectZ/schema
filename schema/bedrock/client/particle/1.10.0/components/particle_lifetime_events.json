@@ -37,21 +37,21 @@
 		"timeline": {
 			"description": "Time-based event triggers.",
 			"type": "object",
-			"additionalProperties": false,
-			"patternProperties": {
-				"^.*$": {
-					"oneOf": [
-						{
+			"propertyNames": {
+				"pattern": "^\\d+(\\.\\d+)?$"
+			},
+			"additionalProperties": {
+				"oneOf": [
+					{
+						"type": "string"
+					},
+					{
+						"type": "array",
+						"items": {
 							"type": "string"
-						},
-						{
-							"type": "array",
-							"items": {
-								"type": "string"
-							}
 						}
-					]
-				}
+					}
+				]
 			}
 		}
 	}

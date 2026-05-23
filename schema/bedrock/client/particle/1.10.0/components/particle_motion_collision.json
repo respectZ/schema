@@ -4,6 +4,7 @@
 	"title": "minecraft:particle_motion_collision",
 	"description": "Enables particle collisions with terrain.",
 	"type": "object",
+	"required": ["collision_radius"],
 	"additionalProperties": false,
 	"properties": {
 		"enabled": {
@@ -20,7 +21,8 @@
 		},
 		"collision_drag": {
 			"description": "Speed reduction while in contact.",
-			"type": "number"
+			"type": "number",
+			"default": 0
 		},
 		"coefficient_of_restitution": {
 			"description": "Bounce coefficient.",
@@ -29,11 +31,13 @@
 		"collision_radius": {
 			"description": "Collision radius, must be <= 0.5 blocks.",
 			"type": "number",
+			"minimum": 0,
 			"maximum": 0.5
 		},
 		"expire_on_contact": {
 			"description": "Expire when contact occurs.",
-			"type": "boolean"
+			"type": "boolean",
+			"default": false
 		},
 		"events": {
 			"description": "Collision-triggered events.",

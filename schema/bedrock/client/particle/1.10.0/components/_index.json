@@ -89,8 +89,8 @@
 		"minecraft:particle_expire_if_not_in_blocks": {
 			"$ref": "./particle_expire_if_not_in_blocks.json"
 		},
-		"minecraft:particle_lifetime_kill_plane": {
-			"$ref": "./particle_lifetime_kill_plane.json"
+		"minecraft:particle_kill_plane": {
+			"$ref": "./particle_kill_plane.json"
 		}
 	}
 }

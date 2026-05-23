@@ -4,6 +4,7 @@
 	"title": "minecraft:particle_appearance_billboard",
 	"description": "Renders particles as billboards.",
 	"type": "object",
+	"required": ["size"],
 	"additionalProperties": false,
 	"properties": {
 		"size": {
@@ -15,7 +16,7 @@
 				"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"
 			}
 		},
-		"face_camera_mode": {
+		"facing_camera_mode": {
 			"description": "Billboard facing mode.",
 			"type": "string",
 			"enum": [
@@ -23,6 +24,7 @@
 				"rotate_y",
 				"lookat_xyz",
 				"lookat_y",
+				"lookat_direction",
 				"direction_x",
 				"direction_y",
 				"direction_z",
@@ -35,10 +37,11 @@
 			"description": "Direction source used by facing modes.",
 			"type": "object",
 			"additionalProperties": false,
+			"required": ["mode"],
 			"properties": {
 				"mode": {
 					"type": "string",
-					"enum": ["derive_from_velocity", "custom_direction"]
+					"enum": ["derive_from_velocity", "custom"]
 				},
 				"min_speed_threshold": {
 					"description": "Minimum speed for derive_from_velocity.",
@@ -87,6 +90,7 @@
 				},
 				"flipbook": {
 					"type": "object",
+					"required": ["base_UV", "max_frame"],
 					"additionalProperties": false,
 					"properties": {
 						"base_UV": {
@@ -114,7 +118,8 @@
 							}
 						},
 						"frames_per_second": {
-							"type": "number"
+							"type": "number",
+							"default": 0
 						},
 						"max_frame": {
 							"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"

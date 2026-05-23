@@ -54,7 +54,7 @@
 					"minItems": 3,
 					"maxItems": 4,
 					"items": {
-						"type": "number",
+						"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression",
 						"minimum": 0,
 						"maximum": 1
 					}
