@@ -1,0 +1,260 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/entity/1.10.0/_index.json",
+	"title": "Minecraft Bedrock Actor Resource Definition 1.10.0",
+	"description": "Defines an entity client resource definition document with format_version 1.10.0.",
+	"type": "object",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:client_entity"],
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"const": "1.10.0",
+			"description": "Specifies the format version of this client entity definition. Determines which features and syntax are available."
+		},
+		"minecraft:client_entity": {
+			"$ref": "#/$defs/client_entity"
+		}
+	},
+	"$defs": {
+		"client_entity": {
+			"type": "object",
+			"description": "Defines the client-side rendering properties for an entity, including textures, geometry, animations, and render controllers.",
+			"required": ["description"],
+			"additionalProperties": false,
+			"properties": {
+				"description": {
+					"$ref": "#/$defs/description"
+				}
+			}
+		},
+		"description": {
+			"type": "object",
+			"required": ["identifier"],
+			"additionalProperties": false,
+			"properties": {
+				"identifier": {
+					"type": "string"
+				},
+				"min_engine_version": {
+					"anyOf": [
+						{
+							"$ref": "../../../../vanilla/definition/format_version.json"
+						},
+						{
+							"enum": ["1.8.0", "1.10.0"]
+						}
+					]
+				},
+				"materials": {
+					"type": "object",
+					"minProperties": 1,
+					"additionalProperties": {
+						"$ref": "../../../../vanilla/client/identifiers.json#/$defs/material_identifier"
+					}
+				},
+				"textures": {
+					"type": "object",
+					"minProperties": 1,
+					"additionalProperties": {
+						"$ref": "../../../../vanilla/client/paths.json#/$defs/texture_path"
+					}
+				},
+				"geometry": {
+					"type": "object",
+					"minProperties": 1,
+					"additionalProperties": {
+						"$ref": "../../../../vanilla/client/identifiers.json#/$defs/geometry_identifier"
+					}
+				},
+				"animations": {
+					"type": "object",
+					"minProperties": 1,
+					"additionalProperties": {
+						"$ref": "../../../../vanilla/client/identifiers.json#/$defs/animation_identifier"
+					}
+				},
+				"particle_effects": {
+					"type": "object",
+					"minProperties": 1,
+					"additionalProperties": {
+						"$ref": "../../../../vanilla/client/identifiers.json#/$defs/particle_identifier"
+					}
+				},
+				"particle_emitters": {
+					"type": "object",
+					"minProperties": 1,
+					"additionalProperties": {
+						"$ref": "../../../../vanilla/client/identifiers.json#/$defs/particle_identifier"
+					}
+				},
+				"sound_effects": {
+					"type": "object",
+					"minProperties": 1,
+					"additionalProperties": {
+						"$ref": "../../../../vanilla/client/identifiers.json#/$defs/sound_identifier"
+					}
+				},
+				"queryable_geometry": {
+					"$ref": "../../../../vanilla/client/identifiers.json#/$defs/geometry_identifier"
+				},
+				"render_controllers": {
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"oneOf": [
+							{
+								"$ref": "../../../../vanilla/client/identifiers.json#/$defs/render_controller_identifier"
+							},
+							{
+								"type": "object",
+								"propertyNames": {
+									"pattern": "controller\\.render\\..+$"
+								},
+								"additionalProperties": {
+									"$ref": "../../../../vanilla/definition/molang.json#/$defs/condition"
+								}
+							}
+						]
+					}
+				},
+				"scripts": {
+					"$ref": "#/$defs/scripts"
+				},
+				"spawn_egg": {
+					"$ref": "#/$defs/spawn_egg"
+				},
+				"enable_attachables": {
+					"type": "boolean"
+				},
+				"held_item_ignores_lighting": {
+					"type": "boolean"
+				},
+				"hide_armor": {
+					"type": "boolean"
+				}
+			}
+		},
+		"scripts": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"animate": {
+					"description": "List of animations to play. Each item can be a string animation name or an object mapping animation name to a Molang condition.",
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"oneOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "object",
+								"additionalProperties": {
+									"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+								}
+							}
+						]
+					}
+				},
+				"initialize": {
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+					}
+				},
+				"pre_animation": {
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+					}
+				},
+				"scale": {
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				"scaleX": {
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				"scaleY": {
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				"scaleZ": {
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				"scalex": {
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				"scaley": {
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				"scalez": {
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				"should_update_bones_and_effects_offscreen": {
+					"description": "Bones and effects will still be updated if the entity is off screen if this expression returns anything other than 0.0.",
+					"oneOf": [
+						{
+							"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+						},
+						{
+							"type": "boolean"
+						},
+						{
+							"type": "number"
+						}
+					]
+				},
+				"should_update_effects_offscreen": {
+					"description": "Effects will still be updated if the entity is off screen if this expression or should_update_bones_and_effects_offscreen returns anything other than 0.0.",
+					"oneOf": [
+						{
+							"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+						},
+						{
+							"type": "boolean"
+						},
+						{
+							"type": "number"
+						}
+					]
+				},
+				"variables": {
+					"type": "object",
+					"propertyNames": {
+						"pattern": "^variable\\.[a-zA-Z_][a-zA-Z0-9_]*$"
+					},
+					"additionalProperties": {
+						"type": "string",
+						"description": "If a variable is public, it can be read by other mobs. See the molang '->' operator for details.",
+						"const": "public"
+					}
+				}
+			}
+		},
+		"spawn_egg": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"base_color": {
+					"$ref": "#/$defs/color"
+				},
+				"overlay_color": {
+					"$ref": "#/$defs/color"
+				},
+				"texture": {
+					"$ref": "../../../../vanilla/client/identifiers.json#/$defs/item_texture_identifier"
+				},
+				"texture_index": {
+					"type": "integer"
+				}
+			}
+		},
+		"color": {
+			"type": "string",
+			"description": "A hexadecimal color code in the format #RRGGBB.",
+			"pattern": "^#([0-9a-fA-F]{6})$"
+		}
+	}
+}

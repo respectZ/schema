@@ -42,7 +42,7 @@ export async function writeJson(filepath: string, data: unknown): Promise<void> 
 	await file.write(formatted);
 }
 
-export function getEnv(key: "BEDROCK_PATH"): string {
+export function getEnv(key: "BEDROCK_PATH" | "MINECRAFT_DATA_PATH"): string {
 	const value = Bun.env[key];
 	if (!value) {
 		throw new Error(`Environment variable ${key} is not set`);
@@ -53,6 +53,11 @@ export function getEnv(key: "BEDROCK_PATH"): string {
 function bedrockPath(type: "bp" | "rp") {
 	const bedrockPath = getEnv("BEDROCK_PATH");
 	return path.join(bedrockPath, type === "bp" ? "behavior_pack" : "resource_pack");
+}
+
+function dataPath(type: "bp" | "rp") {
+	const bedrockPath = getEnv("MINECRAFT_DATA_PATH");
+	return path.join(bedrockPath, type === "bp" ? "behavior_packs" : "resource_packs");
 }
 
 export async function getBedrockFilepaths(options: GetBedrockFilepathsOptions): Promise<string[]> {
@@ -77,8 +82,8 @@ export async function getBedrockFilepaths(options: GetBedrockFilepathsOptions): 
 }
 
 export async function getBedrockFile<U>(options: GetBedrockFileOptions<U>): Promise<U> {
-	const { pattern, type, transform } = options;
-	const searchPath = bedrockPath(type);
+	const { pattern, type, transform, source = "bedrock-samples" } = options;
+	const searchPath = source === "bedrock-samples" ? bedrockPath(type) : dataPath(type);
 	const glob = new Bun.Glob(path.join(searchPath, pattern));
 	for await (let file of glob.scan({ onlyFiles: true })) {
 		file = file.replace(/\\/g, "/");
@@ -92,8 +97,9 @@ export async function getBedrockFile<U>(options: GetBedrockFileOptions<U>): Prom
 export async function getBedrockJSON<T, U = string>(
 	options: GetBedrockJSONContentOptions<T, U>,
 ): Promise<U[]> {
-	const { pattern, type } = options;
-	const glob = new Bun.Glob(path.join(bedrockPath(type), pattern));
+	const { pattern, type, source = "bedrock-samples" } = options;
+	const searchPath = source === "bedrock-samples" ? bedrockPath(type) : dataPath(type);
+	const glob = new Bun.Glob(path.join(searchPath, pattern));
 	const results: U[] = [];
 	for await (let file of glob.scan({ onlyFiles: true })) {
 		const content = await readJson<T>(file);
@@ -113,12 +119,14 @@ export type GetBedrockFilepathsOptions = {
 
 export type GetBedrockFileOptions<U> = {
 	type: "bp" | "rp";
+	source?: "bedrock-samples" | "data";
 	pattern: string;
 	transform: (content: string) => U;
 };
 
 export type GetBedrockJSONContentOptions<T, U> = {
 	type: "bp" | "rp";
+	source?: "bedrock-samples" | "data";
 	pattern: string;
 	transform: (content: T) => U;
 };

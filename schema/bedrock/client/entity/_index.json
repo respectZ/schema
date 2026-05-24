@@ -1,0 +1,50 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/entity/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Client Entity",
+	"required": ["format_version"],
+	"properties": {
+		"format_version": {
+			"enum": ["1.8.0", "1.10.0", "1.26.0"]
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.8.0"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.8.0/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.10.0"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.10.0/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.26.0"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.26.0/_index.json"
+			}
+		}
+	]
+}

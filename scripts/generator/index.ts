@@ -46,6 +46,12 @@ const entries: Entry[] = [
 				soundEventIdentifiers,
 				soundIdentifiers,
 				terrainTextureIdentifiers,
+				materialIdentifiers,
+				geometryIdentifiers,
+				animationControllerIdentifiers,
+				animationIdentifiers,
+				renderControllerIdentifiers,
+				itemTextureIdentifiers,
 			} = await generateClientIdentifiers();
 			return {
 				$defs: {
@@ -93,6 +99,72 @@ const entries: Entry[] = [
 							},
 							{
 								enum: terrainTextureIdentifiers,
+							},
+						],
+					},
+					material_identifier: {
+						anyOf: [
+							{
+								type: "string",
+								maxLength: 256,
+							},
+							{
+								enum: materialIdentifiers,
+							},
+						],
+					},
+					geometry_identifier: {
+						anyOf: [
+							{
+								type: "string",
+								maxLength: 256,
+							},
+							{
+								enum: geometryIdentifiers,
+							},
+						],
+					},
+					animation_identifier: {
+						anyOf: [
+							{
+								type: "string",
+								maxLength: 256,
+							},
+							{
+								enum: animationIdentifiers.concat(animationControllerIdentifiers),
+							},
+						],
+					},
+					animation_controller_identifier: {
+						anyOf: [
+							{
+								type: "string",
+								maxLength: 256,
+							},
+							{
+								enum: animationControllerIdentifiers,
+							},
+						],
+					},
+					render_controller_identifier: {
+						anyOf: [
+							{
+								type: "string",
+								maxLength: 256,
+							},
+							{
+								enum: renderControllerIdentifiers,
+							},
+						],
+					},
+					item_texture_identifier: {
+						anyOf: [
+							{
+								type: "string",
+								maxLength: 256,
+							},
+							{
+								enum: itemTextureIdentifiers,
 							},
 						],
 					},

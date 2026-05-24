@@ -1,5 +1,19 @@
 import { getBedrockJSON } from "../../utils";
 
+const isLegacyGeometry = (data: unknown): data is LegacyGeometry => {
+	if (typeof data !== "object" || data === null) {
+		return false;
+	}
+	return "format_version" in data && data["format_version"] === "1.8.0";
+};
+
+const isGeometry = (data: unknown): data is Geometries => {
+	if (typeof data !== "object" || data === null) {
+		return false;
+	}
+	return "minecraft:geometry" in data && Array.isArray(data["minecraft:geometry"]);
+};
+
 export async function generateClientIdentifiers() {
 	const particleIdentifiers = await getBedrockJSON<Particle>({
 		type: "rp",
@@ -34,11 +48,76 @@ export async function generateClientIdentifiers() {
 		pattern: "textures/{terrain_texture.json}",
 		transform: (content) => Object.keys(content.texture_data),
 	});
+	const [materialIdentifiers] = await getBedrockJSON<Materials, string[]>({
+		type: "rp",
+		source: "data",
+		pattern: "vanilla/materials/{entity.material}",
+		transform: (content) => {
+			const result: string[] = [];
+			for (const key of Object.keys(content.materials)) {
+				if (key !== "version") {
+					const material = key.includes(":") ? key.split(":")[0] : key;
+					result.push(material);
+				}
+			}
+			return result;
+		},
+	});
+	const geometryIdentifiers = await getBedrockJSON<unknown, string[]>({
+		type: "rp",
+		source: "bedrock-samples",
+		pattern: "models/entity/**/*.json",
+		transform: (content) => {
+			if (isLegacyGeometry(content)) {
+				const keys: string[] = [];
+				for (const key of Object.keys(content)) {
+					if (key !== "format_version") {
+						const id = key.includes(":") ? key.split(":")[0] : key;
+						keys.push(id);
+					}
+				}
+			}
+			if (isGeometry(content)) {
+				return content["minecraft:geometry"].map((geometry) => geometry.description.identifier);
+			}
+			return [];
+		},
+	}).then((arrays) => arrays.flat().sort());
+	const animationIdentifiers = await getBedrockJSON<Animations, string[]>({
+		type: "rp",
+		source: "bedrock-samples",
+		pattern: "animations/**/*.json",
+		transform: (content) => Object.keys(content.animations),
+	}).then((arrays) => arrays.flat().sort());
+	const animationControllerIdentifiers = await getBedrockJSON<AnimationControllers, string[]>({
+		type: "rp",
+		source: "bedrock-samples",
+		pattern: "animation_controllers/**/*.json",
+		transform: (content) => Object.keys(content.animation_controllers),
+	}).then((arrays) => arrays.flat().sort());
+	const renderControllerIdentifiers = await getBedrockJSON<RenderControllers, string[]>({
+		type: "rp",
+		source: "bedrock-samples",
+		pattern: "render_controllers/**/*.json",
+		transform: (content) => Object.keys(content.render_controllers),
+	}).then((arrays) => arrays.flat().sort());
+	const [itemTextureIdentifiers] = await getBedrockJSON<TextureAtlas, string[]>({
+		type: "rp",
+		source: "bedrock-samples",
+		pattern: "textures/{item_texture.json}",
+		transform: (content) => Object.keys(content.texture_data),
+	}).then((arrays) => arrays.sort());
 	return {
 		particleIdentifiers,
 		soundEventIdentifiers,
 		soundIdentifiers,
 		terrainTextureIdentifiers,
+		materialIdentifiers,
+		geometryIdentifiers,
+		animationIdentifiers,
+		animationControllerIdentifiers,
+		renderControllerIdentifiers,
+		itemTextureIdentifiers,
 	};
 }
 
@@ -70,4 +149,30 @@ type SoundIdentifiers = {
 
 type TextureAtlas = {
 	texture_data: Record<string, unknown>;
+};
+
+type Materials = {
+	materials: Record<string, unknown>;
+};
+
+type Geometries = {
+	"minecraft:geometry": {
+		description: {
+			identifier: string;
+		};
+	}[];
+};
+
+type LegacyGeometry = Record<string, unknown>;
+
+type Animations = {
+	animations: Record<string, unknown>;
+};
+
+type AnimationControllers = {
+	animation_controllers: Record<string, unknown>;
+};
+
+type RenderControllers = {
+	render_controllers: Record<string, unknown>;
 };

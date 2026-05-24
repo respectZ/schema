@@ -77,6 +77,16 @@
 			},
 			{
 				"fileMatch": [
+					"resource_pack/entity/**/*.{json,jsonc,json5}",
+					"*RP/entity/**/*.{json,jsonc,json5}",
+					"RP_*/entity/**/*.{json,jsonc,json5}",
+					"*rp/entity/**/*.{json,jsonc,json5}",
+					"rp_*/entity/**/*.{json,jsonc,json5}"
+				],
+				"url": "./schema/bedrock/client/entity/_index.json"
+			},
+			{
+				"fileMatch": [
 					"resource_pack/fogs/**/*.{json,jsonc,json5}",
 					"*RP/fogs/**/*.{json,jsonc,json5}",
 					"RP_*/fogs/**/*.{json,jsonc,json5}",
