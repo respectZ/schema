@@ -43,6 +43,21 @@
 					"type": "number"
 				}
 			]
+		},
+		"condition": {
+			"title": "Molang condition",
+			"description": "A Molang condition, which is a boolean expression that can be used for conditional logic in Minecraft.",
+			"oneOf": [
+				{
+					"$ref": "#/$defs/string"
+				},
+				{
+					"type": "boolean"
+				},
+				{
+					"type": "number"
+				}
+			]
 		}
 	}
 }
