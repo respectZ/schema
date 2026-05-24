@@ -65,7 +65,7 @@
 					"items": {
 						"type": "object",
 						"additionalProperties": {
-							"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+							"$ref": "../../../../vanilla/definition/molang.json#/$defs/condition"
 						}
 					}
 				}
