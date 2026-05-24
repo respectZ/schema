@@ -86,6 +86,10 @@ const RP_ENTRIES: JsonValidationEntry[] = [
 		url: "./schema/bedrock/client/particle/_index.json",
 	},
 	{
+		fileMatch: "pbr/global.{json,jsonc,json5}",
+		url: "./schema/bedrock/client/pbr/_index.json",
+	},
+	{
 		fileMatch: "point_lights/global.{json,jsonc,json5}",
 		url: "./schema/bedrock/client/point_lights/_index.json",
 	},

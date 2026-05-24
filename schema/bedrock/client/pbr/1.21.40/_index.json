@@ -1,0 +1,69 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/pbr/1.21.40/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock PBR Fallback Settings 1.21.40",
+	"description": "Default PBR fallback values when texture set detail isn't provided for blocks, entities, particles, or items.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:pbr_fallback_settings"],
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"description": "The 3-part schema version for parsing these PBR fallback settings.",
+			"enum": ["1.21.40"]
+		},
+		"minecraft:pbr_fallback_settings": {
+			"type": "object",
+			"description": "The root object containing default PBR values for blocks, actors, particles, and items.",
+			"additionalProperties": false,
+			"required": ["blocks", "actors", "particles", "items"],
+			"properties": {
+				"blocks": {
+					"$ref": "#/$defs/mers_settings"
+				},
+				"actors": {
+					"$ref": "#/$defs/mers_settings"
+				},
+				"particles": {
+					"$ref": "#/$defs/mers_settings"
+				},
+				"items": {
+					"$ref": "#/$defs/mers_settings"
+				}
+			}
+		}
+	},
+	"$defs": {
+		"mers_color": {
+			"description": "A Metalness, Emissive, Roughness, Subsurface (MERS) color value expressed as either an RGBA array of four numbers in the 0-255 range, or an eight-digit hexadecimal string.",
+			"oneOf": [
+				{
+					"type": "string",
+					"pattern": "^#([0-9a-fA-F]{8})$"
+				},
+				{
+					"type": "array",
+					"minItems": 4,
+					"maxItems": 4,
+					"items": {
+						"type": "number",
+						"minimum": 0,
+						"maximum": 255
+					}
+				}
+			]
+		},
+		"mers_settings": {
+			"type": "object",
+			"description": "Default MERS value for a category when not defined via texture set.",
+			"additionalProperties": false,
+			"required": ["global_metalness_emissive_roughness_subsurface"],
+			"properties": {
+				"global_metalness_emissive_roughness_subsurface": {
+					"description": "The default metalness, emissive, roughness, and subsurface values applied uniformly across the entire surface.",
+					"$ref": "#/$defs/mers_color"
+				}
+			}
+		}
+	}
+}
