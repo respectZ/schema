@@ -147,6 +147,16 @@
 			},
 			{
 				"fileMatch": [
+					"resource_pack/local_lighting/local_lighting.{json,jsonc,json5}",
+					"*RP/local_lighting/local_lighting.{json,jsonc,json5}",
+					"RP_*/local_lighting/local_lighting.{json,jsonc,json5}",
+					"*rp/local_lighting/local_lighting.{json,jsonc,json5}",
+					"rp_*/local_lighting/local_lighting.{json,jsonc,json5}"
+				],
+				"url": "./schema/bedrock/client/local_lighting/_index.json"
+			},
+			{
+				"fileMatch": [
 					"resource_pack/manifest.{json,jsonc,json5}",
 					"*RP/manifest.{json,jsonc,json5}",
 					"RP_*/manifest.{json,jsonc,json5}",

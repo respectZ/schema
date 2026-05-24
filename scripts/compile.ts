@@ -74,6 +74,10 @@ const RP_ENTRIES: JsonValidationEntry[] = [
 		url: "./schema/bedrock/client/lighting/_index.json",
 	},
 	{
+		fileMatch: "local_lighting/local_lighting.{json,jsonc,json5}",
+		url: "./schema/bedrock/client/local_lighting/_index.json",
+	},
+	{
 		fileMatch: "sounds/music_definitions.{json,jsonc,json5}",
 		url: "./schema/bedrock/client/music_definitions/_index.json",
 	},

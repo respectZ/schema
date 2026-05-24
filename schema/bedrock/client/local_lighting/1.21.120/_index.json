@@ -1,0 +1,60 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/local_lighting/1.21.120/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Local Light Settings 1.21.120",
+	"description": "Local light settings for Vibrant Visuals. Assigns light colors and light types to specific block types such as torches.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:local_light_settings"],
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"description": "The 3-part schema version for parsing these local light settings.",
+			"enum": ["1.21.120"]
+		},
+		"minecraft:local_light_settings": {
+			"type": "object",
+			"description": "A map of block identifiers to their local light settings.",
+			"additionalProperties": {
+				"$ref": "#/$defs/block_light_settings"
+			}
+		}
+	},
+	"$defs": {
+		"color": {
+			"description": "A color value expressed as either an RGB array of three numbers in the 0-255 range, or a six-digit hexadecimal string.",
+			"oneOf": [
+				{
+					"type": "string",
+					"pattern": "^#([0-9a-fA-F]{6})$"
+				},
+				{
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"type": "number",
+						"minimum": 0,
+						"maximum": 255
+					}
+				}
+			]
+		},
+		"block_light_settings": {
+			"type": "object",
+			"description": "Light settings for a specific block type.",
+			"additionalProperties": false,
+			"properties": {
+				"light_color": {
+					"description": "The color of light the block emits. Supports RGB array or hexadecimal string. If not provided, the standard Minecraft light color is used.",
+					"$ref": "#/$defs/color"
+				},
+				"light_type": {
+					"type": "string",
+					"description": "The type of local light. Static lights are baked into the scene, while point lights produce sophisticated effects such as diffuse and specular highlights and dynamic shadows.",
+					"enum": ["static_light", "point_light"]
+				}
+			}
+		}
+	}
+}
