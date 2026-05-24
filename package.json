@@ -97,6 +97,16 @@
 			},
 			{
 				"fileMatch": [
+					"resource_pack/color_grading/**/*.{json,jsonc,json5}",
+					"*RP/color_grading/**/*.{json,jsonc,json5}",
+					"RP_*/color_grading/**/*.{json,jsonc,json5}",
+					"*rp/color_grading/**/*.{json,jsonc,json5}",
+					"rp_*/color_grading/**/*.{json,jsonc,json5}"
+				],
+				"url": "./schema/bedrock/client/color_grading/_index.json"
+			},
+			{
+				"fileMatch": [
 					"resource_pack/entity/**/*.{json,jsonc,json5}",
 					"*RP/entity/**/*.{json,jsonc,json5}",
 					"RP_*/entity/**/*.{json,jsonc,json5}",

@@ -1,0 +1,73 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/color_grading/1.21.90/_index.json",
+	"title": "Minecraft Bedrock Color Grading Settings",
+	"type": "object",
+	"required": ["format_version", "minecraft:color_grading_settings"],
+	"additionalProperties": false,
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"description": "The 3-part schema version for parsing these color grading settings.",
+			"enum": ["1.21.90"]
+		},
+		"minecraft:color_grading_settings": {
+			"type": "object",
+			"required": ["description"],
+			"additionalProperties": false,
+			"properties": {
+				"description": {
+					"type": "object",
+					"required": ["identifier"],
+					"additionalProperties": false,
+					"properties": {
+						"identifier": {
+							"type": "string",
+							"description": "The identifier for these color grading settings. The identifier must include a namespace.",
+							"$ref": "../../../../vanilla/definition/identifier.json"
+						}
+					}
+				},
+				"color_grading": {
+					"unevaluatedProperties": false,
+					"allOf": [
+						{
+							"$ref": "../1.21.40/_index.json#/$defs/color_grading"
+						},
+						{
+							"type": "object",
+							"properties": {
+								"temperature": {
+									"type": "object",
+									"description": "Optional parameters for temperature based color grading.",
+									"additionalProperties": false,
+									"required": ["enabled"],
+									"properties": {
+										"enabled": {
+											"type": "boolean",
+											"description": "Enable or disable temperature grading."
+										},
+										"temperature": {
+											"type": "number",
+											"description": "Temperature value in Kelvin.",
+											"minimum": 1000.0,
+											"maximum": 15000.0
+										},
+										"type": {
+											"type": "string",
+											"description": "Type of temperature adjustment.",
+											"enum": ["white_balance", "color_temperature"]
+										}
+									}
+								}
+							}
+						}
+					]
+				},
+				"tone_mapping": {
+					"$ref": "../1.21.40/_index.json#/$defs/tone_mapping"
+				}
+			}
+		}
+	}
+}

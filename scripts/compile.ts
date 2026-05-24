@@ -46,6 +46,10 @@ const RP_ENTRIES: JsonValidationEntry[] = [
 		url: "./schema/bedrock/client/blocks/_index.json",
 	},
 	{
+		fileMatch: "color_grading/**/*.{json,jsonc,json5}",
+		url: "./schema/bedrock/client/color_grading/_index.json",
+	},
+	{
 		fileMatch: "textures/flipbook_textures.{json,jsonc,json5}",
 		url: "./schema/bedrock/client/flipbook_textures/_index.json",
 	},

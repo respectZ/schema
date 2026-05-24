@@ -1,0 +1,175 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/color_grading/1.21.40/_index.json",
+	"title": "Minecraft Bedrock Color Grading Settings",
+	"type": "object",
+	"required": ["format_version", "minecraft:color_grading_settings"],
+	"additionalProperties": false,
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"description": "The 3-part schema version for parsing these color grading settings.",
+			"enum": ["1.21.40"]
+		},
+		"minecraft:color_grading_settings": {
+			"type": "object",
+			"required": ["description"],
+			"additionalProperties": false,
+			"properties": {
+				"description": {
+					"type": "object",
+					"required": ["identifier"],
+					"additionalProperties": false,
+					"properties": {
+						"identifier": {
+							"type": "string",
+							"description": "The identifier for these color grading settings. The identifier must include a namespace.",
+							"$ref": "../../../../vanilla/definition/identifier.json"
+						}
+					}
+				},
+				"color_grading": {
+					"unevaluatedProperties": false,
+					"$ref": "#/$defs/color_grading"
+				},
+				"tone_mapping": {
+					"$ref": "#/$defs/tone_mapping"
+				}
+			}
+		}
+	},
+	"$defs": {
+		"color_grading": {
+			"type": "object",
+			"required": ["midtones"],
+			"properties": {
+				"midtones": {
+					"additionalProperties": false,
+					"$ref": "#/$defs/parameters"
+				},
+				"highlights": {
+					"unevaluatedProperties": false,
+					"allOf": [
+						{
+							"$ref": "#/$defs/parameters"
+						},
+						{
+							"type": "object",
+							"properties": {
+								"enabled": {
+									"type": "boolean",
+									"description": "Enable or disable highlights grading."
+								},
+								"highlightsMin": {
+									"type": "number",
+									"minimum": 1.0,
+									"maximum": 4.0,
+									"description": "Minimum luminance threshold for highlights [1.0, 4.0]."
+								}
+							}
+						}
+					]
+				},
+				"shadows": {
+					"unevaluatedProperties": false,
+					"allOf": [
+						{
+							"$ref": "#/$defs/parameters"
+						},
+						{
+							"type": "object",
+							"properties": {
+								"enabled": {
+									"type": "boolean",
+									"description": "Enable or disable shadows grading."
+								},
+								"shadowsMax": {
+									"type": "number",
+									"minimum": 0.1,
+									"maximum": 1.0,
+									"description": "Maximum luminance threshold for shadows [0.1, 1.0]."
+								}
+							}
+						}
+					]
+				}
+			}
+		},
+		"tone_mapping": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"operator": {
+					"description": "Tone mapping operator to apply.",
+					"oneOf": [
+						{
+							"const": "reinhard",
+							"description": "A low-cost tone mapping operator that remaps HDR color values in the range [0, ∞) to [0, 1). This operator looks especially good when applied to low-contrast scenes whose values are already within the range of [0, 1), but tends to mute higher luminance values."
+						},
+						{
+							"const": "reinhard_luma",
+							"description": "An extended version of the Reinhard operator that comes at a slightly higher cost, but it preserves details in low dynamic range regions of an image that would otherwise be lost by the standard Reinhard operator."
+						},
+						{
+							"const": "reinhard_luminance",
+							"description": "A version of the extended Reinhard operator modified to adjust the luminance of the input colors. It comes at a slightly higher cost, but it preserves colors in high luminance regions of an image that would otherwise be washed out by the standard Reinhard operator."
+						},
+						{
+							"const": "hable",
+							"description": "A filmic tone mapping operator meant to emulate the behaviors of real-life film, developed and shared by John Hable at a GDC talk from 2010 titled \"Uncharted 2: HDR Lighting\"."
+						},
+						{
+							"const": "aces",
+							"description": "A filmic tone mapping operator meant to emulate the behaviors of real-life film, specifically following the ACES standard used in television and film."
+						},
+						{
+							"const": "generic",
+							"description": "A generic tone mapping curve that has been hand-tuned by Mojang's artists. It is similar to the other filmic operators but preserves a bit more hue saturation at high luminance regions."
+						}
+					]
+				}
+			}
+		},
+		"parameters": {
+			"type": "object",
+			"description": "Color grading parameters for midtones, and for when highlights or shadows are not specified.",
+			"properties": {
+				"contrast": {
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": { "type": "number", "minimum": 0.0, "maximum": 4.0 },
+					"description": "Contrast adjustment per RGB channel [0.0, 4.0]."
+				},
+				"gain": {
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": { "type": "number", "minimum": 0.0, "maximum": 10.0 },
+					"description": "Gain adjustment per RGB channel. [0.0, 10.0]"
+				},
+				"gamma": {
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": { "type": "number", "minimum": 0.0, "maximum": 4.0 },
+					"description": "Gamma correction per RGB channel. [0.0, 4.0]"
+				},
+				"offset": {
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": { "type": "number", "minimum": -1.0, "maximum": 1.0 },
+					"description": "Offset adjustment per RGB channel. [-1.0, 1.0]"
+				},
+				"saturation": {
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": { "type": "number", "minimum": 0.0, "maximum": 10.0 },
+					"description": "Saturation adjustment per RGB channel. [0.0, 10.0]"
+				}
+			}
+		}
+	}
+}
