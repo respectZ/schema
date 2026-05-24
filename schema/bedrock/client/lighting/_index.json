@@ -1,0 +1,74 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/lighting/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Lighting Settings",
+	"required": ["format_version"],
+	"properties": {
+		"format_version": {
+			"enum": ["1.21.40", "1.21.60", "1.21.70", "1.21.80", "1.26.0"]
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.40"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.40/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.60"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.60/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.70"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.70/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.80"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.80/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.26.0"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.26.0/_index.json"
+			}
+		}
+	]
+}

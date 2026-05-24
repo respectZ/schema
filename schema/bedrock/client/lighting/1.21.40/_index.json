@@ -1,0 +1,178 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/lighting/1.21.40/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Lighting Settings 1.21.40",
+	"description": "Lighting settings for Vibrant Visuals. Defines directional lights (sun/moon), emissive desaturation, and ambient light.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:lighting_settings"],
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"description": "The 3-part schema version for parsing these lighting settings.",
+			"enum": ["1.21.40"]
+		},
+		"minecraft:lighting_settings": {
+			"type": "object",
+			"description": "The root object containing all lighting settings for directional lights, emissive, and ambient contributions.",
+			"additionalProperties": false,
+			"required": ["description"],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies these lighting settings.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"type": "string",
+							"description": "The identifier for these lighting settings. The identifier must include a namespace.",
+							"$ref": "../../../../vanilla/definition/identifier.json"
+						}
+					}
+				},
+				"directional_lights": {
+					"type": "object",
+					"description": "Settings for directional lights including the sun and moon.",
+					"additionalProperties": false,
+					"properties": {
+						"orbital": {
+							"type": "object",
+							"description": "Orbital light settings for the sun and moon.",
+							"additionalProperties": false,
+							"required": ["sun", "moon"],
+							"properties": {
+								"sun": {
+									"type": "object",
+									"description": "Light settings for the sun.",
+									"additionalProperties": false,
+									"properties": {
+										"illuminance": {
+											"description": "How bright the sun is, measured in lux (lx).",
+											"$ref": "#/$defs/optkeyframe_number"
+										},
+										"color": {
+											"description": "The RGBA color that the sun contributes to direct surface lighting.",
+											"$ref": "#/$defs/optkeyframe_color"
+										}
+									}
+								},
+								"moon": {
+									"type": "object",
+									"description": "Light settings for the moon.",
+									"additionalProperties": false,
+									"properties": {
+										"illuminance": {
+											"description": "How bright the moon is, measured in lux (lx).",
+											"$ref": "#/$defs/optkeyframe_number"
+										},
+										"color": {
+											"description": "The RGBA color that the moon contributes to direct surface lighting.",
+											"$ref": "#/$defs/optkeyframe_color"
+										}
+									}
+								},
+								"orbital_offset_degrees": {
+									"description": "The rotational offset of the sun and moon from their standard orbital axis, measured in degrees.",
+									"$ref": "#/$defs/optkeyframe_number"
+								}
+							}
+						}
+					}
+				},
+				"emissive": {
+					"type": "object",
+					"description": "Settings for emissive light source behavior.",
+					"additionalProperties": false,
+					"required": ["desaturation"],
+					"properties": {
+						"desaturation": {
+							"type": "number",
+							"description": "The amount of desaturation to apply to albedo color values during emissive light calculation. Values range from [0.0, 1.0].",
+							"minimum": 0.0,
+							"maximum": 1.0
+						}
+					}
+				},
+				"ambient": {
+					"type": "object",
+					"description": "Settings for ambient light providing a minimum fallback light source when no other sensible light sources are available.",
+					"additionalProperties": false,
+					"properties": {
+						"illuminance": {
+							"type": "number",
+							"description": "How bright the ambient light is, measured in lux (lx). Allowed range is [0.0, 5.0]. Defaults to 0.02 if not provided."
+						},
+						"color": {
+							"description": "The RGBA color that the ambient light contributes to surface lighting. Defaults to #FFFFFF if not provided.",
+							"$ref": "#/$defs/color"
+						}
+					}
+				}
+			}
+		}
+	},
+	"$defs": {
+		"color": {
+			"description": "An RGBA color value expressed as either an RGB/RGBA array of three to four numbers in the 0-255 range, or a six or eight-digit hexadecimal string.",
+			"oneOf": [
+				{
+					"type": "string",
+					"pattern": "^#([0-9a-fA-F]{6}|[0-9a-fA-F]{8})$"
+				},
+				{
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 4,
+					"items": {
+						"type": "number",
+						"minimum": 0,
+						"maximum": 255
+					}
+				}
+			]
+		},
+		"keyframe_number": {
+			"description": "A time-keyed numeric value collection where each key is a normalized time of day from 0.0 to 1.0.",
+			"type": "object",
+			"minProperties": 1,
+			"propertyNames": {
+				"pattern": "^\\d+(\\.\\d+)?$"
+			},
+			"additionalProperties": {
+				"type": "number"
+			}
+		},
+		"keyframe_color": {
+			"description": "A time-keyed color value collection where each key is a normalized time of day from 0.0 to 1.0.",
+			"type": "object",
+			"minProperties": 1,
+			"propertyNames": {
+				"pattern": "^\\d+(\\.\\d+)?$"
+			},
+			"additionalProperties": {
+				"$ref": "#/$defs/color"
+			}
+		},
+		"optkeyframe_number": {
+			"oneOf": [
+				{
+					"type": "number"
+				},
+				{
+					"$ref": "#/$defs/keyframe_number"
+				}
+			]
+		},
+		"optkeyframe_color": {
+			"oneOf": [
+				{
+					"$ref": "#/$defs/color"
+				},
+				{
+					"$ref": "#/$defs/keyframe_color"
+				}
+			]
+		}
+	}
+}
