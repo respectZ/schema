@@ -1,0 +1,91 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/cubemap/1.21.130/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Cubemap Settings 1.21.130",
+	"description": "Cubemap (skybox) settings for Vibrant Visuals. Configures lighting parameters for custom cubemaps including ambient, sky, directional light contributions, and scattering behavior.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:cubemap_settings"],
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"description": "The 3-part schema version for parsing these cubemap settings.",
+			"enum": ["1.21.130"]
+		},
+		"minecraft:cubemap_settings": {
+			"type": "object",
+			"description": "The root object containing cubemap lighting customization settings.",
+			"additionalProperties": false,
+			"required": ["description"],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies these cubemap settings.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"type": "string",
+							"description": "The identifier for these cubemap settings. The identifier must include a namespace.",
+							"$ref": "../../../../vanilla/definition/identifier.json"
+						}
+					}
+				},
+				"lighting": {
+					"type": "object",
+					"description": "Lighting parameters for the cubemap.",
+					"additionalProperties": false,
+					"properties": {
+						"ambient_light_illuminance": {
+							"description": "The amount of fixed ambient light applied to the cubemap. Can be a plain number or a time-keyed collection. Range [0.0, 100000.0] lux. Defaults to 5.625.",
+							"$ref": "#/$defs/optkeyframe_number"
+						},
+						"sky_light_contribution": {
+							"type": "number",
+							"description": "Controls how much the sky light affects the cubemap. Range [0.0, 1.0]. Defaults to 1.0.",
+							"minimum": 0.0,
+							"maximum": 1.0
+						},
+						"directional_light_contribution": {
+							"type": "number",
+							"description": "Controls how much the directional light (sun and moon) affects the cubemap. Range [0.0, 1.0]. Defaults to 0.0.",
+							"minimum": 0.0,
+							"maximum": 1.0
+						},
+						"affected_by_atmospheric_scattering": {
+							"type": "boolean",
+							"description": "Determines if the cubemap is affected by atmospheric scattering. Defaults to false."
+						},
+						"affected_by_volumetric_scattering": {
+							"type": "boolean",
+							"description": "Determines if the cubemap is affected by volumetric scattering (fog and light shafts). Defaults to true."
+						}
+					}
+				}
+			}
+		}
+	},
+	"$defs": {
+		"keyframe_number": {
+			"description": "A time-keyed numeric value collection where each key is a normalized time of day from 0.0 to 1.0.",
+			"type": "object",
+			"minProperties": 1,
+			"propertyNames": {
+				"pattern": "^\\d+(\\.\\d+)?$"
+			},
+			"additionalProperties": {
+				"type": "number"
+			}
+		},
+		"optkeyframe_number": {
+			"oneOf": [
+				{
+					"type": "number"
+				},
+				{
+					"$ref": "#/$defs/keyframe_number"
+				}
+			]
+		}
+	}
+}
