@@ -1,0 +1,26 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/point_lights/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Point Light Settings",
+	"required": ["format_version"],
+	"properties": {
+		"format_version": {
+			"enum": ["1.21.40"]
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.40"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.40/_index.json"
+			}
+		}
+	]
+}

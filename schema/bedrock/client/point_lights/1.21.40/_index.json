@@ -1,0 +1,52 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/point_lights/1.21.40/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Point Light Settings 1.21.40",
+	"description": "Point light color settings for Vibrant Visuals. Maps block identifiers to their emitted light colors.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:point_light_settings"],
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"description": "The 3-part schema version for parsing these point light settings.",
+			"enum": ["1.21.40"]
+		},
+		"minecraft:point_light_settings": {
+			"type": "object",
+			"description": "The root object containing point light color definitions.",
+			"additionalProperties": false,
+			"required": ["colors"],
+			"properties": {
+				"colors": {
+					"type": "object",
+					"description": "A map of block identifiers to their emitted light color.",
+					"additionalProperties": {
+						"$ref": "#/$defs/color"
+					}
+				}
+			}
+		}
+	},
+	"$defs": {
+		"color": {
+			"description": "A color value expressed as either an RGB array of three numbers in the 0-255 range, or a six-digit hexadecimal string.",
+			"oneOf": [
+				{
+					"type": "string",
+					"pattern": "^#([0-9a-fA-F]{6})$"
+				},
+				{
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"type": "number",
+						"minimum": 0,
+						"maximum": 255
+					}
+				}
+			]
+		}
+	}
+}
