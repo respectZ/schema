@@ -57,6 +57,16 @@
 			},
 			{
 				"fileMatch": [
+					"resource_pack/attachables/**/*.{json,jsonc,json5}",
+					"*RP/attachables/**/*.{json,jsonc,json5}",
+					"RP_*/attachables/**/*.{json,jsonc,json5}",
+					"*rp/attachables/**/*.{json,jsonc,json5}",
+					"rp_*/attachables/**/*.{json,jsonc,json5}"
+				],
+				"url": "./schema/bedrock/client/attachable/_index.json"
+			},
+			{
+				"fileMatch": [
 					"resource_pack/block_culling/**/*.{json,jsonc,json5}",
 					"*RP/block_culling/**/*.{json,jsonc,json5}",
 					"RP_*/block_culling/**/*.{json,jsonc,json5}",

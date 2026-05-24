@@ -1,0 +1,147 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/attachable/1.8.0/_index.json",
+	"title": "Minecraft Bedrock Attachable Resource Definition 1.8.0",
+	"type": "object",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:attachable"],
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"const": "1.8.0"
+		},
+		"minecraft:attachable": {
+			"$ref": "#/$defs/attachable"
+		}
+	},
+	"$defs": {
+		"attachable": {
+			"type": "object",
+			"required": ["description"],
+			"additionalProperties": false,
+			"properties": {
+				"description": {
+					"$ref": "#/$defs/description"
+				}
+			}
+		},
+		"description": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["identifier"],
+			"properties": {
+				"identifier": {
+					"type": "string",
+					"$ref": "../../../../vanilla/definition/identifier.json"
+				},
+				"min_engine_version": {
+					"anyOf": [
+						{
+							"$ref": "../../../../vanilla/definition/format_version.json"
+						},
+						{
+							"enum": ["1.8.0", "1.10.0"]
+						}
+					]
+				},
+				"materials": {
+					"type": "object",
+					"minProperties": 1,
+					"additionalProperties": {
+						"$ref": "../../../../vanilla/client/identifiers.json#/$defs/material_identifier"
+					}
+				},
+				"textures": {
+					"type": "object",
+					"minProperties": 1,
+					"additionalProperties": {
+						"$ref": "../../../../vanilla/client/paths.json#/$defs/texture_path"
+					}
+				},
+				"geometry": {
+					"type": "object",
+					"minProperties": 1,
+					"additionalProperties": {
+						"$ref": "../../../../vanilla/client/identifiers.json#/$defs/geometry_identifier"
+					}
+				},
+				"animations": {
+					"type": "object",
+					"minProperties": 1,
+					"additionalProperties": {
+						"$ref": "../../../../vanilla/client/identifiers.json#/$defs/animation_identifier"
+					}
+				},
+				"particle_effects": {
+					"type": "object",
+					"minProperties": 1,
+					"additionalProperties": {
+						"$ref": "../../../../vanilla/client/identifiers.json#/$defs/particle_identifier"
+					}
+				},
+				"particle_emitters": {
+					"type": "object",
+					"minProperties": 1,
+					"additionalProperties": {
+						"$ref": "../../../../vanilla/client/identifiers.json#/$defs/particle_identifier"
+					}
+				},
+				"sound_effects": {
+					"type": "object",
+					"minProperties": 1,
+					"additionalProperties": {
+						"$ref": "../../../../vanilla/client/identifiers.json#/$defs/sound_identifier"
+					}
+				},
+				"animation_controllers": {
+					"oneOf": [
+						{
+							"type": "array",
+							"minItems": 1,
+							"items": {
+								"$ref": "../../../../vanilla/client/identifiers.json#/$defs/animation_controller_identifier"
+							}
+						},
+						{
+							"type": "array",
+							"minItems": 1,
+							"items": {
+								"type": "object",
+								"minProperties": 1,
+								"additionalProperties": {
+									"$ref": "../../../../vanilla/client/identifiers.json#/$defs/animation_controller_identifier"
+								}
+							}
+						}
+					]
+				},
+				"render_controllers": {
+					"type": "array",
+					"minProperties": 1,
+					"items": {
+						"$ref": "../../../../vanilla/client/identifiers.json#/$defs/render_controller_identifier"
+					}
+				},
+				"scripts": {
+					"$ref": "#/$defs/scripts"
+				}
+			}
+		},
+		"scripts": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"parent_setup": {
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				"pre_animation": {
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+					}
+				}
+			}
+		}
+	}
+}
