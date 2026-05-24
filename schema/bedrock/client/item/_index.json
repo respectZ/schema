@@ -1,0 +1,30 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/item/_index.json",
+	"type": "object",
+	"required": ["format_version"],
+	"properties": {
+		"format_version": {
+			"anyOf": [
+				{
+					"enum": ["1.0.0", "1.16.0"]
+				},
+				{
+					"$ref": "../../../vanilla/definition/format_version.json"
+				}
+			]
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"format_version": true
+				}
+			},
+			"then": {
+				"$ref": "./1.0.0/_index.json"
+			}
+		}
+	]
+}

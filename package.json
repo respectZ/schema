@@ -107,6 +107,16 @@
 			},
 			{
 				"fileMatch": [
+					"resource_pack/items/**/*.{json,jsonc,json5}",
+					"*RP/items/**/*.{json,jsonc,json5}",
+					"RP_*/items/**/*.{json,jsonc,json5}",
+					"*rp/items/**/*.{json,jsonc,json5}",
+					"rp_*/items/**/*.{json,jsonc,json5}"
+				],
+				"url": "./schema/bedrock/client/item/_index.json"
+			},
+			{
+				"fileMatch": [
 					"resource_pack/manifest.{json,jsonc,json5}",
 					"*RP/manifest.{json,jsonc,json5}",
 					"RP_*/manifest.{json,jsonc,json5}",

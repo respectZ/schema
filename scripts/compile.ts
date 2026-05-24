@@ -50,6 +50,10 @@ const RP_ENTRIES: JsonValidationEntry[] = [
 		url: "./schema/bedrock/client/fog/_index.json",
 	},
 	{
+		fileMatch: "items/**/*.{json,jsonc,json5}",
+		url: "./schema/bedrock/client/item/_index.json",
+	},
+	{
 		fileMatch: "textures/item_texture.{json,jsonc,json5}",
 		url: "./schema/bedrock/client/item_texture/_index.json",
 	},

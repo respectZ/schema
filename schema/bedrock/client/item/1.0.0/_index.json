@@ -1,0 +1,126 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/item/1.0.0/_index.json",
+	"title": "Bedrock Client Item 1.0.0",
+	"type": "object",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:item"],
+	"properties": {
+		"format_version": {
+			"type": "string"
+		},
+		"minecraft:item": {
+			"type": "object",
+			"required": ["description"],
+			"additionalProperties": false,
+			"properties": {
+				"description": {
+					"type": "object",
+					"required": ["identifier"],
+					"additionalProperties": false,
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json"
+						},
+						"category": {
+							"enum": ["all", "construction", "nature", "equipment", "items", "commands", "none"]
+						}
+					}
+				},
+				"components": {
+					"$ref": "#/$defs/components"
+				}
+			}
+		}
+	},
+	"$defs": {
+		"components": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"minecraft:icon": {
+					"$ref": "#/$defs/minecraft:icon"
+				},
+				"minecraft:hover_text_color": {
+					"$ref": "#/$defs/minecraft:hover_text_color"
+				},
+				"minecraft:use_animation": {
+					"$ref": "#/$defs/minecraft:use_animation"
+				},
+				"minecraft:rarity": {
+					"$ref": "#/$defs/minecraft:rarity"
+				},
+				"minecraft:icon_atlas": {
+					"$ref": "#/$defs/minecraft:icon_atlas"
+				},
+				"minecraft:icon_variant": {
+					"$ref": "#/$defs/minecraft:icon_variant"
+				}
+			}
+		},
+		"minecraft:icon": {
+			"$ref": "../../../../vanilla/client/identifiers.json#/$defs/item_texture_identifier"
+		},
+		"minecraft:hover_text_color": {
+			"enum": [
+				"escape",
+				"black",
+				"dark_blue",
+				"dark_green",
+				"dark_aqua",
+				"dark_red",
+				"dark_purple",
+				"gold",
+				"gray",
+				"dark_gray",
+				"blue",
+				"green",
+				"aqua",
+				"red",
+				"light_purple",
+				"yellow",
+				"white",
+				"minecoin_gold",
+				"material_quartz",
+				"material_iron",
+				"material_netherite",
+				"material_redstone",
+				"material_copper",
+				"material_gold",
+				"material_emerald",
+				"material_diamond",
+				"material_lapis",
+				"material_amethyst",
+				"material_resin",
+				"party_blue",
+				"obfuscated",
+				"bold",
+				"italic",
+				"reset"
+			]
+		},
+		"minecraft:use_animation": {
+			"enum": [
+				"none",
+				"eat",
+				"drink",
+				"block",
+				"bow",
+				"camera",
+				"crossbow",
+				"spear",
+				"spyglass",
+				"brush"
+			]
+		},
+		"minecraft:rarity": {
+			"enum": ["common", "uncommon", "rare", "epic"]
+		},
+		"minecraft:icon_atlas": {
+			"$ref": "../../../../vanilla/client/identifiers.json#/$defs/item_texture_identifier"
+		},
+		"minecraft:icon_variant": {
+			"enum": ["wood", "stone", "iron", "gold", "diamond"]
+		}
+	}
+}
