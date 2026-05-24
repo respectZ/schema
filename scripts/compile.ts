@@ -117,6 +117,10 @@ const RP_ENTRIES: JsonValidationEntry[] = [
 		fileMatch: "textures/**/*.texture_set.{json,jsonc,json5}",
 		url: "./schema/bedrock/client/texture_set/_index.json",
 	},
+	{
+		fileMatch: "water/**/*.{json,jsonc,json5}",
+		url: "./schema/bedrock/client/water/_index.json",
+	},
 ];
 
 function mapFileMatch(type: keyof typeof PACK_PREFIXES, entry: JsonValidationEntry) {

@@ -1,0 +1,38 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/water/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Water Settings",
+	"required": ["format_version"],
+	"properties": {
+		"format_version": {
+			"enum": ["1.21.80", "1.26.0"]
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.80"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.80/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.26.0"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.26.0/_index.json"
+			}
+		}
+	]
+}

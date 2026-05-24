@@ -294,6 +294,16 @@
 					"rp_*/textures/texture_list.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/texture_list/_index.json"
+			},
+			{
+				"fileMatch": [
+					"resource_pack/water/**/*.{json,jsonc,json5}",
+					"*RP/water/**/*.{json,jsonc,json5}",
+					"RP_*/water/**/*.{json,jsonc,json5}",
+					"*rp/water/**/*.{json,jsonc,json5}",
+					"rp_*/water/**/*.{json,jsonc,json5}"
+				],
+				"url": "./schema/bedrock/client/water/_index.json"
 			}
 		]
 	}

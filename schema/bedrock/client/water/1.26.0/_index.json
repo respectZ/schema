@@ -1,0 +1,178 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/water/1.26.0/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Water Settings 1.26.0",
+	"description": "Water settings for Vibrant Visuals. Defines particle concentrations, waves, caustics, and biome water color contribution for water rendering.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:water_settings"],
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"description": "The 3-part schema version for parsing these water settings.",
+			"enum": ["1.26.0"]
+		},
+		"minecraft:water_settings": {
+			"type": "object",
+			"description": "The root object containing water rendering settings.",
+			"additionalProperties": false,
+			"required": ["description"],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies these water settings.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"type": "string",
+							"description": "The identifier for these water settings. The identifier must include a namespace.",
+							"$ref": "../../../../vanilla/definition/identifier.json"
+						}
+					}
+				},
+				"particle_concentrations": {
+					"type": "object",
+					"description": "Particle concentration values that determine water color and light behavior.",
+					"additionalProperties": false,
+					"properties": {
+						"cdom": {
+							"type": "number",
+							"description": "Concentration of chromophoric dissolved organic matter (CDOM) in mg/L. Higher concentrations produce yellow to yellow-brown colors. Range [0.0, 15.0].",
+							"minimum": 0.0,
+							"maximum": 15.0
+						},
+						"chlorophyll": {
+							"type": "number",
+							"description": "Concentration of chlorophyll in mg/L. Higher concentrations produce green colors. Range [0.0, 10.0].",
+							"minimum": 0.0,
+							"maximum": 10.0
+						},
+						"suspended_sediment": {
+							"type": "number",
+							"description": "Concentration of suspended sediment in mg/L. Higher concentrations produce red to red-brown colors. Range [0.0, 300.0].",
+							"minimum": 0.0,
+							"maximum": 300.0
+						}
+					}
+				},
+				"waves": {
+					"type": "object",
+					"description": "Wave settings for the water surface.",
+					"additionalProperties": false,
+					"properties": {
+						"enabled": {
+							"type": "boolean",
+							"description": "Whether or not waves are enabled."
+						},
+						"depth": {
+							"type": "number",
+							"description": "Controls the amount of wave displacement. Range [0.0, 3.0].",
+							"minimum": 0.0,
+							"maximum": 3.0
+						},
+						"direction_increment": {
+							"type": "number",
+							"description": "Controls how much the heading changes between each octave, in degrees. Range [0.0, 360.0].",
+							"minimum": 0.0,
+							"maximum": 360.0
+						},
+						"frequency": {
+							"type": "number",
+							"description": "Controls the size of individual waves. Higher values create more tightly packed waves. Range [0.01, 3.0].",
+							"minimum": 0.01,
+							"maximum": 3.0
+						},
+						"frequency_scaling": {
+							"type": "number",
+							"description": "Controls how much frequencies change in subsequent octaves. Range [0.0, 2.0].",
+							"minimum": 0.0,
+							"maximum": 2.0
+						},
+						"mix": {
+							"type": "number",
+							"description": "Controls how much each octave blends into the neighboring octave. Range [0.0, 1.0].",
+							"minimum": 0.0,
+							"maximum": 1.0
+						},
+						"octaves": {
+							"type": "integer",
+							"description": "Determines how many layers of waves to simulate. Higher values result in more complex waves. Range [1, 30].",
+							"minimum": 1,
+							"maximum": 30
+						},
+						"pull": {
+							"type": "number",
+							"description": "Controls how much smaller waves are pulled into larger ones. Range [-1.0, 1.0].",
+							"minimum": -1.0,
+							"maximum": 1.0
+						},
+						"sampleWidth": {
+							"type": "number",
+							"description": "Controls the resolution of the fractal effect. Higher values result in smoother waves. Range [0.01, 1.0].",
+							"minimum": 0.01,
+							"maximum": 1.0
+						},
+						"shape": {
+							"type": "number",
+							"description": "Adjusts the shape of the wave. A value of 1 results in a pure sine wave. Range [1.0, 10.0].",
+							"minimum": 1.0,
+							"maximum": 10.0
+						},
+						"speed": {
+							"type": "number",
+							"description": "Controls the starting speed of the first waves. Range [0.01, 10.0].",
+							"minimum": 0.01,
+							"maximum": 10.0
+						},
+						"speed_scaling": {
+							"type": "number",
+							"description": "Controls how much faster or slower subsequent octaves move. Range [0.0, 2.0].",
+							"minimum": 0.0,
+							"maximum": 2.0
+						}
+					}
+				},
+				"caustics": {
+					"type": "object",
+					"description": "Caustics settings for projecting light rays on underwater surfaces.",
+					"additionalProperties": false,
+					"properties": {
+						"enabled": {
+							"type": "boolean",
+							"description": "Whether or not caustics are rendered. If false, all other caustics parameters are ignored. Defaults to true."
+						},
+						"frame_length": {
+							"type": "number",
+							"description": "How many seconds to spend on each frame of animation in the caustics texture. Range [0.01, 5.0].",
+							"minimum": 0.01,
+							"maximum": 5.0
+						},
+						"power": {
+							"type": "integer",
+							"description": "Controls how bright the caustics effect appears. Range [1, 6].",
+							"minimum": 1,
+							"maximum": 6
+						},
+						"scale": {
+							"type": "number",
+							"description": "Controls the size of the repetition of the caustics texture. Larger values make the texture appear smaller. Range [0.1, 5.0].",
+							"minimum": 0.1,
+							"maximum": 5.0
+						},
+						"texture": {
+							"description": "Resource location to a texture for controlling the shape of the caustics. If not supplied, a built-in texture is used automatically.",
+							"$ref": "../../../../vanilla/client/paths.json#/$defs/texture_path"
+						}
+					}
+				},
+				"biome_water_color_contribution": {
+					"type": "number",
+					"description": "Controls the contribution of surface_color water colors defined in *.client_biome.json files. A value of 0 results in no contribution, while a value of 1 results in maximum contribution. Range [0.0, 1.0].",
+					"minimum": 0.0,
+					"maximum": 1.0
+				}
+			}
+		}
+	}
+}
