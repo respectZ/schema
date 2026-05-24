@@ -52,6 +52,11 @@ const entries: Entry[] = [
 				animationIdentifiers,
 				renderControllerIdentifiers,
 				itemTextureIdentifiers,
+				fogIdentifiers,
+				atmosphereIdentifiers,
+				colorGradingIdentifiers,
+				lightingIdentifiers,
+				waterIdentifiers,
 			} = await generateClientIdentifiers();
 			return {
 				$defs: {
@@ -165,6 +170,61 @@ const entries: Entry[] = [
 							},
 							{
 								enum: itemTextureIdentifiers,
+							},
+						],
+					},
+					fog_identifier: {
+						anyOf: [
+							{
+								type: "string",
+								maxLength: 256,
+							},
+							{
+								enum: fogIdentifiers,
+							},
+						],
+					},
+					atmosphere_identifier: {
+						anyOf: [
+							{
+								type: "string",
+								maxLength: 256,
+							},
+							{
+								enum: atmosphereIdentifiers,
+							},
+						],
+					},
+					color_grading_identifier: {
+						anyOf: [
+							{
+								type: "string",
+								maxLength: 256,
+							},
+							{
+								enum: colorGradingIdentifiers,
+							},
+						],
+					},
+					lighting_identifier: {
+						anyOf: [
+							{
+								type: "string",
+								maxLength: 256,
+							},
+							{
+								enum: lightingIdentifiers,
+							},
+						],
+					},
+					water_identifier: {
+						anyOf: [
+							{
+								type: "string",
+								maxLength: 256,
+							},
+							{
+								enum: waterIdentifiers,
 							},
 						],
 					},

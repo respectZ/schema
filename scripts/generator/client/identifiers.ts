@@ -1,3 +1,4 @@
+import type { CommonBedrockSchema } from "../../types";
 import { getBedrockJSON } from "../../utils";
 
 const isLegacyGeometry = (data: unknown): data is LegacyGeometry => {
@@ -12,6 +13,18 @@ const isGeometry = (data: unknown): data is Geometries => {
 		return false;
 	}
 	return "minecraft:geometry" in data && Array.isArray(data["minecraft:geometry"]);
+};
+
+const getIdentifierFromSchema = (obj: unknown, key: string): string => {
+	if (typeof obj !== "object" || obj === null) {
+		throw new Error(`Expected an object but got ${typeof obj}`);
+	}
+	// @ts-expect-error: unknown type
+	const value = obj[key]?.description?.identifier;
+	if (typeof value !== "string") {
+		throw new Error(`Expected a string identifier but got ${typeof value}`);
+	}
+	return value;
 };
 
 export async function generateClientIdentifiers() {
@@ -107,6 +120,42 @@ export async function generateClientIdentifiers() {
 		pattern: "textures/{item_texture.json}",
 		transform: (content) => Object.keys(content.texture_data),
 	}).then((arrays) => arrays.sort());
+	const fogIdentifiers = await getBedrockJSON<CommonBedrockSchema<"minecraft:fog_settings">>({
+		type: "rp",
+		source: "bedrock-samples",
+		pattern: "fogs/**/*.json",
+		transform: (content) => content["minecraft:fog_settings"].description.identifier,
+	}).then((arrays) => arrays.sort());
+	const atmosphereIdentifiers = await getBedrockJSON<
+		CommonBedrockSchema<"minecraft:atmosphere_settings">
+	>({
+		type: "rp",
+		source: "data",
+		pattern: "*/atmospherics/**/*.json",
+		transform: (content) => content["minecraft:atmosphere_settings"].description.identifier,
+	}).then((arrays) => Array.from(new Set(arrays.sort())));
+	const colorGradingIdentifiers = await getBedrockJSON<
+		CommonBedrockSchema<"minecraft:color_grading_settings">
+	>({
+		type: "rp",
+		source: "data",
+		pattern: "*/color_grading/**/*.json",
+		transform: (content) => content["minecraft:color_grading_settings"].description.identifier,
+	}).then((arrays) => Array.from(new Set(arrays.sort())));
+	const lightingIdentifiers = await getBedrockJSON<
+		CommonBedrockSchema<"minecraft:lighting_settings">
+	>({
+		type: "rp",
+		source: "data",
+		pattern: "*/lighting/**/*.json",
+		transform: (content) => content["minecraft:lighting_settings"].description.identifier,
+	}).then((arrays) => Array.from(new Set(arrays.sort())));
+	const waterIdentifiers = await getBedrockJSON<CommonBedrockSchema<"minecraft:water_settings">>({
+		type: "rp",
+		source: "data",
+		pattern: "*/water/**/*.json",
+		transform: (content) => content["minecraft:water_settings"].description.identifier,
+	}).then((arrays) => Array.from(new Set(arrays.sort())));
 	return {
 		particleIdentifiers,
 		soundEventIdentifiers,
@@ -118,6 +167,11 @@ export async function generateClientIdentifiers() {
 		animationControllerIdentifiers,
 		renderControllerIdentifiers,
 		itemTextureIdentifiers,
+		fogIdentifiers,
+		atmosphereIdentifiers,
+		colorGradingIdentifiers,
+		lightingIdentifiers,
+		waterIdentifiers,
 	};
 }
 
