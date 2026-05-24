@@ -1,0 +1,148 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/atmospheric/_index.json",
+	"title": "Minecraft Bedrock Atmospheric Settings",
+	"description": " Defines Vibrant Visuals atmospheric effects such as horizon blending, scattering strength, and sky colors.",
+	"type": "object",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:atmosphere_settings"],
+	"properties": {
+		"format_version": {
+			"description": "The schema version used to parse these atmosphere settings.",
+			"enum": ["1.21.40"]
+		},
+		"minecraft:atmosphere_settings": {
+			"description": "The full atmosphere settings payload for Vibrant Visuals rendering.",
+			"$ref": "#/$defs/atmosphere_settings"
+		}
+	},
+	"$defs": {
+		"atmosphere_settings": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["description"],
+			"properties": {
+				"description": {
+					"description": "Metadata that identifies these atmosphere settings.",
+					"type": "object",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"description": "The identifier for these atmosphere settings. The identifier must include a namespace.",
+							"$ref": "../../../vanilla/definition/identifier.json"
+						}
+					}
+				},
+				"horizon_blend_stops": {
+					"description": "How the atmosphere is divided up across the horizon blend range.",
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"min": {
+							"description": "The minimum horizon height.",
+							"$ref": "#/$defs/optkeyframe_number"
+						},
+						"start": {
+							"description": "The height relative to the horizon where the zenith contribution will take over.",
+							"$ref": "#/$defs/optkeyframe_number"
+						},
+						"mie_start": {
+							"description": "The height relative to the horizon where Mie scattering begins.",
+							"$ref": "#/$defs/optkeyframe_number"
+						},
+						"max": {
+							"description": "The maximum horizon height.",
+							"$ref": "#/$defs/optkeyframe_number"
+						}
+					}
+				},
+				"rayleigh_strength": {
+					"description": "How strong the atmosphere's Rayleigh scattering term is.",
+					"$ref": "#/$defs/optkeyframe_number"
+				},
+				"sun_mie_strength": {
+					"description": "How strong the sun's Mie scattering term is.",
+					"$ref": "#/$defs/optkeyframe_number"
+				},
+				"moon_mie_strength": {
+					"description": "How strong the moon's Mie scattering term is.",
+					"$ref": "#/$defs/optkeyframe_number"
+				},
+				"sun_glare_shape": {
+					"description": "How the lobe of the Mie scattering is shaped.",
+					"$ref": "#/$defs/optkeyframe_number"
+				},
+				"sky_zenith_color": {
+					"description": "The RGB color of the zenith region of the atmosphere. Supports either an RGB array or a hexadecimal color string.",
+					"$ref": "#/$defs/optkeyframe_color"
+				},
+				"sky_horizon_color": {
+					"description": "The RGB color of the horizon region of the atmosphere. Supports either an RGB array or a hexadecimal color string.",
+					"$ref": "#/$defs/optkeyframe_color"
+				}
+			}
+		},
+		"optkeyframe_number": {
+			"oneOf": [
+				{
+					"type": "number"
+				},
+				{
+					"$ref": "#/$defs/keyframe_number"
+				}
+			]
+		},
+		"keyframe_number": {
+			"description": "A time-keyed numeric value collection where each key is a normalized time of day from 0.0 to 1.0.",
+			"type": "object",
+			"minProperties": 1,
+			"propertyNames": {
+				"pattern": "^\\d+(\\.\\d+)?$"
+			},
+			"additionalProperties": {
+				"type": "number"
+			}
+		},
+		"optkeyframe_color": {
+			"oneOf": [
+				{
+					"$ref": "#/$defs/color"
+				},
+				{
+					"$ref": "#/$defs/keyframe_color"
+				}
+			]
+		},
+		"keyframe_color": {
+			"description": "A time-keyed color value collection where each key is a normalized time of day from 0.0 to 1.0.",
+			"type": "object",
+			"minProperties": 1,
+			"propertyNames": {
+				"pattern": "^\\d+(\\.\\d+)?$"
+			},
+			"additionalProperties": {
+				"$ref": "#/$defs/color"
+			}
+		},
+		"color": {
+			"description": "A color value expressed as either an RGB array or a hexadecimal string.",
+			"oneOf": [
+				{
+					"type": "string",
+					"pattern": "^#([0-9a-fA-F]{6})$"
+				},
+				{
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"type": "number",
+						"minimum": 0,
+						"maximum": 255
+					}
+				}
+			]
+		}
+	}
+}

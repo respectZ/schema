@@ -57,6 +57,16 @@
 			},
 			{
 				"fileMatch": [
+					"resource_pack/atmospherics/**/*.{json,jsonc,json5}",
+					"*RP/atmospherics/**/*.{json,jsonc,json5}",
+					"RP_*/atmospherics/**/*.{json,jsonc,json5}",
+					"*rp/atmospherics/**/*.{json,jsonc,json5}",
+					"rp_*/atmospherics/**/*.{json,jsonc,json5}"
+				],
+				"url": "./schema/bedrock/client/atmospheric/_index.json"
+			},
+			{
+				"fileMatch": [
 					"resource_pack/attachables/**/*.{json,jsonc,json5}",
 					"*RP/attachables/**/*.{json,jsonc,json5}",
 					"RP_*/attachables/**/*.{json,jsonc,json5}",
