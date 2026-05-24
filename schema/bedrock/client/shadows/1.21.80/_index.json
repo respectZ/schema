@@ -1,0 +1,34 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/shadows/1.21.80/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Shadow Settings 1.21.80",
+	"description": "Shadow stylization settings for Vibrant Visuals. Controls whether shadows are blocky or soft.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:shadow_settings"],
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"description": "The 3-part schema version for parsing these shadow settings.",
+			"enum": ["1.21.80"]
+		},
+		"minecraft:shadow_settings": {
+			"type": "object",
+			"description": "The root object containing shadow stylization settings.",
+			"additionalProperties": false,
+			"properties": {
+				"shadow_style": {
+					"type": "string",
+					"description": "The type of shadows to use. Blocky shadows are pixelated and snapped to the texel grid. Soft shadows have a smooth falloff on edges.",
+					"enum": ["blocky_shadows", "soft_shadows"]
+				},
+				"texel_size": {
+					"type": "integer",
+					"description": "The resolution in texels to which shadows will be quantized. Recommended to use the same resolution as block texture assets (e.g. 16 for 16x16px textures).",
+					"default": 16,
+					"minimum": 1
+				}
+			}
+		}
+	}
+}

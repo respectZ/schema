@@ -197,6 +197,16 @@
 			},
 			{
 				"fileMatch": [
+					"resource_pack/shadows/global.{json,jsonc,json5}",
+					"*RP/shadows/global.{json,jsonc,json5}",
+					"RP_*/shadows/global.{json,jsonc,json5}",
+					"*rp/shadows/global.{json,jsonc,json5}",
+					"rp_*/shadows/global.{json,jsonc,json5}"
+				],
+				"url": "./schema/bedrock/client/shadows/_index.json"
+			},
+			{
+				"fileMatch": [
 					"resource_pack/sounds.{json,jsonc,json5}",
 					"*RP/sounds.{json,jsonc,json5}",
 					"RP_*/sounds.{json,jsonc,json5}",
