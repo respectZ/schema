@@ -43,10 +43,16 @@
 					}
 				},
 				"on_entry": {
-					"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+					"type": "array",
+					"items": {
+						"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+					}
 				},
 				"on_exit": {
-					"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+					"type": "array",
+					"items": {
+						"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+					}
 				},
 				"parameters": {
 					"type": "array",
