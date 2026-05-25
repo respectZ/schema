@@ -1,0 +1,173 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/render_controller/_index.json",
+	"type": "object",
+	"additionalProperties": false,
+	"required": ["format_version", "render_controllers"],
+	"properties": {
+		"format_version": {
+			"anyOf": [
+				{
+					"$ref": "../../../vanilla/definition/format_version.json"
+				},
+				{
+					"enum": ["1.8.0"]
+				}
+			]
+		},
+		"render_controllers": {
+			"type": "object",
+			"propertyNames": {
+				"pattern": "^controller\\.render\\..+$"
+			},
+			"additionalProperties": {
+				"$ref": "#/$defs/render_controller"
+			}
+		}
+	},
+	"$defs": {
+		"render_controller": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"arrays": {
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"geometries": {
+							"$ref": "#/$defs/array"
+						},
+						"materials": {
+							"$ref": "#/$defs/array"
+						},
+						"textures": {
+							"$ref": "#/$defs/array"
+						}
+					}
+				},
+				"color": {
+					"$ref": "#/$defs/color"
+				},
+				"filter_lighting": {
+					"type": "boolean"
+				},
+				"geometry": {
+					"$ref": "../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				"ignore_lighting": {
+					"type": "boolean"
+				},
+				"is_hurt_color": {
+					"$ref": "#/$defs/color"
+				},
+				"light_color_multiplier": {
+					"type": "number"
+				},
+				"materials": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"propertyNames": {
+							"pattern": "^[a-zA-Z0-9_.:*]+$"
+						},
+						"additionalProperties": {
+							"type": "string"
+						}
+					}
+				},
+				"on_fire_color": {
+					"$ref": "#/$defs/color"
+				},
+				"overlay_color": {
+					"$ref": "#/$defs/color"
+				},
+				"part_visibility": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"propertyNames": {
+							"pattern": "^[a-zA-Z0-9_.:*]+$"
+						},
+						"additionalProperties": {
+							"$ref": "../../../vanilla/definition/molang.json#/$defs/condition"
+						}
+					}
+				},
+				"rebuild_animation_matrices": {
+					"type": "boolean"
+				},
+				"textures": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"uv_anim": {
+					"$ref": "#/$defs/uv_anim"
+				}
+			}
+		},
+		"array": {
+			"type": "object",
+			"propertyNames": {
+				"pattern": "^[aA]rray\\.[a-zA-Z0-9_.:-]+$"
+			},
+			"additionalProperties": {
+				"type": "array",
+				"items": {
+					"$ref": "../../../vanilla/definition/molang.json#/$defs/string"
+				}
+			}
+		},
+		"color": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"r": {
+					"$ref": "#/$defs/molang_or_number"
+				},
+				"g": {
+					"$ref": "#/$defs/molang_or_number"
+				},
+				"b": {
+					"$ref": "#/$defs/molang_or_number"
+				},
+				"a": {
+					"$ref": "#/$defs/molang_or_number"
+				}
+			}
+		},
+		"molang_or_number": {
+			"oneOf": [
+				{
+					"$ref": "../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				{
+					"type": "number"
+				}
+			]
+		},
+		"uv_anim": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"offset": {
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {
+						"$ref": "#/$defs/molang_or_number"
+					}
+				},
+				"scale": {
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {
+						"$ref": "#/$defs/molang_or_number"
+					}
+				}
+			}
+		}
+	}
+}
