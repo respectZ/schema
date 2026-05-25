@@ -6,7 +6,7 @@
 	"required": ["format_version"],
 	"properties": {
 		"format_version": {
-			"enum": ["1.21.40", "1.21.70"]
+			"enum": ["1.21.40", "1.21.70", "1.21.80"]
 		}
 	},
 	"allOf": [
@@ -32,6 +32,18 @@
 			},
 			"then": {
 				"$ref": "./1.21.70/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.80"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.80/_index.json"
 			}
 		}
 	]
