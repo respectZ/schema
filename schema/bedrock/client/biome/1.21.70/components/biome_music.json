@@ -7,7 +7,7 @@
 	"additionalProperties": false,
 	"properties": {
 		"music_definition": {
-			"$ref": "../../../../vanilla/client/identifiers.json#/$defs/sound_identifier",
+			"$ref": "../../../../../vanilla/client/identifiers.json#/$defs/sound_identifier",
 			"description": "Music to be played when inside this biome. If left off or not found the default music will be determined by the dimension. Empty string will result in no music."
 		},
 		"volume_multiplier": {
