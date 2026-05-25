@@ -2,5 +2,5 @@
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"$id": "schema/vanilla/definition/format_version.json",
 	"type": "string",
-	"pattern": "^1\\.\\d+\\.\\d+$"
+	"pattern": "^1\\.\\d+\\(.\\d+)?$"
 }
