@@ -1,0 +1,137 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/crafting_item_catalog/_index.json",
+	"type": "object",
+	"required": [
+		"format_version",
+		"minecraft:crafting_items_catalog"
+	],
+	"additionalProperties": false,
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"enum": [
+				"1.21.60"
+			]
+		},
+		"minecraft:crafting_items_catalog": {
+			"$ref": "#/$defs/crafting_catalog_document"
+		}
+	},
+	"$defs": {
+		"crafting_catalog_document": {
+			"type": "object",
+			"title": "Crafting Catalog Document",
+			"description": "The root object for defining the crafting catalog.",
+			"required": [
+				"categories"
+			],
+			"additionalProperties": false,
+			"properties": {
+				"categories": {
+					"type": "array",
+					"description": "The categories we are adding groups to.",
+					"items": {
+						"$ref": "#/$defs/crafting_catalog_category"
+					}
+				}
+			}
+		},
+		"crafting_catalog_category": {
+			"type": "object",
+			"title": "Crafting Catalog Category",
+			"description": "Represents a collection of groups of items in a category.",
+			"required": [
+				"category_name",
+				"groups"
+			],
+			"additionalProperties": false,
+			"properties": {
+				"category_name": {
+					"title": "Crafting Catalog Item Category",
+					"type": "string",
+					"description": "The category that the items will go to. This is restricted to construction, nature, equipment, or items.",
+					"enum": [
+						"construction",
+						"nature",
+						"equipment",
+						"items"
+					]
+				},
+				"groups": {
+					"type": "array",
+					"description": "The groups that we are adding to a category.",
+					"items": {
+						"$ref": "#/$defs/crafting_catalog_group"
+					}
+				}
+			}
+		},
+		"crafting_catalog_group": {
+			"type": "object",
+			"title": "Crafting Catalog Group",
+			"description": "Represents a group of items. A group can be collapsible if it is provided with a group identifier, or added a set of loose items without an icon.",
+			"required": [
+				"items"
+			],
+			"additionalProperties": false,
+			"properties": {
+				"group_identifier": {
+					"$ref": "#/$defs/crafting_catalog_group_icon",
+					"description": "Optional field to give an icon and name to a group. Otherwise the items are added as loose items."
+				},
+				"items": {
+					"type": "array",
+					"description": "The items to add to the group.",
+					"items": {
+						"$ref": "#/$defs/crafting_catalog_item",
+						"description": "A single item or block."
+					}
+				}
+			}
+		},
+		"crafting_catalog_group_icon": {
+			"type": "object",
+			"title": "Crafting Catalog Group Icon",
+			"description": "The identifier of a group of items.",
+			"required": [
+				"name"
+			],
+			"additionalProperties": false,
+			"properties": {
+				"icon": {
+					"$ref": "#/$defs/crafting_catalog_item",
+					"description": "The item or block that represents the group."
+				},
+				"name": {
+					"$ref": "../../../vanilla/definition/identifier.json",
+					"description": "A localization key representing the name of the group that starts with a namespace. The 'minecraft' namespace is reserved for the Vanilla game."
+				}
+			}
+		},
+		"crafting_catalog_item": {
+			"title": "Crafting Catalog Item",
+			"description": "A single item or block.",
+			"oneOf": [
+				{
+					"$ref": "../../../vanilla/definition/identifier.json",
+					"description": "The name of an item or block in namespace:name format."
+				},
+				{
+					"type": "object",
+					"title": "Crafting Catalog Item Object",
+					"required": [
+						"name"
+					],
+					"additionalProperties": false,
+					"properties": {
+						"name": {
+							"$ref": "../../../vanilla/definition/identifier.json",
+							"description": "The name of an item or block. A namespace for the item is required. You can optionally provide an aux value for items that use it at the end. Example: namespace:my_item:1"
+						}
+					}
+				}
+			]
+		}
+	}
+}
