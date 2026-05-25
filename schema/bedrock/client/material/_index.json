@@ -1,0 +1,493 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/material/_index.json",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"materials": {
+			"patternProperties": {
+				"^version$": {
+					"const": "1.0.0"
+				}
+			},
+			"additionalProperties": {
+				"$ref": "#/$defs/material"
+			}
+		}
+	},
+	"$defs": {
+		"material": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"allOf": [
+				{
+					"$ref": "#/$defs/shader_field"
+				},
+				{
+					"$ref": "#/$defs/renderer_settings"
+				},
+				{
+					"$ref": "#/$defs/defines"
+				},
+				{
+					"$ref": "#/$defs/states"
+				},
+				{
+					"$ref": "#/$defs/depth"
+				},
+				{
+					"$ref": "#/$defs/blend_factor"
+				},
+				{
+					"$ref": "#/$defs/alpha_factor"
+				},
+				{
+					"type": "object",
+					"properties": {
+						"vertexFields": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"field": {
+										"type": "string",
+										"enum": ["Position", "Normal", "UV0", "UV1", "UV2", "Color", "BoneId0"]
+									}
+								}
+							}
+						},
+						"+variants": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"additionalProperties": {
+									"$ref": "#/$defs/material"
+								}
+							}
+						},
+						"variants": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"additionalProperties": {
+									"$ref": "#/$defs/material"
+								}
+							}
+						},
+						"primitiveMode": {
+							"type": "string",
+							"enum": ["None", "QuadList", "TriangleList", "TriangleStrip", "LineList", "Line"]
+						},
+						"+samplerStates": {
+							"$ref": "#/$defs/sampler_states"
+						},
+						"samplerStates": {
+							"$ref": "#/$defs/sampler_states"
+						},
+						"isAnimatedTexture": {
+							"type": "integer",
+							"minimum": 0,
+							"maximum": 1
+						}
+					}
+				}
+			]
+		},
+		"shader_field": {
+			"properties": {
+				"vertexShader": {
+					"type": "string",
+					"enum": [
+						"shaders/uv.vertex",
+						"shaders/color_uv.vertex",
+						"shaders/position.vertex",
+						"shaders/color.vertex",
+						"shaders/uv_time_rotate.vertex",
+						"shaders/uv_blend_flipbook.vertex",
+						"shaders/simple.vertex",
+						"shaders/cameraFacingSprite.vertex",
+						"shaders/entity.vertex",
+						"shaders/renderchunk.vertex",
+						"shaders/banner.vertex",
+						"shaders/pattern.vertex",
+						"shaders/cloud.vertex",
+						"shaders/hb_standard.vertex",
+						"shaders/hb_path.vertex",
+						"shaders/hb_renoir.vertex",
+						"shaders/hb_batched.vertex",
+						"shaders/particle_random_test.vertex",
+						"shaders/end_portal.vertex",
+						"shaders/sky.vertex",
+						"shaders/uv_repeat.vertex",
+						"shaders/uv_selection_overlay.vertex",
+						"shaders/selection_box.vertex",
+						"shaders/uv_scale.vertex",
+						"shaders/rain_snow.vertex"
+					]
+				},
+				"vrGeometryShader": {
+					"type": "string",
+					"enum": [
+						"shaders/uv.geometry",
+						"shaders/hologram_uv_stereo.geometry",
+						"shaders/color_uv.geometry",
+						"shaders/position.geometry",
+						"shaders/color.geometry",
+						"shaders/uv_blend.geometry",
+						"shaders/entity.geometry",
+						"shaders/renderchunk.geometry",
+						"shaders/banner.geometry",
+						"shaders/cloud.geometry",
+						"shaders/end_portal.geometry",
+						"shaders/sky.geometry",
+						"shaders/rain_snow.geometry"
+					]
+				},
+				"fragmentShader": {
+					"type": "string",
+					"enum": [
+						"shaders/texture_ccolor.fragment",
+						"shaders/texture.fragment",
+						"shaders/hologram_texture_stereo.fragment",
+						"shaders/color_texture.fragment",
+						"shaders/current_color.fragment",
+						"shaders/color.fragment",
+						"shaders/levelstage_copy_vr.fragment",
+						"shaders/flat_white.fragment",
+						"shaders/texture_blend.fragment",
+						"shaders/texture_raw_alphatest.fragment",
+						"shaders/text.fragment",
+						"shaders/renderchunk.fragment",
+						"shaders/entity.fragment",
+						"shaders/banner.fragment",
+						"shaders/pattern.fragment",
+						"shaders/passthru.fragment",
+						"shaders/hb_standard.fragment",
+						"shaders/hb_standard_circle.fragment",
+						"shaders/hb_standard_stroke_circle.fragment",
+						"shaders/hb_standard_ellipse.fragment",
+						"shaders/hb_standard_stroke_ellipse.fragment",
+						"shaders/hb_standard_texture.fragment",
+						"shaders/hb_standard_texture_with_color_matrix.fragment",
+						"shaders/hb_stencil.fragment",
+						"shaders/hb_stencil_circle.fragment",
+						"shaders/hb_stencil_texture.fragment",
+						"shaders/hb_stencil_path.fragment",
+						"shaders/hb_text.fragment",
+						"shaders/hb_text_sdf.fragment",
+						"shaders/hb_text_stroke_sdf.fragment",
+						"shaders/hb_blur.fragment",
+						"shaders/hb_path.fragment",
+						"shaders/hb_path_hairline.fragment",
+						"shaders/hb_yuv_2_rgb.fragment",
+						"shaders/hb_yuva_2_rgb.fragment",
+						"shaders/hb_hairline.fragment",
+						"shaders/hb_renoir.fragment",
+						"shaders/hb_batched.fragment",
+						"shaders/hb_textures_with_color_mix.fragment",
+						"shaders/end_portal.fragment",
+						"shaders/shadow_stencil_overlay.fragment",
+						"shaders/stars.fragment",
+						"shaders/color_grayscale.fragment",
+						"shaders/texture_cutout.fragment",
+						"shaders/rain_snow.fragment"
+					]
+				}
+			}
+		},
+		"renderer_settings": {
+			"type": "object",
+			"properties": {
+				"depthBias": {
+					"type": "number"
+				},
+				"slopeScaledDepthBias": {
+					"type": "number"
+				},
+				"msaaSupport": {
+					"enum": ["NonMSAA", "MSAA", "Both"]
+				},
+				"depthBiasOGL": {
+					"type": "number"
+				},
+				"slopeScaledDepthBiasOGL": {
+					"type": "number"
+				}
+			}
+		},
+		"defines": {
+			"type": "object",
+			"description": "This key specifies a list of macros that set options for this entity's shaders. Use +defines (prefix it with a +) to add options in a child material to the parent's options, or -defines (prefix it with a -) to remove options. ",
+			"properties": {
+				"-defines": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/define"
+					}
+				},
+				"+defines": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/define"
+					}
+				},
+				"defines": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/define"
+					}
+				}
+			}
+		},
+		"states": {
+			"type": "object",
+			"description": "Specifies options for the entity's renderers. As with defines, you may use +states to add options in a child material to the parent's options, or -states to remove them.",
+			"properties": {
+				"-states": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/state"
+					}
+				},
+				"+states": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/state"
+					}
+				},
+				"states": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/state"
+					}
+				}
+			}
+		},
+		"depth": {
+			"type": "object",
+			"properties": {
+				"depthFunc": {
+					"$ref": "#/$defs/depth_test"
+				},
+				"frontFace": {
+					"$ref": "#/$defs/face"
+				},
+				"backFace": {
+					"$ref": "#/$defs/face"
+				},
+				"stencilRefOverride": {
+					"type": "integer",
+					"default": 0,
+					"minimum": 0,
+					"maximum": 1
+				},
+				"stencilRef": {
+					"type": "integer"
+				},
+				"stencilReadMask": {
+					"type": "integer"
+				},
+				"stencilWriteMask": {
+					"type": "integer"
+				}
+			}
+		},
+		"face": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"stencilFunc": {
+					"$ref": "#/$defs/depth_test"
+				},
+				"stencilFailOp": {
+					"$ref": "#/$defs/stencil_op"
+				},
+				"stencilDepthFailOp": {
+					"$ref": "#/$defs/stencil_op"
+				},
+				"stencilPassOp": {
+					"$ref": "#/$defs/stencil_op"
+				},
+				"stencilPass": {
+					"$ref": "#/$defs/stencil_op"
+				},
+				"depthStencilFaceName": {
+					"type": "string"
+				}
+			}
+		},
+		"blend_factor": {
+			"type": "object",
+			"properties": {
+				"blendSrc": {
+					"$ref": "#/$defs/factor"
+				},
+				"blendDst": {
+					"$ref": "#/$defs/factor"
+				}
+			}
+		},
+		"alpha_factor": {
+			"type": "object",
+			"properties": {
+				"alphaSrc": {
+					"$ref": "#/$defs/factor"
+				},
+				"alphaDst": {
+					"$ref": "#/$defs/factor"
+				}
+			}
+		},
+		"sampler_states": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"samplerIndex": {
+						"type": "integer",
+						"minimum": 0
+					},
+					"textureWrap": {
+						"type": "string",
+						"enum": ["Repeat", "Clamp"]
+					},
+					"textureFilter": {
+						"type": "string",
+						"enum": ["Point", "Bilinear", "Trilinear", "MipMapBilinear", "TexelAA", "PCF"]
+					}
+				}
+			}
+		},
+		"factor": {
+			"type": "string",
+			"enum": [
+				"DestColor",
+				"SourceColor",
+				"Zero",
+				"One",
+				"OneMinusDestColor",
+				"OneMinusSrcColor",
+				"SourceAlpha",
+				"DestAlpha",
+				"OneMinusSrcAlpha"
+			]
+		},
+		"depth_test": {
+			"type": "string",
+			"enum": ["Always", "Equal", "Greater", "GreaterEqual", "Less", "NotEqual", "LessEqual"]
+		},
+		"stencil_op": {
+			"type": "string",
+			"enum": ["Keep", "Replace"]
+		},
+		"define": {
+			"anyOf": [
+				{ "const": "TINTED" },
+				{
+					"const": "ALPHA_TEST",
+					"description": "Uses the alpha channel for determining texture transparency level."
+				},
+				{ "const": "COLOR_SECOND_TEXTURE" },
+				{
+					"const": "COLOR_BASED",
+					"description": "A boolean value, either true (1) or false (0). When COLOR_BASED is true, it causes the albedo of a material to be multiplied with the vertex color."
+				},
+				{ "const": "DISABLE_TINTING" },
+				{ "const": "FANCY" },
+				{ "const": "ENABLE_FOG" },
+				{ "const": "ENABLE_LIGHT" },
+				{
+					"const": "GLINT",
+					"description": "Calculates a glint effect for textures rendered with this material, an effect that appears on enchanted items."
+				},
+				{ "const": "ITEM_IN_HAND" },
+				{
+					"const": "MULTI_COLOR_TINT",
+					"description": "When used, the material's albedo red and green components will be used as masks to mix two different colors. The material's albedo will then be replced with a bledn between the two colors, using the albedo's green component as an interpolation factor. albedo.rgb = mix(albedo.r * changeColor.rgb, albedo.g * multiplicativeTintColor.rgb, ceil(albedo.g))"
+				},
+				{ "const": "MULTIPLICATIVE_TINT" },
+				{ "const": "NO_TEXTURE" },
+				{ "const": "TINTED_ALPHA_TEST" },
+				{ "const": "UI_ENTITY" },
+				{
+					"const": "USE_COLOR_MASK",
+					"description": "Mix the entity's albedo RGB with a color-tinted version of the albedo, using the albedo's alpha value. albedo.rgb = mix(albedo.rgb, albedo.rgb * changeColor.rgb, albedo.a)"
+				},
+				{
+					"const": "USE_EMISSIVE",
+					"description": "Uses alpha channel for determining emissiveness. Requires USE_SKINNING to be enabled. (This will always be the case if you use Vanilla materials with emissiveness.)"
+				},
+				{ "const": "USE_MULTITEXTURE" },
+				{ "const": "MASKED_MULTITEXTURE" },
+				{ "const": "USE_ONLY_EMISSIVE" },
+				{
+					"const": "USE_OVERLAY",
+					"description": "Changes the overlay color to use high precision. This improves rendering on some devices."
+				},
+				{
+					"const": "USE_SKINNING",
+					"description": "This is deprecated on its own, but is used with USE_EMISSIVE, above."
+				},
+				{ "const": "USE_UV_ANIM" },
+				{ "const": "LINE_STRIP" },
+				{ "const": "USE_MASK" },
+				{ "const": "USE_COLOR_BLEND" },
+				{ "const": "MULTIPLICATIVE_TINT_COLOR" },
+				{ "const": "LOW_PRECISION" },
+				{ "const": "TEXEL_AA" },
+				{ "const": "ATLAS_TEXTURE" },
+				{ "const": "AS_ENTITY_RENDERER" },
+				{ "const": "SEASONS" },
+				{ "const": "BLEND" },
+				{ "const": "Blending" },
+				{ "const": "EFFECTS_OFFSET" },
+				{ "type": "string" }
+			]
+		},
+		"state": {
+			"anyOf": [
+				{
+					"const": "PolygonOffset"
+				},
+				{
+					"const": "Blending",
+					"description": "Enables a color-blending mode for translucent options. Materials may need to adjust the blending factor keys (blendSrc, blendDst, alphaSrc, alphaDst) to use this effectively. (If you're using Vanilla materials that include the Blending state, this is handled for you.)"
+				},
+				{
+					"const": "DisableDepthTest"
+				},
+				{
+					"const": "DisableCulling",
+					"description": "Normally parts of an entity model that aren't visible to the camera—and parts of the scene that the entity would block from the camera's view—are eliminated (or \"culled\") from the rendering pipeline when the model is rendered. Transparent or translucent materials, however, need to disable culling, so objects behind them are still rendered."
+				},
+				{
+					"const": "DisableColorWrite",
+					"description": "Removes all RGBA color information from color values."
+				},
+				{
+					"const": "DisableAlphaWrite",
+					"description": "Removes the alpha (transparency) channel from color values."
+				},
+				{
+					"const": "DisableDepthWrite"
+				},
+				{
+					"const": "StencilWrite"
+				},
+				{
+					"const": "InvertCulling"
+				},
+				{
+					"const": "EnableStencilTest"
+				},
+				{
+					"const": "EnableAlphaToCoverage"
+				},
+				{
+					"const": "Wireframe"
+				}
+			]
+		}
+	}
+}

@@ -177,6 +177,16 @@
 			},
 			{
 				"fileMatch": [
+					"resource_pack/materials/*.material",
+					"*RP/materials/*.material",
+					"RP_*/materials/*.material",
+					"*rp/materials/*.material",
+					"rp_*/materials/*.material"
+				],
+				"url": "./schema/bedrock/client/material/_index.json"
+			},
+			{
+				"fileMatch": [
 					"resource_pack/particles/**/*.{json,jsonc,json5}",
 					"*RP/particles/**/*.{json,jsonc,json5}",
 					"RP_*/particles/**/*.{json,jsonc,json5}",
