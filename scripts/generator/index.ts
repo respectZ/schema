@@ -1,4 +1,4 @@
-import { MinecraftBlockTypes } from "@minecraft/vanilla-data";
+import { MinecraftBlockTypes, MinecraftItemTypes } from "@minecraft/vanilla-data";
 import path from "path/posix";
 import { createSchema, writeJson } from "../utils";
 import { generateClientPaths } from "./client";
@@ -256,6 +256,7 @@ const entries: Entry[] = [
 		filepath: "vanilla/server/identifiers.json",
 		content: async () => {
 			const blockIdentifiers = Object.values(MinecraftBlockTypes);
+			const itemIdentifiers = await Object.values(MinecraftItemTypes);
 			return {
 				$defs: {
 					block_identifier: {
@@ -266,6 +267,17 @@ const entries: Entry[] = [
 							},
 							{
 								enum: blockIdentifiers,
+							},
+						],
+					},
+					item_identifier: {
+						anyOf: [
+							{
+								type: "string",
+								maxLength: 256,
+							},
+							{
+								enum: itemIdentifiers,
 							},
 						],
 					},
