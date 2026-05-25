@@ -1,0 +1,87 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/geometry/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Geometry File",
+	"description": "Schema for geometry model files used by the Minecraft resource pack.",
+	"required": ["format_version"],
+	"properties": {
+		"format_version": {
+			"enum": ["1.8.0", "1.12.0", "1.14.0", "1.16.0", "1.19.30", "1.21.0", "1.26.10"]
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.8.0"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.8.0/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.12.0"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.12.0/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.14.0"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.14.0/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.16.0"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.16.0/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.19.30"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.19.30/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.0"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.0/_index.json"
+			}
+		}
+	]
+}

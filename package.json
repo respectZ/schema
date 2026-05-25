@@ -217,6 +217,16 @@
 			},
 			{
 				"fileMatch": [
+					"resource_pack/models/**/*.geo.{json,jsonc,json5}",
+					"*RP/models/**/*.geo.{json,jsonc,json5}",
+					"RP_*/models/**/*.geo.{json,jsonc,json5}",
+					"*rp/models/**/*.geo.{json,jsonc,json5}",
+					"rp_*/models/**/*.geo.{json,jsonc,json5}"
+				],
+				"url": "./schema/bedrock/client/geometry/_index.json"
+			},
+			{
+				"fileMatch": [
 					"resource_pack/particles/**/*.{json,jsonc,json5}",
 					"*RP/particles/**/*.{json,jsonc,json5}",
 					"RP_*/particles/**/*.{json,jsonc,json5}",

@@ -74,6 +74,10 @@ const RP_ENTRIES: JsonValidationEntry[] = [
 		url: "./schema/bedrock/client/flipbook_textures/_index.json",
 	},
 	{
+		fileMatch: "models/**/*.geo.{json,jsonc,json5}",
+		url: "./schema/bedrock/client/geometry/_index.json",
+	},
+	{
 		fileMatch: "fogs/**/*.{json,jsonc,json5}",
 		url: "./schema/bedrock/client/fog/_index.json",
 	},
