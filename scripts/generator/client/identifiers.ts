@@ -51,6 +51,11 @@ export async function generateClientIdentifiers() {
 			};
 		},
 	});
+	const [individualNamedSoundIdentifiers] = await getBedrockJSON<Sounds, string[]>({
+		type: "rp",
+		pattern: "{sounds.json}",
+		transform: (content) => Object.keys(content.individual_named_sounds.sounds),
+	});
 	const [soundIdentifiers] = await getBedrockJSON<SoundIdentifiers, string[]>({
 		type: "rp",
 		pattern: "sounds/{sound_definitions.json}",
@@ -159,6 +164,7 @@ export async function generateClientIdentifiers() {
 	return {
 		particleIdentifiers,
 		soundEventIdentifiers,
+		individualNamedSoundIdentifiers,
 		soundIdentifiers,
 		terrainTextureIdentifiers,
 		materialIdentifiers,

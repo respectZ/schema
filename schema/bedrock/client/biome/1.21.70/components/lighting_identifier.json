@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/biome/1.21.70/components/lighting_identifier.json",
+	"type": "object",
+	"title": "minecraft:lighting_identifier",
+	"description": "Set the identifier used for lighting in Vibrant Visuals mode. Identifiers must resolve to identifiers in valid Lighting JSON schemas under the \"lighting\" directory. Biomes without this component will have default lighting settings.",
+	"additionalProperties": false,
+	"required": ["lighting_identifier"],
+	"properties": {
+		"lighting_identifier": {
+			"$ref": "../../../../../vanilla/client/identifiers.json#/$defs/lighting_identifier",
+			"description": "Identifier of lighting definition to use"
+		}
+	}
+}

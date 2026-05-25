@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/biome/1.21.70/components/dry_foliage_color.json",
+	"type": "object",
+	"title": "minecraft:dry_foliage_color",
+	"description": "Set the dry foliage color used during rendering. Biomes without this component will have default dry foliage color behavior.",
+	"additionalProperties": false,
+	"required": ["color"],
+	"properties": {
+		"color": {
+			"$ref": "../../_shared.json#/$defs/color_rgb_255",
+			"description": "RGB color of dry foliage"
+		}
+	}
+}

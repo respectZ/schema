@@ -38,6 +38,10 @@ const RP_ENTRIES: JsonValidationEntry[] = [
 		url: "./schema/bedrock/client/attachable/_index.json",
 	},
 	{
+		fileMatch: "biomes/**/*.{json,jsonc,json5}",
+		url: "./schema/bedrock/client/biome/_index.json",
+	},
+	{
 		fileMatch: "cubemaps/**/*.{json,jsonc,json5}",
 		url: "./schema/bedrock/client/cubemap/_index.json",
 	},

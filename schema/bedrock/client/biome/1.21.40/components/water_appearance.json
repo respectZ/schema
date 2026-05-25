@@ -1,0 +1,21 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/biome/1.21.40/components/water_appearance.json",
+
+	"type": "object",
+	"title": "minecraft:water_appearance",
+	"description": "Set the water surface color used during rendering. Biomes without this component will have default water surface color behavior.",
+	"additionalProperties": false,
+	"properties": {
+		"surface_color": {
+			"$ref": "../../_shared.json#/$defs/color_rgb_255",
+			"description": "RGB color of the water surface"
+		},
+		"surface_opacity": {
+			"type": "number",
+			"description": "Opacity of the water surface (must be between 0 for invisible and 1 for opaque, inclusive)",
+			"minimum": 0,
+			"maximum": 1
+		}
+	}
+}

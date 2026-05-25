@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/biome/1.21.40/components/biome_music.json",
+	"type": "object",
+	"title": "minecraft:biome_music",
+	"description": "Affect how music plays within the biome",
+	"additionalProperties": false,
+	"properties": {
+		"volume_multiplier": {
+			"type": "number",
+			"description": "Multiplier temporarily and gradually applied to music volume when within this biome. Must be a value between 0 and 1, inclusive.",
+			"minimum": 0,
+			"maximum": 1
+		}
+	}
+}

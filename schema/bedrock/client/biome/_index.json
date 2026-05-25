@@ -1,0 +1,38 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/biome/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Client Biome Settings",
+	"required": ["format_version"],
+	"properties": {
+		"format_version": {
+			"enum": ["1.21.40", "1.21.70"]
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.40"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.40/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.70"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.70/_index.json"
+			}
+		}
+	]
+}

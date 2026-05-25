@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/biome/1.21.40/components/fog_appearance.json",
+	"type": "object",
+	"title": "minecraft:fog_appearance",
+	"description": "Set the fog settings used during rendering. Biomes without this component will have default fog settings.",
+	"additionalProperties": false,
+	"required": ["fog_identifier"],
+	"properties": {
+		"fog_identifier": {
+			"$ref": "../../../../../vanilla/client/identifiers.json#/$defs/fog_identifier",
+			"description": "Identifier of fog definition to use"
+		}
+	}
+}

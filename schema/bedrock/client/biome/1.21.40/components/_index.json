@@ -1,0 +1,31 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/biome/1.21.40/components/_index.json",
+	"type": "object",
+	"title": "Client Biome Components",
+	"description": "Any components that this Client Biome uses",
+	"additionalProperties": false,
+	"properties": {
+		"minecraft:ambient_sounds": {
+			"$ref": "./ambient_sounds.json"
+		},
+		"minecraft:biome_music": {
+			"$ref": "./biome_music.json"
+		},
+		"minecraft:fog_appearance": {
+			"$ref": "./fog_appearance.json"
+		},
+		"minecraft:foliage_appearance": {
+			"$ref": "./foliage_appearance.json"
+		},
+		"minecraft:grass_appearance": {
+			"$ref": "./grass_appearance.json"
+		},
+		"minecraft:sky_color": {
+			"$ref": "./sky_color.json"
+		},
+		"minecraft:water_appearance": {
+			"$ref": "./water_appearance.json"
+		}
+	}
+}
