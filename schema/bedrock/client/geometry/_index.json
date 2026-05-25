@@ -1,0 +1,27 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/geometry/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Geometry File",
+	"description": "Schema for geometry model files used by the Minecraft resource pack.",
+	"required": ["format_version"],
+	"properties": {
+		"format_version": {
+			"enum": ["1.8.0"]
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.8.0"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.8.0/_index.json"
+			}
+		}
+	]
+}

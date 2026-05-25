@@ -1,0 +1,336 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/geometry/1.8.0/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Geometry 1.8.0",
+	"description": "A geometry file for version 1.8.0 of the Minecraft resource pack.",
+	"additionalProperties": false,
+	"required": ["format_version"],
+	"properties": {
+		"debug": {
+			"type": "boolean",
+			"description": "Enables debug mode for the geometry file."
+		},
+		"format_version": {
+			"type": "string",
+			"enum": ["1.8.0"]
+		}
+	},
+	"patternProperties": {
+		"^geometry\\.[a-zA-Z0-9_.'-:]+$": {
+			"$ref": "#/$defs/geometry"
+		}
+	},
+	"$defs": {
+		"geometry": {
+			"type": "object",
+			"title": "Geometry Definition",
+			"description": "A named geometry model definition.",
+			"additionalProperties": false,
+			"properties": {
+				"debug": {
+					"type": "boolean",
+					"description": "Enables debug mode for this model."
+				},
+				"cape": {
+					"type": "string",
+					"description": "The name of the cape to use for this model."
+				},
+				"visible_bounds_width": {
+					"type": "number",
+					"description": "Width of the visible bounds of the model."
+				},
+				"visible_bounds_height": {
+					"type": "number",
+					"description": "Height of the visible bounds of the model."
+				},
+				"visible_bounds_offset": {
+					"type": "array",
+					"description": "Offset of the visible bounds of the model.",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"type": "number"
+					}
+				},
+				"texturewidth": {
+					"type": "integer",
+					"description": "Width of the texture used by the model."
+				},
+				"textureheight": {
+					"type": "integer",
+					"description": "Height of the texture used by the model."
+				},
+				"bones": {
+					"type": "array",
+					"description": "The bones that make up the model.",
+					"items": {
+						"$ref": "#/$defs/bone"
+					}
+				}
+			}
+		},
+		"bone": {
+			"type": "object",
+			"title": "Bone",
+			"description": "A bone in the model hierarchy.",
+			"additionalProperties": false,
+			"required": ["name"],
+			"properties": {
+				"name": {
+					"type": "string",
+					"description": "The name of the bone."
+				},
+				"reset": {
+					"type": "boolean",
+					"description": "Sets the bone rotation to its bind pose."
+				},
+				"neverRender": {
+					"type": "boolean",
+					"description": "Whether the bone should never be rendered."
+				},
+				"parent": {
+					"type": "string",
+					"description": "The name of the parent bone."
+				},
+				"pivot": {
+					"type": "array",
+					"description": "The pivot point of the bone.",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"type": "number"
+					}
+				},
+				"rotation": {
+					"type": "array",
+					"description": "The rotation of the bone.",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"type": "number"
+					}
+				},
+				"bind_pose_rotation": {
+					"type": "array",
+					"description": "The bind pose rotation of the bone.",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"type": "number"
+					}
+				},
+				"mirror": {
+					"type": "boolean",
+					"description": "Whether the bone is mirrored."
+				},
+				"inflate": {
+					"type": "number",
+					"description": "Inflation amount applied to all cubes in the bone."
+				},
+				"debug": {
+					"type": "boolean",
+					"description": "Enables debug mode for this bone."
+				},
+				"render_group_id": {
+					"type": "integer",
+					"minimum": 0,
+					"description": "Assigns the bone to a render group. Higher values render later."
+				},
+				"cubes": {
+					"type": "array",
+					"description": "The cubes that make up the bone.",
+					"items": {
+						"$ref": "#/$defs/cube"
+					}
+				},
+				"locators": {
+					"type": "object",
+					"description": "Locators for the bone, keyed by identifier.",
+					"additionalProperties": {
+						"type": "array",
+						"minItems": 3,
+						"maxItems": 3,
+						"items": {
+							"type": "number"
+						}
+					}
+				},
+				"poly_mesh": {
+					"$ref": "#/$defs/poly_mesh"
+				},
+				"texture_meshes": {
+					"type": "array",
+					"description": "Texture meshes for the bone.",
+					"items": {
+						"$ref": "#/$defs/texture_mesh"
+					}
+				}
+			}
+		},
+		"cube": {
+			"type": "object",
+			"title": "Cube",
+			"description": "A cube in a bone.",
+			"additionalProperties": false,
+			"properties": {
+				"origin": {
+					"type": "array",
+					"description": "The origin of the cube.",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"type": "number"
+					}
+				},
+				"size": {
+					"type": "array",
+					"description": "The size of the cube.",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"type": "number"
+					}
+				},
+				"uv": {
+					"type": "array",
+					"description": "The UV coordinates of the cube.",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {
+						"type": "number"
+					}
+				},
+				"inflate": {
+					"type": "number",
+					"description": "Inflation amount for the cube."
+				},
+				"mirror": {
+					"type": "boolean",
+					"description": "Whether the cube is mirrored."
+				}
+			}
+		},
+		"poly_mesh": {
+			"type": "object",
+			"title": "Poly Mesh",
+			"description": "A polygonal mesh for the bone.",
+			"additionalProperties": false,
+			"properties": {
+				"normalized_uvs": {
+					"type": "boolean",
+					"description": "Whether the UVs are normalized."
+				},
+				"positions": {
+					"type": "array",
+					"description": "The vertex positions.",
+					"items": {
+						"type": "array",
+						"minItems": 3,
+						"maxItems": 3,
+						"items": {
+							"type": "number"
+						}
+					}
+				},
+				"normals": {
+					"type": "array",
+					"description": "The vertex normals.",
+					"items": {
+						"type": "array",
+						"minItems": 3,
+						"maxItems": 3,
+						"items": {
+							"type": "number"
+						}
+					}
+				},
+				"uvs": {
+					"type": "array",
+					"description": "The vertex UVs.",
+					"items": {
+						"type": "array",
+						"minItems": 2,
+						"maxItems": 2,
+						"items": {
+							"type": "number"
+						}
+					}
+				},
+				"polys": {
+					"oneOf": [
+						{
+							"type": "string",
+							"enum": ["tri_list", "quad_list"]
+						},
+						{
+							"type": "array",
+							"items": {
+								"type": "array",
+								"minItems": 3,
+								"maxItems": 4,
+								"items": {
+									"type": "array",
+									"minItems": 3,
+									"maxItems": 3,
+									"items": {
+										"type": "number"
+									}
+								}
+							}
+						}
+					]
+				}
+			}
+		},
+		"texture_mesh": {
+			"type": "object",
+			"title": "Texture Mesh",
+			"description": "A texture mesh for the bone.",
+			"additionalProperties": false,
+			"required": ["texture"],
+			"properties": {
+				"texture": {
+					"type": "string",
+					"description": "The texture to use for this mesh."
+				},
+				"position": {
+					"type": "array",
+					"description": "The position of the mesh.",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"type": "number"
+					}
+				},
+				"local_pivot": {
+					"type": "array",
+					"description": "The local pivot of the mesh.",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"type": "number"
+					}
+				},
+				"rotation": {
+					"type": "array",
+					"description": "The rotation of the mesh.",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"type": "number"
+					}
+				},
+				"scale": {
+					"type": "array",
+					"description": "The scale of the mesh.",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"type": "number"
+					}
+				}
+			}
+		}
+	}
+}
