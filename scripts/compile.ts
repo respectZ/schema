@@ -10,6 +10,10 @@ const BP_ENTRIES: JsonValidationEntry[] = [
 		fileMatch: "manifest.{json,jsonc,json5}",
 		url: "./schema/bedrock/shared/manifest/_index.json",
 	},
+	{
+		fileMatch: "shapes/**/*.{json,jsonc,json5}",
+		url: "./schema/bedrock/client/voxel/_index.json",
+	},
 ];
 
 const RP_ENTRIES: JsonValidationEntry[] = [

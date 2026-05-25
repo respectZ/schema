@@ -1,0 +1,78 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/voxel/1.21.110/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Voxel Shape 1.21.110",
+	"description": "A voxel shape definition for a behavior pack.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:voxel_shape"],
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"enum": ["1.21.110"]
+		},
+		"minecraft:voxel_shape": {
+			"type": "object",
+			"title": "Voxel Shape Definition",
+			"description": "Defines a voxel shape using axis-aligned bounding boxes for face culling.",
+			"additionalProperties": false,
+			"required": ["description", "shape"],
+			"properties": {
+				"description": {
+					"type": "object",
+					"title": "Voxel Shape Description",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "Identifier for the voxel shape, in namespace:name format."
+						}
+					}
+				},
+				"shape": {
+					"type": "object",
+					"title": "Shape",
+					"description": "The shape definition containing bounding boxes.",
+					"additionalProperties": false,
+					"required": ["boxes"],
+					"properties": {
+						"boxes": {
+							"type": "array",
+							"description": "Array of up to 32 axis-aligned bounding boxes that define the shape.",
+							"minItems": 1,
+							"maxItems": 32,
+							"items": {
+								"type": "object",
+								"title": "Bounding Box",
+								"description": "An axis-aligned bounding box defined by minimum and maximum corners.",
+								"additionalProperties": false,
+								"required": ["min", "max"],
+								"properties": {
+									"min": {
+										"type": "array",
+										"description": "Minimum corner coordinates (x, y, z) in pixels. Must be less than max for each axis.",
+										"minItems": 3,
+										"maxItems": 3,
+										"items": {
+											"type": "integer"
+										}
+									},
+									"max": {
+										"type": "array",
+										"description": "Maximum corner coordinates (x, y, z) in pixels. Must be greater than min for each axis.",
+										"minItems": 3,
+										"maxItems": 3,
+										"items": {
+											"type": "integer"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
