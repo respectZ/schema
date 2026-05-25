@@ -1,6 +1,6 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/voxel/1.21.110/_index.json",
+	"$id": "schema/bedrock/server/voxel/1.21.110/_index.json",
 	"type": "object",
 	"title": "Minecraft Bedrock Voxel Shape 1.21.110",
 	"description": "A voxel shape definition for a behavior pack.",

@@ -12,7 +12,7 @@ const BP_ENTRIES: JsonValidationEntry[] = [
 	},
 	{
 		fileMatch: "shapes/**/*.{json,jsonc,json5}",
-		url: "./schema/bedrock/client/voxel/_index.json",
+		url: "./schema/bedrock/server/voxel/_index.json",
 	},
 ];
 
