@@ -1,0 +1,26 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/biome/1.21.110/components/precipitation.json",
+	"type": "object",
+	"title": "minecraft:precipitation",
+	"description": "Describes the visuals for a biome's precipitation. Biomes without this component will have default values. At most one precipitation type can be set for a biome.",
+	"additionalProperties": false,
+	"properties": {
+		"ash": {
+			"type": "number",
+			"description": "Density of ash precipitation visuals"
+		},
+		"blue_spores": {
+			"type": "number",
+			"description": "Density of blue spore precipitation visuals"
+		},
+		"red_spores": {
+			"type": "number",
+			"description": "Density of blue spore precipitation visuals"
+		},
+		"white_ash": {
+			"type": "number",
+			"description": "Density of white ash precipitation visuals"
+		}
+	}
+}
