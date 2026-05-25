@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/biome/1.21.130/components/cubemap_identifier.json",
+	"type": "object",
+	"title": "minecraft:cubemap_identifier",
+	"description": "Set the identifier used for cubemap in Vibrant Visuals mode. Identifiers must resolve to identifiers in valid Cubemap JSON schemas under the \"cubemaps\" directory. Biomes without this component will have default cubemap settings.",
+	"additionalProperties": false,
+	"required": ["cubemap_identifier"],
+	"properties": {
+		"cubemap_identifier": {
+			"type": "string",
+			"description": "Identifier of cubemap definition to use"
+		}
+	}
+}
