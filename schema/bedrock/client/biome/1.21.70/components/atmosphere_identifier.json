@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/biome/1.21.70/components/atmosphere_identifier.json",
+	"type": "object",
+	"title": "minecraft:atmosphere_identifier",
+	"description": "Set the identifier used for atmospherics in Vibrant Visuals mode. Identifiers must resolve to identifiers in valid Atmospheric Scattering JSON schemas under the \"atmospherics\" directory. Biomes without this component will have default atmosphere settings.",
+	"additionalProperties": false,
+	"required": ["atmosphere_identifier"],
+	"properties": {
+		"atmosphere_identifier": {
+			"$ref": "../../../../../vanilla/client/identifiers.json#/$defs/atmosphere_identifier",
+			"description": "Identifier of atmosphere definition to use"
+		}
+	}
+}

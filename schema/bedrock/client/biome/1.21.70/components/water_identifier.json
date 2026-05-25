@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/biome/1.21.70/components/water_identifier.json",
+	"type": "object",
+	"title": "minecraft:water_identifier",
+	"description": "Set the identifier used for rendering water in Vibrant Visuals mode. Identifiers must resolve to identifiers in valid Water JSON schemas under the \"water\" directory. Biomes without this component will have default water settings.",
+	"additionalProperties": false,
+	"required": ["water_identifier"],
+	"properties": {
+		"water_identifier": {
+			"$ref": "../../../../../vanilla/client/identifiers.json#/$defs/water_identifier",
+			"description": "Identifier of water definition to use"
+		}
+	}
+}

@@ -1,0 +1,33 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/biome/1.21.40/components/grass_appearance.json",
+	"type": "object",
+	"title": "minecraft:grass_appearance",
+	"description": "Set the grass color or color map used during rendering. Biomes without this component will have default grass appearance.",
+	"additionalProperties": false,
+	"properties": {
+		"color": {
+			"description": "RGB color of grass.",
+			"oneOf": [
+				{
+					"$ref": "../../_shared.json#/$defs/color_rgb_255"
+				},
+				{
+					"type": "object",
+					"title": "Grass Color Map",
+					"description": "Object specifying a color map for grass instead of a specific color.",
+					"additionalProperties": false,
+					"required": ["color_map"],
+					"properties": {
+						"color_map": {
+							"title": "Grass Colormap",
+							"type": "string",
+							"description": "Color map from textures/colormap to determine color of grass.",
+							"enum": ["grass", "swamp_grass"]
+						}
+					}
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/biome/_shared.json",
+	"$defs": {
+		"color_rgb_255": {
+			"title": "Color255RGB",
+			"oneOf": [
+				{
+					"type": "string",
+					"pattern": "^#[a-fA-F0-9]{6}$"
+				},
+				{
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"type": "integer"
+					}
+				}
+			]
+		}
+	}
+}

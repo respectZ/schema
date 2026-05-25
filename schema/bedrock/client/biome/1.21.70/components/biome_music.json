@@ -1,0 +1,20 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/biome/1.21.70/components/biome_music.json",
+	"type": "object",
+	"title": "minecraft:biome_music",
+	"description": "Affect how music plays within the biome",
+	"additionalProperties": false,
+	"properties": {
+		"music_definition": {
+			"$ref": "../../../../../vanilla/client/identifiers.json#/$defs/sound_identifier",
+			"description": "Music to be played when inside this biome. If left off or not found the default music will be determined by the dimension. Empty string will result in no music."
+		},
+		"volume_multiplier": {
+			"type": "number",
+			"description": "Multiplier temporarily and gradually applied to music volume when within this biome. Must be a value between 0 and 1, inclusive.",
+			"minimum": 0,
+			"maximum": 1
+		}
+	}
+}

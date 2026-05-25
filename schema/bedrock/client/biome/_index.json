@@ -1,0 +1,119 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/biome/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Client Biome Settings",
+	"required": ["format_version"],
+	"properties": {
+		"format_version": {
+			"enum": [
+				"1.21.40",
+				"1.21.70",
+				"1.21.80",
+				"1.21.90",
+				"1.21.100",
+				"1.21.110",
+				"1.21.120",
+				"1.21.130"
+			]
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.40"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.40/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.70"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.70/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.80"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.80/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.90"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.90/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.100"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.100/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.110"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.110/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.120"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.120/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.130"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.130/_index.json"
+			}
+		}
+	]
+}

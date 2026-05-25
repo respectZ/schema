@@ -44,6 +44,7 @@ const entries: Entry[] = [
 			const {
 				particleIdentifiers,
 				soundEventIdentifiers,
+				individualNamedSoundIdentifiers,
 				soundIdentifiers,
 				terrainTextureIdentifiers,
 				materialIdentifiers,
@@ -84,6 +85,9 @@ const entries: Entry[] = [
 					},
 					sound_event_identifier: {
 						enum: soundEventIdentifiers.events,
+					},
+					individual_named_sound_identifier: {
+						enum: individualNamedSoundIdentifiers,
 					},
 					block_sound_identifier: {
 						anyOf: [
