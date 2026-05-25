@@ -1,0 +1,46 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/client/biomes_client/_index.json",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"biomes": {
+			"type": "object",
+			"additionalProperties": {
+				"$ref": "#/$defs/config"
+			}
+		}
+	},
+	"$defs": {
+		"config": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"water_surface_color": {
+					"$ref": "#/$defs/color"
+				},
+				"water_surface_transparency": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1
+				},
+				"fog_identifier": {
+					"$ref": "../../../vanilla/client/identifiers.json#/$defs/fog_identifier"
+				},
+				"remove_all_prior_fog": {
+					"type": "boolean",
+					"description": "If set to true, all previous fog definitions in resource packs before the current pack will be cleared, effectively making the current resource pack the new starting point for all fogs."
+				},
+				"inherit_from_prior_fog": {
+					"type": "boolean",
+					"description": "If set to true, the fog_identifier tags from all matching biomes will be combined and create a new merged fog definition for that biome."
+				}
+			}
+		},
+		"color": {
+			"type": "string",
+			"description": "A hexadecimal color code in the format #RRGGBB.",
+			"pattern": "^#([0-9a-fA-F]{6})$"
+		}
+	}
+}
