@@ -1,0 +1,112 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/aim_assist_categories/1.21.50/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Aim Assist Categories 1.21.50",
+	"description": "A camera aim-assist categories definition for a behavior pack.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:aim_assist_categories"],
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"enum": ["1.21.50"]
+		},
+		"minecraft:aim_assist_categories": {
+			"$ref": "#/$defs/camera_aim_assist_categories_definition"
+		}
+	},
+	"$defs": {
+		"camera_aim_assist_categories_definition": {
+			"type": "object",
+			"title": "Camera Aim Assist Categories Definition",
+			"description": "A single Camera Aim-Assist Categories Definition.",
+			"required": ["categories"],
+			"additionalProperties": false,
+			"properties": {
+				"categories": {
+					"type": "array",
+					"description": "List of categories used by Camera Aim-Assist 'minecraft:aim_assist_preset'.",
+					"items": {
+						"$ref": "#/$defs/camera_aim_assist_category_definition"
+					}
+				}
+			}
+		},
+		"camera_aim_assist_category_definition": {
+			"type": "object",
+			"title": "Camera Aim Assist Category Definition",
+			"description": "A single aim-assist category used during lookup.",
+			"required": ["name", "priorities"],
+			"additionalProperties": false,
+			"properties": {
+				"name": {
+					"type": "string",
+					"description": "Name of the Aim-Assist Category used during lookup."
+				},
+				"priorities": {
+					"$ref": "#/$defs/camera_aim_assist_category_priorities"
+				}
+			}
+		},
+		"camera_aim_assist_category_priorities": {
+			"type": "object",
+			"title": "Camera Aim Assist Category Priorities",
+			"description": "The set of priorities used when determining aim-assist selection.",
+			"additionalProperties": false,
+			"properties": {
+				"block_default": {
+					"type": "integer",
+					"description": "Optional. Default Aim-Assist targeting priority used for Blocks not found in 'blocks'."
+				},
+				"entity_default": {
+					"type": "integer",
+					"description": "Optional. Default Aim-Assist targeting priority used for Entities not found in 'entities'."
+				},
+				"blocks": {
+					"type": "object",
+					"description": "Optional. Map of Block identifiers to Aim-Assist targeting priority. Larger numbers have greater priority.",
+					"propertyNames": {
+						"$ref": "../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
+					},
+					"additionalProperties": {
+						"type": "integer",
+						"description": "Aim-Assist targeting priority."
+					}
+				},
+				"entities": {
+					"type": "object",
+					"description": "Optional. Map of Entity identifiers to Aim-Assist targeting priority. Larger numbers have greater priority.",
+					"propertyNames": {
+						"$ref": "../../../../vanilla/definition/identifier.json"
+					},
+					"additionalProperties": {
+						"type": "integer",
+						"description": "Aim-Assist targeting priority."
+					}
+				},
+				"block_tags": {
+					"type": "object",
+					"description": "Optional. Map of Block tags to Aim-Assist targeting priority. Larger numbers have greater priority.",
+					"propertyNames": {
+						"$ref": "../../../../vanilla/server/tags.json#/$defs/block_tag"
+					},
+					"additionalProperties": {
+						"type": "integer",
+						"description": "Aim-Assist targeting priority."
+					}
+				},
+				"entity_type_families": {
+					"type": "object",
+					"description": "Optional. Map of Entity type families to Aim-Assist targeting priority. Larger numbers have greater priority.",
+					"propertyNames": {
+						"$ref": "../../../../vanilla/server/type_family.json"
+					},
+					"additionalProperties": {
+						"type": "integer",
+						"description": "Aim-Assist targeting priority."
+					}
+				}
+			}
+		}
+	}
+}

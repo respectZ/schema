@@ -23,6 +23,10 @@ const BP_ENTRIES: JsonValidationEntry[] = [
 		url: "./schema/bedrock/server/voxel/_index.json",
 	},
 	{
+		fileMatch: "aim_assist/categories/**/*.{json,jsonc,json5}",
+		url: "./schema/bedrock/server/aim_assist_categories/_index.json",
+	},
+	{
 		fileMatch: "aim_assist/presets/**/*.{json,jsonc,json5}",
 		url: "./schema/bedrock/server/aim_assist/_index.json",
 	},

@@ -1,0 +1,33 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/aim_assist_categories/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Aim Assist Categories File",
+	"description": "Schema for aim assist categories definition files used by behavior packs.",
+	"required": [
+		"format_version"
+	],
+	"properties": {
+		"format_version": {
+			"enum": [
+				"1.21.50"
+			]
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": [
+							"1.21.50"
+						]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.50/_index.json"
+			}
+		}
+	]
+}
