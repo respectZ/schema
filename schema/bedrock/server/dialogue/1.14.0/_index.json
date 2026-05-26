@@ -1,0 +1,117 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/dialogue/1.14.0/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock NPC Dialogue 1.14.0",
+	"description": "An NPC dialogue definition document for a behavior pack.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:npc_dialogue"],
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"enum": ["1.14.0"]
+		},
+		"minecraft:npc_dialogue": {
+			"$ref": "#/$defs/npc_dialogue_definition"
+		}
+	},
+	"$defs": {
+		"npc_dialogue_definition": {
+			"type": "object",
+			"title": "NPC Dialogue Definition",
+			"description": "The NPC dialogue definition containing scenes.",
+			"required": ["scenes"],
+			"additionalProperties": false,
+			"properties": {
+				"scenes": {
+					"type": "array",
+					"description": "Array of dialogue scene definitions. Each scene has a scene_tag, optional text, npc_name, buttons, and commands.",
+					"items": {
+						"$ref": "#/$defs/dialogue_scene"
+					}
+				}
+			}
+		},
+		"dialogue_scene": {
+			"type": "object",
+			"title": "Dialogue Scene",
+			"description": "A single NPC dialogue scene definition.",
+			"required": ["scene_tag"],
+			"additionalProperties": false,
+			"properties": {
+				"scene_tag": {
+					"type": "string",
+					"description": "The name used to call this scene in-game."
+				},
+				"npc_name": {
+					"oneOf": [
+						{
+							"type": "string",
+							"description": "The name displayed for the NPC in the dialogue box."
+						},
+						{
+							"$ref": "../../../../vanilla/definition/raw_message.json"
+						}
+					],
+					"description": "Optional. Add or change a name for your NPC dialogue box."
+				},
+				"text": {
+					"oneOf": [
+						{
+							"type": "string",
+							"description": "The dialogue text displayed in the NPC dialogue box."
+						},
+						{
+							"$ref": "../../../../vanilla/definition/raw_message.json"
+						}
+					],
+					"description": "Optional. The dialogue text displayed in the NPC dialogue box."
+				},
+				"on_open_commands": {
+					"type": "array",
+					"description": "Optional. The commands that will fire when the NPC dialogue box opens.",
+					"items": {
+						"type": "string",
+						"description": "A command to execute."
+					}
+				},
+				"on_close_commands": {
+					"type": "array",
+					"description": "Optional. The commands that will fire when the NPC dialogue box closes.",
+					"items": {
+						"type": "string",
+						"description": "A command to execute."
+					}
+				},
+				"buttons": {
+					"type": "array",
+					"description": "Optional. Array of buttons for the NPC dialogue.",
+					"items": {
+						"$ref": "#/$defs/dialogue_button"
+					}
+				}
+			}
+		},
+		"dialogue_button": {
+			"type": "object",
+			"title": "Dialogue Button",
+			"description": "A button in the NPC dialogue.",
+			"required": ["name", "commands"],
+			"additionalProperties": false,
+			"properties": {
+				"name": {
+					"type": "string",
+					"description": "The text displayed on the button."
+				},
+				"commands": {
+					"type": "array",
+					"description": "The commands to execute when the button is pressed.",
+					"items": {
+						"type": "string",
+						"description": "A command to execute."
+					}
+				}
+			}
+		}
+	}
+}
