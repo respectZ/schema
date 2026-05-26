@@ -11,6 +11,10 @@ const BP_ENTRIES: JsonValidationEntry[] = [
 		url: "./schema/bedrock/shared/manifest/_index.json",
 	},
 	{
+		fileMatch: "animation_controllers/**/*.{json,jsonc,json5}",
+		url: "./schema/bedrock/server/animation_controller/_index.json",
+	},
+	{
 		fileMatch: "animations/**/*.{json,jsonc,json5}",
 		url: "./schema/bedrock/server/animation/_index.json",
 	},

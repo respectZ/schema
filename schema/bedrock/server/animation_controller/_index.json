@@ -1,0 +1,88 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/animation_controller/1.8.0/_index.json",
+	"title": "Animation Controller",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"format_version": {
+			"anyOf": [
+				{
+					"$ref": "../../../vanilla/definition/format_version.json"
+				},
+				{
+					"enum": ["1.8.0", "1.10.0"]
+				}
+			]
+		},
+		"animation_controllers": {
+			"type": "object",
+			"propertyNames": {
+				"pattern": "^controller\\.animation\\..+$"
+			},
+			"additionalProperties": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"initial_state": {
+						"type": "string"
+					},
+					"states": {
+						"type": "object",
+						"additionalProperties": {
+							"$ref": "#/$defs/state"
+						}
+					}
+				}
+			}
+		}
+	},
+	"$defs": {
+		"state": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"animations": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/animation"
+					}
+				},
+				"on_entry": {
+					"type": "array",
+					"items": {
+						"$ref": "../../../vanilla/definition/molang.json#/$defs/string"
+					}
+				},
+				"on_exit": {
+					"type": "array",
+					"items": {
+						"$ref": "../../../vanilla/definition/molang.json#/$defs/string"
+					}
+				},
+				"transitions": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"additionalProperties": {
+							"$ref": "../../../vanilla/definition/molang.json#/$defs/condition"
+						}
+					}
+				}
+			}
+		},
+		"animation": {
+			"oneOf": [
+				{
+					"type": "string"
+				},
+				{
+					"type": "object",
+					"additionalProperties": {
+						"$ref": "../../../vanilla/definition/molang.json#/$defs/string"
+					}
+				}
+			]
+		}
+	}
+}
