@@ -1,9 +1,14 @@
-import { MinecraftBlockTypes, MinecraftItemTypes } from "@minecraft/vanilla-data";
+import {
+	MinecraftBlockTypes,
+	MinecraftEntityTypes,
+	MinecraftItemTypes,
+} from "@minecraft/vanilla-data";
 import path from "path/posix";
 import { createSchema, writeJson } from "../utils";
 import { generateClientPaths } from "./client";
 import { generateClientIdentifiers } from "./client/identifiers";
 import { generateClientLang } from "./client/lang";
+import { generateServerTypeFamily } from "./server";
 
 const entries: Entry[] = [
 	{
@@ -256,7 +261,8 @@ const entries: Entry[] = [
 		filepath: "vanilla/server/identifiers.json",
 		content: async () => {
 			const blockIdentifiers = Object.values(MinecraftBlockTypes);
-			const itemIdentifiers = await Object.values(MinecraftItemTypes);
+			const itemIdentifiers = Object.values(MinecraftItemTypes);
+			const entityIdentifiers = Object.values(MinecraftEntityTypes);
 			return {
 				$defs: {
 					block_identifier: {
@@ -281,7 +287,35 @@ const entries: Entry[] = [
 							},
 						],
 					},
+					entity_identifier: {
+						anyOf: [
+							{
+								type: "string",
+								maxLength: 256,
+							},
+							{
+								enum: entityIdentifiers,
+							},
+						],
+					},
 				},
+			};
+		},
+	},
+	{
+		filepath: "vanilla/server/type_family.json",
+		content: async () => {
+			const typeFamily = await generateServerTypeFamily();
+			return {
+				anyOf: [
+					{
+						type: "string",
+						maxLength: 256,
+					},
+					{
+						enum: typeFamily,
+					},
+				],
 			};
 		},
 	},
