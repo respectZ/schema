@@ -1,0 +1,125 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/dimension/1.18.0/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Dimension 1.18.0",
+	"description": "A custom dimension definition for a behavior pack.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:dimension"],
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"enum": ["1.18.0"]
+		},
+		"minecraft:dimension": {
+			"$ref": "#/$defs/dimension_definition"
+		}
+	},
+	"$defs": {
+		"dimension_definition": {
+			"type": "object",
+			"title": "Dimension Definition",
+			"description": "Defines a custom dimension with its description and components.",
+			"required": ["description", "components"],
+			"additionalProperties": false,
+			"properties": {
+				"description": {
+					"$ref": "#/$defs/dimension_description"
+				},
+				"components": {
+					"$ref": "#/$defs/dimension_components"
+				}
+			},
+			"allOf": [
+				{
+					"if": {
+						"properties": {
+							"description": {
+								"properties": {
+									"identifier": {
+										"const": "minecraft:overworld"
+									}
+								},
+								"required": ["identifier"]
+							}
+						},
+						"required": ["description"]
+					},
+					"then": {
+						"properties": {
+							"components": {
+								"required": ["minecraft:dimension_bounds"]
+							}
+						}
+					},
+					"else": {
+						"properties": {
+							"components": {
+								"properties": {
+									"minecraft:dimension_bounds": false
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"dimension_description": {
+			"type": "object",
+			"title": "Dimension Description",
+			"description": "Declares the unique identifier for a dimension.",
+			"required": ["identifier"],
+			"additionalProperties": false,
+			"properties": {
+				"identifier": {
+					"type": "string",
+					"enum": ["minecraft:overworld", "minecraft:nether", "minecraft:the_end"]
+				}
+			}
+		},
+		"dimension_components": {
+			"type": "object",
+			"title": "Dimension Components",
+			"description": "Specifies the components that define dimension properties such as bounds and generation.",
+			"additionalProperties": false,
+			"properties": {
+				"minecraft:dimension_bounds": {
+					"$ref": "#/$defs/dimension_bounds"
+				},
+				"minecraft:generation": {
+					"$ref": "#/$defs/dimension_generation"
+				}
+			}
+		},
+		"dimension_bounds": {
+			"type": "object",
+			"title": "Dimension Bounds",
+			"description": "Defines the minimum and maximum vertical bounds for a dimension.",
+			"required": ["min", "max"],
+			"additionalProperties": false,
+			"properties": {
+				"min": {
+					"type": "integer",
+					"description": "Minimum vertical bound for the dimension."
+				},
+				"max": {
+					"type": "integer",
+					"description": "Maximum vertical bound for the dimension."
+				}
+			}
+		},
+		"dimension_generation": {
+			"type": "object",
+			"title": "Dimension Generation",
+			"description": "Specifies the generator type used for world generation in the dimension.",
+			"required": ["generator_type"],
+			"additionalProperties": false,
+			"properties": {
+				"generator_type": {
+					"type": "string",
+					"enum": ["void"]
+				}
+			}
+		}
+	}
+}

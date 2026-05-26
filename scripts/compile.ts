@@ -23,6 +23,10 @@ const BP_ENTRIES: JsonValidationEntry[] = [
 		url: "./schema/bedrock/server/voxel/_index.json",
 	},
 	{
+		fileMatch: "dimensions/**/*.{json,jsonc,json5}",
+		url: "./schema/bedrock/server/dimension/_index.json",
+	},
+	{
 		fileMatch: "dialogue/**/*.{json,jsonc,json5}",
 		url: "./schema/bedrock/server/dialogue/_index.json",
 	},
