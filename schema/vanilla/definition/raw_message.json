@@ -1,0 +1,62 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/definition/raw_message.json",
+	"title": "Raw Message",
+	"description": "Defines a JSON structure that is used for more flexible text display.",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"rawtext": {
+			"type": "array",
+			"description": "Provides a raw-text equivalent of the current message.",
+			"items": {
+				"$ref": "#"
+			}
+		},
+		"text": {
+			"type": "string",
+			"description": "Provides a string literal value to use."
+		},
+		"translate": {
+			"type": "string",
+			"description": "Provides a translation token to look up in the player's language."
+		},
+		"with": {
+			"oneOf": [
+				{
+					"type": "array",
+					"description": "Array of string arguments for the translation token.",
+					"items": {
+						"type": "string"
+					}
+				},
+				{
+					"$ref": "#",
+					"description": "RawMessage object containing array of raw text arguments."
+				}
+			],
+			"description": "Arguments for the translation token. Can be either an array of strings or RawMessage."
+		},
+		"selector": {
+			"type": "string",
+			"description": "A selector to insert entity names into the raw text."
+		},
+		"score": {
+			"type": "object",
+			"title": "Raw Message Score",
+			"description": "Provides a token that will get replaced with the value of a score.",
+			"required": ["name", "objective"],
+			"additionalProperties": false,
+			"properties": {
+				"name": {
+					"type": "string",
+					"description": "The player name or target selector to identify the entity."
+				},
+				"objective": {
+					"type": "string",
+					"description": "The scoreboard objective name."
+				}
+			}
+		}
+	}
+}
