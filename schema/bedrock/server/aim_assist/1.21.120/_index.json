@@ -1,0 +1,99 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/aim_assist/1.21.120/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Aim Assist Preset 1.21.120",
+	"description": "A camera aim-assist preset definition for a behavior pack.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:aim_assist_preset"],
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"enum": ["1.21.120"]
+		},
+		"minecraft:aim_assist_preset": {
+			"$ref": "#/$defs/camera_aim_assist_preset_definition"
+		}
+	},
+	"$defs": {
+		"camera_aim_assist_preset_definition": {
+			"type": "object",
+			"title": "Camera Aim Assist Preset Definition",
+			"description": "A single Camera Aim-Assist Preset Definition.",
+			"required": ["identifier"],
+			"additionalProperties": false,
+			"properties": {
+				"identifier": {
+					"$ref": "../../../../vanilla/definition/identifier.json",
+					"description": "Namespaced identifier for Camera Aim-Assist preset. Namespace and name must be separated by a ':'."
+				},
+				"default_item_settings": {
+					"type": "string",
+					"description": "Optional. Default Aim-Assist Category used for Items not found in 'item_settings'."
+				},
+				"hand_settings": {
+					"type": "string",
+					"description": "Optional. Aim-Assist Category used for an empty hand."
+				},
+				"exclusion_settings": {
+					"description": "Optional. List of block/entity identifiers to exclude from aim assist targeting.",
+					"$ref": "#/$defs/exclusion_entry"
+				},
+				"item_settings": {
+					"type": "object",
+					"description": "Optional. Map of Item identifiers to Aim-Assist Category names found in the specified 'categories'.",
+					"additionalProperties": {
+						"type": "string",
+						"description": "Aim-Assist Category name."
+					},
+					"propertyNames": {
+						"$ref": "../../../../vanilla/definition/identifier.json"
+					}
+				},
+				"liquid_targeting_list": {
+					"type": "array",
+					"description": "Optional. List of item identifiers that will target liquid blocks with aim-assist when being held.",
+					"items": {
+						"$ref": "../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
+					}
+				}
+			}
+		},
+		"exclusion_entry": {
+			"type": "object",
+			"title": "Exclusion Entry",
+			"description": "An entry in the exclusion list for aim assist targeting.",
+			"additionalProperties": false,
+			"properties": {
+				"blocks": {
+					"type": "array",
+					"description": "Block identifiers to exclude from aim assist targeting.",
+					"items": {
+						"$ref": "../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
+					}
+				},
+				"block_tags": {
+					"type": "array",
+					"description": "Block tags to exclude from aim assist targeting.",
+					"items": {
+						"$ref": "../../../../vanilla/server/tags.json#/$defs/block_tag"
+					}
+				},
+				"entities": {
+					"type": "array",
+					"description": "Entity identifiers to exclude from aim assist targeting.",
+					"items": {
+						"$ref": "../../../../vanilla/server/identifiers.json#/$defs/entity_identifier"
+					}
+				},
+				"entity_type_families": {
+					"type": "array",
+					"description": "Entity type families to exclude from aim assist targeting.",
+					"items": {
+						"$ref": "../../../../vanilla/server/type_family.json"
+					}
+				}
+			}
+		}
+	}
+}
