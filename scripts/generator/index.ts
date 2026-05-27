@@ -5,11 +5,11 @@ import {
 	MinecraftItemTypes,
 } from "@minecraft/vanilla-data";
 import path from "path/posix";
-import { createSchema, writeJson } from "../utils";
+import { createSchema, readJson, writeJson } from "../utils";
 import { generateClientPaths } from "./client";
 import { generateClientIdentifiers } from "./client/identifiers";
 import { generateClientLang } from "./client/lang";
-import { generateServerTypeFamily } from "./server";
+import { generateServerBiomeTag, generateServerTypeFamily } from "./server";
 
 const entries: Entry[] = [
 	{
@@ -339,23 +339,59 @@ const entries: Entry[] = [
 			};
 		},
 	},
+	{
+		filepath: "vanilla/server/tags.json",
+		load: true,
+		content: async (json) => {
+			const biomeTags = await generateServerBiomeTag();
+			json["$defs"]["biome_tag"] = {
+				anyOf: [
+					{
+						type: "string",
+						maxLength: 256,
+					},
+					{
+						enum: biomeTags,
+					},
+				],
+			};
+			return json;
+		},
+	},
 ];
 
 async function main() {
 	for (const entry of entries) {
 		const dest = path.join("schema", entry.filepath);
-		const schema = createSchema(dest);
+		let schema: Record<string, unknown>;
+		let content: Record<string, unknown>;
+		if (isAddition(entry)) {
+			schema = await readJson(dest);
+			content = await entry.content(schema);
+		} else {
+			schema = createSchema(dest);
+			content = await entry.content();
+		}
 		console.log(`Generating schema for ${entry.filepath}...`);
-		const content = await entry.content();
 		Object.assign(schema, content);
 		console.log(`Writing schema to ${dest}...`);
 		await writeJson(dest, schema);
 	}
 }
 
+const isAddition = (entry: Entry): entry is EntryAddition => "load" in entry && entry.load === true;
+
 await main();
 
-type Entry = {
+type Entry =
+	| {
+			filepath: string;
+			content: () => Promise<Record<string, unknown>>;
+	  }
+	| EntryAddition;
+
+type EntryAddition = {
 	filepath: string;
-	content: () => Promise<Record<string, unknown>>;
+	load: true;
+	content: (json: Record<string, any>) => Promise<Record<string, unknown>>;
 };
