@@ -1,5 +1,6 @@
 import {
 	MinecraftBlockTypes,
+	MinecraftEnchantmentTypes,
 	MinecraftEntityTypes,
 	MinecraftItemTypes,
 } from "@minecraft/vanilla-data";
@@ -314,6 +315,25 @@ const entries: Entry[] = [
 					},
 					{
 						enum: typeFamily,
+					},
+				],
+			};
+		},
+	},
+	{
+		filepath: "vanilla/server/enchantment.json",
+		content: async () => {
+			const enchantments = Object.values(MinecraftEnchantmentTypes).map((enchantment) =>
+				enchantment.replace("minecraft:", ""),
+			);
+			return {
+				anyOf: [
+					{
+						type: "string",
+						maxLength: 256,
+					},
+					{
+						enum: enchantments,
 					},
 				],
 			};
