@@ -1,0 +1,44 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "vanilla/server/armor_trim.json",
+	"$defs": {
+		"material": {
+			"type": "string",
+			"enum": [
+				"amethyst",
+				"copper",
+				"diamond",
+				"emerald",
+				"gold",
+				"iron",
+				"lapis",
+				"quartz",
+				"netherite",
+				"redstone",
+				"resin"
+			]
+		},
+		"pattern": {
+			"type": "string",
+			"enum": [
+				"ward",
+				"snout",
+				"dune",
+				"spire",
+				"rib",
+				"tide",
+				"sentry",
+				"coast",
+				"eye",
+				"vex",
+				"silence",
+				"wayfinder",
+				"raiser",
+				"shaper",
+				"host",
+				"flow",
+				"bolt"
+			]
+		}
+	}
+}
