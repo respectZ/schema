@@ -1,0 +1,85 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/recipe/1.0.0/recipe_smithing_trim.json",
+	"type": "object",
+	"title": "Smithing Trim Recipe",
+	"description": "A smithing table armor trim recipe defining how armor items are decorated with trim patterns.",
+	"required": ["description", "template", "base", "addition"],
+	"additionalProperties": false,
+	"properties": {
+		"description": {
+			"$ref": "#/$defs/description"
+		},
+		"template": {
+			"oneOf": [
+				{
+					"type": "string"
+				},
+				{
+					"$ref": "#/$defs/item_tag"
+				}
+			],
+			"description": "The trim template item or tag."
+		},
+		"base": {
+			"oneOf": [
+				{
+					"type": "string"
+				},
+				{
+					"$ref": "#/$defs/item_tag"
+				}
+			],
+			"description": "The base armor item or tag to be trimmed."
+		},
+		"addition": {
+			"oneOf": [
+				{
+					"type": "string"
+				},
+				{
+					"$ref": "#/$defs/item_tag"
+				}
+			],
+			"description": "The trim material or tag to apply."
+		},
+		"tags": {
+			"type": "array",
+			"items": {
+				"const": "smithing_table"
+			},
+			"description": "Tags that specify this is a smithing_table recipe."
+		}
+	},
+	"$defs": {
+		"description": {
+			"type": "object",
+			"title": "Description",
+			"description": "The recipe description containing identifier.",
+			"required": ["identifier"],
+			"additionalProperties": false,
+			"properties": {
+				"identifier": {
+					"$ref": "../../../../vanilla/definition/identifier.json",
+					"description": "The unique identifier for this recipe."
+				}
+			}
+		},
+		"item_tag": {
+			"type": "object",
+			"title": "Item or Tag",
+			"description": "An item identifier or tag reference.",
+			"additionalProperties": false,
+			"properties": {
+				"item": {
+					"$ref": "../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+					"description": "A specific item identifier."
+				},
+				"tag": {
+					"$ref": "../../../../vanilla/server/tags.json#/$defs/item_tag",
+					"description": "An item tag."
+				}
+			}
+		}
+	}
+}

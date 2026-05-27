@@ -1,0 +1,48 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/recipe/1.0.0/recipe_furnace.json",
+	"type": "object",
+	"title": "Furnace Recipe",
+	"description": "A smelting/cooking recipe defining input items that can be smelted in furnaces or other cooking stations.",
+	"required": ["description", "input", "output"],
+	"additionalProperties": false,
+	"properties": {
+		"description": {
+			"$ref": "#/$defs/description"
+		},
+		"input": {
+			"$ref": "../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+			"description": "The input item. Can be a simple identifier or include data value."
+		},
+		"output": {
+			"$ref": "../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+			"description": "The output item identifier."
+		},
+		"tags": {
+			"type": "array",
+			"items": {
+				"$ref": "../general.json#/$defs/recipe_tag"
+			},
+			"description": "Tags that specify which smelting stations can use this recipe."
+		},
+		"unlock": {
+			"$ref": "../general.json#/$defs/unlock",
+			"description": "Conditions that must be met to unlock this recipe in the recipe book."
+		}
+	},
+	"$defs": {
+		"description": {
+			"type": "object",
+			"title": "Description",
+			"description": "The recipe description containing identifier.",
+			"required": ["identifier"],
+			"additionalProperties": false,
+			"properties": {
+				"identifier": {
+					"$ref": "../../../../vanilla/definition/identifier.json",
+					"description": "The unique identifier for this recipe."
+				}
+			}
+		}
+	}
+}

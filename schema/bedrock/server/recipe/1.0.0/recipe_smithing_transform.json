@@ -1,0 +1,52 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/recipe/1.0.0/recipe_smithing_transform.json",
+	"type": "object",
+	"title": "Smithing Transform Recipe",
+	"description": "A smithing table transformation recipe defining how items are upgraded using a smithing template, base item, and addition material.",
+	"required": ["description", "template", "base", "addition", "result"],
+	"additionalProperties": false,
+	"properties": {
+		"description": {
+			"$ref": "#/$defs/description"
+		},
+		"template": {
+			"$ref": "../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+			"description": "The smithing template item."
+		},
+		"base": {
+			"$ref": "../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+			"description": "The base item to be transformed."
+		},
+		"addition": {
+			"$ref": "../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+			"description": "The addition material."
+		},
+		"result": {
+			"$ref": "../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+			"description": "The resulting transformed item."
+		},
+		"tags": {
+			"type": "array",
+			"items": {
+				"const": "smithing_table"
+			},
+			"description": "Tags that specify this is a smithing_table recipe."
+		}
+	},
+	"$defs": {
+		"description": {
+			"type": "object",
+			"title": "Description",
+			"description": "The recipe description containing identifier.",
+			"required": ["identifier"],
+			"additionalProperties": false,
+			"properties": {
+				"identifier": {
+					"$ref": "../../../../vanilla/definition/identifier.json",
+					"description": "The unique identifier for this recipe."
+				}
+			}
+		}
+	}
+}

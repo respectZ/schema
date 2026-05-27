@@ -1,0 +1,37 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/recipe/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Recipe File",
+	"description": "Schema for crafting and smelting recipe definition files used by behavior packs.",
+	"required": ["format_version"],
+	"properties": {
+		"format_version": {
+			"oneOf": [
+				{
+					"enum": ["1.0.0", "1.20.10"]
+				},
+				{
+					"$ref": "../../../vanilla/definition/format_version.json"
+				}
+			]
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"pattern": "^(1\\.20\\.[1-9]*)|(1\\.2[1-9]+\\.\\d+)|(1\\.[3-9]\\d+\\.\\d+)$"
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.20.10/_index.json"
+			},
+			"else": {
+				"$ref": "./1.0.0/_index.json"
+			}
+		}
+	]
+}

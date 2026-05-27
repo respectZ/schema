@@ -1,0 +1,127 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/recipe/1.0.0/recipe_shaped.json",
+	"type": "object",
+	"title": "Shaped Recipe",
+	"description": "A shaped crafting recipe requiring ingredients in a specific pattern on the crafting grid.",
+	"required": ["description", "pattern", "key", "result"],
+	"additionalProperties": false,
+	"properties": {
+		"description": {
+			"$ref": "#/$defs/description"
+		},
+		"assume_symmetry": {
+			"type": "boolean",
+			"description": "If true, the recipe pattern can be mirrored horizontally."
+		},
+		"group": {
+			"type": "string",
+			"description": "An optional group identifier for recipe book organization."
+		},
+		"key": {
+			"type": "object",
+			"patternProperties": {
+				"^.$": {
+					"$ref": "#/$defs/ingredient"
+				}
+			},
+			"additionalProperties": false,
+			"description": "Maps pattern characters to item definitions."
+		},
+		"pattern": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"minItems": 1,
+			"maxItems": 3,
+			"description": "The crafting pattern as an array of strings. Each string represents a row, and each character maps to a key."
+		},
+		"priority": {
+			"type": "integer",
+			"description": "Recipe priority for conflict resolution. Lower values have higher priority."
+		},
+		"result": {
+			"oneOf": [
+				{
+					"$ref": "#/$defs/result_item"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/result_item"
+					}
+				}
+			],
+			"description": "The crafting result or array of results."
+		},
+		"tags": {
+			"type": "array",
+			"items": {
+				"$ref": "../general.json#/$defs/recipe_tag"
+			},
+			"description": "Tags that specify which crafting stations can use this recipe."
+		},
+		"unlock": {
+			"$ref": "../general.json#/$defs/unlock",
+			"description": "Conditions that must be met to unlock this recipe in the recipe book."
+		}
+	},
+	"$defs": {
+		"description": {
+			"type": "object",
+			"title": "Description",
+			"description": "The recipe description containing identifier.",
+			"required": ["identifier"],
+			"additionalProperties": false,
+			"properties": {
+				"identifier": {
+					"$ref": "../../../../vanilla/definition/identifier.json",
+					"description": "The unique identifier for this recipe."
+				}
+			}
+		},
+		"ingredient": {
+			"type": "object",
+			"title": "Ingredient",
+			"description": "An item definition used as an ingredient.",
+			"additionalProperties": false,
+			"properties": {
+				"item": {
+					"$ref": "../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+					"description": "The item identifier."
+				},
+				"tag": {
+					"$ref": "../../../../vanilla/server/tags.json#/$defs/item_tag",
+					"description": "An item tag that matches multiple items."
+				},
+				"data": {
+					"type": "integer",
+					"description": "The item data/aux value for items with variants."
+				}
+			}
+		},
+		"result_item": {
+			"type": "object",
+			"title": "Result",
+			"description": "The crafting result item.",
+			"required": ["item"],
+			"additionalProperties": false,
+			"properties": {
+				"item": {
+					"$ref": "../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+					"description": "The result item identifier."
+				},
+				"count": {
+					"type": "integer",
+					"minimum": 1,
+					"description": "The number of items produced."
+				},
+				"data": {
+					"type": "integer",
+					"description": "The result item data/aux value."
+				}
+			}
+		}
+	}
+}

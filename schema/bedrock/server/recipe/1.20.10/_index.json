@@ -1,0 +1,94 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/recipe/1.20.10/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Recipe 1.20.10",
+	"description": "A crafting or smelting recipe definition for a behavior pack.",
+	"required": ["format_version"],
+	"minProperties": 2,
+	"maxProperties": 2,
+	"properties": {
+		"format_version": {
+			"type": "string"
+		}
+	},
+	"oneOf": [
+		{
+			"title": "Shaped Recipe",
+			"properties": {
+				"format_version": true,
+				"minecraft:recipe_shaped": {
+					"$ref": "./recipe_shaped.json"
+				}
+			},
+			"additionalProperties": false,
+			"required": ["format_version", "minecraft:recipe_shaped"]
+		},
+		{
+			"title": "Shapeless Recipe",
+			"properties": {
+				"format_version": true,
+				"minecraft:recipe_shapeless": {
+					"$ref": "./recipe_shapeless.json"
+				}
+			},
+			"additionalProperties": false,
+			"required": ["format_version", "minecraft:recipe_shapeless"]
+		},
+		{
+			"title": "Furnace Recipe",
+			"properties": {
+				"format_version": true,
+				"minecraft:recipe_furnace": {
+					"$ref": "../1.0.0/recipe_furnace.json"
+				}
+			},
+			"additionalProperties": false,
+			"required": ["format_version", "minecraft:recipe_furnace"]
+		},
+		{
+			"title": "Brewing Container Recipe",
+			"properties": {
+				"format_version": true,
+				"minecraft:recipe_brewing_container": {
+					"$ref": "../1.0.0/recipe_brewing_container.json"
+				}
+			},
+			"additionalProperties": false,
+			"required": ["format_version", "minecraft:recipe_brewing_container"]
+		},
+		{
+			"title": "Brewing Mix Recipe",
+			"properties": {
+				"format_version": true,
+				"minecraft:recipe_brewing_mix": {
+					"$ref": "../1.0.0/recipe_brewing_mix.json"
+				}
+			},
+			"additionalProperties": false,
+			"required": ["format_version", "minecraft:recipe_brewing_mix"]
+		},
+		{
+			"title": "Smithing Transform Recipe",
+			"properties": {
+				"format_version": true,
+				"minecraft:recipe_smithing_transform": {
+					"$ref": "../1.0.0/recipe_smithing_transform.json"
+				}
+			},
+			"additionalProperties": false,
+			"required": ["format_version", "minecraft:recipe_smithing_transform"]
+		},
+		{
+			"title": "Smithing Trim Recipe",
+			"properties": {
+				"format_version": true,
+				"minecraft:recipe_smithing_trim": {
+					"$ref": "../1.0.0/recipe_smithing_trim.json"
+				}
+			},
+			"additionalProperties": false,
+			"required": ["format_version", "minecraft:recipe_smithing_trim"]
+		}
+	]
+}

@@ -1,0 +1,117 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/recipe/1.20.10/recipe_shapeless.json",
+	"type": "object",
+	"title": "Shapeless Recipe",
+	"description": "A shapeless crafting recipe where ingredients can be placed in any order on the crafting grid.",
+	"required": ["description", "ingredients", "result", "tags", "unlock"],
+	"additionalProperties": false,
+	"properties": {
+		"description": {
+			"$ref": "#/$defs/description"
+		},
+		"group": {
+			"type": "string",
+			"description": "An optional group identifier for recipe book organization."
+		},
+		"ingredients": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/ingredient"
+			},
+			"minItems": 1,
+			"description": "The list of ingredients required for the recipe."
+		},
+		"priority": {
+			"type": "integer",
+			"description": "Recipe priority for conflict resolution."
+		},
+		"result": {
+			"oneOf": [
+				{
+					"$ref": "#/$defs/result_item"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/result_item"
+					}
+				}
+			],
+			"description": "The crafting result or array of results."
+		},
+		"tags": {
+			"type": "array",
+			"items": {
+				"$ref": "../general.json#/$defs/recipe_tag"
+			},
+			"description": "Tags that specify which crafting stations can use this recipe."
+		},
+		"unlock": {
+			"$ref": "../general.json#/$defs/unlock",
+			"description": "Conditions that must be met to unlock this recipe in the recipe book."
+		}
+	},
+	"$defs": {
+		"description": {
+			"type": "object",
+			"title": "Description",
+			"description": "The recipe description containing identifier.",
+			"required": ["identifier"],
+			"additionalProperties": false,
+			"properties": {
+				"identifier": {
+					"$ref": "../../../../vanilla/definition/identifier.json",
+					"description": "The unique identifier for this recipe."
+				}
+			}
+		},
+		"ingredient": {
+			"type": "object",
+			"title": "Ingredient",
+			"description": "An item definition used as an ingredient.",
+			"additionalProperties": false,
+			"properties": {
+				"item": {
+					"$ref": "../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+					"description": "The item identifier."
+				},
+				"tag": {
+					"$ref": "../../../../vanilla/server/tags.json#/$defs/item_tag",
+					"description": "An item tag that matches multiple items."
+				},
+				"count": {
+					"type": "integer",
+					"minimum": 1,
+					"description": "The number of this ingredient required."
+				},
+				"data": {
+					"type": "integer",
+					"description": "Deprecated - the item data/aux value for items with variants."
+				}
+			}
+		},
+		"result_item": {
+			"type": "object",
+			"title": "Result",
+			"description": "The crafting result item.",
+			"required": ["item"],
+			"additionalProperties": false,
+			"properties": {
+				"item": {
+					"$ref": "../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+					"description": "The result item identifier."
+				},
+				"count": {
+					"type": "integer",
+					"minimum": 1,
+					"description": "The number of items produced."
+				},
+				"data": {
+					"type": "integer",
+					"description": "Deprecated - the result item data/aux value."
+				}
+			}
+		}
+	}
+}

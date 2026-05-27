@@ -1,0 +1,79 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/recipe/1.21.10/recipe_shaped.json",
+	"$defs": {
+		"recipe_tag": {
+			"type": "string",
+			"enum": [
+				"blast_furnace",
+				"brewing_stand",
+				"campfire",
+				"cartography_table",
+				"crafting_table",
+				"deprecated",
+				"furnace",
+				"smithing_table",
+				"smoker",
+				"soul_campfire",
+				"stonecutter"
+			]
+		},
+		"unlock_context": {
+			"oneOf": [
+				{
+					"const": "None"
+				},
+				{
+					"const": "AlwaysUnlocked",
+					"description": "Always unlocks the item when the specified context is met."
+				},
+				{
+					"const": "PlayerInWater",
+					"description": "Unlocks the item the first time the player enters the water."
+				},
+				{
+					"const": "PlayerHasManyItems",
+					"description": "Player has more than 10 items in their inventory."
+				}
+			]
+		},
+		"unlock": {
+			"oneOf": [
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"required": ["context"],
+					"properties": {
+						"context": {
+							"$ref": "#/$defs/unlock_context",
+							"description": "The context in which the recipe is unlocked."
+						}
+					}
+				},
+				{
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"type": "object",
+						"additionalProperties": false,
+						"minProperties": 1,
+						"properties": {
+							"item": {
+								"$ref": "../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+								"description": "The item that must be obtained to unlock this recipe."
+							},
+							"tag": {
+								"$ref": "../../../vanilla/server/tags.json#/$defs/item_tag",
+								"description": "An item tag that matches multiple items that can be obtained to unlock this recipe."
+							},
+							"data": {
+								"type": "integer",
+								"description": "The item data/aux value for items with variants."
+							}
+						}
+					}
+				}
+			]
+		}
+	}
+}

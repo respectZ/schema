@@ -1,0 +1,48 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/recipe/1.0.0/recipe_brewing_mix.json",
+	"type": "object",
+	"title": "Brewing Mix Recipe",
+	"description": "A brewing recipe defining how potions are created by combining a base potion with a reagent in a brewing stand.",
+	"required": ["description", "input", "reagent", "output"],
+	"additionalProperties": false,
+	"properties": {
+		"description": {
+			"$ref": "#/$defs/description"
+		},
+		"input": {
+			"$ref": "../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+			"description": "The input potion type."
+		},
+		"reagent": {
+			"$ref": "../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+			"description": "The reagent item that modifies the potion."
+		},
+		"output": {
+			"$ref": "../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+			"description": "The output potion type."
+		},
+		"tags": {
+			"type": "array",
+			"items": {
+				"$ref": "../general.json#/$defs/recipe_tag"
+			},
+			"description": "Tags that specify this is a brewing_stand recipe."
+		}
+	},
+	"$defs": {
+		"description": {
+			"type": "object",
+			"title": "Description",
+			"description": "The recipe description containing identifier.",
+			"required": ["identifier"],
+			"additionalProperties": false,
+			"properties": {
+				"identifier": {
+					"$ref": "../../../../vanilla/definition/identifier.json",
+					"description": "The unique identifier for this recipe."
+				}
+			}
+		}
+	}
+}
