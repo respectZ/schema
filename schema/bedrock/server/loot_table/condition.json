@@ -1,0 +1,585 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/loot_table/condition.json",
+	"type": "object",
+	"title": "Loot Condition",
+	"description": "Defines a condition that must be met for a loot table entry or function to apply.",
+	"required": ["condition"],
+	"unevaluatedProperties": false,
+	"properties": {
+		"condition": {
+			"type": "string",
+			"enum": [
+				"killed_by_player",
+				"killed_by_player_or_pets",
+				"killed_by_entity",
+				"damaged_by_entity",
+				"passenger_of_entity",
+				"entity_killed",
+				"random_chance",
+				"random_difficulty_chance",
+				"random_chance_with_looting",
+				"random_regional_difficulty_chance",
+				"has_mark_variant",
+				"has_variant",
+				"match_tool",
+				"is_baby",
+				"has_property",
+				"bool_property",
+				"int_property",
+				"float_property",
+				"enum_property",
+				"biome_has_tag",
+				"entity_properties"
+			],
+			"description": "The condition type."
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"condition": {
+						"const": "killed_by_player"
+					}
+				},
+				"required": ["condition"]
+			},
+			"then": {
+				"properties": {
+					"condition": true
+				},
+				"additionalProperties": false,
+				"required": ["condition"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"condition": {
+						"const": "killed_by_player_or_pets"
+					}
+				},
+				"required": ["condition"]
+			},
+			"then": {
+				"properties": {
+					"condition": true
+				},
+				"additionalProperties": false,
+				"required": ["condition"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"condition": {
+						"const": "killed_by_entity"
+					}
+				},
+				"required": ["condition"]
+			},
+			"then": {
+				"properties": {
+					"condition": true,
+					"entity_type": {
+						"type": "string",
+						"description": "The entity type that must have killed the target.",
+						"$ref": "../../../vanilla/server/identifiers.json#/$defs/entity_identifier"
+					}
+				},
+				"additionalProperties": false,
+				"required": ["condition"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"condition": {
+						"const": "damaged_by_entity"
+					}
+				},
+				"required": ["condition"]
+			},
+			"then": {
+				"properties": {
+					"condition": true,
+					"entity_type": {
+						"type": "string",
+						"description": "The entity type that must have damaged the target.",
+						"$ref": "../../../vanilla/server/identifiers.json#/$defs/entity_identifier"
+					}
+				},
+				"additionalProperties": false,
+				"required": ["condition"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"condition": {
+						"const": "passenger_of_entity"
+					}
+				},
+				"required": ["condition"]
+			},
+			"then": {
+				"properties": {
+					"condition": true,
+					"entity_type": {
+						"type": "string",
+						"description": "The entity type that the target must be a passenger of.",
+						"$ref": "../../../vanilla/server/identifiers.json#/$defs/entity_identifier"
+					}
+				},
+				"additionalProperties": false,
+				"required": ["condition"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"condition": {
+						"const": "entity_killed"
+					}
+				},
+				"required": ["condition"]
+			},
+			"then": {
+				"properties": {
+					"condition": true,
+					"entity_type": {
+						"type": "string",
+						"description": "The entity type that must have been killed.",
+						"$ref": "../../../vanilla/server/identifiers.json#/$defs/entity_identifier"
+					}
+				},
+				"additionalProperties": false,
+				"required": ["condition"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"condition": {
+						"const": "random_chance"
+					}
+				},
+				"required": ["condition"]
+			},
+			"then": {
+				"properties": {
+					"condition": true,
+					"chance": {
+						"type": "number",
+						"description": "The base probability (0.0-1.0)."
+					}
+				},
+				"additionalProperties": false,
+				"required": ["condition", "chance"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"condition": {
+						"const": "random_chance_with_looting"
+					}
+				},
+				"required": ["condition"]
+			},
+			"then": {
+				"properties": {
+					"condition": true,
+					"chance": {
+						"type": "number",
+						"description": "The base probability (0.0-1.0)."
+					},
+					"looting_multiplier": {
+						"type": "number",
+						"description": "Additional chance per looting level."
+					}
+				},
+				"additionalProperties": false,
+				"required": ["condition", "chance", "looting_multiplier"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"condition": {
+						"const": "random_difficulty_chance"
+					}
+				},
+				"required": ["condition"]
+			},
+			"then": {
+				"properties": {
+					"condition": true,
+					"default_chance": {
+						"type": "number",
+						"description": "Default probability if difficulty not matched."
+					},
+					"peaceful": {
+						"type": "number",
+						"description": "Probability on peaceful difficulty."
+					},
+					"easy": {
+						"type": "number",
+						"description": "Probability on easy difficulty."
+					},
+					"normal": {
+						"type": "number",
+						"description": "Probability on normal difficulty."
+					},
+					"hard": {
+						"type": "number",
+						"description": "Probability on hard difficulty."
+					}
+				},
+				"additionalProperties": false,
+				"required": ["condition"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"condition": {
+						"const": "random_regional_difficulty_chance"
+					}
+				},
+				"required": ["condition"]
+			},
+			"then": {
+				"properties": {
+					"condition": true,
+					"max_chance": {
+						"type": "number",
+						"minimum": 0,
+						"maximum": 1,
+						"default": 0
+					}
+				},
+				"additionalProperties": false,
+				"required": ["condition"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"condition": {
+						"const": "has_mark_variant"
+					}
+				},
+				"required": ["condition"]
+			},
+			"then": {
+				"properties": {
+					"condition": true,
+					"value": {
+						"type": "integer",
+						"description": "The variant value to match."
+					}
+				},
+				"additionalProperties": false,
+				"required": ["condition", "value"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"condition": {
+						"const": "has_variant"
+					}
+				},
+				"required": ["condition"]
+			},
+			"then": {
+				"properties": {
+					"condition": true,
+					"value": {
+						"type": "integer",
+						"description": "The variant value to match."
+					}
+				},
+				"additionalProperties": false,
+				"required": ["condition", "value"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"condition": {
+						"const": "match_tool"
+					}
+				},
+				"required": ["condition"]
+			},
+			"then": {
+				"properties": {
+					"condition": true,
+					"match_tool": {
+						"$ref": "#/$defs/match_tool",
+						"description": "The tool item properties to match."
+					}
+				},
+				"additionalProperties": false,
+				"required": ["condition", "match_tool"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"condition": {
+						"const": "has_property"
+					}
+				},
+				"required": ["condition"]
+			},
+			"then": {
+				"properties": {
+					"condition": true,
+					"domain": {
+						"type": "string",
+						"description": "Property name to check."
+					}
+				},
+				"additionalProperties": false,
+				"required": ["condition", "domain"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"condition": {
+						"const": "bool_property"
+					}
+				},
+				"required": ["condition"]
+			},
+			"then": {
+				"properties": {
+					"condition": true,
+					"domain": {
+						"type": "string",
+						"description": "Property name to check."
+					},
+					"value": {
+						"type": "boolean",
+						"description": "The boolean value to match."
+					}
+				},
+				"additionalProperties": false,
+				"required": ["condition", "domain"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"condition": {
+						"const": "int_property"
+					}
+				},
+				"required": ["condition"]
+			},
+			"then": {
+				"properties": {
+					"condition": true,
+					"domain": {
+						"type": "string",
+						"description": "Property name to check."
+					},
+					"value": {
+						"type": "integer",
+						"description": "The integer value to match."
+					}
+				},
+				"additionalProperties": false,
+				"required": ["condition", "domain"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"condition": {
+						"const": "float_property"
+					}
+				},
+				"required": ["condition"]
+			},
+			"then": {
+				"properties": {
+					"condition": true,
+					"domain": {
+						"type": "string",
+						"description": "Property name to check."
+					},
+					"value": {
+						"type": "number",
+						"description": "The float value to match."
+					}
+				},
+				"additionalProperties": false,
+				"required": ["condition", "domain"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"condition": {
+						"const": "enum_property"
+					}
+				},
+				"required": ["condition"]
+			},
+			"then": {
+				"properties": {
+					"condition": true,
+					"domain": {
+						"type": "string",
+						"description": "Property name to check."
+					},
+					"value": {
+						"type": "string",
+						"description": "The enum value to match."
+					}
+				},
+				"additionalProperties": false,
+				"required": ["condition", "domain"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"condition": {
+						"const": "biome_has_tag"
+					}
+				},
+				"required": ["condition"]
+			},
+			"then": {
+				"properties": {
+					"condition": true,
+					"tag": {
+						"type": "string",
+						"description": "The biome tag to check for.",
+						"$ref": "../../../vanilla/server/tags.json#/$defs/biome_tag"
+					}
+				},
+				"additionalProperties": false,
+				"required": ["condition", "tag"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"condition": {
+						"const": "entity_properties"
+					}
+				},
+				"required": ["condition"]
+			},
+			"then": {
+				"properties": {
+					"condition": true,
+					"entity": {
+						"type": "string",
+						"enum": ["this", "attacker", "attacking_player"],
+						"description": "Which entity to check."
+					},
+					"properties": {
+						"$ref": "#/$defs/entity_properties",
+						"description": "The entity properties to match."
+					}
+				},
+				"additionalProperties": false,
+				"required": ["condition", "entity", "properties"]
+			}
+		}
+	],
+	"$defs": {
+		"match_tool": {
+			"type": "object",
+			"title": "Match Tool",
+			"description": "Specifies the tool item properties to match for a condition.",
+			"additionalProperties": false,
+			"properties": {
+				"count": {
+					"$ref": "./general.json#/$defs/count_range",
+					"description": "The count value or range."
+				},
+				"durability": {
+					"$ref": "./general.json#/$defs/durability_range",
+					"description": "The durability value or range."
+				},
+				"enchantments": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/enchantment_spec"
+					},
+					"description": "Array of enchantments the tool must have."
+				},
+				"item": {
+					"description": "The item identifier to match.",
+					"$ref": "../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+				},
+				"minecraft:match_tool_filter_any": {
+					"description": "Matches any item tags.",
+					"type": "array",
+					"items": {
+						"description": "Item tag",
+						"$ref": "../../../vanilla/server/tags.json#/$defs/item_tag"
+					}
+				},
+				"minecraft:match_tool_filter_all": {
+					"description": "Matches all item tags.",
+					"type": "array",
+					"items": {
+						"description": "Item tag",
+						"$ref": "../../../vanilla/server/tags.json#/$defs/item_tag"
+					}
+				},
+				"minecraft:match_tool_filter_none": {
+					"description": "Matches no item tags.",
+					"type": "array",
+					"items": {
+						"description": "Item tag",
+						"$ref": "../../../vanilla/server/tags.json#/$defs/item_tag"
+					}
+				}
+			}
+		},
+		"enchantment_spec": {
+			"type": "object",
+			"title": "Enchantment Spec",
+			"description": "Specifies an enchantment and its level range to match on a tool.",
+			"additionalProperties": false,
+			"properties": {
+				"enchantment": {
+					"description": "The enchantment identifier.",
+					"$ref": "../../../vanilla/server/enchantment.json"
+				},
+				"levels": {
+					"$ref": "./general.json#/$defs/levels_range",
+					"description": "The enchantment level or range of levels."
+				}
+			}
+		},
+		"entity_properties": {
+			"type": "object",
+			"title": "Entity Properties",
+			"description": "Properties of an entity to match for a condition.",
+			"additionalProperties": false,
+			"properties": {
+				"on_fire": {
+					"type": "boolean",
+					"description": "Whether the entity is on fire."
+				},
+				"on_ground": {
+					"type": "boolean",
+					"description": "Whether the entity is on the ground."
+				}
+			}
+		}
+	}
+}

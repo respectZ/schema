@@ -1,0 +1,992 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/loot_table/function.json",
+	"type": "object",
+	"title": "Loot Function",
+	"description": "Defines a function that modifies a loot table entry when selected.",
+	"required": ["function"],
+	"unevaluatedProperties": false,
+	"properties": {
+		"function": {
+			"type": "string",
+			"enum": [
+				"set_count",
+				"set_data",
+				"set_damage",
+				"looting_enchant",
+				"enchant_with_levels",
+				"enchant_book_for_trading",
+				"enchant_randomly",
+				"furnace_smelt",
+				"set_data_from_color_index",
+				"enchant_random_gear",
+				"random_aux_value",
+				"random_block_state",
+				"random_dye",
+				"exploration_map",
+				"set_banner_details",
+				"explosion_decay",
+				"set_name",
+				"set_lore",
+				"specific_enchants",
+				"fill_container",
+				"set_actor_id",
+				"set_book_contents",
+				"set_stew_effect",
+				"set_ominous_bottle_amplifier",
+				"set_armor_trim",
+				"set_potion",
+				"minecraft:set_count",
+				"minecraft:set_data",
+				"minecraft:set_damage",
+				"minecraft:looting_enchant",
+				"minecraft:enchant_with_levels",
+				"minecraft:enchant_book_for_trading",
+				"minecraft:enchant_randomly",
+				"minecraft:furnace_smelt",
+				"minecraft:set_data_from_color_index",
+				"minecraft:enchant_random_gear",
+				"minecraft:random_aux_value",
+				"minecraft:random_block_state",
+				"minecraft:random_dye",
+				"minecraft:exploration_map",
+				"minecraft:set_banner_details",
+				"minecraft:explosion_decay",
+				"minecraft:set_name",
+				"minecraft:set_lore",
+				"minecraft:specific_enchants",
+				"minecraft:fill_container",
+				"minecraft:set_actor_id",
+				"minecraft:set_book_contents",
+				"minecraft:set_stew_effect",
+				"minecraft:set_ominous_bottle_amplifier",
+				"minecraft:set_armor_trim",
+				"minecraft:set_potion"
+			],
+			"description": "The function type."
+		},
+		"conditions": {
+			"type": "array",
+			"items": {
+				"$ref": "./condition.json"
+			},
+			"description": "Conditions that must be met for this function to apply."
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["set_count", "minecraft:set_count"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true,
+					"count": {
+						"oneOf": [
+							{
+								"type": "integer",
+								"minimum": 0
+							},
+							{
+								"$ref": "#/$defs/count_range"
+							}
+						],
+						"description": "The count value or range."
+					},
+					"add": {
+						"type": "boolean"
+					}
+				},
+				"required": ["function", "count"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["set_data", "minecraft:set_data"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true,
+					"data": {
+						"oneOf": [
+							{
+								"type": "integer"
+							},
+							{
+								"$ref": "#/$defs/data_range"
+							}
+						],
+						"description": "The data value or range to set."
+					}
+				},
+				"required": ["function", "data"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["set_damage", "minecraft:set_damage"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true,
+					"damage": {
+						"$ref": "#/$defs/damage_range",
+						"description": "The damage range."
+					},
+					"add": {
+						"type": "boolean"
+					}
+				},
+				"required": ["function", "damage"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["looting_enchant", "minecraft:looting_enchant"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true,
+					"count": {
+						"oneOf": [
+							{
+								"type": "integer",
+								"minimum": 0
+							},
+							{
+								"$ref": "#/$defs/count_range"
+							}
+						],
+						"description": "The count value or range."
+					},
+					"limit": {
+						"type": "integer"
+					}
+				},
+				"required": ["function", "count"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["enchant_with_levels", "minecraft:enchant_with_levels"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true,
+					"levels": {
+						"oneOf": [
+							{
+								"type": "integer",
+								"minimum": 1
+							},
+							{
+								"$ref": "./general.json#/$defs/levels_range"
+							}
+						],
+						"description": "The enchantment level or range."
+					},
+					"treasure": {
+						"type": "boolean",
+						"description": "Whether to include treasure enchantments."
+					}
+				},
+				"required": ["function", "levels"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["enchant_book_for_trading", "minecraft:enchant_book_for_trading"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true,
+					"base_cost": {
+						"type": "integer",
+						"default": 2,
+						"description": "The base cost in emeralds for the enchanted book."
+					},
+					"per_level_cost": {
+						"type": "integer",
+						"default": 3,
+						"description": "The additional cost in emeralds per enchantment level."
+					},
+					"base_random_cost": {
+						"type": "integer",
+						"default": 5,
+						"description": "The base random cost in emeralds added to the total cost."
+					},
+					"per_level_random_cost": {
+						"type": "integer",
+						"default": 10,
+						"description": "The additional random cost in emeralds per enchantment level."
+					},
+					"enchantments": {
+						"$ref": "#/$defs/enchantments",
+						"description": "Specific enchantments to apply to the book."
+					}
+				},
+				"required": ["function"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["enchant_randomly", "minecraft:enchant_randomly"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true,
+					"treasure": {
+						"type": "boolean",
+						"description": "Whether to include treasure enchantments."
+					}
+				},
+				"required": ["function"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["furnace_smelt", "minecraft:furnace_smelt"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true
+				},
+				"required": ["function"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["set_data_from_color_index", "minecraft:set_data_from_color_index"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true
+				},
+				"required": ["function"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["enchant_random_gear", "minecraft:enchant_random_gear"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true,
+					"chance": {
+						"type": "number",
+						"description": "Modifier chance (0.0-1.0).",
+						"minimum": 0,
+						"maximum": 1
+					}
+				},
+				"required": ["function"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["random_aux_value", "minecraft:random_aux_value"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true,
+					"values": {
+						"oneOf": [
+							{
+								"type": "integer"
+							},
+							{
+								"$ref": "#/$defs/data_range"
+							}
+						],
+						"description": "The data value or range to set."
+					}
+				},
+				"required": ["function"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["random_block_state", "minecraft:random_block_state"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true,
+					"values": {
+						"oneOf": [
+							{
+								"type": "integer"
+							},
+							{
+								"$ref": "#/$defs/data_range"
+							}
+						],
+						"description": "The data value or range to set."
+					},
+					"block_state": {
+						"type": "string",
+						"description": "The block state"
+					}
+				},
+				"required": ["function"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["random_dye", "minecraft:random_dye"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true
+				},
+				"required": ["function"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["exploration_map", "minecraft:exploration_map"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true,
+					"destination": {
+						"type": "string",
+						"description": "The structure destination type. (Note: endcity, ruinedportal, pillageroutpost, ancientcity don't work.)",
+						"enum": [
+							"endcity",
+							"ruinedportal",
+							"buriedtreasure",
+							"pillageroutpost",
+							"bastionremnant",
+							"ancientcity",
+							"minecraft:monument",
+							"minecraft:mansion",
+							"minecraft:buried_treasure",
+							"minecraft:village_snowy",
+							"minecraft:village_taiga",
+							"minecraft:village_plains",
+							"minecraft:village_savanna",
+							"minecraft:village_desert",
+							"minecraft:jungle_temple",
+							"minecraft:swamp_hut",
+							"minecraft:trial_chambers",
+							"monument",
+							"mansion",
+							"buried_treasure",
+							"village_snowy",
+							"village_taiga",
+							"village_plains",
+							"village_savanna",
+							"village_desert",
+							"jungle_temple",
+							"swamp_hut",
+							"trial_chambers"
+						]
+					}
+				},
+				"required": ["function", "destination"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["set_banner_details", "minecraft:set_banner_details"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true,
+					"type": {
+						"oneOf": [
+							{
+								"type": "integer",
+								"minimum": 0,
+								"maximum": 1
+							},
+							{
+								"type": "string",
+								"enum": ["default", "illager_captain"]
+							}
+						]
+					},
+					"base_color": {
+						"$ref": "#/$defs/banner_color",
+						"description": "The base color of the banner."
+					},
+					"patterns": {
+						"oneOf": [
+							{
+								"$ref": "#/$defs/banner_pattern_item"
+							},
+							{
+								"type": "array",
+								"maxItems": 6,
+								"items": {
+									"$ref": "#/$defs/banner_pattern_item"
+								},
+								"description": "An array of banner patterns to apply."
+							}
+						]
+					}
+				},
+				"required": ["function", "type"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["explosion_decay", "minecraft:explosion_decay"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true
+				},
+				"required": ["function"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["set_name", "minecraft:set_name"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true,
+					"name": {
+						"type": "string",
+						"description": "The custom name to set on the item."
+					}
+				},
+				"required": ["function"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["set_lore", "minecraft:set_lore"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true,
+					"lore": {
+						"oneOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							}
+						]
+					}
+				},
+				"required": ["function"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["specific_enchants", "minecraft:specific_enchants"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true,
+					"enchants": {
+						"oneOf": [
+							{
+								"$ref": "#/$defs/specific_enchant_enchant"
+							},
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/$defs/specific_enchant_enchant"
+								},
+								"description": "An array of specific enchantments to apply."
+							},
+							{
+								"$ref": "../../../vanilla/server/enchantment.json"
+							}
+						]
+					}
+				},
+				"required": ["function"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["fill_container", "minecraft:fill_container"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true,
+					"loot_table": {
+						"type": "string",
+						"description": "The loot table path to fill the container with."
+					}
+				},
+				"required": ["function"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["set_actor_id", "minecraft:set_actor_id"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true,
+					"id": {
+						"type": "string",
+						"description": "The entity identifier.",
+						"$ref": "../../../vanilla/server/identifiers.json#/$defs/entity_identifier"
+					}
+				},
+				"required": ["function", "id"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["set_book_contents", "minecraft:set_book_contents"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true,
+					"author": {
+						"type": "string",
+						"description": "The author of the book."
+					},
+					"title": {
+						"type": "string",
+						"description": "The title of the book.",
+						"maxLength": 16
+					},
+					"pages": {
+						"type": "array",
+						"items": {
+							"type": "string",
+							"maxLength": 256
+						},
+						"description": "An array of page contents for the book."
+					}
+				},
+				"required": ["function"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["set_stew_effect", "minecraft:set_stew_effect"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true,
+					"effects": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"id": {
+									"type": "integer",
+									"description": "Effect type in numeric."
+								}
+							}
+						}
+					}
+				},
+				"required": ["function"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["set_ominous_bottle_amplifier", "minecraft:set_ominous_bottle_amplifier"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true,
+					"amplifier": {
+						"oneOf": [
+							{
+								"type": "integer",
+								"description": "The amplifier level to set on the ominous bottle effect."
+							},
+							{
+								"type": "object",
+								"additionalProperties": false,
+								"properties": {
+									"min": {
+										"type": "integer"
+									},
+									"max": {
+										"type": "integer"
+									}
+								}
+							}
+						]
+					}
+				},
+				"required": ["function"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["set_armor_trim", "minecraft:set_armor_trim"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true,
+					"material": {
+						"$ref": "../../../vanilla/server/armor_trim.json#/$defs/material"
+					},
+					"pattern": {
+						"$ref": "../../../vanilla/server/armor_trim.json#/$defs/pattern"
+					}
+				},
+				"required": ["function"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"enum": ["set_potion", "minecraft:set_potion"]
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true,
+					"id": {
+						"type": "string",
+						"description": "The potion effect identifier.",
+						"enum": [
+							"water",
+							"mundane",
+							"long_mundane",
+							"thick",
+							"awkward",
+							"nightvision",
+							"long_nightvision",
+							"invisibility",
+							"long_invisibility",
+							"leaping",
+							"long_leaping",
+							"strong_leaping",
+							"fire_resistance",
+							"long_fire_resistance",
+							"swiftness",
+							"long_swiftness",
+							"strong_swiftness",
+							"slowness",
+							"long_slowness",
+							"strong_slowness",
+							"water_breathing",
+							"long_water_breathing",
+							"healing",
+							"strong_healing",
+							"harming",
+							"strong_harming",
+							"poison",
+							"long_poison",
+							"strong_poison",
+							"regeneration",
+							"long_regeneration",
+							"strong_regeneration",
+							"strength",
+							"long_strength",
+							"strong_strength",
+							"weakness",
+							"long_weakness",
+							"wither",
+							"turtleMaster",
+							"long_turtle_master",
+							"strong_turtle_master",
+							"slow_falling",
+							"long_slow_falling",
+							"wind_charged",
+							"weaving",
+							"oozing",
+							"infested"
+						]
+					}
+				},
+				"required": ["function"]
+			}
+		}
+	],
+	"$defs": {
+		"count_range": {
+			"type": "object",
+			"title": "Count Range",
+			"description": "A range of count values with minimum and maximum.",
+			"required": ["min", "max"],
+			"additionalProperties": false,
+			"properties": {
+				"min": {
+					"type": "integer",
+					"minimum": 0,
+					"description": "Minimum count."
+				},
+				"max": {
+					"type": "integer",
+					"minimum": 0,
+					"description": "Maximum count."
+				}
+			}
+		},
+		"damage_range": {
+			"type": "object",
+			"title": "Damage Range",
+			"description": "A range of damage.",
+			"required": ["min", "max"],
+			"additionalProperties": false,
+			"properties": {
+				"min": {
+					"type": "number",
+					"description": "Minimum damage percentage."
+				},
+				"max": {
+					"type": "number",
+					"description": "Maximum damage percentage."
+				}
+			}
+		},
+		"data_range": {
+			"type": "object",
+			"title": "Data Range",
+			"description": "A range of data values with minimum and maximum.",
+			"required": ["min", "max"],
+			"additionalProperties": false,
+			"properties": {
+				"min": {
+					"type": "integer",
+					"description": "Minimum data value."
+				},
+				"max": {
+					"type": "integer",
+					"description": "Maximum data value."
+				}
+			}
+		},
+		"enchantment": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"description": "The enchantment identifier.",
+					"$ref": "../../../vanilla/server/enchantment.json"
+				},
+				"min": {
+					"type": "integer"
+				},
+				"max": {
+					"type": "integer"
+				}
+			},
+			"required": ["name"],
+			"additionalProperties": false
+		},
+		"enchantments": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/enchantment"
+			}
+		},
+		"specific_enchant_enchant": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"description": "The enchantment identifier.",
+					"$ref": "../../../vanilla/server/enchantment.json"
+				},
+				"level": {
+					"oneOf": [
+						{
+							"type": "integer"
+						},
+						{
+							"type": "array",
+							"minItems": 2,
+							"maxItems": 2,
+							"description": "Min max",
+							"items": {
+								"type": "integer"
+							}
+						}
+					]
+				}
+			},
+			"required": ["id"],
+			"additionalProperties": false
+		},
+		"banner_color": {
+			"type": "string",
+			"enum": [
+				"black",
+				"red",
+				"green",
+				"brown",
+				"blue",
+				"purple",
+				"cyan",
+				"silver",
+				"gray",
+				"pink",
+				"lime",
+				"yellow",
+				"light_blue",
+				"magenta",
+				"orange",
+				"white"
+			]
+		},
+		"banner_pattern": {
+			"type": "string",
+			"enum": [
+				"base",
+				"border",
+				"gradient",
+				"creeper",
+				"skull",
+				"flower",
+				"mojang",
+				"globe",
+				"piglin",
+				"ruminant"
+			]
+		},
+		"banner_pattern_item": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["pattern", "color"],
+			"properties": {
+				"pattern": {
+					"$ref": "#/$defs/banner_pattern",
+					"description": "The banner pattern type."
+				},
+				"color": {
+					"$ref": "#/$defs/banner_color",
+					"description": "The banner pattern color."
+				}
+			}
+		}
+	}
+}

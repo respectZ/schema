@@ -1,0 +1,254 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/loot_table/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Loot Table",
+	"description": "Defines loot that can be generated from entities, chests, fishing, and other gameplay events.",
+	"additionalProperties": false,
+	"properties": {
+		"pools": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/loot_pool"
+			},
+			"description": "A list of loot pools. Each pool is rolled independently to select entries."
+		}
+	},
+	"$defs": {
+		"loot_pool": {
+			"type": "object",
+			"title": "Loot Pool",
+			"description": "Defines a pool of loot entries that can be rolled one or more times.",
+			"additionalProperties": false,
+			"properties": {
+				"bonus_rolls": {
+					"type": "integer",
+					"description": "Additional rolls added based on luck attribute."
+				},
+				"conditions": {
+					"type": "array",
+					"items": {
+						"$ref": "./condition.json"
+					},
+					"description": "Array of conditions that must be met for this pool to be rolled."
+				},
+				"entries": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/loot_entry"
+					},
+					"description": "Array of possible entries to select from when rolling this pool."
+				},
+				"rolls": {
+					"oneOf": [
+						{
+							"type": "integer",
+							"minimum": 0
+						},
+						{
+							"$ref": "#/$defs/rolls_range"
+						}
+					],
+					"description": "Number of times to roll this pool."
+				},
+				"tiers": {
+					"$ref": "#/$defs/tiers",
+					"description": "Tiered entry selection configuration."
+				}
+			}
+		},
+		"rolls_range": {
+			"type": "object",
+			"title": "Rolls Range",
+			"description": "A range of roll counts with minimum and maximum values.",
+			"required": ["min", "max"],
+			"additionalProperties": false,
+			"properties": {
+				"min": {
+					"type": "integer",
+					"minimum": 0,
+					"description": "Minimum number of rolls."
+				},
+				"max": {
+					"type": "integer",
+					"minimum": 1,
+					"description": "Maximum number of rolls."
+				}
+			}
+		},
+		"loot_entry": {
+			"type": "object",
+			"title": "Loot Table Entry",
+			"description": "Defines an entry in a loot table pool that can be selected when the pool rolls.",
+			"unevaluatedProperties": false,
+			"allOf": [
+				{
+					"type": "object",
+					"properties": {
+						"type": {
+							"type": "string",
+							"enum": ["item", "loot_table", "empty"]
+						}
+					},
+					"required": ["type"]
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "item"
+							}
+						},
+						"required": ["type"]
+					},
+					"then": {
+						"required": ["name"],
+						"properties": {
+							"name": {
+								"$ref": "#/$defs/name_item"
+							},
+							"conditions": {
+								"type": "array",
+								"items": {
+									"$ref": "./condition.json"
+								},
+								"description": "Array of conditions that must be met for this entry to be considered."
+							},
+							"functions": {
+								"type": "array",
+								"items": {
+									"$ref": "./function.json"
+								},
+								"description": "Array of functions to apply to the item when selected."
+							},
+							"weight": {
+								"type": "integer",
+								"minimum": 1,
+								"description": "The relative weight of this entry being selected. Higher weights are more likely."
+							},
+							"quality": {
+								"type": "integer",
+								"description": "Additional weight added to this entry based on the luck attribute. Can be negative."
+							},
+							"pools": {
+								"type": "array",
+								"items": {
+									"$ref": "#/$defs/loot_pool"
+								},
+								"description": "Nested pools for type 'loot_table'. Allows inline loot table definition."
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "loot_table"
+							}
+						},
+						"required": ["type"]
+					},
+					"then": {
+						"properties": {
+							"name": {
+								"$ref": "#/$defs/name_loot_table"
+							},
+							"conditions": {
+								"type": "array",
+								"items": {
+									"$ref": "./condition.json"
+								},
+								"description": "Array of conditions that must be met for this entry to be considered."
+							},
+							"weight": {
+								"type": "integer",
+								"minimum": 1,
+								"description": "The relative weight of this entry being selected. Higher weights are more likely."
+							},
+							"quality": {
+								"type": "integer",
+								"description": "Additional weight added to this entry based on the luck attribute. Can be negative."
+							},
+							"pools": {
+								"type": "array",
+								"items": {
+									"$ref": "#/$defs/loot_pool"
+								},
+								"description": "Nested pools for type 'loot_table'. Allows inline loot table definition. Requires valid 'name'."
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "empty"
+							}
+						},
+						"required": ["type"]
+					},
+					"then": {
+						"properties": {
+							"conditions": {
+								"type": "array",
+								"items": {
+									"$ref": "./condition.json"
+								},
+								"description": "Array of conditions that must be met for this entry to be considered."
+							},
+							"weight": {
+								"type": "integer",
+								"minimum": 1,
+								"description": "The relative weight of this entry being selected. Higher weights are more likely."
+							},
+							"quality": {
+								"type": "integer",
+								"description": "Additional weight added to this entry based on the luck attribute. Can be negative."
+							}
+						}
+					}
+				}
+			]
+		},
+		"tiers": {
+			"type": "object",
+			"title": "Tiers",
+			"description": "Tiered entry selection configuration for a loot pool.",
+			"additionalProperties": false,
+			"properties": {
+				"bonus_chance": {
+					"type": "number",
+					"description": "Bonus chance for higher tiers."
+				},
+				"bonus_rolls": {
+					"type": "integer",
+					"description": "Bonus rolls for higher tiers."
+				},
+				"initial_range": {
+					"type": "integer",
+					"description": "Initial range for tier selection."
+				}
+			}
+		},
+		"entry_item": {
+			"type": "object",
+			"title": "Item Entry",
+			"properties": {
+				"name": {
+					"$ref": "#/$defs/name_item"
+				}
+			}
+		},
+		"name_item": {
+			"type": "string",
+			"description": "The item identifier for an item entry.",
+			"$ref": "../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+		},
+		"name_loot_table": {
+			"type": "string",
+			"description": "The loot table path for a loot table entry."
+		}
+	}
+}

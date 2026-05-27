@@ -1,0 +1,64 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/loot_table/general.json",
+	"type": "object",
+	"title": "Loot Table General Types",
+	"description": "Shared type definitions used across loot table components.",
+	"$defs": {
+		"levels_range": {
+			"type": "object",
+			"title": "Levels Range",
+			"description": "A range of enchantment levels.",
+			"required": ["min", "max"],
+			"additionalProperties": false,
+			"properties": {
+				"min": {
+					"type": "integer",
+					"minimum": 0,
+					"description": "Minimum enchantment level."
+				},
+				"max": {
+					"type": "integer",
+					"minimum": 1,
+					"description": "Maximum enchantment level."
+				}
+			}
+		},
+		"durability_range": {
+			"type": "object",
+			"title": "Durability Range",
+			"description": "A range of durability.",
+			"required": ["min", "max"],
+			"additionalProperties": false,
+			"properties": {
+				"min": {
+					"type": "number",
+					"description": "Minimum durability."
+				},
+				"max": {
+					"type": "number",
+					"description": "Maximum durability."
+				}
+			}
+		},
+		"count_range": {
+			"type": "object",
+			"title": "Count Range",
+			"description": "A range of count values with minimum and maximum.",
+			"required": ["min", "max"],
+			"additionalProperties": false,
+			"properties": {
+				"min": {
+					"type": "integer",
+					"minimum": 0,
+					"description": "Minimum count."
+				},
+				"max": {
+					"type": "integer",
+					"minimum": 0,
+					"description": "Maximum count."
+				}
+			}
+		}
+	}
+}
