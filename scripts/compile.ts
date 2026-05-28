@@ -43,6 +43,10 @@ const BP_ENTRIES: JsonValidationEntry[] = [
 		url: "./schema/bedrock/server/loot_table/_index.json",
 	},
 	{
+		fileMatch: "trading/**/*.{json,jsonc,json5}",
+		url: "./schema/bedrock/server/trading/_index.json",
+	},
+	{
 		fileMatch: "recipes/**/*.{json,jsonc,json5}",
 		url: "./schema/bedrock/server/recipe/_index.json",
 	},

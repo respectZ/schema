@@ -1,0 +1,184 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/trading/1.0.0/_index.json",
+	"type": "object",
+	"title": "Trade Table",
+	"description": "Defines the items a villager or wandering trader can offer in trades.",
+	"required": ["tiers"],
+	"additionalProperties": false,
+	"properties": {
+		"format_version": {
+			"description": "The format version of the trade table. Use 1.21.80 for strict chance check.",
+			"default": "1.21.80"
+		},
+		"tiers": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/tier"
+			},
+			"description": "A list of tiers that define the trades available at each level."
+		},
+		"weight": {
+			"type": "integer",
+			"description": "The weight/probability of this trade table being selected when multiple tables exist (e.g., for wandering traders)."
+		}
+	},
+	"$defs": {
+		"tier": {
+			"type": "object",
+			"title": "Tier",
+			"description": "A tier of trades that unlocks as the villager gains experience.",
+			"additionalProperties": false,
+			"properties": {
+				"groups": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/group"
+					},
+					"description": "A list of trade groups for this tier. Groups allow selecting a subset of trades per interaction."
+				},
+				"total_exp_required": {
+					"type": "integer",
+					"default": 0,
+					"description": "The total experience required to unlock this tier."
+				},
+				"trades": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/trade"
+					},
+					"description": "A list of trades available in this tier. Only one of 'groups' or 'trades' should be used."
+				}
+			}
+		},
+		"group": {
+			"type": "object",
+			"title": "Group",
+			"description": "A group of trades where a limited number can be selected per interaction.",
+			"required": ["trades"],
+			"additionalProperties": false,
+			"properties": {
+				"num_to_select": {
+					"type": "integer",
+					"default": 1,
+					"description": "The number of trades to select from this group each time the trades refresh."
+				},
+				"trades": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/trade"
+					},
+					"description": "A list of trades in this group."
+				}
+			}
+		},
+		"trade": {
+			"type": "object",
+			"title": "Trade",
+			"description": "A single trade offer between a villager and a player.",
+			"required": ["wants", "gives"],
+			"additionalProperties": false,
+			"properties": {
+				"wants": {
+					"type": "array",
+					"minItems": 1,
+					"maxItems": 2,
+					"items": {
+						"$ref": "#/$defs/trade_item"
+					},
+					"description": "The items the villager wants in exchange. Usually 1 item, but can be 2 for some trades."
+				},
+				"gives": {
+					"type": "array",
+					"minItems": 1,
+					"maxItems": 1,
+					"items": {
+						"$ref": "#/$defs/trade_item"
+					},
+					"description": "The items the villager gives to the player."
+				},
+				"max_uses": {
+					"type": "integer",
+					"default": 12,
+					"description": "The maximum number of times this trade can be used before it is exhausted."
+				},
+				"reward_exp": {
+					"type": "boolean",
+					"default": true,
+					"description": "Whether this trade rewards the villager with experience when used."
+				},
+				"trader_exp": {
+					"type": "integer",
+					"minimum": 1,
+					"default": 1,
+					"description": "The amount of experience the villager gains when this trade is used."
+				}
+			}
+		},
+		"trade_item": {
+			"type": "object",
+			"title": "Trade Item",
+			"description": "An item involved in a trade, either wanted or given.",
+			"additionalProperties": false,
+			"properties": {
+				"item": {
+					"$ref": "../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+					"description": "The item identifier."
+				},
+				"quantity": {
+					"oneOf": [
+						{
+							"type": "integer",
+							"minimum": 1
+						},
+						{
+							"type": "object",
+							"title": "Quantity Range",
+							"description": "A range of possible quantities for the item.",
+							"required": ["min", "max"],
+							"additionalProperties": false,
+							"properties": {
+								"min": {
+									"type": "integer",
+									"minimum": 1,
+									"description": "Minimum quantity."
+								},
+								"max": {
+									"type": "integer",
+									"minimum": 1,
+									"description": "Maximum quantity."
+								}
+							}
+						}
+					],
+					"default": 1,
+					"description": "The quantity of the item, either as a fixed number or a range."
+				},
+				"price_multiplier": {
+					"type": "number",
+					"default": 0.05,
+					"description": "A multiplier that adjusts the price based on demand and other factors."
+				},
+				"filters": {
+					// TODO: Filters
+					"type": "object",
+					"description": "Filters that define additional conditions for this trade item."
+				},
+				"functions": {
+					"type": "array",
+					"items": {
+						"$ref": "../../loot_table/function.json"
+					},
+					"description": "Array of functions to apply to the trade item, such as enchantments."
+				},
+				"choice": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/trade_item"
+					},
+					"description": "Alternative items that can be traded. Allows the player to choose from multiple options."
+				}
+			}
+		}
+	}
+}

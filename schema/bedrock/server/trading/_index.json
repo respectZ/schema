@@ -1,0 +1,12 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/trading/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Trade Table File",
+	"description": "Schema for trade table definition files used by behavior packs.",
+	"allOf": [
+		{
+			"$ref": "./1.0.0/_index.json"
+		}
+	]
+}
