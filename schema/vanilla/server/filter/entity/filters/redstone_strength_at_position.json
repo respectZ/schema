@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/redstone_strength_at_position.json",
+	"type": "object",
+	"title": "Redstone Strength At Position Filter",
+	"description": "Tests the redstone strength at the subject's position.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"type": "integer",
+			"description": "An integer value."
+		}
+	},
+	"required": ["value"]
+}

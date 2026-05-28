@@ -1,0 +1,18 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/has_component.json",
+	"type": "object",
+	"title": "Has Component Filter",
+	"description": "Returns true when the subject entity contains the named component.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			// TODO: Update list entity components.
+			"description": "A string value.",
+			"type": "string"
+		}
+	},
+	"required": ["value"]
+}

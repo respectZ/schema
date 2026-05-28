@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/hourly_clock_time.json",
+	"type": "object",
+	"title": "Hourly Clock Time Filter",
+	"description": "Compares the current 24 hour time with an int value in the range[0, 24000].",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"type": "integer",
+			"description": "An integer value."
+		}
+	},
+	"required": ["value"]
+}

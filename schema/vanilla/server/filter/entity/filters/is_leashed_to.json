@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/is_leashed_to.json",
+	"type": "object",
+	"title": "Is Leashed To Filter",
+	"description": "Returns true if the subject entity leashed to the calling entity.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"type": "boolean",
+			"description": "True or false."
+		}
+	}
+}

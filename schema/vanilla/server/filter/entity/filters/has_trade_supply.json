@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/has_trade_supply.json",
+	"type": "object",
+	"title": "Has Trade Supply Filter",
+	"description": "Tests whether the target has any trade supply left.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"type": "boolean",
+			"description": "True or false."
+		}
+	}
+}

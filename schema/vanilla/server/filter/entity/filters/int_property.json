@@ -1,0 +1,21 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/int_property.json",
+	"type": "object",
+	"title": "Int Property Filter",
+	"description": "Returns true when the int actor property matches the value provided.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"domain": {
+			"type": "string",
+			"description": "The property name to look for."
+		},
+		"value": {
+			"type": "integer",
+			"description": "An integer value."
+		}
+	},
+	"required": ["domain", "value"]
+}

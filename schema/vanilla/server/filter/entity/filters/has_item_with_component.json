@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/has_item_with_component.json",
+	"type": "object",
+	"title": "Has Item With Component Filter",
+	"description": "Returns true when the subject entity is holding a item with the specified component.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"description": "A string value.",
+			"type": "string"
+		}
+	},
+	"required": ["value"]
+}

@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/has_mob_effect.json",
+	"type": "object",
+	"title": "Has Mob Effect Filter",
+	"description": "Tests whether the Subject has the specified mob effect.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"description": "The mob effect to test for.",
+			"$ref": "../../../effect_type.json"
+		}
+	},
+	"required": []
+}

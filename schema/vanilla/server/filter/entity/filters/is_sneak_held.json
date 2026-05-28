@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/is_sneak_held.json",
+	"type": "object",
+	"title": "Is Sneak Held Filter",
+	"description": "Returns true if the subject entity has the sneak input held.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"type": "boolean",
+			"description": "True or false."
+		}
+	}
+}

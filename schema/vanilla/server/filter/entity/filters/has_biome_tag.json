@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/has_biome_tag.json",
+	"type": "object",
+	"title": "Has Biome Tag Filter",
+	"description": "Tests whether the biome the subject is in has the specified tag.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"$ref": "../../../tags.json#/$defs/biome_tag"
+		}
+	},
+	"required": ["value"]
+}

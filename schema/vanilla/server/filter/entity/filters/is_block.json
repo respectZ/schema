@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/is_block.json",
+	"type": "object",
+	"title": "Is Block Filter",
+	"description": "Returns true when the block has the given name.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"description": "The block identifier to test.",
+			"$ref": "../../../identifiers.json#/$defs/block_identifier"
+		}
+	},
+	"required": ["value"]
+}

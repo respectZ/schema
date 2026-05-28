@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/is_altitude.json",
+	"type": "object",
+	"title": "Is Altitude Filter",
+	"description": "Tests the current altitude against a provided value.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"type": "integer",
+			"description": "An integer value."
+		}
+	},
+	"required": ["value"]
+}

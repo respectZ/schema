@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/is_waterlogged.json",
+	"type": "object",
+	"title": "Is Waterlogged Filter",
+	"description": "Tests if the subject block is submerged in water.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"description": "True or false.",
+			"type": "boolean"
+		}
+	},
+	"required": ["value"]
+}

@@ -1,0 +1,1719 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/_index.json",
+	"oneOf": [
+		{
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/filter_item"
+			}
+		},
+		{
+			"$ref": "#/$defs/filter_item"
+		}
+	],
+	"$defs": {
+		"filter_item": {
+			"oneOf": [
+				{
+					"$ref": "#/$defs/test_filter"
+				},
+				{
+					"$ref": "#/$defs/logical_filter"
+				}
+			]
+		},
+		"test_filter": {
+			"type": "object",
+			"title": "Entity Filter",
+			"description": "A filter that tests a condition on an entity.",
+			"required": ["test"],
+			"unevaluatedProperties": false,
+			"properties": {
+				"test": {
+					"type": "string",
+					"enum": [
+						"actor_health",
+						"all_slots_empty",
+						"any_slot_empty",
+						"bool_property",
+						"clock_time",
+						"distance_to_nearest_player",
+						"enum_property",
+						"float_property",
+						"has_ability",
+						"has_biome_tag",
+						"has_component",
+						"has_container_open",
+						"has_damage",
+						"has_damaged_equipment",
+						"has_equipment",
+						"has_equipment_tag",
+						"has_item_with_component",
+						"has_mob_effect",
+						"has_nametag",
+						"has_property",
+						"has_ranged_weapon",
+						"has_same_equipment_in_slot_as",
+						"has_silk_touch",
+						"has_tag",
+						"has_target",
+						"has_trade_supply",
+						"home_distance",
+						"hourly_clock_time",
+						"in_block",
+						"in_caravan",
+						"in_clouds",
+						"in_contact_with_water",
+						"in_lava",
+						"in_nether",
+						"in_overworld",
+						"in_water",
+						"in_water_or_rain",
+						"inactivity_timer",
+						"int_property",
+						"is_altitude",
+						"is_avoiding_mobs",
+						"is_baby",
+						"is_biome",
+						"is_block",
+						"is_bound_to_creaking_heart",
+						"is_brightness",
+						"is_climbing",
+						"is_color",
+						"is_controlling_passenger_family",
+						"is_daytime",
+						"is_difficulty",
+						"is_family",
+						"is_game_rule",
+						"is_humid",
+						"is_immobile",
+						"is_in_same_vehicle",
+						"is_in_village",
+						"is_leashed",
+						"is_leashed_to",
+						"is_mark_variant",
+						"is_missing_health",
+						"is_moving",
+						"is_navigating",
+						"is_owner",
+						"is_panicking",
+						"is_persistent",
+						"is_raider",
+						"is_riding",
+						"is_riding_self",
+						"is_sitting",
+						"is_skin_id",
+						"is_sleeping",
+						"is_sneak_held",
+						"is_sneaking",
+						"is_snow_covered",
+						"is_sprinting",
+						"is_tamed",
+						"is_target",
+						"is_temperature_type",
+						"is_temperature_value",
+						"is_underground",
+						"is_underwater",
+						"is_variant",
+						"is_vehicle_family",
+						"is_visible",
+						"is_waterlogged",
+						"is_weather",
+						"light_level",
+						"moon_intensity",
+						"moon_phase",
+						"on_fire",
+						"on_ground",
+						"on_hot_block",
+						"on_ladder",
+						"owner_distance",
+						"random_chance",
+						"redstone_strength_at_position",
+						"rider_count",
+						"surface_mob",
+						"taking_fire_damage",
+						"target_distance",
+						"trusts",
+						"was_last_hurt_by",
+						"weather",
+						"weather_at_position",
+						"y_rotation"
+					],
+					"description": "The filter test to apply."
+				},
+				"subject": {
+					"$ref": "#/$defs/subject",
+					"description": "(Optional) The subject of this filter test. Defaults to 'self'."
+				},
+				"operator": {
+					"$ref": "#/$defs/operator",
+					"description": "(Optional) The comparison to apply with 'value'. Defaults to 'equals'."
+				}
+			},
+			"allOf": [
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "actor_health"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/actor_health.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "all_slots_empty"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/all_slots_empty.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "any_slot_empty"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/any_slot_empty.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "bool_property"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/bool_property.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "clock_time"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/clock_time.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "distance_to_nearest_player"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/distance_to_nearest_player.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "enum_property"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/enum_property.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "float_property"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/float_property.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_ability"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/has_ability.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_biome_tag"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/has_biome_tag.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_component"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/has_component.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_container_open"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/has_container_open.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_damage"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/has_damage.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_damaged_equipment"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/has_damaged_equipment.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_equipment"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/has_equipment.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_equipment_tag"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/has_equipment_tag.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_item_with_component"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/has_item_with_component.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_mob_effect"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/has_mob_effect.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_nametag"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/has_nametag.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_property"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/has_property.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_ranged_weapon"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/has_ranged_weapon.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_same_equipment_in_slot_as"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/has_same_equipment_in_slot_as.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_silk_touch"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/has_silk_touch.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_tag"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/has_tag.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_target"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/has_target.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_trade_supply"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/has_trade_supply.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "home_distance"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/home_distance.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "hourly_clock_time"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/hourly_clock_time.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "in_block"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/in_block.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "in_caravan"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/in_caravan.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "in_clouds"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/in_clouds.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "in_contact_with_water"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/in_contact_with_water.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "in_lava"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/in_lava.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "in_nether"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/in_nether.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "in_overworld"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/in_overworld.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "in_water"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/in_water.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "in_water_or_rain"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/in_water_or_rain.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "inactivity_timer"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/inactivity_timer.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "int_property"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/int_property.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_altitude"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_altitude.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_avoiding_mobs"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_avoiding_mobs.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_baby"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_baby.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_biome"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_biome.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_block"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_block.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_bound_to_creaking_heart"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_bound_to_creaking_heart.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_brightness"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_brightness.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_climbing"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_climbing.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_color"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_color.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_controlling_passenger_family"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_controlling_passenger_family.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_daytime"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_daytime.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_difficulty"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_difficulty.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_family"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_family.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_game_rule"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_game_rule.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_humid"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_humid.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_immobile"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_immobile.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_in_same_vehicle"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_in_same_vehicle.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_in_village"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_in_village.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_leashed"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_leashed.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_leashed_to"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_leashed_to.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_mark_variant"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_mark_variant.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_missing_health"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_missing_health.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_moving"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_moving.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_navigating"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_navigating.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_owner"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_owner.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_panicking"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_panicking.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_persistent"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_persistent.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_raider"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_raider.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_riding"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_riding.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_riding_self"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_riding_self.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_sitting"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_sitting.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_skin_id"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_skin_id.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_sleeping"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_sleeping.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_sneak_held"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_sneak_held.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_sneaking"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_sneaking.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_snow_covered"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_snow_covered.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_sprinting"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_sprinting.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_tamed"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_tamed.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_target"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_target.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_temperature_type"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_temperature_type.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_temperature_value"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_temperature_value.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_underground"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_underground.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_underwater"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_underwater.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_variant"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_variant.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_vehicle_family"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_vehicle_family.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_visible"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_visible.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_waterlogged"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_waterlogged.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "is_weather"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/is_weather.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "light_level"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/light_level.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "moon_intensity"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/moon_intensity.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "moon_phase"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/moon_phase.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "on_fire"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/on_fire.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "on_ground"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/on_ground.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "on_hot_block"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/on_hot_block.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "on_ladder"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/on_ladder.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "owner_distance"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/owner_distance.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "random_chance"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/random_chance.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "redstone_strength_at_position"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/redstone_strength_at_position.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "rider_count"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/rider_count.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "surface_mob"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/surface_mob.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "taking_fire_damage"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/taking_fire_damage.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "target_distance"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/target_distance.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "trusts"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/trusts.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "was_last_hurt_by"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/was_last_hurt_by.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "weather"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/weather.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "weather_at_position"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/weather_at_position.json"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "y_rotation"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/y_rotation.json"
+					}
+				}
+			]
+		},
+		"logical_filter": {
+			"title": "Logical Filter",
+			"description": "A logical combination of filters.",
+			"type": "object",
+			"oneOf": [
+				{
+					"properties": {
+						"AND": {
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/filter_item"
+							}
+						}
+					},
+					"additionalProperties": false,
+					"required": ["AND"]
+				},
+				{
+					"properties": {
+						"all": {
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/filter_item"
+							}
+						}
+					},
+					"additionalProperties": false,
+					"required": ["all"]
+				},
+				{
+					"properties": {
+						"all_of": {
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/filter_item"
+							}
+						}
+					},
+					"additionalProperties": false,
+					"required": ["all_of"]
+				},
+				{
+					"properties": {
+						"OR": {
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/filter_item"
+							}
+						}
+					},
+					"additionalProperties": false,
+					"required": ["OR"]
+				},
+				{
+					"properties": {
+						"any": {
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/filter_item"
+							}
+						}
+					},
+					"additionalProperties": false,
+					"required": ["any"]
+				},
+				{
+					"properties": {
+						"any_of": {
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/filter_item"
+							}
+						}
+					},
+					"additionalProperties": false,
+					"required": ["any_of"]
+				},
+				{
+					"properties": {
+						"NOT": {
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/filter_item"
+							}
+						}
+					},
+					"additionalProperties": false,
+					"required": ["NOT"]
+				},
+				{
+					"properties": {
+						"none_of": {
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/filter_item"
+							}
+						}
+					},
+					"additionalProperties": false,
+					"required": ["none_of"]
+				}
+			]
+		},
+		"subject": {
+			"title": "Subject",
+			"description": "The subject of this filter test.",
+			"oneOf": [
+				{
+					"const": "block",
+					"description": "The block involved with the interaction."
+				},
+				{
+					"const": "damager",
+					"description": "The damaging actor involved with the interaction."
+				},
+				{
+					"const": "other",
+					"description": "The other member of an interaction, not the caller."
+				},
+				{
+					"const": "parent",
+					"description": "The caller's current parent."
+				},
+				{
+					"const": "player",
+					"description": "The player involved with the interaction."
+				},
+				{
+					"const": "self",
+					"description": "The entity or object calling the test"
+				},
+				{
+					"const": "target",
+					"description": "The caller's current target."
+				}
+			]
+		},
+		"operator": {
+			"title": "Operator",
+			"description": "The comparison operator to apply with 'value'.",
+			"oneOf": [
+				{
+					"const": "!=",
+					"description": "Test for inequality."
+				},
+				{
+					"const": "<",
+					"description": "Test for less-than the value."
+				},
+				{
+					"const": "<=",
+					"description": "Test for less-than or equal to the value."
+				},
+				{
+					"const": "<>",
+					"description": "Test for inequality."
+				},
+				{
+					"const": "=",
+					"description": "Test for equality."
+				},
+				{
+					"const": "==",
+					"description": "Test for equality."
+				},
+				{
+					"const": ">",
+					"description": "Test for greater-than the value."
+				},
+				{
+					"const": ">=",
+					"description": "Test for greater-than or equal to the value."
+				},
+				{
+					"const": "equals",
+					"description": "Test for equality."
+				},
+				{
+					"const": "not",
+					"description": "Test for inequality."
+				}
+			]
+		}
+	}
+}

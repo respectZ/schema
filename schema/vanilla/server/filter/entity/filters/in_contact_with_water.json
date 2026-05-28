@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/in_contact_with_water.json",
+	"type": "object",
+	"title": "In Contact With Water Filter",
+	"description": "Returns true when the subject entity in contact with any water: water, rain, splash water bottle.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"type": "boolean",
+			"description": "True or false."
+		}
+	}
+}

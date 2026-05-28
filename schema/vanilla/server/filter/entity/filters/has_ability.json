@@ -1,0 +1,63 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/has_ability.json",
+	"type": "object",
+	"title": "Has Ability Filter",
+	"description": "Returns true when the subject entity has the named ability.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"title": "Ability",
+			"description": "The Ability type to test.",
+			"oneOf": [
+				{
+					"const": "flySpeed",
+					"description": "Fly speed ability."
+				},
+				{
+					"const": "flying",
+					"description": "Flying ability."
+				},
+				{
+					"const": "instabuild",
+					"description": "Instabuild ability."
+				},
+				{
+					"const": "invulnerable",
+					"description": "Invulnerable ability."
+				},
+				{
+					"const": "lightning",
+					"description": "Lightning ability."
+				},
+				{
+					"const": "mayfly",
+					"description": "Mayfly ability."
+				},
+				{
+					"const": "mute",
+					"description": "Mute ability."
+				},
+				{
+					"const": "noclip",
+					"description": "Noclip ability."
+				},
+				{
+					"const": "verticalFlySpeed",
+					"description": "Vertical fly speed ability."
+				},
+				{
+					"const": "walkSpeed",
+					"description": "Walk speed ability."
+				},
+				{
+					"const": "worldbuilder",
+					"description": "Worldbuilder ability."
+				}
+			]
+		}
+	},
+	"required": ["value"]
+}

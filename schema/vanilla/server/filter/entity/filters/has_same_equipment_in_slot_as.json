@@ -1,0 +1,20 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/has_same_equipment_in_slot_as.json",
+	"type": "object",
+	"title": "Has Same Equipment In Slot As Filter",
+	"description": "Returns whether the subject entity has the same item equipped in the specified slot as calling entity.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"domain": {
+			"$ref": "../../general.json#/$defs/equipment_slot"
+		},
+		"value": {
+			"description": "True or false.",
+			"type": "boolean"
+		}
+	},
+	"required": ["value"]
+}

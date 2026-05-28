@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/taking_fire_damage.json",
+	"type": "object",
+	"title": "Taking Fire Damage Filter",
+	"description": "Tests if the subject is taking fire damage.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"type": "boolean",
+			"description": "True or false."
+		}
+	}
+}

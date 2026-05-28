@@ -1,0 +1,20 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/has_equipment.json",
+	"type": "object",
+	"title": "Has Equipment Filter",
+	"description": "Tests for the presence of a named item in the designated slot of the subject entity.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"domain": {
+			"$ref": "../../general.json#/$defs/equipment_slot"
+		},
+		"value": {
+			"description": "The item identifier to test for.",
+			"$ref": "../../../identifiers.json#/$defs/item_identifier"
+		}
+	},
+	"required": ["value"]
+}

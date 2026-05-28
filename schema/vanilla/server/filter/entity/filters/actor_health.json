@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/actor_health.json",
+	"type": "object",
+	"title": "Actor Health Filter",
+	"description": "Tests the health of the subject.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"type": "integer",
+			"description": "An integer value."
+		}
+	},
+	"required": ["value"]
+}

@@ -1,0 +1,116 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/damage_type.json",
+	"title": "Damage Type",
+	"description": "The damage type to test.",
+	"oneOf": [
+		{
+			"const": "anvil",
+			"description": "Anvil damage."
+		},
+		{
+			"const": "attack",
+			"description": "Attack damage."
+		},
+		{
+			"const": "block_explosion",
+			"description": "Block explosion damage."
+		},
+		{
+			"const": "contact",
+			"description": "Contact damage."
+		},
+		{
+			"const": "drowning",
+			"description": "Drowning damage."
+		},
+		{
+			"const": "entity_explosion",
+			"description": "Entity explosion damage."
+		},
+		{
+			"const": "fall",
+			"description": "Fall damage."
+		},
+		{
+			"const": "falling_block",
+			"description": "Falling block damage."
+		},
+		{
+			"const": "fatal",
+			"description": "Any damage which kills the subject."
+		},
+		{
+			"const": "fire",
+			"description": "Fire damage."
+		},
+		{
+			"const": "fire_tick",
+			"description": "Fire tick damage."
+		},
+		{
+			"const": "fly_into_wall",
+			"description": "Fly into wall damage."
+		},
+		{
+			"const": "lava",
+			"description": "Lava damage."
+		},
+		{
+			"const": "magic",
+			"description": "Magic damage."
+		},
+		{
+			"const": "none",
+			"description": "No damage."
+		},
+		{
+			"const": "override",
+			"description": "Override damage."
+		},
+		{
+			"const": "piston",
+			"description": "Piston damage."
+		},
+		{
+			"const": "projectile",
+			"description": "Projectile damage."
+		},
+		{
+			"const": "self_destruct",
+			"description": "Self destruct damage."
+		},
+		{
+			"const": "sonic_boom",
+			"description": "Sonic boom damage."
+		},
+		{
+			"const": "stalactite",
+			"description": "Stalactite damage."
+		},
+		{
+			"const": "stalagmite",
+			"description": "Stalagmite damage."
+		},
+		{
+			"const": "starve",
+			"description": "Starve damage."
+		},
+		{
+			"const": "suffocation",
+			"description": "Suffocation damage."
+		},
+		{
+			"const": "thorns",
+			"description": "Thorns damage."
+		},
+		{
+			"const": "void",
+			"description": "Void damage."
+		},
+		{
+			"const": "wither",
+			"description": "Wither damage."
+		}
+	]
+}

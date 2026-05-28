@@ -1,0 +1,19 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/is_brightness.json",
+	"type": "object",
+	"title": "Is Brightness Filter",
+	"description": "Tests the current brightness against a provided value in the range (0.0f, 1.0f).",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"type": "number",
+			"description": "A floating point value in the range (0.0f, 1.0f).",
+			"minimum": 0,
+			"maximum": 1
+		}
+	},
+	"required": ["value"]
+}

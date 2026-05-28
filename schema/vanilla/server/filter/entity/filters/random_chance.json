@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/random_chance.json",
+	"type": "object",
+	"title": "Random Chance Filter",
+	"description": "Returns true if the random chance rolls 0 out of a specified max range.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"type": "integer",
+			"description": "An integer value."
+		}
+	},
+	"required": ["value"]
+}

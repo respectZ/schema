@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/inactivity_timer.json",
+	"type": "object",
+	"title": "Inactivity Timer Filter",
+	"description": "Tests if the specified duration in seconds of inactivity for despawning has been reached.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"type": "integer",
+			"description": "An integer value."
+		}
+	},
+	"required": ["value"]
+}

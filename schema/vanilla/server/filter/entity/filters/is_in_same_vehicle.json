@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/is_in_same_vehicle.json",
+	"type": "object",
+	"title": "Is In Same Vehicle Filter",
+	"description": "Returns whether the subject entity is in the same vehicle as the calling entity.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"description": "True or false.",
+			"type": "boolean"
+		}
+	},
+	"required": ["value"]
+}

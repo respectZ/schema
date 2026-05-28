@@ -1,0 +1,19 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/moon_phase.json",
+	"type": "object",
+	"title": "Moon Phase Filter",
+	"description": "Compares the current moon phase with an integer value in the range (0, 7).",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"type": "integer",
+			"description": "An integer value in the range (0, 7) where 0 is a full moon.",
+			"minimum": 0,
+			"maximum": 7
+		}
+	},
+	"required": ["value"]
+}

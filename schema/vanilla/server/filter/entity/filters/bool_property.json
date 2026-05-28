@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/bool_property.json",
+	"type": "object",
+	"title": "Bool Property Filter",
+	"description": "Returns true when the bool actor property matches the value provided.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"domain": {
+			"type": "string",
+			"description": "The property name to look for."
+		},
+		"value": {
+			"type": "boolean",
+			"default": true,
+			"description": "true or false."
+		}
+	},
+	"required": ["domain"]
+}

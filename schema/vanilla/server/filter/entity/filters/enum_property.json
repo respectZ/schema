@@ -1,0 +1,21 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/enum_property.json",
+	"type": "object",
+	"title": "Enum Property Filter",
+	"description": "Returns true when the actor property matches the value provided.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"domain": {
+			"type": "string",
+			"description": "The property name to look for."
+		},
+		"value": {
+			"type": "string",
+			"description": "A string value."
+		}
+	},
+	"required": ["domain", "value"]
+}

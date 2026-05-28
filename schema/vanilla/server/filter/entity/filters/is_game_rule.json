@@ -1,0 +1,21 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/is_game_rule.json",
+	"type": "object",
+	"title": "Is Game Rule Filter",
+	"description": "Tests whether a named game rule is active.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"domain": {
+			"description": "The game rule to test.",
+			"$ref": "../../../gamerule.json"
+		},
+		"value": {
+			"description": "True or false.",
+			"type": "boolean"
+		}
+	},
+	"required": ["domain"]
+}

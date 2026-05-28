@@ -1,0 +1,70 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/general.json",
+	"$defs": {
+		"equipment_slot": {
+			"title": "Equipment Slot",
+			"description": "The equipment location to test.",
+			"oneOf": [
+				{
+					"const": "any",
+					"description": "Any equipment slot."
+				},
+				{
+					"const": "armor",
+					"description": "Any armor slot."
+				},
+				{
+					"const": "body",
+					"description": "The body slot."
+				},
+				{
+					"const": "feet",
+					"description": "The feet/boots slot."
+				},
+				{
+					"const": "hand",
+					"description": "Any hand slot."
+				},
+				{
+					"const": "head",
+					"description": "The head/helmet slot."
+				},
+				{
+					"const": "inventory",
+					"description": "The inventory slot."
+				},
+				{
+					"const": "leg",
+					"description": "The legs/leggings slot."
+				},
+				{
+					"const": "main_hand",
+					"description": "The main hand slot."
+				},
+				{
+					"const": "torso",
+					"description": "The torso/chestplate slot."
+				}
+			]
+		},
+		"weather_type": {
+			"title": "Weather Type",
+			"description": "The weather condition to test.",
+			"oneOf": [
+				{
+					"const": "clear",
+					"description": "Clear weather."
+				},
+				{
+					"const": "rain",
+					"description": "Rainy weather."
+				},
+				{
+					"const": "thunder",
+					"description": "Thunderstorm weather."
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/all_slots_empty.json",
+	"type": "object",
+	"title": "All Slots Empty Filter",
+	"description": "Returns true when the designated equipment location for the subject entity is completely empty.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"$ref": "../../general.json#/$defs/equipment_slot"
+		}
+	}
+}

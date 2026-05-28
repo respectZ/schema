@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/has_damage.json",
+	"type": "object",
+	"title": "Has Damage Filter",
+	"description": "Returns true when the subject entity receives the named damage type.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"description": "The damage type to test.",
+			"$ref": "../../../damage_type.json"
+		}
+	},
+	"required": ["value"]
+}

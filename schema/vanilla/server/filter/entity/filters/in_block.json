@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/in_block.json",
+	"type": "object",
+	"title": "In Block Filter",
+	"description": "Returns true when the subject entity is inside a specified Block type.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"description": "The block identifier to test.",
+			"$ref": "../../../identifiers.json#/$defs/block_identifier"
+		}
+	},
+	"required": []
+}

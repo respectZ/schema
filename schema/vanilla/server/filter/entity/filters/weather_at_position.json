@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/weather_at_position.json",
+	"type": "object",
+	"title": "Weather At Position Filter",
+	"description": "Tests the current weather, at the actor's position, against a provided weather value.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"description": "The weather condition to test.",
+			"$ref": "../../general.json#/$defs/weather_type"
+		}
+	},
+	"required": ["value"]
+}

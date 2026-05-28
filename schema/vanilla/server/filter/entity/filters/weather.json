@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/weather.json",
+	"type": "object",
+	"title": "Weather Filter",
+	"description": "Tests the current weather in the dimension against a provided weather value.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"description": "The weather condition to test.",
+			"$ref": "../../general.json#/$defs/weather_type"
+		}
+	},
+	"required": ["value"]
+}

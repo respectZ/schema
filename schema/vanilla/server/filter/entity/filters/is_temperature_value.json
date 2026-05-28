@@ -1,0 +1,19 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/is_temperature_value.json",
+	"type": "object",
+	"title": "Is Temperature Value Filter",
+	"description": "Tests the current temperature against a provided value in the range (0.0, 1.0) where 0.0f is the coldest temp and 1.0f is the hottest.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"type": "number",
+			"description": "A floating point value in the range (0.0f, 1.0f) where 0.0f is the coldest and 1.0f is the hottest.",
+			"minimum": 0,
+			"maximum": 1
+		}
+	},
+	"required": ["value"]
+}

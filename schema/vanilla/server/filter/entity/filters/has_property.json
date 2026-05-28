@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/has_property.json",
+	"type": "object",
+	"title": "Has Property Filter",
+	"description": "Tests for the presence of a property of the subject entity.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"type": "string",
+			"description": "The property name to look for."
+		}
+	},
+	"required": ["value"]
+}

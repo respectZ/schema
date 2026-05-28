@@ -1,0 +1,19 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/clock_time.json",
+	"type": "object",
+	"title": "Clock Time Filter",
+	"description": "Compares the current time with a float value in the range (0.0, 1.0). 0.0 = Noon, 0.25 = Sunset, 0.5 = Midnight, 0.75 = Sunrise.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"type": "number",
+			"description": "A floating point value in the range (0.0, 1.0).",
+			"minimum": 0,
+			"maximum": 1
+		}
+	},
+	"required": ["value"]
+}

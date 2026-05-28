@@ -1,0 +1,19 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/moon_intensity.json",
+	"type": "object",
+	"title": "Moon Intensity Filter",
+	"description": "Compares the current moon intensity with a float value in the range (0.0, 1.0).",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"type": "number",
+			"description": "A floating point value in the range (0.0f, 1.0f).",
+			"minimum": 0,
+			"maximum": 1
+		}
+	},
+	"required": ["value"]
+}

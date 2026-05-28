@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/is_avoiding_mobs.json",
+	"type": "object",
+	"title": "Is Avoiding Mobs Filter",
+	"description": "Returns true if the subject entity is fleeing from other mobs.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"type": "boolean",
+			"description": "True or false."
+		}
+	}
+}

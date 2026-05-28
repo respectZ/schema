@@ -1,0 +1,82 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/entity/filters/is_color.json",
+	"type": "object",
+	"title": "Is Color Filter",
+	"description": "Returns true if the subject entity is the named color.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"value": {
+			"description": "The color name to test.",
+			"oneOf": [
+				{
+					"const": "white",
+					"description": "White dye color."
+				},
+				{
+					"const": "orange",
+					"description": "Orange dye color."
+				},
+				{
+					"const": "magenta",
+					"description": "Magenta dye color."
+				},
+				{
+					"const": "light_blue",
+					"description": "Light blue dye color."
+				},
+				{
+					"const": "yellow",
+					"description": "Yellow dye color."
+				},
+				{
+					"const": "lime",
+					"description": "Lime dye color."
+				},
+				{
+					"const": "pink",
+					"description": "Pink dye color."
+				},
+				{
+					"const": "gray",
+					"description": "Gray dye color."
+				},
+				{
+					"const": "light_gray",
+					"description": "Light gray dye color."
+				},
+				{
+					"const": "cyan",
+					"description": "Cyan dye color."
+				},
+				{
+					"const": "purple",
+					"description": "Purple dye color."
+				},
+				{
+					"const": "blue",
+					"description": "Blue dye color."
+				},
+				{
+					"const": "brown",
+					"description": "Brown dye color."
+				},
+				{
+					"const": "green",
+					"description": "Green dye color."
+				},
+				{
+					"const": "red",
+					"description": "Red dye color."
+				},
+				{
+					"const": "black",
+					"description": "Black dye color."
+				}
+			]
+		}
+	},
+	"required": ["value"]
+}
