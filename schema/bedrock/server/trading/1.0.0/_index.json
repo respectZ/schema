@@ -160,8 +160,7 @@
 					"description": "A multiplier that adjusts the price based on demand and other factors."
 				},
 				"filters": {
-					// TODO: Filters
-					"type": "object",
+					"$ref": "../../../../vanilla/server/filter/entity/_index.json",
 					"description": "Filters that define additional conditions for this trade item."
 				},
 				"functions": {
