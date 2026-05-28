@@ -50,12 +50,17 @@ export function getEnv(key: "BEDROCK_PATH" | "MINECRAFT_DATA_PATH"): string {
 	return value;
 }
 
-function bedrockPath(type: "bp" | "rp") {
+function bedrockPath(type: BedrockSubdirType) {
 	const bedrockPath = getEnv("BEDROCK_PATH");
-	return path.join(bedrockPath, type === "bp" ? "behavior_pack" : "resource_pack");
+	const subfolderMap = {
+		bp: "behavior_pack",
+		rp: "resource_pack",
+		metadata: "metadata",
+	} satisfies Record<BedrockSubdirType, string>;
+	return path.join(bedrockPath, subfolderMap[type]);
 }
 
-function dataPath(type: "bp" | "rp") {
+function dataPath(type: BedrockSubdirType) {
 	const bedrockPath = getEnv("MINECRAFT_DATA_PATH");
 	return path.join(bedrockPath, type === "bp" ? "behavior_packs" : "resource_packs");
 }
@@ -108,8 +113,10 @@ export async function getBedrockJSON<T, U = string>(
 	return results;
 }
 
+type BedrockSubdirType = "bp" | "rp" | "metadata";
+
 export type GetBedrockFilepathsOptions = {
-	type: "bp" | "rp";
+	type: BedrockSubdirType;
 	pattern: string;
 	extension?: boolean;
 	relative?: boolean;
@@ -118,14 +125,14 @@ export type GetBedrockFilepathsOptions = {
 };
 
 export type GetBedrockFileOptions<U> = {
-	type: "bp" | "rp";
+	type: BedrockSubdirType;
 	source?: "bedrock-samples" | "data";
 	pattern: string;
 	transform: (content: string) => U;
 };
 
 export type GetBedrockJSONContentOptions<T, U> = {
-	type: "bp" | "rp";
+	type: BedrockSubdirType;
 	source?: "bedrock-samples" | "data";
 	pattern: string;
 	transform: (content: T) => U;

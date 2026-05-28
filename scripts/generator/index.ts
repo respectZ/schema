@@ -10,7 +10,7 @@ import { createSchema, readJson, writeJson } from "../utils";
 import { generateClientPaths } from "./client";
 import { generateClientIdentifiers } from "./client/identifiers";
 import { generateClientLang } from "./client/lang";
-import { generateServerBiomeTag, generateServerTypeFamily } from "./server";
+import { generateServerBiomeTag, generateServerGameRule, generateServerTypeFamily } from "./server";
 
 const entries: Entry[] = [
 	{
@@ -369,6 +369,15 @@ const entries: Entry[] = [
 				],
 			};
 			return json;
+		},
+	},
+	{
+		filepath: "vanilla/server/gamerule.json",
+		content: async () => {
+			const gameRules = await generateServerGameRule();
+			return {
+				enum: gameRules,
+			};
 		},
 	},
 ];
