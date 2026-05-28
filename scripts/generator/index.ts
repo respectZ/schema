@@ -1,6 +1,7 @@
 import {
 	MinecraftBiomeTypes,
 	MinecraftBlockTypes,
+	MinecraftEffectTypes,
 	MinecraftEnchantmentTypes,
 	MinecraftEntityTypes,
 	MinecraftItemTypes,
@@ -377,6 +378,17 @@ const entries: Entry[] = [
 			const gameRules = await generateServerGameRule();
 			return {
 				enum: gameRules,
+			};
+		},
+	},
+	{
+		filepath: "vanilla/server/effect_type.json",
+		content: async () => {
+			const effectTypes = Object.values(MinecraftEffectTypes).map((effect) =>
+				effect.replace("minecraft:", ""),
+			);
+			return {
+				enum: effectTypes,
 			};
 		},
 	},
