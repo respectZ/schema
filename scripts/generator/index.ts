@@ -1,4 +1,5 @@
 import {
+	MinecraftBiomeTypes,
 	MinecraftBlockTypes,
 	MinecraftEnchantmentTypes,
 	MinecraftEntityTypes,
@@ -264,6 +265,7 @@ const entries: Entry[] = [
 			const blockIdentifiers = Object.values(MinecraftBlockTypes);
 			const itemIdentifiers = Object.values(MinecraftItemTypes);
 			const entityIdentifiers = Object.values(MinecraftEntityTypes);
+			const biomeIdentifiers = Object.values(MinecraftBiomeTypes);
 			return {
 				$defs: {
 					block_identifier: {
@@ -296,6 +298,17 @@ const entries: Entry[] = [
 							},
 							{
 								enum: entityIdentifiers,
+							},
+						],
+					},
+					biome_identifier: {
+						anyOf: [
+							{
+								type: "string",
+								maxLength: 256,
+							},
+							{
+								enum: biomeIdentifiers,
 							},
 						],
 					},
