@@ -1,0 +1,41 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/camera/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Camera Preset File",
+	"description": "Schema for camera preset definition files used by behavior packs.",
+	"required": ["format_version"],
+	"properties": {
+		"format_version": {
+			// TODO: Figure out differences between 1.21.80 and 1.21.90.
+			// Technically they have different parser, but the fields are the same so far.
+			"enum": ["1.19.50", "1.21.60", "1.21.80", "1.21.90"]
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.19.50", "1.21.60"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.19.50/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.80", "1.21.90"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.80/_index.json"
+			}
+		}
+	]
+}

@@ -1,0 +1,189 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/camera/1.21.80/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Camera Preset 1.21.80",
+	"description": "A camera preset definition for a behavior pack.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:camera_preset"],
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"enum": ["1.21.80"]
+		},
+		"minecraft:camera_preset": {
+			"$ref": "#/$defs/camera_preset_definition"
+		}
+	},
+	"$defs": {
+		"aim_assist_settings": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"preset": {
+					"$ref": "../../../../vanilla/definition/identifier.json",
+					"description": "Identifier for a predefined aim assist preset."
+				},
+				"target_mode": {
+					"type": "string",
+					"description": "Mode for selecting aim assist targets.",
+					"enum": ["angle", "distance"]
+				},
+				"angle": {
+					"type": "number",
+					"description": "Maximum angle for aim assist targeting."
+				},
+				"distance": {
+					"type": "number",
+					"description": "Maximum distance for aim assist targeting."
+				}
+			}
+		},
+		"camera_preset_definition": {
+			"type": "object",
+			"title": "Camera Preset Definition",
+			"description": "A single camera preset definition.",
+			"additionalProperties": false,
+			"required": ["identifier", "inherit_from"],
+			"properties": {
+				"identifier": {
+					"$ref": "../../../../vanilla/definition/identifier.json",
+					"description": "Namespaced identifier for this camera preset."
+				},
+				"inherit_from": {
+					"$ref": "../../../../vanilla/server/camera_preset.json",
+					"description": "Another camera preset identifier to inherit properties from."
+				},
+				"pos_x": {
+					"type": "number",
+					"description": "Camera position X coordinate in world space.",
+					"default": 0
+				},
+				"pos_y": {
+					"type": "number",
+					"description": "Camera position Y coordinate in world space.",
+					"default": 0
+				},
+				"pos_z": {
+					"type": "number",
+					"description": "Camera position Z coordinate in world space.",
+					"default": 0
+				},
+				"rot_x": {
+					"type": "number",
+					"description": "Starting rotation pitch (vertical angle). Limited to 90 (facing straight down) to -90 (facing straight up).",
+					"default": 0,
+					"minimum": -90,
+					"maximum": 90
+				},
+				"rot_y": {
+					"type": "number",
+					"description": "Starting rotation yaw (horizontal angle). Rotates 360 degrees around the target parallel to the earth.",
+					"default": 0
+				},
+				"rotation_speed": {
+					"type": "number",
+					"description": "By default this is set to 0.0f which is \"perfect\" tracking and will always keep up with the target no matter the speed.",
+					"default": 0,
+					"minimum": 0,
+					"maximum": 360
+				},
+				"snap_to_target": {
+					"type": "boolean",
+					"description": "Whether the camera snaps to the target.",
+					"default": false
+				},
+				"horizontal_rotation_limit": {
+					"type": "array",
+					"description": "Horizontal rotation (yaw) limits as [min, max] in degrees.",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {
+						"type": "number",
+						"minimum": 0,
+						"maximum": 360
+					}
+				},
+				"vertical_rotation_limit": {
+					"type": "array",
+					"description": "Vertical rotation (pitch) limits as [min, max] in degrees.",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {
+						"type": "number",
+						"minimum": 0,
+						"maximum": 180
+					}
+				},
+				"continue_targeting": {
+					"type": "boolean",
+					"description": "Whether to continue targeting when out of range.",
+					"default": false
+				},
+				"tracking_radius": {
+					"type": "number",
+					"description": "Radius within which the camera tracks the target.",
+					"default": 50
+				},
+				"view_offset": {
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"description": "Anchors the camera to a point in the focal view that is not the player. The player will be shifted to the side of this offset.",
+					"items": {
+						"type": "number",
+						"default": 0,
+						"minimum": -64,
+						"maximum": 64
+					}
+				},
+				"entity_offset": {
+					"type": "array",
+					"description": "Anchors the camera to a pivot point on the player (0, 0, 0 is the center of the player). Only usable with the follow_orbit preset.",
+					"items": {
+						"type": "number",
+						"default": 0,
+						"minimum": -64,
+						"maximum": 64
+					}
+				},
+				"radius": {
+					"type": "number",
+					"description": "Camera distance from the target, measured in blocks.",
+					"minimum": 0.1,
+					"maximum": 64
+				},
+				"yaw_limits_min": {
+					"type": "number",
+					"description": "Minimum yaw angle limit.",
+					"minimum": -180,
+					"maximum": 179.899994
+				},
+				"yaw_limits_max": {
+					"type": "number",
+					"description": "Maximum yaw angle limit.",
+					"minimum": -180,
+					"maximum": 179.899994
+				},
+				"listener": {
+					"type": "string",
+					"description": "Audio listener type. 'camera' uses the camera position, 'player' uses the player position.",
+					"enum": ["camera", "player"]
+				},
+				"player_effects": {
+					"type": "boolean",
+					"description": "Whether player effects are enabled for this camera preset.",
+					"default": false
+				},
+				"aim_assist": {
+					"$ref": "#/$defs/aim_assist_settings",
+					"description": "Settings for aim assist behavior."
+				},
+				"control_scheme": {
+					"description": "Defines how Minecraft responds to game controllers, touch input on mobile devices, keyboard and mouse combos, and full keyboard controls.",
+					"$ref": "../../../../vanilla/server/control_scheme.json"
+				}
+			}
+		}
+	}
+}

@@ -54,6 +54,10 @@ const BP_ENTRIES: JsonValidationEntry[] = [
 		fileMatch: "item_catalog/crafting_item_catalog.{json,jsonc,json5}",
 		url: "./schema/bedrock/server/crafting_item_catalog/_index.json",
 	},
+	{
+		fileMatch: "cameras/presets/**/*.{json,jsonc,json5}",
+		url: "./schema/bedrock/server/camera/_index.json",
+	},
 ];
 
 const RP_ENTRIES: JsonValidationEntry[] = [
