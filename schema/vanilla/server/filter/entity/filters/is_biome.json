@@ -9,8 +9,27 @@
 		"subject": true,
 		"operator": true,
 		"value": {
-			"description": "A string value.",
-			"type": "string"
+			"type": "string",
+			"enum": [
+				"beach",
+				"desert",
+				"extreme_hills",
+				"flat",
+				"forest",
+				"ice",
+				"jungle",
+				"mesa",
+				"mushroom_island",
+				"ocean",
+				"plain",
+				"river",
+				"savanna",
+				"stone_beach",
+				"swamp",
+				"taiga",
+				"the_end",
+				"the_nether"
+			]
 		}
 	},
 	"required": ["value"]
