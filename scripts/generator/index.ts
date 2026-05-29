@@ -1,6 +1,7 @@
 import {
 	MinecraftBiomeTypes,
 	MinecraftBlockTypes,
+	MinecraftCameraPresetsTypes,
 	MinecraftEffectTypes,
 	MinecraftEnchantmentTypes,
 	MinecraftEntityTypes,
@@ -389,6 +390,21 @@ const entries: Entry[] = [
 			);
 			return {
 				enum: effectTypes,
+			};
+		},
+	},
+	{
+		filepath: "vanilla/server/camera_preset.json",
+		content: async () => {
+			return {
+				anyOf: [
+					{
+						$ref: "../definition/identifier.json",
+					},
+					{
+						enum: Object.values(MinecraftCameraPresetsTypes),
+					},
+				],
 			};
 		},
 	},
