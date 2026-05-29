@@ -1,0 +1,205 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/feature_rule/1.12.0/_index.json",
+	"type": "object",
+	"title": "Minecraft Feature Rule 1.12.0",
+	"description": "Feature rule definition. Used to define rules for features in behavior packs.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:feature_rules"],
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"enum": ["1.12.0"]
+		},
+		"minecraft:feature_rules": {
+			"$ref": "#/$defs/feature_rules"
+		}
+	},
+	"$defs": {
+		"feature_rules": {
+			"type": "object",
+			"title": "Feature Rule Definition",
+			"additionalProperties": false,
+			"required": ["description", "conditions", "distribution"],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Identifier for the Feature Rule and Feture to place.",
+					"additionalProperties": false,
+					"required": ["identifier", "places_feature"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "The name of this feature rule in the format 'namespace_name:rule_name'. 'rule_name' must match the filename."
+						},
+						"places_feature": {
+							"$ref": "../../../../vanilla/server/feature.json",
+							"description": "Named reference to the feature controlled by this rule."
+						}
+					}
+				},
+				"conditions": {
+					"type": "object",
+					"description": "Parameters to control where and when the feature will be placed.",
+					"additionalProperties": false,
+					"required": ["placement_pass"],
+					"properties": {
+						"minecraft:biome_filter": {
+							"$ref": "../../../../vanilla/server/filter/biome/_index.json",
+							"description": "List of filter tests to determine which biomes this rule will attach to."
+						},
+						"placement_pass": {
+							"description": "When the feature should be placed relative to others. Earlier passes in the list are guaranteed to occur before later passes. Order is not guaranteed within each pass.",
+							"type": "string",
+							"enum": [
+								"pregeneration_pass",
+								"before_underground_pass",
+								"after_underground_pass",
+								"before_surface_pass",
+								"after_surface_pass",
+								"first_pass",
+								"surface_pass",
+								"before_sky_pass",
+								"sky_pass",
+								"after_sky_pass",
+								"final_pass",
+								"underground_pass"
+							]
+						}
+					}
+				},
+				"distribution": {
+					"$ref": "#/$defs/distribution"
+				}
+			}
+		},
+		"distribution": {
+			"type": "object",
+			"title": "Scatter Params",
+			"description": "Parameters controlling the initial scatter of the feature.",
+			"additionalProperties": false,
+			"required": ["iterations", "x", "y", "z"],
+			"properties": {
+				"coordinate_eval_order": {
+					"type": "string",
+					"title": "Coordinate Evaluation Order",
+					"description": "The order in which coordinates will be evaluated. Should be used when a coordinate depends on another. If omitted, defaults to \"xzy\". Supported orders are defined by \"Coordinate Evaluation Order\".",
+					"enum": ["xyz", "xzy", "yxz", "yzx", "zxy", "zyx"],
+					"default": "xzy"
+				},
+				"iterations": {
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/expression",
+					"description": "Number of scattered positions to generate."
+				},
+				"scatter_chance": {
+					"$ref": "#/$defs/scatter_chance",
+					"description": "Probability that this scatter will occur. Not evaluated each iteration; either no iterations will run, or all will."
+				},
+				"x": {
+					"$ref": "#/$defs/coordinate_range",
+					"description": "Distribution for the coordinate (evaluated each iteration)."
+				},
+				"y": {
+					"$ref": "#/$defs/coordinate_range",
+					"description": "Distribution for the coordinate (evaluated each iteration)."
+				},
+				"z": {
+					"$ref": "#/$defs/coordinate_range",
+					"description": "Distribution for the coordinate (evaluated each iteration)."
+				}
+			}
+		},
+		"scatter_chance": {
+			"type": "object",
+			"title": "Scatter Chance",
+			"description": "Probability that this scatter will occur. Not evaluated each iteration; either no iterations will run, or all will.",
+			"unevaluatedProperties": false,
+			"oneOf": [
+				{
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/expression"
+				},
+				{
+					"type": "object",
+					"required": ["denominator", "numerator"],
+					"properties": {
+						"denominator": {
+							"type": "integer",
+							"minimum": 1,
+							"description": "Denominator for scatter probability."
+						},
+						"numerator": {
+							"type": "integer",
+							"minimum": 1,
+							"description": "Numerator for scatter probability."
+						}
+					}
+				}
+			]
+		},
+		"coordinate_range": {
+			"title": "Coordinate Range",
+			"description": "Represents the scatter distrubution over a coordinate (x/y/z), can also be built by an expression.",
+			"unevaluatedProperties": false,
+			"oneOf": [
+				{
+					"$ref": "../../../../vanilla/definition/molang.json#/$defs/expression"
+				},
+				{
+					"type": "object",
+					"required": ["distribution", "extent"],
+					"properties": {
+						"distribution": {
+							"title": "Random Distribution Type",
+							"type": "string",
+							"description": "Type of distribution. Supported distributions are defined by \"Random Distribution Type\".",
+							"enum": [
+								"uniform",
+								"gaussian",
+								"inverse_gaussian",
+								"triangle",
+								"fixed_grid",
+								"jittered_grid"
+							]
+						},
+						"extent": {
+							"type": "array",
+							"maxItems": 2,
+							"minItems": 2,
+							"description": "Lower and upper bound (inclusive) of the scatter range, as an offset from the input point to scatter around.",
+							"items": {
+								"$ref": "../../../../vanilla/definition/molang.json#/$defs/expression"
+							}
+						}
+					},
+					"allOf": [
+						{
+							"if": {
+								"properties": {
+									"distribution": {
+										"enum": ["fixed_grid", "jittered_grid"]
+									}
+								},
+								"required": ["distribution"]
+							},
+							"then": {
+								"properties": {
+									"grid_offset": {
+										"type": "integer",
+										"minimum": 0,
+										"description": "When the distribution type is grid, defines the offset along this axis."
+									},
+									"step_size": {
+										"type": "integer",
+										"minimum": 1,
+										"description": "When the distribution type is grid, defines the distance between steps along this axis."
+									}
+								},
+								"required": ["distribution"]
+							}
+						}
+					]
+				}
+			]
+		}
+	}
+}

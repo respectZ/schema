@@ -1,0 +1,193 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/filter/biome/_index.json",
+	"oneOf": [
+		{
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/filter_item"
+			}
+		},
+		{
+			"$ref": "#/$defs/filter_item"
+		}
+	],
+	"$defs": {
+		"filter_item": {
+			"oneOf": [
+				{
+					"$ref": "#/$defs/test_filter"
+				},
+				{
+					"$ref": "#/$defs/logical_filter"
+				}
+			]
+		},
+		"test_filter": {
+			"type": "object",
+			"title": "Entity Filter",
+			"description": "A filter that tests a condition on an entity.",
+			"required": ["test"],
+			"unevaluatedProperties": false,
+			"properties": {
+				"test": {
+					"type": "string",
+					"enum": ["has_biome_tag"],
+					"description": "The filter test to apply."
+				},
+				"operator": {
+					"$ref": "#/$defs/operator",
+					"description": "(Optional) The comparison to apply with 'value'. Defaults to 'equals'."
+				}
+			},
+			"allOf": [
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "has_biome_tag"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "../entity/filters/has_biome_tag.json"
+					}
+				}
+			]
+		},
+		"logical_filter": {
+			"title": "Logical Filter",
+			"description": "A logical combination of filters.",
+			"type": "object",
+			"oneOf": [
+				{
+					"properties": {
+						"AND": {
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/filter_item"
+							}
+						}
+					},
+					"additionalProperties": false,
+					"required": ["AND"]
+				},
+				{
+					"properties": {
+						"all": {
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/filter_item"
+							}
+						}
+					},
+					"additionalProperties": false,
+					"required": ["all"]
+				},
+				{
+					"properties": {
+						"all_of": {
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/filter_item"
+							}
+						}
+					},
+					"additionalProperties": false,
+					"required": ["all_of"]
+				},
+				{
+					"properties": {
+						"OR": {
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/filter_item"
+							}
+						}
+					},
+					"additionalProperties": false,
+					"required": ["OR"]
+				},
+				{
+					"properties": {
+						"any": {
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/filter_item"
+							}
+						}
+					},
+					"additionalProperties": false,
+					"required": ["any"]
+				},
+				{
+					"properties": {
+						"any_of": {
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/filter_item"
+							}
+						}
+					},
+					"additionalProperties": false,
+					"required": ["any_of"]
+				},
+				{
+					"properties": {
+						"NOT": {
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/filter_item"
+							}
+						}
+					},
+					"additionalProperties": false,
+					"required": ["NOT"]
+				},
+				{
+					"properties": {
+						"none_of": {
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/filter_item"
+							}
+						}
+					},
+					"additionalProperties": false,
+					"required": ["none_of"]
+				}
+			]
+		},
+		"operator": {
+			"title": "Operator",
+			"description": "The comparison operator to apply with 'value'.",
+			"oneOf": [
+				{
+					"const": "!=",
+					"description": "Test for inequality."
+				},
+				{
+					"const": "<>",
+					"description": "Test for inequality."
+				},
+				{
+					"const": "=",
+					"description": "Test for equality."
+				},
+				{
+					"const": "==",
+					"description": "Test for equality."
+				},
+				{
+					"const": "equals",
+					"description": "Test for equality."
+				},
+				{
+					"const": "not",
+					"description": "Test for inequality."
+				}
+			]
+		}
+	}
+}
