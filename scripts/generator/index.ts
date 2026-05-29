@@ -12,7 +12,7 @@ import { createSchema, readJson, writeJson } from "../utils";
 import { generateClientPaths } from "./client";
 import { generateClientIdentifiers } from "./client/identifiers";
 import { generateClientLang } from "./client/lang";
-import { generateServerBiomeTag, generateServerGameRule, generateServerTypeFamily } from "./server";
+import { generateCommandEnum, generateServerBiomeTag, generateServerTypeFamily } from "./server";
 
 const entries: Entry[] = [
 	{
@@ -376,7 +376,7 @@ const entries: Entry[] = [
 	{
 		filepath: "vanilla/server/gamerule.json",
 		content: async () => {
-			const gameRules = await generateServerGameRule();
+			const { gameRules } = await generateCommandEnum();
 			return {
 				enum: gameRules,
 			};
@@ -405,6 +405,15 @@ const entries: Entry[] = [
 						enum: Object.values(MinecraftCameraPresetsTypes),
 					},
 				],
+			};
+		},
+	},
+	{
+		filepath: "vanilla/server/control_scheme.json",
+		content: async () => {
+			const { controlSchemes } = await generateCommandEnum();
+			return {
+				enum: controlSchemes,
 			};
 		},
 	},
