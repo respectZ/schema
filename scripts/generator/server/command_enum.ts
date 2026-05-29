@@ -10,10 +10,12 @@ export async function generateCommandEnum() {
 				const result: Result = {
 					gameRules: [],
 					controlSchemes: [],
+					features: [],
 				};
 				const mapSet: Record<keyof Result, Set<string>> = {
 					gameRules: new Set<string>(["BoolGameRule", "IntGameRule"]),
 					controlSchemes: new Set<string>(["controlscheme"]),
+					features: new Set<string>(["features"]),
 				};
 				for (const commandEnum of content.command_enums) {
 					for (const [key, value] of Object.entries(mapSet)) {
@@ -46,4 +48,5 @@ type MojangCommands = {
 type Result = {
 	gameRules: string[];
 	controlSchemes: string[];
+	features: string[];
 };

@@ -417,6 +417,22 @@ const entries: Entry[] = [
 			};
 		},
 	},
+	{
+		filepath: "vanilla/server/feature.json",
+		content: async () => {
+			const { features } = await generateCommandEnum();
+			return {
+				anyOf: [
+					{
+						$ref: "../definition/identifier.json",
+					},
+					{
+						enum: features,
+					},
+				],
+			};
+		},
+	},
 ];
 
 async function main() {
