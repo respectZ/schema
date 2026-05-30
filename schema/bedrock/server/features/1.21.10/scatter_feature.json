@@ -1,0 +1,51 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/1.21.0/scatter_feature.json",
+	"type": "object",
+	"title": "Scatter Feature",
+	"description": "Scatters a feature throughout a chunk with configurable coordinate distributions.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:scatter_feature"],
+	"properties": {
+		"format_version": {
+			"type": "string"
+		},
+		"minecraft:scatter_feature": {
+			"$ref": "#/$defs/scatter_feature_definition"
+		}
+	},
+	"$defs": {
+		"scatter_feature_definition": {
+			"type": "object",
+			"title": "Scatter Feature Definition",
+			"description": "A single Scatter Feature Definition.",
+			"additionalProperties": false,
+			"required": ["description", "places_feature", "distribution"],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies this feature.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "The identifier for this feature. The identifier must include a namespace and must match the filename."
+						}
+					}
+				},
+				"places_feature": {
+					"$ref": "../../../../vanilla/server/feature.json",
+					"description": "Reference to the feature to be scattered."
+				},
+				"project_input_to_floor": {
+					"type": "boolean",
+					"description": "Optional. If true, snaps the y-value of the scattered position to the terrain heightmap. If false or unset, y-value is unmodified."
+				},
+				"distribution": {
+					"$ref": "../../feature_rule/1.12.0/_index.json#/$defs/distribution"
+				}
+			}
+		}
+	}
+}

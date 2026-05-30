@@ -1,0 +1,69 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/1.13.0/height_difference_filter_feature.json",
+	"type": "object",
+	"title": "Height Difference Filter Feature",
+	"description": "'minecraft:height_difference_filter_feature' filters away positions based on the heightmap around the placement position.The filter will check for surface blocks in each cardinal direction within the `search_radius`. Each block will be checked against all given conditions.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:height_difference_filter_feature"],
+	"properties": {
+		"format_version": {
+			"type": "string"
+		},
+		"minecraft:height_difference_filter_feature": {
+			"$ref": "#/$defs/height_difference_filter_feature_definition"
+		}
+	},
+	"$defs": {
+		"height_difference_filter_feature_definition": {
+			"type": "object",
+			"title": "Height Difference Filter Feature Definition",
+			"description": "Definition for 'minecraft:height_difference_filter_feature'.",
+			"additionalProperties": false,
+			"required": ["description", "places_feature", "search_radius"],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies this feature.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "The identifier for this feature. The identifier must include a namespace and must match the filename."
+						}
+					}
+				},
+				"places_feature": {
+					"$ref": "../../../../vanilla/server/feature.json",
+					"description": "Named reference of feature to be placed."
+				},
+				"min_required_upward_height_diff": {
+					"type": "integer",
+					"minimum": 0,
+					"description": "Optional. Specifies the minimum height difference required upwards."
+				},
+				"min_required_downward_height_diff": {
+					"type": "integer",
+					"minimum": 0,
+					"description": "Optional. Specifies the minimum height difference required downwards."
+				},
+				"max_allowed_upward_height_diff": {
+					"type": "integer",
+					"minimum": 0,
+					"description": "Optional. Specifies the maximum height difference allowed upwards."
+				},
+				"max_allowed_downward_height_diff": {
+					"type": "integer",
+					"minimum": 0,
+					"description": "Optional. Specifies the maximum height difference allowed downwards."
+				},
+				"search_radius": {
+					"type": "integer",
+					"minimum": 0,
+					"description": "'search_radius' specifies the the length in each cardinal direction the filter will check for blocks against the given differences."
+				}
+			}
+		}
+	}
+}

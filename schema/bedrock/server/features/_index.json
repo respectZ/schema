@@ -1,0 +1,51 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Features",
+	"description": "Schema for feature definition files used by behavior packs.",
+	"required": ["format_version"],
+	"properties": {
+		"format_version": {
+			"enum": ["1.13.0", "1.21.10", "1.21.40"]
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.13.0"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.13.0/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.10"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.10/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.40"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.40/_index.json"
+			}
+		}
+	]
+}

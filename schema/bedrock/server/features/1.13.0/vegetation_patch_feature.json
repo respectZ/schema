@@ -1,0 +1,106 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/1.13.0/vegetation_patch_feature.json",
+	"type": "object",
+	"title": "Vegetation Patch Feature",
+	"description": "Scatters a vegetation feature in an area with configurable radius and depth.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:vegetation_patch_feature"],
+	"properties": {
+		"format_version": {
+			"type": "string"
+		},
+		"minecraft:vegetation_patch_feature": {
+			"$ref": "#/$defs/vegetation_patch_feature_definition"
+		}
+	},
+	"$defs": {
+		"vegetation_patch_feature_definition": {
+			"type": "object",
+			"title": "Vegetation Patch Feature Definition",
+			"description": "A single Vegetation Patch Feature Definition.",
+			"additionalProperties": false,
+			"required": [
+				"description",
+				"replaceable_blocks",
+				"ground_block",
+				"vegetation_feature",
+				"surface",
+				"depth",
+				"vertical_range",
+				"vegetation_chance",
+				"horizontal_radius"
+			],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies this feature.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "The identifier for this feature. The identifier must include a namespace and must match the filename."
+						}
+					}
+				},
+				"replaceable_blocks": {
+					"type": "array",
+					"minItems": 1,
+					"description": "Blocks that can be replaced to create the vegetation patch.",
+					"items": {
+						"$ref": "../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
+					}
+				},
+				"ground_block": {
+					"$ref": "../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+					"description": "The block to place as the ground base of the patch."
+				},
+				"vegetation_feature": {
+					"$ref": "../../../../vanilla/server/feature.json",
+					"description": "Reference to the vegetation feature to scatter."
+				},
+				"surface": {
+					"type": "string",
+					"enum": ["floor", "ceiling"],
+					"description": "Whether vegetation grows on the floor or ceiling."
+				},
+				"depth": {
+					"$ref": "../general.json#/$defs/int_range",
+					"description": "How deep the patch goes below/above the surface."
+				},
+				"vertical_range": {
+					"type": "integer",
+					"minimum": 1,
+					"description": "Vertical range for vegetation placement."
+				},
+				"vegetation_chance": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1,
+					"description": "Chance for vegetation to spawn at each valid location."
+				},
+				"horizontal_radius": {
+					"$ref": "../general.json#/$defs/int_range",
+					"description": "Horizontal radius range of the patch."
+				},
+				"extra_deep_block_chance": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1,
+					"description": "Optional. Chance of extra deep ground blocks."
+				},
+				"extra_edge_column_chance": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1,
+					"description": "Optional. Chance of extra edge column ground blocks."
+				},
+				"waterlogged": {
+					"type": "boolean",
+					"description": "Optional. Whether the patch can be waterlogged."
+				}
+			}
+		}
+	}
+}

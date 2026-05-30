@@ -1,0 +1,49 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/1.13.0/fossil_feature.json",
+	"type": "object",
+	"title": "Fossil Feature",
+	"description": "Generates a skeletal structure composed of bone blocks and parametric ore blocks.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:fossil_feature"],
+	"properties": {
+		"format_version": {
+			"type": "string"
+		},
+		"minecraft:fossil_feature": {
+			"$ref": "#/$defs/fossil_feature_definition"
+		}
+	},
+	"$defs": {
+		"fossil_feature_definition": {
+			"type": "object",
+			"title": "Fossil Feature Definition",
+			"description": "A single Fossil Feature Definition.",
+			"additionalProperties": false,
+			"required": ["description", "ore_block", "max_empty_corners"],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies this feature.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "The identifier for this feature. The identifier must include a namespace and must match the filename."
+						}
+					}
+				},
+				"ore_block": {
+					"$ref": "../../../../vanilla/server/block_descriptor.json",
+					"description": "The ore block to use for some parts of the fossil."
+				},
+				"max_empty_corners": {
+					"type": "integer",
+					"minimum": 0,
+					"description": "Maximum number of empty corners allowed for the fossil to generate."
+				}
+			}
+		}
+	}
+}

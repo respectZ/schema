@@ -1,0 +1,94 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/1.13.0/beards_and_shavers.json",
+	"type": "object",
+	"title": "Beards and Shavers Feature",
+	"description": "Builds a 'beard' or 'shave' out space so as to provide a clear space for a feature to place.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:beards_and_shavers"],
+	"properties": {
+		"format_version": {
+			"type": "string"
+		},
+		"minecraft:beards_and_shavers": {
+			"doNotSuggest": true,
+			"deprecationMessage": "Internal feature.",
+			"$ref": "#/$defs/beards_and_shavers_definition"
+		}
+	},
+	"$defs": {
+		"beards_and_shavers_definition": {
+			"type": "object",
+			"title": "Beards and Shavers Definition",
+			"description": "A single Beards and Shavers Feature Definition.",
+			"additionalProperties": false,
+			"required": [
+				"description",
+				"places_feature",
+				"bounding_box_min",
+				"bounding_box_max",
+				"y_delta",
+				"surface_block_type",
+				"subsurface_block_type"
+			],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies this feature.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "The identifier for this feature. The identifier must include a namespace and must match the filename."
+						}
+					}
+				},
+				"places_feature": {
+					"$ref": "../../../../vanilla/server/feature.json",
+					"description": "Named reference of feature to be placed."
+				},
+				"bounding_box_min": {
+					"type": "array",
+					"description": "Minimum dimensions of the bounding box.",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"type": "number",
+						"description": "Coordinate value."
+					}
+				},
+				"bounding_box_max": {
+					"type": "array",
+					"description": "Maximum dimensions of the bounding box.",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"type": "number",
+						"description": "Coordinate value."
+					}
+				},
+				"y_delta": {
+					"type": "number",
+					"description": "Y delta for the beard/shaver effect."
+				},
+				"surface_block_type": {
+					"$ref": "../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+					"description": "Block type for the surface."
+				},
+				"subsurface_block_type": {
+					"$ref": "../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+					"description": "Block type for subsurface."
+				},
+				"beard_raggedness_min": {
+					"type": "number",
+					"description": "Minimum raggedness value for the beard."
+				},
+				"beard_raggedness_max": {
+					"type": "number",
+					"description": "Maximum raggedness value for the beard."
+				}
+			}
+		}
+	}
+}

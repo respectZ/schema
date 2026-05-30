@@ -1,0 +1,173 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/1.13.0/geode_feature.json",
+	"type": "object",
+	"title": "Geode Feature",
+	"description": "Generates a rock formation to simulate a geode with multiple configurable layers.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:geode_feature"],
+	"properties": {
+		"format_version": {
+			"type": "string"
+		},
+		"minecraft:geode_feature": {
+			"$ref": "#/$defs/geode_feature_definition"
+		}
+	},
+	"$defs": {
+		"geode_feature_definition": {
+			"type": "object",
+			"title": "Geode Feature Definition",
+			"description": "A single Geode Feature Definition.",
+			"additionalProperties": false,
+			"required": [
+				"description",
+				"filler",
+				"inner_layer",
+				"middle_layer",
+				"outer_layer",
+				"min_outer_wall_distance",
+				"max_outer_wall_distance",
+				"min_distribution_points",
+				"max_distribution_points",
+				"min_point_offset",
+				"max_point_offset",
+				"max_radius",
+				"crack_point_offset",
+				"generate_crack_chance",
+				"base_crack_size",
+				"noise_multiplier",
+				"use_potential_placements_chance",
+				"use_alternate_layer0_chance",
+				"placements_require_layer0_alternate",
+				"invalid_blocks_threshold"
+			],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies this feature.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "The identifier for this feature. The identifier must include a namespace and must match the filename."
+						}
+					}
+				},
+				"filler": {
+					"$ref": "../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+					"description": "The block to fill the inside of the geode."
+				},
+				"inner_layer": {
+					"$ref": "../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+					"description": "The block that forms the inside layer of the geode shell."
+				},
+				"alternate_inner_layer": {
+					"$ref": "../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+					"description": "Optional. The block that has a chance of generating instead of inner_layer."
+				},
+				"middle_layer": {
+					"$ref": "../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+					"description": "The block that forms the middle layer of the geode shell."
+				},
+				"outer_layer": {
+					"$ref": "../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+					"description": "The block that forms the outer shell of the geode."
+				},
+				"inner_placements": {
+					"type": "array",
+					"minItems": 1,
+					"description": "Optional. Blocks to place inside the geode.",
+					"items": {
+						"$ref": "../../../../vanilla/server/block_descriptor.json"
+					}
+				},
+				"min_outer_wall_distance": {
+					"type": "integer",
+					"minimum": 0,
+					"maximum": 10,
+					"description": "The minimum distance each distribution point must be from the outer wall."
+				},
+				"max_outer_wall_distance": {
+					"type": "integer",
+					"minimum": 0,
+					"maximum": 20,
+					"description": "The maximum distance each distribution point can be from the outer wall."
+				},
+				"min_distribution_points": {
+					"type": "integer",
+					"minimum": 0,
+					"maximum": 10,
+					"description": "The minimum number of points inside the distance field that can get generated."
+				},
+				"max_distribution_points": {
+					"type": "integer",
+					"minimum": 0,
+					"maximum": 20,
+					"description": "The maximum number of points inside the distance field that can get generated."
+				},
+				"min_point_offset": {
+					"type": "integer",
+					"minimum": 0,
+					"maximum": 10,
+					"description": "The lowest possible value of random offset applied to each distribution point."
+				},
+				"max_point_offset": {
+					"type": "integer",
+					"minimum": 0,
+					"maximum": 10,
+					"description": "The highest possible value of random offset applied to each distribution point."
+				},
+				"max_radius": {
+					"type": "integer",
+					"minimum": 1,
+					"description": "The maximum possible radius of the geode generated."
+				},
+				"crack_point_offset": {
+					"type": "integer",
+					"minimum": 0,
+					"maximum": 10,
+					"description": "An offset applied to each distribution point that forms the geode crack opening."
+				},
+				"generate_crack_chance": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1,
+					"description": "The likelihood of a geode generating with a crack in its shell."
+				},
+				"base_crack_size": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 5,
+					"description": "How large the crack opening of the geode should be when generated."
+				},
+				"noise_multiplier": {
+					"type": "number",
+					"description": "A multiplier applied to the noise that is applied to the distribution points within the geode."
+				},
+				"use_potential_placements_chance": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1,
+					"description": "The likelihood that a special block will be placed on the inside of the geode."
+				},
+				"use_alternate_layer0_chance": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1,
+					"description": "The likelihood that a block in the innermost layer will be replaced with an alternate option."
+				},
+				"placements_require_layer0_alternate": {
+					"type": "boolean",
+					"description": "If true, the potential placement block will only be placed on the alternate layer0 blocks."
+				},
+				"invalid_blocks_threshold": {
+					"type": "integer",
+					"minimum": 0,
+					"description": "The threshold of invalid blocks for a geode to have a distribution point before aborting generation."
+				}
+			}
+		}
+	}
+}

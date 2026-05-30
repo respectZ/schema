@@ -1,0 +1,54 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/1.13.0/aggregate_feature.json",
+	"type": "object",
+	"title": "Aggregate Feature",
+	"description": "Places a collection of features in arbitrary order. All features in the collection use the same input position.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:aggregate_feature"],
+	"properties": {
+		"format_version": {
+			"type": "string"
+		},
+		"minecraft:aggregate_feature": {
+			"$ref": "#/$defs/aggregate_feature_definition"
+		}
+	},
+	"$defs": {
+		"aggregate_feature_definition": {
+			"type": "object",
+			"title": "Aggregate Feature Definition",
+			"description": "A single Aggregate Feature Definition.",
+			"additionalProperties": false,
+			"required": ["description", "features"],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies this feature.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "The identifier for this feature. The identifier must include a namespace and must match the filename."
+						}
+					}
+				},
+				"features": {
+					"type": "array",
+					"description": "Collection of features to be placed one by one. No guarantee of order. All features use the same input position.",
+					"minItems": 1,
+					"items": {
+						"$ref": "../../../../vanilla/server/feature.json",
+						"description": "Feature identifier reference."
+					}
+				},
+				"early_out": {
+					"type": "string",
+					"description": "Optional. Do not continue placing features once either the first success or first failure has occurred. (Note: This field is likely to be changed in future versions)",
+					"enum": ["none", "first_failure", "first_success"]
+				}
+			}
+		}
+	}
+}

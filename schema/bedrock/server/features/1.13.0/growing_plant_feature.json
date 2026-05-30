@@ -1,0 +1,145 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/1.13.0/growing_plant_feature.json",
+	"type": "object",
+	"title": "Growing Plant Feature",
+	"description": "Places a growing plant in the world with variable body and head blocks and height distribution.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:growing_plant_feature"],
+	"properties": {
+		"format_version": {
+			"type": "string"
+		},
+		"minecraft:growing_plant_feature": {
+			"$ref": "#/$defs/growing_plant_feature_definition"
+		}
+	},
+	"$defs": {
+		"growing_plant_feature_definition": {
+			"type": "object",
+			"title": "Growing Plant Feature Definition",
+			"description": "A single Growing Plant Feature Definition.",
+			"additionalProperties": false,
+			"required": [
+				"description",
+				"height_distribution",
+				"growth_direction",
+				"body_blocks",
+				"head_blocks"
+			],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies this feature.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "The identifier for this feature. The identifier must include a namespace and must match the filename."
+						}
+					}
+				},
+				"height_distribution": {
+					"type": "array",
+					"minItems": 1,
+					"description": "Collection of weighted heights that placement will select from.",
+					"items": {
+						"type": "array",
+						"minItems": 2,
+						"maxItems": 2,
+						"prefixItems": [
+							{
+								"$ref": "#/$defs/int_range",
+								"description": "Plant height range."
+							},
+							{
+								"type": "number",
+								"minimum": 0,
+								"description": "Weight for random selection."
+							}
+						],
+						"items": false
+					}
+				},
+				"growth_direction": {
+					"type": "string",
+					"enum": ["UP", "DOWN"],
+					"description": "Direction that the plant grows towards."
+				},
+				"age": {
+					"$ref": "#/$defs/int_range",
+					"description": "Optional. Age of the head of the plant."
+				},
+				"body_blocks": {
+					"type": "array",
+					"minItems": 1,
+					"description": "Collection of weighted block options for the plant body.",
+					"items": {
+						"type": "array",
+						"minItems": 2,
+						"maxItems": 2,
+						"prefixItems": [
+							{
+								"$ref": "../../../../vanilla/server/block_descriptor.json",
+								"description": "Plant body block."
+							},
+							{
+								"type": "number",
+								"minimum": 0,
+								"description": "Weight for random selection."
+							}
+						],
+						"items": [
+							{
+								"$ref": "../../../../vanilla/server/block_descriptor.json"
+							}
+						]
+					}
+				},
+				"head_blocks": {
+					"type": "array",
+					"minItems": 1,
+					"description": "Collection of weighted block options for the plant head.",
+					"items": {
+						"type": "array",
+						"minItems": 2,
+						"maxItems": 2,
+						"prefixItems": [
+							{
+								"$ref": "../../../../vanilla/server/block_descriptor.json",
+								"description": "Plant head block."
+							},
+							{
+								"type": "number",
+								"minimum": 0,
+								"description": "Weight for random selection."
+							}
+						],
+						"items": false
+					}
+				},
+				"allow_water": {
+					"type": "boolean",
+					"description": "Optional. Plant blocks can be placed in water."
+				}
+			}
+		},
+		"int_range": {
+			"type": "object",
+			"title": "Integer Range",
+			"description": "A range of integer values.",
+			"additionalProperties": false,
+			"properties": {
+				"range_min": {
+					"type": "integer",
+					"description": "Minimum value."
+				},
+				"range_max": {
+					"type": "integer",
+					"description": "Maximum value."
+				}
+			}
+		}
+	}
+}

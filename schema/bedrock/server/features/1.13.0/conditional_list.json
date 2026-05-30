@@ -1,0 +1,68 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/1.13.0/conditional_list.json",
+	"type": "object",
+	"title": "Conditional List Feature",
+	"description": "Places the first suitable feature within a collection based on conditions.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:conditional_list"],
+	"properties": {
+		"format_version": {
+			"type": "string"
+		},
+		"minecraft:conditional_list": {
+			"doNotSuggest": true,
+			"deprecationMessage": "Internal feature.",
+			"$ref": "#/$defs/conditional_list_definition"
+		}
+	},
+	"$defs": {
+		"conditional_list_definition": {
+			"type": "object",
+			"title": "Conditional List Definition",
+			"description": "A single Conditional List Feature Definition.",
+			"additionalProperties": false,
+			"required": ["description", "conditional_features"],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies this feature.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "The identifier for this feature. The identifier must include a namespace and must match the filename."
+						}
+					}
+				},
+				"conditional_features": {
+					"type": "array",
+					"minItems": 1,
+					"description": "Array of features with conditions, evaluated in order.",
+					"items": {
+						"type": "object",
+						"title": "Conditional Feature",
+						"additionalProperties": false,
+						"required": ["places_feature", "condition"],
+						"properties": {
+							"places_feature": {
+								"$ref": "../../../../vanilla/server/feature.json",
+								"description": "Reference to the feature to be placed if condition succeeds."
+							},
+							"condition": {
+								"$ref": "../../../../vanilla/definition/molang.json#/$defs/expression",
+								"description": "Molang expression that must evaluate to true for this feature to be placed."
+							}
+						}
+					}
+				},
+				"early_out_scheme": {
+					"type": "string",
+					"enum": ["condition_success", "placement_success"],
+					"description": "Optional. Whether to stop on first successful condition or first successful placement. Default is placement_success."
+				}
+			}
+		}
+	}
+}

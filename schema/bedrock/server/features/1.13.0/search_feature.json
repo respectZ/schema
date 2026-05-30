@@ -1,0 +1,81 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/1.13.0/search_feature.json",
+	"type": "object",
+	"title": "Search Feature",
+	"description": "Sweeps a volume searching for a valid placement location for its referenced feature.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:search_feature"],
+	"properties": {
+		"format_version": {
+			"type": "string"
+		},
+		"minecraft:search_feature": {
+			"$ref": "#/$defs/search_feature_definition"
+		}
+	},
+	"$defs": {
+		"search_feature_definition": {
+			"type": "object",
+			"title": "Search Feature Definition",
+			"description": "A single Search Feature Definition.",
+			"additionalProperties": false,
+			"required": ["description", "places_feature", "search_volume", "search_axis"],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies this feature.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "The identifier for this feature. The identifier must include a namespace and must match the filename."
+						}
+					}
+				},
+				"places_feature": {
+					"$ref": "../../../../vanilla/server/feature.json",
+					"description": "Reference to the feature to be placed at valid locations."
+				},
+				"search_volume": {
+					"$ref": "#/$defs/bounding_box",
+					"description": "The axis-aligned bounding box that defines the search boundaries."
+				},
+				"search_axis": {
+					"type": "string",
+					"enum": ["+x", "-x", "+y", "-y", "+z", "-z"],
+					"description": "Axis along which to sweep the search."
+				},
+				"required_successes": {
+					"type": "integer",
+					"minimum": 1,
+					"description": "Optional. Number of valid positions required for placement to succeed. Default is 1."
+				}
+			}
+		},
+		"bounding_box": {
+			"type": "object",
+			"title": "Bounding Box",
+			"description": "An axis-aligned bounding box defined by min and max coordinates.",
+			"additionalProperties": false,
+			"required": ["min", "max"],
+			"properties": {
+				"min": {
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": { "type": "integer" },
+					"description": "Minimum corner [x, y, z]."
+				},
+				"max": {
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": { "type": "integer" },
+					"description": "Maximum corner [x, y, z]."
+				}
+			}
+		}
+	}
+}

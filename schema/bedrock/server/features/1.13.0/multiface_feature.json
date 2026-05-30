@@ -1,0 +1,84 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/1.13.0/multiface_feature.json",
+	"type": "object",
+	"title": "Multiface Feature",
+	"description": "Places one or a few multiface blocks on floors/walls/ceilings. This feature can place any block type.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:multiface_feature"],
+	"properties": {
+		"format_version": {
+			"type": "string"
+		},
+		"minecraft:multiface_feature": {
+			"$ref": "#/$defs/multiface_feature_definition"
+		}
+	},
+	"$defs": {
+		"multiface_feature_definition": {
+			"type": "object",
+			"title": "Multiface Feature Definition",
+			"description": "A single Multiface Feature Definition.",
+			"additionalProperties": false,
+			"required": [
+				"description",
+				"places_block",
+				"search_range",
+				"can_place_on_floor",
+				"can_place_on_ceiling",
+				"can_place_on_wall",
+				"chance_of_spreading"
+			],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies this feature.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "The identifier for this feature. The identifier must include a namespace and must match the filename."
+						}
+					}
+				},
+				"places_block": {
+					"$ref": "../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+					"description": "Reference to the block to be placed."
+				},
+				"search_range": {
+					"type": "integer",
+					"minimum": 1,
+					"maximum": 64,
+					"description": "How far, in blocks, this feature can search for a valid position to place."
+				},
+				"can_place_on_floor": {
+					"type": "boolean",
+					"description": "Can this feature be placed on the ground (top face of a block)?"
+				},
+				"can_place_on_ceiling": {
+					"type": "boolean",
+					"description": "Can this feature be placed on the ceiling (bottom face of a block)?"
+				},
+				"can_place_on_wall": {
+					"type": "boolean",
+					"description": "Can this feature be placed on the wall (side faces of a block)?"
+				},
+				"chance_of_spreading": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1,
+					"description": "For each block placed by this feature, how likely will that block spread to another?"
+				},
+				"can_place_on": {
+					"type": "array",
+					"minItems": 1,
+					"description": "Optional. A list of blocks that the block in this feature can be placed on. Omit to allow any block.",
+					"items": {
+						"$ref": "../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
+					}
+				}
+			}
+		}
+	}
+}

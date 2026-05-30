@@ -1,0 +1,48 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/1.13.0/surface_relative_threshold_feature.json",
+	"type": "object",
+	"title": "Surface Relative Threshold Feature",
+	"description": "Determines whether the provided position is below the estimated surface level of the world, and places a feature if so.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:surface_relative_threshold_feature"],
+	"properties": {
+		"format_version": {
+			"type": "string"
+		},
+		"minecraft:surface_relative_threshold_feature": {
+			"$ref": "#/$defs/surface_relative_threshold_feature_definition"
+		}
+	},
+	"$defs": {
+		"surface_relative_threshold_feature_definition": {
+			"type": "object",
+			"title": "Surface Relative Threshold Feature Definition",
+			"description": "A single Surface Relative Threshold Feature Definition.",
+			"additionalProperties": false,
+			"required": ["description", "feature_to_place"],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies this feature.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "The identifier for this feature. The identifier must include a namespace and must match the filename."
+						}
+					}
+				},
+				"feature_to_place": {
+					"$ref": "../../../../vanilla/server/feature.json",
+					"description": "Reference to the feature to place if position is below surface."
+				},
+				"minimum_distance_below_surface": {
+					"type": "integer",
+					"description": "Optional. Minimum distance below surface level required for placement."
+				}
+			}
+		}
+	}
+}

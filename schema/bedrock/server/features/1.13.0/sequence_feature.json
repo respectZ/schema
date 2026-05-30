@@ -1,0 +1,49 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/1.13.0/sequence_feature.json",
+	"type": "object",
+	"title": "Sequence Feature",
+	"description": "Places a collection of features sequentially, in the order they appear in data. The output position of the previous feature is used as the input position for the next.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:sequence_feature"],
+	"properties": {
+		"format_version": {
+			"type": "string"
+		},
+		"minecraft:sequence_feature": {
+			"$ref": "#/$defs/sequence_feature_definition"
+		}
+	},
+	"$defs": {
+		"sequence_feature_definition": {
+			"type": "object",
+			"title": "Sequence Feature Definition",
+			"description": "A single Sequence Feature Definition.",
+			"additionalProperties": false,
+			"required": ["description", "features"],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies this feature.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "The identifier for this feature. The identifier must include a namespace and must match the filename."
+						}
+					}
+				},
+				"features": {
+					"type": "array",
+					"description": "List of features to be placed in sequence. The output position of the previous feature is used as the input position to the next.",
+					"minItems": 1,
+					"items": {
+						"$ref": "../../../../vanilla/server/feature.json",
+						"description": "Feature identifier reference."
+					}
+				}
+			}
+		}
+	}
+}

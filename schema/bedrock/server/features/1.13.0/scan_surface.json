@@ -1,0 +1,46 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/1.13.0/scan_surface.json",
+	"type": "object",
+	"title": "Scan Surface Feature",
+	"description": "Scans the surface of a Chunk, calling place() on the surface of each block column.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:scan_surface"],
+	"properties": {
+		"format_version": {
+			"type": "string"
+		},
+		"minecraft:scan_surface": {
+			"doNotSuggest": true,
+			"deprecationMessage": "Internal feature.",
+			"$ref": "#/$defs/scan_surface_definition"
+		}
+	},
+	"$defs": {
+		"scan_surface_definition": {
+			"type": "object",
+			"title": "Scan Surface Definition",
+			"description": "A single Scan Surface Feature Definition.",
+			"additionalProperties": false,
+			"required": ["description", "scan_surface_feature"],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies this feature.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "The identifier for this feature. The identifier must include a namespace and must match the filename."
+						}
+					}
+				},
+				"scan_surface_feature": {
+					"$ref": "../../../../vanilla/server/feature.json",
+					"description": "Reference to the feature to place on the scanned surface."
+				}
+			}
+		}
+	}
+}

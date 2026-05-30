@@ -1,0 +1,77 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/1.13.0/ore_feature.json",
+	"type": "object",
+	"title": "Ore Feature",
+	"description": "Places a vein of blocks to simulate ore deposits. Despite the name, any block can be placed by this feature.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:ore_feature"],
+	"properties": {
+		"format_version": {
+			"type": "string"
+		},
+		"minecraft:ore_feature": {
+			"$ref": "#/$defs/ore_feature_definition"
+		}
+	},
+	"$defs": {
+		"ore_feature_definition": {
+			"type": "object",
+			"title": "Ore Feature Definition",
+			"description": "A single Ore Feature Definition.",
+			"additionalProperties": false,
+			"required": ["description", "count"],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies this feature.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "The identifier for this feature. The identifier must include a namespace and must match the filename."
+						}
+					}
+				},
+				"count": {
+					"type": "integer",
+					"minimum": 1,
+					"description": "The number of blocks to be placed."
+				},
+				"discard_chance_on_air_exposure": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1,
+					"description": "Optional. Chance of discarding placement if neighboring block is Air."
+				},
+				"replace_rules": {
+					"type": "array",
+					"minItems": 1,
+					"description": "Optional. Collection of replace rules that will be checked in order of definition. If a rule is resolved, the rest will not be resolved for that block position.",
+					"items": {
+						"type": "object",
+						"title": "Replace Rule",
+						"description": "A single replace rule for ore placement.",
+						"additionalProperties": false,
+						"required": ["places_block"],
+						"properties": {
+							"places_block": {
+								"$ref": "../../../../vanilla/server/block_descriptor.json",
+								"description": "Reference to the block to be placed."
+							},
+							"may_replace": {
+								"type": "array",
+								"minItems": 1,
+								"description": "Optional. A list of blocks that may be replaced during placement. Omit this field to allow any block to be replaced.",
+								"items": {
+									"$ref": "../../../../vanilla/server/block_descriptor.json"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

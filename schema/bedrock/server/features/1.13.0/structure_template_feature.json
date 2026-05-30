@@ -1,0 +1,126 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/1.13.0/structure_template_feature.json",
+	"type": "object",
+	"title": "Structure Template Feature",
+	"description": "Places a structure in the world. The structure must be stored as a .mcstructure file in the \"structures\" subdirectory of a behavior pack.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:structure_template_feature"],
+	"properties": {
+		"format_version": {
+			"type": "string"
+		},
+		"minecraft:structure_template_feature": {
+			"$ref": "#/$defs/structure_template_feature_definition"
+		}
+	},
+	"$defs": {
+		"structure_template_feature_definition": {
+			"type": "object",
+			"title": "Structure Template Feature Definition",
+			"description": "A single Structure Template Feature Definition.",
+			"additionalProperties": false,
+			"required": ["description", "structure_name", "constraints"],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies this feature.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "The identifier for this feature. The identifier must include a namespace and must match the filename."
+						}
+					}
+				},
+				"structure_name": {
+					"$ref": "../../../../vanilla/definition/identifier.json",
+					"description": "Reference to the structure to place (namespace:structure_name)."
+				},
+				"adjustment_radius": {
+					"type": "integer",
+					"minimum": 0,
+					"maximum": 16,
+					"description": "Optional. Radius to search for valid placement within."
+				},
+				"facing_direction": {
+					"type": "string",
+					"enum": ["north", "south", "east", "west", "random"],
+					"description": "Optional. Direction the structure faces. Default is random."
+				},
+				"rotate_around_center": {
+					"type": "boolean",
+					"description": "Optional. If true, rotate the structure around its center."
+				},
+				"ground_level": {
+					"type": "integer",
+					"minimum": 1,
+					"description": "Optional. Specifies which Y coordinate of the structure is considered its ground level. This value determines which layer of the structure is checked by the \"grounded\" and \"leveled\" constraints and is used as a downward vertical offset during placement. If the value exceeds the structure's height, it is clamped to the maximum valid value and a content warning is emitted. Defaults to 0."
+				},
+				"constraints": {
+					"$ref": "#/$defs/placement_constraints",
+					"description": "Constraints for structure placement."
+				}
+			}
+		},
+		"placement_constraints": {
+			"type": "object",
+			"title": "Placement Constraints",
+			"description": "Constraints for structure placement.",
+			"additionalProperties": false,
+			"properties": {
+				"grounded": {
+					"type": "object",
+					"description": "Optional. When specified, ensures the structure is on the ground.",
+					"additionalProperties": false
+				},
+				"leveled": {
+					"type": "object",
+					"description": "Optional. When specified, ensures the structure's ground level is placed on mostly flat terrain.",
+					"additionalProperties": false,
+					"properties": {
+						"max_steepness": {
+							"type": "integer",
+							"minimum": 0,
+							"maximum": 8,
+							"description": "Optional. Maximum allowed height difference between the placement position and terrain samples taken halfway along each side of the structure. A valid terrain sample consists of a solid block with a non-solid block above it. Defaults to 2."
+						}
+					}
+				},
+				"unburied": {
+					"type": "object",
+					"description": "Optional. When specified, ensures the structure has air above it.",
+					"additionalProperties": false
+				},
+				"block_intersection": {
+					"type": "object",
+					"description": "Optional. Block intersection constraints.",
+					"additionalProperties": false,
+					"properties": {
+						"block_allowlist": {
+							"type": "array",
+							"minItems": 1,
+							"description": "Optional. Blocks allowed to intersect with structure.",
+							"items": {
+								"$ref": "../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
+							}
+						},
+						"block_whitelist": {
+							"type": "array",
+							"minItems": 1,
+							"description": "Optional. Blocks that must intersect with structure.",
+							"items": {
+								"$ref": "../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
+							}
+						},
+						"only_check_intersection_for_motion_blocking_blocks": {
+							"type": "boolean",
+							"description": "Optional. If true, only motion-blocking blocks within the structure are checked for intersections with blocks in \"block_allowlist|block_whitelist\". If false, all blocks in the structure except empty ones are checked for intersections, including air."
+						}
+					}
+				}
+			}
+		}
+	}
+}

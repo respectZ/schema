@@ -1,0 +1,121 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/1.21.10/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Features 1.21.10",
+	"description": "Schema for feature definition files format version 1.21.10.",
+	"unevaluatedProperties": false,
+	"required": ["format_version"],
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"enum": ["1.21.10"]
+		}
+	},
+	"oneOf": [
+		{
+			"required": ["minecraft:aggregate_feature"],
+			"$ref": "../1.13.0/aggregate_feature.json"
+		},
+		{
+			"required": ["minecraft:sequence_feature"],
+			"$ref": "../1.13.0/sequence_feature.json"
+		},
+		{
+			"required": ["minecraft:beards_and_shavers"],
+			"$ref": "../1.13.0/beards_and_shavers.json"
+		},
+		{
+			"required": ["minecraft:cave_carver_feature"],
+			"$ref": "../1.13.0/cave_carver_feature.json"
+		},
+		{
+			"required": ["minecraft:ore_feature"],
+			"$ref": "../1.13.0/ore_feature.json"
+		},
+		{
+			"required": ["minecraft:scatter_feature"],
+			"$ref": "./scatter_feature.json"
+		},
+		{
+			"required": ["minecraft:weighted_random_feature"],
+			"$ref": "../1.13.0/weighted_random_feature.json"
+		},
+		{
+			"required": ["minecraft:underwater_cave_carver_feature"],
+			"$ref": "../1.13.0/underwater_cave_carver_feature.json"
+		},
+		{
+			"required": ["minecraft:single_block_feature"],
+			"$ref": "../1.13.0/single_block_feature.json"
+		},
+		{
+			"required": ["minecraft:fossil_feature"],
+			"$ref": "../1.13.0/fossil_feature.json"
+		},
+		{
+			"required": ["minecraft:search_feature"],
+			"$ref": "../1.13.0/search_feature.json"
+		},
+		{
+			"required": ["minecraft:conditional_list"],
+			"$ref": "../1.13.0/conditional_list.json"
+		},
+		{
+			"required": ["minecraft:nether_cave_carver_feature"],
+			"$ref": "../1.13.0/nether_cave_carver_feature.json"
+		},
+		{
+			"required": ["minecraft:multiface_feature"],
+			"$ref": "../1.13.0/multiface_feature.json"
+		},
+		{
+			"required": ["minecraft:partially_exposed_blob_feature"],
+			"$ref": "../1.13.0/partially_exposed_blob_feature.json"
+		},
+		{
+			"required": ["minecraft:snap_to_surface_feature"],
+			"$ref": "../1.13.0/snap_to_surface_feature.json"
+		},
+		{
+			"required": ["minecraft:surface_relative_threshold_feature"],
+			"$ref": "../1.13.0/surface_relative_threshold_feature.json"
+		},
+		{
+			"required": ["minecraft:scan_surface"],
+			"$ref": "../1.13.0/scan_surface.json"
+		},
+		{
+			"required": ["minecraft:rect_layout"],
+			"$ref": "../1.13.0/rect_layout.json"
+		},
+		{
+			"required": ["minecraft:growing_plant_feature"],
+			"$ref": "../1.13.0/growing_plant_feature.json"
+		},
+		{
+			"required": ["minecraft:vegetation_patch_feature"],
+			"$ref": "../1.13.0/vegetation_patch_feature.json"
+		},
+		{
+			"required": ["minecraft:structure_template_feature"],
+			"$ref": "../1.13.0/structure_template_feature.json"
+		},
+		{
+			"required": ["minecraft:geode_feature"],
+			"$ref": "../1.13.0/geode_feature.json"
+		},
+		{
+			"required": ["minecraft:sculk_patch_feature"],
+			"$ref": "../1.13.0/sculk_patch_feature.json"
+		},
+		{
+			"required": ["minecraft:tree_feature"],
+			"$ref": "../1.13.0/tree_feature.json"
+		},
+		{
+			"required": ["minecraft:height_difference_filter_feature"],
+			"$ref": "../1.13.0/height_difference_filter_feature.json"
+		}
+	]
+}

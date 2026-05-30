@@ -1,0 +1,157 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/1.13.0/single_block_feature.json",
+	"type": "object",
+	"title": "Single Block Feature",
+	"description": "Places a single block in the world. The block can be selected from a weighted list.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:single_block_feature"],
+	"properties": {
+		"format_version": {
+			"type": "string"
+		},
+		"minecraft:single_block_feature": {
+			"$ref": "#/$defs/single_block_feature_definition"
+		}
+	},
+	"$defs": {
+		"single_block_feature_definition": {
+			"type": "object",
+			"title": "Single Block Feature Definition",
+			"description": "A single block placement feature.",
+			"additionalProperties": false,
+			"required": [
+				"description",
+				"places_block",
+				"enforce_survivability_rules",
+				"enforce_placement_rules"
+			],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies this feature.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "The identifier for this feature. The identifier must include a namespace and must match the filename."
+						}
+					}
+				},
+				"places_block": {
+					"oneOf": [
+						{
+							"$ref": "../../../../vanilla/server/block_descriptor.json",
+							"description": "A single block identifier."
+						},
+						{
+							"type": "array",
+							"minItems": 1,
+							"description": "An array of weighted block options.",
+							"items": {
+								"type": "object",
+								"title": "Weighted Block",
+								"additionalProperties": false,
+								"required": ["block"],
+								"properties": {
+									"block": {
+										"$ref": "../../../../vanilla/server/block_descriptor.json",
+										"description": "The block identifier."
+									},
+									"weight": {
+										"type": "integer",
+										"minimum": 0,
+										"description": "Optional. Weight for random selection (relative to other blocks)."
+									}
+								}
+							}
+						}
+					],
+					"description": "The block to place, or an array of weighted blocks to randomly select from."
+				},
+				"enforce_survivability_rules": {
+					"type": "boolean",
+					"description": "If true, enforce the block's built-in survivability rules."
+				},
+				"enforce_placement_rules": {
+					"type": "boolean",
+					"description": "If true, enforce the block's built-in placement rules."
+				},
+				"may_attach_to": {
+					"$ref": "#/$defs/block_placement_rules",
+					"description": "Optional. Allowlist of blocks this can attach to."
+				},
+				"may_replace": {
+					"type": "array",
+					"minItems": 1,
+					"description": "Optional. Blocks that can be replaced during placement.",
+					"items": {
+						"$ref": "../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
+					}
+				}
+			}
+		},
+		"block_placement_rules": {
+			"type": "object",
+			"title": "Block Placement Rules",
+			"description": "Rules for which blocks this can attach to.",
+			"additionalProperties": false,
+			"properties": {
+				"auto_rotate": {
+					"type": "boolean",
+					"description": "Optional. If true, automatically rotate based on attached face."
+				},
+				"min_sides_must_attach": {
+					"type": "integer",
+					"minimum": 1,
+					"maximum": 4,
+					"description": "Optional. Minimum number of sides that must have valid attachments."
+				},
+				"north": {
+					"$ref": "#/$defs/block_placement_face",
+					"description": "Optional. Blocks allowed on the north face."
+				},
+				"south": {
+					"$ref": "#/$defs/block_placement_face",
+					"description": "Optional. Blocks allowed on the south face."
+				},
+				"east": {
+					"$ref": "#/$defs/block_placement_face",
+					"description": "Optional. Blocks allowed on the east face."
+				},
+				"west": {
+					"$ref": "#/$defs/block_placement_face",
+					"description": "Optional. Blocks allowed on the west face."
+				},
+				"top": {
+					"$ref": "#/$defs/block_placement_face",
+					"description": "Optional. Blocks allowed on the top face."
+				},
+				"bottom": {
+					"$ref": "#/$defs/block_placement_face",
+					"description": "Optional. Blocks allowed on the bottom face."
+				},
+				"sides": {
+					"$ref": "#/$defs/block_placement_face",
+					"description": "Optional. Blocks allowed on all horizontal faces."
+				}
+			}
+		},
+		"block_placement_face": {
+			"oneOf": [
+				{
+					"$ref": "../../../../vanilla/server/block_descriptor.json"
+				},
+				{
+					"type": "array",
+					"minItems": 1,
+					"description": "An array of block descriptors.",
+					"items": {
+						"$ref": "../../../../vanilla/server/block_descriptor.json"
+					}
+				}
+			]
+		}
+	}
+}

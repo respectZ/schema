@@ -1,0 +1,80 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/1.13.0/nether_cave_carver_feature.json",
+	"type": "object",
+	"title": "Nether Cave Carver Feature",
+	"description": "Carves a cave through the Nether in the current chunk, and in every chunk around the current chunk in an 8 radial pattern. This feature will also only work when placed specifically in the pass \"pregeneration_pass\".",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:nether_cave_carver_feature"],
+	"properties": {
+		"format_version": {
+			"type": "string"
+		},
+		"minecraft:nether_cave_carver_feature": {
+			"$ref": "#/$defs/nether_cave_carver_feature_definition"
+		}
+	},
+	"$defs": {
+		"nether_cave_carver_feature_definition": {
+			"type": "object",
+			"title": "Nether Cave Carver Feature Definition",
+			"description": "A single Nether Cave Carver Feature Definition.",
+			"additionalProperties": false,
+			"required": ["description"],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies this feature.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "The identifier for this feature. The identifier must include a namespace and must match the filename."
+						}
+					}
+				},
+				"fill_with": {
+					"$ref": "../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+					"description": "Optional. Reference to the block to fill the cave with."
+				},
+				"width_modifier": {
+					"oneOf": [
+						{
+							"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+						},
+						{
+							"type": "number"
+						}
+					],
+					"description": "Optional. How many blocks to increase the cave radius by, from the center point of the cave."
+				},
+				"skip_carve_chance": {
+					"type": "integer",
+					"minimum": 1,
+					"description": "Optional. The chance to skip doing the carve (1 / value)."
+				},
+				"height_limit": {
+					"type": "integer",
+					"description": "Optional. The height limit where we attempt to carve."
+				},
+				"y_scale": {
+					"$ref": "../general.json#/$defs/float_range",
+					"description": "Optional. The scaling in y."
+				},
+				"horizontal_radius_multiplier": {
+					"$ref": "../general.json#/$defs/float_range",
+					"description": "Optional. Horizontal radius multiplier."
+				},
+				"vertical_radius_multiplier": {
+					"$ref": "../general.json#/$defs/float_range",
+					"description": "Optional. Vertical radius multiplier."
+				},
+				"floor_level": {
+					"$ref": "../general.json#/$defs/float_range",
+					"description": "Optional. Floor level."
+				}
+			}
+		}
+	}
+}

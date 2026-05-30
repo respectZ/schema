@@ -1,0 +1,74 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/1.13.0/snap_to_surface_feature.json",
+	"type": "object",
+	"title": "Snap To Surface Feature",
+	"description": "Snaps the y-value of a feature placement position to the floor or the ceiling within the provided vertical search range.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:snap_to_surface_feature"],
+	"properties": {
+		"format_version": {
+			"type": "string"
+		},
+		"minecraft:snap_to_surface_feature": {
+			"$ref": "#/$defs/snap_to_surface_feature_definition"
+		}
+	},
+	"$defs": {
+		"snap_to_surface_feature_definition": {
+			"type": "object",
+			"title": "Snap To Surface Feature Definition",
+			"description": "A single Snap To Surface Feature Definition.",
+			"additionalProperties": false,
+			"required": ["description", "feature_to_snap", "vertical_search_range"],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies this feature.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "The identifier for this feature. The identifier must include a namespace and must match the filename."
+						}
+					}
+				},
+				"feature_to_snap": {
+					"$ref": "../../../../vanilla/server/feature.json",
+					"description": "Reference to the feature to snap."
+				},
+				"vertical_search_range": {
+					"type": "integer",
+					"minimum": 1,
+					"description": "Range to search for a floor or ceiling for snapping the feature."
+				},
+				"surface": {
+					"type": "string",
+					"enum": ["ceiling", "floor", "random_horizontal"],
+					"description": "Optional. Defines the surface that the y-value of the placement position will be snapped to. Valid values: 'ceiling', 'floor', 'random_horizontal'. Defaults to 'floor'."
+				},
+				"allow_air_placement": {
+					"type": "boolean",
+					"description": "Optional. Determines whether the feature can snap through air blocks. Defaults to true."
+				},
+				"allow_underwater_placement": {
+					"type": "boolean",
+					"description": "Optional. Determines whether the feature can snap through water blocks. Defaults to false."
+				},
+				"allowed_surface_blocks": {
+					"type": "array",
+					"minItems": 1,
+					"description": "Optional. A list of blocks that the feature is permitted to snap to. Leaving this empty results in the feature snapping to blocks that can provide support for the given face (up/down/horizontal).",
+					"items": {
+						"$ref": "../../../../vanilla/server/block_descriptor.json"
+					}
+				},
+				"embed_in_surface": {
+					"type": "boolean",
+					"description": "Optional. Determines whether the placed feature should be embedded in the found surface."
+				}
+			}
+		}
+	}
+}

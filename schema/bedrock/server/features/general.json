@@ -1,0 +1,64 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/general.json",
+	"$defs": {
+		"float_range": {
+			"oneOf": [
+				{
+					"type": "number"
+				},
+				{
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {
+						"type": "number"
+					}
+				},
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"range_min": {
+							"type": "number",
+							"description": "Minimum value."
+						},
+						"range_max": {
+							"type": "number",
+							"description": "Maximum value."
+						}
+					}
+				}
+			]
+		},
+		"int_range": {
+			"oneOf": [
+				{
+					"type": "integer"
+				},
+				{
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {
+						"type": "integer"
+					}
+				},
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"range_min": {
+							"type": "integer",
+							"description": "Minimum value."
+						},
+						"range_max": {
+							"type": "integer",
+							"description": "Maximum value."
+						}
+					}
+				}
+			]
+		}
+	}
+}

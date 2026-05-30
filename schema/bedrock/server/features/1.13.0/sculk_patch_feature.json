@@ -1,0 +1,101 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/1.13.0/sculk_patch_feature.json",
+	"type": "object",
+	"title": "Sculk Patch Feature",
+	"description": "Generates a sculk patch in the world with configurable growth and spread parameters.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:sculk_patch_feature"],
+	"properties": {
+		"format_version": {
+			"type": "string"
+		},
+		"minecraft:sculk_patch_feature": {
+			"doNotSuggest": true,
+			"deprecationMessage": "Internal feature.",
+			"$ref": "#/$defs/sculk_patch_feature_definition"
+		}
+	},
+	"$defs": {
+		"sculk_patch_feature_definition": {
+			"type": "object",
+			"title": "Sculk Patch Feature Definition",
+			"description": "A single Sculk Patch Feature Definition.",
+			"additionalProperties": false,
+			"required": [
+				"description",
+				"cursor_count",
+				"charge_amount",
+				"spread_attempts",
+				"growth_rounds",
+				"spread_rounds"
+			],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies this feature.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "The identifier for this feature. The identifier must include a namespace and must match the filename."
+						}
+					}
+				},
+				"can_place_sculk_patch_on": {
+					"type": "array",
+					"minItems": 1,
+					"description": "Optional. Blocks that the sculk patch can be placed on.",
+					"items": {
+						"$ref": "../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
+					}
+				},
+				"central_block": {
+					"$ref": "../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+					"description": "Optional. The central block type for the sculk patch."
+				},
+				"central_block_placement_chance": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1,
+					"description": "Optional. Probability of placing the central block."
+				},
+				"cursor_count": {
+					"type": "integer",
+					"minimum": 0,
+					"maximum": 32,
+					"description": "Number of cursors for sculk spreading."
+				},
+				"charge_amount": {
+					"type": "integer",
+					"minimum": 1,
+					"maximum": 1000,
+					"description": "Amount of charge for sculk growth."
+				},
+				"spread_attempts": {
+					"type": "integer",
+					"minimum": 1,
+					"maximum": 64,
+					"description": "Number of spread attempts per round."
+				},
+				"growth_rounds": {
+					"type": "integer",
+					"minimum": 0,
+					"maximum": 8,
+					"description": "Number of growth rounds."
+				},
+				"spread_rounds": {
+					"type": "integer",
+					"minimum": 0,
+					"maximum": 8,
+					"description": "Number of spread rounds."
+				},
+				"extra_growth_chance": {
+					"$ref": "../general.json#/$defs/int_range",
+					"description": "Optional. Range for extra growth chance."
+				}
+			}
+		}
+	}
+}

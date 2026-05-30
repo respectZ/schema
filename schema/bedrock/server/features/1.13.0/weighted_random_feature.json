@@ -1,0 +1,63 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/1.13.0/weighted_random_feature.json",
+	"type": "object",
+	"title": "Weighted Random Feature",
+	"description": "Randomly selects and places a feature based on a weight value. Weights are relative, with higher values making selection more likely.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:weighted_random_feature"],
+	"properties": {
+		"format_version": {
+			"type": "string"
+		},
+		"minecraft:weighted_random_feature": {
+			"$ref": "#/$defs/weighted_random_feature_definition"
+		}
+	},
+	"$defs": {
+		"weighted_random_feature_definition": {
+			"type": "object",
+			"title": "Weighted Random Feature Definition",
+			"description": "A single Weighted Random Feature Definition.",
+			"additionalProperties": false,
+			"required": ["description", "features"],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies this feature.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "The identifier for this feature. The identifier must include a namespace and must match the filename."
+						}
+					}
+				},
+				"features": {
+					"type": "array",
+					"minItems": 1,
+					"description": "Collection of weighted features to randomly select from.",
+					"items": {
+						"type": "array",
+						"minItems": 2,
+						"maxItems": 2,
+						"description": "A feature and its weight [feature_identifier, weight].",
+						"prefixItems": [
+							{
+								"$ref": "../../../../vanilla/server/feature.json",
+								"description": "Feature identifier or reference."
+							},
+							{
+								"type": "number",
+								"minimum": 0,
+								"description": "Weight for this feature (relative to other weights)."
+							}
+						],
+						"items": false
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,72 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/features/1.13.0/rect_layout.json",
+	"type": "object",
+	"title": "Rect Layout Feature",
+	"description": "Scans the surface of a Chunk, calling place() on the surface of each block column with rectangular layout.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:rect_layout"],
+	"properties": {
+		"format_version": {
+			"type": "string"
+		},
+		"minecraft:rect_layout": {
+			"doNotSuggest": true,
+			"deprecationMessage": "Internal feature.",
+			"$ref": "#/$defs/rect_layout_definition"
+		}
+	},
+	"$defs": {
+		"rect_layout_definition": {
+			"type": "object",
+			"title": "Rect Layout Definition",
+			"description": "A single Rect Layout Feature Definition.",
+			"additionalProperties": false,
+			"required": ["description"],
+			"properties": {
+				"description": {
+					"type": "object",
+					"description": "Metadata that identifies this feature.",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "The identifier for this feature. The identifier must include a namespace and must match the filename."
+						}
+					}
+				},
+				"ratio_of_empty_space": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1,
+					"description": "Optional. The ratio of empty space within feature areas."
+				},
+				"feature_areas": {
+					"type": "array",
+					"minItems": 1,
+					"description": "Optional. Array of feature areas with dimensions.",
+					"items": {
+						"type": "object",
+						"title": "Feature Area",
+						"additionalProperties": false,
+						"required": ["feature", "area_dimensions"],
+						"properties": {
+							"feature": {
+								"$ref": "../../../../vanilla/server/feature.json",
+								"description": "Reference to the feature to place in this area."
+							},
+							"area_dimensions": {
+								"type": "array",
+								"minItems": 2,
+								"maxItems": 2,
+								"items": { "type": "integer", "minimum": 1 },
+								"description": "Dimensions [width, height] of the feature area."
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
