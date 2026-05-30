@@ -1,0 +1,7 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/1.8.0/biome_filter.json",
+	"$ref": "../../../../vanilla/server/filter/entity/_index.json",
+	"title": "Biome Filter",
+	"description": "Filters allow data objects to specify test criteria for biome matching. Can be a single filter object or an array of filter objects."
+}

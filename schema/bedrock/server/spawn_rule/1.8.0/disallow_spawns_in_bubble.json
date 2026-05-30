@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/1.8.0/disallow_spawns_in_bubble.json",
+	"type": "object",
+	"title": "Disallow Spawns In Bubble",
+	"description": "Prevents spawning inside bubble columns.",
+	"additionalProperties": false
+}

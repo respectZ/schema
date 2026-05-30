@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/1.8.0/spawns_lava.json",
+	"type": "object",
+	"title": "Spawns Lava",
+	"description": "Indicates the entity can spawn in lava.",
+	"additionalProperties": false
+}

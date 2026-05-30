@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/1.8.0/is_experimental.json",
+	"type": "object",
+	"title": "Is Experimental",
+	"description": "Marks this spawn rule as experimental. Only active when the corresponding experiment toggle is enabled.",
+	"additionalProperties": false
+}

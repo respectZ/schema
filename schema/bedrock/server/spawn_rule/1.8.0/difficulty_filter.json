@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/1.8.0/difficulty_filter.json",
+	"type": "object",
+	"title": "Difficulty Filter",
+	"description": "Restricts mob spawning to specific difficulty levels (Peaceful, Easy, Normal, Hard). For example, hostile mobs don't spawn on Peaceful, and some dangerous variants only appear on Hard difficulty.",
+	"additionalProperties": false,
+	"properties": {
+		"min": {
+			"type": "string",
+			"enum": ["peaceful", "easy", "normal", "hard"],
+			"default": "peaceful",
+			"description": "Minimum difficulty level at which this entity can spawn."
+		},
+		"max": {
+			"type": "string",
+			"enum": ["peaceful", "easy", "normal", "hard"],
+			"default": "hard",
+			"description": "Maximum difficulty level at which this entity can spawn."
+		}
+	}
+}

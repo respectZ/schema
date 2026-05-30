@@ -1,0 +1,20 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/1.8.0/density_limit.json",
+	"type": "object",
+	"title": "Density Limit",
+	"description": "Limits how many of this entity type can exist in an area, with separate caps for surface and underground spawning. Set -1 for unlimited.",
+	"additionalProperties": false,
+	"properties": {
+		"surface": {
+			"type": "integer",
+			"default": -1,
+			"description": "Maximum entity density on the surface. -1 for unlimited."
+		},
+		"underground": {
+			"type": "integer",
+			"default": -1,
+			"description": "Maximum entity density underground. -1 for unlimited."
+		}
+	}
+}

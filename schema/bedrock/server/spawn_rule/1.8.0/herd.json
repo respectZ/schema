@@ -1,0 +1,55 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/1.8.0/herd.json",
+	"title": "Herd",
+	"description": "Specifies herd spawning configuration. Can be a single herd object or an array of herd objects.",
+	"oneOf": [
+		{
+			"$ref": "#/$defs/herd_definition"
+		},
+		{
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/herd_definition"
+			}
+		}
+	],
+	"$defs": {
+		"herd_definition": {
+			"type": "object",
+			"title": "Herd Definition",
+			"description": "Configures group spawning behavior, including minimum and maximum herd size. Allows running events on the first N spawns or after M spawns.",
+			"additionalProperties": false,
+			"properties": {
+				"event": {
+					"type": "string",
+					"description": "An event to run after M number of the herd have spawned."
+				},
+				"event_skip_count": {
+					"type": "integer",
+					"default": 0,
+					"description": "Number of the herd to skip before running the event."
+				},
+				"initial_event": {
+					"type": "string",
+					"description": "Event run for the first N of the herd that are placed."
+				},
+				"initial_event_count": {
+					"type": "integer",
+					"default": 0,
+					"description": "Number of times that the initial event will run."
+				},
+				"max_size": {
+					"type": "integer",
+					"default": 1,
+					"description": "Maximum number in this group to attempt to spawn."
+				},
+				"min_size": {
+					"type": "integer",
+					"default": 1,
+					"description": "Minimum number in this group to attempt to spawn."
+				}
+			}
+		}
+	}
+}

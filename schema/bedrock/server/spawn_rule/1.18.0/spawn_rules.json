@@ -1,0 +1,21 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/1.18.0/spawn_rules.json",
+	"type": "object",
+	"title": "Spawn Rules",
+	"description": "Defines the complete spawn rules for an entity type, including spawn conditions and herd configuration.",
+	"additionalProperties": false,
+	"required": ["description"],
+	"properties": {
+		"description": {
+			"$ref": "../1.8.0/spawn_description.json"
+		},
+		"conditions": {
+			"type": "array",
+			"description": "Array of spawn condition objects that define when and how this entity spawns.",
+			"items": {
+				"$ref": "./spawn_biome_condition.json"
+			}
+		}
+	}
+}

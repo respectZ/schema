@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/1.8.0/spawns_above_block_filter.json",
+	"type": "object",
+	"title": "Spawns Above Block Filter",
+	"description": "Filters spawning based on blocks above the spawn location. Note: This item no longer works after format versions of at least 1.18.0.",
+	"additionalProperties": false,
+	"properties": {
+		"blocks": {
+			"type": "array",
+			"description": "List of blocks to check above the spawn point.",
+			"items": {
+				"$ref": "../../../../vanilla/server/block_descriptor.json"
+			}
+		},
+		"distance": {
+			"type": "integer",
+			"default": 1,
+			"description": "Distance above the spawn point to check for blocks."
+		}
+	}
+}

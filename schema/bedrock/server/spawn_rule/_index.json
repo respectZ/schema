@@ -1,0 +1,33 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/_index.json",
+	"type": "object",
+	"title": "Spawn Rule",
+	"description": "Spawn rules definition for Minecraft Bedrock Edition entities.",
+	"anyOf": [
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"const": "1.8.0"
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.8.0/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"const": "1.18.0"
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.18.0/_index.json"
+			}
+		}
+	]
+}

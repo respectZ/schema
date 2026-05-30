@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/1.8.0/spawns_underground.json",
+	"type": "object",
+	"title": "Spawns Underground",
+	"description": "When enabled, this entity can spawn underground (below the surface).",
+	"additionalProperties": false
+}

@@ -1,0 +1,23 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/1.8.0/spawns_on_block_filter.json",
+	"title": "Spawns On Block Filter",
+	"description": "Specifies blocks on which this entity can spawn. Can be a single block name string, an array of block identifiers, or an array of block objects with properties.",
+	"oneOf": [
+		{
+			"$ref": "../../../../vanilla/server/block_descriptor.json",
+			"description": "A single block identifier."
+		},
+		{
+			"type": "array",
+			"items": {
+				"oneOf": [
+					{
+						"$ref": "../../../../vanilla/server/block_descriptor.json"
+					}
+				]
+			},
+			"description": "An array of block identifiers or block objects."
+		}
+	]
+}

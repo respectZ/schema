@@ -1,0 +1,10 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/1.8.0/spawns_on_block_prevented_filter.json",
+	"type": "array",
+	"title": "Spawns On Block Prevented Filter",
+	"description": "Specifies blocks on which this entity cannot spawn.",
+	"items": {
+		"$ref": "../../../../vanilla/server/block_descriptor.json"
+	}
+}

@@ -1,0 +1,18 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/1.8.0/height_filter.json",
+	"type": "object",
+	"title": "Height Filter",
+	"description": "Restricts spawning to specific Y-coordinate ranges. Useful for depth-based mob distribution.",
+	"additionalProperties": false,
+	"properties": {
+		"min": {
+			"type": "integer",
+			"description": "Minimum Y-coordinate at which this entity can spawn."
+		},
+		"max": {
+			"type": "integer",
+			"description": "Maximum Y-coordinate at which this entity can spawn."
+		}
+	}
+}

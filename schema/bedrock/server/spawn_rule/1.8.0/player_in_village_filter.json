@@ -1,0 +1,19 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/1.8.0/player_in_village_filter.json",
+	"type": "object",
+	"title": "Player In Village Filter",
+	"description": "Restricts spawning based on whether a player is within village boundaries. Used for village-specific spawns like iron golems, cats, and raid mobs that should only appear when players are near villages.",
+	"additionalProperties": false,
+	"properties": {
+		"distance": {
+			"type": "integer",
+			"description": "Distance from the village center to check for players."
+		},
+		"village_border_tolerance": {
+			"type": "integer",
+			"default": 10,
+			"description": "Tolerance for village borders in blocks."
+		}
+	}
+}

@@ -1,0 +1,18 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/1.18.0/_index.json",
+	"type": "object",
+	"title": "Spawn Rule 1.18.0",
+	"description": "Spawn rules definition for format_version 1.18.0.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:spawn_rules"],
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"enum": ["1.18.0"]
+		},
+		"minecraft:spawn_rules": {
+			"$ref": "./spawn_rules.json"
+		}
+	}
+}

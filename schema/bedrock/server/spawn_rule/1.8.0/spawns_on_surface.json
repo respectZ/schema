@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/1.8.0/spawns_on_surface.json",
+	"type": "object",
+	"title": "Spawns On Surface",
+	"description": "When enabled, this entity can spawn on the world surface.",
+	"additionalProperties": false
+}

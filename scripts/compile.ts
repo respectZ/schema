@@ -66,6 +66,10 @@ const BP_ENTRIES: JsonValidationEntry[] = [
 		fileMatch: "features/**/*.{json,jsonc,json5}",
 		url: "./schema/bedrock/server/features/_index.json",
 	},
+	{
+		fileMatch: "spawn_rules/**/*.{json,jsonc,json5}",
+		url: "./schema/bedrock/server/spawn_rule/_index.json",
+	},
 ];
 
 const RP_ENTRIES: JsonValidationEntry[] = [

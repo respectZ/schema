@@ -1,0 +1,19 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/1.8.0/weight.json",
+	"type": "object",
+	"title": "Weight",
+	"description": "Defines the relative probability of this entity spawning compared to other entities in the same biome and spawn pool. Higher weight values mean more frequent spawns. A weight of 100 is typical for common mobs.",
+	"additionalProperties": false,
+	"properties": {
+		"default": {
+			"type": "integer",
+			"description": "Default spawn weight/probability."
+		},
+		"rarity": {
+			"type": "integer",
+			"default": 0,
+			"description": "Rarity modifier for the spawn weight."
+		}
+	}
+}

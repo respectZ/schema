@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/1.8.0/spawn_event.json",
+	"type": "object",
+	"title": "Spawn Event",
+	"description": "Triggers a specific entity event when the mob spawns. Commonly used to initialize entity behavior.",
+	"additionalProperties": false,
+	"required": ["event"],
+	"properties": {
+		"event": {
+			"type": "string",
+			"description": "The event identifier to trigger when spawning."
+		}
+	}
+}

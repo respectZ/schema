@@ -1,0 +1,40 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/1.8.0/permute_type.json",
+	"title": "Permute Type",
+	"description": "Weighted spawn permutation that selects which entity variant to spawn. Can be a single permutation or an array of permutations.",
+	"oneOf": [
+		{
+			"$ref": "#/$defs/permute_type_definition"
+		},
+		{
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/permute_type_definition"
+			}
+		}
+	],
+	"$defs": {
+		"permute_type_definition": {
+			"type": "object",
+			"title": "Permute Type Definition",
+			"description": "A weighted spawn permutation configuration.",
+			"additionalProperties": false,
+			"properties": {
+				"entity_type": {
+					"$ref": "../../../../vanilla/definition/identifier.json",
+					"description": "The entity variant to spawn when this permutation is selected."
+				},
+				"min_guaranteed": {
+					"type": "integer",
+					"default": 0,
+					"description": "The minimum number of this permutation to spawn."
+				},
+				"weight": {
+					"type": "integer",
+					"description": "The relative weight of this permutation. Higher values make this variant spawn more frequently."
+				}
+			}
+		}
+	}
+}

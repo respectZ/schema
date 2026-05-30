@@ -1,0 +1,18 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/1.8.0/world_age_filter.json",
+	"type": "object",
+	"title": "World Age Filter",
+	"description": "Restricts spawning based on world age (in ticks). Useful for progressive difficulty where certain mobs appear later.",
+	"additionalProperties": false,
+	"properties": {
+		"min": {
+			"type": "integer",
+			"description": "Minimum world age in ticks."
+		},
+		"max": {
+			"type": "integer",
+			"description": "Maximum world age in ticks."
+		}
+	}
+}

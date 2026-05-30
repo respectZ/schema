@@ -1,0 +1,14 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/1.8.0/mob_event_filter.json",
+	"type": "object",
+	"title": "Mob Event Filter",
+	"description": "Controls spawning based on whether a specific mob event is active. Mob events are world-level toggles (like raids or wandering traders) that can enable or disable certain spawn behaviors.",
+	"additionalProperties": false,
+	"properties": {
+		"event": {
+			"type": "string",
+			"description": "The mob event identifier to check for."
+		}
+	}
+}

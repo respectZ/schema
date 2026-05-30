@@ -1,0 +1,20 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/1.8.0/spawn_description.json",
+	"type": "object",
+	"title": "Spawn Description",
+	"description": "The description block that identifies which entity these spawn rules apply to and specifies the population control group.",
+	"additionalProperties": false,
+	"required": ["identifier"],
+	"properties": {
+		"identifier": {
+			"$ref": "../../../../vanilla/definition/identifier.json",
+			"description": "The entity identifier these spawn rules apply to (e.g., 'minecraft:zombie')."
+		},
+		"population_control": {
+			"type": "string",
+			"description": "The population control group for managing spawn caps.",
+			"enum": ["animal", "water_animal", "ambient", "monster", "cat", "pillager"]
+		}
+	}
+}

@@ -1,0 +1,79 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/spawn_rule/1.18.0/spawn_biome_condition.json",
+	"type": "object",
+	"title": "Spawn Biome Condition",
+	"description": "Defines the conditions under which an entity can spawn, including biome filters, brightness, height, and herd settings.",
+	"additionalProperties": false,
+	"properties": {
+		"minecraft:biome_filter": {
+			"$ref": "../1.8.0/biome_filter.json"
+		},
+		"minecraft:brightness_filter": {
+			"$ref": "../1.8.0/brightness_filter.json"
+		},
+		"minecraft:delay_filter": {
+			"$ref": "../1.8.0/delay_filter.json"
+		},
+		"minecraft:density_limit": {
+			"$ref": "../1.8.0/density_limit.json"
+		},
+		"minecraft:difficulty_filter": {
+			"$ref": "../1.8.0/difficulty_filter.json"
+		},
+		"minecraft:disallow_spawns_in_bubble": {
+			"$ref": "../1.8.0/disallow_spawns_in_bubble.json"
+		},
+		"minecraft:distance_filter": {
+			"$ref": "../1.8.0/distance_filter.json"
+		},
+		"minecraft:height_filter": {
+			"$ref": "../1.8.0/height_filter.json"
+		},
+		"minecraft:herd": {
+			"$ref": "../1.8.0/herd.json"
+		},
+		"minecraft:is_experimental": {
+			"$ref": "../1.8.0/is_experimental.json"
+		},
+		"minecraft:is_persistent": {
+			"$ref": "../1.8.0/is_persistent.json"
+		},
+		"minecraft:mob_event_filter": {
+			"$ref": "../1.8.0/mob_event_filter.json"
+		},
+		"minecraft:permute_type": {
+			"$ref": "../1.8.0/permute_type.json"
+		},
+		"minecraft:player_in_village_filter": {
+			"$ref": "../1.8.0/player_in_village_filter.json"
+		},
+		"minecraft:spawn_event": {
+			"$ref": "../1.8.0/spawn_event.json"
+		},
+		"minecraft:spawns_lava": {
+			"$ref": "../1.8.0/spawns_lava.json"
+		},
+		"minecraft:spawns_on_block_filter": {
+			"$ref": "../1.8.0/spawns_on_block_filter.json"
+		},
+		"minecraft:spawns_on_block_prevented_filter": {
+			"$ref": "../1.8.0/spawns_on_block_prevented_filter.json"
+		},
+		"minecraft:spawns_on_surface": {
+			"$ref": "../1.8.0/spawns_on_surface.json"
+		},
+		"minecraft:spawns_underground": {
+			"$ref": "../1.8.0/spawns_underground.json"
+		},
+		"minecraft:spawns_underwater": {
+			"$ref": "../1.8.0/spawns_underwater.json"
+		},
+		"minecraft:weight": {
+			"$ref": "../1.8.0/weight.json"
+		},
+		"minecraft:world_age_filter": {
+			"$ref": "../1.8.0/world_age_filter.json"
+		}
+	}
+}
