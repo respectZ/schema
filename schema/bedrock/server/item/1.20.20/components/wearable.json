@@ -1,0 +1,23 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.20/components/wearable.json",
+	"type": "object",
+	"title": "Wearable Component",
+	"description": "Wearable items can be worn by a player in the head, chest, legs, feet, or off-hand slots.",
+	"additionalProperties": false,
+	"required": ["slot"],
+	"properties": {
+		"protection": {
+			"type": "integer",
+			"title": "Protection",
+			"description": "How much protection the wearable item has. Default is set to 0",
+			"default": 0,
+			"minimum": 0
+		},
+		"slot": {
+			"$ref": "../../../../../vanilla/server/equipment_slot.json",
+			"title": "Slot",
+			"description": "Determines where the item can be worn. If any non-hand slot is chosen, the max stack size is set to 1"
+		}
+	}
+}

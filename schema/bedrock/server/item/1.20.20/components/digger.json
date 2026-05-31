@@ -1,0 +1,38 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.20/components/digger.json",
+	"type": "object",
+	"title": "Digger Component",
+	"description": "Digger item component specifies how quickly this item can dig specific blocks.",
+	"additionalProperties": false,
+	"properties": {
+		"destroy_speeds": {
+			"type": "array",
+			"title": "Destroy Speeds",
+			"description": "A list of blocks to dig with correlating speeds of digging.",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"required": ["block", "speed"],
+				"properties": {
+					"block": {
+						"$ref": "../../../../../vanilla/server/block_descriptor.json#/$defs/block_without_tags",
+						"title": "Block",
+						"description": "Block identifier"
+					},
+					"speed": {
+						"type": "integer",
+						"title": "Speed",
+						"description": "Digging speed for the correlating block(s)."
+					}
+				}
+			}
+		},
+		"use_efficiency": {
+			"type": "boolean",
+			"title": "Use Efficiency",
+			"description": "Determines whether this item should be impacted if the efficiency enchantment is applied to it.",
+			"default": false
+		}
+	}
+}

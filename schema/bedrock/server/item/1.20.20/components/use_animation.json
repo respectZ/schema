@@ -1,0 +1,40 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.20/components/use_animation.json",
+	"title": "Use Animation Component",
+	"description": "Use_animation specifies which animation is played when the player uses the item.",
+	"$defs": {
+		"animation": {
+			"title": "Animation",
+			"type": "string",
+			"enum": [
+				"none",
+				"eat",
+				"drink",
+				"block",
+				"bow",
+				"camera",
+				"crossbow",
+				"spear",
+				"spyglass",
+				"brush"
+			]
+		}
+	},
+	"oneOf": [
+		{
+			"$ref": "#/$defs/animation"
+		},
+		{
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"value": {
+					"$ref": "#/$defs/animation",
+					"default": "none",
+					"description": "Specifies which animation to play when the the item is used."
+				}
+			}
+		}
+	]
+}

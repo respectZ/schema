@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.20/components/use_duration.json",
+	"title": "Use Duration Component",
+	"description": "This component determines how long the item takes to use when used in combination with components like Shooter, Throwable or Food.",
+	"oneOf": [
+		{
+			"type": "number"
+		},
+		{
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"value": {
+					"type": "number",
+					"title": "Value",
+					"description": "How long the item takes to use in seconds"
+				}
+			}
+		}
+	]
+}

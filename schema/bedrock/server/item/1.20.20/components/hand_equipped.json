@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.20/components/hand_equipped.json",
+	"title": "Hand Equipped Component",
+	"description": "The hand_equipped component determines if an item is rendered like a tool while it is in a player's hand.",
+	"oneOf": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"value": {
+					"default": false,
+					"description": "Determines whether the item is rendered like a tool while in the player's hand.",
+					"type": "boolean"
+				}
+			}
+		}
+	]
+}
