@@ -1,0 +1,31 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.50/components/use_modifier.json",
+	"type": "object",
+	"title": "Use Modifier Component",
+	"description": "Modifies use behavior, including how long the item takes to use and the player's movement speed.",
+	"additionalProperties": false,
+	"properties": {
+		"emit_vibrations": {
+			"default": true,
+			"description": "Whether vibrations are emitted when the item starts or stops being used.",
+			"type": "boolean"
+		},
+		"movement_modifier": {
+			"description": "Multiplier applied to the player's movement speed while the item is in use.",
+			"maximum": 1,
+			"minimum": 0,
+			"type": "number"
+		},
+		"start_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "Sound played when the item starts being used."
+		},
+		"use_duration": {
+			"default": 0,
+			"description": "Time, in seconds, that the item takes to use.",
+			"minimum": 0,
+			"type": "number"
+		}
+	}
+}

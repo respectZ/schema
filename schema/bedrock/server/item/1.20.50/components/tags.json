@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.50/components/tags.json",
+	"type": "object",
+	"title": "Tags Component",
+	"description": "The tags component specifies which tags an item has on it.",
+	"additionalProperties": false,
+	"properties": {
+		"tags": {
+			"type": "array",
+			"description": "An array that can contain multiple item tags.",
+			"items": {
+				"$ref": "../../../../../vanilla/server/tags.json#/$defs/item_tag"
+			}
+		}
+	}
+}
