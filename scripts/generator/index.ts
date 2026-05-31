@@ -2,6 +2,7 @@ import {
 	MinecraftBiomeTypes,
 	MinecraftBlockTypes,
 	MinecraftCameraPresetsTypes,
+	MinecraftCooldownCategoryTypes,
 	MinecraftEffectTypes,
 	MinecraftEnchantmentTypes,
 	MinecraftEntityTypes,
@@ -577,6 +578,22 @@ const entries: Entry[] = [
 						],
 					},
 				},
+			};
+		},
+	},
+	{
+		filepath: "vanilla/server/cooldown_category.json",
+		content: async () => {
+			return {
+				anyOf: [
+					{
+						type: "string",
+						maxLength: 256,
+					},
+					{
+						enum: Object.values(MinecraftCooldownCategoryTypes),
+					},
+				],
 			};
 		},
 	},
