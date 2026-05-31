@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.10/components/block_placer.json",
+	"type": "object",
+	"title": "Block Placer",
+	"description": "Block Placer item component. Items with this component will place a block when used",
+	"additionalProperties": false,
+	"required": ["block"],
+	"properties": {
+		"block": {
+			"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+			"description": "Defines the block that will be placed"
+		},
+		"use_on": {
+			"type": "array",
+			"description": "List of block descriptors that contain blocks that this item can be used on. If left empty, all blocks will be allowed",
+			"items": {
+				"$ref": "../../../../../vanilla/server/block_descriptor.json"
+			}
+		}
+	}
+}

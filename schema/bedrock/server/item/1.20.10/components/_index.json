@@ -1,0 +1,55 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.10/components/_index.json",
+	"type": "object",
+	"title": "Components",
+	"description": "Item components",
+	"additionalProperties": false,
+	"properties": {
+		"minecraft:display_name": {
+			"$ref": "../../1.20.0/components/display_name.json"
+		},
+		"minecraft:durability": {
+			"$ref": "../../1.20.0/components/durability.json"
+		},
+		"minecraft:fuel": {
+			"$ref": "../../1.20.0/components/fuel.json"
+		},
+		"minecraft:entity_placer": {
+			"$ref": "../../1.20.0/components/entity_placer.json"
+		},
+		"minecraft:icon": {
+			"$ref": "../../1.20.0/components/icon.json"
+		},
+		"minecraft:can_destroy_in_creative": {
+			"$ref": "can_destroy_in_creative.json"
+		},
+		"minecraft:cooldown": {
+			"$ref": "cooldown.json"
+		},
+		"minecraft:block_placer": {
+			"$ref": "block_placer.json"
+		},
+		"minecraft:hover_text_color": {
+			"$ref": "hover_text_color.json"
+		},
+		"minecraft:max_stack_size": {
+			"$ref": "max_stack_size.json"
+		},
+		"minecraft:projectile": {
+			"$ref": "projectile.json"
+		},
+		"minecraft:record": {
+			"$ref": "record.json"
+		},
+		"minecraft:repairable": {
+			"$ref": "repairable.json"
+		},
+		"minecraft:shooter": {
+			"$ref": "shooter.json"
+		},
+		"minecraft:throwable": {
+			"$ref": "throwable.json"
+		}
+	}
+}

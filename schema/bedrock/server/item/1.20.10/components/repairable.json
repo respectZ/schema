@@ -1,0 +1,34 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.10/components/repairable.json",
+	"type": "object",
+	"title": "Repairable",
+	"description": "Repairable item component. Determines the items that can be used to repair this item along with how much durability they repair",
+	"additionalProperties": false,
+	"required": ["repair_items"],
+	"properties": {
+		"repair_items": {
+			"type": "array",
+			"description": "List of repair item entries",
+			"items": {
+				"type": "object",
+				"title": "Repair Item",
+				"additionalProperties": false,
+				"required": ["items"],
+				"properties": {
+					"items": {
+						"type": "array",
+						"description": "List of items that can be used for repair",
+						"items": {
+							"$ref": "../../../../../vanilla/server/item_descriptor.json"
+						}
+					},
+					"repair_amount": {
+						"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression",
+						"description": "How much durability is repaired"
+					}
+				}
+			}
+		}
+	}
+}

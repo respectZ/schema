@@ -1,0 +1,27 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.20/components/record.json",
+	"type": "object",
+	"title": "Record Component",
+	"description": "Record Item Component. Used by record items to play music.",
+	"additionalProperties": false,
+	"properties": {
+		"comparator_signal": {
+			"type": "integer",
+			"title": "Comparator Signal",
+			"description": "Signal strength for comparator blocks to use, from 1 - 13",
+			"minimum": 1,
+			"maximum": 13
+		},
+		"duration": {
+			"type": "number",
+			"title": "Duration",
+			"description": "Duration of sound event in seconds, float value"
+		},
+		"sound_event": {
+			"$ref": "../../../../../vanilla/client/identifiers.json#/$defs/sound_event_identifier",
+			"title": "Sound Event",
+			"description": "Sound event type"
+		}
+	}
+}

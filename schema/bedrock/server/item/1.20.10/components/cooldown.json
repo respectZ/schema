@@ -1,0 +1,20 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.10/components/cooldown.json",
+	"type": "object",
+	"title": "Cooldown",
+	"description": "Cool down time for a component. After you use an item, all items specified with the same cool down category setting becomes unusable for the duration specified by the cool down time setting in this component",
+	"additionalProperties": false,
+	"required": ["category", "duration"],
+	"properties": {
+		"category": {
+			"$ref": "../../../../../vanilla/server/cooldown_category.json",
+			"description": "The type of cool down for this item. All items with a cool down component with the same category are put on cool down when one is used"
+		},
+		"duration": {
+			"type": "number",
+			"minimum": 0,
+			"description": "The duration of time (in seconds) items with a matching category will spend cooling down before becoming usable again"
+		}
+	}
+}

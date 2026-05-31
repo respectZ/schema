@@ -1,0 +1,44 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.10/components/throwable.json",
+	"type": "object",
+	"title": "Throwable",
+	"description": "Throwable item component. Throwable items, such as a snowball",
+	"additionalProperties": false,
+	"properties": {
+		"do_swing_animation": {
+			"type": "boolean",
+			"description": "Whether the item should use the swing animation when thrown",
+			"default": false
+		},
+		"launch_power_scale": {
+			"type": "number",
+			"minimum": 0,
+			"description": "The scale at which the power of the throw increases",
+			"default": 1.0
+		},
+		"max_draw_duration": {
+			"type": "number",
+			"minimum": 0,
+			"description": "The maximum duration to draw a throwable item",
+			"default": 0.0
+		},
+		"max_launch_power": {
+			"type": "number",
+			"minimum": 0,
+			"description": "The maximum power to launch the throwable item",
+			"default": 1.0
+		},
+		"min_draw_duration": {
+			"type": "number",
+			"minimum": 0,
+			"description": "The minimum duration to draw a throwable item",
+			"default": 0.0
+		},
+		"scale_power_by_draw_duration": {
+			"type": "boolean",
+			"description": "Whether or not the power of the throw increases with duration charged",
+			"default": false
+		}
+	}
+}

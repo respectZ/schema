@@ -1,0 +1,26 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.10/components/max_stack_size.json",
+	"title": "Max Stack Size",
+	"description": "The max stack size component determines how many of the item can be stacked together",
+	"oneOf": [
+		{
+			"maximum": 64,
+			"minimum": 1,
+			"type": "integer"
+		},
+		{
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"value": {
+					"default": 1,
+					"description": "Specifies how many of the item that can be stacked.",
+					"maximum": 64,
+					"minimum": 1,
+					"type": "integer"
+				}
+			}
+		}
+	]
+}

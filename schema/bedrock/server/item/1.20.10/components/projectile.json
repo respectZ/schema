@@ -1,0 +1,20 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.10/components/projectile.json",
+	"type": "object",
+	"title": "Projectile",
+	"description": "Projectile item component. Projectile items shoot out, like an arrow",
+	"additionalProperties": false,
+	"required": ["projectile_entity"],
+	"properties": {
+		"minimum_critical_power": {
+			"type": "number",
+			"minimum": 0,
+			"description": "How long you must charge a projectile for it to critically hit"
+		},
+		"projectile_entity": {
+			"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+			"description": "The entity to be fired as a projectile"
+		}
+	}
+}
