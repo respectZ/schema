@@ -1,0 +1,43 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.60/components/icon.json",
+	"title": "Icon",
+	"description": "The icon item component determines the icon to represent the item",
+	"oneOf": [
+		{
+			"$ref": "../../../../../vanilla/client/identifiers.json#/$defs/item_texture_identifier",
+			"title": "Texture Identifier",
+			"description": "The texture identifier from 'resource_pack/textures/item_texture.json'"
+		},
+		{
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"textures": {
+					"type": "object",
+					"description": "This map contains the different textures that can be used for the item's icon. Default will contain the actual icon texture. Armor trim textures and palettes can be specified here too. The icon textures are the keys from the resource_pack/textures/item_texture.json 'texture_data' object associated with the texture file.",
+					"additionalProperties": {
+						"$ref": "../../../../../vanilla/client/identifiers.json#/$defs/item_texture_identifier"
+					},
+					"properties": {
+						"default": {
+							"$ref": "../../../../../vanilla/client/identifiers.json#/$defs/item_texture_identifier"
+						},
+						"bundle_open_back": {
+							"$ref": "../../../../../vanilla/client/identifiers.json#/$defs/item_texture_identifier"
+						},
+						"bundle_open_front": {
+							"$ref": "../../../../../vanilla/client/identifiers.json#/$defs/item_texture_identifier"
+						},
+						"dyed": {
+							"$ref": "../../../../../vanilla/client/identifiers.json#/$defs/item_texture_identifier"
+						},
+						"icon_trim": {
+							"$ref": "../../../../../vanilla/client/identifiers.json#/$defs/item_texture_identifier"
+						}
+					}
+				}
+			}
+		}
+	]
+}

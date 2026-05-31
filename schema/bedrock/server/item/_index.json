@@ -6,7 +6,7 @@
 	"description": "Item definition file for behavior packs",
 	"properties": {
 		"format_version": {
-			"enum": ["1.12.0", "1.20.0", "1.20.10", "1.20.20", "1.20.30", "1.20.50"]
+			"enum": ["1.12.0", "1.20.0", "1.20.10", "1.20.20", "1.20.30", "1.20.50", "1.20.60"]
 		}
 	},
 	"allOf": [
@@ -80,6 +80,18 @@
 			},
 			"then": {
 				"$ref": "./1.20.50/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.20.60"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.20.60/_index.json"
 			}
 		}
 	]
