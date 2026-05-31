@@ -12,7 +12,12 @@ import { createSchema, readJson, writeJson } from "../utils";
 import { generateClientPaths } from "./client";
 import { generateClientIdentifiers } from "./client/identifiers";
 import { generateClientLang } from "./client/lang";
-import { generateCommandEnum, generateServerBiomeTag, generateServerTypeFamily } from "./server";
+import {
+	generateCommandEnum,
+	generateServerBiomeTag,
+	generateServerPaths,
+	generateServerTypeFamily,
+} from "./server";
 import { generateServerBlockStates } from "./server/block_states";
 
 const entries: Entry[] = [
@@ -536,6 +541,27 @@ const entries: Entry[] = [
 						},
 					},
 				],
+			};
+		},
+	},
+	{
+		filepath: "vanilla/server/paths.json",
+		content: async () => {
+			const { lootTablePaths } = await generateServerPaths();
+			return {
+				$defs: {
+					loot_table_path: {
+						anyOf: [
+							{
+								type: "string",
+								maxLength: 256,
+							},
+							{
+								enum: lootTablePaths,
+							},
+						],
+					},
+				},
 			};
 		},
 	},
