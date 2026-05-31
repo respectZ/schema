@@ -4,6 +4,11 @@
 	"type": "object",
 	"title": "Spawn Rule",
 	"description": "Spawn rules definition for Minecraft Bedrock Edition entities.",
+	"properties": {
+		"format_version": {
+			"enum": ["1.8.0"]
+		}
+	},
 	"anyOf": [
 		{
 			"if": {
