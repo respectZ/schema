@@ -1,0 +1,10 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.80/components/custom_components.json",
+	"type": "array",
+	"title": "Custom Components",
+	"description": "Specifies an array of custom components defined in a script that should be added to this item.",
+	"items": {
+		"$ref": "../../../../../vanilla/definition/identifier.json#/$defs/no_minecraft"
+	}
+}

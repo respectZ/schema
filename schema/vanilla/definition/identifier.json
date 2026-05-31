@@ -2,5 +2,11 @@
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"$id": "schema/vanilla/definition/identifier.json",
 	"type": "string",
-	"pattern": "^[a-z0-9._%+-]+:[a-z0-9._%+-]+$"
+	"pattern": "^[a-z0-9._%+-]+:[a-z0-9._%+-]+$",
+	"$defs": {
+		"no_minecraft": {
+			"type": "string",
+			"pattern": "^(?:(?!^(minecraft):).)+:(?:.)+$"
+		}
+	}
 }
