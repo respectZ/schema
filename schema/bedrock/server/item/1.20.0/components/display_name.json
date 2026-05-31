@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.0/components/display_name.json",
+	"type": "object",
+	"title": "Display Name",
+	"description": "The display_name item component specifies the text shown whenever an item's name is displayed, like in hover text.",
+	"additionalProperties": false,
+	"required": ["value"],
+	"properties": {
+		"value": {
+			"type": "string",
+			"title": "Display Name",
+			"description": "The display name for an item"
+		}
+	}
+}

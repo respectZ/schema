@@ -1,0 +1,28 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.0/components/fuel.json",
+	"title": "Fuel",
+	"description": "Fuel item component allows this item to be used as fuel in a furnace to 'cook' other items.",
+	"$defs": {
+		"duration": {
+			"type": "number",
+			"minimum": 0.05
+		}
+	},
+	"oneOf": [
+		{
+			"$ref": "#/$defs/duration"
+		},
+		{
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"duration": {
+					"$ref": "#/$defs/duration",
+					"title": "Duration",
+					"description": "How long in seconds will this fuel cook items for"
+				}
+			}
+		}
+	]
+}

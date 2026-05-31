@@ -1,0 +1,25 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.0/components/_index.json",
+	"type": "object",
+	"title": "Components",
+	"description": "Item components",
+	"additionalProperties": false,
+	"properties": {
+		"minecraft:display_name": {
+			"$ref": "display_name.json"
+		},
+		"minecraft:durability": {
+			"$ref": "durability.json"
+		},
+		"minecraft:fuel": {
+			"$ref": "fuel.json"
+		},
+		"minecraft:entity_placer": {
+			"$ref": "entity_placer.json"
+		},
+		"minecraft:icon": {
+			"$ref": "icon.json"
+		}
+	}
+}

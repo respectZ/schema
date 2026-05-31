@@ -1,0 +1,39 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.0/components/durability.json",
+	"type": "object",
+	"title": "Durability",
+	"description": "The durability item component specifies how much damage the item takes before breaking, and allows the item to be combined to repair or augment them.",
+	"additionalProperties": false,
+	"required": ["max_durability"],
+	"properties": {
+		"max_durability": {
+			"type": "integer",
+			"title": "Max Durability",
+			"description": "Max durability is the amount of damage that this item can take before breaking",
+			"minimum": 0
+		},
+		"damage_chance": {
+			"type": "object",
+			"title": "Damage Chance",
+			"description": "Damage chance is the percentage chance of this item losing durability. Default is set to 100",
+			"additionalProperties": false,
+			"properties": {
+				"min": {
+					"type": "integer",
+					"title": "Minimum",
+					"description": "Minimum damage chance value",
+					"minimum": 0,
+					"maximum": 100
+				},
+				"max": {
+					"type": "integer",
+					"title": "Maximum",
+					"description": "Maximum damage chance value",
+					"minimum": 0,
+					"maximum": 100
+				}
+			}
+		}
+	}
+}

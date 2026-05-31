@@ -1,0 +1,27 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.0/components/icon.json",
+	"title": "Icon",
+	"description": "The icon item component determines the icon to represent the item",
+	"oneOf": [
+		{
+			"$ref": "../../../../../vanilla/client/identifiers.json#/$defs/item_texture_identifier",
+			"title": "Texture Identifier",
+			"description": "The texture identifier from 'resource_pack/textures/item_texture.json'"
+		},
+		{
+			"type": "object",
+			"title": "Texture Object",
+			"description": "Texture object definition",
+			"additionalProperties": false,
+			"required": ["texture"],
+			"properties": {
+				"texture": {
+					"$ref": "../../../../../vanilla/client/identifiers.json#/$defs/item_texture_identifier",
+					"title": "Texture Identifier",
+					"description": "The texture identifier from 'resource_pack/textures/item_texture.json'"
+				}
+			}
+		}
+	]
+}
