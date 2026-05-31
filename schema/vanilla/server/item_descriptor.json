@@ -1,0 +1,20 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/item_descriptor.json",
+	"oneOf": [
+		{
+			"$ref": "./identifiers.json#/$defs/item_identifier"
+		},
+		{
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["type"],
+			"properties": {
+				"type": {
+					"$ref": "./identifiers.json#/$defs/item_identifier",
+					"description": "The identifier of the item"
+				}
+			}
+		}
+	]
+}
