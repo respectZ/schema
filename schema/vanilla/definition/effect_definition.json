@@ -1,0 +1,20 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/definition/effect_definition.json",
+	"type": "object",
+	"additionalProperties": false,
+	"required": ["name"],
+	"properties": {
+		"name": {
+			"$ref": "../server/effect_type.json"
+		},
+		"duration": {
+			"$ref": "./effect_duration.json"
+		},
+		"amplifier": {
+			"type": "integer",
+			"minimum": 0,
+			"description": "Effect amplifier level (0 for level I, 1 for level II, etc.)"
+		}
+	}
+}

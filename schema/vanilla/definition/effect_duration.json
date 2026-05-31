@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/definition/effect_duration.json",
+	"oneOf": [
+		{
+			"type": "integer",
+			"minimum": 0,
+			"description": "Effect duration in ticks."
+		},
+		{
+			"type": "string",
+			"enum": ["infinite"]
+		}
+	]
+}
