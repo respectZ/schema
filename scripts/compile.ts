@@ -70,6 +70,22 @@ const BP_ENTRIES: JsonValidationEntry[] = [
 		fileMatch: "spawn_rules/**/*.{json,jsonc,json5}",
 		url: "./schema/bedrock/server/spawn_rule/_index.json",
 	},
+	{
+		fileMatch: "worldgen/structure_sets/**/*.{json,jsonc,json5}",
+		url: "./schema/bedrock/server/worldgen/structure_set/_index.json",
+	},
+	{
+		fileMatch: "worldgen/template_pools/**/*.{json,jsonc,json5}",
+		url: "./schema/bedrock/server/worldgen/template_pool/_index.json",
+	},
+	{
+		fileMatch: "worldgen/processors/**/*.{json,jsonc,json5}",
+		url: "./schema/bedrock/server/worldgen/processor_list/_index.json",
+	},
+	{
+		fileMatch: "worldgen/structures/**/*.{json,jsonc,json5}",
+		url: "./schema/bedrock/server/worldgen/jigsaw_structure/_index.json",
+	},
 ];
 
 const RP_ENTRIES: JsonValidationEntry[] = [

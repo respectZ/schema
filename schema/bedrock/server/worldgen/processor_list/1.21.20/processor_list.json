@@ -1,0 +1,716 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/worldgen/processor_list/1.21.20/processor_list.json",
+	"type": "object",
+	"title": "Processor List",
+	"description": "Rules used by Jigsaw Structures to determine which blocks to modify or replace when placing a Structure Template in the world.",
+	"additionalProperties": false,
+	"required": ["description", "processors"],
+	"properties": {
+		"description": {
+			"$ref": "#/$defs/description"
+		},
+		"processors": {
+			"type": "array",
+			"description": "List of processors to run on the Structure Template.",
+			"items": {
+				"$ref": "#/$defs/processor"
+			}
+		}
+	},
+	"$defs": {
+		"description": {
+			"type": "object",
+			"title": "Description",
+			"description": "Metadata that identifies this processor list.",
+			"additionalProperties": false,
+			"required": ["identifier"],
+			"properties": {
+				"identifier": {
+					"$ref": "../../../../../vanilla/definition/identifier.json",
+					"description": "Identifier of the processor list."
+				}
+			}
+		},
+		"block_specifier": {
+			"title": "Block Specifier",
+			"description": "Specifies a particular block. Can be a string block name or a JSON object with name and states.",
+			"$ref": "../../../../../vanilla/server/block_descriptor.json#/$defs/block_without_tags"
+		},
+		"block_predicate_always_true": {
+			"type": "object",
+			"title": "Always True (Block)",
+			"description": "Predicate that always evaluates to true.",
+			"additionalProperties": false,
+			"required": ["predicate_type"],
+			"properties": {
+				"predicate_type": {
+					"type": "string",
+					"enum": ["minecraft:always_true"],
+					"description": "The predicate type."
+				}
+			}
+		},
+		"block_predicate_block_match": {
+			"type": "object",
+			"title": "Block Match",
+			"description": "Predicate that evaluates to true if the block at the specified location matches the specified block.",
+			"additionalProperties": false,
+			"required": ["predicate_type", "block"],
+			"properties": {
+				"predicate_type": {
+					"type": "string",
+					"enum": ["minecraft:block_match"],
+					"description": "The predicate type."
+				},
+				"block": {
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+					"description": "The block to match against."
+				}
+			}
+		},
+		"block_predicate_random_block_match": {
+			"type": "object",
+			"title": "Random Block Match",
+			"description": "Predicate that evaluates to true with a given probability if the block at the specified location matches the specified block.",
+			"additionalProperties": false,
+			"required": ["predicate_type", "block", "probability"],
+			"properties": {
+				"predicate_type": {
+					"type": "string",
+					"enum": ["minecraft:random_block_match"],
+					"description": "The predicate type."
+				},
+				"block": {
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+					"description": "The block to match against."
+				},
+				"probability": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1,
+					"description": "Probability of the evaluating to true when the block matches."
+				}
+			}
+		},
+		"block_predicate_tag_match": {
+			"type": "object",
+			"title": "Tag Match",
+			"description": "Predicate that evaluates to true if the block at the specified location has the specified tag.",
+			"additionalProperties": false,
+			"required": ["predicate_type", "tag"],
+			"properties": {
+				"predicate_type": {
+					"type": "string",
+					"enum": ["minecraft:tag_match"],
+					"description": "The predicate type."
+				},
+				"tag": {
+					"$ref": "../../../../../vanilla/server/tags.json#/$defs/block_tag",
+					"description": "The tag to match against."
+				}
+			}
+		},
+		"block_predicate_blockstate_match": {
+			"type": "object",
+			"title": "Block State Match",
+			"description": "Predicate that evaluates to true if the block state at the specified location matches the specified block state.",
+			"additionalProperties": false,
+			"required": ["predicate_type", "block_state"],
+			"properties": {
+				"predicate_type": {
+					"type": "string",
+					"enum": ["minecraft:blockstate_match"],
+					"description": "The predicate type."
+				},
+				"block_state": {
+					"$ref": "#/$defs/block_specifier",
+					"description": "The block state to match against."
+				}
+			}
+		},
+		"block_predicate_random_blockstate_match": {
+			"type": "object",
+			"title": "Random Block State Match",
+			"description": "Predicate that evaluates to true with a given probability if the block state at the specified location matches the specified block state.",
+			"additionalProperties": false,
+			"required": ["predicate_type", "block_state", "probability"],
+			"properties": {
+				"predicate_type": {
+					"type": "string",
+					"enum": ["minecraft:random_blockstate_match"],
+					"description": "The predicate type."
+				},
+				"block_state": {
+					"$ref": "#/$defs/block_specifier",
+					"description": "The block state to match against."
+				},
+				"probability": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1,
+					"description": "Probability of the evaluating to true when the block state matches."
+				}
+			}
+		},
+		"block_predicate": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"required": ["predicate_type"],
+			"properties": {
+				"predicate_type": {
+					"type": "string",
+					"enum": [
+						"minecraft:always_true",
+						"minecraft:block_match",
+						"minecraft:random_block_match",
+						"minecraft:tag_match",
+						"minecraft:blockstate_match",
+						"minecraft:random_blockstate_match"
+					],
+					"description": "The predicate type."
+				}
+			},
+			"allOf": [
+				{
+					"if": {
+						"properties": {
+							"predicate_type": {
+								"const": "minecraft:always_true"
+							}
+						},
+						"required": ["predicate_type"]
+					},
+					"then": {
+						"$ref": "#/$defs/block_predicate_always_true"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"predicate_type": {
+								"const": "minecraft:block_match"
+							}
+						},
+						"required": ["predicate_type"]
+					},
+					"then": {
+						"$ref": "#/$defs/block_predicate_block_match"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"predicate_type": {
+								"const": "minecraft:random_block_match"
+							}
+						},
+						"required": ["predicate_type"]
+					},
+					"then": {
+						"$ref": "#/$defs/block_predicate_random_block_match"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"predicate_type": {
+								"const": "minecraft:tag_match"
+							}
+						},
+						"required": ["predicate_type"]
+					},
+					"then": {
+						"$ref": "#/$defs/block_predicate_tag_match"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"predicate_type": {
+								"const": "minecraft:blockstate_match"
+							}
+						},
+						"required": ["predicate_type"]
+					},
+					"then": {
+						"$ref": "#/$defs/block_predicate_blockstate_match"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"predicate_type": {
+								"const": "minecraft:random_blockstate_match"
+							}
+						},
+						"required": ["predicate_type"]
+					},
+					"then": {
+						"$ref": "#/$defs/block_predicate_random_blockstate_match"
+					}
+				}
+			]
+		},
+		"position_predicate_always_true": {
+			"type": "object",
+			"title": "Always True (Position)",
+			"description": "Position predicate that always evaluates to true.",
+			"additionalProperties": false,
+			"required": ["predicate_type"],
+			"properties": {
+				"predicate_type": {
+					"type": "string",
+					"enum": ["minecraft:always_true"],
+					"description": "The predicate type."
+				}
+			}
+		},
+		"position_predicate_axis_aligned_linear": {
+			"type": "object",
+			"title": "Axis Aligned Linear",
+			"description": "Position predicate that evaluates based on distance along an axis and probability.",
+			"additionalProperties": false,
+			"required": ["predicate_type"],
+			"properties": {
+				"predicate_type": {
+					"type": "string",
+					"enum": ["minecraft:axis_aligned_linear_pos"],
+					"description": "The predicate type."
+				},
+				"axis": {
+					"type": "string",
+					"enum": ["x", "y", "z"],
+					"default": "y",
+					"description": "The axis to check distance along."
+				},
+				"min_dist": {
+					"$ref": "#/$defs/int_provider",
+					"description": "Minimum distance from origin."
+				},
+				"max_dist": {
+					"$ref": "#/$defs/int_provider",
+					"description": "Maximum distance from origin."
+				},
+				"min_chance": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1,
+					"description": "Minimum chance probability."
+				},
+				"max_chance": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1,
+					"description": "Maximum chance probability."
+				}
+			}
+		},
+		"position_predicate": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"required": ["predicate_type"],
+			"properties": {
+				"predicate_type": {
+					"type": "string",
+					"enum": ["minecraft:always_true", "minecraft:axis_aligned_linear_pos"],
+					"description": "The predicate type."
+				}
+			},
+			"allOf": [
+				{
+					"if": {
+						"properties": {
+							"predicate_type": {
+								"const": "minecraft:always_true"
+							}
+						},
+						"required": ["predicate_type"]
+					},
+					"then": {
+						"$ref": "#/$defs/position_predicate_always_true"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"predicate_type": {
+								"const": "minecraft:axis_aligned_linear_pos"
+							}
+						},
+						"required": ["predicate_type"]
+					},
+					"then": {
+						"$ref": "#/$defs/position_predicate_axis_aligned_linear"
+					}
+				}
+			]
+		},
+		"int_provider_constant": {
+			"type": "object",
+			"title": "Constant",
+			"description": "Specifies a constant integer value.",
+			"additionalProperties": false,
+			"required": ["type", "value"],
+			"properties": {
+				"type": {
+					"type": "string",
+					"enum": ["constant"],
+					"description": "The provider type."
+				},
+				"value": {
+					"type": "integer",
+					"description": "The constant value."
+				}
+			}
+		},
+		"int_provider_uniform": {
+			"type": "object",
+			"title": "Uniform",
+			"description": "Specifies a uniformly distributed integer within a range.",
+			"additionalProperties": false,
+			"required": ["type", "min_inclusive", "max_inclusive"],
+			"properties": {
+				"type": {
+					"type": "string",
+					"enum": ["uniform"],
+					"description": "The provider type."
+				},
+				"min_inclusive": {
+					"type": "integer",
+					"description": "Minimum value (inclusive)."
+				},
+				"max_inclusive": {
+					"type": "integer",
+					"description": "Maximum value (inclusive)."
+				}
+			}
+		},
+		"int_provider": {
+			"oneOf": [
+				{
+					"type": "integer",
+					"description": "Integer value or reference"
+				},
+				{
+					"type": "object",
+					"unevaluatedProperties": false,
+					"required": ["type"],
+					"properties": {
+						"type": {
+							"type": "string",
+							"description": "The provider type.",
+							"enum": ["constant", "uniform"]
+						}
+					},
+					"allOf": [
+						{
+							"if": {
+								"properties": {
+									"type": {
+										"const": "constant"
+									}
+								},
+								"required": ["type"]
+							},
+							"then": {
+								"$ref": "#/$defs/int_provider_constant"
+							}
+						},
+						{
+							"if": {
+								"properties": {
+									"type": {
+										"const": "uniform"
+									}
+								},
+								"required": ["type"]
+							},
+							"then": {
+								"$ref": "#/$defs/int_provider_uniform"
+							}
+						}
+					]
+				}
+			]
+		},
+		"block_entity_modifier_passthrough": {
+			"type": "object",
+			"title": "Passthrough",
+			"description": "Block entity modifier that leaves the state unchanged.",
+			"additionalProperties": false,
+			"required": ["type"],
+			"properties": {
+				"type": {
+					"type": "string",
+					"enum": ["minecraft:passthrough"],
+					"description": "The modifier type."
+				}
+			}
+		},
+		"block_entity_modifier_append_loot": {
+			"type": "object",
+			"title": "Append Loot",
+			"description": "Block entity modifier that appends loot to the block entity.",
+			"additionalProperties": false,
+			"required": ["type", "loot_table"],
+			"properties": {
+				"type": {
+					"type": "string",
+					"enum": ["minecraft:append_loot"],
+					"description": "The modifier type."
+				},
+				"loot_table": {
+					"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
+					"description": "Path to the loot table to append."
+				}
+			}
+		},
+		"block_entity_modifier": {
+			"oneOf": [
+				{
+					"$ref": "#/$defs/block_entity_modifier_passthrough"
+				},
+				{
+					"$ref": "#/$defs/block_entity_modifier_append_loot"
+				}
+			]
+		},
+		"processor_rule": {
+			"type": "object",
+			"title": "Processor Rule",
+			"description": "A rule that defines predicates and output state for block replacement.",
+			"additionalProperties": false,
+			"required": ["output_state"],
+			"properties": {
+				"input_predicate": {
+					"$ref": "#/$defs/block_predicate",
+					"description": "Predicate to match the input block."
+				},
+				"location_predicate": {
+					"$ref": "#/$defs/block_predicate",
+					"description": "Predicate to match at the location."
+				},
+				"position_predicate": {
+					"$ref": "#/$defs/position_predicate",
+					"description": "Predicate based on position."
+				},
+				"output_state": {
+					"$ref": "#/$defs/block_specifier",
+					"description": "The block state to output when predicates match."
+				},
+				"block_entity_modifier": {
+					"$ref": "#/$defs/block_entity_modifier",
+					"description": "Modifier for block entity data."
+				}
+			}
+		},
+		"block_rule_processor": {
+			"type": "object",
+			"title": "Block Rule Processor",
+			"description": "Processor that replaces and modifies blocks based on a series of rules.",
+			"additionalProperties": false,
+			"required": ["processor_type", "rules"],
+			"properties": {
+				"processor_type": {
+					"type": "string",
+					"enum": ["minecraft:rule"],
+					"description": "The processor type."
+				},
+				"rules": {
+					"type": "array",
+					"description": "List of rules to apply.",
+					"items": {
+						"$ref": "#/$defs/processor_rule"
+					}
+				}
+			}
+		},
+		"protected_blocks_processor": {
+			"type": "object",
+			"title": "Protected Blocks Processor",
+			"description": "Processor that protects blocks with specific tags from being replaced.",
+			"additionalProperties": false,
+			"required": ["processor_type", "value"],
+			"properties": {
+				"processor_type": {
+					"type": "string",
+					"enum": ["minecraft:protected_blocks"],
+					"description": "The processor type."
+				},
+				"value": {
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+					"description": "The tag identifier for blocks to protect."
+				}
+			}
+		},
+		"block_ignore_processor": {
+			"type": "object",
+			"title": "Block Ignore Processor",
+			"description": "Processor that specifies block types in the template that should be ignored by other processors.",
+			"additionalProperties": false,
+			"required": ["processor_type", "blocks"],
+			"properties": {
+				"processor_type": {
+					"type": "string",
+					"enum": ["minecraft:block_ignore"],
+					"description": "The processor type."
+				},
+				"blocks": {
+					"type": "array",
+					"description": "List of blocks evaluated on all blocks of a Structure Template. If a block is matched in the provided list the block will be ignored for processing.",
+					"items": {
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+						"description": "Block name to ignore"
+					}
+				}
+			}
+		},
+		"capped_processor": {
+			"type": "object",
+			"title": "Capped Processor",
+			"description": "Processor that wraps another processor and caps the number of times it can be applied.",
+			"additionalProperties": false,
+			"required": ["processor_type", "delegate", "limit"],
+			"properties": {
+				"processor_type": {
+					"type": "string",
+					"enum": ["minecraft:capped"],
+					"description": "The processor type."
+				},
+				"delegate": {
+					"$ref": "#/$defs/capped_processor_delegate",
+					"description": "The processor to wrap and execute."
+				},
+				"limit": {
+					"$ref": "#/$defs/int_provider",
+					"description": "Maximum number of times the delegate processor can be applied."
+				}
+			}
+		},
+		"capped_processor_delegate": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"required": ["processor_type"],
+			"properties": {
+				"processor_type": {
+					"type": "string",
+					"enum": ["minecraft:rule", "minecraft:protected_blocks", "minecraft:block_ignore"],
+					"description": "The processor type."
+				}
+			},
+			"allOf": [
+				{
+					"if": {
+						"properties": {
+							"processor_type": {
+								"const": "minecraft:rule"
+							}
+						},
+						"required": ["processor_type"]
+					},
+					"then": {
+						"$ref": "#/$defs/block_rule_processor"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"processor_type": {
+								"const": "minecraft:protected_blocks"
+							}
+						},
+						"required": ["processor_type"]
+					},
+					"then": {
+						"$ref": "#/$defs/protected_blocks_processor"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"processor_type": {
+								"const": "minecraft:block_ignore"
+							}
+						},
+						"required": ["processor_type"]
+					},
+					"then": {
+						"$ref": "#/$defs/block_ignore_processor"
+					}
+				}
+			]
+		},
+		"processor": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"required": ["processor_type"],
+			"properties": {
+				"processor_type": {
+					"type": "string",
+					"enum": [
+						"minecraft:rule",
+						"minecraft:protected_blocks",
+						"minecraft:block_ignore",
+						"minecraft:capped"
+					],
+					"description": "The processor type."
+				}
+			},
+			"allOf": [
+				{
+					"if": {
+						"properties": {
+							"processor_type": {
+								"const": "minecraft:rule"
+							}
+						},
+						"required": ["processor_type"]
+					},
+					"then": {
+						"$ref": "#/$defs/block_rule_processor"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"processor_type": {
+								"const": "minecraft:protected_blocks"
+							}
+						},
+						"required": ["processor_type"]
+					},
+					"then": {
+						"$ref": "#/$defs/protected_blocks_processor"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"processor_type": {
+								"const": "minecraft:block_ignore"
+							}
+						},
+						"required": ["processor_type"]
+					},
+					"then": {
+						"$ref": "#/$defs/block_ignore_processor"
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"processor_type": {
+								"const": "minecraft:capped"
+							}
+						},
+						"required": ["processor_type"]
+					},
+					"then": {
+						"$ref": "#/$defs/capped_processor"
+					}
+				}
+			]
+		}
+	}
+}

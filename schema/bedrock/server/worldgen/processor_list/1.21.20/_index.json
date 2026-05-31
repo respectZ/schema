@@ -1,0 +1,18 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/worldgen/processor_list/1.21.20/_index.json",
+	"type": "object",
+	"title": "Processor List 1.21.20",
+	"description": "Rules used by Jigsaw Structures to determine which blocks to modify or replace when placing a Structure Template in the world.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:processor_list"],
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"enum": ["1.21.20"]
+		},
+		"minecraft:processor_list": {
+			"$ref": "./processor_list.json"
+		}
+	}
+}

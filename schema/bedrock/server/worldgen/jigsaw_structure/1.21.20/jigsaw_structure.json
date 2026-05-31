@@ -1,0 +1,382 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/worldgen/jigsaw_structure/1.21.20/jigsaw_structure.json",
+	"type": "object",
+	"title": "Jigsaw Structure",
+	"description": "Jigsaw structures are procedurally generated structures that combine template pools and processors to create complex, varied structures.",
+	"additionalProperties": false,
+	"required": ["description", "start_pool", "start_height", "max_depth", "step"],
+	"properties": {
+		"description": {
+			"$ref": "#/$defs/description",
+			"description": "Metadata about the jigsaw structure."
+		},
+		"start_pool": {
+			"type": "string",
+			"description": "The identifier of the template pool to start structure generation with."
+		},
+		"start_height": {
+			"$ref": "#/$defs/height_provider",
+			"description": "Height range for structure placement."
+		},
+		"max_depth": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 20,
+			"description": "Maximum depth for structure piece recursion."
+		},
+		"step": {
+			"type": "string",
+			"enum": [
+				"raw_generation",
+				"lakes",
+				"local_modifications",
+				"underground_structures",
+				"surface_structures",
+				"strongholds",
+				"underground_ores",
+				"underground_decoration",
+				"fluid_springs",
+				"vegetal_decoration",
+				"top_layer_modification"
+			],
+			"description": "The world generation phase in which the structure is generated."
+		},
+		"biome_filters": {
+			"$ref": "../../../../../vanilla/server/filter/biome/_index.json",
+			"description": "Biome filters to restrict structure placement."
+		},
+		"pool_aliases": {
+			"type": "array",
+			"description": "Pool aliases for template pool substitution.",
+			"items": {
+				"$ref": "#/$defs/pool_alias"
+			}
+		},
+		"start_jigsaw_name": {
+			"type": "string",
+			"description": "The name of the jigsaw block to start placement from."
+		},
+		"max_distance_from_center": {
+			"$ref": "#/$defs/max_distance_from_center",
+			"description": "Maximum distance for pieces from the structure center."
+		},
+		"heightmap_projection": {
+			"type": "string",
+			"enum": ["world_surface", "ocean_floor", "none"],
+			"default": "none",
+			"description": "Heightmap used to calculate the relative start height. For example, a heightmap_projection of ocean_floor and a start_height of 10 means the Jigsaw Structure will begin generating 10 blocks above the ocean floor."
+		},
+		"terrain_adaptation": {
+			"type": "string",
+			"enum": ["none", "bury", "beard_thin", "beard_box", "encapsulate"],
+			"description": "How the terrain should adapt relative to the generated structure."
+		},
+		"dimension_padding": {
+			"$ref": "#/$defs/dimension_padding_range",
+			"description": "Padding at world edges."
+		},
+		"liquid_settings": {
+			"type": "string",
+			"enum": ["apply_waterlogging", "ignore_waterlogging"],
+			"default": "apply_waterlogging",
+			"description": "How to handle waterloggable blocks overlapping with existing liquid."
+		}
+	},
+	"$defs": {
+		"description": {
+			"type": "object",
+			"title": "Description",
+			"description": "Metadata that identifies this jigsaw structure.",
+			"additionalProperties": false,
+			"required": ["identifier"],
+			"properties": {
+				"identifier": {
+					"$ref": "../../../../../vanilla/definition/identifier.json",
+					"description": "Identifier of the jigsaw structure."
+				}
+			}
+		},
+		"anchor_absolute": {
+			"type": "object",
+			"title": "Absolute Anchor",
+			"description": "Direct Y-coordinate anchor point.",
+			"additionalProperties": false,
+			"required": ["absolute"],
+			"properties": {
+				"absolute": {
+					"type": "integer",
+					"description": "Absolute Y-coordinate."
+				}
+			}
+		},
+		"anchor_above_bottom": {
+			"type": "object",
+			"title": "Above Bottom Anchor",
+			"description": "Anchor point offset from Y=0.",
+			"additionalProperties": false,
+			"required": ["above_bottom"],
+			"properties": {
+				"above_bottom": {
+					"type": "integer",
+					"description": "Offset above Y=0."
+				}
+			}
+		},
+		"anchor_below_top": {
+			"type": "object",
+			"title": "Below Top Anchor",
+			"description": "Anchor point offset from top of world.",
+			"additionalProperties": false,
+			"required": ["below_top"],
+			"properties": {
+				"below_top": {
+					"type": "integer",
+					"description": "Offset below top."
+				}
+			}
+		},
+		"anchor_from_sea": {
+			"type": "object",
+			"title": "From Sea Anchor",
+			"description": "Anchor point offset from sea level (Y=62).",
+			"additionalProperties": false,
+			"required": ["from_sea"],
+			"properties": {
+				"from_sea": {
+					"type": "integer",
+					"description": "Offset from sea level."
+				}
+			}
+		},
+		"anchor": {
+			"oneOf": [
+				{
+					"$ref": "#/$defs/anchor_absolute"
+				},
+				{
+					"$ref": "#/$defs/anchor_above_bottom"
+				},
+				{
+					"$ref": "#/$defs/anchor_below_top"
+				},
+				{
+					"$ref": "#/$defs/anchor_from_sea"
+				}
+			]
+		},
+		"height_provider_constant": {
+			"type": "object",
+			"title": "Constant Height Provider",
+			"description": "Fixed height anchor point.",
+			"additionalProperties": false,
+			"required": ["type", "value"],
+			"properties": {
+				"type": {
+					"type": "string",
+					"enum": ["constant"],
+					"description": "Height provider type."
+				},
+				"value": {
+					"$ref": "#/$defs/anchor",
+					"description": "The anchor point."
+				}
+			}
+		},
+		"height_provider_uniform": {
+			"type": "object",
+			"title": "Uniform Height Provider",
+			"description": "Range of height anchor points.",
+			"additionalProperties": false,
+			"required": ["type", "min_inclusive", "max_inclusive"],
+			"properties": {
+				"type": {
+					"type": "string",
+					"enum": ["uniform"],
+					"description": "Height provider type."
+				},
+				"min_inclusive": {
+					"$ref": "#/$defs/anchor",
+					"description": "Minimum anchor point."
+				},
+				"max_inclusive": {
+					"$ref": "#/$defs/anchor",
+					"description": "Maximum anchor point."
+				}
+			}
+		},
+		"height_provider": {
+			"oneOf": [
+				{
+					"$ref": "#/$defs/height_provider_constant"
+				},
+				{
+					"$ref": "#/$defs/height_provider_uniform"
+				}
+			]
+		},
+		"direct_pool_alias": {
+			"type": "object",
+			"title": "Direct Pool Alias",
+			"description": "One-to-one pool alias replacement.",
+			"additionalProperties": false,
+			"required": ["alias", "target"],
+			"properties": {
+				"alias": {
+					"type": "string",
+					"description": "Pool identifier to replace."
+				},
+				"target": {
+					"type": "string",
+					"description": "Target pool identifier."
+				}
+			}
+		},
+		"random_pool_item": {
+			"type": "object",
+			"title": "Random Pool Item",
+			"description": "Weighted pool item for random selection.",
+			"additionalProperties": false,
+			"required": ["data", "weight"],
+			"properties": {
+				"data": {
+					"type": "array",
+					"description": "Pool data items.",
+					"items": {
+						"oneOf": [
+							{
+								"type": "string",
+								"description": "Direct pool identifier"
+							},
+							{
+								"$ref": "#/$defs/random_pool_item"
+							}
+						]
+					}
+				},
+				"weight": {
+					"type": "integer",
+					"minimum": 0,
+					"description": "Weight for selection probability."
+				}
+			}
+		},
+		"random_pool_alias": {
+			"type": "object",
+			"title": "Random Pool Alias",
+			"description": "Weighted random selection from multiple pools.",
+			"additionalProperties": false,
+			"required": ["alias", "data"],
+			"properties": {
+				"alias": {
+					"type": "string",
+					"description": "Pool identifier to replace."
+				},
+				"data": {
+					"type": "array",
+					"description": "List of weighted pool items.",
+					"items": {
+						"$ref": "#/$defs/random_pool_item"
+					}
+				}
+			}
+		},
+		"random_group_pool_alias": {
+			"type": "object",
+			"title": "Random Group Pool Alias",
+			"description": "Grouped pool aliases with weights.",
+			"additionalProperties": false,
+			"required": ["alias", "groups"],
+			"properties": {
+				"alias": {
+					"type": "string",
+					"description": "Pool identifier to replace."
+				},
+				"groups": {
+					"type": "array",
+					"description": "Weighted groups of pool aliases.",
+					"items": {
+						"type": "object",
+						"additionalProperties": false,
+						"required": ["data", "weight"],
+						"properties": {
+							"data": {
+								"type": "array",
+								"description": "Pool items in this group.",
+								"items": {
+									"oneOf": [
+										{
+											"type": "string",
+											"description": "Direct pool identifier"
+										},
+										{
+											"type": "array",
+											"description": "Nested pool item",
+											"items": {
+												"type": "string"
+											}
+										}
+									]
+								}
+							},
+							"weight": {
+								"type": "integer",
+								"minimum": 0,
+								"description": "Weight for group selection."
+							}
+						}
+					}
+				}
+			}
+		},
+		"pool_alias": {
+			"oneOf": [
+				{
+					"$ref": "#/$defs/direct_pool_alias"
+				},
+				{
+					"$ref": "#/$defs/random_pool_alias"
+				},
+				{
+					"$ref": "#/$defs/random_group_pool_alias"
+				}
+			]
+		},
+		"max_distance_from_center": {
+			"type": "object",
+			"title": "Max Distance From Center",
+			"description": "Maximum distance limits for structure pieces.",
+			"additionalProperties": false,
+			"properties": {
+				"max_distance": {
+					"type": "integer",
+					"description": "Maximum distance from center."
+				}
+			}
+		},
+		"dimension_padding_range": {
+			"type": "object",
+			"title": "Dimension Padding Range",
+			"description": "Padding range at world dimensions.",
+			"additionalProperties": false,
+			"properties": {
+				"top": {
+					"type": "integer",
+					"description": "Top padding."
+				},
+				"bottom": {
+					"type": "integer",
+					"description": "Bottom padding."
+				},
+				"left": {
+					"type": "integer",
+					"description": "Left padding."
+				},
+				"right": {
+					"type": "integer",
+					"description": "Right padding."
+				}
+			}
+		}
+	}
+}

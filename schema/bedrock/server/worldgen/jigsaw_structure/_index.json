@@ -1,0 +1,26 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/worldgen/jigsaw_structure/_index.json",
+	"type": "object",
+	"title": "Jigsaw Structure",
+	"description": "Jigsaw structures are procedurally generated structures that combine template pools and processors to create complex, varied structures.",
+	"properties": {
+		"format_version": {
+			"enum": ["1.21.20"]
+		}
+	},
+	"oneOf": [
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"const": "1.21.20"
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.20/_index.json"
+			}
+		}
+	]
+}

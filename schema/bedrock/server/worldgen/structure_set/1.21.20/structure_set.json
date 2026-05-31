@@ -1,0 +1,95 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/worldgen/structure_set/1.21.20/structure_set.json",
+	"type": "object",
+	"title": "Structure Set",
+	"description": "A Jigsaw Structure Set is a collection of Jigsaw Structures that are placed according to a set of rules.",
+	"additionalProperties": false,
+	"required": ["description", "placement", "structures"],
+	"properties": {
+		"description": {
+			"$ref": "#/$defs/description"
+		},
+		"placement": {
+			"$ref": "#/$defs/random_spread_placement",
+			"description": "Describes where structures in the set spawn relative to one another. Currently, the only placement type supported is random_spread, which scatters structures randomly with a given separation and spacing."
+		},
+		"structures": {
+			"type": "array",
+			"description": "Weighted list of Jigsaw Structures in the set.",
+			"items": {
+				"$ref": "#/$defs/structure"
+			}
+		}
+	},
+	"$defs": {
+		"description": {
+			"type": "object",
+			"title": "Description",
+			"description": "Metadata that identifies this structure set.",
+			"additionalProperties": false,
+			"required": ["identifier"],
+			"properties": {
+				"identifier": {
+					"$ref": "../../../../../vanilla/definition/identifier.json",
+					"description": "Identifier of the Jigsaw Structure Set."
+				}
+			}
+		},
+		"structure": {
+			"type": "object",
+			"title": "Structure",
+			"description": "A weighted structure entry in the set.",
+			"additionalProperties": false,
+			"required": ["structure", "weight"],
+			"properties": {
+				"structure": {
+					"type": "string",
+					"description": "Identifier of the Jigsaw Structure."
+				},
+				"weight": {
+					"type": "integer",
+					"minimum": 1,
+					"maximum": 200,
+					"description": "Weight of the Jigsaw Structure in the set. Higher weights are more likely to be selected."
+				}
+			}
+		},
+		"random_spread_placement": {
+			"type": "object",
+			"title": "Random Spread Placement",
+			"description": "Random spread placement configuration for structures.",
+			"additionalProperties": false,
+			"required": ["type", "salt", "spacing", "separation"],
+			"properties": {
+				"type": {
+					"type": "string",
+					"enum": ["minecraft:random_spread"],
+					"title": "Placement Type",
+					"description": "Type of placement for the Jigsaw Structure Set."
+				},
+				"salt": {
+					"type": "integer",
+					"description": "Seed used for the random generator to provide a unique scatter pattern. This is used to prevent overlap in the case where multiple structure sets use the same placement values."
+				},
+				"spacing": {
+					"type": "integer",
+					"minimum": 1,
+					"description": "Grid cell size (in chunks) to use when generating the structure. Structures will attempt to generate at a random position within each cell."
+				},
+				"separation": {
+					"type": "integer",
+					"minimum": 0,
+					"description": "Padding (in chunks) within each grid cell. Structures will not generate within the padded area."
+				},
+				"spread_type": {
+					"type": "string",
+					"enum": ["linear", "triangular"],
+					"default": "linear",
+					"title": "Spread Type",
+					"description": "Randomness algorithm used when placing structures."
+				}
+			}
+		}
+	}
+}

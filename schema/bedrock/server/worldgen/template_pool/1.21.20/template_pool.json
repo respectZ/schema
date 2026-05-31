@@ -1,0 +1,127 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/worldgen/template_pool/1.21.20/template_pool.json",
+	"type": "object",
+	"title": "Template Pool",
+	"description": "Used to pair block rules with Structure Templates and to randomly place Structure Templates using a weighted list.",
+	"additionalProperties": false,
+	"required": ["description", "elements"],
+	"properties": {
+		"description": {
+			"$ref": "#/$defs/description"
+		},
+		"elements": {
+			"type": "array",
+			"description": "List of Structure Template and processor list pairs.",
+			"items": {
+				"$ref": "#/$defs/template_pool_element"
+			}
+		},
+		"fallback": {
+			"type": "string",
+			"default": "minecraft:empty",
+			"description": "Fallback template pool to use if no element in the pool can be placed successfully."
+		}
+	},
+	"$defs": {
+		"description": {
+			"type": "object",
+			"title": "Description",
+			"description": "Metadata that identifies this template pool.",
+			"additionalProperties": false,
+			"required": ["identifier"],
+			"properties": {
+				"identifier": {
+					"$ref": "../../../../../vanilla/definition/identifier.json",
+					"description": "Identifier of the template pool. Used by Jigsaw Structures to assign processors to Structure Templates."
+				}
+			}
+		},
+		"template_pool_element": {
+			"type": "object",
+			"title": "Template Pool Element",
+			"description": "A grouping of a Structure Template, the Processor List to use when placing the structure, and its weight that determines the likelihood of the element being chosen.",
+			"additionalProperties": false,
+			"required": ["element"],
+			"properties": {
+				"element": {
+					"type": "object",
+					"title": "Element",
+					"description": "The element type and its configuration.",
+					"unevaluatedProperties": false,
+					"required": ["element_type"],
+					"properties": {
+						"element_type": {
+							"type": "string",
+							"enum": [
+								"minecraft:empty_pool_element",
+								"minecraft:single_pool_element",
+								"minecraft:feature_pool_element"
+							],
+							"description": "The type of element."
+						}
+					},
+					"allOf": [
+						{
+							"if": {
+								"properties": {
+									"element_type": {
+										"const": "minecraft:single_pool_element"
+									}
+								},
+								"required": ["element_type"]
+							},
+							"then": {
+								"required": ["element_type", "location"],
+								"properties": {
+									"location": {
+										"type": "string",
+										"maxLength": 256,
+										"description": "The path of the structure file. This path is relative to the behavior pack's structures folder."
+									},
+									"processors": {
+										"type": "string",
+										"default": "",
+										"description": "The identifier of the processor list to use when placing the structure."
+									},
+									"projection": {
+										"type": "string",
+										"enum": ["rigid", "terrain_matching"],
+										"default": "rigid",
+										"description": "Specifies how structures should be placed relative to the terrain."
+									}
+								}
+							}
+						},
+						{
+							"if": {
+								"properties": {
+									"element_type": {
+										"const": "minecraft:feature_pool_element"
+									}
+								},
+								"required": ["element_type"]
+							},
+							"then": {
+								"required": ["element_type", "feature"],
+								"properties": {
+									"feature": {
+										"type": "string",
+										"description": "The identifier of the feature to place."
+									}
+								}
+							}
+						}
+					]
+				},
+				"weight": {
+					"type": "integer",
+					"minimum": 1,
+					"maximum": 200,
+					"default": 1,
+					"description": "The weighted probability of choosing the element from the pool. For example, a template pool containing 2 structures with weights of 1 and 3 will have a 25% and 75% chance of being chosen respectively."
+				}
+			}
+		}
+	}
+}

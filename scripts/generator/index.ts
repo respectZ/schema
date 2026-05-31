@@ -485,11 +485,8 @@ const entries: Entry[] = [
 			return {
 				title: "Block Descriptor",
 				unevaluatedProperties: false,
-				oneOf: [
-					{
-						$ref: "./identifiers.json#/$defs/block_identifier",
-					},
-					{
+				$defs: {
+					block_with_states: {
 						type: "object",
 						required: ["name"],
 						properties: {
@@ -530,6 +527,24 @@ const entries: Entry[] = [
 							},
 							...allOf,
 						],
+					},
+					block_without_tags: {
+						oneOf: [
+							{
+								$ref: "./identifiers.json#/$defs/block_identifier",
+							},
+							{
+								$ref: "#/$defs/block_with_states",
+							},
+						],
+					},
+				},
+				oneOf: [
+					{
+						$ref: "./identifiers.json#/$defs/block_identifier",
+					},
+					{
+						$ref: "#/$defs/block_with_states",
 					},
 					{
 						type: "object",

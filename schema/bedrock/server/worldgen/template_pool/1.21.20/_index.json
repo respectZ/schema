@@ -1,0 +1,18 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/worldgen/template_pool/1.21.20/_index.json",
+	"type": "object",
+	"title": "Template Pool 1.21.20",
+	"description": "Used to pair block rules with Structure Templates and to randomly place Structure Templates using a weighted list.",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:template_pool"],
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"enum": ["1.21.20"]
+		},
+		"minecraft:template_pool": {
+			"$ref": "./template_pool.json"
+		}
+	}
+}
