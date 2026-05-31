@@ -5,6 +5,7 @@
 	"title": "Components",
 	"description": "Item components",
 	"additionalProperties": false,
+	"required": ["minecraft:icon"],
 	"properties": {
 		"minecraft:display_name": {
 			"$ref": "display_name.json"
