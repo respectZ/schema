@@ -597,6 +597,15 @@ const entries: Entry[] = [
 			};
 		},
 	},
+	{
+		filepath: "vanilla/server/creative_group.json",
+		content: async () => {
+			const { creativeGroups } = await generateClientLang();
+			return {
+				enum: creativeGroups,
+			};
+		},
+	},
 ];
 
 async function main() {
