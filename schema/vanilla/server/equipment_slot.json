@@ -1,0 +1,14 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/server/equipment_slot.json",
+	"enum": [
+		"slot.saddle",
+		"slot.weapon.offhand",
+		"slot.armor",
+		"slot.armor.head",
+		"slot.chest",
+		"slot.armor.chest",
+		"slot.armor.legs",
+		"slot.armor.feet"
+	]
+}
