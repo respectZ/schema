@@ -1,0 +1,7 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.12.0/components/hand_equipped.json",
+	"type": "boolean",
+	"title": "Hand Equipped",
+	"description": "Whether this item is hand-equipped (held in hands)"
+}

@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.12.0/components/block.json",
+	"type": "string",
+	"title": "Block",
+	"description": "Block identifier this item represents. Leave empty for no block.",
+	"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
+}

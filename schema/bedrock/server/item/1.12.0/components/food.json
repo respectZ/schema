@@ -1,0 +1,85 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.12.0/components/food.json",
+	"type": "object",
+	"title": "Food",
+	"description": "Food component for edible items",
+	"additionalProperties": false,
+	"properties": {
+		"nutrition": {
+			"type": "integer",
+			"description": "Nutrition value of the food",
+			"minimum": 0
+		},
+		"saturation_modifier": {
+			"type": "string",
+			"enum": ["poor", "low", "normal", "good", "max", "supernatural"],
+			"default": "normal",
+			"description": "Saturation modifier level"
+		},
+		"using_converts_to": {
+			"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+			"description": "Item identifier to convert to after using"
+		},
+		"on_use_action": {
+			"type": "string",
+			"enum": ["chorus_teleport", "none", "suspicious_stew_effect"],
+			"default": "none",
+			"description": "Action to perform when used"
+		},
+		"on_use_range": {
+			"type": "array",
+			"description": "Range for use action (array of 3 numbers)",
+			"items": {
+				"type": "number"
+			},
+			"minItems": 3,
+			"maxItems": 3
+		},
+		"cooldown_type": {
+			"type": "string",
+			"enum": ["chorusfruit", "none"],
+			"default": "none",
+			"description": "Type of cooldown to apply"
+		},
+		"cooldown_time": {
+			"type": "number",
+			"description": "Cooldown duration in ticks",
+			"minimum": 0
+		},
+		"can_always_eat": {
+			"type": "boolean",
+			"description": "Whether the food can always be eaten regardless of hunger"
+		},
+		"effects": {
+			"type": "array",
+			"description": "Effects applied when food is eaten",
+			"items": {
+				"type": "object",
+				"title": "Effect",
+				"additionalProperties": false,
+				"properties": {
+					"chance": {
+						"type": "number",
+						"minimum": 0,
+						"maximum": 1,
+						"default": 1,
+						"description": "Chance for effect to apply (0-1)"
+					}
+				},
+				"allOf": [
+					{
+						"$ref": "../../../../../vanilla/definition/effect_definition.json"
+					}
+				]
+			}
+		},
+		"remove_effects": {
+			"type": "array",
+			"description": "Effects to remove when food is eaten (array of effect identifiers)",
+			"items": {
+				"$ref": "../../../../../vanilla/server/effect_type.json"
+			}
+		}
+	}
+}

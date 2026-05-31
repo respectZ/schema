@@ -1,0 +1,21 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.12.0/components/seed.json",
+	"type": "object",
+	"title": "Seed",
+	"description": "Seed component for plantable items",
+	"additionalProperties": false,
+	"properties": {
+		"crop_result": {
+			"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+			"description": "Block identifier that grows from this seed"
+		},
+		"plant_at": {
+			"type": "array",
+			"description": "Block identifiers this seed can be planted on",
+			"items": {
+				"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
+			}
+		}
+	}
+}

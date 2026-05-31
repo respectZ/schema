@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.12.0/components/max_damage.json",
+	"type": "integer",
+	"title": "Max Damage",
+	"description": "Maximum damage the item can take before breaking. Used as item health.",
+	"minimum": 0
+}
