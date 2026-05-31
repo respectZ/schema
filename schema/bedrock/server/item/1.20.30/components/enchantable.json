@@ -1,0 +1,47 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.30/components/enchantable.json",
+	"type": "object",
+	"title": "Enchantable Component",
+	"description": "The enchantable component specifies what enchantments can be applied to the item. Not all enchantments will have an effect on all item components.",
+	"additionalProperties": false,
+	"required": ["slot", "value"],
+	"properties": {
+		"slot": {
+			"type": "string",
+			"description": "Specifies which types of enchantments can be applied. For example, `bow` would allow this item to be enchanted as if it were a bow.",
+			"enum": [
+				"none",
+				"all",
+				"g_armor",
+				"armor_head",
+				"armor_torso",
+				"armor_feet",
+				"armor_legs",
+				"sword",
+				"bow",
+				"spear",
+				"crossbow",
+				"melee_spear",
+				"g_tool",
+				"hoe",
+				"shears",
+				"flintsteel",
+				"shield",
+				"g_digging",
+				"axe",
+				"pickaxe",
+				"shovel",
+				"fishing_rod",
+				"carrot_stick",
+				"elytra",
+				"cosmetic_head"
+			]
+		},
+		"value": {
+			"description": "Specifies the value of the enchantment (minimum of 0).",
+			"minimum": 0,
+			"type": "integer"
+		}
+	}
+}

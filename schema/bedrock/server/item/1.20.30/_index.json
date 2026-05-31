@@ -1,0 +1,78 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.30/_index.json",
+	"type": "object",
+	"title": "Item 1.20.30",
+	"description": "Item definition file for behavior packs (format_version 1.20.30)",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:item"],
+	"properties": {
+		"format_version": {
+			"$ref": "../../../../vanilla/definition/format_version.json",
+			"const": "1.20.30"
+		},
+		"minecraft:item": {
+			"type": "object",
+			"title": "Item",
+			"description": "Root item object",
+			"additionalProperties": false,
+			"required": ["description"],
+			"properties": {
+				"description": {
+					"type": "object",
+					"title": "Description",
+					"description": "Item description metadata",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "Item identifier"
+						},
+						"menu_category": {
+							"$ref": "#/$defs/menu_category"
+						}
+					}
+				},
+				"components": {
+					"$ref": "./components/_index.json"
+				}
+			}
+		}
+	},
+	"$defs": {
+		"menu_category": {
+			"type": "object",
+			"title": "menu_category",
+			"description": "menu_category contains the creative group name and category for this item.",
+			"additionalProperties": false,
+			"properties": {
+				"category": {
+					"default": "none",
+					"description": "Creative category where this item belongs. Defaults to \"none\".",
+					"enum": ["construction", "nature", "equipment", "items", "none"],
+					"title": "CreativeItemCategory",
+					"type": "string"
+				},
+				"group": {
+					"anyOf": [
+						{
+							"description": "The Creative Group that this item belongs to. Group name is limited to 256 characters. The name also must start with a namespace.",
+							"maxLength": 256,
+							"pattern": "^(?:.)+:(?:.)+$",
+							"type": "string"
+						},
+						{
+							"$ref": "../../../../vanilla/server/creative_group.json"
+						}
+					]
+				},
+				"is_hidden_in_commands": {
+					"description": "Determines whether or not this item can be used with commands. Defaults to false.",
+					"type": "boolean",
+					"default": false
+				}
+			}
+		}
+	}
+}

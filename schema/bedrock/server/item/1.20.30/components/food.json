@@ -1,0 +1,33 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.30/components/food.json",
+	"type": "object",
+	"title": "Food Component",
+	"description": "When an item has a food component, it becomes edible to the player. Must have the 'minecraft:use_duration' component in order to function properly.",
+	"additionalProperties": false,
+	"properties": {
+		"can_always_eat": {
+			"type": "boolean",
+			"title": "Can Always Eat",
+			"description": "If true you can always eat this item (even when not hungry). Default is set to false",
+			"default": false
+		},
+		"nutrition": {
+			"type": "integer",
+			"title": "Nutrition",
+			"description": "The value that is added to the actor's nutrition when the item is used. Default is set to 0",
+			"default": 0
+		},
+		"saturation_modifier": {
+			"type": "number",
+			"title": "Saturation Modifier",
+			"description": "Saturation Modifier is used in this formula: (nutrition * saturation_modifier * 2) when applying the saturation buff. Default is set to 0.6",
+			"default": 0.6
+		},
+		"using_converts_to": {
+			"$ref": "../../../../../vanilla/server/item_descriptor.json",
+			"title": "Using Converts To",
+			"description": "When used, converts to the item specified by the string in this field. Default does not convert item"
+		}
+	}
+}

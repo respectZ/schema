@@ -1,0 +1,107 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.30/components/_index.json",
+	"type": "object",
+	"title": "Components",
+	"description": "Item components",
+	"additionalProperties": false,
+	"properties": {
+		"minecraft:display_name": {
+			"$ref": "../../1.20.0/components/display_name.json"
+		},
+		"minecraft:durability": {
+			"$ref": "../../1.20.0/components/durability.json"
+		},
+		"minecraft:fuel": {
+			"$ref": "../../1.20.0/components/fuel.json"
+		},
+		"minecraft:entity_placer": {
+			"$ref": "../../1.20.0/components/entity_placer.json"
+		},
+		"minecraft:icon": {
+			"$ref": "../../1.20.0/components/icon.json"
+		},
+		"minecraft:can_destroy_in_creative": {
+			"$ref": "../../1.20.10/components/can_destroy_in_creative.json"
+		},
+		"minecraft:cooldown": {
+			"$ref": "../../1.20.10/components/cooldown.json"
+		},
+		"minecraft:block_placer": {
+			"$ref": "../../1.20.10/components/block_placer.json"
+		},
+		"minecraft:hover_text_color": {
+			"$ref": "../../1.20.10/components/hover_text_color.json"
+		},
+		"minecraft:max_stack_size": {
+			"$ref": "../../1.20.10/components/max_stack_size.json"
+		},
+		"minecraft:projectile": {
+			"$ref": "../../1.20.10/components/projectile.json"
+		},
+		"minecraft:record": {
+			"$ref": "../../1.20.10/components/record.json"
+		},
+		"minecraft:repairable": {
+			"$ref": "../../1.20.10/components/repairable.json"
+		},
+		"minecraft:shooter": {
+			"$ref": "../../1.20.10/components/shooter.json"
+		},
+		"minecraft:throwable": {
+			"$ref": "../../1.20.10/components/throwable.json"
+		},
+		"minecraft:damage": {
+			"$ref": "../../1.20.20/components/damage.json"
+		},
+		"minecraft:digger": {
+			"$ref": "../../1.20.20/components/digger.json"
+		},
+		"minecraft:glint": {
+			"$ref": "../../1.20.20/components/glint.json"
+		},
+		"minecraft:hand_equipped": {
+			"$ref": "../../1.20.20/components/hand_equipped.json"
+		},
+		"minecraft:liquid_clipped": {
+			"$ref": "../../1.20.20/components/liquid_clipped.json"
+		},
+		"minecraft:should_despawn": {
+			"$ref": "../../1.20.20/components/should_despawn.json"
+		},
+		"minecraft:stacked_by_data": {
+			"$ref": "../../1.20.20/components/stacked_by_data.json"
+		},
+		"minecraft:use_animation": {
+			"$ref": "../../1.20.20/components/use_animation.json"
+		},
+		"minecraft:use_duration": {
+			"$ref": "../../1.20.20/components/use_duration.json"
+		},
+		"minecraft:wearable": {
+			"$ref": "../../1.20.20/components/wearable.json"
+		},
+		"minecraft:enchantable": {
+			"$ref": "enchantable.json"
+		},
+		"minecraft:food": {
+			"$ref": "food.json"
+		},
+		"minecraft:interact_button": {
+			"$ref": "interact_button.json"
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"minecraft:food": true
+				},
+				"required": ["minecraft:food"]
+			},
+			"then": {
+				"required": ["minecraft:food", "minecraft:use_duration"]
+			}
+		}
+	]
+}
