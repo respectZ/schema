@@ -15,6 +15,13 @@
 			"type": "number",
 			"minimum": 0,
 			"description": "The duration of time (in seconds) items with a matching category will spend cooling down before becoming usable again"
+		},
+		"type": {
+			"type": "string",
+			"default": "use",
+			"title": "ItemCooldownType",
+			"description": "The type of action the cooldown applies to. Options are mutually exclusive, so cooldown for one type of action does not affect the others. Values: \"use\" (when using an item), \"attack\" (when attack with an item).",
+			"enum": ["use", "attack"]
 		}
 	}
 }
