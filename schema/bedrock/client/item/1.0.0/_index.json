@@ -23,7 +23,7 @@
 							"$ref": "../../../../vanilla/definition/identifier.json"
 						},
 						"category": {
-							"enum": ["all", "construction", "nature", "equipment", "items", "commands", "none"]
+							"$ref": "../../../../vanilla/server/creative_category.json"
 						}
 					}
 				},

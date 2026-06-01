@@ -38,10 +38,9 @@
 			"additionalProperties": false,
 			"properties": {
 				"category_name": {
+					"$ref": "../../../vanilla/server/creative_category.json",
 					"title": "Crafting Catalog Item Category",
-					"type": "string",
-					"description": "The category that the items will go to. This is restricted to construction, nature, equipment, or items.",
-					"enum": ["construction", "nature", "equipment", "items"]
+					"description": "The category that the items will go to. This is restricted to construction, nature, equipment, or items."
 				},
 				"groups": {
 					"type": "array",

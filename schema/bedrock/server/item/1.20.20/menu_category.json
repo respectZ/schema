@@ -7,11 +7,10 @@
 	"additionalProperties": false,
 	"properties": {
 		"category": {
+			"$ref": "../../../../vanilla/server/creative_category.json",
 			"default": "none",
 			"description": "Creative category where this item belongs. Defaults to \"none\".",
-			"enum": ["construction", "nature", "equipment", "items", "none"],
-			"title": "CreativeItemCategory",
-			"type": "string"
+			"title": "CreativeItemCategory"
 		},
 		"group": {
 			"anyOf": [
