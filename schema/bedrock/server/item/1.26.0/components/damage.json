@@ -1,0 +1,26 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.26.0/components/damage.json",
+	"title": "Damage",
+	"description": "The damage component determines how much extra damage the item does on attack.",
+	"oneOf": [
+		{
+			"type": "integer",
+			"maximum": 32767,
+			"minimum": 0
+		},
+		{
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"value": {
+					"type": "integer",
+					"minimum": 0,
+					"maximum": 32767,
+					"description": "Specifies how much extra damage the item does, must be a positive number.",
+					"default": 0
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,32 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.26.0/components/block_placer.json",
+	"type": "object",
+	"title": "Block Placer",
+	"description": "Items with the block_placer component will place a block when used. \nThis component can also be used instead of the \"minecraft:icon\" component to render the referenced block as the item icon.",
+	"additionalProperties": false,
+	"required": ["block"],
+	"properties": {
+		"aligned_placement": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, block placement through this item will be aligned while holding the interaction button down. Defaults to false."
+		},
+		"block": {
+			"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+			"description": "Defines the block that will be placed"
+		},
+		"replace_block_item": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, the item will be registered as the item for this block. This item will be returned by default when the block is broken/picked. Note: the identifier for this item must match the block's identifier for this field to be valid."
+		},
+		"use_on": {
+			"type": "array",
+			"description": "List of block descriptors that contain blocks that this item can be used on. If left empty, all blocks will be allowed",
+			"items": {
+				"$ref": "../../../../../vanilla/server/block_descriptor.json"
+			}
+		}
+	}
+}
