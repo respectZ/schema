@@ -1,0 +1,33 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.21.30/components/dyeable.json",
+	"type": "object",
+	"title": "Dyeable",
+	"$defs": {
+		"color": {
+			"title": "Color255RGB",
+			"oneOf": [
+				{
+					"pattern": "^#[a-fA-F0-9]{6}$",
+					"type": "string"
+				},
+				{
+					"type": "array",
+					"maxItems": 3,
+					"minItems": 3,
+					"items": {
+						"type": "integer",
+						"minimum": 0,
+						"maximum": 255
+					}
+				}
+			]
+		}
+	},
+	"properties": {
+		"default_color": {
+			"$ref": "#/$defs/color",
+			"default": [255, 255, 255]
+		}
+	}
+}
