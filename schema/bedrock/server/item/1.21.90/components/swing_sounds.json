@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.21.90/components/swing_sounds.json",
+	"type": "object",
+	"title": "Swing Sounds",
+	"description": "Overrides the swing sounds emitted by the user.",
+	"additionalProperties": false,
+	"properties": {
+		"attack_critical_hit": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "Sound played when an attack hits and deals critical damage."
+		},
+		"attack_hit": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "Sound played when an attack hits."
+		},
+		"attack_miss": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "Sound played when an attack misses or deals no damage due to invulnerability."
+		}
+	}
+}

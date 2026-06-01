@@ -1,0 +1,44 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.21.90/components/piercing_weapon.json",
+	"type": "object",
+	"title": "Piercing Weapon",
+	"description": "Allows an item to deal damage to all entities detected in a straight line along the user's view vector. Items with this component cannot destroy blocks, as the attack action always takes priority, regardless of what the user is looking at.",
+	"additionalProperties": false,
+	"properties": {
+		"creative_reach": {
+			"$ref": "#/defs/float_range",
+			"description": "Defines the reach used when the user is in Creative Mode. Defaults to \"reach\" if unspecified."
+		},
+		"hitbox_margin": {
+			"type": "number",
+			"description": "Added tolerance to the view vector raycast for detecting entity collisions.",
+			"default": 0
+		},
+		"reach": {
+			"$ref": "#/defs/float_range",
+			"description": "Defines the range (in blocks) along the user's view vector where entities can be hit. Only targets within this distance are considered. Block collisions between the user and target block damage and its effects.",
+			"default": {
+				"max": 3,
+				"min": 0
+			}
+		}
+	},
+	"defs": {
+		"float_range": {
+			"title": "FloatRange",
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"max": {
+					"default": 0,
+					"type": "number"
+				},
+				"min": {
+					"default": 0,
+					"type": "number"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,43 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.21.90/_index.json",
+	"type": "object",
+	"title": "Item 1.21.90",
+	"description": "Item definition file for behavior packs (format_version 1.21.90)",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:item"],
+	"properties": {
+		"format_version": {
+			"$ref": "../../../../vanilla/definition/format_version.json",
+			"const": "1.21.90"
+		},
+		"minecraft:item": {
+			"type": "object",
+			"title": "Item",
+			"description": "Root item object",
+			"additionalProperties": false,
+			"required": ["description"],
+			"properties": {
+				"description": {
+					"type": "object",
+					"title": "Description",
+					"description": "Item description metadata",
+					"additionalProperties": false,
+					"required": ["identifier"],
+					"properties": {
+						"identifier": {
+							"$ref": "../../../../vanilla/definition/identifier.json",
+							"description": "Item identifier"
+						},
+						"menu_category": {
+							"$ref": "../1.20.30/menu_category.json"
+						}
+					}
+				},
+				"components": {
+					"$ref": "./components/_index.json"
+				}
+			}
+		}
+	}
+}

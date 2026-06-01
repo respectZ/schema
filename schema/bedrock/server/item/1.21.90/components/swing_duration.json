@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.21.90/components/swing_duration.json",
+	"type": "object",
+	"title": "Swing Duration",
+	"description": "Duration, in seconds, of the item's swing animation played when mining or attacking. Affects visuals only and does not impact attack frequency or other gameplay mechanics.",
+	"additionalProperties": false,
+	"properties": {
+		"value": {
+			"type": "number",
+			"minimum": 0,
+			"description": "Duration, in seconds, of the item's swing animation played when mining or attacking. Affects visuals only and does not impact attack frequency or other gameplay mechanics.",
+			"default": 0.3
+		}
+	}
+}

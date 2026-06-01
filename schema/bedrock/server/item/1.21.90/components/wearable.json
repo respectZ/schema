@@ -1,0 +1,26 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.21.90/components/wearable.json",
+	"type": "object",
+	"title": "Wearable",
+	"description": "Wearable items can be worn by a player in a specified slot.",
+	"additionalProperties": false,
+	"required": ["slot"],
+	"properties": {
+		"hides_player_location": {
+			"type": "boolean",
+			"default": false,
+			"description": "Determines whether the Player's location is hidden on Locator Maps and the Locator Bar when the wearable item is worn. Default is false."
+		},
+		"protection": {
+			"type": "integer",
+			"minimum": 0,
+			"description": "How much protection the wearable item provides. Default is set to 0.",
+			"default": 0
+		},
+		"slot": {
+			"$ref": "../../../../../vanilla/server/equipment_slot.json",
+			"description": "Specifies where the item can be worn. If any non-hand slot is chosen, the max stack size is set to 1."
+		}
+	}
+}
