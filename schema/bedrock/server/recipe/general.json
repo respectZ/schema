@@ -2,22 +2,6 @@
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"$id": "schema/bedrock/server/recipe/1.21.10/recipe_shaped.json",
 	"$defs": {
-		"recipe_tag": {
-			"type": "string",
-			"enum": [
-				"blast_furnace",
-				"brewing_stand",
-				"campfire",
-				"cartography_table",
-				"crafting_table",
-				"deprecated",
-				"furnace",
-				"smithing_table",
-				"smoker",
-				"soul_campfire",
-				"stonecutter"
-			]
-		},
 		"unlock_context": {
 			"oneOf": [
 				{

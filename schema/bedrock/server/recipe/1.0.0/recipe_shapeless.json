@@ -43,7 +43,7 @@
 		"tags": {
 			"type": "array",
 			"items": {
-				"$ref": "../general.json#/$defs/recipe_tag"
+				"$ref": "../../../../vanilla/server/tags.json#/$defs/recipe_tag"
 			},
 			"description": "Tags that specify which crafting stations can use this recipe."
 		},

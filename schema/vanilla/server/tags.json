@@ -133,6 +133,26 @@
 				}
 			]
 		},
+		"recipe_tag": {
+			"anyOf": [
+				{ "type": "string", "maxLength": 256 },
+				{
+					"enum": [
+						"blast_furnace",
+						"brewing_stand",
+						"campfire",
+						"cartography_table",
+						"crafting_table",
+						"deprecated",
+						"furnace",
+						"smithing_table",
+						"smoker",
+						"soul_campfire",
+						"stonecutter"
+					]
+				}
+			]
+		},
 		"biome_tag": {
 			"anyOf": [
 				{ "type": "string", "maxLength": 256 },

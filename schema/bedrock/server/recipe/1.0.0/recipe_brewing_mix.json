@@ -25,7 +25,7 @@
 		"tags": {
 			"type": "array",
 			"items": {
-				"$ref": "../general.json#/$defs/recipe_tag"
+				"$ref": "../../../../vanilla/server/tags.json#/$defs/recipe_tag"
 			},
 			"description": "Tags that specify this is a brewing_stand recipe."
 		}
