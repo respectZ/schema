@@ -1,0 +1,45 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.21.10/components/durability_sensor.json",
+	"type": "object",
+	"title": "Durability Sensor",
+	"description": "Enables an item to emit effects when it receives damage. Because of this, the item also needs a `minecraft:durability` component.",
+	"additionalProperties": false,
+	"required": ["durability_thresholds"],
+	"properties": {
+		"durability_thresholds": {
+			"type": "array",
+			"minItems": 1,
+			"description": "The list of both durability thresholds and effects emitted when each threshold is met. When multiple thresholds are met, only the threshold with the lowest durability after applying the damage is considered.",
+			"items": {
+				"$ref": "#/$defs/durability_threshold",
+				"description": "Defines both the durability threshold, and the effects emitted when that threshold is met."
+			}
+		}
+	},
+	"$defs": {
+		"durability_threshold": {
+			"type": "object",
+			"title": "Durability Threshold",
+			"description": "Defines both the durability threshold, and the effects emitted when that threshold is met.",
+			"additionalProperties": false,
+			"properties": {
+				"durability": {
+					"type": "integer",
+					"default": 0,
+					"description": "The effects are emitted when the item durability value is less than or equal to this value."
+				},
+				"particle_type": {
+					"default": "none",
+					"description": "Particle effect to emit when the threshold is met.",
+					"$ref": "../../../../../vanilla/server/particle_type.json"
+				},
+				"sound_event": {
+					"$ref": "../../../../../vanilla/server/level_sound.json",
+					"default": "undefined",
+					"description": "Sound effect to emit when the threshold is met."
+				}
+			}
+		}
+	}
+}

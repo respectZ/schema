@@ -1,0 +1,19 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.21.10/components/damage_absorption.json",
+	"type": "object",
+	"title": "Damage Absorption",
+	"description": "It allows an item to absorb damage that would otherwise be dealt to its wearer. For this to happen, the item needs to be equipped in an armor slot. The absorbed damage reduces the item's durability, with any excess damage being ignored. Because of this, the item also needs a `minecraft:durability` component.",
+	"additionalProperties": false,
+	"required": ["absorbable_causes"],
+	"properties": {
+		"absorbable_causes": {
+			"minItems": 1,
+			"type": "array",
+			"description": "List of damage causes that can be absorbed by the item. By default, no damage cause is absorbed.",
+			"items": {
+				"$ref": "../../../../../vanilla/server/damage_type.json"
+			}
+		}
+	}
+}
