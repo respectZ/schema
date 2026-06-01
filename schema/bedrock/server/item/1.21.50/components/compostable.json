@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.20.50/components/compostable.json",
+	"type": "object",
+	"title": "Compostable",
+	"description": "Specifies that an item is compostable and provides the chance of creating a composting layer in the composter",
+	"additionalProperties": false,
+	"required": ["composting_chance"],
+	"properties": {
+		"composting_chance": {
+			"type": "integer",
+			"minimum": 1,
+			"maximum": 100,
+			"description": "The chance of this item to create a layer upon composting with the composter. Valid value range is 1 - 100 inclusive"
+		}
+	}
+}
