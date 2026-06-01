@@ -1,6 +1,6 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/item/1.20.30/menu_category.json",
+	"$id": "schema/bedrock/server/item/1.20.20/menu_category.json",
 	"type": "object",
 	"title": "menu_category",
 	"description": "menu_category contains the creative group name and category for this item.",

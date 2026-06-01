@@ -28,6 +28,9 @@
 						"identifier": {
 							"$ref": "../../../../vanilla/definition/identifier.json",
 							"description": "Item identifier"
+						},
+						"menu_category": {
+							"$ref": "./menu_category.json"
 						}
 					}
 				},
