@@ -1,0 +1,185 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/item/1.21.40/components/_index.json",
+	"type": "object",
+	"title": "Components",
+	"description": "Item components",
+	"additionalProperties": false,
+	"properties": {
+		"minecraft:display_name": {
+			"$ref": "../../1.20.0/components/display_name.json"
+		},
+		"minecraft:durability": {
+			"$ref": "../../1.20.0/components/durability.json"
+		},
+		"minecraft:fuel": {
+			"$ref": "../../1.20.0/components/fuel.json"
+		},
+		"minecraft:entity_placer": {
+			"$ref": "../../1.20.0/components/entity_placer.json"
+		},
+		"minecraft:can_destroy_in_creative": {
+			"$ref": "../../1.20.10/components/can_destroy_in_creative.json"
+		},
+		"minecraft:cooldown": {
+			"$ref": "../../1.20.10/components/cooldown.json"
+		},
+		"minecraft:hover_text_color": {
+			"$ref": "../../1.20.10/components/hover_text_color.json"
+		},
+		"minecraft:max_stack_size": {
+			"$ref": "../../1.20.10/components/max_stack_size.json"
+		},
+		"minecraft:projectile": {
+			"$ref": "../../1.20.10/components/projectile.json"
+		},
+		"minecraft:record": {
+			"$ref": "../../1.20.10/components/record.json"
+		},
+		"minecraft:repairable": {
+			"$ref": "../../1.20.10/components/repairable.json"
+		},
+		"minecraft:shooter": {
+			"$ref": "../../1.20.10/components/shooter.json"
+		},
+		"minecraft:throwable": {
+			"$ref": "../../1.20.10/components/throwable.json"
+		},
+		"minecraft:damage": {
+			"$ref": "../../1.20.20/components/damage.json"
+		},
+		"minecraft:digger": {
+			"$ref": "../../1.20.20/components/digger.json"
+		},
+		"minecraft:glint": {
+			"$ref": "../../1.20.20/components/glint.json"
+		},
+		"minecraft:hand_equipped": {
+			"$ref": "../../1.20.20/components/hand_equipped.json"
+		},
+		"minecraft:liquid_clipped": {
+			"$ref": "../../1.20.20/components/liquid_clipped.json"
+		},
+		"minecraft:should_despawn": {
+			"$ref": "../../1.20.20/components/should_despawn.json"
+		},
+		"minecraft:stacked_by_data": {
+			"$ref": "../../1.20.20/components/stacked_by_data.json"
+		},
+		"minecraft:use_animation": {
+			"$ref": "../../1.20.20/components/use_animation.json"
+		},
+		"minecraft:wearable": {
+			"$ref": "../../1.20.20/components/wearable.json"
+		},
+		"minecraft:enchantable": {
+			"$ref": "../../1.20.30/components/enchantable.json"
+		},
+		"minecraft:food": {
+			"$ref": "../../1.20.30/components/food.json"
+		},
+		"minecraft:interact_button": {
+			"$ref": "../../1.20.30/components/interact_button.json"
+		},
+		"minecraft:tags": {
+			"$ref": "../../1.20.50/components/tags.json"
+		},
+		"minecraft:use_modifiers": {
+			"$ref": "../../1.20.50/components/use_modifiers.json"
+		},
+		"minecraft:icon": {
+			"$ref": "../../1.20.60/components/icon.json"
+		},
+		"minecraft:custom_components": {
+			"$ref": "../../1.20.80/components/custom_components.json"
+		},
+		"minecraft:damage_absorption": {
+			"$ref": "../../1.21.10/components/damage_absorption.json"
+		},
+		"minecraft:durability_sensor": {
+			"$ref": "../../1.21.10/components/durability_sensor.json"
+		},
+		"minecraft:bundle_interaction": {
+			"$ref": "../../1.21.30/components/bundle_interaction.json"
+		},
+		"minecraft:dyeable": {
+			"$ref": "../../1.21.30/components/dyeable.json"
+		},
+		"minecraft:rarity": {
+			"$ref": "../../1.21.30/components/rarity.json"
+		},
+		"minecraft:storage_item": {
+			"$ref": "../../1.21.30/components/storage_item.json"
+		},
+		"minecraft:block_placer": {
+			"$ref": "block_placer.json"
+		},
+		"minecraft:planter": {
+			"$ref": "planter.json"
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"minecraft:food": true
+				},
+				"required": ["minecraft:food"]
+			},
+			"then": {
+				"required": ["minecraft:food", "minecraft:use_modifiers"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"minecraft:damage_absorption": true
+				},
+				"required": ["minecraft:damage_absorption"]
+			},
+			"then": {
+				"required": ["minecraft:damage_absorption", "minecraft:durability"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"minecraft:bundle_interaction": true
+				},
+				"required": ["minecraft:bundle_interaction"]
+			},
+			"then": {
+				"required": ["minecraft:bundle_interaction", "minecraft:storage_item"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"minecraft:storage_item": true
+				},
+				"required": ["minecraft:storage_item"]
+			},
+			"then": {
+				"properties": {
+					"minecraft:max_stack_size": {
+						"oneOf": [
+							{
+								"const": 1
+							},
+							{
+								"type": "object",
+								"additionalProperties": false,
+								"properties": {
+									"value": {
+										"const": 1
+									}
+								}
+							}
+						]
+					}
+				},
+				"required": ["minecraft:storage_item", "minecraft:max_stack_size"]
+			}
+		}
+	]
+}
