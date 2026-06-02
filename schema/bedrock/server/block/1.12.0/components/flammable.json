@@ -1,0 +1,21 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.12.0/components/flammable.json",
+	"type": "object",
+	"title": "Flammable",
+	"description": "Describes the flammable properties for this block.",
+	"additionalProperties": false,
+	"properties": {
+		"flame_odds": {
+			"type": "integer",
+			"default": 0,
+			"description": "How likely the block will catch flame when next to a fire."
+		},
+		"burn_odds": {
+			"type": "integer",
+			"default": 0,
+			"description": "How likely the block will be destroyed by flames when on fire."
+		}
+	},
+	"required": ["flame_odds", "burn_odds"]
+}

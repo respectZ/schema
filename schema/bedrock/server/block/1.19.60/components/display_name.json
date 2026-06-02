@@ -1,0 +1,7 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.19.60/components/display_name.json",
+	"title": "Display Name Component",
+	"description": "Specifies the language file key that maps to what text will be displayed when you hover over the block in your inventory and hotbar.",
+	"$ref": "../../../../../vanilla/client/lang_keys.json"
+}

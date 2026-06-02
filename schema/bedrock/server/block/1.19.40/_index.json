@@ -1,0 +1,33 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.19.40/_index.json",
+	"type": "object",
+	"title": "Block 1.19.40",
+	"description": "Block definition file for behavior packs (format_version 1.19.40)",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:block"],
+	"properties": {
+		"format_version": {
+			"$ref": "../../../../vanilla/definition/format_version.json",
+			"const": "1.19.40"
+		},
+		"minecraft:block": {
+			"type": "object",
+			"title": "Block",
+			"description": "Root block object",
+			"additionalProperties": false,
+			"required": ["description"],
+			"properties": {
+				"description": {
+					"$ref": "../1.12.0/description.json"
+				},
+				"components": {
+					"$ref": "./components/_index.json"
+				}
+			}
+		},
+		"use_beta_features": {
+			"type": "boolean"
+		}
+	}
+}

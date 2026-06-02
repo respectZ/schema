@@ -1,0 +1,25 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.12.0/components/destroy_time.json",
+	"oneOf": [
+		{
+			"type": "number",
+			"default": 0.0,
+			"description": "Sets the destroy time property for the block. Greater numbers result in greater mining times."
+		},
+		{
+			"type": "object",
+			"title": "Destroy Time",
+			"description": "The destroy time property for a block.",
+			"additionalProperties": false,
+			"properties": {
+				"destroy_time": {
+					"type": "number",
+					"default": 0.0,
+					"description": "Sets the destroy time property for the block. Greater numbers result in greater mining times."
+				}
+			},
+			"required": ["destroy_time"]
+		}
+	]
+}

@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.19.70/components/_index.json",
+	"type": "object",
+	"title": "Components",
+	"description": "Block components",
+	"$ref": "../../1.19.60/components/_index.json"
+}

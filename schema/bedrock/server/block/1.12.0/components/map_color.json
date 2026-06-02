@@ -1,0 +1,25 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.12.0/components/map_color.json",
+	"oneOf": [
+		{
+			"type": "string",
+			"pattern": "^#[0-9a-fA-F]{6}$",
+			"description": "A color represented as a hex value. This will be the color rendered to a map."
+		},
+		{
+			"type": "object",
+			"title": "Map Color",
+			"description": "Modifies the map color for a block.",
+			"additionalProperties": false,
+			"properties": {
+				"map_color": {
+					"type": "string",
+					"pattern": "^#[0-9a-fA-F]{6}$",
+					"description": "A color represented as a hex value. This will be the color rendered to a map."
+				}
+			},
+			"required": ["map_color"]
+		}
+	]
+}

@@ -1,0 +1,36 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.19.60/components/selection_box.json",
+	"type": "object",
+	"title": "Selection Box Component",
+	"description": "Defines the area of the block that is selected by the player's cursor.",
+	"oneOf": [
+		{
+			"type": "boolean"
+		},
+		{
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"origin": {
+					"type": "array",
+					"description": "Minimal position of the bounds of the selection box. Specified as [x, y, z] and must be in the range (-8, 0, -8) to (8, 16, 8), inclusive.",
+					"items": {
+						"type": "number"
+					},
+					"minItems": 3,
+					"maxItems": 3
+				},
+				"size": {
+					"type": "array",
+					"description": "Size of each side of the selection box. Specified as [x, y, z]. origin + size must be in the range (-8, 0, -8) to (8, 16, 8), inclusive.",
+					"items": {
+						"type": "number"
+					},
+					"minItems": 3,
+					"maxItems": 3
+				}
+			}
+		}
+	]
+}

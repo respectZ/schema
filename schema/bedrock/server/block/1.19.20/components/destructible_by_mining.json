@@ -1,0 +1,23 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.19.20/components/destructible_by_mining.json",
+	"oneOf": [
+		{
+			"type": "boolean",
+			"description": "If set to true, the block will have the default destroy time. If set to false, this block is indestructible by mining."
+		},
+		{
+			"type": "object",
+			"title": "Destructible by Mining",
+			"description": "Describes the destructible by mining properties for this block.",
+			"additionalProperties": false,
+			"properties": {
+				"seconds_to_destroy": {
+					"type": "number",
+					"description": "Sets the number of seconds it takes to destroy the block with base equipment. Greater numbers result in greater mining times.",
+					"default": 0.0
+				}
+			}
+		}
+	]
+}

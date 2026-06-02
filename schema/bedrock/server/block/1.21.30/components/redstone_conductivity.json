@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.21.30/components/redstone_conductivity.json",
+	"type": "object",
+	"title": "Redstone Conductivity Component",
+	"description": "The basic redstone properties of a block; if the component is not provided the default values are used.",
+	"additionalProperties": false,
+	"properties": {
+		"allows_wire_to_step_down": {
+			"title": "Allows Wire to Step Down",
+			"description": "Specifies if redstone wire can stair-step downward on the block.",
+			"type": "boolean",
+			"default": true
+		},
+		"redstone_conductor": {
+			"title": "Redstone Conductor",
+			"description": "Specifies if the block can be powered by redstone.",
+			"type": "boolean",
+			"default": false
+		}
+	}
+}

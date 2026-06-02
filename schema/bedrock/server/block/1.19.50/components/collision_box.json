@@ -1,0 +1,48 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.19.50/components/collision_box.json",
+	"title": "Collision Box Component",
+	"description": "Defines the area of the block that collides with entities. If set to true, default values are used. If set to false, the block's collision with entities is disabled.",
+	"oneOf": [
+		{
+			"type": "boolean"
+		},
+		{
+			"$ref": "#/$defs/collision_box"
+		},
+		{
+			"type": "array",
+			"description": "Defines multiple collision boxes for the block. Each collision box is defined as an object with 'origin' and 'size' properties.",
+			"items": {
+				"$ref": "#/$defs/collision_box"
+			},
+			"minItems": 1
+		}
+	],
+	"$defs": {
+		"collision_box": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"origin": {
+					"type": "array",
+					"description": "Minimal position of the bounds of the collision box. Specified as [x, y, z] and must be in the range (-8, 0, -8) to (8, 24, 8), inclusive.",
+					"items": {
+						"type": "number"
+					},
+					"minItems": 3,
+					"maxItems": 3
+				},
+				"size": {
+					"type": "array",
+					"description": "Size of each side of the collision box. Specified as [x, y, z]. origin + size must be in the range (-8, 0, -8) to (8, 24, 8), inclusive.",
+					"items": {
+						"type": "number"
+					},
+					"minItems": 3,
+					"maxItems": 3
+				}
+			}
+		}
+	}
+}

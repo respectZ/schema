@@ -1,0 +1,13 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/reference/voxel_shape.json",
+	"anyOf": [
+		{
+			"$ref": "../definition/identifier.json#/$defs/no_minecraft",
+			"maxLength": 256
+		},
+		{
+			"$ref": "../server/voxel_shape.json"
+		}
+	]
+}

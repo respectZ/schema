@@ -1,0 +1,23 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.19.20/components/destructible_by_explosion.json",
+	"oneOf": [
+		{
+			"type": "boolean",
+			"description": "If set to true, the block will have the default explosion resistance. If set to false, this block is indestructible by explosion."
+		},
+		{
+			"type": "object",
+			"title": "Destructible by Explosion",
+			"description": "Describes the destructible by explosion properties for this block.",
+			"additionalProperties": false,
+			"properties": {
+				"explosion_resistance": {
+					"type": "number",
+					"description": "Sets the explosion resistance for the block. Greater values result in greater resistance to explosions. The scale will be different for different explosion power levels. A negative value or 0 means it will easily explode; larger numbers increase level of resistance.",
+					"default": 0
+				}
+			}
+		}
+	]
+}

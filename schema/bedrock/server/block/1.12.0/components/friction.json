@@ -1,0 +1,25 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.12.0/components/friction.json",
+	"oneOf": [
+		{
+			"type": "number",
+			"default": 0.1,
+			"description": "Sets the friction property for this block."
+		},
+		{
+			"type": "object",
+			"title": "Friction",
+			"description": "Property describing the friction for this block. Friction affects an entity's movements when it walks on the block.",
+			"additionalProperties": false,
+			"properties": {
+				"friction": {
+					"type": "number",
+					"default": 0.1,
+					"description": "Sets the friction property for this block."
+				}
+			},
+			"required": ["friction"]
+		}
+	]
+}

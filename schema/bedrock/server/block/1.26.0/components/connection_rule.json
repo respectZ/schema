@@ -1,0 +1,24 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.26.0/components/connection_rule.json",
+	"type": "object",
+	"title": "Connection Rule Component",
+	"description": "Defines whether other blocks such as fences, walls, bars, and glass panes are allowed to connect to this block.",
+	"additionalProperties": false,
+	"properties": {
+		"accepts_connections_from": {
+			"type": "string",
+			"description": "The type of block allowed to connect to this block.",
+			"enum": ["all", "only_fences", "none"],
+			"default": "all"
+		},
+		"enabled_directions": {
+			"type": "array",
+			"description": "The cardinal directions that connection is enabled for: north, south, east, and west.",
+			"items": {
+				"type": "string",
+				"enum": ["north", "south", "east", "west"]
+			}
+		}
+	}
+}

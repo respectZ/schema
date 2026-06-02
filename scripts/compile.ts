@@ -59,6 +59,10 @@ const BP_ENTRIES: JsonValidationEntry[] = [
 		url: "./schema/bedrock/server/item/_index.json",
 	},
 	{
+		fileMatch: "blocks/**/*.{json,jsonc,json5}",
+		url: "./schema/bedrock/server/block/_index.json",
+	},
+	{
 		fileMatch: "cameras/presets/**/*.{json,jsonc,json5}",
 		url: "./schema/bedrock/server/camera/_index.json",
 	},

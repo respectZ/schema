@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.19.20/components/friction.json",
+	"type": "number",
+	"title": "Friction Component",
+	"description": "Describes the friction for this block in a range of (0.0-0.9). Friction affects an entity's movement speed when it travels on the block. Greater value results in more friction.",
+	"minimum": 0,
+	"maximum": 0.9
+}

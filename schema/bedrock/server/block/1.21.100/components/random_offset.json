@@ -1,0 +1,57 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.21.100/components/random_offset.json",
+	"type": "object",
+	"title": "Random Offset Component",
+	"description": "Defines a random offset for the block, seeded based on the block's position and the specified range and steps.",
+	"additionalProperties": false,
+	"properties": {
+		"x": {
+			"$ref": "#/$defs/axis_offset",
+			"description": "X coordinate offset range."
+		},
+		"y": {
+			"$ref": "#/$defs/axis_offset",
+			"description": "Y coordinate offset range."
+		},
+		"z": {
+			"$ref": "#/$defs/axis_offset",
+			"description": "Z coordinate offset range."
+		}
+	},
+	"$defs": {
+		"axis_offset": {
+			"type": "object",
+			"title": "Axis Offset",
+			"description": "Range of values between two numbers, with a defined number of steps.",
+			"additionalProperties": false,
+			"required": ["range"],
+			"properties": {
+				"range": {
+					"$ref": "#/$defs/range"
+				},
+				"steps": {
+					"type": "integer",
+					"description": "Number of steps between the range."
+				}
+			}
+		},
+		"range": {
+			"type": "object",
+			"title": "Range",
+			"description": "Range of values between two numbers.",
+			"additionalProperties": false,
+			"required": ["min", "max"],
+			"properties": {
+				"min": {
+					"type": "number",
+					"description": "Minimum value of the range."
+				},
+				"max": {
+					"type": "number",
+					"description": "Maximum value of the range."
+				}
+			}
+		}
+	}
+}

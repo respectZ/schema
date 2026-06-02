@@ -1,0 +1,26 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.21.20/components/tick.json",
+	"type": "object",
+	"title": "Tick Component",
+	"description": "Causes the block to tick based on a regular interval equal to a number of ticks randomly chosen from the interval_range parameter.",
+	"additionalProperties": false,
+	"properties": {
+		"interval_range": {
+			"title": "Interval Range",
+			"description": "A range of values, specified in ticks, to decide the next tick interval for a block. After each block tick, a new value will be chosen from within the range to determine the next tick interval.",
+			"type": "array",
+			"minItems": 2,
+			"maxItems": 2,
+			"items": {
+				"type": "number"
+			}
+		},
+		"looping": {
+			"title": "Looping",
+			"description": "If false, the block will only be ticked once after a delay equal to a number of ticks randomly chosen from the interval_range and no further ticking will occur.",
+			"type": "boolean",
+			"default": true
+		}
+	}
+}

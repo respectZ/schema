@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.21.70/components/replaceable.json",
+	"type": "object",
+	"title": "Replaceable Component",
+	"description": "A block with this component can be replaced when another block is placed in the same block position.",
+	"additionalProperties": false
+}

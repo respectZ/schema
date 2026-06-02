@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.21.120/components/flower_pottable.json",
+	"type": "object",
+	"title": "Flower Pottable Component",
+	"description": "When added to a block type, indicates that this block can be placed inside a flower pot.",
+	"additionalProperties": false
+}

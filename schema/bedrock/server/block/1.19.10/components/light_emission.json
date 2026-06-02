@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.19.10/components/light_emission.json",
+	"type": "integer",
+	"title": "Light Emission Component",
+	"description": "The amount of light this block will emit in a range (0-15). Higher value means more light will be emitted.",
+	"minimum": 0,
+	"maximum": 15
+}

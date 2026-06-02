@@ -1,0 +1,25 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.12.0/components/block_light_absorption.json",
+	"oneOf": [
+		{
+			"type": "integer",
+			"default": 0,
+			"description": "The amount of light this block will absorb. For ice blocks, this describes at what light level the ice will melt."
+		},
+		{
+			"type": "object",
+			"title": "Block Light Absorption",
+			"description": "How a block absorbs light.",
+			"additionalProperties": false,
+			"properties": {
+				"filter_level": {
+					"type": "integer",
+					"default": 0,
+					"description": "The amount of light this block will absorb. For ice blocks, this describes at what light level the ice will melt."
+				}
+			},
+			"required": ["filter_level"]
+		}
+	]
+}

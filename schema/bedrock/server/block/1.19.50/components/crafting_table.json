@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.19.50/components/crafting_table.json",
+	"type": "object",
+	"title": "Crafting Table Component",
+	"description": "Makes your block into a custom crafting table which enables the crafting table UI and the ability to craft recipes.",
+	"additionalProperties": false,
+	"properties": {
+		"crafting_tags": {
+			"type": "array",
+			"description": "Defines the tags recipes should define to be crafted on this table. Limited to 64 tags. Each tag is limited to 64 characters.",
+			"items": {
+				"$ref": "../../../../../vanilla/server/tags.json#/$defs/recipe_tag"
+			},
+			"maxItems": 64
+		},
+		"table_name": {
+			"$ref": "../../../../../vanilla/client/lang_keys.json",
+			"description": "Specifies the language file key that maps to what text will be displayed in the UI of this table."
+		}
+	}
+}

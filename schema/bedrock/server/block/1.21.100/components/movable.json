@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.21.100/components/movable.json",
+	"type": "object",
+	"title": "Movable Component",
+	"description": "How the block reacts to being pushed by another block like a piston.",
+	"additionalProperties": false,
+	"required": ["movement_type"],
+	"properties": {
+		"movement_type": {
+			"type": "string",
+			"description": "How the block reacts to being pushed by another block like a piston.",
+			"enum": ["push_pull", "push", "popped", "immovable"]
+		},
+		"sticky": {
+			"type": "string",
+			"description": "How the block should handle adjacent blocks around it when being pushed by another block like a piston.",
+			"default": "none",
+			"enum": ["same", "none"]
+		}
+	}
+}

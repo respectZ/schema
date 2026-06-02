@@ -1,0 +1,40 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.26.0/components/leashable.json",
+	"type": "object",
+	"title": "Leashable Component",
+	"description": "Allows a block to have a lead tied to it.",
+	"additionalProperties": false,
+	"properties": {
+		"offset": {
+			"oneOf": [
+				{
+					"type": "array",
+					"maxItems": 3,
+					"minItems": 3,
+					"items": {
+						"type": "number"
+					}
+				},
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"x": {
+							"default": 0,
+							"type": "number"
+						},
+						"y": {
+							"default": 0,
+							"type": "number"
+						},
+						"z": {
+							"default": 0,
+							"type": "number"
+						}
+					}
+				}
+			]
+		}
+	}
+}

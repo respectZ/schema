@@ -1,0 +1,10 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.21.20/components/custom_components.json",
+	"type": "array",
+	"title": "Custom Components",
+	"description": "An ordered list of custom component names which are bound in script to be executed upon a block event.",
+	"items": {
+		"$ref": "../../../../../vanilla/definition/identifier.json#/$defs/no_minecraft"
+	}
+}

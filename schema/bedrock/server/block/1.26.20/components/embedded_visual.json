@@ -1,0 +1,19 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.26.20/components/embedded_visual.json",
+	"type": "object",
+	"title": "Embedded Visual Component",
+	"description": "This defines how a block embedded into an other block renders. Eg. a block in a flowerpot.",
+	"additionalProperties": false,
+	"required": ["geometry", "material_instances"],
+	"properties": {
+		"geometry": {
+			"description": "The 'minecraft:geometry' component that will be used for the embedded block.",
+			"$ref": "geometry.json"
+		},
+		"material_instances": {
+			"description": "The 'minecraft:material_instances' component that will be used for the embedded block.",
+			"$ref": "../../1.21.70/components/material_instances.json"
+		}
+	}
+}

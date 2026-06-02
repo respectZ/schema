@@ -1,0 +1,25 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.12.0/components/explosion_resistance.json",
+	"oneOf": [
+		{
+			"type": "number",
+			"default": 0.0,
+			"description": "Sets the explosion resistance for this block."
+		},
+		{
+			"type": "object",
+			"title": "Explosion Resistance",
+			"description": "The explosion resistance property for a block.",
+			"additionalProperties": false,
+			"properties": {
+				"resistance": {
+					"type": "number",
+					"default": 0.0,
+					"description": "Sets the explosion resistance for this block."
+				}
+			},
+			"required": ["resistance"]
+		}
+	]
+}

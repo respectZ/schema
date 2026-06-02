@@ -1,0 +1,36 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/vanilla/reference/block_geometry.json",
+	"anyOf": [
+		{
+			"type": "string",
+			"maxLength": 256
+		},
+		{
+			"$ref": "../client/identifiers.json#/$defs/geometry_identifier"
+		},
+		{
+			"enum": ["minecraft:geometry.full_block", "minecraft:geometry.cross"]
+		}
+	],
+	"$defs": {
+		"v2": {
+			"anyOf": [
+				{
+					"type": "string",
+					"maxLength": 256
+				},
+				{
+					"$ref": "../client/identifiers.json#/$defs/geometry_identifier"
+				},
+				{
+					"enum": [
+						"minecraft:geometry.full_block",
+						"minecraft:geometry.cross",
+						"minecraft:geometry.full_block_v1"
+					]
+				}
+			]
+		}
+	}
+}

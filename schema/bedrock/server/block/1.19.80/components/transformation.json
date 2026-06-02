@@ -1,0 +1,55 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.19.80/components/transformation.json",
+	"type": "object",
+	"title": "Transformation Component",
+	"description": "The block's translation, rotation and scale with respect to the center of its world position.",
+	"additionalProperties": false,
+	"properties": {
+		"rotation": {
+			"type": "array",
+			"description": "The block's rotation in increments of 90 degrees.",
+			"items": {
+				"type": "number"
+			},
+			"minItems": 3,
+			"maxItems": 3
+		},
+		"rotation_pivot": {
+			"type": "array",
+			"description": "The point to apply rotation around.",
+			"items": {
+				"type": "number"
+			},
+			"minItems": 3,
+			"maxItems": 3
+		},
+		"scale": {
+			"type": "array",
+			"description": "The block's scale.",
+			"items": {
+				"type": "number"
+			},
+			"minItems": 3,
+			"maxItems": 3
+		},
+		"scale_pivot": {
+			"type": "array",
+			"description": "The point to apply scale around.",
+			"items": {
+				"type": "number"
+			},
+			"minItems": 3,
+			"maxItems": 3
+		},
+		"translation": {
+			"type": "array",
+			"description": "The block's translation.",
+			"items": {
+				"type": "number"
+			},
+			"minItems": 3,
+			"maxItems": 3
+		}
+	}
+}

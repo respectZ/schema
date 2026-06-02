@@ -1,0 +1,61 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.21.30/components/destructible_by_mining.json",
+	"oneOf": [
+		{
+			"type": "boolean",
+			"description": "If set to true, the block will have the default destroy time. If set to false, this block is indestructible by mining."
+		},
+		{
+			"type": "object",
+			"title": "Destructible by Mining",
+			"description": "Describes the destructible by mining properties for this block.",
+			"additionalProperties": false,
+			"properties": {
+				"seconds_to_destroy": {
+					"type": "number",
+					"description": "Sets the number of seconds it takes to destroy the block with base equipment. Greater numbers result in greater mining times.",
+					"default": 0
+				},
+				"item_specific_speeds": {
+					"type": "array",
+					"description": "Optional array of objects to describe item specific block destroy speeds, each object contains an 'item' ItemDescriptor and a 'destroy_speed' float.",
+					"items": {
+						"$ref": "#/$defs/item_specific_speed"
+					}
+				}
+			}
+		}
+	],
+	"$defs": {
+		"item_specific_speed": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["item", "destroy_speed"],
+			"properties": {
+				"item": {
+					"description": "A filter for the item used while mining.",
+					"oneOf": [
+						{
+							"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+						},
+						{
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"tags": {
+									"description": "A condition using Molang queries that the item must satisfy.",
+									"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string"
+								}
+							}
+						}
+					]
+				},
+				"destroy_speed": {
+					"type": "number",
+					"description": "A destroy speed applied while using the defined 'item'."
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,49 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.20.10/description.json",
+	"type": "object",
+	"title": "Block Description",
+	"description": "Block description metadata",
+	"additionalProperties": false,
+	"required": ["identifier"],
+	"properties": {
+		"identifier": {
+			"$ref": "../../../../vanilla/definition/identifier.json",
+			"description": "Block identifier"
+		},
+		"is_experimental": {
+			"type": "boolean",
+			"default": false,
+			"description": "If this block is experimental, it will only be registered if the world is marked as experimental."
+		},
+		"states": {
+			"$ref": "../1.19.70/properties.json",
+			"description": "Map of key/value pairs that maps the state name (key) to an array of all possible values for that state (value)."
+		},
+		"traits": {
+			"$ref": "../1.19.70/traits.json",
+			"description": "Change the connection, multiblock state, placement position and/or direction behaviors of a block."
+		},
+		"menu_category": {
+			"type": "object",
+			"title": "Menu Category",
+			"description": "Specifies the menu category and group for the block, which determine where this block is placed in the inventory and crafting table container screens.",
+			"additionalProperties": false,
+			"properties": {
+				"category": {
+					"$ref": "../../../../vanilla/server/creative_category.json",
+					"description": "Determines which category this block will be placed under in the inventory and crafting table container screens."
+				},
+				"group": {
+					"$ref": "../../../../vanilla/server/creative_group.json",
+					"description": "Specifies the language file key that maps to which expandable/collapsible group this block will be a part of within a category."
+				},
+				"is_hidden_in_commands": {
+					"type": "boolean",
+					"default": false,
+					"description": "Determines whether or not this block can be used with commands."
+				}
+			}
+		}
+	}
+}

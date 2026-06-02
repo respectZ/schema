@@ -12,21 +12,17 @@
 			"title": "Versioned Molang expression",
 			"description": "A Molang expression with an associated version number.",
 			"default": "",
-			"oneOf": [
-				{
-					"type": "object",
-					"properties": {
-						"expression": {
-							"type": "string"
-						},
-						"version": {
-							"type": "integer",
-							"examples": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-						}
-					},
-					"required": ["expression", "version"]
+			"type": "object",
+			"properties": {
+				"expression": {
+					"type": "string"
+				},
+				"version": {
+					"type": "integer",
+					"examples": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 				}
-			]
+			},
+			"required": ["expression", "version"]
 		},
 		"expression": {
 			"title": "Molang expression",

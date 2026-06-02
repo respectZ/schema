@@ -1,0 +1,40 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.19.70/properties.json",
+	"type": "object",
+	"title": "Block Properties",
+	"description": "Map of key/value pairs that maps the property name (key) to an array of all possible values for that property (value).",
+	"additionalProperties": false,
+	"patternProperties": {
+		"^(?:(?!^(minecraft):).)+:(?:.)+$": {
+			"oneOf": [
+				{
+					"type": "array",
+					"items": {
+						"oneOf": [{ "type": "boolean" }, { "type": "number" }, { "type": "string" }]
+					},
+					"minItems": 1
+				},
+				{
+					"type": "object",
+					"title": "Integer Range",
+					"description": "Defines a range of integer values for the property.",
+					"additionalProperties": false,
+					"properties": {
+						"values": {
+							"type": "object",
+							"title": "Integer Range Values",
+							"description": "Defines the minimum and maximum integer values for the property.",
+							"additionalProperties": false,
+							"properties": {
+								"min": { "type": "integer" },
+								"max": { "type": "integer" }
+							},
+							"required": ["min", "max"]
+						}
+					}
+				}
+			]
+		}
+	}
+}

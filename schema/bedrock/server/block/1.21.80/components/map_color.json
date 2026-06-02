@@ -1,0 +1,70 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.21.80/components/map_color.json",
+	"oneOf": [
+		{
+			"type": "string",
+			"title": "Map Color Component",
+			"description": "Sets the color of the block when rendered to a map. If this component is omitted, the block will not show up on the map.",
+			"pattern": "^#[0-9A-Fa-f]{6}$"
+		},
+		{
+			"type": "array",
+			"title": "Map Color Component",
+			"description": "Sets the color of the block when rendered to a map. If this component is omitted, the block will not show up on the map.",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"type": "integer",
+				"minimum": 0,
+				"maximum": 255
+			}
+		},
+		{
+			"type": "object",
+			"title": "Map Color Object",
+			"description": "Sets the color of the block when rendered to a map.",
+			"additionalProperties": false,
+			"required": ["color"],
+			"properties": {
+				"color": {
+					"description": "The color used for the map.",
+					"oneOf": [
+						{
+							"type": "string",
+							"title": "Hex Color",
+							"description": "Color represented as a hex value in the format #RRGGBB",
+							"pattern": "^#[0-9A-Fa-f]{6}$"
+						},
+						{
+							"type": "array",
+							"title": "RGB Array",
+							"description": "Color expressed as an array of [R, G, B] from 0 to 255",
+							"minItems": 3,
+							"maxItems": 3,
+							"items": {
+								"type": "integer",
+								"minimum": 0,
+								"maximum": 255
+							}
+						}
+					]
+				},
+				"tint_method": {
+					"type": "string",
+					"description": "Tint multiplied to the color.",
+					"default": "none",
+					"enum": [
+						"none",
+						"default_foliage",
+						"birch_foliage",
+						"evergreen_foliage",
+						"dry_foliage",
+						"grass",
+						"water"
+					]
+				}
+			}
+		}
+	]
+}

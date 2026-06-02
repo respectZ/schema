@@ -1,0 +1,122 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.19.70/traits.json",
+	"type": "object",
+	"title": "Block Traits",
+	"description": "Change the connection, multiblock state, placement position and/or direction behaviors of a block",
+	"additionalProperties": false,
+	"properties": {
+		"minecraft:connection": {
+			"type": "object",
+			"title": "Connection",
+			"description": "Adds connection states to the block. The values of these states are updated when the block or neighboring blocks change.",
+			"additionalProperties": false,
+			"required": ["enabled_states"],
+			"properties": {
+				"enabled_states": {
+					"type": "array",
+					"minItems": 1,
+					"uniqueItems": true,
+					"description": "Which connection states to enable. Options: [\"minecraft:cardinal_connections\"]. Must specify at least one.",
+					"items": {
+						"type": "string",
+						"title": "Connection Enabled State",
+						"enum": ["minecraft:cardinal_connections"]
+					}
+				}
+			}
+		},
+		"minecraft:multi_block": {
+			"type": "object",
+			"title": "Multi Block",
+			"description": "Adds the \"minecraft:multi_block_part\" state and multi block functionality to the block.",
+			"additionalProperties": false,
+			"required": ["direction", "enabled_states"],
+			"properties": {
+				"direction": {
+					"type": "string",
+					"title": "Facing",
+					"description": "The direction the block parts are placed starting from 'minecraft:multi_block_part' permutation '0' to permutation 'parts'. Default value is 'up'.",
+					"enum": ["down", "up"]
+				},
+				"enabled_states": {
+					"type": "array",
+					"minItems": 1,
+					"description": "Which state to enable. Must specify at least one. Options: [\"minecraft:multi_block_part\"].",
+					"uniqueItems": true,
+					"items": {
+						"type": "string",
+						"title": "Multi Block Enabled State",
+						"enum": ["minecraft:multi_block_part"]
+					}
+				},
+				"parts": {
+					"type": "integer",
+					"minimum": 2,
+					"maximum": 4,
+					"description": "The number of block parts, this sets the value for state 'minecraft:multi_block_part'. Default value is '2'.",
+					"default": 2
+				}
+			}
+		},
+		"minecraft:placement_direction": {
+			"type": "object",
+			"title": "Placement Direction",
+			"description": "Adds the \"minecraft:cardinal_direction\", \"minecraft:facing_direction\" and/or \"minecraft:corner_and_cardinal_direction\" states and setter function to the block.",
+			"additionalProperties": false,
+			"required": ["enabled_states"],
+			"properties": {
+				"blocks_to_corner_with": {
+					"type": "array",
+					"description": "A list of block descriptors that define the blocks to connect with the corner shape.",
+					"items": {
+						"$ref": "../../../../vanilla/server/block_descriptor.json"
+					}
+				},
+				"enabled_states": {
+					"type": "array",
+					"minItems": 1,
+					"uniqueItems": true,
+					"description": "Which states to enable. Must specify at least one. Options: [\"minecraft:cardinal_direction\", \"minecraft:facing_direction\", \"minecraft:corner_and_cardinal_direction\"].",
+					"items": {
+						"type": "string",
+						"title": "Placement Position Enabled State",
+						"enum": [
+							"minecraft:cardinal_direction",
+							"minecraft:corner_and_cardinal_direction",
+							"minecraft:facing_direction"
+						]
+					}
+				},
+				"y_rotation_offset": {
+					"type": "number",
+					"maximum": 360,
+					"minimum": 0,
+					"multipleOf": 90,
+					"description": "The y rotation offset to apply to the block. Must be [0.0, 90.0, 180.0, 270.0, 360.0]. Default is 0, meaning if the player is facing north, the \"minecraft:cardinal_direction\" and/or \"minecraft:facing_direction\" state will be north.",
+					"enum": [0, 90, 180, 270, 360]
+				}
+			}
+		},
+		"minecraft:placement_position": {
+			"type": "object",
+			"title": "Placement Position",
+			"description": "Adds the \"minecraft:block_face\" and/or \"minecraft:vertical_half\" states and setter function to the block.",
+			"additionalProperties": false,
+			"required": ["enabled_states"],
+			"properties": {
+				"enabled_states": {
+					"type": "array",
+					"minItems": 1,
+					"uniqueItems": true,
+					"description": "Which states to enable. Must specify at least one. Options: [\"minecraft:block_face\", \"minecraft:vertical_half\"].",
+					"items": {
+						"type": "string",
+						"title": "Placement Position Enabled State",
+						"enum": ["minecraft:block_face", "minecraft:vertical_half"]
+					}
+				}
+			}
+		}
+	}
+}

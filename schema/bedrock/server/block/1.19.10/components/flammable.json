@@ -1,0 +1,31 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.19.10/components/flammable.json",
+	"oneOf": [
+		{
+			"type": "boolean",
+			"description": "If true, uses default flammable values. If false, disables flammable properties."
+		},
+		{
+			"type": "object",
+			"title": "Flammable",
+			"description": "Describes the flammable properties for this block.",
+			"additionalProperties": false,
+			"properties": {
+				"catch_chance_modifier": {
+					"type": "integer",
+					"default": 5,
+					"minimum": 0,
+					"description": "A modifier affecting the chance that this block will catch flame when next to a fire. Higher number means more likely to catch on fire."
+				},
+				"destroy_chance_modifier": {
+					"type": "integer",
+					"default": 20,
+					"minimum": 0,
+					"description": "A modifier affecting the chance that this block will be destroyed by flames when on fire. Higher number means more likely to be destroyed by fire."
+				}
+			},
+			"required": ["catch_chance_modifier", "destroy_chance_modifier"]
+		}
+	]
+}

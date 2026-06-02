@@ -1,0 +1,7 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.19.10/components/explosion_resistance.json",
+	"type": "number",
+	"title": "Explosion Resistance Component",
+	"description": "How much power it can resist from explosion. Bigger the value is, more explosion power it blocks from explosion. If the value is less than remaining power from explosion, the block would destroy"
+}

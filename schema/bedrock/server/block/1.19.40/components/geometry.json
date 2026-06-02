@@ -1,0 +1,26 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.19.40/components/geometry.json",
+	"title": "Geometry Component",
+	"description": "The description identifier of the geometry file to use to render this block. This identifier must match an existing geometry identifier in any of the currently loaded resource packs.",
+	"anyOf": [
+		{
+			"description": "A simple geometry identifier string, or one of the vanilla identifiers.",
+			"$ref": "../../../../../vanilla/reference/block_geometry.json"
+		},
+		{
+			"type": "object",
+			"title": "Geometry Object",
+			"description": "An object describing the geometry to use.",
+			"additionalProperties": false,
+			"required": ["identifier"],
+			"properties": {
+				"identifier": {
+					"title": "Identifier",
+					"description": "Specifies the geometry description identifier to use to render this block. This identifier must match an existing geometry identifier in any of the currently loaded resource packs.",
+					"$ref": "../../../../../vanilla/reference/block_geometry.json"
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.21.80/_index.json",
+	"type": "object",
+	"title": "Block 1.21.80",
+	"description": "Block definition file for behavior packs (format_version 1.21.80)",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:block"],
+	"properties": {
+		"format_version": {
+			"$ref": "../../../../vanilla/definition/format_version.json",
+			"const": "1.21.80"
+		},
+		"minecraft:block": {
+			"type": "object",
+			"title": "Block",
+			"description": "Root block object",
+			"additionalProperties": false,
+			"required": ["description"],
+			"properties": {
+				"description": {
+					"$ref": "../1.20.10/description.json"
+				},
+				"components": {
+					"$ref": "./components/_index.json"
+				},
+				"permutations": {
+					"type": "array",
+					"description": "List of permutations for the block.",
+					"items": {
+						"type": "object",
+						"title": "Permutation",
+						"additionalProperties": false,
+						"properties": {
+							"condition": {
+								"$ref": "../../../../vanilla/definition/molang.json#/$defs/string",
+								"description": "A Molang expression that evaluates to true or false to determine if this permutation should be used. For permutation conditions you are limited to using one Molang query: 'query.block_state()'."
+							},
+							"components": {
+								"$ref": "./components/_index.json",
+								"description": "List of all components that are used in this permutation."
+							}
+						}
+					}
+				}
+			}
+		},
+		"use_beta_features": {
+			"type": "boolean"
+		}
+	}
+}

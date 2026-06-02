@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.26.20/components/chest_obstruction.json",
+	"type": "object",
+	"title": "Chest Obstruction Component",
+	"description": "This defines how a block reacts to a chest being opened underneath it.",
+	"additionalProperties": false,
+	"properties": {
+		"obstruction_rule": {
+			"type": "string",
+			"title": "Chest Obstruction rule",
+			"enum": ["always", "never", "shape"],
+			"default": "shape"
+		}
+	}
+}

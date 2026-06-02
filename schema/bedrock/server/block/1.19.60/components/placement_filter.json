@@ -1,0 +1,39 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.19.60/components/placement_filter.json",
+	"type": "object",
+	"title": "Placement Filter Component",
+	"description": "Sets rules for under what conditions the block can be placed and survive.",
+	"additionalProperties": false,
+	"properties": {
+		"conditions": {
+			"type": "array",
+			"description": "List of conditions where the block can be placed/survive. Limited to 64 conditions.",
+			"items": {
+				"type": "object",
+				"title": "Condition",
+				"additionalProperties": false,
+				"properties": {
+					"allowed_faces": {
+						"type": "array",
+						"description": "List of describing which face(s) this block can be placed on.",
+						"items": {
+							"type": "string",
+							"enum": ["up", "down", "north", "south", "east", "west", "side", "all"]
+						},
+						"maxItems": 6
+					},
+					"block_filter": {
+						"type": "array",
+						"description": "List of blocks that this block can be placed against in the allowed_faces direction. Limited to 64 blocks.",
+						"items": {
+							"$ref": "../../../../../vanilla/server/block_descriptor.json"
+						},
+						"maxItems": 64
+					}
+				}
+			},
+			"maxItems": 64
+		}
+	}
+}

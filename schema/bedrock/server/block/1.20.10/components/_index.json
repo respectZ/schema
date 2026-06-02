@@ -1,0 +1,66 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.20.10/components/_index.json",
+	"type": "object",
+	"title": "Components",
+	"description": "Block components",
+	"additionalProperties": false,
+	"properties": {
+		"minecraft:destructible_by_explosion": {
+			"$ref": "../../1.19.20/components/destructible_by_explosion.json"
+		},
+		"minecraft:destructible_by_mining": {
+			"$ref": "../../1.19.20/components/destructible_by_mining.json"
+		},
+		"minecraft:flammable": {
+			"$ref": "../../1.19.10/components/flammable.json"
+		},
+		"minecraft:friction": {
+			"$ref": "../../1.19.20/components/friction.json"
+		},
+		"minecraft:light_emission": {
+			"$ref": "../../1.19.10/components/light_emission.json"
+		},
+		"minecraft:loot": {
+			"$ref": "../../1.19.10/components/loot.json"
+		},
+		"minecraft:map_color": {
+			"$ref": "../../1.19.10/components/map_color.json"
+		},
+		"minecraft:light_dampening": {
+			"$ref": "../../1.19.40/components/light_dampening.json"
+		},
+		"minecraft:material_instances": {
+			"$ref": "../../1.19.40/components/material_instances.json"
+		},
+		"minecraft:collision_box": {
+			"$ref": "../../1.19.50/components/collision_box.json"
+		},
+		"minecraft:crafting_table": {
+			"$ref": "../../1.19.50/components/crafting_table.json"
+		},
+		"minecraft:display_name": {
+			"$ref": "../../1.19.60/components/display_name.json"
+		},
+		"minecraft:placement_filter": {
+			"$ref": "../../1.19.60/components/placement_filter.json"
+		},
+		"minecraft:selection_box": {
+			"$ref": "../../1.19.60/components/selection_box.json"
+		},
+		"minecraft:transformation": {
+			"$ref": "../../1.19.80/components/transformation.json"
+		},
+		"minecraft:geometry": {
+			"$ref": "geometry.json"
+		}
+	},
+	"patternProperties": {
+		"^tag:.+$": {
+			"type": "object",
+			"title": "Block Tag",
+			"description": "Block tag",
+			"additionalProperties": false
+		}
+	}
+}

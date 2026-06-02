@@ -1,0 +1,42 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.19.10/components/_index.json",
+	"type": "object",
+	"title": "Components",
+	"description": "Block components",
+	"additionalProperties": false,
+	"properties": {
+		"minecraft:block_light_filter": {
+			"$ref": "block_light_filter.json"
+		},
+		"minecraft:destroy_time": {
+			"$ref": "destroy_time.json"
+		},
+		"minecraft:explosion_resistance": {
+			"$ref": "explosion_resistance.json"
+		},
+		"minecraft:flammable": {
+			"$ref": "flammable.json"
+		},
+		"minecraft:friction": {
+			"$ref": "friction.json"
+		},
+		"minecraft:light_emission": {
+			"$ref": "light_emission.json"
+		},
+		"minecraft:loot": {
+			"$ref": "loot.json"
+		},
+		"minecraft:map_color": {
+			"$ref": "map_color.json"
+		}
+	},
+	"patternProperties": {
+		"^tag:.+$": {
+			"type": "object",
+			"title": "Block Tag",
+			"description": "Block tag",
+			"additionalProperties": false
+		}
+	}
+}

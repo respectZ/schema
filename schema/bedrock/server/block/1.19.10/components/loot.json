@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.19.10/components/loot.json",
+	"type": "string",
+	"title": "Loot Component",
+	"description": "The path to the loot table, relative to the behavior pack. Path string is limited to 256 characters",
+	"maxLength": 256
+}

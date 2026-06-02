@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.19.10/components/block_light_filter.json",
+	"type": "integer",
+	"title": "Block Light Filter Component",
+	"description": "The amount that light will be dampened when it passes through the block, in a range (0-15). Higher value means the light will be dampened more",
+	"minimum": 0,
+	"maximum": 15
+}

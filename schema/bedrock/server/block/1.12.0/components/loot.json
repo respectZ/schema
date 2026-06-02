@@ -1,0 +1,21 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.12.0/components/loot.json",
+	"oneOf": [
+		{
+			"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path"
+		},
+		{
+			"type": "object",
+			"title": "Loot",
+			"description": "Loot table component used to set what loot table is used when a block is destroyed.",
+			"additionalProperties": false,
+			"properties": {
+				"loot_table": {
+					"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path"
+				}
+			},
+			"required": ["loot_table"]
+		}
+	]
+}

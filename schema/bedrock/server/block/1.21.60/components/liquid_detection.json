@@ -1,0 +1,52 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/block/1.21.60/components/liquid_detection.json",
+	"type": "object",
+	"title": "Liquid Detection Component",
+	"description": "The definitions for how a block behaves when detecting liquid.",
+	"additionalProperties": false,
+	"properties": {
+		"can_contain_liquid": {
+			"type": "boolean",
+			"description": "Whether this block can contain the liquid. For example, if the liquid type is 'water', this means the block can be waterlogged.",
+			"default": false
+		},
+		"detection_rules": {
+			"type": "array",
+			"description": "List of detection rules. Only one rule definition is allowed per liquid type - if multiple are specified, the first will be used and the rest will be ignored.",
+			"minItems": 1,
+			"maxItems": 1,
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"liquid_type": {
+						"type": "string",
+						"description": "The type of liquid this detection rule is for. Currently, 'water' is the only supported liquid type.",
+						"default": "water",
+						"const": "water"
+					},
+					"on_liquid_touches": {
+						"type": "string",
+						"description": "How the block reacts to flowing water.",
+						"default": "blocking",
+						"enum": ["blocking", "broken", "popped", "no_reaction"]
+					}
+				}
+			}
+		},
+		"stops_liquid_flowing_from_direction": {
+			"type": "array",
+			"description": "When a block contains a liquid, controls the directions in which the liquid can't flow out from the block.",
+			"items": {
+				"type": "string",
+				"enum": ["up", "down", "north", "south", "east", "west"]
+			}
+		},
+		"use_liquid_clipping": {
+			"type": "boolean",
+			"description": "Whether this block uses the encompassing collider to visually clip the liquid.",
+			"default": true
+		}
+	}
+}
