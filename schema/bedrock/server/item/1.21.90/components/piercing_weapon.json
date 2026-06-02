@@ -7,7 +7,7 @@
 	"additionalProperties": false,
 	"properties": {
 		"creative_reach": {
-			"$ref": "#/defs/float_range",
+			"$ref": "#/$defs/float_range",
 			"description": "Defines the reach used when the user is in Creative Mode. Defaults to \"reach\" if unspecified."
 		},
 		"hitbox_margin": {
@@ -16,7 +16,7 @@
 			"default": 0
 		},
 		"reach": {
-			"$ref": "#/defs/float_range",
+			"$ref": "#/$defs/float_range",
 			"description": "Defines the range (in blocks) along the user's view vector where entities can be hit. Only targets within this distance are considered. Block collisions between the user and target block damage and its effects.",
 			"default": {
 				"max": 3,
@@ -24,7 +24,7 @@
 			}
 		}
 	},
-	"defs": {
+	"$defs": {
 		"float_range": {
 			"title": "FloatRange",
 			"type": "object",

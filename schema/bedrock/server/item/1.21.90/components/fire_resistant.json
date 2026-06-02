@@ -1,6 +1,6 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/item/1.21.90/components/fire_resistane.json",
+	"$id": "schema/bedrock/server/item/1.21.90/components/fire_resistant.json",
 	"type": "object",
 	"title": "Fire Resistant",
 	"description": "Determines whether the item is immune to burning when dropped in fire or lava.",
