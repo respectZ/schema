@@ -1,0 +1,63 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/biome/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Biome Definition",
+	"description": "Schema for custom biome definition files used by behavior packs.",
+	"required": ["format_version"],
+	"properties": {
+		"format_version": {
+			"enum": ["1.21.110", "1.26.0", "1.26.20", "1.26.30"]
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.21.110"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.21.110/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.26.0"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.26.0/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.26.20"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.26.20/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.26.30"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.26.30/_index.json"
+			}
+		}
+	]
+}

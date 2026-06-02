@@ -1,0 +1,66 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/biome/1.21.110/components/capped.json",
+	"type": "object",
+	"title": "minecraft:capped",
+	"description": "Generates surface on blocks with non-solid blocks above or below.",
+	"additionalProperties": false,
+	"required": [
+		"ceiling_materials",
+		"floor_materials",
+		"foundation_material",
+		"sea_material",
+		"type"
+	],
+	"properties": {
+		"beach_material": {
+			"$ref": "#/$defs/block_specifier",
+			"description": "Material used to decorate surface near sea level."
+		},
+		"ceiling_materials": {
+			"type": "array",
+			"description": "Materials used for the surface ceiling.",
+			"minItems": 1,
+			"items": {
+				"$ref": "#/$defs/block_specifier"
+			}
+		},
+		"floor_materials": {
+			"type": "array",
+			"description": "Materials used for the surface floor.",
+			"minItems": 1,
+			"items": {
+				"$ref": "#/$defs/block_specifier"
+			}
+		},
+		"foundation_material": {
+			"$ref": "#/$defs/block_specifier",
+			"description": "Material used to replace solid blocks that are not surface blocks."
+		},
+		"sea_material": {
+			"$ref": "#/$defs/block_specifier",
+			"description": "Material used to replace air blocks below sea level."
+		},
+		"type": {
+			"const": "minecraft:capped",
+			"description": "Controls the type of surface builder to use.",
+			"title": "SurfaceBuilderType",
+			"enum": [
+				"minecraft:overworld",
+				"minecraft:frozen_ocean",
+				"minecraft:mesa",
+				"minecraft:swamp",
+				"minecraft:capped",
+				"minecraft:the_end",
+				"minecraft:noise_gradient"
+			]
+		}
+	},
+	"$defs": {
+		"block_specifier": {
+			"title": "Block Specifier",
+			"description": "Specifies a particular block. Can be a string block name or a JSON object with name and states.",
+			"$ref": "../../../../../vanilla/server/block_descriptor.json#/$defs/block_without_tags"
+		}
+	}
+}

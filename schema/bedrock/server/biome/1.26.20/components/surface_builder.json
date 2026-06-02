@@ -1,0 +1,44 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/biome/1.26.20/components/surface_builder.json",
+	"type": "object",
+	"title": "minecraft:surface_builder",
+	"description": "Controls the materials used for terrain generation.",
+	"additionalProperties": false,
+	"required": ["builder"],
+	"properties": {
+		"builder": {
+			"description": "Controls block types and strategy used for terrain generation.",
+			"oneOf": [
+				{
+					"$ref": "../../1.21.110/components/overworld.json",
+					"description": "Controls the blocks used for the default Minecraft Overworld terrain generation."
+				},
+				{
+					"$ref": "../../1.21.110/components/frozen_ocean.json",
+					"description": "Similar to overworld_surface. Adds icebergs."
+				},
+				{
+					"$ref": "../../1.21.110/components/mesa.json",
+					"description": "Similar to overworld_surface. Adds colored strata and optional pillars."
+				},
+				{
+					"$ref": "../../1.21.110/components/swamp.json",
+					"description": "Used to add decoration to the surface of swamp biomes such as water lilies."
+				},
+				{
+					"$ref": "../../1.21.110/components/capped.json",
+					"description": "Generates surface on blocks with non-solid blocks above or below."
+				},
+				{
+					"$ref": "../../1.21.110/components/the_end.json",
+					"description": "Use default Minecraft End terrain generation."
+				},
+				{
+					"$ref": "./noise_gradient.json",
+					"description": "Places continuous bands of blocks according to a noise distribution. This surface builder's processing has been implemented with sub-terrain height ranges in mind."
+				}
+			]
+		}
+	}
+}

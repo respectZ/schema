@@ -1,0 +1,73 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/biome/1.21.110/components/swamp.json",
+	"type": "object",
+	"title": "minecraft:swamp",
+	"description": "Used to add decoration to the surface of swamp biomes such as water lilies.",
+	"additionalProperties": false,
+	"required": [
+		"foundation_material",
+		"max_puddle_depth_below_sea_level",
+		"mid_material",
+		"sea_floor_depth",
+		"sea_floor_material",
+		"sea_material",
+		"top_material",
+		"type"
+	],
+	"properties": {
+		"foundation_material": {
+			"$ref": "#/$defs/block_specifier",
+			"description": "Controls the block type used deep underground in this biome."
+		},
+		"max_puddle_depth_below_sea_level": {
+			"type": "integer",
+			"description": "Controls the depth at which surface level blocks can be replaced with water for puddles. The number represents the number of blocks (0, 127) below sea level that we will go down to look for a surface block.",
+			"minimum": 0,
+			"maximum": 127
+		},
+		"mid_material": {
+			"$ref": "#/$defs/block_specifier",
+			"description": "Controls the block type used in a layer below the surface of this biome."
+		},
+		"sea_floor_depth": {
+			"type": "integer",
+			"description": "Controls how deep below the world water level the floor should occur.",
+			"minimum": 0,
+			"maximum": 127
+		},
+		"sea_floor_material": {
+			"$ref": "#/$defs/block_specifier",
+			"description": "Controls the block type used as a floor for bodies of water in this biome."
+		},
+		"sea_material": {
+			"$ref": "#/$defs/block_specifier",
+			"description": "Controls the block type used for the bodies of water in this biome."
+		},
+		"top_material": {
+			"$ref": "#/$defs/block_specifier",
+			"description": "Controls the block type used for the surface of this biome."
+		},
+		"type": {
+			"const": "minecraft:swamp",
+			"description": "Controls the type of surface builder to use.",
+			"title": "SurfaceBuilderType",
+			"enum": [
+				"minecraft:overworld",
+				"minecraft:frozen_ocean",
+				"minecraft:mesa",
+				"minecraft:swamp",
+				"minecraft:capped",
+				"minecraft:the_end",
+				"minecraft:noise_gradient"
+			]
+		}
+	},
+	"$defs": {
+		"block_specifier": {
+			"title": "Block Specifier",
+			"description": "Specifies a particular block. Can be a string block name or a JSON object with name and states.",
+			"$ref": "../../../../../vanilla/server/block_descriptor.json#/$defs/block_without_tags"
+		}
+	}
+}

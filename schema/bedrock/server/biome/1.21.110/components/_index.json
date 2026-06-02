@@ -1,0 +1,49 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/biome/1.21.110/components/_index.json",
+	"type": "object",
+	"title": "Biome Components",
+	"description": "Any components that this Server Biome uses.",
+	"unevaluatedProperties": false,
+	"properties": {
+		"minecraft:climate": {
+			"$ref": "./climate.json"
+		},
+		"minecraft:creature_spawn_probability": {
+			"$ref": "./creature_spawn_probability.json"
+		},
+		"minecraft:humidity": {
+			"$ref": "./humidity.json"
+		},
+		"minecraft:map_tints": {
+			"$ref": "./map_tints.json"
+		},
+		"minecraft:mountain_parameters": {
+			"$ref": "./mountain_parameters.json"
+		},
+		"minecraft:multinoise_generation_rules": {
+			"$ref": "./multinoise_generation_rules.json"
+		},
+		"minecraft:overworld_generation_rules": {
+			"$ref": "./overworld_generation_rules.json"
+		},
+		"minecraft:overworld_height": {
+			"$ref": "./overworld_height.json"
+		},
+		"minecraft:partially_frozen": {
+			"$ref": "./partially_frozen.json"
+		},
+		"minecraft:replace_biomes": {
+			"$ref": "./replace_biomes.json"
+		},
+		"minecraft:surface_builder": {
+			"$ref": "./surface_builder.json"
+		},
+		"minecraft:surface_material_adjustments": {
+			"$ref": "./surface_material_adjustments.json"
+		},
+		"minecraft:tags": {
+			"$ref": "./tags.json"
+		}
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/biome/1.21.110/components/partially_frozen.json",
+	"type": "object",
+	"title": "minecraft:partially_frozen",
+	"description": "Component will impact the temperature in a frozen biome, causing some areas to not be frozen. Ex: patchy ice, patchy snow.",
+	"additionalProperties": false
+}

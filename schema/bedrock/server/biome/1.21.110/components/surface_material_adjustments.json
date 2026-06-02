@@ -1,0 +1,87 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/biome/1.21.110/components/surface_material_adjustments.json",
+	"type": "object",
+	"title": "minecraft:surface_material_adjustments",
+	"description": "Specify fine-detail changes to blocks used in terrain generation (based on a noise function).",
+	"additionalProperties": false,
+	"properties": {
+		"adjustments": {
+			"type": "array",
+			"description": "All adjustments that match the column's noise values will be applied in the order listed.",
+			"items": {
+				"$ref": "#/$defs/adjustment"
+			}
+		}
+	},
+	"$defs": {
+		"block_specifier": {
+			"title": "Block Specifier",
+			"description": "Specifies a particular block. Can be a string block name or a JSON object with name and states.",
+			"$ref": "../../../../../vanilla/server/block_descriptor.json#/$defs/block_without_tags"
+		},
+		"adjustment_materials": {
+			"type": "object",
+			"title": "Surface Adjustment Materials",
+			"description": "The specific blocks used for this surface adjustment.",
+			"additionalProperties": false,
+			"properties": {
+				"foundation_material": {
+					"$ref": "#/$defs/block_specifier",
+					"description": "Controls the block type used deep underground in this biome when this adjustment is active."
+				},
+				"mid_material": {
+					"$ref": "#/$defs/block_specifier",
+					"description": "Controls the block type used in a layer below the surface of this biome when this adjustment is active."
+				},
+				"sea_floor_material": {
+					"$ref": "#/$defs/block_specifier",
+					"description": "Controls the block type used as a floor for bodies of water in this biome when this adjustment is active."
+				},
+				"sea_material": {
+					"$ref": "#/$defs/block_specifier",
+					"description": "Controls the block type used in the bodies of water in this biome when this adjustment is active."
+				},
+				"top_material": {
+					"$ref": "#/$defs/block_specifier",
+					"description": "Controls the block type used for the surface of this biome when this adjustment is active."
+				}
+			}
+		},
+		"adjustment": {
+			"type": "object",
+			"title": "Surface Adjustment",
+			"description": "An adjustment to generated terrain, replacing blocks based on the specified settings.",
+			"additionalProperties": false,
+			"required": ["materials"],
+			"properties": {
+				"height_range": {
+					"type": "array",
+					"description": "Defines a range of values [min, max] for which this adjustment should be applied.",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {
+						"$ref": "../../../../../vanilla/definition/molang.json#/$defs/condition"
+					}
+				},
+				"materials": {
+					"$ref": "#/$defs/adjustment_materials",
+					"description": "The specific blocks used for this surface adjustment."
+				},
+				"noise_frequency_scale": {
+					"type": "number",
+					"description": "The scale to multiply by the position when accessing the noise value for the material adjustments."
+				},
+				"noise_range": {
+					"type": "array",
+					"description": "Defines a range of noise values [min, max] for which this adjustment should be applied.",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {
+						"type": "number"
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,55 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/biome/1.26.0/components/replace_biomes.json",
+	"type": "object",
+	"title": "minecraft:replace_biomes",
+	"description": "Replaces a specified portion of one or more Minecraft biomes.",
+	"additionalProperties": false,
+	"required": ["replacements"],
+	"properties": {
+		"replacements": {
+			"type": "array",
+			"description": "List of biome replacement configurations. Retroactively adding a new replacement to the front of this list will cause the world generation to change. Please add any new replacements to the end of the list. Each entry must include at least one target biome and have no duplicate entries.",
+			"minItems": 1,
+			"items": {
+				"$ref": "#/$defs/replacement"
+			}
+		}
+	},
+	"$defs": {
+		"replacement": {
+			"type": "object",
+			"title": "Biome Replacement",
+			"description": "Represents the replacement information used to determine the placement of the overriding biome.",
+			"additionalProperties": false,
+			"required": ["amount", "dimension", "noise_frequency_scale", "targets"],
+			"properties": {
+				"amount": {
+					"type": "number",
+					"description": "Noise value used to determine whether or not the replacement is attempted, similar to a percentage. Must be in the range (0.0, 1.0].",
+					"exclusiveMinimum": 0,
+					"maximum": 1
+				},
+				"dimension": {
+					"type": "string",
+					"description": "Dimension in which this replacement can happen. Can be either 'minecraft:overworld' or 'minecraft:nether'.",
+					"enum": ["minecraft:overworld", "minecraft:nether"]
+				},
+				"noise_frequency_scale": {
+					"type": "number",
+					"description": "Scaling value used to alter the frequency of replacement attempts. A lower frequency will mean a bigger contiguous biome area that occurs less often. A higher frequency will mean smaller contiguous biome areas that occur more often. Must be in the range (0.0, 100.0].",
+					"exclusiveMinimum": 0,
+					"maximum": 100
+				},
+				"targets": {
+					"type": "array",
+					"description": "Biomes that are going to be replaced by the overriding biome. Target biomes must not contain namespaces.",
+					"minItems": 1,
+					"items": {
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/biome_identifier"
+					}
+				}
+			}
+		}
+	}
+}

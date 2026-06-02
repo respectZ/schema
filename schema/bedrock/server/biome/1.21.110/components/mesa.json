@@ -1,0 +1,86 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/biome/1.21.110/components/mesa.json",
+	"type": "object",
+	"title": "minecraft:mesa",
+	"description": "Similar to overworld_surface. Adds colored strata and optional pillars.",
+	"additionalProperties": false,
+	"required": [
+		"bryce_pillars",
+		"clay_material",
+		"foundation_material",
+		"hard_clay_material",
+		"has_forest",
+		"mid_material",
+		"sea_floor_depth",
+		"sea_floor_material",
+		"sea_material",
+		"top_material",
+		"type"
+	],
+	"properties": {
+		"bryce_pillars": {
+			"type": "boolean",
+			"description": "Whether the mesa generates with pillars."
+		},
+		"clay_material": {
+			"$ref": "#/$defs/block_specifier",
+			"description": "Base clay block to use."
+		},
+		"foundation_material": {
+			"$ref": "#/$defs/block_specifier",
+			"description": "Controls the block type used deep underground in this biome."
+		},
+		"hard_clay_material": {
+			"$ref": "#/$defs/block_specifier",
+			"description": "Hardened clay block to use."
+		},
+		"has_forest": {
+			"type": "boolean",
+			"description": "Places coarse dirt and grass at high altitudes."
+		},
+		"mid_material": {
+			"$ref": "#/$defs/block_specifier",
+			"description": "Controls the block type used in a layer below the surface of this biome."
+		},
+		"sea_floor_depth": {
+			"type": "integer",
+			"description": "Controls how deep below the world water level the floor should occur.",
+			"minimum": 0,
+			"maximum": 127
+		},
+		"sea_floor_material": {
+			"$ref": "#/$defs/block_specifier",
+			"description": "Controls the block type used as a floor for bodies of water in this biome."
+		},
+		"sea_material": {
+			"$ref": "#/$defs/block_specifier",
+			"description": "Controls the block type used for the bodies of water in this biome."
+		},
+		"top_material": {
+			"$ref": "#/$defs/block_specifier",
+			"description": "Controls the block type used for the surface of this biome."
+		},
+		"type": {
+			"const": "minecraft:mesa",
+			"description": "Controls the type of surface builder to use.",
+			"title": "SurfaceBuilderType",
+			"enum": [
+				"minecraft:overworld",
+				"minecraft:frozen_ocean",
+				"minecraft:mesa",
+				"minecraft:swamp",
+				"minecraft:capped",
+				"minecraft:the_end",
+				"minecraft:noise_gradient"
+			]
+		}
+	},
+	"$defs": {
+		"block_specifier": {
+			"title": "Block Specifier",
+			"description": "Specifies a particular block. Can be a string block name or a JSON object with name and states.",
+			"$ref": "../../../../../vanilla/server/block_descriptor.json#/$defs/block_without_tags"
+		}
+	}
+}

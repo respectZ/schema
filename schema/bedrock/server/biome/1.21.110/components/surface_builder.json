@@ -1,0 +1,40 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/biome/1.21.110/components/surface_builder.json",
+	"type": "object",
+	"title": "minecraft:surface_builder",
+	"description": "Controls the materials used for terrain generation.",
+	"additionalProperties": false,
+	"required": ["builder"],
+	"properties": {
+		"builder": {
+			"description": "Controls the block types used for terrain generation.",
+			"oneOf": [
+				{
+					"$ref": "./overworld.json",
+					"description": "Controls the blocks used for the default Minecraft Overworld terrain generation."
+				},
+				{
+					"$ref": "./frozen_ocean.json",
+					"description": "Similar to overworld_surface. Adds icebergs."
+				},
+				{
+					"$ref": "./mesa.json",
+					"description": "Similar to overworld_surface. Adds colored strata and optional pillars."
+				},
+				{
+					"$ref": "./swamp.json",
+					"description": "Used to add decoration to the surface of swamp biomes such as water lilies."
+				},
+				{
+					"$ref": "./capped.json",
+					"description": "Generates surface on blocks with non-solid blocks above or below."
+				},
+				{
+					"$ref": "./the_end.json",
+					"description": "Use default Minecraft End terrain generation."
+				}
+			]
+		}
+	}
+}

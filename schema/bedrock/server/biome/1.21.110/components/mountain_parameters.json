@@ -1,0 +1,66 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/biome/1.21.110/components/mountain_parameters.json",
+	"type": "object",
+	"title": "minecraft:mountain_parameters",
+	"description": "Noise parameters used to drive mountain terrain generation in the Overworld.",
+	"additionalProperties": false,
+	"properties": {
+		"steep_material_adjustment": {
+			"$ref": "#/$defs/steep_material_adjustment",
+			"description": "Defines surface material for steep slopes."
+		},
+		"top_slide": {
+			"$ref": "#/$defs/top_slide",
+			"description": "Controls the density tapering that happens at the top of the world to prevent terrain from reaching too high."
+		}
+	},
+	"$defs": {
+		"block_specifier": {
+			"title": "Block Specifier",
+			"description": "Specifies a particular block. Can be a string block name or a JSON object with name and states.",
+			"$ref": "../../../../../vanilla/server/block_descriptor.json#/$defs/block_without_tags"
+		},
+		"steep_material_adjustment": {
+			"type": "object",
+			"title": "Steep Material Adjustment",
+			"description": "Defines surface material for steep slopes.",
+			"additionalProperties": false,
+			"properties": {
+				"east_slopes": {
+					"type": "boolean",
+					"description": "Enable for east-facing slopes."
+				},
+				"material": {
+					"$ref": "#/$defs/block_specifier",
+					"description": "Block type to use as steep material."
+				},
+				"north_slopes": {
+					"type": "boolean",
+					"description": "Enable for north-facing slopes."
+				},
+				"south_slopes": {
+					"type": "boolean",
+					"description": "Enable for south-facing slopes."
+				},
+				"west_slopes": {
+					"type": "boolean",
+					"description": "Enable for west-facing slopes."
+				}
+			}
+		},
+		"top_slide": {
+			"type": "object",
+			"title": "Top Slide",
+			"description": "Controls the density tapering that happens at the top of the world to prevent terrain from reaching too high.",
+			"additionalProperties": false,
+			"required": ["enabled"],
+			"properties": {
+				"enabled": {
+					"type": "boolean",
+					"description": "If false, top slide will be disabled. If true, other parameters will be taken into account."
+				}
+			}
+		}
+	}
+}

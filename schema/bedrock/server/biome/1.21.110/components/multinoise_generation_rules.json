@@ -1,0 +1,30 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/biome/1.21.110/components/multinoise_generation_rules.json",
+	"type": "object",
+	"title": "minecraft:multinoise_generation_rules",
+	"description": "Controls how this biome is instantiated (and then potentially modified) during world generation of the nether.",
+	"additionalProperties": false,
+	"properties": {
+		"target_altitude": {
+			"type": "number",
+			"description": "Altitude with which this biome should be generated, relative to other biomes."
+		},
+		"target_humidity": {
+			"type": "number",
+			"description": "Humidity with which this biome should be generated, relative to other biomes."
+		},
+		"target_temperature": {
+			"type": "number",
+			"description": "Temperature with which this biome should be generated, relative to other biomes."
+		},
+		"target_weirdness": {
+			"type": "number",
+			"description": "Weirdness with which this biome should be generated, relative to other biomes."
+		},
+		"weight": {
+			"type": "number",
+			"description": "Weight with which this biome should be generated, relative to other biomes."
+		}
+	}
+}

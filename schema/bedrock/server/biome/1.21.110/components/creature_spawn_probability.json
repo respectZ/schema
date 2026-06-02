@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/biome/1.21.110/components/creature_spawn_probability.json",
+	"type": "object",
+	"title": "minecraft:creature_spawn_probability",
+	"description": "Probability that creatures will spawn within the biome when a chunk is generated.",
+	"additionalProperties": false,
+	"properties": {
+		"probability": {
+			"type": "number",
+			"description": "Probabiltity between [0.0, 0.75] of creatures spawning within the biome on chunk generation.",
+			"minimum": 0,
+			"maximum": 0.75
+		}
+	}
+}

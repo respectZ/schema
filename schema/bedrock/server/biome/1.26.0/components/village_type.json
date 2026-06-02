@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/biome/1.26.0/components/village_type.json",
+	"type": "object",
+	"title": "minecraft:village_type",
+	"description": "Determines the type of village for the Biome.",
+	"additionalProperties": false,
+	"required": ["type"],
+	"properties": {
+		"type": {
+			"type": "string",
+			"description": "The village type for this biome.",
+			"title": "VillageType",
+			"enum": ["desert", "ice", "savanna", "taiga", "default"]
+		}
+	}
+}

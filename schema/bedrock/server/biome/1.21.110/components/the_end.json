@@ -1,0 +1,25 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/biome/1.21.110/components/the_end.json",
+	"type": "object",
+	"title": "minecraft:the_end",
+	"description": "Use default Minecraft End terrain generation.",
+	"additionalProperties": false,
+	"required": ["type"],
+	"properties": {
+		"type": {
+			"const": "minecraft:the_end",
+			"description": "Use default Minecraft End terrain generation.",
+			"title": "SurfaceBuilderType",
+			"enum": [
+				"minecraft:overworld",
+				"minecraft:frozen_ocean",
+				"minecraft:mesa",
+				"minecraft:swamp",
+				"minecraft:capped",
+				"minecraft:the_end",
+				"minecraft:noise_gradient"
+			]
+		}
+	}
+}
