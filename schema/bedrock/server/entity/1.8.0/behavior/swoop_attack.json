@@ -1,0 +1,31 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/swoop_attack.json",
+	"type": "object",
+	"title": "Behavior Swoop Attack",
+	"description": "Allows the mob to move to attack a target. The goal ends if it has a horizontal collision or gets hit. Built to be used with flying mobs.",
+	"additionalProperties": false,
+	"properties": {
+		"delay_range": {
+			"oneOf": [
+				{
+					"type": "number",
+					"description": "Fixed delay in seconds between swoop attempts."
+				},
+				{
+					"type": "array",
+					"items": { "type": "number", "minimum": 0 },
+					"minItems": 2,
+					"maxItems": 2,
+					"description": "Range [min, max] of the random delay between swoop attempts."
+				}
+			],
+			"description": "Delay between swoop attempts in seconds."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Movement speed multiplier while swooping."
+		}
+	}
+}

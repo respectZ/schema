@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/peek.json",
+	"type": "object",
+	"title": "Peek",
+	"description": "Defines the entity's 'peek' behavior, defining the events that should be called during it",
+	"additionalProperties": false,
+	"properties": {
+		"on_close": {
+			"type": "string",
+			"description": "Event to call when the entity is done peeking."
+		},
+		"on_open": {
+			"type": "string",
+			"description": "Event to call when the entity starts peeking."
+		},
+		"on_target_open": {
+			"type": "string",
+			"description": "Event to call when the entity's target entity starts peeking."
+		}
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/ocelotattack.json",
+	"type": "object",
+	"title": "Behavior Ocelot Attack",
+	"description": "Can only be used by the Ocelot. Allows it to perform the sneak and pounce attack.",
+	"additionalProperties": false,
+	"properties": {
+		"sneak_speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Sneak speed multiplier while approaching the target."
+		},
+		"sprint_speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Sprint speed multiplier while approaching the target."
+		},
+		"walk_speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Walk speed multiplier while approaching the target."
+		}
+	}
+}

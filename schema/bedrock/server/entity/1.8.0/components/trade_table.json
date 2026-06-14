@@ -1,0 +1,18 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/trade_table.json",
+	"type": "object",
+	"title": "Trade Table",
+	"description": "Defines this entity's ability to trade with players.",
+	"additionalProperties": false,
+	"properties": {
+		"display_name": {
+			"$ref": "../../../../../vanilla/client/lang_keys.json",
+			"description": "Name to be displayed while trading with this entity."
+		},
+		"table": {
+			"$ref": "../../../../../vanilla/server/paths.json#/$defs/trading_path",
+			"description": "File path relative to the resource pack root for this entity's trades."
+		}
+	}
+}

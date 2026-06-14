@@ -1,0 +1,30 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/random_sitting.json",
+	"type": "object",
+	"title": "Behavior Random Sitting",
+	"description": "Allows the mob to randomly sit for a duration.",
+	"additionalProperties": false,
+	"properties": {
+		"cooldown": {
+			"type": "number",
+			"default": 100,
+			"description": "Minimum time in ticks between sitting."
+		},
+		"min_sit_time": {
+			"type": "number",
+			"default": 10,
+			"description": "Minimum time in seconds to sit."
+		},
+		"start_chance": {
+			"type": "number",
+			"default": 0.1,
+			"description": "Probability per tick of starting to sit."
+		},
+		"stop_chance": {
+			"type": "number",
+			"default": 0.3,
+			"description": "Probability per tick of stopping sitting."
+		}
+	}
+}

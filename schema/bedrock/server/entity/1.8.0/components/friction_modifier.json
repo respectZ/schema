@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/friction_modifier.json",
+	"type": "object",
+	"title": "Friction Modifier",
+	"description": "Defines how much does friction affect this entity.",
+	"additionalProperties": false,
+	"properties": {
+		"value": {
+			"type": "number",
+			"default": 1.0,
+			"description": "The higher the number, the more the friction affects this entity. 1.0 means regular friction, 2.0 means twice as much."
+		}
+	}
+}

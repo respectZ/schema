@@ -1,0 +1,55 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/ranged_attack.json",
+	"type": "object",
+	"title": "Behavior Ranged Attack",
+	"description": "Allows the mob to use ranged attacks like shooting arrows.",
+	"additionalProperties": false,
+	"properties": {
+		"attack_interval_max": {
+			"type": "integer",
+			"default": 0,
+			"description": "Maximum time in ticks between attacks."
+		},
+		"attack_interval_min": {
+			"type": "integer",
+			"default": 0,
+			"description": "Minimum time in ticks between attacks."
+		},
+		"attack_radius": {
+			"type": "number",
+			"default": 0.0,
+			"description": "Maximum distance in blocks at which the entity will attack."
+		},
+		"burst_interval": {
+			"type": "number",
+			"default": 0.0,
+			"description": "Time in seconds between bursts of shots."
+		},
+		"burst_shots": {
+			"type": "integer",
+			"default": 1,
+			"description": "Number of shots per burst."
+		},
+		"charge_charged_trigger": {
+			"type": "number",
+			"default": 0.0,
+			"description": "Charge time in seconds at which a charged trigger fires."
+		},
+		"charge_shoot_trigger": {
+			"type": "number",
+			"default": 0.0,
+			"description": "Charge time in seconds at which a shoot trigger fires."
+		},
+		"ranged_fov": {
+			"type": "number",
+			"default": 90.0,
+			"description": "Field of view, in degrees, within which the entity can perform the ranged attack."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Movement speed multiplier while chasing the target."
+		}
+	}
+}

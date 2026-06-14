@@ -1,0 +1,43 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/nameable.json",
+	"type": "object",
+	"title": "Nameable",
+	"description": "Allows this entity to be named (e.g. using a name tag)",
+	"additionalProperties": false,
+	"properties": {
+		"allowNameTagRenaming": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true, this entity can be renamed with name tags."
+		},
+		"alwaysShow": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, the name will always be shown."
+		},
+		"default_trigger": {
+			"type": "string",
+			"description": "Trigger to run when the entity gets named."
+		},
+		"name_actions": {
+			"type": "array",
+			"description": "Describes the special names for this entity and the events to call when the entity acquires those names.",
+			"items": {
+				"type": "object",
+				"required": ["name_filter"],
+				"additionalProperties": false,
+				"properties": {
+					"name_filter": {
+						"type": "string",
+						"description": "List of special names that will cause the events defined in 'on_named' to fire."
+					},
+					"on_named": {
+						"$ref": "../triggers.json",
+						"description": "Event to be called when this entity acquires the name specified in 'name_filter'."
+					}
+				}
+			}
+		}
+	}
+}

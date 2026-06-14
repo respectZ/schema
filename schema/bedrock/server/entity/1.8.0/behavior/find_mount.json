@@ -1,0 +1,35 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/find_mount.json",
+	"type": "object",
+	"title": "Behavior Find Mount",
+	"description": "Allows the mob to look around for another mob to ride atop it.",
+	"additionalProperties": false,
+	"properties": {
+		"avoid_water": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the entity avoids water while pathing to a mount."
+		},
+		"mount_distance": {
+			"type": "number",
+			"default": -1.0,
+			"description": "Distance in blocks at which the entity is considered to have reached the mount."
+		},
+		"start_delay": {
+			"type": "integer",
+			"default": 0,
+			"description": "Time in ticks before the entity starts looking for a mount."
+		},
+		"target_needed": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the entity needs a specific target."
+		},
+		"within_radius": {
+			"type": "number",
+			"default": 0.0,
+			"description": "Search radius in blocks."
+		}
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/take_flower.json",
+	"type": "object",
+	"title": "Behavior Take Flower",
+	"description": "Can only be used by Villagers. Allows the mob to accept flowers from Iron Golems.",
+	"additionalProperties": false,
+	"properties": {}
+}

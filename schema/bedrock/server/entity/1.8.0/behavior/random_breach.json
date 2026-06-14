@@ -1,0 +1,35 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/random_breach.json",
+	"type": "object",
+	"title": "Behavior Random Breach",
+	"description": "Allows the mob to randomly break surface of the water.",
+	"additionalProperties": false,
+	"properties": {
+		"cooldown_time": {
+			"type": "number",
+			"default": 0.0,
+			"description": "Time in seconds between breach attempts."
+		},
+		"interval": {
+			"type": "integer",
+			"default": 120,
+			"description": "Time in ticks between breach attempts."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Movement speed multiplier while breaching."
+		},
+		"xz_dist": {
+			"type": "integer",
+			"default": 10,
+			"description": "Maximum horizontal distance in blocks of the breach destination."
+		},
+		"y_dist": {
+			"type": "integer",
+			"default": 7,
+			"description": "Maximum vertical distance in blocks of the breach destination."
+		}
+	}
+}

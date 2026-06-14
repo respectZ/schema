@@ -1,0 +1,45 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/entity_types.json",
+	"type": "array",
+	"title": "Behavior Entity Types",
+	"description": "List of entity-type filters used by behavior components.",
+	"items": {
+		"type": "object",
+		"additionalProperties": false,
+		"properties": {
+			"filters": {
+				"$ref": "../../../../vanilla/server/filter/entity/_index.json",
+				"description": "Filter to test entities of this type."
+			},
+			"max_dist": {
+				"type": "number",
+				"default": 16,
+				"description": "Maximum distance in blocks at which the entity can be detected."
+			},
+			"must_see": {
+				"type": "boolean",
+				"default": false,
+				"description": "Whether the entity must be visible (line of sight) to be detected."
+			},
+			"must_see_forget_duration": {
+				"type": "number",
+				"description": "Time in seconds before a lost target is forgotten even if it cannot be seen."
+			},
+			"sprint_speed_multiplier": {
+				"type": "number",
+				"default": 1.0,
+				"description": "Sprint speed multiplier when pursuing this entity type."
+			},
+			"walk_speed_multiplier": {
+				"type": "number",
+				"default": 1.0,
+				"description": "Walk speed multiplier when pursuing this entity type."
+			},
+			"reevaluate_description": {
+				"type": "boolean",
+				"description": "Whether to re-evaluate the filter description each tick."
+			}
+		}
+	}
+}

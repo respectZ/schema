@@ -1,0 +1,7 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/navigation.generic.json",
+	"$ref": "../navigation.json",
+	"title": "Navigation Generic",
+	"description": "Allows this entity to generate paths by walking, swimming, flying and/or climbing around and jumping up and down a block."
+}

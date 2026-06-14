@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/walk_animation_speed.json",
+	"type": "object",
+	"title": "Walk Animation Speed",
+	"description": "Sets the speed multiplier for this entity's walk animation speed.",
+	"additionalProperties": false,
+	"properties": {
+		"value": {
+			"type": "number",
+			"default": 1.0,
+			"description": "The higher the number, the faster the walk animation plays. 1.0 means normal speed, 2.0 means twice as fast."
+		}
+	}
+}

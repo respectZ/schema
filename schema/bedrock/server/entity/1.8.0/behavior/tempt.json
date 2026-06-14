@@ -1,0 +1,32 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/tempt.json",
+	"type": "object",
+	"title": "Behavior Tempt",
+	"description": "Allows the mob to be tempted by food they like.",
+	"additionalProperties": false,
+	"properties": {
+		"can_get_scared": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the entity can be scared while tempted."
+		},
+		"items": {
+			"type": "array",
+			"description": "Items that tempt this entity.",
+			"items": {
+				"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+			}
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Movement speed multiplier while tempted."
+		},
+		"within_radius": {
+			"type": "number",
+			"default": 0.0,
+			"description": "Radius in blocks in which the entity is tempted."
+		}
+	}
+}

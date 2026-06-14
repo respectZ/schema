@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/ground_offset.json",
+	"type": "object",
+	"title": "Ground Offset",
+	"description": "Sets the offset from the ground that the entity is actually at.",
+	"additionalProperties": false,
+	"properties": {
+		"value": {
+			"type": "number",
+			"default": 0.0,
+			"description": "The value of the entity's offset from the terrain, in blocks."
+		}
+	}
+}

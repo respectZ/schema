@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/flee_sun.json",
+	"type": "object",
+	"title": "Behavior Flee Sun",
+	"description": "Allows the mob to run away from direct sunlight and seek shade.",
+	"additionalProperties": false,
+	"properties": {
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Movement speed multiplier while fleeing the sun."
+		}
+	}
+}

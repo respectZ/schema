@@ -1,0 +1,19 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/shooter.json",
+	"type": "object",
+	"title": "Shooter",
+	"description": "Defines the entity's ranged attack behavior.",
+	"additionalProperties": false,
+	"properties": {
+		"auxVal": {
+			"type": "integer",
+			"default": -1,
+			"description": "ID of the Potion effect to be applied on hit."
+		},
+		"def": {
+			"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+			"description": "Entity definition to use as projectile for the ranged attack. The entity definition must have the projectile component to be able to be shot as a projectile."
+		}
+	}
+}

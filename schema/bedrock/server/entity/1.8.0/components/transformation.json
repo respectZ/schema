@@ -1,0 +1,83 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/transformation.json",
+	"type": "object",
+	"title": "Transformation",
+	"description": "Defines an entity's transformation from the current definition into another",
+	"additionalProperties": false,
+	"properties": {
+		"add": {
+			"type": "object",
+			"description": "List of components to add to the entity after the transformation.",
+			"additionalProperties": false,
+			"properties": {
+				"component_groups": {
+					"type": "array",
+					"description": "Names of component groups to add.",
+					"items": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"begin_transform_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "Sound to play when the transformation starts."
+		},
+		"delay": {
+			"type": "object",
+			"description": "Defines the properties of the delay for the transformation.",
+			"additionalProperties": false,
+			"properties": {
+				"value": {
+					"type": "number",
+					"default": 0.0,
+					"description": "Time in seconds before the entity transforms."
+				},
+				"block_assist_chance": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1,
+					"description": "Chance that the entity will look for nearby blocks that can speed up the transformation. Value must be between 0.0 and 1.0."
+				},
+				"block_chance": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1,
+					"description": "Chance that, once a block is found, will help speed up the transformation."
+				},
+				"block_max": {
+					"type": "integer",
+					"description": "Maximum number of blocks the entity will look for to aid in the transformation. If not defined or set to 0, it will be set to the block radius."
+				},
+				"block_radius": {
+					"type": "integer",
+					"description": "Distance in Blocks that the entity will search for blocks that can help the transformation."
+				},
+				"block_types": {
+					"type": "array",
+					"description": "List of blocks that can help the transformation of this entity.",
+					"items": {
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
+					}
+				}
+			}
+		},
+		"drop_equipment": {
+			"type": "boolean",
+			"description": "Cause the entity to drop all equipment upon transformation."
+		},
+		"into": {
+			"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+			"description": "Entity Definition that this entity will transform into."
+		},
+		"transformation_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "Sound played at the moment of transformation."
+		},
+		"keep_owner": {
+			"type": "boolean",
+			"description": "If this entity is owned by another entity, it should remain owned after transformation.."
+		}
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/insomnia.json",
+	"type": "object",
+	"title": "Insomnia",
+	"description": "Adds a timer since last rested to see if phantoms should spawn.",
+	"additionalProperties": false,
+	"properties": {
+		"days_until_insomnia": {
+			"type": "number",
+			"default": 3.0,
+			"description": "Number of days the mob has to stay up until the insomnia effect begins."
+		}
+	}
+}

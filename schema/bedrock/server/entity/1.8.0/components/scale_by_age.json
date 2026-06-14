@@ -1,0 +1,20 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/scale_by_age.json",
+	"type": "object",
+	"title": "Scale By Age",
+	"description": "Defines the entity's size interpolation based on the entity's age.",
+	"additionalProperties": false,
+	"properties": {
+		"end_scale": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Ending scale of the entity when it's fully grown."
+		},
+		"start_scale": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Initial scale of the newborn entity."
+		}
+	}
+}

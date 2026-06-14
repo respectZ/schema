@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/movement.amphibious.json",
+	"type": "object",
+	"title": "Movement Amphibious",
+	"description": "This move control allows the mob to swim in water and walk on land.",
+	"additionalProperties": false,
+	"properties": {
+		"max_turn": {
+			"type": "number",
+			"default": 30.0,
+			"description": "The maximum number of degrees the entity can turn per tick."
+		}
+	}
+}

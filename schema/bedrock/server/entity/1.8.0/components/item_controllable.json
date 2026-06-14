@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/item_controllable.json",
+	"type": "object",
+	"title": "Item Controllable",
+	"description": "Defines what items can be used to control this entity while ridden",
+	"additionalProperties": false,
+	"properties": {
+		"control_items": {
+			"type": "array",
+			"description": "List of items that can be used to control this entity.",
+			"items": {
+				"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+			}
+		}
+	}
+}

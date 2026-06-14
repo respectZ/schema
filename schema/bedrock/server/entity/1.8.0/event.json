@@ -1,0 +1,79 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/event.json",
+	"$ref": "#/$defs/event",
+	"additionalProperties": false,
+	"$defs": {
+		"event": {
+			"type": "object",
+			"properties": {
+				"add": {
+					"type": "object",
+					"title": "Add Component Groups",
+					"description": "Component groups to add when the event runs.",
+					"additionalProperties": false,
+					"properties": {
+						"component_groups": {
+							"type": "array",
+							"items": {
+								"type": "string",
+								"description": "Name of a component group defined in 'component_groups'."
+							}
+						}
+					}
+				},
+				"remove": {
+					"type": "object",
+					"title": "Remove Component Groups",
+					"description": "Component groups to remove when the event runs.",
+					"additionalProperties": false,
+					"properties": {
+						"component_groups": {
+							"type": "array",
+							"items": {
+								"type": "string",
+								"description": "Name of a component group defined in 'component_groups'."
+							}
+						}
+					}
+				},
+				"sequence": {
+					"type": "array",
+					"title": "Event Sequence",
+					"description": "An ordered sequence of sub-events to run in order.",
+					"items": {
+						"$ref": "#/$defs/event"
+					}
+				},
+				"randomize": {
+					"type": "array",
+					"title": "Randomized Sub-events",
+					"description": "A list of weighted sub-events. One is picked at random when the parent event fires.",
+					"items": {
+						"unevaluatedProperties": false,
+						"allOf": [
+							{
+								"$ref": "#/$defs/event"
+							},
+							{
+								"type": "object",
+								"required": ["weight"],
+								"properties": {
+									"weight": {
+										"type": "number",
+										"minimum": 0,
+										"description": "Relative weight of this entry being picked."
+									}
+								}
+							}
+						]
+					}
+				},
+				"filters": {
+					"$ref": "../../../../vanilla/server/filter/entity/_index.json",
+					"description": "Optional. Conditions that must be met for the event to run."
+				}
+			}
+		}
+	}
+}

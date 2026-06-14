@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/can_power_jump.json",
+	"type": "object",
+	"title": "Can Power Jump",
+	"description": "Allows the entity to power jump like the horse does in vanilla.",
+	"additionalProperties": false,
+	"properties": {}
+}

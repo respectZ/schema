@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/move_towards_target.json",
+	"type": "object",
+	"title": "Behavior Move Towards Target",
+	"description": "Allows mob to move towards its current target.",
+	"additionalProperties": false,
+	"properties": {
+		"within_radius": {
+			"type": "number",
+			"default": 0.0,
+			"description": "Distance in blocks at which the entity stops moving towards the target."
+		}
+	}
+}

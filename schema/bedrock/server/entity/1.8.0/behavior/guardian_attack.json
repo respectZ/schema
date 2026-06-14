@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/guardian_attack.json",
+	"type": "object",
+	"title": "Behavior Guardian Attack",
+	"description": "Allows the guardian to use its laser beam attack. Can only be used by Guardians and Elder Guardians.",
+	"additionalProperties": false,
+	"properties": {}
+}

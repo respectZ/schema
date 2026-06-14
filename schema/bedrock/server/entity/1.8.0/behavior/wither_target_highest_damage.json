@@ -1,0 +1,14 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/wither_target_highest_damage.json",
+	"type": "object",
+	"title": "Behavior Wither Target Highest Damage",
+	"description": "Allows the wither to focus its attacks on whichever mob has dealt the most damage to it.",
+	"additionalProperties": false,
+	"properties": {
+		"entity_types": {
+			"$ref": "../entity_types.json",
+			"description": "Entity types the entity will consider as attack targets."
+		}
+	}
+}

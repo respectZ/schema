@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/open_door.json",
+	"type": "object",
+	"title": "Behavior Open Door",
+	"description": "Allows the mob to open doors. Requires the mob to be able to path through doors, otherwise the mob won't even want to try opening them.",
+	"additionalProperties": false,
+	"properties": {}
+}

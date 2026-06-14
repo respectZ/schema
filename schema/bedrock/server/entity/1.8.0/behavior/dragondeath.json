@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/dragondeath.json",
+	"type": "object",
+	"title": "Behavior Dragondeath",
+	"description": "Allows the dragon to go out with glory. This controls the Ender Dragon's death animation and can't be used by other mobs.",
+	"additionalProperties": false,
+	"properties": {}
+}

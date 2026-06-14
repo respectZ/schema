@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/jump.dynamic.json",
+	"type": "object",
+	"title": "Jump Dynamic",
+	"description": "Defines a dynamic type jump control that will change jump properties based on the speed modifier of the mob.",
+	"additionalProperties": false,
+	"properties": {}
+}

@@ -1,0 +1,50 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/float_wander.json",
+	"type": "object",
+	"title": "Behavior Float Wander",
+	"description": "Allows the mob to float around like the Ghast.",
+	"additionalProperties": false,
+	"properties": {
+		"float_duration": {
+			"oneOf": [
+				{
+					"type": "number",
+					"minimum": 0,
+					"description": "Fixed duration in seconds of each float."
+				},
+				{
+					"type": "array",
+					"items": { "type": "number", "minimum": 0 },
+					"minItems": 2,
+					"maxItems": 2,
+					"description": "Range [min, max] of the random float duration in seconds."
+				}
+			],
+			"description": "Duration of each float."
+		},
+		"must_reach": {
+			"type": "boolean",
+			"description": "Whether the entity must reach the chosen position before reselecting."
+		},
+		"random_reselect": {
+			"type": "boolean",
+			"description": "Whether a new position is reselected while the entity floats."
+		},
+		"xz_dist": {
+			"type": "integer",
+			"default": 10,
+			"description": "Maximum horizontal distance in blocks of the random position."
+		},
+		"y_dist": {
+			"type": "integer",
+			"default": 7,
+			"description": "Maximum vertical distance in blocks of the random position."
+		},
+		"y_offset": {
+			"type": "number",
+			"default": 0.0,
+			"description": "Vertical offset applied to the chosen position."
+		}
+	}
+}

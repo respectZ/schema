@@ -1,0 +1,30 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/pet_sleep_with_owner.json",
+	"type": "object",
+	"title": "Behavior Pet Sleep With Owner",
+	"description": "Allows the pet mob to move onto a bed with it's owner while sleeping.",
+	"additionalProperties": false,
+	"properties": {
+		"goal_radius": {
+			"type": "number",
+			"default": 0.5,
+			"description": "Distance in blocks at which the entity is considered to have reached the bed."
+		},
+		"search_height": {
+			"type": "integer",
+			"default": 1,
+			"description": "Vertical search range in blocks."
+		},
+		"search_range": {
+			"type": "integer",
+			"default": 0,
+			"description": "Horizontal search range in blocks."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Movement speed multiplier while looking for the bed."
+		}
+	}
+}

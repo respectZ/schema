@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/scaffolding_climber.json",
+	"type": "object",
+	"title": "Scaffolding Climber",
+	"description": "Allows the player to detect and manuever on the scaffolding block.",
+	"additionalProperties": false,
+	"properties": {}
+}

@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/scared.json",
+	"type": "object",
+	"title": "Behavior Scared",
+	"description": "Allows the a mob to become scared when the weather outside is thundering",
+	"additionalProperties": false,
+	"properties": {
+		"sound_interval": {
+			"type": "integer",
+			"default": 0,
+			"description": "Interval, in ticks, between scared sounds. 0 disables the sound."
+		}
+	}
+}

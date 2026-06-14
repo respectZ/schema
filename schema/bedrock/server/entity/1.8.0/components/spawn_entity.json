@@ -1,0 +1,44 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/spawn_entity.json",
+	"type": "object",
+	"title": "Spawn Entity",
+	"description": "Adds a timer after which this entity will spawn another entity or item (similar to vanilla's chicken's egg-laying behavior).",
+	"additionalProperties": false,
+	"properties": {
+		"max_wait_time": {
+			"type": "integer",
+			"default": 600,
+			"description": "Maximum amount of time to randomly wait in seconds before another entity is spawned."
+		},
+		"min_wait_time": {
+			"type": "integer",
+			"default": 300,
+			"description": "Minimum amount of time to randomly wait in seconds before another entity is spawned."
+		},
+		"spawn_entity": {
+			"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+			"description": "Identifier of the entity to spawn. Leave empty to spawn the item defined above instead."
+		},
+		"spawn_event": {
+			"type": "string",
+			"default": "minecraft:entity_born",
+			"description": "Event to call when the entity is spawned."
+		},
+		"spawn_item": {
+			"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+			"default": "egg",
+			"description": "Name of the item to spawn."
+		},
+		"spawn_method": {
+			"type": "string",
+			"default": "born",
+			"description": "Method to use to spawn the entity."
+		},
+		"spawn_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"default": "plop",
+			"description": "Name of the sound effect to play when the entity is spawned."
+		}
+	}
+}

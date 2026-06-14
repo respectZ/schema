@@ -1,0 +1,20 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/ambient_sound_interval.json",
+	"type": "object",
+	"title": "Ambient Sound Interval",
+	"description": "Sets the entity's delay between playing its ambient sound.",
+	"additionalProperties": false,
+	"properties": {
+		"value": {
+			"type": "number",
+			"default": 8.0,
+			"description": "Minimum time in seconds before the entity plays its ambient sound again."
+		},
+		"range": {
+			"type": "number",
+			"default": 16.0,
+			"description": "Maximum time in seconds to randomly add to the ambient sound delay time."
+		}
+	}
+}

@@ -1,0 +1,37 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/shareables.json",
+	"type": "object",
+	"title": "Shareables",
+	"description": "Defines a list of items the mob wants to share. Each item must have the following parameters:",
+	"additionalProperties": false,
+	"properties": {
+		"items": {
+			"type": "array",
+			"description": "List of items that the entity wants to share.",
+			"items": {
+				"type": "object",
+				"required": ["item"],
+				"additionalProperties": false,
+				"properties": {
+					"item": {
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+						"description": "The name of the item."
+					},
+					"surplus_amount": {
+						"type": "integer",
+						"description": "Number of this item considered extra that the entity wants to share."
+					},
+					"want_amount": {
+						"type": "integer",
+						"description": "Number of this item this entity wants to share."
+					},
+					"craft_into": {
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+						"description": "Defines the item this entity wants to craft with the item defined above. Should be an item name."
+					}
+				}
+			}
+		}
+	}
+}

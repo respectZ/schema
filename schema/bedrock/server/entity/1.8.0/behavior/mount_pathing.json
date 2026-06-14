@@ -1,0 +1,25 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/mount_pathing.json",
+	"type": "object",
+	"title": "Behavior Mount Pathing",
+	"description": "Allows the mob to move around on its own while mounted seeking a target to attack.",
+	"additionalProperties": false,
+	"properties": {
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Movement speed multiplier while pathing to a mount."
+		},
+		"target_dist": {
+			"type": "number",
+			"default": 0.0,
+			"description": "Target distance in blocks."
+		},
+		"track_target": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the entity tracks its target when out of sight."
+		}
+	}
+}

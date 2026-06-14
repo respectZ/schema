@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/move_towards_restriction.json",
+	"type": "object",
+	"title": "Behavior Move Towards Restriction",
+	"description": "Allows Guardians, Iron Golems and Villagers to move within their pre-defined area that the mob should be restricted to. Other mobs don't have a restriction defined.",
+	"additionalProperties": false,
+	"properties": {
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Movement speed multiplier while moving towards the restriction."
+		}
+	}
+}

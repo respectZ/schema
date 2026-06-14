@@ -1,0 +1,14 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/eat_block.json",
+	"type": "object",
+	"title": "Behavior Eat Block",
+	"description": "Allows the mob to eat a block (for example, sheep eating grass).",
+	"additionalProperties": false,
+	"properties": {
+		"on_eat": {
+			"$ref": "../triggers.json",
+			"description": "Trigger fired when the entity eats a block."
+		}
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/is_dyeable.json",
+	"type": "object",
+	"title": "Is Dyeable",
+	"description": "Allows dyes to be used on this entity to change its color.",
+	"additionalProperties": false,
+	"properties": {
+		"interact_text": {
+			"type": "string",
+			"description": "The text that will display when interacting with this entity with a dye when playing with Touch-screen controls."
+		}
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/squid_move_away_from_ground.json",
+	"type": "object",
+	"title": "Behavior Squid Move Away From Ground",
+	"description": "Allows the squid to move away from ground blocks and back to water. Can only be used by the Squid.",
+	"additionalProperties": false,
+	"properties": {}
+}

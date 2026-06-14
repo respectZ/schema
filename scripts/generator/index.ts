@@ -563,7 +563,7 @@ const entries: Entry[] = [
 	{
 		filepath: "vanilla/server/paths.json",
 		content: async () => {
-			const { lootTablePaths } = await generateServerPaths();
+			const { lootTablePaths, tradingPaths } = await generateServerPaths();
 			return {
 				$defs: {
 					loot_table_path: {
@@ -574,6 +574,17 @@ const entries: Entry[] = [
 							},
 							{
 								enum: lootTablePaths,
+							},
+						],
+					},
+					trading_path: {
+						anyOf: [
+							{
+								type: "string",
+								maxLength: 256,
+							},
+							{
+								enum: tradingPaths,
 							},
 						],
 					},

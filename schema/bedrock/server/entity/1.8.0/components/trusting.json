@@ -1,0 +1,28 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/trusting.json",
+	"type": "object",
+	"title": "Trusting",
+	"description": "Defines the rules for a mob to trust players.",
+	"additionalProperties": false,
+	"properties": {
+		"probability": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 1.0,
+			"default": 1.0,
+			"description": "The chance of the entity trusting with each item use between 0.0 and 1.0, where 1.0 is 100%."
+		},
+		"trust_event": {
+			"type": "string",
+			"description": "Event to run when this entity becomes trusting."
+		},
+		"trust_items": {
+			"type": "array",
+			"description": "The list of items that can be used to get the entity to trust players.",
+			"items": {
+				"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/squid_idle.json",
+	"type": "object",
+	"title": "Behavior Squid Idle",
+	"description": "Allows the squid to swim in place idly. Can only be used by the Squid.",
+	"additionalProperties": false,
+	"properties": {}
+}

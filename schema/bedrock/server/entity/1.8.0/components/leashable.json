@@ -1,0 +1,33 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/leashable.json",
+	"type": "object",
+	"title": "Leashable",
+	"description": "Allows this entity to be leashed and Defines the conditions and events for this entity when is leashed.",
+	"additionalProperties": false,
+	"properties": {
+		"hard_distance": {
+			"type": "number",
+			"default": 6.0,
+			"description": "Distance in blocks at which the leash stiffens, restricting movement."
+		},
+		"max_distance": {
+			"type": "number",
+			"default": 10.0,
+			"description": "Distance in blocks at which the leash breaks."
+		},
+		"on_leash": {
+			"type": "string",
+			"description": "Event to call when this entity is leashed."
+		},
+		"on_unleash": {
+			"type": "string",
+			"description": "Event to call when this entity is unleashed."
+		},
+		"soft_distance": {
+			"type": "number",
+			"default": 4.0,
+			"description": "Distance in blocks at which the 'spring' effect starts acting to keep this entity close to the entity that leashed it."
+		}
+	}
+}

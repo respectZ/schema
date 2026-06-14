@@ -1,0 +1,60 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/explode.json",
+	"type": "object",
+	"title": "Explode",
+	"description": "Defines how the entity explodes.",
+	"additionalProperties": false,
+	"properties": {
+		"breaks_blocks": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true, the explosion will destroy blocks in the explosion radius."
+		},
+		"causesFire": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, blocks in the explosion radius will be set on fire."
+		},
+		"destroyAffectedByGriefing": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, whether the explosion breaks blocks is affected by the mob griefing game rule."
+		},
+		"fireAffectedByGriefing": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, whether the explosion causes fire is affected by the mob griefing game rule."
+		},
+		"fuseLength": {
+			"oneOf": [
+				{
+					"type": "number",
+					"description": "The fixed fuse length in seconds. Negative values mean immediate explosion."
+				},
+				{
+					"type": "array",
+					"items": { "type": "number" },
+					"minItems": 2,
+					"maxItems": 2,
+					"description": "Range [min, max] of the random fuse length in seconds."
+				}
+			],
+			"description": "The range for the random amount of time the fuse will be lit before exploding. A negative value means the explosion will be immediate."
+		},
+		"fuseLit": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, the fuse is already lit when this component is added to the entity."
+		},
+		"maxResistance": {
+			"type": "number",
+			"description": "Blocks with less resistance than this value will be broken by the explosion."
+		},
+		"power": {
+			"type": "number",
+			"default": 3.0,
+			"description": "The radius of the explosion in blocks and the amount of damage the explosion deals."
+		}
+	}
+}

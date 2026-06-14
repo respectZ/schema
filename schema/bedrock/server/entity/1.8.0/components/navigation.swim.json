@@ -1,0 +1,45 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/navigation.swim.json",
+	"type": "object",
+	"title": "Navigation Swim",
+	"description": "Allows this entity to generate paths that include water.",
+	"additionalProperties": false,
+	"properties": {
+		"avoid_portals": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the pathfinder avoids portals."
+		},
+		"avoid_sun": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the pathfinder avoids sunlight."
+		},
+		"avoid_water": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the pathfinder avoids water."
+		},
+		"can_open_doors": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the pathfinder can open doors."
+		},
+		"can_pass_doors": {
+			"type": "boolean",
+			"default": true,
+			"description": "Whether the pathfinder can pass through doors."
+		},
+		"can_path_over_water": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the pathfinder can path over water."
+		},
+		"can_sink": {
+			"type": "boolean",
+			"default": true,
+			"description": "Whether the entity can sink in water."
+		}
+	}
+}

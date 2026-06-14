@@ -1,0 +1,44 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/melee_attack.json",
+	"type": "object",
+	"title": "Behavior Melee Attack",
+	"description": "Allows the mob to use close combat melee attacks.",
+	"additionalProperties": false,
+	"properties": {
+		"attack_once": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the entity only attacks once per engagement."
+		},
+		"attack_types": {
+			"type": "string",
+			"description": "Specific attack types this melee attack is restricted to."
+		},
+		"melee_fov": {
+			"type": "number",
+			"default": 90.0,
+			"description": "Field of view, in degrees, within which the entity can perform the attack."
+		},
+		"random_stop_interval": {
+			"type": "integer",
+			"default": 0,
+			"description": "Maximum number of ticks the entity can chase before stopping."
+		},
+		"reach_multiplier": {
+			"type": "number",
+			"default": 2.0,
+			"description": "Multiplier applied to the attack reach distance."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Movement speed multiplier while chasing the target."
+		},
+		"track_target": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the entity tracks its target even when out of sight."
+		}
+	}
+}

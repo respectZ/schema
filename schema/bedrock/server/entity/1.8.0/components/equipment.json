@@ -1,0 +1,35 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/equipment.json",
+	"type": "object",
+	"title": "Equipment",
+	"description": "Sets the Equipment table to use for this Entity.",
+	"additionalProperties": false,
+	"properties": {
+		"slot_drop_chance": {
+			"type": "array",
+			"description": "A list of slots with the chance to drop an equipped item from that slot.",
+			"items": {
+				"type": "object",
+				"required": ["slot"],
+				"additionalProperties": false,
+				"properties": {
+					"slot": {
+						"$ref": "../../../../../vanilla/server/equipment_slot.json",
+						"description": "The equipment slot name."
+					},
+					"drop_chance": {
+						"type": "number",
+						"minimum": 0,
+						"maximum": 1,
+						"description": "The chance to drop the equipped item (0.0 to 1.0)."
+					}
+				}
+			}
+		},
+		"table": {
+			"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
+			"description": "Path to the equipment table, relative to the behavior pack's root."
+		}
+	}
+}

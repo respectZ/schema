@@ -1,0 +1,36 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/send_event.json",
+	"type": "object",
+	"title": "Behavior Send Event",
+	"description": "Allows the mob to send an event to another mob.",
+	"additionalProperties": false,
+	"properties": {
+		"cast_duration": {
+			"type": "number",
+			"description": "Total duration of the cast in seconds."
+		},
+		"sequence": {
+			"type": "array",
+			"description": "Ordered list of events to send during the cast.",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"base_delay": {
+						"type": "number",
+						"description": "Delay, in seconds, after which this event fires."
+					},
+					"event": {
+						"type": "string",
+						"description": "Name of the event to fire."
+					},
+					"sound_event": {
+						"$ref": "../../../../../vanilla/server/level_sound.json",
+						"description": "Sound played at this step of the sequence."
+					}
+				}
+			}
+		}
+	}
+}

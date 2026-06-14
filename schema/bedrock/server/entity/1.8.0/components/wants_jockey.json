@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/wants_jockey.json",
+	"type": "object",
+	"title": "Wants Jockey",
+	"description": "Sets that this entity wants to become a jockey.",
+	"additionalProperties": false,
+	"properties": {}
+}

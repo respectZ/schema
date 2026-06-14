@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/movement.skip.json",
+	"type": "object",
+	"title": "Movement Skip",
+	"description": "This move control causes the mob to hop as it moves.",
+	"additionalProperties": false,
+	"properties": {
+		"max_turn": {
+			"type": "number",
+			"default": 30.0,
+			"description": "The maximum number of degrees the entity can turn per tick."
+		}
+	}
+}

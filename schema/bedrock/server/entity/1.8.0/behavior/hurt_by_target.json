@@ -1,0 +1,24 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/hurt_by_target.json",
+	"type": "object",
+	"title": "Behavior Hurt By Target",
+	"description": "Allows the mob to target another mob that hurts them.",
+	"additionalProperties": false,
+	"properties": {
+		"alert_same_type": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the entity alerts other entities of the same type to also target."
+		},
+		"entity_types": {
+			"$ref": "../entity_types.json",
+			"description": "Entity types to retaliate against."
+		},
+		"hurt_owner": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the entity retaliates when its owner is hurt."
+		}
+	}
+}

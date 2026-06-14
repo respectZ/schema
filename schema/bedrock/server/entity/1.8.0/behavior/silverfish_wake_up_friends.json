@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/silverfish_wake_up_friends.json",
+	"type": "object",
+	"title": "Behavior Silverfish Wake Up Friends",
+	"description": "Allows the mob to alert mobs in nearby blocks to come out. Currently it can only be used by Silverfish.",
+	"additionalProperties": false,
+	"properties": {}
+}

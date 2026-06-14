@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/dragonchargeplayer.json",
+	"type": "object",
+	"title": "Behavior Dragonchargeplayer",
+	"description": "Allows the dragon to attack a player by flying fast at them. The player is chosen by the dragonscanning goal. Can only be used by the Ender Dragon.",
+	"additionalProperties": false,
+	"properties": {}
+}

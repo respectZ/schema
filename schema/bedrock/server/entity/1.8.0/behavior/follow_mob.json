@@ -1,0 +1,25 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/follow_mob.json",
+	"type": "object",
+	"title": "Behavior Follow Mob",
+	"description": "Allows the mob to follow other mobs.",
+	"additionalProperties": false,
+	"properties": {
+		"search_range": {
+			"type": "integer",
+			"default": 0,
+			"description": "Horizontal search range in blocks."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Movement speed multiplier while following."
+		},
+		"stop_distance": {
+			"type": "number",
+			"default": 2.0,
+			"description": "Distance in blocks at which the entity stops following."
+		}
+	}
+}

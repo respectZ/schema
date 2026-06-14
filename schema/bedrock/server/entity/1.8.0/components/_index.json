@@ -1,0 +1,301 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/_index.json",
+	"type": "object",
+	"title": "Entity Components",
+	"description": "Entity component map. Each property is a known component name and its value is the component's configuration.",
+	"unevaluatedProperties": false,
+	"properties": {
+		"minecraft:addrider": {
+			"$ref": "./addrider.json"
+		},
+		"minecraft:ageable": {
+			"$ref": "./ageable.json"
+		},
+		"minecraft:ambient_sound_interval": {
+			"$ref": "./ambient_sound_interval.json"
+		},
+		"minecraft:angry": {
+			"$ref": "./angry.json"
+		},
+		"minecraft:attack": {
+			"$ref": "./attack.json"
+		},
+		"minecraft:boostable": {
+			"$ref": "./boostable.json"
+		},
+		"minecraft:breathable": {
+			"$ref": "./breathable.json"
+		},
+		"minecraft:breedable": {
+			"$ref": "./breedable.json"
+		},
+		"minecraft:bribeable": {
+			"$ref": "./bribeable.json"
+		},
+		"minecraft:burns_in_daylight": {
+			"$ref": "./burns_in_daylight.json"
+		},
+		"minecraft:can_climb": {
+			"$ref": "./can_climb.json"
+		},
+		"minecraft:can_fly": {
+			"$ref": "./can_fly.json"
+		},
+		"minecraft:can_power_jump": {
+			"$ref": "./can_power_jump.json"
+		},
+		"minecraft:collision_box": {
+			"$ref": "./collision_box.json"
+		},
+		"minecraft:color": {
+			"$ref": "./color.json"
+		},
+		"minecraft:color2": {
+			"$ref": "./color2.json"
+		},
+		"minecraft:damage_over_time": {
+			"$ref": "./damage_over_time.json"
+		},
+		"minecraft:damage_sensor": {
+			"$ref": "./damage_sensor.json"
+		},
+		"minecraft:default_look_angle": {
+			"$ref": "./default_look_angle.json"
+		},
+		"minecraft:environment_sensor": {
+			"$ref": "./environment_sensor.json"
+		},
+		"minecraft:equipment": {
+			"$ref": "./equipment.json"
+		},
+		"minecraft:equippable": {
+			"$ref": "./equippable.json"
+		},
+		"minecraft:explode": {
+			"$ref": "./explode.json"
+		},
+		"minecraft:fire_immune": {
+			"$ref": "./fire_immune.json"
+		},
+		"minecraft:floats_in_liquid": {
+			"$ref": "./floats_in_liquid.json"
+		},
+		"minecraft:flying_speed": {
+			"$ref": "./flying_speed.json"
+		},
+		"minecraft:foot_size": {
+			"$ref": "./foot_size.json"
+		},
+		"minecraft:friction_modifier": {
+			"$ref": "./friction_modifier.json"
+		},
+		"minecraft:genetics": {
+			"$ref": "./genetics.json"
+		},
+		"minecraft:ground_offset": {
+			"$ref": "./ground_offset.json"
+		},
+		"minecraft:healable": {
+			"$ref": "./healable.json"
+		},
+		"minecraft:hurt_when_wet": {
+			"$ref": "./hurt_when_wet.json"
+		},
+		"minecraft:input_ground_controlled": {
+			"$ref": "./input_ground_controlled.json"
+		},
+		"minecraft:insomnia": {
+			"$ref": "./insomnia.json"
+		},
+		"minecraft:interact": {
+			"$ref": "./interact.json"
+		},
+		"minecraft:inventory": {
+			"$ref": "./inventory.json"
+		},
+		"minecraft:is_baby": {
+			"$ref": "./is_baby.json"
+		},
+		"minecraft:is_charged": {
+			"$ref": "./is_charged.json"
+		},
+		"minecraft:is_chested": {
+			"$ref": "./is_chested.json"
+		},
+		"minecraft:is_dyeable": {
+			"$ref": "./is_dyeable.json"
+		},
+		"minecraft:is_ignited": {
+			"$ref": "./is_ignited.json"
+		},
+		"minecraft:is_saddled": {
+			"$ref": "./is_saddled.json"
+		},
+		"minecraft:is_shaking": {
+			"$ref": "./is_shaking.json"
+		},
+		"minecraft:is_sheared": {
+			"$ref": "./is_sheared.json"
+		},
+		"minecraft:is_stackable": {
+			"$ref": "./is_stackable.json"
+		},
+		"minecraft:is_tamed": {
+			"$ref": "./is_tamed.json"
+		},
+		"minecraft:item_controllable": {
+			"$ref": "./item_controllable.json"
+		},
+		"minecraft:item_hopper": {
+			"$ref": "./item_hopper.json"
+		},
+		"minecraft:jump.dynamic": {
+			"$ref": "./jump.dynamic.json"
+		},
+		"minecraft:jump.static": {
+			"$ref": "./jump.static.json"
+		},
+		"minecraft:leashable": {
+			"$ref": "./leashable.json"
+		},
+		"minecraft:loot": {
+			"$ref": "./loot.json"
+		},
+		"minecraft:lookat": {
+			"$ref": "./lookat.json"
+		},
+		"minecraft:mark_variant": {
+			"$ref": "./mark_variant.json"
+		},
+		"minecraft:movement.amphibious": {
+			"$ref": "./movement.amphibious.json"
+		},
+		"minecraft:movement.basic": {
+			"$ref": "./movement.basic.json"
+		},
+		"minecraft:movement.fly": {
+			"$ref": "./movement.fly.json"
+		},
+		"minecraft:movement.generic": {
+			"$ref": "./movement.generic.json"
+		},
+		"minecraft:movement.jump": {
+			"$ref": "./movement.jump.json"
+		},
+		"minecraft:movement.skip": {
+			"$ref": "./movement.skip.json"
+		},
+		"minecraft:movement.sway": {
+			"$ref": "./movement.sway.json"
+		},
+		"minecraft:nameable": {
+			"$ref": "./nameable.json"
+		},
+		"minecraft:navigation.walk": {
+			"$ref": "./navigation.walk.json"
+		},
+		"minecraft:navigation.generic": {
+			"$ref": "./navigation.generic.json"
+		},
+		"minecraft:navigation.climb": {
+			"$ref": "./navigation.climb.json"
+		},
+		"minecraft:navigation.swim": {
+			"$ref": "./navigation.swim.json"
+		},
+		"minecraft:navigation.fly": {
+			"$ref": "./navigation.fly.json"
+		},
+		"minecraft:navigation.float": {
+			"$ref": "./navigation.float.json"
+		},
+		"minecraft:peek": {
+			"$ref": "./peek.json"
+		},
+		"minecraft:push_through": {
+			"$ref": "./push_through.json"
+		},
+		"minecraft:projectile": {
+			"$ref": "./projectile.json"
+		},
+		"minecraft:rail_movement": {
+			"$ref": "./rail_movement.json"
+		},
+		"minecraft:rail_sensor": {
+			"$ref": "./rail_sensor.json"
+		},
+		"minecraft:rideable": {
+			"$ref": "./rideable.json"
+		},
+		"minecraft:scale": {
+			"$ref": "./scale.json"
+		},
+		"minecraft:scale_by_age": {
+			"$ref": "./scale_by_age.json"
+		},
+		"minecraft:scaffolding_climber": {
+			"$ref": "./scaffolding_climber.json"
+		},
+		"minecraft:shareables": {
+			"$ref": "./shareables.json"
+		},
+		"minecraft:shooter": {
+			"$ref": "./shooter.json"
+		},
+		"minecraft:sittable": {
+			"$ref": "./sittable.json"
+		},
+		"minecraft:sound_volume": {
+			"$ref": "./sound_volume.json"
+		},
+		"minecraft:spawn_entity": {
+			"$ref": "./spawn_entity.json"
+		},
+		"minecraft:spell_effects": {
+			"$ref": "./spell_effects.json"
+		},
+		"minecraft:strength": {
+			"$ref": "./strength.json"
+		},
+		"minecraft:tameable": {
+			"$ref": "./tameable.json"
+		},
+		"minecraft:tamemount": {
+			"$ref": "./tamemount.json"
+		},
+		"minecraft:target_nearby_sensor": {
+			"$ref": "./target_nearby_sensor.json"
+		},
+		"minecraft:teleport": {
+			"$ref": "./teleport.json"
+		},
+		"minecraft:tick_world": {
+			"$ref": "./tick_world.json"
+		},
+		"minecraft:timer": {
+			"$ref": "./timer.json"
+		},
+		"minecraft:trade_table": {
+			"$ref": "./trade_table.json"
+		},
+		"minecraft:transformation": {
+			"$ref": "./transformation.json"
+		},
+		"minecraft:trusting": {
+			"$ref": "./trusting.json"
+		},
+		"minecraft:type_family": {
+			"$ref": "./type_family.json"
+		},
+		"minecraft:variant": {
+			"$ref": "./variant.json"
+		},
+		"minecraft:walk_animation_speed": {
+			"$ref": "./walk_animation_speed.json"
+		},
+		"minecraft:wants_jockey": {
+			"$ref": "./wants_jockey.json"
+		}
+	}
+}

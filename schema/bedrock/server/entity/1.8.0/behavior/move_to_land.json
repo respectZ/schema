@@ -1,0 +1,35 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/move_to_land.json",
+	"type": "object",
+	"title": "Behavior Move To Land",
+	"description": "Allows the mob to move back onto land when in water.",
+	"additionalProperties": false,
+	"properties": {
+		"goal_radius": {
+			"type": "number",
+			"default": 0.5,
+			"description": "Distance in blocks at which the entity is considered to have reached the land."
+		},
+		"search_count": {
+			"type": "integer",
+			"default": 10,
+			"description": "Maximum number of blocks to search."
+		},
+		"search_height": {
+			"type": "integer",
+			"default": 1,
+			"description": "Vertical search range in blocks."
+		},
+		"search_range": {
+			"type": "integer",
+			"default": 0,
+			"description": "Horizontal search range in blocks."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Movement speed multiplier while moving to land."
+		}
+	}
+}

@@ -1,0 +1,101 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/genetics.json",
+	"type": "object",
+	"title": "Genetics",
+	"description": "Defines the way a mob's genes and alleles are passed on to it's offspring, and how those traits manifest in the child. Compatible parent genes are crossed together, the alleles are handed down from the parents to the child, and any matching genetic variants fire off JSON events to modify the child and express the traits.",
+	"additionalProperties": false,
+	"properties": {
+		"genes": {
+			"type": "array",
+			"description": "The list of genes that this entity has and will cross with a partner during breeding.",
+			"items": {
+				"type": "object",
+				"required": ["name", "allele_range"],
+				"additionalProperties": false,
+				"properties": {
+					"allele_range": {
+						"type": "object",
+						"description": "The range of positive integer allele values for this gene. Spawned mobs will have a random number in this range assigned to them.",
+						"required": ["range_min", "range_max"],
+						"additionalProperties": false,
+						"properties": {
+							"range_min": {
+								"type": "integer",
+								"description": "Lower bound of the allele values for this gene."
+							},
+							"range_max": {
+								"type": "integer",
+								"description": "Upper bound of the allele values for this gene."
+							}
+						}
+					},
+					"genetic_variants": {
+						"type": "array",
+						"description": "The list of genetic variants for this gene. These check for particular allele combinations and fire events when all of them are satisfied.",
+						"items": {
+							"type": "object",
+							"required": ["main_allele"],
+							"additionalProperties": false,
+							"properties": {
+								"birth_event": {
+									"type": "string",
+									"description": "Event to run when this mob is created and matches the above allele conditions.."
+								},
+								"both_allele": {
+									"$ref": "#/$defs/both_allele_range",
+									"description": "If this value is non-negative, compare both the mob's main and hidden alleles with this value for a match with both. Can also be a range of integers."
+								},
+								"either_allele": {
+									"$ref": "#/$defs/both_allele_range",
+									"description": "If this value is non-negative, compare both the mob's main and hidden alleles with this value for a match with both. Can also be a range of integers."
+								},
+								"hidden_allele": {
+									"$ref": "#/$defs/both_allele_range",
+									"description": "If this value is non-negative, compare the mob's hidden allele with this value for a match. Can also be a range of integers."
+								},
+								"main_allele": {
+									"$ref": "#/$defs/both_allele_range",
+									"description": "If this value is non-negative, compare the mob's main allele with this value for a match. Can also be a range of integers."
+								},
+								"name": {
+									"type": "string",
+									"description": "The name of the gene."
+								}
+							}
+						}
+					},
+					"mutation_rate": {
+						"type": "number",
+						"default": 0.03125,
+						"description": "Chance that an allele will be replaced with a random one instead of the parent's allele during birth."
+					}
+				}
+			}
+		}
+	},
+	"$defs": {
+		"both_allele_range": {
+			"oneOf": [
+				{
+					"type": "integer"
+				},
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"required": ["range_min", "range_max"],
+					"properties": {
+						"range_min": {
+							"type": "integer",
+							"description": "Minimum allele value."
+						},
+						"range_max": {
+							"type": "integer",
+							"description": "Maximum allele value."
+						}
+					}
+				}
+			]
+		}
+	}
+}

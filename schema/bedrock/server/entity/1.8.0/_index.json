@@ -1,0 +1,66 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/_index.json",
+	"type": "object",
+	"title": "Minecraft Bedrock Entity 1.8.0",
+	"description": "Entity behavior definition for format_version 1.8.0.",
+	"required": ["format_version", "minecraft:entity"],
+	"additionalProperties": false,
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"enum": ["1.8.0"]
+		},
+		"minecraft:entity": {
+			"type": "object",
+			"title": "Entity",
+			"description": "Root entity definition object.",
+			"required": ["description", "components"],
+			"additionalProperties": false,
+			"properties": {
+				"description": {
+					"$ref": "./description.json"
+				},
+				"component_groups": {
+					"type": "object",
+					"title": "Component Groups",
+					"description": "Named groups of components that can be added or removed as a unit via events.",
+					"unevaluatedProperties": {
+						"$ref": "./components/_index.json"
+					}
+				},
+				"components": {
+					"allOf": [{ "$ref": "./components/_index.json" }, { "$ref": "./behavior/_index.json" }]
+				},
+				"events": {
+					"type": "object",
+					"title": "Events",
+					"description": "Map of named events to their definitions.",
+					"additionalProperties": {
+						"$ref": "./event.json",
+						"title": "Event Definition",
+						"description": "Definition of an entity event. An event can add or remove component groups directly, or run a sequence/randomize of sub-events."
+					},
+					"properties": {
+						"minecraft:entity_born": {
+							"$ref": "./event.json",
+							"description": "Triggers an event calls on an entity when the entity is born via `breeding`."
+						},
+						"minecraft:entity_spawned": {
+							"$ref": "./event.json",
+							"description": "Triggers an event calls on an entity when the entity is spawned in the world."
+						},
+						"minecraft:transformed": {
+							"$ref": "./event.json",
+							"description": "Triggers an event call on an entity that transforms into another entity."
+						},
+						"minecraft:on_prime": {
+							"$ref": "./event.json",
+							"description": "Triggers an event calls on an entity when the entity is set to explode."
+						}
+					}
+				}
+			}
+		}
+	}
+}

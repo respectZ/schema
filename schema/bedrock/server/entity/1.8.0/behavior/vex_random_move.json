@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/vex_random_move.json",
+	"type": "object",
+	"title": "Behavior Vex Random Move",
+	"description": "Allows the mob to move around randomly like the Vex.",
+	"additionalProperties": false,
+	"properties": {}
+}

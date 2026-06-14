@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/float.json",
+	"type": "object",
+	"title": "Behavior Float",
+	"description": "Allows the mob to stay afloat while swimming.",
+	"additionalProperties": false,
+	"properties": {}
+}

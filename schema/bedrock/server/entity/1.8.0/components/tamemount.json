@@ -1,0 +1,64 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/tamemount.json",
+	"type": "object",
+	"title": "Tame Mount",
+	"description": "Allows the Entity to be tamed by mounting it.",
+	"additionalProperties": false,
+	"properties": {
+		"attemptTemperMod": {
+			"type": "integer",
+			"default": 5,
+			"description": "The amount the entity's temper will increase when mounted."
+		},
+		"autoRejectItems": {
+			"type": "object",
+			"description": "The list of items that, if carried while interacting with the entity, will anger it.",
+			"additionalProperties": false,
+			"properties": {
+				"item": {
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+					"description": "Name of the item this entity dislikes and will cause it to get angry if used while untamed."
+				}
+			}
+		},
+		"feedItems": {
+			"type": "object",
+			"description": "The list of items that can be used to increase the entity's temper and speed up the taming process.",
+			"additionalProperties": false,
+			"properties": {
+				"item": {
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+					"description": "Name of the item this entity likes and can be used to increase this entity's temper."
+				},
+				"temperMod": {
+					"type": "number",
+					"default": 0.0,
+					"description": "The amount of temper this entity gains when fed this item."
+				}
+			}
+		},
+		"feed_text": {
+			"$ref": "../../../../../vanilla/client/lang_keys.json",
+			"description": "The text that shows in the feeding interact button."
+		},
+		"maxTemper": {
+			"type": "integer",
+			"default": 100,
+			"description": "The maximum value for the entity's random starting temper."
+		},
+		"minTemper": {
+			"type": "integer",
+			"default": 0,
+			"description": "The minimum value for the entity's random starting temper."
+		},
+		"ride_text": {
+			"$ref": "../../../../../vanilla/client/lang_keys.json",
+			"description": "The text that shows in the riding interact button."
+		},
+		"tame_event": {
+			"type": "string",
+			"description": "Event that triggers when the entity becomes tamed."
+		}
+	}
+}

@@ -1,0 +1,34 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/angry.json",
+	"type": "object",
+	"title": "Angry",
+	"description": "Defines the entity's 'angry' state using a timer.",
+	"additionalProperties": false,
+	"properties": {
+		"broadcastAnger": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether anger is broadcast to other entities of the same type."
+		},
+		"broadcastRange": {
+			"type": "number",
+			"default": 20,
+			"description": "The range in blocks within which the broadcast is heard."
+		},
+		"calm_event": {
+			"type": "string",
+			"description": "The event to run when the entity stops being angry."
+		},
+		"duration": {
+			"type": "integer",
+			"default": 25,
+			"description": "The duration in seconds the entity will stay angry."
+		},
+		"duration_delta": {
+			"type": "integer",
+			"default": 0,
+			"description": "Random variance (in seconds) added to the duration."
+		}
+	}
+}

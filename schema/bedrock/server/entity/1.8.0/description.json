@@ -1,0 +1,34 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/description.json",
+	"type": "object",
+	"title": "Entity Description",
+	"description": "Identifies the entity and provides base construction metadata.",
+	"required": ["identifier"],
+	"additionalProperties": false,
+	"properties": {
+		"identifier": {
+			"$ref": "../../../../vanilla/definition/identifier.json",
+			"description": "Namespaced identifier for this entity."
+		},
+		"is_experimental": {
+			"type": "boolean",
+			"title": "Is Experimental",
+			"description": "Whether this entity is experimental and only enabled with the experimental toggle."
+		},
+		"is_summonable": {
+			"type": "boolean",
+			"title": "Is Summonable",
+			"description": "Whether this entity can be summoned via the /summon command."
+		},
+		"runtime_identifier": {
+			"$ref": "../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+			"description": "The vanilla Minecraft entity identifier used to build this entity from (e.g. minecraft:horse)."
+		},
+		"is_spawnable": {
+			"type": "boolean",
+			"title": "Is Spawnable",
+			"description": "Whether this entity has a spawn egg in the creative inventory."
+		}
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/move_through_village.json",
+	"type": "object",
+	"title": "Behavior Move Through Village",
+	"description": "Can only be used by Villagers. Allows the villagers to create paths around the village.",
+	"additionalProperties": false,
+	"properties": {
+		"only_at_night": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the behavior is only active at night."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Movement speed multiplier while moving through the village."
+		}
+	}
+}

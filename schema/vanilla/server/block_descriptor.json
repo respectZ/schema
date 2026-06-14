@@ -11792,7 +11792,19 @@
 						"properties": { "name": { "enum": ["minecraft:potent_sulfur"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"potent_sulfur_state": {
+										"type": "string",
+										"enum": ["dry", "wet", "dormant", "erupting", "continuous"]
+									}
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -14603,6 +14615,26 @@
 								"additionalProperties": false,
 								"properties": {
 									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:sulfur_spike"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"dripstone_thickness": {
+										"type": "string",
+										"enum": ["tip", "frustum", "middle", "base", "merge"]
+									},
+									"hanging": { "type": "boolean" }
 								}
 							}
 						}

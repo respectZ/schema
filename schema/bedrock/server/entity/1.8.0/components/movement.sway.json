@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/movement.sway.json",
+	"type": "object",
+	"title": "Movement Sway",
+	"description": "This move control causes the mob to sway side to side giving the impression it is swimming.",
+	"additionalProperties": false,
+	"properties": {
+		"max_turn": {
+			"type": "number",
+			"default": 30.0,
+			"description": "The maximum number of degrees the entity can turn per tick."
+		}
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/breed.json",
+	"type": "object",
+	"title": "Behavior Breed",
+	"description": "Allows this mob to breed with other mobs.",
+	"additionalProperties": false,
+	"properties": {
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Movement speed multiplier while seeking a mate."
+		}
+	}
+}

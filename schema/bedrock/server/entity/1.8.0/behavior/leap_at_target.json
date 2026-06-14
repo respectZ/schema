@@ -1,0 +1,20 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/leap_at_target.json",
+	"type": "object",
+	"title": "Behavior Leap At Target",
+	"description": "Allows monsters to jump at and attack their target. Can only be used by hostile mobs.",
+	"additionalProperties": false,
+	"properties": {
+		"must_be_on_ground": {
+			"type": "boolean",
+			"default": true,
+			"description": "Whether the entity must be on the ground to leap."
+		},
+		"yd": {
+			"type": "number",
+			"default": 0.0,
+			"description": "Vertical distance of the leap, in blocks."
+		}
+	}
+}

@@ -1,0 +1,36 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/attack.json",
+	"type": "object",
+	"title": "Attack",
+	"description": "Defines an entity's melee attack and any additional effects on it.",
+	"additionalProperties": false,
+	"properties": {
+		"damage": {
+			"oneOf": [
+				{
+					"type": "number",
+					"minimum": 0,
+					"description": "The fixed amount of damage the melee attack deals."
+				},
+				{
+					"type": "array",
+					"items": { "type": "number", "minimum": 0 },
+					"minItems": 2,
+					"maxItems": 2,
+					"description": "Range of the random amount of damage the melee attack deals"
+				}
+			],
+			"description": "Amount of damage the melee attack deals."
+		},
+		"effect_duration": {
+			"type": "number",
+			"default": 0.0,
+			"description": "Duration in seconds of the status ailment applied to the damaged entity."
+		},
+		"effect_name": {
+			"$ref": "../../../../../vanilla/server/effect_type.json",
+			"description": "Name of the status ailment to apply to an entity attacked by this entity's melee attack."
+		}
+	}
+}

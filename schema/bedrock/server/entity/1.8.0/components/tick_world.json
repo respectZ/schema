@@ -1,0 +1,28 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/tick_world.json",
+	"type": "object",
+	"title": "Tick World",
+	"description": "Defines if the entity ticks the world and the radius around it to tick.",
+	"additionalProperties": false,
+	"properties": {
+		"distance_to_players": {
+			"type": "number",
+			"minimum": 128,
+			"default": 128,
+			"description": "The distance at which the closest player has to be before this entity despawns. This option will be ignored if never_despawn is true. Min: 128 blocks."
+		},
+		"never_despawn": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true, this entity will not despawn even if players are far away. If false, distance_to_players will be used to determine when to despawn."
+		},
+		"radius": {
+			"type": "integer",
+			"minimum": 2,
+			"maximum": 6,
+			"default": 2,
+			"description": "The area around the entity to tick. Default: 2. Allowed range: 2-6."
+		}
+	}
+}

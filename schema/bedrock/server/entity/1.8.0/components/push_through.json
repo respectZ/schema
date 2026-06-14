@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/push_through.json",
+	"type": "object",
+	"title": "Push Through",
+	"description": "Sets the distance through which the entity can push through.",
+	"additionalProperties": false,
+	"properties": {
+		"value": {
+			"type": "number",
+			"default": 0.0,
+			"description": "The value of the entity's push-through, in blocks."
+		}
+	}
+}

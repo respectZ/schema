@@ -1,0 +1,42 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/target_nearby_sensor.json",
+	"type": "object",
+	"title": "Target Nearby Sensor",
+	"description": "Defines the entity's range within which it can see or sense other entities to target them.",
+	"additionalProperties": false,
+	"properties": {
+		"inside_range": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Maximum distance in blocks that another entity will be considered in the 'inside' range."
+		},
+		"on_inside_range": {
+			"oneOf": [
+				{
+					"type": "string"
+				},
+				{
+					"$ref": "../triggers.json"
+				}
+			],
+			"description": "Event to call when an entity gets in the inside range. Can specify 'event' for the name of the event and 'target' for the target of the event."
+		},
+		"on_outside_range": {
+			"oneOf": [
+				{
+					"type": "string"
+				},
+				{
+					"$ref": "../triggers.json"
+				}
+			],
+			"description": "Event to call when an entity gets in the outside range. Can specify 'event' for the name of the event and 'target' for the target of the event."
+		},
+		"outside_range": {
+			"type": "number",
+			"default": 5.0,
+			"description": "Maximum distance in blocks that another entity will be considered in the 'outside' range."
+		}
+	}
+}

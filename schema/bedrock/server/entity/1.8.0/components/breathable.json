@@ -1,0 +1,64 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/breatheable.json",
+	"type": "object",
+	"title": "Breathable",
+	"description": "Defines what blocks this entity can breathe in and gives them the ability to suffocate",
+	"additionalProperties": false,
+	"properties": {
+		"breatheBlocks": {
+			"type": "array",
+			"description": "List of blocks this entity can breathe in, in addition to the above.",
+			"items": {
+				"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
+			}
+		},
+		"breathesAir": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true, this entity can breathe in air."
+		},
+		"breathesLava": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, this entity can breathe in lava."
+		},
+		"breathesSolids": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, this entity can breathe in solid blocks."
+		},
+		"breathesWater": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, this entity can breathe in water."
+		},
+		"generatesBubbles": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true, this entity will have visible bubbles while in water."
+		},
+		"inhaleTime": {
+			"type": "number",
+			"default": 0.0,
+			"description": "Time in seconds to recover breath to maximum."
+		},
+		"nonBreatheBlocks": {
+			"type": "array",
+			"description": "List of blocks this entity can't breathe in, in addition to the above.",
+			"items": {
+				"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
+			}
+		},
+		"suffocateTime": {
+			"type": "integer",
+			"default": -20,
+			"description": "Time in seconds between suffocation damage."
+		},
+		"totalSupply": {
+			"type": "integer",
+			"default": 15,
+			"description": "Time in seconds the entity can hold its breath."
+		}
+	}
+}

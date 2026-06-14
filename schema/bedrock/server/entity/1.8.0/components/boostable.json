@@ -1,0 +1,43 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/boostable.json",
+	"type": "object",
+	"title": "Boostable",
+	"description": "Defines the conditions and behavior of a rideable entity's boost",
+	"additionalProperties": false,
+	"properties": {
+		"boost_items": {
+			"type": "array",
+			"description": "List of items that can be used to boost while riding this entity.",
+			"items": {
+				"type": "object",
+				"required": ["item"],
+				"additionalProperties": false,
+				"properties": {
+					"item": {
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+						"description": "Name of the item that can be used to boost."
+					},
+					"damage": {
+						"type": "integer",
+						"description": "This is the damage that the item will take each time it is used."
+					},
+					"replaceItem": {
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+						"description": "The item used to boost will become this item once it is used up."
+					}
+				}
+			}
+		},
+		"duration": {
+			"type": "number",
+			"default": 3.0,
+			"description": "Time in seconds for the boost."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Factor by which the entity's normal speed increases. E.g. 2.0 means go twice as fast."
+		}
+	}
+}

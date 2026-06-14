@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/flying_speed.json",
+	"type": "object",
+	"title": "Flying Speed",
+	"description": "Speed in Blocks that this entity flies at.",
+	"additionalProperties": false,
+	"properties": {
+		"value": {
+			"type": "number",
+			"default": 0.02,
+			"description": "Flying speed in blocks per tick."
+		}
+	}
+}

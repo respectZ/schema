@@ -1,0 +1,53 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/triggers.json",
+	"type": "object",
+	"title": "Event Trigger",
+	"description": "A trigger that fires a named event when a condition is met.",
+	"required": ["event"],
+	"additionalProperties": false,
+	"properties": {
+		"event": {
+			"type": "string",
+			"description": "The name of the event to run when this trigger fires."
+		},
+		"target": {
+			"type": "string",
+			"oneOf": [
+				{
+					"const": "self",
+					"description": "The entity or object calling the test."
+				},
+				{
+					"const": "block",
+					"description": "The block involved with the interaction."
+				},
+				{
+					"const": "damager",
+					"description": "The damaging actor involved with the interaction."
+				},
+				{
+					"const": "other",
+					"description": "The other member of an interaction, not the caller."
+				},
+				{
+					"const": "parent",
+					"description": "The caller's current parent."
+				},
+				{
+					"const": "player",
+					"description": "The player involved with the interaction."
+				},
+				{
+					"const": "target",
+					"description": "The caller's current target."
+				}
+			],
+			"description": "The subject of the trigger. Defaults to 'self'."
+		},
+		"filters": {
+			"$ref": "../../../../vanilla/server/filter/entity/_index.json",
+			"description": "Optional. The filter conditions that must be met for the event to fire."
+		}
+	}
+}

@@ -1,0 +1,34 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/beg.json",
+	"type": "object",
+	"title": "Behavior Beg",
+	"description": "Allows this mob to look at and follow the player that holds food they like.",
+	"additionalProperties": false,
+	"properties": {
+		"items": {
+			"type": "array",
+			"description": "Items the entity will beg for.",
+			"items": {
+				"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+			}
+		},
+		"look_distance": {
+			"type": "number",
+			"default": 8.0,
+			"description": "Distance in blocks at which the entity will look at the player."
+		},
+		"look_time": {
+			"oneOf": [
+				{
+					"type": "array",
+					"items": { "type": "number", "minimum": 0 },
+					"minItems": 2,
+					"maxItems": 2,
+					"description": "Range [min, max] of look time in seconds."
+				}
+			],
+			"description": "Time in seconds the entity will look at the player."
+		}
+	}
+}

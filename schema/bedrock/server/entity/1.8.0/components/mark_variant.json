@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/mark_variant.json",
+	"type": "object",
+	"title": "Mark Variant",
+	"description": "Additional variant value. Can be used to further differentiate variants.",
+	"additionalProperties": false,
+	"properties": {
+		"value": {
+			"type": "integer",
+			"default": 0,
+			"description": "The ID of the variant. By convention, 0 is the ID of the base entity."
+		}
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/rail_movement.json",
+	"type": "object",
+	"title": "Rail Movement",
+	"description": "Defines the entity's movement on the rails. An entity with this component is only allowed to move on the rail.",
+	"additionalProperties": false,
+	"properties": {
+		"max_speed": {
+			"type": "number",
+			"default": 0.4,
+			"description": "Maximum speed that this entity will move at when on the rail."
+		}
+	}
+}

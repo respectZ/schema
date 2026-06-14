@@ -1,0 +1,51 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/sneeze.json",
+	"type": "object",
+	"title": "Behavior Sneeze",
+	"description": "Allows the mob to stop and sneeze possibly startling nearby mobs and dropping an item.",
+	"additionalProperties": false,
+	"properties": {
+		"cooldown_time": {
+			"type": "number",
+			"default": 0.0,
+			"description": "Time in seconds between sneezes."
+		},
+		"drop_item_chance": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Chance of dropping an item when sneezing."
+		},
+		"entity_types": {
+			"$ref": "../entity_types.json",
+			"description": "Entity types that can be targeted by the sneeze."
+		},
+		"loot_table": {
+			"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
+			"description": "Path to the loot table used to determine the dropped item."
+		},
+		"prepare_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "Sound played when the entity prepares to sneeze."
+		},
+		"prepare_time": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Time in seconds the entity prepares before sneezing."
+		},
+		"probability": {
+			"type": "number",
+			"default": 0.02,
+			"description": "Probability of sneezing per tick."
+		},
+		"sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "Sound played when the entity sneezes."
+		},
+		"within_radius": {
+			"type": "number",
+			"default": 0.0,
+			"description": "Radius in blocks in which targets are considered."
+		}
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/input_ground_controlled.json",
+	"type": "object",
+	"title": "Input Ground Controlled",
+	"description": "When configured as a rideable entity, the entity will be controlled using WASD controls.",
+	"additionalProperties": false,
+	"properties": {}
+}

@@ -1,0 +1,48 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/equippable.json",
+	"type": "object",
+	"title": "Equippable",
+	"description": "Defines an entity's behavior for having items equipped to it",
+	"additionalProperties": false,
+	"properties": {
+		"slots": {
+			"type": "array",
+			"description": "List of slots and the item that can be equipped.",
+			"items": {
+				"type": "object",
+				"required": ["slot"],
+				"additionalProperties": false,
+				"properties": {
+					"slot": {
+						"type": "integer",
+						"description": "The slot number of this slot."
+					},
+					"accepted_items": {
+						"type": "array",
+						"description": "The list of items that can go in this slot.",
+						"items": {
+							"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+						}
+					},
+					"item": {
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+						"description": "Name of the item that can be equipped for this slot."
+					},
+					"interact_text": {
+						"type": "string",
+						"description": "Text to be displayed when the entity can be equipped with this item when playing with Touch-screen controls."
+					},
+					"on_equip": {
+						"type": "string",
+						"description": "Event to trigger when this entity is equipped with this item."
+					},
+					"on_unequip": {
+						"type": "string",
+						"description": "Event to trigger when this item is removed from this entity."
+					}
+				}
+			}
+		}
+	}
+}

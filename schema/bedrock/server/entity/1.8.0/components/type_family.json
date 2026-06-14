@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/type_family.json",
+	"type": "object",
+	"title": "Type Family",
+	"description": "Defines the families this entity belongs to.",
+	"additionalProperties": false,
+	"properties": {
+		"family": {
+			"type": "array",
+			"description": "List of family names.",
+			"items": {
+				"$ref": "../../../../../vanilla/server/type_family.json"
+			}
+		}
+	}
+}

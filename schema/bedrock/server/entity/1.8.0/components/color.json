@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/color.json",
+	"type": "object",
+	"title": "Color",
+	"description": "Defines the entity's color. Only works on vanilla entities that have predefined color values (sheep, llama, shulker).",
+	"additionalProperties": false,
+	"properties": {
+		"value": {
+			"type": "integer",
+			"default": 0,
+			"description": "The palette color value of the entity."
+		}
+	}
+}

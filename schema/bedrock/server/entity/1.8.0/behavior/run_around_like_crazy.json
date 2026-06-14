@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/run_around_like_crazy.json",
+	"type": "object",
+	"title": "Behavior Run Around Like Crazy",
+	"description": "Allows the mob to run around aimlessly.",
+	"additionalProperties": false,
+	"properties": {
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Movement speed multiplier while running."
+		}
+	}
+}

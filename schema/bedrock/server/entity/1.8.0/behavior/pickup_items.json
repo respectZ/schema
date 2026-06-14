@@ -1,0 +1,30 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/pickup_items.json",
+	"type": "object",
+	"title": "Behavior Pickup Items",
+	"description": "Allows the mob to pick up items on the ground.",
+	"additionalProperties": false,
+	"properties": {
+		"goal_radius": {
+			"type": "number",
+			"default": 0.5,
+			"description": "Distance in blocks at which the entity is considered to have reached the item."
+		},
+		"max_dist": {
+			"type": "number",
+			"default": 0.0,
+			"description": "Maximum distance in blocks at which the entity will look for items."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Movement speed multiplier while moving towards items."
+		},
+		"track_target": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the entity tracks its target when out of sight."
+		}
+	}
+}

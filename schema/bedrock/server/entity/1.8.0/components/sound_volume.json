@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/sound_volume.json",
+	"type": "object",
+	"title": "Sound Volume",
+	"description": "Sets the entity's base volume for sound effects.",
+	"additionalProperties": false,
+	"properties": {
+		"value": {
+			"type": "number",
+			"default": 1.0,
+			"description": "The value of the volume the entity uses for sound effects."
+		}
+	}
+}

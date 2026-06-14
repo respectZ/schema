@@ -1,0 +1,46 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/look_at_entity.json",
+	"type": "object",
+	"title": "Behavior Look At Entity",
+	"description": "Allows the mob to look at nearby entities.",
+	"additionalProperties": false,
+	"properties": {
+		"angle_of_view_horizontal": {
+			"type": "integer",
+			"default": 360,
+			"description": "Horizontal field of view, in degrees, used to detect targets."
+		},
+		"angle_of_view_vertical": {
+			"type": "integer",
+			"default": 360,
+			"description": "Vertical field of view, in degrees, used to detect targets."
+		},
+		"filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "Filter to determine which entities to look at."
+		},
+		"look_distance": {
+			"type": "number",
+			"default": 8.0,
+			"description": "Maximum distance in blocks at which the entity will look."
+		},
+		"look_time": {
+			"oneOf": [
+				{
+					"type": "array",
+					"items": { "type": "number", "minimum": 0 },
+					"minItems": 2,
+					"maxItems": 2,
+					"description": "Range [min, max] of look time in seconds."
+				}
+			],
+			"description": "Time in seconds the entity will look."
+		},
+		"probability": {
+			"type": "number",
+			"default": 0.02,
+			"description": "Probability of triggering the look behavior each tick."
+		}
+	}
+}

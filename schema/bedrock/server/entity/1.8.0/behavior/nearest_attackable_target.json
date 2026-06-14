@@ -1,0 +1,59 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/nearest_attackable_target.json",
+	"type": "object",
+	"title": "Behavior Nearest Attackable Target",
+	"description": "Allows the mob to check for and pursue the nearest valid target.",
+	"additionalProperties": false,
+	"properties": {
+		"attack_interval": {
+			"type": "integer",
+			"default": 0,
+			"description": "Minimum number of ticks between attacks on the same target."
+		},
+		"entity_types": {
+			"$ref": "../entity_types.json",
+			"description": "Entity types that may be targeted."
+		},
+		"must_reach": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the entity must reach the target to attack."
+		},
+		"must_see": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the entity must see the target to attack."
+		},
+		"must_see_forget_duration": {
+			"type": "number",
+			"default": 3.0,
+			"description": "Time in seconds before losing a target that is no longer visible."
+		},
+		"persist_time": {
+			"type": "number",
+			"default": 0.0,
+			"description": "Time in seconds the target is remembered after losing it."
+		},
+		"reselect_targets": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether to reselect targets when the current target dies."
+		},
+		"scan_interval": {
+			"type": "integer",
+			"default": 10,
+			"description": "Time in ticks between scans for new targets."
+		},
+		"target_search_height": {
+			"type": "number",
+			"default": -1.0,
+			"description": "Vertical search range for targets. -1 means unlimited."
+		},
+		"within_radius": {
+			"type": "number",
+			"default": 0.0,
+			"description": "Search radius in blocks."
+		}
+	}
+}

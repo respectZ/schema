@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/slime_keep_on_jumping.json",
+	"type": "object",
+	"title": "Behavior Slime Keep On Jumping",
+	"description": "Can only be used by Slimes and Magma Cubes. Allows the mob to continuously jump around like a slime.",
+	"additionalProperties": false,
+	"properties": {}
+}

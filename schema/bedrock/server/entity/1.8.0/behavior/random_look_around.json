@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/random_look_around.json",
+	"type": "object",
+	"title": "Behavior Random Look Around",
+	"description": "Allows the mob to randomly look around.",
+	"additionalProperties": false,
+	"properties": {
+		"look_time": {
+			"oneOf": [
+				{
+					"type": "array",
+					"items": { "type": "number", "minimum": 0 },
+					"minItems": 2,
+					"maxItems": 2,
+					"description": "Range [min, max] of look time in seconds."
+				}
+			],
+			"description": "Time in seconds the entity looks in a direction."
+		}
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/default_look_angle.json",
+	"type": "object",
+	"title": "Default Look Angle",
+	"description": "Sets this entity's default head rotation angle.",
+	"additionalProperties": false,
+	"properties": {
+		"value": {
+			"type": "number",
+			"default": 0.0,
+			"description": "Angle in degrees."
+		}
+	}
+}

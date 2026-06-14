@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/item_hopper.json",
+	"type": "object",
+	"title": "Item Hopper",
+	"description": "Determines that this entity is an item hopper",
+	"additionalProperties": false,
+	"properties": {}
+}

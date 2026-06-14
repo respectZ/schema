@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/enderman_leave_block.json",
+	"type": "object",
+	"title": "Behavior Enderman Leave Block",
+	"description": "Allows the enderman to drop a block they are carrying. Can only be used by Endermen.",
+	"additionalProperties": false,
+	"properties": {}
+}

@@ -1,0 +1,48 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/spell_effects.json",
+	"type": "object",
+	"title": "Spell Effects",
+	"description": "Defines what mob effects to add and remove to the entity when adding this component.",
+	"additionalProperties": false,
+	"properties": {
+		"add_effects": {
+			"type": "array",
+			"description": "List of effects to add to this entity after adding this component.",
+			"items": {
+				"type": "object",
+				"required": ["effect"],
+				"additionalProperties": false,
+				"properties": {
+					"effect": {
+						"$ref": "../../../../../vanilla/server/effect_type.json",
+						"description": "Name of the effect to add."
+					},
+					"duration": {
+						"type": "number",
+						"description": "Duration in seconds."
+					},
+					"amplifier": {
+						"type": "integer",
+						"description": "Effect level."
+					},
+					"ambient": {
+						"type": "boolean",
+						"description": "Whether the effect is considered ambient."
+					},
+					"visible": {
+						"type": "boolean",
+						"description": "Whether the effect is visible."
+					}
+				}
+			}
+		},
+		"remove_effects": {
+			"type": "array",
+			"description": "List of effect names to remove from this entity after adding this component.",
+			"items": {
+				"$ref": "../../../../../vanilla/server/effect_type.json"
+			}
+		}
+	}
+}

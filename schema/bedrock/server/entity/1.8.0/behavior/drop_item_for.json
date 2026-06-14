@@ -1,0 +1,73 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/drop_item_for.json",
+	"type": "object",
+	"title": "Behavior Drop Item For",
+	"description": "Allows the mob to move near a target and drop an item.",
+	"additionalProperties": false,
+	"properties": {
+		"drop_item_chance": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Chance per tick to drop an item."
+		},
+		"entity_types": {
+			"$ref": "../entity_types.json",
+			"description": "Entity types the entity will drop items for."
+		},
+		"goal_radius": {
+			"type": "number",
+			"default": 0.5,
+			"description": "Distance in blocks at which the entity is considered to have reached the drop location."
+		},
+		"loot_table": {
+			"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
+			"description": "Path to the loot table used to determine the dropped item."
+		},
+		"max_dist": {
+			"type": "number",
+			"default": 0.0,
+			"description": "Maximum distance in blocks at which the entity will offer items."
+		},
+		"offering_distance": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Distance in blocks at which the item is offered."
+		},
+		"on_drop_attempt": {
+			"type": "string",
+			"description": "Event to run when the entity attempts to drop an item."
+		},
+		"search_height": {
+			"type": "integer",
+			"default": 1,
+			"description": "Vertical range to search for the drop location."
+		},
+		"search_range": {
+			"type": "integer",
+			"default": 0,
+			"description": "Horizontal range to search for the drop location."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Movement speed multiplier while moving to drop the item."
+		},
+		"time_of_day_range": {
+			"oneOf": [
+				{
+					"type": "number",
+					"description": "Fixed time of day value."
+				},
+				{
+					"type": "array",
+					"items": { "type": "number", "minimum": 0, "maximum": 1 },
+					"minItems": 2,
+					"maxItems": 2,
+					"description": "Range [min, max] of the random time of day (0-1)."
+				}
+			],
+			"description": "Time of day range during which the entity will drop items."
+		}
+	}
+}

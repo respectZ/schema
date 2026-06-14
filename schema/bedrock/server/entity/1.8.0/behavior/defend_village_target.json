@@ -1,0 +1,14 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/defend_village_target.json",
+	"type": "object",
+	"title": "Behavior Defend Village Target",
+	"description": "Allows the mob to stay in the village and fight mobs hostile to the villagers.",
+	"additionalProperties": false,
+	"properties": {
+		"entity_types": {
+			"$ref": "../entity_types.json",
+			"description": "Entity types to defend against."
+		}
+	}
+}

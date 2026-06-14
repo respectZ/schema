@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/floats_in_liquid.json",
+	"type": "object",
+	"title": "Floats In Liquid",
+	"description": "Sets that this entity can float in liquid blocks.",
+	"additionalProperties": false,
+	"properties": {}
+}

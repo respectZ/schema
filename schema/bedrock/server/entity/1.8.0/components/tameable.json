@@ -1,0 +1,28 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/tameable.json",
+	"type": "object",
+	"title": "Tameable",
+	"description": "Defines the rules for a mob to be tamed by the player.",
+	"additionalProperties": false,
+	"properties": {
+		"probability": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 1.0,
+			"default": 1.0,
+			"description": "The chance of taming the entity with each item use between 0.0 and 1.0, where 1.0 is 100%."
+		},
+		"tameItems": {
+			"type": "array",
+			"description": "The list of items that can be used to tame this entity.",
+			"items": {
+				"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+			}
+		},
+		"tame_event": {
+			"type": "string",
+			"description": "Event to run when this entity becomes tamed."
+		}
+	}
+}

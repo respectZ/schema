@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/roll.json",
+	"type": "object",
+	"title": "Behavior Roll",
+	"description": "This allows the mob to roll forward.",
+	"additionalProperties": false,
+	"properties": {
+		"probability": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Probability of starting a roll per tick."
+		}
+	}
+}

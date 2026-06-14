@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/silverfish_merge_with_stone.json",
+	"type": "object",
+	"title": "Behavior Silverfish Merge With Stone",
+	"description": "Allows the mob to go into stone blocks like Silverfish do. Currently it can only be used by Silverfish.",
+	"additionalProperties": false,
+	"properties": {}
+}

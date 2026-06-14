@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/foot_size.json",
+	"type": "object",
+	"title": "Foot Size",
+	"description": "Sets the number of blocks the entity can step without jumping.",
+	"additionalProperties": false,
+	"properties": {
+		"value": {
+			"type": "number",
+			"default": 0.5,
+			"description": "The value of the size of the entity's step."
+		}
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/enderman_take_block.json",
+	"type": "object",
+	"title": "Behavior Enderman Take Block",
+	"description": "Allows the enderman to take a block and carry it around. Can only be used by Endermen.",
+	"additionalProperties": false,
+	"properties": {}
+}

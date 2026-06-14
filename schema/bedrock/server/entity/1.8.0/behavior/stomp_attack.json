@@ -1,0 +1,39 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/stomp_attack.json",
+	"type": "object",
+	"title": "Behavior Stomp Attack",
+	"description": "Allows the mob to use the polar bear's melee attack.",
+	"additionalProperties": false,
+	"properties": {
+		"attack_once": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the entity attacks only once per engagement."
+		},
+		"attack_types": {
+			"type": "string",
+			"description": "Specific attack types this stomp attack is restricted to."
+		},
+		"random_stop_interval": {
+			"type": "integer",
+			"default": 0,
+			"description": "Maximum number of ticks the entity can chase before stopping."
+		},
+		"reach_multiplier": {
+			"type": "number",
+			"default": 2.0,
+			"description": "Multiplier applied to the stomp reach distance."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Movement speed multiplier while chasing the target."
+		},
+		"track_target": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the entity tracks its target when out of sight."
+		}
+	}
+}

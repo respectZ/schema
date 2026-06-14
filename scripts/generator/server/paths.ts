@@ -8,7 +8,15 @@ export async function generateServerPaths() {
 		relative: true,
 		sort: true,
 	});
+	const tradingPaths = await getBedrockFilepaths({
+		type: "bp",
+		pattern: "trading/**/*.json",
+		extension: true,
+		relative: true,
+		sort: true,
+	});
 	return {
 		lootTablePaths,
+		tradingPaths,
 	};
 }

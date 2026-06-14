@@ -1,0 +1,114 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/summon_entity.json",
+	"type": "object",
+	"title": "Behavior Summon Entity",
+	"description": "Allows the mob to attack the player by summoning other entities.",
+	"additionalProperties": false,
+	"properties": {
+		"summon_choices": {
+			"type": "array",
+			"description": "Weighted list of possible summon behaviors.",
+			"items": {
+				"type": "object",
+				"required": ["weight"],
+				"additionalProperties": false,
+				"properties": {
+					"cast_duration": {
+						"type": "number",
+						"description": "Time in seconds the entity casts before summoning."
+					},
+					"cooldown_time": {
+						"type": "number",
+						"description": "Time in seconds before this choice can be re-selected."
+					},
+					"do_casting": {
+						"type": "boolean",
+						"description": "Whether the entity plays a casting animation."
+					},
+					"filters": {
+						"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+						"description": "Filter conditions that must be met for this choice to be picked."
+					},
+					"max_activation_range": {
+						"type": "number",
+						"description": "Maximum distance in blocks from the target at which the choice activates."
+					},
+					"min_activation_range": {
+						"type": "number",
+						"description": "Minimum distance in blocks from the target at which the choice activates."
+					},
+					"particle_color": {
+						"type": "integer",
+						"description": "Particle color (RGBA) emitted during casting."
+					},
+					"sequence": {
+						"type": "array",
+						"description": "Ordered list of summon steps.",
+						"items": {
+							"type": "object",
+							"required": ["entity_type"],
+							"additionalProperties": false,
+							"properties": {
+								"base_delay": {
+									"type": "number",
+									"description": "Delay in seconds before this step."
+								},
+								"delay_per_summon": {
+									"type": "number",
+									"description": "Additional delay in seconds per summoned entity."
+								},
+								"entity_lifespan": {
+									"type": "number",
+									"description": "Lifetime in seconds of the summoned entity."
+								},
+								"entity_type": {
+									"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+									"description": "Entity identifier to summon."
+								},
+								"num_entities_spawned": {
+									"type": "integer",
+									"description": "Number of entities to spawn in this step."
+								},
+								"shape": {
+									"type": "string",
+									"enum": ["line", "circle"],
+									"description": "Shape of the spawn pattern."
+								},
+								"size": {
+									"type": "number",
+									"description": "Size of the spawn pattern."
+								},
+								"sound_event": {
+									"$ref": "../../../../../vanilla/server/level_sound.json",
+									"description": "Sound played when this step runs."
+								},
+								"summon_cap": {
+									"type": "integer",
+									"description": "Maximum number of entities to keep alive within the cap radius."
+								},
+								"summon_cap_radius": {
+									"type": "number",
+									"description": "Radius in blocks of the summon cap."
+								},
+								"target": {
+									"type": "string",
+									"description": "Target subject for the spawned entity. Defaults to 'self'."
+								}
+							}
+						}
+					},
+					"start_sound_event": {
+						"$ref": "../../../../../vanilla/server/level_sound.json",
+						"description": "Sound played when the choice starts."
+					},
+					"weight": {
+						"type": "number",
+						"minimum": 0,
+						"description": "Relative weight of this choice."
+					}
+				}
+			}
+		}
+	}
+}

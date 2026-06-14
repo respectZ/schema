@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/slime_float.json",
+	"type": "object",
+	"title": "Behavior Slime Float",
+	"description": "Can only be used by Slimes and Magma Cubes. Controls their ability to float in water / lava.",
+	"additionalProperties": false,
+	"properties": {}
+}

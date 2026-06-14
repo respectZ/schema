@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/environment_sensor.json",
+	"type": "object",
+	"title": "Environment Sensor",
+	"description": "Creates a trigger based on environment conditions.",
+	"additionalProperties": false,
+	"properties": {
+		"on_environment": {
+			"type": "array",
+			"description": "The list of triggers that fire when the environment conditions match the given filter criteria.",
+			"items": {
+				"$ref": "../triggers.json"
+			}
+		}
+	}
+}

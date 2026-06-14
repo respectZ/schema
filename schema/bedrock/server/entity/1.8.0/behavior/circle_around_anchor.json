@@ -1,0 +1,78 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/circle_around_anchor.json",
+	"type": "object",
+	"title": "Behavior Circle Around Anchor",
+	"description": "Allows the mob to move in a circle around a point or a target.",
+	"additionalProperties": false,
+	"properties": {
+		"goal_radius": {
+			"type": "number",
+			"default": 0.5,
+			"description": "Distance in blocks at which the entity is considered to have reached the goal."
+		},
+		"height_above_target_range": {
+			"oneOf": [
+				{
+					"type": "number",
+					"description": "Fixed height above target."
+				},
+				{
+					"type": "array",
+					"items": { "type": "number" },
+					"minItems": 2,
+					"maxItems": 2,
+					"description": "Range [min, max] of height above the target."
+				}
+			],
+			"description": "Height above the target to maintain."
+		},
+		"height_change_chance": {
+			"type": "integer",
+			"default": 350,
+			"description": "Chance per tick to change height (out of 1000)."
+		},
+		"height_offset_range": {
+			"oneOf": [
+				{
+					"type": "number",
+					"description": "Fixed height offset."
+				},
+				{
+					"type": "array",
+					"items": { "type": "number" },
+					"minItems": 2,
+					"maxItems": 2,
+					"description": "Range [min, max] of the random height offset."
+				}
+			],
+			"description": "Random vertical offset applied to the entity."
+		},
+		"radius_change_chance": {
+			"type": "integer",
+			"default": 250,
+			"description": "Chance per tick to change the circle radius (out of 1000)."
+		},
+		"radius_range": {
+			"oneOf": [
+				{
+					"type": "number",
+					"description": "Fixed circle radius."
+				},
+				{
+					"type": "array",
+					"items": { "type": "number", "minimum": 0 },
+					"minItems": 2,
+					"maxItems": 2,
+					"description": "Range [min, max] of the random circle radius in blocks."
+				}
+			],
+			"description": "Random circle radius."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Movement speed multiplier while circling."
+		}
+	}
+}

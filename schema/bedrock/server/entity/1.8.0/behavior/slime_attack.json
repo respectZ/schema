@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/slime_attack.json",
+	"type": "object",
+	"title": "Behavior Slime Attack",
+	"description": "Can only be used by Slimes and Magma Cubes. Allows the mob to use a melee attack like the slime's.",
+	"additionalProperties": false,
+	"properties": {}
+}

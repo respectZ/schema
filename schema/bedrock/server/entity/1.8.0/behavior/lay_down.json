@@ -1,0 +1,20 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/lay_down.json",
+	"type": "object",
+	"title": "Behavior Lay Down",
+	"description": "Allows mobs to lay down at times",
+	"additionalProperties": false,
+	"properties": {
+		"interval": {
+			"type": "integer",
+			"default": 120,
+			"description": "Minimum time in ticks between lay-down attempts."
+		},
+		"random_stop_interval": {
+			"type": "integer",
+			"default": 120,
+			"description": "Maximum time in ticks between lay-down attempts."
+		}
+	}
+}

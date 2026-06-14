@@ -1,0 +1,14 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/vex_copy_owner_target.json",
+	"type": "object",
+	"title": "Behavior Vex Copy Owner Target",
+	"description": "Allows the mob to target the same entity its owner is targeting.",
+	"additionalProperties": false,
+	"properties": {
+		"entity_types": {
+			"$ref": "../entity_types.json",
+			"description": "Entity types the entity will consider as attack targets."
+		}
+	}
+}

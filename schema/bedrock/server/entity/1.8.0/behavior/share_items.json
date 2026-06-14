@@ -1,0 +1,29 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/share_items.json",
+	"type": "object",
+	"title": "Behavior Share Items",
+	"description": "Allows the mob to give items it has to others.",
+	"additionalProperties": false,
+	"properties": {
+		"entity_types": {
+			"$ref": "../entity_types.json",
+			"description": "Entity types the entity will share items with."
+		},
+		"goal_radius": {
+			"type": "number",
+			"default": 0.5,
+			"description": "Distance in blocks at which the entity is considered to have reached the recipient."
+		},
+		"max_dist": {
+			"type": "number",
+			"default": 0.0,
+			"description": "Maximum distance in blocks at which the entity will share items."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Movement speed multiplier while moving to share items."
+		}
+	}
+}

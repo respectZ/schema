@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/move_indoors.json",
+	"type": "object",
+	"title": "Behavior Move Indoors",
+	"description": "Can only be used by Villagers. Allows them to seek shelter indoors.",
+	"additionalProperties": false,
+	"properties": {
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Movement speed multiplier while moving indoors."
+		}
+	}
+}

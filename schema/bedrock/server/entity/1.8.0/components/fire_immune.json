@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/fire_immune.json",
+	"type": "object",
+	"title": "Fire Immune",
+	"description": "Sets that this entity doesn't take damage from fire.",
+	"additionalProperties": false,
+	"properties": {}
+}

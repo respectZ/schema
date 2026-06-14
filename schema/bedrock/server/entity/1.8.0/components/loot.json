@@ -1,0 +1,14 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/loot.json",
+	"type": "object",
+	"title": "Loot",
+	"description": "Sets the loot table for what items this entity drops upon death.",
+	"additionalProperties": false,
+	"properties": {
+		"table": {
+			"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
+			"description": "The path to the loot table, relative to the behavior pack's root."
+		}
+	}
+}

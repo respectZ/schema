@@ -1,0 +1,58 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/lookat.json",
+	"type": "object",
+	"title": "Look At",
+	"description": "Defines the behavior when another entity looks at this entity.",
+	"additionalProperties": false,
+	"properties": {
+		"filters": {
+			"oneOf": [
+				{
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json"
+				},
+				{
+					"type": "string",
+					"description": "Shorthand preset filter expression, e.g. 'player'."
+				}
+			],
+			"description": "Filter to test which subjects may be looked at. Defaults to 'player'."
+		},
+		"look_cooldown": {
+			"oneOf": [
+				{
+					"type": "number",
+					"minimum": 0,
+					"description": "Fixed cooldown in seconds between looks."
+				},
+				{
+					"type": "array",
+					"items": { "type": "number", "minimum": 0 },
+					"minItems": 2,
+					"maxItems": 2,
+					"description": "Range [min, max] in seconds between looks."
+				}
+			],
+			"description": "The range for the random amount of time during which the entity is 'cooling down' and won't get angered or look for a target."
+		},
+		"look_event": {
+			"type": "string",
+			"description": "Event to run when the entities specified in filters look at this entity."
+		},
+		"mAllowInvulnerable": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, invulnerable entities (e.g. Players in creative mode) are considered valid targets."
+		},
+		"searchRadius": {
+			"type": "number",
+			"default": 10.0,
+			"description": "Maximum distance this entity will look for another entity looking at it."
+		},
+		"setTarget": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true, this entity will set the attack target as the entity that looked at it."
+		}
+	}
+}

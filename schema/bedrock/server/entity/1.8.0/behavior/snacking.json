@@ -1,0 +1,32 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/behavior/snacking.json",
+	"type": "object",
+	"title": "Behavior Snacking",
+	"description": "Allows the mob to take a load off and snack on food that it found nearby.",
+	"additionalProperties": false,
+	"properties": {
+		"items": {
+			"type": "array",
+			"description": "Items the entity will snack on.",
+			"items": {
+				"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+			}
+		},
+		"snacking_cooldown": {
+			"type": "number",
+			"default": 7.5,
+			"description": "Maximum cooldown in seconds between snacks."
+		},
+		"snacking_cooldown_min": {
+			"type": "number",
+			"default": 0.5,
+			"description": "Minimum cooldown in seconds between snacks."
+		},
+		"snacking_stop_chance": {
+			"type": "number",
+			"default": 0.0017,
+			"description": "Probability per tick of stopping snacking."
+		}
+	}
+}

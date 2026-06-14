@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/is_saddled.json",
+	"type": "object",
+	"title": "Is Saddled",
+	"description": "Sets that this entity is currently saddled.",
+	"additionalProperties": false,
+	"properties": {}
+}

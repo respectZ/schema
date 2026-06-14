@@ -1,0 +1,18 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/addrider.json",
+	"type": "object",
+	"title": "Add Rider",
+	"description": "Adds a rider to the entity. Requires minecraft:rideable.",
+	"additionalProperties": false,
+	"properties": {
+		"entity_type": {
+			"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+			"description": "Type of entity to acquire as a rider."
+		},
+		"spawn_event": {
+			"type": "string",
+			"description": "Trigger event when a rider is acquired."
+		}
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/burns_in_daylight.json",
+	"type": "object",
+	"title": "Burns In Daylight",
+	"description": "Sets that this entity burns in daylight.",
+	"additionalProperties": false,
+	"properties": {}
+}

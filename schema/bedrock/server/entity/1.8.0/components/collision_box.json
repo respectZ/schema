@@ -1,0 +1,20 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "schema/bedrock/server/entity/1.8.0/components/collision_box.json",
+	"type": "object",
+	"title": "Collision Box",
+	"description": "Sets the width and height of the Entity's collision box.",
+	"additionalProperties": false,
+	"properties": {
+		"height": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Height of the collision box in blocks."
+		},
+		"width": {
+			"type": "number",
+			"default": 1.0,
+			"description": "Width and depth of the collision box in blocks."
+		}
+	}
+}
