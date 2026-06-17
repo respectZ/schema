@@ -1,6 +1,6 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/item/1.26.0/components/_index.json",
+	"$id": "schema/bedrock/server/item/1.26.30/components/_index.json",
 	"type": "object",
 	"title": "Components",
 	"description": "Item components",
@@ -78,9 +78,6 @@
 		"minecraft:tags": {
 			"$ref": "../../1.20.50/components/tags.json"
 		},
-		"minecraft:use_modifiers": {
-			"$ref": "../../1.20.50/components/use_modifiers.json"
-		},
 		"minecraft:icon": {
 			"$ref": "../../1.20.60/components/icon.json"
 		},
@@ -130,13 +127,16 @@
 			"$ref": "../../1.21.90/components/wearable.json"
 		},
 		"minecraft:block_placer": {
-			"$ref": "block_placer.json"
+			"$ref": "../../1.26.0/components/block_placer.json"
 		},
 		"minecraft:damage": {
-			"$ref": "damage.json"
+			"$ref": "../../1.26.0/components/damage.json"
 		},
 		"minecraft:planter": {
-			"$ref": "planter.json"
+			"$ref": "../../1.26.0/components/planter.json"
+		},
+		"minecraft:use_modifiers": {
+			"$ref": "use_modifiers.json"
 		}
 	},
 	"patternProperties": {
