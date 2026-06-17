@@ -77,14 +77,15 @@
 					"type": "array",
 					"minItems": 1,
 					"uniqueItems": true,
-					"description": "Which states to enable. Must specify at least one. Options: [\"minecraft:cardinal_direction\", \"minecraft:facing_direction\", \"minecraft:corner_and_cardinal_direction\"].",
+					"description": "Which states to enable. Must specify at least one. Options: [\"minecraft:cardinal_direction\", \"minecraft:facing_direction\", \"minecraft:corner_and_cardinal_direction\", \"minecraft:sixteen_way_rotation\"].",
 					"items": {
 						"type": "string",
 						"title": "Placement Position Enabled State",
 						"enum": [
 							"minecraft:cardinal_direction",
 							"minecraft:corner_and_cardinal_direction",
-							"minecraft:facing_direction"
+							"minecraft:facing_direction",
+							"minecraft:sixteen_way_rotation"
 						]
 					}
 				},
