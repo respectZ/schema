@@ -13,7 +13,7 @@ export async function generateCommandEnum() {
 					features: [],
 				};
 				const mapSet: Record<keyof Result, Set<string>> = {
-					gameRules: new Set<string>(["BoolGameRule", "IntGameRule"]),
+					gameRules: new Set<string>(["BoolGameRule", "IntGameRule", "playerwaypointsRule"]),
 					controlSchemes: new Set<string>(["controlscheme"]),
 					features: new Set<string>(["features"]),
 				};
