@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Trust",
+	"description": "Allows this entity to trust multiple players.",
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false
+}

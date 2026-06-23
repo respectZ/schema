@@ -1,0 +1,232 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$ref": "#/$defs/event",
+	"additionalProperties": false,
+	"$defs": {
+		"event": {
+			"type": "object",
+			"title": "Event Definition",
+			"description": "Definition of an entity event. An event can have one or more action properties (add, remove, sequence, randomize, trigger, etc.) that fire when the event is triggered.",
+			"properties": {
+				"filters": {
+					"$ref": "../../../../vanilla/server/filter/entity/_index.json",
+					"description": "Optional. Filter conditions that must be met for the event to fire."
+				},
+				"add": {
+					"title": "Add Component Group",
+					"description": "Adds component groups to the current entity. These groups must be defined in the 'component_groups' section of the file. As entities can only have one component of each type active, any components in a group that is being added will replace previously added components. Additionally, adding a component group that is already active will cause those components to be re-initialized. For some types of components like minecraft:is_baby, re-initializing an already active component has no effect, but for other component types the associated logic will start over. For example, an already-added minecraft:timer that is added again will start its timing logic over.",
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"component_groups": {
+							"type": "array",
+							"items": {
+								"type": "string",
+								"description": "Name of a component group defined in 'component_groups'."
+							}
+						}
+					}
+				},
+				"remove": {
+					"title": "Remove Component Group",
+					"description": "Removes component groups from the current entity. This can be any group you have defined in the 'component_groups' section of the file.",
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"component_groups": {
+							"type": "array",
+							"items": {
+								"type": "string",
+								"description": "Name of a component group defined in 'component_groups'."
+							}
+						}
+					}
+				},
+				"sequence": {
+					"type": "array",
+					"title": "Sequence Node",
+					"description": "Executes actions in sequence.",
+					"items": {
+						"$ref": "#/$defs/event"
+					}
+				},
+				"randomize": {
+					"type": "array",
+					"title": "Randomize Node",
+					"description": "The 'randomize' node is an array node that will pick one entry to execute, based on a weight.\n\t\tIf no weight is specified, a node will have a weight of 1.0.\n\t\tIf you add a weight of 4.0 in one node, and 8.0 in another, then those nodes will have a 33.33% (4 / (4 + 8)) and 66.66% (8 / (4 + 8)) chance of executing, respectively.",
+					"items": {
+						"unevaluatedProperties": false,
+						"allOf": [
+							{
+								"$ref": "#/$defs/event"
+							},
+							{
+								"type": "object",
+								"properties": {
+									"weight": {
+										"type": "number"
+									}
+								}
+							}
+						]
+					}
+				},
+				"trigger": {
+					"oneOf": [
+						{
+							"type": "string"
+						},
+						{
+							"$ref": "./triggers.json"
+						}
+					]
+				},
+				"emit_particle": {
+					"title": "Emit Particle",
+					"description": "Emits a particle specified via the particle attribute.",
+					"type": "object",
+					"additionalProperties": false,
+					"required": ["particle"],
+					"properties": {
+						"particle": {
+							"$ref": "../../../../vanilla/server/particle_type.json",
+							"description": "Identifier of the particle to emit."
+						}
+					}
+				},
+				"emit_vibration": {
+					"title": "Emit Vibration",
+					"description": "Allows the entity to emit a vibration having the entity itself as its source.",
+					"type": "object",
+					"additionalProperties": false,
+					"required": ["vibration"],
+					"properties": {
+						"vibration": {
+							"type": "string",
+							"description": "Type of vibration to emit.",
+							"enum": ["entity_interact", "entity_act", "entity_die", "shear"]
+						}
+					}
+				},
+				"play_sound": {
+					"title": "Play Sound",
+					"description": "Plays a sound as part of an entity event response.",
+					"type": "object",
+					"additionalProperties": false,
+					"required": ["sound"],
+					"properties": {
+						"sound": {
+							"$ref": "../../../../vanilla/server/level_sound.json",
+							"description": "The identifier of the sound to play."
+						}
+					}
+				},
+				"queue_command": {
+					"title": "Queue Command",
+					"description": "Will queue a slash command or a series of slash commands set in an array to trigger at the end of the tick. Due to being queued as opposed to triggering instantly, any immediate side-effects of the command may not be observable by other molang queries, commands, or scripts until later in the tick. Note that commands executed via queue_command are guaranteed to run in order with respect to other queued commands. Additionally, if an entity is removed before a queued command has the chance to execute, for example removed on the same tick that the command was queued, the command will not execute.",
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"command": {
+							"oneOf": [
+								{
+									"type": "string",
+									"description": "Slash command to run."
+								},
+								{
+									"type": "array",
+									"items": {
+										"type": "string"
+									},
+									"description": "List of slash commands to run."
+								}
+							]
+						},
+						"target": {
+							"$ref": "../../../../vanilla/server/filter/general.json#/$defs/filter_subject",
+							"description": "The target context to execute against."
+						}
+					}
+				},
+				"reset_target": {
+					"title": "Reset Target",
+					"description": "Resets the entities' target (the focus of its gaze, attacking behavior, etc.).",
+					"type": "object",
+					"additionalProperties": false
+				},
+				"set_property": {
+					"title": "Set Property",
+					"description": "Sets the value of an entity property. The property must be defined in the 'properties' section of the file.",
+					"type": "object",
+					"additionalProperties": {
+						"oneOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "number"
+							},
+							{
+								"type": "boolean"
+							}
+						]
+					},
+					"propertyNames": {
+						"$ref": "../../../../vanilla/definition/identifier.json"
+					}
+				},
+				"first_valid": {
+					"type": "array",
+					"title": "First Valid Node",
+					"description": "Executes the first valid sub-event.",
+					"items": {
+						"$ref": "#/$defs/event"
+					}
+				},
+				"execute_event_on_home_block": {
+					"$ref": "./triggers.json"
+				},
+				"set_home_position": {
+					"type": "object",
+					"additionalProperties": false
+				},
+				"stop_movement": {
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"stop_vertical_movement": {
+							"type": "boolean"
+						},
+						"stop_horizontal_movement": {
+							"type": "boolean"
+						}
+					}
+				},
+				"drop_item": {
+					"type": "object",
+					"additionalProperties": false,
+					"required": ["slot"],
+					"properties": {
+						"slot": {
+							"$ref": "../../../../vanilla/server/equipment_slot.json"
+						}
+					}
+				},
+				"unleash": {
+					"title": "Unleash",
+					"description": "Unleashes the entity.",
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"unleash_self": {
+							"type": "boolean"
+						},
+						"unleash_others": {
+							"type": "boolean"
+						}
+					}
+				}
+			}
+		}
+	}
+}

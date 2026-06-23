@@ -1,0 +1,46 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Entity Sensor",
+	"description": "A component that fires an event when a set of conditions are met by other entities within the defined range.",
+	"type": "object",
+	"properties": {
+		"sensor_range": {
+			"type": "number",
+			"description": "The maximum distance in blocks another entity can be from this entity to have the filters checked against it."
+		},
+		"relative_range": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true the sensor range is additive on top of the entity's size."
+		},
+		"require_all": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true requires all nearby entities to pass the filter conditions for the event to send."
+		},
+		"minimum_count": {
+			"type": "integer",
+			"default": 1,
+			"description": "The minimum number of entities that must pass the filter conditions for the event to send."
+		},
+		"maximum_count": {
+			"type": "integer",
+			"default": -1,
+			"description": "The maximum number of entities that must pass the filter conditions for the event to send."
+		},
+		"event_filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "The set of conditions that must be satisfied to fire the event."
+		},
+		"event": {
+			"type": "string",
+			"description": "Event to fire when the conditions are met."
+		},
+		"cooldown": {
+			"type": "number",
+			"default": -1,
+			"description": "How many seconds should elapse before the sensor can once again sense for entities."
+		}
+	},
+	"additionalProperties": false
+}

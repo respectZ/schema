@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Balloon",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"lift_force": {
+			"type": "array",
+			"items": {
+				"type": "number"
+			},
+			"minItems": 3,
+			"maxItems": 3,
+			"default": [0.0, 1.6, 0.0]
+		}
+	}
+}

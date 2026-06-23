@@ -1,0 +1,19 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Pushable",
+	"description": "Defines what can push an entity between other entities and pistons.",
+	"type": "object",
+	"properties": {
+		"is_pushable": {
+			"type": "boolean",
+			"default": true,
+			"description": "Whether the entity can be pushed by other entities."
+		},
+		"is_pushable_by_piston": {
+			"type": "boolean",
+			"default": true,
+			"description": "Whether the entity can be pushed by pistons safely."
+		}
+	},
+	"additionalProperties": false
+}

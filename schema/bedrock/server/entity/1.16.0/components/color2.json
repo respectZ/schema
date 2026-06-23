@@ -1,0 +1,14 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"title": "Color 2",
+	"description": "Defines the entity's second texture color. Only works on vanilla entities that have a second predefined color values (tropical fish).",
+	"additionalProperties": false,
+	"properties": {
+		"value": {
+			"type": "integer",
+			"default": 0,
+			"description": "The second palette color value of the entity."
+		}
+	}
+}

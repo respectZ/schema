@@ -1,0 +1,42 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Air Drag Modifier",
+	"description": "Defines how much air drag affects this entity.",
+	"type": "object",
+	"properties": {
+		"min": {
+			"type": "number"
+		},
+		"max": {
+			"type": "number"
+		},
+		"value": {
+			"description": "The air drag modifier value. Higher values increase air drag.",
+			"oneOf": [
+				{
+					"$ref": "#/$defs/value"
+				},
+				{
+					"type": "number",
+					"minimum": 0,
+					"default": 1
+				}
+			]
+		}
+	},
+	"$defs": {
+		"value": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"range_max": {
+					"type": "number"
+				},
+				"range_min": {
+					"type": "number"
+				}
+			}
+		}
+	},
+	"additionalProperties": false
+}

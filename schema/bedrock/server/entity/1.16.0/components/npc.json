@@ -1,0 +1,76 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "NPC",
+	"description": "Allows an entity to be an NPC with custom skin and dialogue interactions.",
+	"type": "object",
+	"properties": {
+		"npc_data": {
+			"type": "object",
+			"description": "The data used for the NPC.",
+			"properties": {
+				"portrait_offsets": {
+					"type": "object",
+					"description": "Offsets for the NPC portrait display.",
+					"properties": {
+						"translate": {
+							"type": "array",
+							"description": "Translation offset [x, y, z] for the portrait.",
+							"items": { "type": "number" },
+							"minItems": 3,
+							"maxItems": 3
+						},
+						"scale": {
+							"type": "array",
+							"description": "Scale factor [x, y, z] for the portrait.",
+							"items": { "type": "number" },
+							"minItems": 3,
+							"maxItems": 3
+						}
+					},
+					"additionalProperties": false
+				},
+				"picker_offsets": {
+					"type": "object",
+					"description": "Offsets for the NPC skin picker display.",
+					"properties": {
+						"translate": {
+							"type": "array",
+							"description": "Translation offset [x, y, z] for the picker.",
+							"items": { "type": "number" },
+							"minItems": 3,
+							"maxItems": 3
+						},
+						"scale": {
+							"type": "array",
+							"description": "Scale factor [x, y, z] for the picker.",
+							"items": { "type": "number" },
+							"minItems": 3,
+							"maxItems": 3
+						}
+					},
+					"additionalProperties": false
+				},
+				"skin_list": {
+					"type": "array",
+					"description": "List of available skins for the NPC.",
+					"items": {
+						"type": "object",
+						"properties": {
+							"variant": {
+								"type": "integer",
+								"description": "The variant index for this skin."
+							},
+							"mark_variant": {
+								"type": "integer",
+								"description": "The mark variant index for this skin."
+							}
+						},
+						"additionalProperties": false
+					}
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

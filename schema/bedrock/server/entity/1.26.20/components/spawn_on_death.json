@@ -1,0 +1,53 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Spawn On Death",
+	"description": "Component for spawning entities when an entity perishes.",
+	"type": "object",
+	"properties": {
+		"additional_spawn_range": {
+			"$ref": "#/$defs/item_intrange",
+			"description": "Additional random range of entities to spawn, defaults to 0, 0 when not set"
+		},
+		"entity_to_spawn": {
+			"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+			"description": "What entity to spawn, defaults to owning entity when not set"
+		},
+		"filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "Conditions that need to be met for the behavior to start."
+		},
+		"inherit_parent_name": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true, the entity will inherit the name of the parent entity, defaults to true when not set"
+		},
+		"spawn_amount": {
+			"type": "integer",
+			"default": 1,
+			"description": "How many entities to spawn, defaults to 1 when not set Value must be > 0."
+		},
+		"spawn_method": {
+			"type": "string",
+			"default": "spawned",
+			"enum": ["born", "spawned", "summoned"],
+			"description": "Spawn method. born, spawned, or summoned, defaults to spawned when not set"
+		}
+	},
+	"$defs": {
+		"item_intrange": {
+			"type": "object",
+			"properties": {
+				"max": {
+					"type": "integer",
+					"default": 0
+				},
+				"min": {
+					"type": "integer",
+					"default": 0
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

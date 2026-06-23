@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Player Level",
+	"description": "Defines the player's level.",
+	"type": "object",
+	"properties": {
+		"max": {
+			"type": "integer",
+			"description": "The maximum player level value of the entity."
+		},
+		"value": {
+			"type": "integer",
+			"description": "The initial value of the player level."
+		}
+	},
+	"additionalProperties": false
+}

@@ -1,0 +1,65 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Behavior Look At Player",
+	"description": "Compels an entity to look at the player by rotating the `head` bone pose within a set limit.",
+	"type": "object",
+	"properties": {
+		"angle_of_view_horizontal": {
+			"type": "integer",
+			"default": 360,
+			"description": "The angle in degrees that the mob can see rotated on the Y-axis (left-right). Value must be <= 360."
+		},
+		"angle_of_view_vertical": {
+			"type": "integer",
+			"default": 360,
+			"description": "The angle in degrees that the mob can see rotated on the X-axis (up-down). Value must be <= 360."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"look_distance": {
+			"type": "number",
+			"default": 8,
+			"description": "The distance in blocks from which the entity will look at the nearest entity."
+		},
+		"look_time": {
+			"$ref": "#/$defs/item_floatrange",
+			"description": "Time range to look at the nearest entity."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"probability": {
+			"type": "number",
+			"default": 0.019999999552965164,
+			"description": "The probability of looking at the target. A value of 1.00 is 100%. Value must be <= 1."
+		},
+		"target_distance": {
+			"type": "number"
+		}
+	},
+	"$defs": {
+		"item_floatrange": {
+			"type": "object",
+			"properties": {
+				"max": {
+					"type": "number",
+					"default": 0
+				},
+				"min": {
+					"type": "number",
+					"default": 0
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

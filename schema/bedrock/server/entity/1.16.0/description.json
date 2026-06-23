@@ -1,0 +1,249 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"title": "Entity Description",
+	"description": "Identifies the entity and provides base construction metadata.",
+	"required": ["identifier"],
+	"additionalProperties": false,
+	"properties": {
+		"identifier": {
+			"$ref": "../../../../vanilla/definition/identifier.json",
+			"description": "Namespaced identifier for this entity."
+		},
+		"is_experimental": {
+			"type": "boolean",
+			"default": false,
+			"title": "Is Experimental",
+			"description": "Whether this entity is experimental and only enabled with the experimental toggle."
+		},
+		"is_summonable": {
+			"type": "boolean",
+			"default": false,
+			"title": "Is Summonable",
+			"description": "Whether this entity can be summoned via the /summon command."
+		},
+		"is_spawnable": {
+			"type": "boolean",
+			"default": false,
+			"title": "Is Spawnable",
+			"description": "Whether this entity has a spawn egg in the creative inventory."
+		},
+		"runtime_identifier": {
+			"$ref": "../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+			"description": "The vanilla Minecraft entity identifier used to build this entity from (e.g. minecraft:horse)."
+		},
+		"animations": {
+			"type": "object",
+			"minProperties": 1,
+			"additionalProperties": {
+				"type": "string"
+			}
+		},
+		"scripts": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"animate": {
+					"description": "List of animations to play. Each item can be a string animation name or an object mapping animation name to a Molang condition.",
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"oneOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "object",
+								"additionalProperties": {
+									"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+								}
+							}
+						]
+					}
+				}
+			}
+		},
+		"properties": {
+			"type": "object",
+			"description": "List of custom entity properties. Can be a list of objects (preferred) or a single object.",
+			"maxProperties": 32,
+			"propertyNames": {
+				"$ref": "../../../../vanilla/definition/identifier.json"
+			},
+			"additionalProperties": {
+				"oneOf": [
+					{
+						"type": "object",
+						"required": ["type", "default"],
+						"additionalProperties": false,
+						"properties": {
+							"type": {
+								"const": "bool"
+							},
+							"default": {
+								"oneOf": [
+									{
+										"type": "boolean"
+									},
+									{
+										"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+									}
+								]
+							},
+							"client_sync": {
+								"type": "boolean",
+								"default": false
+							}
+						}
+					},
+					{
+						"type": "object",
+						"required": ["type", "range", "default"],
+						"additionalProperties": false,
+						"properties": {
+							"type": {
+								"const": "int"
+							},
+							"range": {
+								"type": "array",
+								"minItems": 2,
+								"maxItems": 2,
+								"items": {
+									"type": "integer"
+								}
+							},
+							"default": {
+								"oneOf": [
+									{
+										"type": "integer"
+									},
+									{
+										"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+									}
+								]
+							},
+							"client_sync": {
+								"type": "boolean",
+								"default": false
+							}
+						}
+					},
+					{
+						"type": "object",
+						"required": ["type", "range", "default"],
+						"additionalProperties": false,
+						"properties": {
+							"type": {
+								"const": "float"
+							},
+							"range": {
+								"type": "array",
+								"minItems": 2,
+								"maxItems": 2,
+								"items": {
+									"type": "number"
+								}
+							},
+							"default": {
+								"oneOf": [
+									{
+										"type": "number"
+									},
+									{
+										"$ref": "../../../../vanilla/definition/molang.json#/$defs/string"
+									}
+								]
+							},
+							"client_sync": {
+								"type": "boolean",
+								"default": false
+							}
+						}
+					},
+					{
+						"type": "object",
+						"required": ["type", "values", "default"],
+						"additionalProperties": false,
+						"properties": {
+							"type": {
+								"const": "enum"
+							},
+							"values": {
+								"type": "array",
+								"minItems": 1,
+								"maxItems": 16,
+								"uniqueItems": true,
+								"items": {
+									"type": "string",
+									"pattern": "^[A-Za-z][A-Za-z0-9_]{0,31}$"
+								}
+							},
+							"default": {
+								"type": "string"
+							},
+							"client_sync": {
+								"type": "boolean",
+								"default": false
+							}
+						}
+					}
+				]
+			}
+		},
+		"aliases": {
+			"type": "object",
+			"description": "You can define aliases for your entity to summon the entity with set entity property values through the `summon` command.",
+			"additionalProperties": {
+				"oneOf": [
+					{
+						"type": "string"
+					},
+					{
+						"type": "number"
+					},
+					{
+						"type": "boolean"
+					}
+				]
+			},
+			"propertyNames": {
+				"$ref": "../../../../vanilla/definition/identifier.json"
+			}
+		},
+		"spawn_category": {
+			"type": "string",
+			"enum": [
+				"misc",
+				"ambient",
+				"monster",
+				"axolotls",
+				"creature",
+				"water_ambient",
+				"water_creature",
+				"underground_water_creature"
+			]
+		},
+		"entity_version": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"upgrades": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"upgrade_to": {
+								"type": "integer",
+								"minimum": 1
+							},
+							"name": {
+								"$ref": "../../../../vanilla/definition/identifier.json"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

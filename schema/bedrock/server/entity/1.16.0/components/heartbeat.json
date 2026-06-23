@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Heartbeat",
+	"description": "Defines the entity's heartbeat.",
+	"type": "object",
+	"properties": {
+		"interval": {
+			"$ref": "../../../../../vanilla/definition/molang.json#/$defs/versioned",
+			"description": "A Molang expression defining the inter-beat interval in seconds. A value of zero or less means no heartbeat."
+		},
+		"sound_event": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "Level sound event to be played as the heartbeat sound."
+		}
+	},
+	"additionalProperties": false
+}

@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"title": "Can Power Jump",
+	"description": "Allows the entity to power jump like the horse does in vanilla.",
+	"additionalProperties": false,
+	"properties": {}
+}

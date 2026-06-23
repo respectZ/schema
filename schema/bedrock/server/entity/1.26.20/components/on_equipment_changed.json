@@ -1,0 +1,31 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "On Equipment Changed",
+	"description": "Triggers events when equipment is equipped or unequipped.",
+	"type": "object",
+	"properties": {
+		"slots": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"slot": {
+						"type": "string",
+						"description": "The equipment slot to watch for changes."
+					},
+					"on_equip": {
+						"$ref": "../../1.16.0/triggers.json",
+						"description": "Event to fire when equipment is equipped to this slot."
+					},
+					"on_unequip": {
+						"$ref": "../../1.16.0/triggers.json",
+						"description": "Event to fire when equipment is unequipped from this slot."
+					}
+				},
+				"additionalProperties": false
+			},
+			"description": "List of equipment slots and their equip/unequip triggers."
+		}
+	},
+	"additionalProperties": false
+}

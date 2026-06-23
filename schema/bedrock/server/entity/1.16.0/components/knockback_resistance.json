@@ -1,0 +1,55 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Knockback Resistance",
+	"description": "Determines an entity's resistance to knockback from melee attacks. A value of 0.0 means no resistance, while 1.0 provides full immunity to knockback (like iron golems).",
+	"oneOf": [
+		{
+			"type": "number",
+			"minimum": 0,
+			"maximum": 1
+		},
+		{
+			"type": "object",
+			"properties": {
+				"min": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1
+				},
+				"max": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1,
+					"description": "Maximum potential knockback resistance for this entity."
+				},
+				"value": {
+					"description": "The amount of knockback resistance, from 0.0 (no resistance) to 1.0 (full immunity).",
+					"oneOf": [
+						{
+							"type": "number",
+							"minimum": 0,
+							"maximum": 1
+						},
+						{
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"range_max": {
+									"type": "number",
+									"minimum": 0,
+									"maximum": 1
+								},
+								"range_min": {
+									"type": "number",
+									"minimum": 0,
+									"maximum": 1
+								}
+							}
+						}
+					]
+				}
+			},
+			"additionalProperties": false
+		}
+	]
+}

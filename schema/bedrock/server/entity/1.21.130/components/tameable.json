@@ -1,0 +1,65 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Tameable",
+	"description": "This entity can be tamed.",
+	"type": "object",
+	"properties": {
+		"probability": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 1.0,
+			"default": 1,
+			"description": "The chance of taming the entity with each item use between 0.0 and 1.0, where 1.0 is 100%"
+		},
+		"tame_event": {
+			"description": "Event to fire when the entity is tamed. Can be an object with event and target properties, or a simple event string.",
+			"oneOf": [
+				{
+					"$ref": "../../1.16.0/triggers.json"
+				},
+				{
+					"type": "string"
+				}
+			]
+		},
+		"tame_items": {
+			"description": "The list of items that can be used to tame this entity",
+			"oneOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+					}
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/tame_item"
+					},
+					"description": "List of item objects with optional result_item for items that can be used to tame this entity."
+				}
+			]
+		},
+		"tameItems": {
+			"doNotSuggest": true,
+			"$ref": "#/properties/tame_items"
+		}
+	},
+	"$defs": {
+		"tame_item": {
+			"type": "object",
+			"properties": {
+				"item": {
+					"$ref": "../../../../../vanilla/server/item_descriptor.json",
+					"description": "The item identifier that can be used to tame this entity."
+				},
+				"result_item": {
+					"$ref": "../../../../../vanilla/server/item_descriptor.json",
+					"description": "The item that is given back to the player when they tame the entity. If not specified, the item used to tame is consumed."
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

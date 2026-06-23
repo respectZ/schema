@@ -1,0 +1,194 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Offspring Data",
+	"description": "Defines how offspring inherit traits from parent entities.",
+	"type": "object",
+	"properties": {
+		"blend_attributes": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true, the entities will blend their attributes in the offspring after they breed. For example, horses blend their health, movement, and jump_strength in their offspring."
+		},
+		"breeds_with": {
+			"description": "The entity definitions that this entity can breed with. Can be a single object or an array.",
+			"oneOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/breeds_with"
+					}
+				},
+				{
+					"$ref": "#/$defs/breeds_with"
+				}
+			]
+		},
+		"combine_parent_colors": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, the offspring's color will be a combination of both parents' colors."
+		},
+		"deny_parents_variant": {
+			"$ref": "#/$defs/deny_parents_variant",
+			"description": "Determines how likely the baby of parents with the same variant will deny that variant and take a random variant within the given range instead."
+		},
+		"inherit_tamed": {
+			"type": "boolean",
+			"description": "If true, the babies will be automatically tamed if its parents are."
+		},
+		"mutation_factor": {
+			"$ref": "#/$defs/mutation_factor",
+			"description": "Determines how likely the babies are to NOT inherit one of their parent's variances."
+		},
+		"mutation_strategy": {
+			"type": "string",
+			"description": "Strategy used for mutating inherited traits.",
+			"enum": ["random", "none"]
+		},
+		"parent_centric_attribute_blending": {
+			"type": "array",
+			"items": {
+				// TODO: Component list
+				"type": "string"
+			},
+			"description": "List of attributes that should benefit from parent centric attribute blending. For example, horses blend their health, movement, and jump_strength in their offspring."
+		},
+		// TODO: This
+		"property_inheritance": {
+			"type": "object",
+			"additionalProperties": {
+				"type": "object"
+			},
+			"description": "List of Entity Properties that should be inherited from the parent entities and potentially mutated."
+		},
+		"random_variant_mutation_interval": {
+			"oneOf": [
+				{
+					"type": "integer"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "integer"
+					},
+					"minItems": 2,
+					"maxItems": 2
+				}
+			],
+			"default": 0,
+			"description": "Range used to determine random variant."
+		}
+	},
+	"$defs": {
+		"breeds_with": {
+			"type": "object",
+			"properties": {
+				"baby_type": {
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+					"description": "The entity definition of this entity's babies."
+				},
+				"breed_event": {
+					"description": "Event to run when this entity breeds. Can be a simple event name string or a trigger object with event and optional filters.",
+					"oneOf": [
+						{
+							"type": "string"
+						},
+						{
+							"$ref": "../../1.16.0/triggers.json"
+						}
+					]
+				},
+				"mate_type": {
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+					"description": "The entity definition that this entity can mate with."
+				}
+			},
+			"additionalProperties": true
+		},
+		"deny_parents_variant": {
+			"type": "object",
+			"properties": {
+				"chance": {
+					"type": "number",
+					"description": "The percentage chance of denying the parents' variant."
+				},
+				"max_variant": {
+					"type": "string",
+					"description": "The inclusive maximum of the variant range."
+				},
+				"min_variant": {
+					"type": "string",
+					"description": "The inclusive minimum of the variant range."
+				}
+			},
+			"additionalProperties": false
+		},
+		"mutation_factor": {
+			"type": "object",
+			"properties": {
+				"color": {
+					"description": "The percentage chance of denying the parents' variant.",
+					"oneOf": [
+						{
+							"type": "number"
+						},
+						{
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"range_min": {
+									"type": "number"
+								},
+								"range_max": {
+									"type": "number"
+								}
+							}
+						}
+					]
+				},
+				"extra_variant": {
+					"description": "The percentage chance of a mutation on the entity's extra variant type.",
+					"oneOf": [
+						{
+							"type": "number"
+						},
+						{
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"range_min": {
+									"type": "number"
+								},
+								"range_max": {
+									"type": "number"
+								}
+							}
+						}
+					]
+				},
+				"variant": {
+					"description": "The percentage chance of a mutation on the entity's variant type.",
+					"oneOf": [
+						{
+							"type": "number"
+						},
+						{
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"range_min": {
+									"type": "number"
+								},
+								"range_max": {
+									"type": "number"
+								}
+							}
+						}
+					]
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

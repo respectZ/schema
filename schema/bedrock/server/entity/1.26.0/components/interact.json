@@ -1,0 +1,209 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Interact",
+	"description": "Defines interactions with this entity.",
+	"type": "object",
+	"properties": {
+		"interactions": {
+			"description": "The list of interactions for this entity.",
+			"oneOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/interactions"
+					}
+				},
+				{
+					"type": "object"
+				}
+			]
+		}
+	},
+	"$defs": {
+		"interactions": {
+			"type": "object",
+			"properties": {
+				"cooldown": {
+					"type": "number",
+					"default": 0,
+					"description": "Time in seconds before this entity can be interacted with again."
+				},
+				"cooldown_after_being_attacked": {
+					"type": "number",
+					"default": 0,
+					"description": "Time in seconds before this entity can be interacted with after being attacked."
+				},
+				"drop_item_slot": {
+					"$ref": "../../../../../vanilla/server/equipment_slot.json",
+					"description": "The entity's slot to remove and drop the item from, if any, upon successful interaction."
+				},
+				"drop_item_y_offset": {
+					"type": "number",
+					"default": 0,
+					"description": "Will offset the item drop position this amount in the y direction. Requires \"drop_item_slot\" to be specified."
+				},
+				"equip_item_slot": {
+					"$ref": "../../../../../vanilla/server/equipment_slot.json",
+					"description": "The entity's slot to equip the item to, if any, upon successful interaction."
+				},
+				"health_amount": {
+					"type": "integer",
+					"default": 0,
+					"description": "The amount of health this entity will recover or lose when interacting with this item. Negative values will harm the entity."
+				},
+				"give_item": {
+					"type": "boolean",
+					"default": false,
+					"description": "If true, the player can give items to the entity during interaction."
+				},
+				"hurt_item": {
+					"type": "number"
+				},
+				"interact_text": {
+					"type": "string"
+				},
+				"on_interact": {
+					"description": "Event to fire when the interaction occurs.",
+					"oneOf": [
+						{
+							"$ref": "../../1.16.0/triggers.json"
+						},
+						{
+							"type": "string"
+						}
+					]
+				},
+				"particle_on_start": {
+					"description": "Particle effect that will be triggered at the start of the interaction.",
+					"oneOf": [
+						{
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/particle_on_start"
+							}
+						},
+						{
+							"$ref": "#/$defs/particle_on_start"
+						}
+					]
+				},
+				"play_sounds": {
+					"$ref": "../../../../../vanilla/server/level_sound.json",
+					"description": "List of sounds to play when the interaction occurs."
+				},
+				"repair_entity_item": {
+					"description": "Allows to repair one of the entity's items.",
+					"oneOf": [
+						{
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/repair_entity_item"
+							}
+						},
+						{
+							"$ref": "#/$defs/repair_entity_item"
+						}
+					]
+				},
+				"spawn_entities": {
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+					"description": "List of entities to spawn when the interaction occurs."
+				},
+				"spawn_items": {
+					"description": "Loot table with items to drop on the ground upon successful interaction.",
+					"oneOf": [
+						{
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/spawn_items"
+							}
+						},
+						{
+							"$ref": "#/$defs/spawn_items"
+						}
+					]
+				},
+				"swing": {
+					"type": "boolean",
+					"default": true,
+					"description": "If true, the player will do the 'swing' animation when interacting with this entity."
+				},
+				"take_item": {
+					"type": "boolean",
+					"default": false,
+					"description": "If true, the player can take items from the entity during interaction."
+				},
+				"transform_to_item": {
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+					"description": "The item used will transform to this item upon successful interaction. Format: itemName:auxValue"
+				},
+				"use_item": {
+					"type": "boolean",
+					"default": false,
+					"description": "If true, the interaction will use an item."
+				},
+				"vibration": {
+					"type": "string",
+					"default": "entity_interact",
+					"description": "Vibration to emit when the interaction occurs. Admitted values are none (no vibration emitted), shear, entity_die, entity_act, entity_interact.",
+					"enum": ["none", "shear", "entity_die", "entity_act", "entity_interact"]
+				}
+			},
+			"additionalProperties": false
+		},
+		"particle_on_start": {
+			"type": "object",
+			"properties": {
+				"particle_offset_towards_interactor": {
+					"type": "boolean",
+					"default": false,
+					"description": "Whether or not the particle will appear closer to who performed the interaction."
+				},
+				"particle_type": {
+					"$ref": "../../../../../vanilla/server/particle_type.json",
+					"description": "The type of particle that will be spawned."
+				},
+				"particle_y_offset": {
+					"type": "number",
+					"default": 0,
+					"description": "Will offset the particle this amount in the y direction."
+				},
+				"copper_event": {
+					"type": "string",
+					"default": "none",
+					"enum": ["none", "wax_on", "wax_off", "scrape"]
+				}
+			},
+			"additionalProperties": false
+		},
+		"repair_entity_item": {
+			"type": "object",
+			"properties": {
+				"amount": {
+					"type": "integer",
+					"description": "How much of the item durability should be restored upon interaction."
+				},
+				"slot": {
+					"$ref": "../../../../../vanilla/server/equipment_slot.json",
+					"description": "The entity's slot containing the item to be repaired."
+				}
+			},
+			"additionalProperties": false
+		},
+		"spawn_items": {
+			"type": "object",
+			"properties": {
+				"table": {
+					"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
+					"description": "File path, relative to the Behavior Pack's path, to the loot table file."
+				},
+				"y_offset": {
+					"type": "number",
+					"default": 1,
+					"description": "Will offset the items spawn position this amount in the y direction."
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}

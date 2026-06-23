@@ -1,0 +1,127 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Anger Level",
+	"description": "Compels the entity to track anger towards a set of nuisances.",
+	"type": "object",
+	"properties": {
+		"anger_decrement_interval": {
+			"type": "number",
+			"default": 1,
+			"description": "Anger level will decay over time. Defines how often anger towards all nuisances will decrease by one."
+		},
+		"angry_boost": {
+			"type": "integer",
+			"default": 20,
+			"description": "Anger boost applied to angry threshold when mob gets angry Value must be >= 0."
+		},
+		"angry_threshold": {
+			"type": "integer",
+			"default": 80,
+			"description": "Threshold that define when the mob is considered angry at a nuisance Value must be >= 0."
+		},
+		"broadcast_anger": {
+			"type": "boolean",
+			"default": false,
+			"description": "If set, other entities of the same entity definition within the broadcastRange will also become angry"
+		},
+		"broadcast_anger_on_attack": {
+			"type": "boolean",
+			"default": false,
+			"description": "If set, other entities of the same entity definition within the broadcastRange will also become angry whenever this mob attacks"
+		},
+		"broadcast_filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "Conditions that make this entry in the list valid"
+		},
+		"broadcast_range": {
+			"type": "integer",
+			"default": 20,
+			"description": "Distance in blocks within which other entities of the same entity type will become angry"
+		},
+		"broadcast_targets": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/type_family.json"
+			},
+			"description": "A list of entity families to broadcast anger to"
+		},
+		"calm_event": {
+			"type": "string",
+			"description": "Event to fire when this entity is calmed down"
+		},
+		"default_annoyingness": {
+			"type": "integer",
+			"default": 0,
+			"description": "The default amount of annoyingness for any given nuisance. Specifies how much to raise anger level on each provocation."
+		},
+		"default_projectile_annoyingness": {
+			"type": "number"
+		},
+		"duration": {
+			"type": "integer",
+			"description": "The amount of time in seconds that the entity will be angry."
+		},
+		"duration_delta": {
+			"type": "integer",
+			"description": "Variance in seconds added to the duration [-delta, delta]."
+		},
+		"filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "Filter out mob types that it should not attack while angry (other Piglins)"
+		},
+		"max_anger": {
+			"type": "integer",
+			"default": 100,
+			"description": "The maximum anger level that can be reached. Applies to any nuisance Value must be >= 0."
+		},
+		"nuisance_filter": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "Filter that is applied to determine if a mob can be a nuisance"
+		},
+		"on_increase_sounds": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/increase_sounds"
+			},
+			"description": "Sounds to play when the entity is getting provoked. Evaluated in order. First matching condition wins"
+		},
+		"remove_targets_below_angry_threshold": {
+			"type": "boolean",
+			"default": true,
+			"description": "Defines if the mob should remove target if it falls below 'angry' threshold"
+		},
+		"sound_interval": {
+			"oneOf": [
+				{
+					"type": "integer"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "integer"
+					},
+					"minItems": 2,
+					"maxItems": 2
+				}
+			],
+			"description": "Anger boost applied to angry threshold when the entity gets angry."
+		}
+	},
+	"$defs": {
+		"increase_sounds": {
+			"type": "object",
+			"properties": {
+				"condition": {
+					"type": "string",
+					"description": "A Molang expression describing under which conditions to play this sound, given that the entity was provoked"
+				},
+				"sound": {
+					"$ref": "../../../../../vanilla/server/level_sound.json",
+					"description": "The sound to play"
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

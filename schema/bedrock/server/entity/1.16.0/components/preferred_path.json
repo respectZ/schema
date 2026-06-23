@@ -1,0 +1,50 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Preferred Path",
+	"description": "Specifies costing information for mobs that prefer to walk on preferred paths.",
+	"type": "object",
+	"properties": {
+		"default_block_cost": {
+			"type": "number",
+			"default": 0,
+			"description": "Cost for non-preferred blocks"
+		},
+		"jump_cost": {
+			"type": "integer",
+			"default": 0,
+			"description": "Added cost for jumping up a node"
+		},
+		"max_fall_blocks": {
+			"type": "integer",
+			"default": 3,
+			"description": "Distance mob can fall without taking damage"
+		},
+		"preferred_path_blocks": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/preferred_path_blocks"
+			},
+			"description": "A list of block types with their associated pathfinding costs. Each entry specifies blocks and their cost value."
+		}
+	},
+	"$defs": {
+		"preferred_path_blocks": {
+			"type": "object",
+			"properties": {
+				"blocks": {
+					"type": "array",
+					"items": {
+						"$ref": "../../../../../vanilla/server/block_descriptor.json"
+					},
+					"description": "Array of block identifiers that share this cost value."
+				},
+				"cost": {
+					"type": "integer",
+					"description": "The cost value for these blocks during pathfinding. Lower costs make paths more preferred."
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

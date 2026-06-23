@@ -1,0 +1,96 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Behavior Place Block",
+	"description": "AI goal that makes entities place blocks from their inventory into the world, like Endermen placing carried blocks. Configure which blocks the entity can place and the search radius. Works with take_block behavior to create entities that relocate blocks or build structures.",
+	"type": "object",
+	"properties": {
+		"affected_by_griefing_rule": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true, whether the goal is affected by the mob griefing game rule."
+		},
+		"can_place": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "Filters for if the entity should try to place its block. Self and Target are set."
+		},
+		"chance": {
+			"type": "number",
+			"default": 1,
+			"description": "Chance each tick for the entity to try and place a block. Value must be <= 1."
+		},
+		"control_flags": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			}
+		},
+		"on_place": {
+			"$ref": "../../1.16.0/triggers.json",
+			"description": "Trigger ran if the entity does place its block. Self, Target, and Block are set."
+		},
+		"placeable_carried_blocks": {
+			"$ref": "../../../../../vanilla/server/block_descriptor.json",
+			"description": "Block descriptors for which blocks are valid to be placed from the entity's carried item, if empty all blocks are valid."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"randomly_placeable_blocks": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/weighted_block_descriptor"
+			},
+			"description": "Weighted block descriptors for which blocks should be randomly placed, if empty the entity will try to place its carried block from placeable_carried_blocks."
+		},
+		"xz_range": {
+			"$ref": "#/$defs/item_floatrange",
+			"description": "XZ range from which the entity will try and place blocks in."
+		},
+		"y_range": {
+			"$ref": "#/$defs/item_floatrange",
+			"description": "Y range from which the entity will try and place blocks in."
+		}
+	},
+	"$defs": {
+		"item_floatrange": {
+			"type": "object",
+			"properties": {
+				"max": {
+					"type": "number",
+					"default": 0,
+					"minimum": 0
+				},
+				"min": {
+					"type": "number",
+					"default": 0,
+					"minimum": 0
+				}
+			},
+			"additionalProperties": false
+		},
+		"weighted_block_descriptor": {
+			"type": "object",
+			"properties": {
+				"block": {
+					"$ref": "../../../../../vanilla/server/block_descriptor.json",
+					"description": "Block descriptor for this entry."
+				},
+				"filter": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": "Filter for if this entry should be randomly selected from. Self, Target, and Block are set."
+				},
+				"weight": {
+					"type": "integer",
+					"default": 1,
+					"description": "Weight for this entry."
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

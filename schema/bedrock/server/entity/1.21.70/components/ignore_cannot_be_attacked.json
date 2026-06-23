@@ -1,0 +1,13 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Ignore Cannot Be Attacked",
+	"description": "When set, blocks entities from attacking the owner entity unless they have the \"minecraft:ignore_cannot_be_attacked\" component.",
+	"type": "object",
+	"properties": {
+		"filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "Defines which entities are exceptions and are allowed to be attacked by the owner entity, potentially attacked entity is subject \"other\"."
+		}
+	},
+	"additionalProperties": false
+}

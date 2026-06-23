@@ -1,0 +1,14 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Instant Despawn",
+	"description": "Despawns the Actor immediately.",
+	"type": "object",
+	"properties": {
+		"remove_child_entities": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, all entities linked to this entity in a child relationship (eg. leashed) will also be despawned."
+		}
+	},
+	"additionalProperties": false
+}

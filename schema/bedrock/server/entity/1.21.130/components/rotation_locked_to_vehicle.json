@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Rotation Locked To Vehicle",
+	"description": "Causes the entity's rotation to match their vehicle's facing direction.",
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false
+}

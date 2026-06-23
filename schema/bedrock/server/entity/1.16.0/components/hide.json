@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Hide",
+	"description": "Moves to and hides at their owned POI or the closest nearby.",
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false
+}

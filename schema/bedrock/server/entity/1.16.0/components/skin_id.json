@@ -1,0 +1,14 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Skin Id",
+	"description": "Skin ID value. Can be used to differentiate skins, such as base skins for villagers.",
+	"type": "object",
+	"properties": {
+		"value": {
+			"type": "integer",
+			"default": 0,
+			"description": "The ID of the skin. By convention, 0 is the ID of the base skin."
+		}
+	},
+	"additionalProperties": false
+}

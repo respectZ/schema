@@ -1,0 +1,41 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Jump Dynamic",
+	"description": "Defines a dynamic type jump control that will change jump properties based on the speed modifier of the mob. Requires `minecraft:movement.skip` to be used.",
+	"type": "object",
+	"properties": {
+		"fast_skip_data": {
+			"$ref": "#/$defs/skip_data",
+			"description": "The jump data used for the fast skip."
+		},
+		"regular_skip_data": {
+			"$ref": "#/$defs/skip_data",
+			"description": "The jump data used for the regular skip."
+		}
+	},
+	"$defs": {
+		"skip_data": {
+			"type": "object",
+			"properties": {
+				"animation_duration": {
+					"type": "number",
+					"description": "The duration of the jump animation."
+				},
+				"distance_scale": {
+					"type": "number",
+					"description": "The distance scale of the jump."
+				},
+				"height": {
+					"type": "number",
+					"description": "The height of the jump."
+				},
+				"jump_delay": {
+					"type": "number",
+					"description": "The delay of the jump."
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

@@ -1,0 +1,31 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Behavior Drink Milk",
+	"description": "Allows the mob to drink milk based on specified environment conditions.",
+	"type": "object",
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"cooldown_seconds": {
+			"type": "number",
+			"default": 5,
+			"description": "Time (in seconds) that the goal is on cooldown before it can be used again."
+		},
+		"filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "Conditions that need to be met for the behavior to start."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		}
+	},
+	"additionalProperties": false
+}

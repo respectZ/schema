@@ -1,0 +1,32 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Equip Item",
+	"description": "The entity puts on the desired equipment.",
+	"type": "object",
+	"properties": {
+		"can_wear_armor": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, the entity can pick up and wear armor items from the ground."
+		},
+		"excluded_items": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/excluded_items"
+			},
+			"description": "List of items that the entity should not equip."
+		}
+	},
+	"$defs": {
+		"excluded_items": {
+			"type": "object",
+			"properties": {
+				"item": {
+					"$ref": "../../../../../vanilla/server/item_descriptor.json"
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

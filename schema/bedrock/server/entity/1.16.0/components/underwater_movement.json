@@ -1,0 +1,42 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Underwater Movement",
+	"description": "Defines the speed with which an entity can move through water.",
+	"type": "object",
+	"properties": {
+		"min": {
+			"type": "number"
+		},
+		"max": {
+			"type": "number"
+		},
+		"value": {
+			"description": "Movement speed of the entity under water.",
+			"oneOf": [
+				{
+					"type": "number"
+				},
+				{
+					"$ref": "#/$defs/value"
+				}
+			]
+		}
+	},
+	"$defs": {
+		"value": {
+			"type": "object",
+			"properties": {
+				"range_max": {
+					"type": "number",
+					"description": "Maximum movement speed"
+				},
+				"range_min": {
+					"type": "number",
+					"description": "Minimum movement speed"
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

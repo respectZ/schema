@@ -64,6 +64,41 @@
 					"description": "Thunderstorm weather."
 				}
 			]
+		},
+		"filter_subject": {
+			"oneOf": [
+				{
+					"const": "block",
+					"description": "The block involved with the interaction."
+				},
+				{
+					"const": "damager",
+					"description": "The damaging actor involved with the interaction."
+				},
+				{
+					"const": "other",
+					"description": "The other member of an interaction, not the caller."
+				},
+				{
+					"const": "parent",
+					"description": "The caller's current parent."
+				},
+				{
+					"const": "player",
+					"description": "The player involved with the interaction."
+				},
+				{
+					"const": "self",
+					"description": "The entity or object calling the test"
+				},
+				{
+					"const": "target",
+					"description": "The caller's current target."
+				},
+				{
+					"enum": ["baby", "holder", "item"]
+				}
+			]
 		}
 	}
 }

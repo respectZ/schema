@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"title": "Can Climb",
+	"description": "Allows this entity to climb up ladders.",
+	"additionalProperties": false,
+	"properties": {}
+}

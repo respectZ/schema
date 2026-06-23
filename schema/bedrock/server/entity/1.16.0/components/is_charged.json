@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"title": "Is Charged",
+	"description": "Sets that this entity is charged.",
+	"additionalProperties": false,
+	"properties": {}
+}

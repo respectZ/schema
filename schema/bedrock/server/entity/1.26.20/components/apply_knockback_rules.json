@@ -1,0 +1,71 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Apply Knockback Rules",
+	"description": "Defines how an entity applies knockback.",
+	"type": "object",
+	"properties": {
+		"presets": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/entity_apply_knockback_rules_instance"
+			},
+			"default": [],
+			"description": "Array of rules instances defining how knockback should be applied to the entity."
+		}
+	},
+	"$defs": {
+		"entity_apply_knockback_rules_instance": {
+			"type": "object",
+			"properties": {
+				"check_if_target_is_immersed_in_water": {
+					"type": "boolean",
+					"default": false,
+					"description": "Whether or not the target should be fully immersed in water for the knockback rules to apply."
+				},
+				"extra_knockback_approach": {
+					"type": "string",
+					"default": "reapply_default",
+					"description": "Defines the approach for combining extra knockback from enchantments or sprinting: - \"reapply_default\": Reapplies knockback again with default knockback parameters, i.",
+					"enum": ["multiply_reduced", "reapply_default"]
+				},
+				"filter": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": "Filter for the entity type that will be affected by these knockback rules."
+				},
+				"horizontal_power": {
+					"type": "number",
+					"default": 1,
+					"description": "Power with which a target should be knocked backwards."
+				},
+				"knockback_mode": {
+					"type": "string",
+					"default": "relative_horizontal",
+					"description": "Defines how knockback is applied to the target: - \"relative_horizontal\": Applies knockback along the horizontal direction from the attacker to the target.",
+					"enum": ["hit_direction", "relative_horizontal"]
+				},
+				"scale_with_damage": {
+					"type": "boolean",
+					"default": false,
+					"description": "Scaling factor to the magnitude of knockback based on the inverse square of the damage."
+				},
+				"slowdown_scale": {
+					"type": "number",
+					"default": 0.5,
+					"description": "Scaling factor to apply to the target's velocity before applying knockback. Value must be <= 1."
+				},
+				"vertical_power": {
+					"type": "number",
+					"default": 0.4000000059604645,
+					"description": "Power with which a target should be knocked upwards."
+				},
+				"vertical_velocity_cap": {
+					"type": "number",
+					"default": 0.4000000059604645,
+					"description": "Maximum allowed Y velocity after target's knockback rules have been evaluated."
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

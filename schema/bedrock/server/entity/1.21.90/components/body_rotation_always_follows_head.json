@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Body Rotation Always Follows Head",
+	"description": "Causes the entity's body rotation to match the one of their head.\nDoes not override the \"minecraft:body_rotation_blocked\" component.",
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false
+}

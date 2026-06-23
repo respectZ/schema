@@ -1,0 +1,77 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Entity Sensor",
+	"description": "A component that owns multiple subsensors, each one firing an event when a set of conditions are met by other entities within the defined range.",
+	"type": "object",
+	"properties": {
+		"find_players_only": {
+			"type": "boolean",
+			"default": false,
+			"description": "Limits the search to Players only for all subsensors."
+		},
+		"relative_range": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true the subsensors' range is additive on top of the entity's size."
+		},
+		"subsensors": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/subsensors"
+			},
+			"description": "The list of subsensors which sense for entities and emit events when all their conditions are met."
+		}
+	},
+	"$defs": {
+		"subsensors": {
+			"type": "object",
+			"properties": {
+				"cooldown": {
+					"type": "number",
+					"default": -1,
+					"description": "How many seconds should elapse before the subsensor can once again sense for entities."
+				},
+				"event": {
+					"type": "string",
+					"description": "Event to fire when the conditions are met."
+				},
+				"event_filters": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": "The set of conditions that must be satisfied to fire the event."
+				},
+				"maximum_count": {
+					"type": "integer",
+					"default": -1,
+					"description": "The maximum number of entities that must pass the filter conditions for the event to send."
+				},
+				"minimum_count": {
+					"type": "integer",
+					"default": 1,
+					"description": "The minimum number of entities that must pass the filter conditions for the event to send."
+				},
+				"range": {
+					"type": "array",
+					"items": {
+						"type": "number"
+					},
+					"minItems": 2,
+					"maxItems": 2,
+					"default": [10, 10],
+					"description": "The maximum horizontal and vertical distance another entity can be from this and have the filters checked against it."
+				},
+				"require_all": {
+					"type": "boolean",
+					"default": false,
+					"description": "If true requires all nearby entities to pass the filter conditions for the events to send."
+				},
+				"y_offset": {
+					"type": "number",
+					"default": 0,
+					"description": "Vertical offset applied to the entity's position when computing the distance from other entities."
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

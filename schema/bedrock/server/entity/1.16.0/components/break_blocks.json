@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Break Blocks",
+	"description": "Specifies the blocks that the entity can break as it moves around.",
+	"type": "object",
+	"properties": {
+		"breakable_blocks": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
+			},
+			"description": "A list of the blocks that can be broken as this entity moves around."
+		}
+	},
+	"additionalProperties": false
+}

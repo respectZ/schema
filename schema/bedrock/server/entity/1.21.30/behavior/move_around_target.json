@@ -1,0 +1,60 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Behavior Move Around Target",
+	"description": "Allows an entity to move around a target.If the entity is too close(i.e.closer than destination range min and height difference limit) it will try to move away from its target.If the entity is too far away from its target it will try to move closer to a random position within the destination range.A randomized amount of those positions will be behind the target, and the spread can be tweaked with 'destination_pos_spread_degrees'.",
+	"type": "object",
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			}
+		},
+		"destination_pos_spread_degrees": {
+			"type": "number",
+			"default": 90,
+			"description": "This angle (in degrees) is used for controlling the spread when picking a destination position behind the target."
+		},
+		"destination_position_range": {
+			"type": "array",
+			"minItems": 2,
+			"maxItems": 2,
+			"items": {
+				"type": "number"
+			},
+			"description": "The range of distances from the target entity within which the goal should look for a position to move the owner entity to."
+		},
+		"filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "Conditions that need to be met for the behavior to start."
+		},
+		"height_difference_limit": {
+			"type": "number",
+			"default": 10,
+			"description": "Distance in height (in blocks) between the owner entity and the target has to be less than this value when owner checks if it is too close and should move away from the target."
+		},
+		"horizontal_search_distance": {
+			"type": "integer",
+			"default": 5,
+			"description": "Horizontal search distance (in blocks) when searching for a position to move away from target."
+		},
+		"movement_speed": {
+			"type": "number",
+			"default": 0.6000000238418579,
+			"description": "The speed with which the entity should move to its target position."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"vertical_search_distance": {
+			"type": "integer",
+			"default": 5,
+			"description": "Vertical search distance (in blocks) when searching for a position to move away from target."
+		}
+	},
+	"additionalProperties": false
+}

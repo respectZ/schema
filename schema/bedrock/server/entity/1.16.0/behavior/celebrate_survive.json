@@ -1,0 +1,51 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Behavior Celebrate Survive",
+	"description": "Allows the player to trade with this mob. When the goal starts, it will stop the mob's navigation.",
+	"type": "object",
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"duration": {
+			"type": "number",
+			"default": 30,
+			"description": "The duration in seconds that the celebration lasts for."
+		},
+		"fireworks_interval": {
+			"$ref": "#/$defs/item_floatrange",
+			"description": "Minimum and maximum time between firework (positive, in seconds)."
+		},
+		"on_celebration_end_event": {
+			"$ref": "../triggers.json",
+			"description": "The event to trigger when the goal's duration expires."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		}
+	},
+	"$defs": {
+		"item_floatrange": {
+			"type": "object",
+			"properties": {
+				"max": {
+					"type": "number",
+					"default": 0
+				},
+				"min": {
+					"type": "number",
+					"default": 0
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

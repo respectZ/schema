@@ -1,0 +1,62 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Dweller",
+	"description": "Compels an entity to join and migrate between villages and other dwellings.",
+	"type": "object",
+	"properties": {
+		"can_find_poi": {
+			"type": "boolean",
+			"description": "Whether or not the entity can find and add POIs to the dwelling."
+		},
+		"can_migrate": {
+			"type": "boolean",
+			"description": "Determines whether the entity can migrate between dwellings, or only have its initial dwelling."
+		},
+		"dweller_role": {
+			"type": "string",
+			"enum": ["inhabitant", "defender", "hostile", "passive"],
+			"description": "The role of which the entity plays in the dwelling. Current Roles: inhabitant, defender, hostile, passive."
+		},
+		"dwelling_bounds_tolerance": {
+			"type": "number",
+			"description": "A padding distance for checking if the entity is within the dwelling."
+		},
+		"dwelling_type": {
+			"type": "string",
+			"enum": ["village"],
+			"description": "The type of dwelling the entity wishes to join. Current Types: village."
+		},
+		"first_founding_reward": {
+			"type": "integer",
+			"description": "Determines how much reputation players are rewarded on first founding."
+		},
+		"preferred_profession": {
+			"type": "string",
+			"description": "Allows the user to define a starting profession for this particular Dweller, instead of letting them choose organically. (They still need to gain experience from trading before this takes effect.)",
+			"enum": [
+				"armorer",
+				"cartographer",
+				"weaponsmith",
+				"butcher",
+				"cleric",
+				"farmer",
+				"fisherman",
+				"fletcher",
+				"librarian",
+				"leatherworker",
+				"mason",
+				"shepherd",
+				"toolsmith"
+			]
+		},
+		"update_interval_base": {
+			"type": "number",
+			"description": "How often the entity checks on their dwelling status in ticks. Positive values only."
+		},
+		"update_interval_variant": {
+			"type": "number",
+			"description": "The variant value in ticks that will be added to the update_interval_base."
+		}
+	},
+	"additionalProperties": false
+}

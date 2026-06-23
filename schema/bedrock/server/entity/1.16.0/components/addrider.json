@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Addrider",
+	"description": "Adds riders to the entity. Requires \"minecraft:rideable\". Can only spawn as many riders as \"minecraft:rideable\" has \"seat_count\".",
+	"type": "object",
+	"properties": {
+		"entity_type": {
+			"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+			"description": "The entity type that will be riding this entity."
+		},
+		"spawn_event": {
+			"type": "string",
+			"description": "The spawn event that will be used when the riding entity is created."
+		}
+	},
+	"additionalProperties": false
+}

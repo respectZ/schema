@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Pushable By Block",
+	"description": "Allows the entity to be pushed by certain blocks, like Shulker Boxes and Pistons.",
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false
+}

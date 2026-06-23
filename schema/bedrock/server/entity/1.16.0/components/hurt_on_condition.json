@@ -1,0 +1,37 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Hurt On Condition",
+	"description": "Defines a set of conditions under which an entity should take damage.",
+	"type": "object",
+	"properties": {
+		"damage_conditions": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/damage_conditions"
+			},
+			"description": "List of damage conditions that when met can cause damage to the entity."
+		}
+	},
+	"$defs": {
+		"damage_conditions": {
+			"type": "object",
+			"properties": {
+				"cause": {
+					"$ref": "../../../../../vanilla/server/damage_type.json",
+					"description": "The kind of damage that is caused to the entity. Various armors and spells use this to determine if the entity is immune."
+				},
+				"damage_per_tick": {
+					"type": "integer",
+					"default": 1,
+					"description": "The amount of damage done each tick that the conditions are met."
+				},
+				"filters": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": "The set of conditions that must be satisfied before the entity takes the defined damage."
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

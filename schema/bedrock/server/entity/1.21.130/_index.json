@@ -1,0 +1,76 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"title": "Minecraft Bedrock Entity 1.21.130",
+	"description": "Entity behavior definition for format_version 1.21.130.",
+	"required": ["format_version", "minecraft:entity"],
+	"additionalProperties": false,
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"enum": ["1.21.130"]
+		},
+		"use_beta_features": {
+			"type": "boolean"
+		},
+		"minecraft:entity": {
+			"type": "object",
+			"title": "Entity",
+			"description": "Root entity definition object.",
+			"required": ["description", "components"],
+			"additionalProperties": false,
+			"properties": {
+				"description": {
+					"$ref": "../1.21.20/description.json"
+				},
+				"component_groups": {
+					"type": "object",
+					"title": "Component Groups",
+					"description": "Named groups of components that can be added or removed as a unit via events.",
+					"additionalProperties": {
+						"allOf": [
+							{ "$ref": "./components/_index.json" },
+							{ "$ref": "./behavior/_index.json" },
+							{ "$ref": "../1.8.0/triggers/_index.json" }
+						]
+					}
+				},
+				"components": {
+					"allOf": [
+						{ "$ref": "./components/_index.json" },
+						{ "$ref": "./behavior/_index.json" },
+						{ "$ref": "../1.8.0/triggers/_index.json" }
+					]
+				},
+				"events": {
+					"type": "object",
+					"title": "Events",
+					"description": "Map of named events to their definitions.",
+					"additionalProperties": {
+						"$ref": "../1.16.0/event.json",
+						"title": "Event Definition",
+						"description": "Definition of an entity event."
+					},
+					"properties": {
+						"minecraft:entity_born": {
+							"$ref": "../1.16.0/event.json",
+							"description": "Triggers an event call on an entity when the entity is born via breeding."
+						},
+						"minecraft:entity_spawned": {
+							"$ref": "../1.16.0/event.json",
+							"description": "Triggers an event call on an entity when the entity is spawned in the world."
+						},
+						"minecraft:entity_transformed": {
+							"$ref": "../1.16.0/event.json",
+							"description": "Triggers an event call on an entity that transforms into another entity."
+						},
+						"minecraft:on_prime": {
+							"$ref": "../1.16.0/event.json",
+							"description": "Triggers an event call on an entity when the entity is set to explode."
+						}
+					}
+				}
+			}
+		}
+	}
+}

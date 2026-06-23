@@ -1,0 +1,133 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Breedable",
+	"description": "Allows an entity to establish a way to get into the love state used for breeding.",
+	"type": "object",
+	"properties": {
+		"allow_sitting": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, entities can breed while sitting"
+		},
+		"allowSitting": {
+			"doNotSuggest": true,
+			"$ref": "#/properties/allow_sitting"
+		},
+		"breed_cooldown": {
+			"type": "number",
+			"default": 60,
+			"description": "Time in seconds before the Entity can breed again."
+		},
+		"breed_items": {
+			"description": "The list of items that can be used to get the entity into the 'love' state. Can be a single item or an array.",
+			"oneOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+					}
+				},
+				{
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+				}
+			]
+		},
+		"breedItems": {
+			"doNotSuggest": true,
+			"$ref": "#/properties/breed_items"
+		},
+		"causes_pregnancy": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, the entity will become pregnant instead of spawning a baby."
+		},
+		"environment_requirements": {
+			"oneOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/environment_requirements"
+					}
+				},
+				{
+					"$ref": "#/$defs/environment_requirements"
+				}
+			],
+			"description": "The list of nearby block requirements to get the entity into the 'love' state."
+		},
+		"extra_baby_chance": {
+			"oneOf": [
+				{
+					"type": "number"
+				},
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"range_min": {
+							"type": "number"
+						},
+						"range_max": {
+							"type": "number"
+						}
+					}
+				}
+			],
+			"default": 0,
+			"description": "Chance that up to 16 babies will spawn."
+		},
+		"extraBabyChance": {
+			"doNotSuggest": true,
+			"$ref": "#/properties/extra_baby_chance"
+		},
+		"love_filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "The filters to run when attempting to fall in love."
+		},
+		"require_full_health": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, the entity needs to be at full health before it can breed."
+		},
+		"require_tame": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true, the entities need to be tamed first before they can breed."
+		},
+		"requireTame": {
+			"doNotSuggest": true,
+			"$ref": "#/properties/require_tame"
+		}
+	},
+	"$defs": {
+		"environment_requirements": {
+			"type": "object",
+			"properties": {
+				"block_types": {
+					"oneOf": [
+						{
+							"type": "array",
+							"items": {
+								"$ref": "../../../../../vanilla/server/block_descriptor.json"
+							}
+						},
+						{
+							"$ref": "../../../../../vanilla/server/block_descriptor.json"
+						}
+					],
+					"description": "The block types required nearby for the entity to breed."
+				},
+				"count": {
+					"type": "integer",
+					"description": "The number of the required block types nearby for the entity to breed."
+				},
+				"radius": {
+					"type": "number",
+					"description": "How many blocks radius from the mob's center to search in for the required blocks. Bounded between 0 and 16."
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

@@ -1,0 +1,24 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Boss",
+	"description": "Defines the current state of the boss for updating the boss HUD.",
+	"type": "object",
+	"properties": {
+		"hud_range": {
+			"type": "integer",
+			"default": 55,
+			"description": "The max distance from the boss at which the boss's health bar is present on the players screen."
+		},
+		"name": {
+			"type": "string",
+			"default": 55,
+			"description": "The name that will be displayed above the boss's health bar."
+		},
+		"should_darken_sky": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the sky should darken in the presence of the boss."
+		}
+	},
+	"additionalProperties": false
+}

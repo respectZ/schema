@@ -1,0 +1,30 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Behavior Charge Held Item",
+	"description": "Allows an entity to charge and use their held item.",
+	"type": "object",
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"items": {
+			"type": "array",
+			"description": "The list of items that can be used to charge the held item. This list is required and must have at least one item in it. Value must have at least 1 items.",
+			"minItems": 1,
+			"items": {
+				"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+			}
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		}
+	},
+	"additionalProperties": false
+}

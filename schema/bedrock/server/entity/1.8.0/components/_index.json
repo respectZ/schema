@@ -20,6 +20,9 @@
 		"minecraft:attack": {
 			"$ref": "./attack.json"
 		},
+		"minecraft:balloon": {
+			"$ref": "../../1.16.0/components/balloon.json"
+		},
 		"minecraft:boostable": {
 			"$ref": "./boostable.json"
 		},
@@ -31,6 +34,9 @@
 		},
 		"minecraft:bribeable": {
 			"$ref": "./bribeable.json"
+		},
+		"minecraft:bucketable": {
+			"$ref": "../../1.16.0/components/bucketable.json"
 		},
 		"minecraft:burns_in_daylight": {
 			"$ref": "./burns_in_daylight.json"
@@ -158,11 +164,11 @@
 		"minecraft:leashable": {
 			"$ref": "./leashable.json"
 		},
-		"minecraft:loot": {
-			"$ref": "./loot.json"
-		},
 		"minecraft:lookat": {
 			"$ref": "./lookat.json"
+		},
+		"minecraft:loot": {
+			"$ref": "./loot.json"
 		},
 		"minecraft:mark_variant": {
 			"$ref": "./mark_variant.json"
@@ -191,32 +197,35 @@
 		"minecraft:nameable": {
 			"$ref": "./nameable.json"
 		},
-		"minecraft:navigation.walk": {
-			"$ref": "./navigation.walk.json"
-		},
-		"minecraft:navigation.generic": {
-			"$ref": "./navigation.generic.json"
-		},
 		"minecraft:navigation.climb": {
 			"$ref": "./navigation.climb.json"
-		},
-		"minecraft:navigation.swim": {
-			"$ref": "./navigation.swim.json"
-		},
-		"minecraft:navigation.fly": {
-			"$ref": "./navigation.fly.json"
 		},
 		"minecraft:navigation.float": {
 			"$ref": "./navigation.float.json"
 		},
+		"minecraft:navigation.fly": {
+			"$ref": "./navigation.fly.json"
+		},
+		"minecraft:navigation.generic": {
+			"$ref": "./navigation.generic.json"
+		},
+		"minecraft:navigation.swim": {
+			"$ref": "./navigation.swim.json"
+		},
+		"minecraft:navigation.walk": {
+			"$ref": "./navigation.walk.json"
+		},
 		"minecraft:peek": {
 			"$ref": "./peek.json"
 		},
-		"minecraft:push_through": {
-			"$ref": "./push_through.json"
+		"minecraft:player.hunger": {
+			"$ref": "../../1.16.0/components/player.hunger.json"
 		},
 		"minecraft:projectile": {
 			"$ref": "./projectile.json"
+		},
+		"minecraft:push_through": {
+			"$ref": "./push_through.json"
 		},
 		"minecraft:rail_movement": {
 			"$ref": "./rail_movement.json"
@@ -227,14 +236,14 @@
 		"minecraft:rideable": {
 			"$ref": "./rideable.json"
 		},
+		"minecraft:scaffolding_climber": {
+			"$ref": "./scaffolding_climber.json"
+		},
 		"minecraft:scale": {
 			"$ref": "./scale.json"
 		},
 		"minecraft:scale_by_age": {
 			"$ref": "./scale_by_age.json"
-		},
-		"minecraft:scaffolding_climber": {
-			"$ref": "./scaffolding_climber.json"
 		},
 		"minecraft:shareables": {
 			"$ref": "./shareables.json"

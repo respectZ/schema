@@ -1,0 +1,29 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Scheduler",
+	"description": "Fires off scheduled mob events at time of day events.",
+	"type": "object",
+	"properties": {
+		"max_delay_secs": {
+			"type": "number"
+		},
+		"min_delay_secs": {
+			"type": "number"
+		},
+		"scheduled_events": {
+			"description": "The list of triggers that fire when the conditions match the given filter criteria. Can be an array of event objects or a single event object.",
+			"oneOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../triggers.json"
+					}
+				},
+				{
+					"$ref": "../triggers.json"
+				}
+			]
+		}
+	},
+	"additionalProperties": false
+}
