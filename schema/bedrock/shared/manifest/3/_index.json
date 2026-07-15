@@ -36,6 +36,13 @@
 		"settings": {
 			"description": "Optional settings screen entries for packs (preview feature).",
 			"$ref": "#/$defs/settings"
+		},
+		"subpacks": {
+			"type": "array",
+			"description": "Section containing definitions for sub-packs that let players choose between different variations of a resource pack and switch between them at any time.",
+			"items": {
+				"$ref": "#/$defs/subpack"
+			}
 		}
 	},
 	"$defs": {
@@ -258,6 +265,32 @@
 				}
 			}
 		},
+		"subpack": {
+			"type": "object",
+			"description": "A sub-pack variation of a resource pack that players can switch between.",
+			"additionalProperties": false,
+			"required": ["folder_name", "name"],
+			"properties": {
+				"folder_name": {
+					"type": "string",
+					"description": "The name of the folder where the sub-pack is located (inside the subpacks folder)."
+				},
+				"name": {
+					"type": "string",
+					"description": "The name players see when choosing this sub-pack."
+				},
+				"memory_tier": {
+					"type": "integer",
+					"description": "Minimum amount of RAM required to run the sub-pack (each tier represents 250 MB). Will be replaced by memory_performance_tier in a future release."
+				},
+				"memory_performance_tier": {
+					"type": "integer",
+					"minimum": 1,
+					"maximum": 5,
+					"description": "Optimal platform tier for the sub-pack (values range 1-5). Experimental; requires manifest V3."
+				}
+			}
+		},
 		"settings_label": {
 			"type": "object",
 			"description": "Read-only label for settings screen.",
@@ -321,6 +354,39 @@
 				}
 			}
 		},
+		"settings_dropdown": {
+			"type": "object",
+			"description": "Dropdown setting for selecting from a list of options.",
+			"additionalProperties": false,
+			"required": ["type", "text", "name", "options"],
+			"properties": {
+				"type": {
+					"const": "dropdown"
+				},
+				"text": {
+					"type": "string"
+				},
+				"name": {
+					"$ref": "../../../../vanilla/definition/identifier.json"
+				},
+				"options": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"additionalProperties": false,
+						"required": ["name", "text"],
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"text": {
+								"type": "string"
+							}
+						}
+					}
+				}
+			}
+		},
 		"settings": {
 			"type": "array",
 			"description": "Ordered list of settings entries.",
@@ -334,6 +400,9 @@
 					},
 					{
 						"$ref": "#/$defs/settings_slider"
+					},
+					{
+						"$ref": "#/$defs/settings_dropdown"
 					}
 				]
 			}
