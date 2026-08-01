@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/server/filter/entity/filters/has_damaged_equipment.json",
 	"type": "object",
 	"title": "Has Damaged Equipment Filter",
 	"description": "Tests for the presence of a damaged named item in the designated slot of the subject entity.",

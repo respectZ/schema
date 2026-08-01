@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/client/sound_definitions/_index.json",
 	"title": "Minecraft Bedrock Sound Definitions",
 	"type": "object",
 	"additionalProperties": false,

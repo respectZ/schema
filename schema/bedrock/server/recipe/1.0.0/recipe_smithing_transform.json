@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/recipe/1.0.0/recipe_smithing_transform.json",
 	"type": "object",
 	"title": "Smithing Transform Recipe",
 	"description": "A smithing table transformation recipe defining how items are upgraded using a smithing template, base item, and addition material.",

@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/biome/1.26.20/_index.json",
 	"type": "object",
 	"title": "Minecraft Bedrock Biome Definition 1.26.20",
 	"description": "Contains a description and components to define a Server Biome.",

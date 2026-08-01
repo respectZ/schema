@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/server/filter/entity/filters/y_rotation.json",
 	"type": "object",
 	"title": "Y Rotation Filter",
 	"description": "Returns the Y rotation of this entity.",

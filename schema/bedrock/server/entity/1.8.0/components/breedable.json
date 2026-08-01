@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/entity/1.8.0/components/breedable.json",
 	"type": "object",
 	"title": "Breedable",
 	"description": "Defines the way an entity can get into the 'love' state.",

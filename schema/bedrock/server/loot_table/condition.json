@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/loot_table/condition.json",
 	"type": "object",
 	"title": "Loot Condition",
 	"description": "Defines a condition that must be met for a loot table entry or function to apply.",

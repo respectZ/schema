@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/block/1.26.0/components/leashable.json",
 	"type": "object",
 	"title": "Leashable Component",
 	"description": "Allows a block to have a lead tied to it.",

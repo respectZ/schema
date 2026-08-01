@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/item/1.21.90/components/wearable.json",
 	"type": "object",
 	"title": "Wearable",
 	"description": "Wearable items can be worn by a player in a specified slot.",

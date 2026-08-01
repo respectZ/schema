@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/entity/1.8.0/components/ambient_sound_interval.json",
 	"type": "object",
 	"title": "Ambient Sound Interval",
 	"description": "Sets the entity's delay between playing its ambient sound.",

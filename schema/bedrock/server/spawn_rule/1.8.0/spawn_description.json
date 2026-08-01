@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/spawn_rule/1.8.0/spawn_description.json",
 	"type": "object",
 	"title": "Spawn Description",
 	"description": "The description block that identifies which entity these spawn rules apply to and specifies the population control group.",

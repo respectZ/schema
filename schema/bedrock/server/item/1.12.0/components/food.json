@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/item/1.12.0/components/food.json",
 	"type": "object",
 	"title": "Food",
 	"description": "Food component for edible items",

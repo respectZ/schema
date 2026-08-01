@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/trading/1.0.0/_index.json",
 	"type": "object",
 	"title": "Trade Table",
 	"description": "Defines the items a villager or wandering trader can offer in trades.",

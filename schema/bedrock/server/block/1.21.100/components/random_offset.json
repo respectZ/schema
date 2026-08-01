@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/block/1.21.100/components/random_offset.json",
 	"type": "object",
 	"title": "Random Offset Component",
 	"description": "Defines a random offset for the block, seeded based on the block's position and the specified range and steps.",

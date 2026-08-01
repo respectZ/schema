@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/block/1.19.60/components/selection_box.json",
 	"type": "object",
 	"title": "Selection Box Component",
 	"description": "Defines the area of the block that is selected by the player's cursor.",

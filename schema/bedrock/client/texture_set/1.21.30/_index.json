@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/texture_set/1.21.30/_index.json",
 	"title": "Minecraft Bedrock Texture Set",
 	"type": "object",
 	"additionalProperties": false,

@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/features/1.13.0/ore_feature.json",
 	"type": "object",
 	"title": "Ore Feature",
 	"description": "Places a vein of blocks to simulate ore deposits. Despite the name, any block can be placed by this feature.",

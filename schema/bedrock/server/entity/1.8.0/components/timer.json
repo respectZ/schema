@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/entity/1.8.0/components/timer.json",
 	"type": "object",
 	"title": "Timer",
 	"description": "Adds a timer after which an event will fire.",

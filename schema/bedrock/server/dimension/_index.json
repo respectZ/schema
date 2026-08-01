@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/dimension/_index.json",
 	"type": "object",
 	"title": "Minecraft Bedrock Dimension File",
 	"description": "Schema for custom dimension definition files used by behavior packs.",

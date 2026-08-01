@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/server/filter/entity/filters/is_family.json",
 	"type": "object",
 	"title": "Is Family Filter",
 	"description": "Returns true when the subject entity is a member of the named family.",

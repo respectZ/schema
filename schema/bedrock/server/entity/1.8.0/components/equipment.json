@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/entity/1.8.0/components/equipment.json",
 	"type": "object",
 	"title": "Equipment",
 	"description": "Sets the Equipment table to use for this Entity.",

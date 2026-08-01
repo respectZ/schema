@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/server/filter/entity/filters/enum_property.json",
 	"type": "object",
 	"title": "Enum Property Filter",
 	"description": "Returns true when the actor property matches the value provided.",

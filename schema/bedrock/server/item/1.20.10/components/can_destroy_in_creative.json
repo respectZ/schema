@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/item/1.20.10/components/can_destroy_in_creative.json",
 	"title": "Can Destroy In Creative",
 	"description": "The can_destroy_in_creative component determines if the item can be used by a player to break blocks when in creative mode.",
 	"oneOf": [

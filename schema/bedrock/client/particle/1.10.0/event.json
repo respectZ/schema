@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft-07/schema#",
-	"$id": "schema/bedrock/client/particle/1.10.0/event.json",
 	"properties": {
 		"expression": {
 			"$ref": "../../../../vanilla/definition/molang.json#/$defs/expression"

@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/item/1.20.50/components/compostable.json",
 	"type": "object",
 	"title": "Compostable",
 	"description": "Specifies that an item is compostable and provides the chance of creating a composting layer in the composter",

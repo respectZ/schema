@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/shared/manifest/2/_index.json",
 	"title": "Minecraft Bedrock Pack Manifest 1",
 	"description": "The manifest.json file contains the basic information about a pack that Minecraft needs to identify it, including header metadata, modules, and optional dependencies, capabilities, and metadata.",
 	"type": "object",

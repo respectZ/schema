@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/item/1.21.60/components/storage_weight_modifier.json",
 	"type": "object",
 	"title": "Storage Weight Modifier",
 	"description": "Specifies the maximum weight limit that a storage item can hold",

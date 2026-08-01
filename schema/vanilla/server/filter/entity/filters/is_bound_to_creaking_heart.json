@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/server/filter/entity/filters/is_bound_to_creaking_heart.json",
 	"type": "object",
 	"title": "Is Bound To Creaking Heart Filter",
 	"description": "Tests that the Creaking Heart that spawned the subject Creaking still exists.",

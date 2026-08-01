@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/aim_assist_categories/1.21.50/_index.json",
 	"type": "object",
 	"title": "Minecraft Bedrock Aim Assist Categories 1.21.50",
 	"description": "A camera aim-assist categories definition for a behavior pack.",

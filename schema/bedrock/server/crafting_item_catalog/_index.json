@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/crafting_item_catalog/_index.json",
 	"type": "object",
 	"required": ["format_version", "minecraft:crafting_items_catalog"],
 	"additionalProperties": false,

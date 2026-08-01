@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/server/filter/entity/filters/int_property.json",
 	"type": "object",
 	"title": "Int Property Filter",
 	"description": "Returns true when the int actor property matches the value provided.",

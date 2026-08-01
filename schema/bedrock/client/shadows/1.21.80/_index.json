@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/shadows/1.21.80/_index.json",
 	"type": "object",
 	"title": "Minecraft Bedrock Shadow Settings 1.21.80",
 	"description": "Shadow stylization settings for Vibrant Visuals. Controls whether shadows are blocky or soft.",

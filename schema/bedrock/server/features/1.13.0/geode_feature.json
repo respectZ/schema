@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/features/1.13.0/geode_feature.json",
 	"type": "object",
 	"title": "Geode Feature",
 	"description": "Generates a rock formation to simulate a geode with multiple configurable layers.",

@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/biome/1.21.110/components/overworld_generation_rules.json",
 	"type": "object",
 	"title": "minecraft:overworld_generation_rules",
 	"description": "Controls how this biome is instantiated (and then potentially modified) during world generation of the overworld.",

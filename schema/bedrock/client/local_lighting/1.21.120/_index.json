@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/local_lighting/1.21.120/_index.json",
 	"type": "object",
 	"title": "Minecraft Bedrock Local Light Settings 1.21.120",
 	"description": "Local light settings for Vibrant Visuals. Assigns light colors and light types to specific block types such as torches.",

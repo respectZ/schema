@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/attachable/1.10.0/_index.json",
 	"title": "Minecraft Bedrock Attachable Resource Definition 1.10.0",
 	"type": "object",
 	"additionalProperties": false,

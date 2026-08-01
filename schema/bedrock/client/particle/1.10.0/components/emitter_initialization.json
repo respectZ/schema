@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/particle/1.10.0/components/emitter_initialization.json",
 	"title": "minecraft:emitter_initialization",
 	"description": "Runs Molang expressions during emitter creation and updates.",
 	"type": "object",

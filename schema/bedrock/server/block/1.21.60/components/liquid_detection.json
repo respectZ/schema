@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/block/1.21.60/components/liquid_detection.json",
 	"type": "object",
 	"title": "Liquid Detection Component",
 	"description": "The definitions for how a block behaves when detecting liquid.",

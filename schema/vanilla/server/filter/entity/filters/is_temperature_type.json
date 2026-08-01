@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/server/filter/entity/filters/is_temperature_type.json",
 	"type": "object",
 	"title": "Is Temperature Type Filter",
 	"description": "Tests whether the current temperature is a given type.",

@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/recipe/1.0.0/recipe_shapeless.json",
 	"type": "object",
 	"title": "Shapeless Recipe",
 	"description": "A shapeless crafting recipe where ingredients can be placed in any order on the crafting grid.",

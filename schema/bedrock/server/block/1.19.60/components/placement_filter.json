@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/block/1.19.60/components/placement_filter.json",
 	"type": "object",
 	"title": "Placement Filter Component",
 	"description": "Sets rules for under what conditions the block can be placed and survive.",

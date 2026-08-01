@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/biome/1.21.120/components/ambient_sounds.json",
 	"type": "object",
 	"title": "minecraft:ambient_sounds",
 	"description": "Set the ambient sounds for the biome. These sounds must be in the 'individual_named_sounds' in a 'sounds.json' file.",

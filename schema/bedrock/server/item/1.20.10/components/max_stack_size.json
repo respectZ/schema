@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/item/1.20.10/components/max_stack_size.json",
 	"title": "Max Stack Size",
 	"description": "The max stack size component determines how many of the item can be stacked together",
 	"oneOf": [

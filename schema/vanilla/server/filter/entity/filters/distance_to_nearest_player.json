@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/server/filter/entity/filters/distance_to_nearest_player.json",
 	"type": "object",
 	"title": "Distance To Nearest Player Filter",
 	"description": "Compares the distance to the nearest Player with a float value.",

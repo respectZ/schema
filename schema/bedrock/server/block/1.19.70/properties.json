@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/block/1.19.70/properties.json",
 	"type": "object",
 	"title": "Block Properties",
 	"description": "Map of key/value pairs that maps the property name (key) to an array of all possible values for that property (value).",

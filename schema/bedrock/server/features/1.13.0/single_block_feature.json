@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/features/1.13.0/single_block_feature.json",
 	"type": "object",
 	"title": "Single Block Feature",
 	"description": "Places a single block in the world. The block can be selected from a weighted list.",

@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/particle/_index.json",
 	"title": "Minecraft Bedrock Particle Effect",
 	"type": "object",
 	"$ref": "./1.10.0/_index.json",

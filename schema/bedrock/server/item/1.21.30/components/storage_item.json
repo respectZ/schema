@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/item/1.21.30/components/storage_item.json",
 	"type": "object",
 	"title": "Storage Item",
 	"description": "Storage Items can be used by other components to store other items within this item.",

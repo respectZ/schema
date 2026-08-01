@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/entity/1.8.0/components/_index.json",
 	"type": "object",
 	"title": "Entity Components",
 	"description": "Entity component map. Each property is a known component name and its value is the component's configuration.",

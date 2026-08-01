@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/block/1.21.80/components/destruction_particles.json",
 	"type": "object",
 	"title": "Destruction Particles Component",
 	"description": "Sets the particles that will be used when block is destroyed.",

@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/dialogue/_index.json",
 	"type": "object",
 	"title": "Minecraft Bedrock NPC Dialogue File",
 	"description": "Schema for NPC dialogue definition files used by behavior packs.",

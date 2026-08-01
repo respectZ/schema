@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/block/1.21.100/components/movable.json",
 	"type": "object",
 	"title": "Movable Component",
 	"description": "How the block reacts to being pushed by another block like a piston.",

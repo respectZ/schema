@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/block/1.21.130/components/_index.json",
 	"type": "object",
 	"title": "Components",
 	"description": "Block components",

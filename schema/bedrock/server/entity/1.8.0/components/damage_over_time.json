@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/entity/1.8.0/components/damage_over_time.json",
 	"type": "object",
 	"title": "Damage Over Time",
 	"description": "Applies defined amount of damage to the entity at specified intervals",

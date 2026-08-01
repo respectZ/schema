@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/features/1.13.0/conditional_list.json",
 	"type": "object",
 	"title": "Conditional List Feature",
 	"description": "Places the first suitable feature within a collection based on conditions.",

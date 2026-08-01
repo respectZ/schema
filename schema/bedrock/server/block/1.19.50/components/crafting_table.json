@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/block/1.19.50/components/crafting_table.json",
 	"type": "object",
 	"title": "Crafting Table Component",
 	"description": "Makes your block into a custom crafting table which enables the crafting table UI and the ability to craft recipes.",

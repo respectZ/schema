@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/fog/1.21.90/_index.json",
 	"title": "Minecraft Bedrock Fog Settings 1.21.90",
 	"description": "Fogs in resource packs define distance and volumetric fog settings for different mediums. The fog file registers a named fog settings definition under minecraft:fog_settings.",
 	"type": "object",

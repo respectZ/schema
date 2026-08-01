@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/server/filter/entity/filters/has_nametag.json",
 	"type": "object",
 	"title": "Has Nametag Filter",
 	"description": "Tests if the subject has been given a custom name.",

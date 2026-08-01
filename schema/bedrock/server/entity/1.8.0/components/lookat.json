@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/entity/1.8.0/components/lookat.json",
 	"type": "object",
 	"title": "Look At",
 	"description": "Defines the behavior when another entity looks at this entity.",

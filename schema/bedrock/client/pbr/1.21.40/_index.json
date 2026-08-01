@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/pbr/1.21.40/_index.json",
 	"type": "object",
 	"title": "Minecraft Bedrock PBR Fallback Settings 1.21.40",
 	"description": "Default PBR fallback values when texture set detail isn't provided for blocks, entities, particles, or items.",

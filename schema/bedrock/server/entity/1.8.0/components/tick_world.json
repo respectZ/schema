@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/entity/1.8.0/components/tick_world.json",
 	"type": "object",
 	"title": "Tick World",
 	"description": "Defines if the entity ticks the world and the radius around it to tick.",

@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/entity/1.8.0/behavior/drop_item_for.json",
 	"type": "object",
 	"title": "Behavior Drop Item For",
 	"description": "Allows the mob to move near a target and drop an item.",

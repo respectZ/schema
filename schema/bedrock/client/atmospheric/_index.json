@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/atmospheric/_index.json",
 	"title": "Minecraft Bedrock Atmospheric Settings",
 	"description": " Defines Vibrant Visuals atmospheric effects such as horizon blending, scattering strength, and sky colors.",
 	"type": "object",

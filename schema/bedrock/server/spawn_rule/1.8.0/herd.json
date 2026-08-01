@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/spawn_rule/1.8.0/herd.json",
 	"title": "Herd",
 	"description": "Specifies herd spawning configuration. Can be a single herd object or an array of herd objects.",
 	"oneOf": [

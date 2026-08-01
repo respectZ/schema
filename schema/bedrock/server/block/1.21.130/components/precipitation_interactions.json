@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/block/1.21.130/components/precipitation_interactions.json",
 	"type": "object",
 	"title": "Precipitation Interactions Component",
 	"description": "Determines how the block will interact with rain and snow.",

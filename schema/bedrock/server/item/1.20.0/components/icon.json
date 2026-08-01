@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/item/1.20.0/components/icon.json",
 	"title": "Icon",
 	"description": "The icon item component determines the icon to represent the item",
 	"oneOf": [

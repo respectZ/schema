@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/features/1.13.0/nether_cave_carver_feature.json",
 	"type": "object",
 	"title": "Nether Cave Carver Feature",
 	"description": "Carves a cave through the Nether in the current chunk, and in every chunk around the current chunk in an 8 radial pattern. This feature will also only work when placed specifically in the pass \"pregeneration_pass\".",

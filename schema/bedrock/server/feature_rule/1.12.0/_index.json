@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/feature_rule/1.12.0/_index.json",
 	"type": "object",
 	"title": "Minecraft Feature Rule 1.12.0",
 	"description": "Feature rule definition. Used to define rules for features in behavior packs.",

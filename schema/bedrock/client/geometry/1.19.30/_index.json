@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/geometry/1.19.30/_index.json",
 	"type": "object",
 	"title": "Minecraft Bedrock Geometry 1.19.30",
 	"description": "A geometry file for version 1.19.30 of the Minecraft resource pack.",

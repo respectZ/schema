@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/spawn_rule/1.18.0/spawn_biome_condition.json",
 	"type": "object",
 	"title": "Spawn Biome Condition",
 	"description": "Defines the conditions under which an entity can spawn, including biome filters, brightness, height, and herd settings.",

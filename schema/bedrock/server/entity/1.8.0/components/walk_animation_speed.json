@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/entity/1.8.0/components/walk_animation_speed.json",
 	"type": "object",
 	"title": "Walk Animation Speed",
 	"description": "Sets the speed multiplier for this entity's walk animation speed.",

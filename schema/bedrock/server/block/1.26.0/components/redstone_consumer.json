@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/block/1.26.0/components/redstone_consumer.json",
 	"type": "object",
 	"title": "Redstone Consumer Component",
 	"description": "A component describing how a block can consume and potentially propogate a redstone signal. This component is not available for block permutations.",

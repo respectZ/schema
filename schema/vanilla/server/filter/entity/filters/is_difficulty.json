@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/server/filter/entity/filters/is_difficulty.json",
 	"type": "object",
 	"title": "Is Difficulty Filter",
 	"description": "Tests the current difficulty level of the game.",

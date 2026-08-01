@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/block/1.19.20/components/destructible_by_mining.json",
 	"oneOf": [
 		{
 			"type": "boolean",

@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/spawn_rule/1.8.0/permute_type.json",
 	"title": "Permute Type",
 	"description": "Weighted spawn permutation that selects which entity variant to spawn. Can be a single permutation or an array of permutations.",
 	"oneOf": [

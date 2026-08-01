@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/block/1.21.70/components/material_instances.json",
 	"type": "object",
 	"title": "Material Instances Component",
 	"description": "The material instances for a block. Maps face or material_instance names in a geometry file to an actual material instance.",

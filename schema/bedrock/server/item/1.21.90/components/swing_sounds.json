@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/item/1.21.90/components/swing_sounds.json",
 	"type": "object",
 	"title": "Swing Sounds",
 	"description": "Overrides the swing sounds emitted by the user.",

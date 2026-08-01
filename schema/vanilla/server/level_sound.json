@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/server/level_sound.json",
 	"type": "string",
 	"enum": [
 		"item.use.on",

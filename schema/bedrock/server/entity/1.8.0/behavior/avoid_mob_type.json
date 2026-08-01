@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/entity/1.8.0/behavior/avoid_mob_type.json",
 	"type": "object",
 	"title": "Behavior Avoid Mob Type",
 	"description": "Allows this entity to avoid certain mob types.",

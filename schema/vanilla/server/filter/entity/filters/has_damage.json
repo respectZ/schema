@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/server/filter/entity/filters/has_damage.json",
 	"type": "object",
 	"title": "Has Damage Filter",
 	"description": "Returns true when the subject entity receives the named damage type.",

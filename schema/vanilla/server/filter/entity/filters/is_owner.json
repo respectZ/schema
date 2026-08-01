@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/server/filter/entity/filters/is_owner.json",
 	"type": "object",
 	"title": "Is Owner Filter",
 	"description": "Returns true if the subject entity is the owner of the calling entity.",

@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/block/1.21.130/_index.json",
 	"type": "object",
 	"title": "Block 1.21.130",
 	"description": "Block definition file for behavior packs (format_version 1.21.130)",

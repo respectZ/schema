@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/recipe/1.0.0/recipe_smithing_trim.json",
 	"type": "object",
 	"title": "Smithing Trim Recipe",
 	"description": "A smithing table armor trim recipe defining how armor items are decorated with trim patterns.",

@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/camera/_index.json",
 	"type": "object",
 	"title": "Minecraft Bedrock Camera Preset File",
 	"description": "Schema for camera preset definition files used by behavior packs.",

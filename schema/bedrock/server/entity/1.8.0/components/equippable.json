@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/entity/1.8.0/components/equippable.json",
 	"type": "object",
 	"title": "Equippable",
 	"description": "Defines an entity's behavior for having items equipped to it",

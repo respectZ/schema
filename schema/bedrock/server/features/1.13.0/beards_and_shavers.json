@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/features/1.13.0/beards_and_shavers.json",
 	"type": "object",
 	"title": "Beards and Shavers Feature",
 	"description": "Builds a 'beard' or 'shave' out space so as to provide a clear space for a feature to place.",

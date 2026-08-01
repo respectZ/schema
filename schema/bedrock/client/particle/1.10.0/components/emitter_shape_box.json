@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/particle/1.10.0/components/emitter_shape_box.json",
 	"title": "minecraft:emitter_shape_box",
 	"description": "Emits particles from a box.",
 	"type": "object",

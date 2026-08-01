@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/features/1.13.0/multiface_feature.json",
 	"type": "object",
 	"title": "Multiface Feature",
 	"description": "Places one or a few multiface blocks on floors/walls/ceilings. This feature can place any block type.",

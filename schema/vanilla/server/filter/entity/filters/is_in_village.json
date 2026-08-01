@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/server/filter/entity/filters/is_in_village.json",
 	"type": "object",
 	"title": "Is In Village Filter",
 	"description": "Tests whether the Subject is inside the bounds of a village.",

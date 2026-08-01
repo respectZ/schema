@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/spawn_rule/_index.json",
 	"type": "object",
 	"title": "Spawn Rule",
 	"description": "Spawn rules definition for Minecraft Bedrock Edition entities.",

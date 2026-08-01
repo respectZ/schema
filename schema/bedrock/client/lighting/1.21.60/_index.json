@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/lighting/1.21.60/_index.json",
 	"type": "object",
 	"title": "Minecraft Bedrock Lighting Settings 1.21.60",
 	"description": "Lighting settings for Vibrant Visuals. Defines directional lights (sun/moon), emissive desaturation, and ambient light.",

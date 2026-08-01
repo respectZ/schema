@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/server/filter/entity/filters/is_riding.json",
 	"type": "object",
 	"title": "Is Riding Filter",
 	"description": "Returns true if the subject entity is riding on another entity.",

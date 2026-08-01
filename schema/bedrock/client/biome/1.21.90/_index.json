@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/biome/1.21.90/_index.json",
 	"type": "object",
 	"title": "Minecraft Bedrock Client Biome Definition 1.21.90",
 	"description": "Contains a description and components to define a Client Biome.",

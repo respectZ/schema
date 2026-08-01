@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/biome/1.21.110/components/climate.json",
 	"type": "object",
 	"title": "minecraft:climate",
 	"description": "Describes temperature, humidity, precipitation, and similar. Biomes without this component will have default values.",

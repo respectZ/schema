@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/server/filter/entity/filters/has_tag.json",
 	"type": "object",
 	"title": "Has Tag Filter",
 	"description": "Returns true if the subject entity has the tag provided.",

@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/item/1.20.0/components/fuel.json",
 	"title": "Fuel",
 	"description": "Fuel item component allows this item to be used as fuel in a furnace to 'cook' other items.",
 	"$defs": {

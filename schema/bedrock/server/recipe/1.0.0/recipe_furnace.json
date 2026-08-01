@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/recipe/1.0.0/recipe_furnace.json",
 	"type": "object",
 	"title": "Furnace Recipe",
 	"description": "A smelting/cooking recipe defining input items that can be smelted in furnaces or other cooking stations.",

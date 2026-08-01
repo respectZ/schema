@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/item/1.20.10/components/repairable.json",
 	"type": "object",
 	"title": "Repairable",
 	"description": "Repairable item component. Determines the items that can be used to repair this item along with how much durability they repair",

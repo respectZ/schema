@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/entity/1.8.0/components/attack.json",
 	"type": "object",
 	"title": "Attack",
 	"description": "Defines an entity's melee attack and any additional effects on it.",

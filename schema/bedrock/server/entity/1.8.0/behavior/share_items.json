@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/entity/1.8.0/behavior/share_items.json",
 	"type": "object",
 	"title": "Behavior Share Items",
 	"description": "Allows the mob to give items it has to others.",

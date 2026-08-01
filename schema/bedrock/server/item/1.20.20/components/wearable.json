@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/item/1.20.20/components/wearable.json",
 	"type": "object",
 	"title": "Wearable Component",
 	"description": "Wearable items can be worn by a player in the head, chest, legs, feet, or off-hand slots.",

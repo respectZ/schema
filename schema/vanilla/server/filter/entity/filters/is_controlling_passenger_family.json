@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/server/filter/entity/filters/is_controlling_passenger_family.json",
 	"type": "object",
 	"title": "Is Controlling Passenger Family Filter",
 	"description": "Returns true when the subject entity's controlling passenger is a member of the named family.",

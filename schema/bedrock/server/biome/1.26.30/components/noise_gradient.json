@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/biome/1.26.30/components/noise_gradient.json",
 	"type": "object",
 	"title": "minecraft:noise_gradient",
 	"description": "Places continuous bands of blocks according to a noise distribution. This surface builder's processing has been implemented with sub-terrain height ranges in mind.",

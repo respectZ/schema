@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/server/filter/entity/filters/rider_count.json",
 	"type": "object",
 	"title": "Rider Count Filter",
 	"description": "Returns the number of riders on this entity.",

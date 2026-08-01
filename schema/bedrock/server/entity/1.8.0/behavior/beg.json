@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/entity/1.8.0/behavior/beg.json",
 	"type": "object",
 	"title": "Behavior Beg",
 	"description": "Allows this mob to look at and follow the player that holds food they like.",

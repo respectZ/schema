@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/features/1.13.0/height_difference_filter_feature.json",
 	"type": "object",
 	"title": "Height Difference Filter Feature",
 	"description": "'minecraft:height_difference_filter_feature' filters away positions based on the heightmap around the placement position.The filter will check for surface blocks in each cardinal direction within the `search_radius`. Each block will be checked against all given conditions.",

@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/cubemap/1.21.130/_index.json",
 	"type": "object",
 	"title": "Minecraft Bedrock Cubemap Settings 1.21.130",
 	"description": "Cubemap (skybox) settings for Vibrant Visuals. Configures lighting parameters for custom cubemaps including ambient, sky, directional light contributions, and scattering behavior.",

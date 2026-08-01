@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/item/1.20.50/components/use_modifier.json",
 	"type": "object",
 	"title": "Use Modifier Component",
 	"description": "Modifies use behavior, including how long the item takes to use and the player's movement speed.",

@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/item/1.21.10/components/durability_sensor.json",
 	"type": "object",
 	"title": "Durability Sensor",
 	"description": "Enables an item to emit effects when it receives damage. Because of this, the item also needs a `minecraft:durability` component.",

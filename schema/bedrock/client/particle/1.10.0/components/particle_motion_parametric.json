@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/particle/1.10.0/components/particle_motion_parametric.json",
 	"title": "minecraft:particle_motion_parametric",
 	"description": "Directly controls particle motion.",
 	"type": "object",

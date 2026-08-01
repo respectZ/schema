@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/item_texture/_index.json",
 	"title": "Minecraft Bedrock Item Texture Atlas",
 	"description": "The item_texture.json file defines the texture atlas for item textures. It maps texture names to texture file paths, allowing items to reference textures by name. Located at textures/item_texture.json in resource packs.",
 	"type": "object",

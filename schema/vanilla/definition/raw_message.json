@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/definition/raw_message.json",
 	"title": "Raw Message",
 	"description": "Defines a JSON structure that is used for more flexible text display.",
 	"type": "object",

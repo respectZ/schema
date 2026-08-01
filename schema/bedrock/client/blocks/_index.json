@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/blocks/_index.json",
 	"title": "Minecraft Bedrock Blocks Resource Definition",
 	"description": "The blocks.json file in a resource pack defines texture and sound mappings for blocks. Each block entry maps a block identifier to its visual and audio properties.",
 	"type": "object",

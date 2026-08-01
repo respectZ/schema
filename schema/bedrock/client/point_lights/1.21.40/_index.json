@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/point_lights/1.21.40/_index.json",
 	"type": "object",
 	"title": "Minecraft Bedrock Point Light Settings 1.21.40",
 	"description": "Point light color settings for Vibrant Visuals. Maps block identifiers to their emitted light colors.",

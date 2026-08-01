@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/shadows/_index.json",
 	"type": "object",
 	"title": "Minecraft Bedrock Shadow Settings",
 	"required": ["format_version"],

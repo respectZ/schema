@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/block/1.26.0/components/connection_rule.json",
 	"type": "object",
 	"title": "Connection Rule Component",
 	"description": "Defines whether other blocks such as fences, walls, bars, and glass panes are allowed to connect to this block.",

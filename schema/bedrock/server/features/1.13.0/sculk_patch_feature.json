@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/features/1.13.0/sculk_patch_feature.json",
 	"type": "object",
 	"title": "Sculk Patch Feature",
 	"description": "Generates a sculk patch in the world with configurable growth and spread parameters.",

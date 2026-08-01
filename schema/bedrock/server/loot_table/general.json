@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/loot_table/general.json",
 	"type": "object",
 	"title": "Loot Table General Types",
 	"description": "Shared type definitions used across loot table components.",

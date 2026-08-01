@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/biome/1.21.70/components/foliage_appearance.json",
 	"type": "object",
 	"title": "minecraft:foliage_appearance",
 	"description": "Set the foliage color or color map used during rendering. Biomes without this component will have default foliage appearance.",

@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/water/1.26.0/_index.json",
 	"type": "object",
 	"title": "Minecraft Bedrock Water Settings 1.26.0",
 	"description": "Water settings for Vibrant Visuals. Defines particle concentrations, waves, caustics, and biome water color contribution for water rendering.",

@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/entity/1.8.0/components/spell_effects.json",
 	"type": "object",
 	"title": "Spell Effects",
 	"description": "Defines what mob effects to add and remove to the entity when adding this component.",

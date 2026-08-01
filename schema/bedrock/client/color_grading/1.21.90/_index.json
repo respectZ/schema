@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/color_grading/1.21.90/_index.json",
 	"title": "Minecraft Bedrock Color Grading Settings",
 	"type": "object",
 	"required": ["format_version", "minecraft:color_grading_settings"],

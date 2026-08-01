@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/server/filter/entity/filters/bool_property.json",
 	"type": "object",
 	"title": "Bool Property Filter",
 	"description": "Returns true when the bool actor property matches the value provided.",

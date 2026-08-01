@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/entity/1.8.0/_index.json",
 	"title": "Minecraft Bedrock Actor Resource Definition 1.8.0",
 	"description": "Defines client entity and attachable visual resources for actors, including textures, geometry, materials, animations, and render controllers.",
 	"type": "object",

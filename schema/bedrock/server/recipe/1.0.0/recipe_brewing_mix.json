@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/recipe/1.0.0/recipe_brewing_mix.json",
 	"type": "object",
 	"title": "Brewing Mix Recipe",
 	"description": "A brewing recipe defining how potions are created by combining a base potion with a reagent in a brewing stand.",

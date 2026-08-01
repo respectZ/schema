@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/server/filter/entity/filters/float_property.json",
 	"type": "object",
 	"title": "Float Property Filter",
 	"description": "Returns true when the float actor property matches the value provided.",

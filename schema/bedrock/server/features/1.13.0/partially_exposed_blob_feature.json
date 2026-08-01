@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/features/1.13.0/partially_exposed_blob_feature.json",
 	"type": "object",
 	"title": "Partially Exposed Blob Feature",
 	"description": "Generates a blob of the specified block with the specified dimensions. For the most part the blob is embedded in the specified surface, however a single side is allowed to be exposed.",

@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/features/1.13.0/growing_plant_feature.json",
 	"type": "object",
 	"title": "Growing Plant Feature",
 	"description": "Places a growing plant in the world with variable body and head blocks and height distribution.",

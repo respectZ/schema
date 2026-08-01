@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/biome/1.21.110/components/mountain_parameters.json",
 	"type": "object",
 	"title": "minecraft:mountain_parameters",
 	"description": "Noise parameters used to drive mountain terrain generation in the Overworld.",

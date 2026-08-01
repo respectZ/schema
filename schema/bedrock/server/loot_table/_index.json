@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/loot_table/_index.json",
 	"type": "object",
 	"title": "Minecraft Bedrock Loot Table",
 	"description": "Defines loot that can be generated from entities, chests, fishing, and other gameplay events.",

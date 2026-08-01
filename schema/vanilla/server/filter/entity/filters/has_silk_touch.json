@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/server/filter/entity/filters/has_silk_touch.json",
 	"type": "object",
 	"title": "Has Silk Touch Filter",
 	"description": "Tests if the subject is holding an item with silk touch.",

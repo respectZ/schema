@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/entity/1.8.0/components/color2.json",
 	"type": "object",
 	"title": "Color 2",
 	"description": "Defines the entity's second texture color. Only works on vanilla entities that have a second predefined color values (tropical fish).",

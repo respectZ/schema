@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/entity/1.8.0/components/scale_by_age.json",
 	"type": "object",
 	"title": "Scale By Age",
 	"description": "Defines the entity's size interpolation based on the entity's age.",

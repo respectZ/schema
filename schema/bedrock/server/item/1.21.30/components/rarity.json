@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/item/1.21.30/components/rarity.json",
 	"title": "Rarity",
 	"description": "Specifies the base rarity and subsequently color of the item name when the player hovers the cursor over the item.",
 	"oneOf": [

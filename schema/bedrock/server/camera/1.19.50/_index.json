@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/camera/1.19.50/_index.json",
 	"type": "object",
 	"title": "Minecraft Bedrock Camera Preset 1.19.50",
 	"description": "A camera preset definition for a behavior pack.",

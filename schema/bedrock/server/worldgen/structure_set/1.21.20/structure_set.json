@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/worldgen/structure_set/1.21.20/structure_set.json",
 	"type": "object",
 	"title": "Structure Set",
 	"description": "A Jigsaw Structure Set is a collection of Jigsaw Structures that are placed according to a set of rules.",

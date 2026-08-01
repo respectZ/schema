@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/reference/block_geometry.json",
 	"anyOf": [
 		{
 			"type": "string",

@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/flipbook_textures/_index.json",
 	"title": "Minecraft Bedrock Flipbook Textures",
 	"description": "The flipbook_textures.json file defines animated textures for blocks. Each entry specifies a texture that cycles through frames at a specified rate. Located at textures/flipbook_textures.json in resource packs.",
 	"type": "array",

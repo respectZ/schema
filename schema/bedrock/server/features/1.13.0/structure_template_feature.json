@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/features/1.13.0/structure_template_feature.json",
 	"type": "object",
 	"title": "Structure Template Feature",
 	"description": "Places a structure in the world. The structure must be stored as a .mcstructure file in the \"structures\" subdirectory of a behavior pack.",

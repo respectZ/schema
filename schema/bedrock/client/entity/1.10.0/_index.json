@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/entity/1.10.0/_index.json",
 	"title": "Minecraft Bedrock Actor Resource Definition 1.10.0",
 	"description": "Defines an entity client resource definition document with format_version 1.10.0.",
 	"type": "object",

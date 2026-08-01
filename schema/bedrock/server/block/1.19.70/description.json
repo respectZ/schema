@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/block/1.19.70/description.json",
 	"type": "object",
 	"title": "Block Description",
 	"description": "Block description metadata",

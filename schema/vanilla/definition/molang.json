@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/vanilla/definition/molang.json",
 	"$defs": {
 		"string": {
 			"title": "Molang string",

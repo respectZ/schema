@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/features/1.21.10/_index.json",
 	"type": "object",
 	"title": "Minecraft Bedrock Features 1.21.10",
 	"description": "Schema for feature definition files format version 1.21.10.",

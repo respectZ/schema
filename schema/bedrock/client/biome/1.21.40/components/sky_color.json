@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/biome/1.21.40/components/sky_color.json",
 	"type": "object",
 	"title": "minecraft:sky_color",
 	"description": "Set the sky color used during rendering. Biomes without this component will have default sky color behavior.",

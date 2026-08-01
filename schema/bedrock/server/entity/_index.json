@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/entity/_index.json",
 	"type": "object",
 	"title": "Minecraft Bedrock Entity File",
 	"description": "Schema for entity behavior definition files used by behavior packs.",

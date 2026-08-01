@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/recipe/_index.json",
 	"type": "object",
 	"title": "Minecraft Bedrock Recipe File",
 	"description": "Schema for crafting and smelting recipe definition files used by behavior packs.",

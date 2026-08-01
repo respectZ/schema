@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/particle/1.10.0/components/_index.json",
 	"title": "Minecraft Bedrock Particle Components 1.10.0",
 	"type": "object",
 	"additionalProperties": false,

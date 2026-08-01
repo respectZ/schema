@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/client/particle/1.10.0/components/emitter_lifetime_looping.json",
 	"title": "minecraft:emitter_lifetime_looping",
 	"description": "Emitter loops with active and sleep phases.",
 	"type": "object",

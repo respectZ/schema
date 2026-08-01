@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/entity/1.8.0/components/navigation.walk.json",
 	"type": "object",
 	"title": "Navigation Walk",
 	"description": "Allows this entity to generate paths by walking around and jumping up and down a block like regular mobs.",

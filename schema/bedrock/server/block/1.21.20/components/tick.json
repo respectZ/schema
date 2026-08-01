@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/block/1.21.20/components/tick.json",
 	"type": "object",
 	"title": "Tick Component",
 	"description": "Causes the block to tick based on a regular interval equal to a number of ticks randomly chosen from the interval_range parameter.",

@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "schema/bedrock/server/biome/1.21.110/components/overworld_height.json",
 	"type": "object",
 	"title": "minecraft:overworld_height",
 	"description": "Noise parameters used to drive terrain height in the Overworld.",
