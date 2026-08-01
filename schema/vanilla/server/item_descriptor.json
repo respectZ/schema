@@ -7,14 +7,9 @@
 		},
 		{
 			"type": "object",
+			"required": ["tags"],
 			"additionalProperties": false,
-			"required": ["type"],
-			"properties": {
-				"type": {
-					"$ref": "./identifiers.json#/$defs/item_identifier",
-					"description": "The identifier of the item"
-				}
-			}
+			"properties": { "tags": { "$ref": "../definition/molang.json#/$defs/string" } }
 		}
 	]
 }
