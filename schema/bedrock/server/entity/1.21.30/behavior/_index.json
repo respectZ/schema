@@ -306,7 +306,7 @@
 			"$ref": "../../1.16.0/behavior/move_to_water.json"
 		},
 		"minecraft:behavior.move_towards_restriction": {
-			"$ref": "../../1.16.0/behavior/move_towards_restriction.json"
+			"$ref": "../../1.16.100/behavior/move_towards_restriction.json"
 		},
 		"minecraft:behavior.move_towards_target": {
 			"$ref": "../../1.16.0/behavior/move_towards_target.json"
@@ -336,7 +336,7 @@
 			"$ref": "../../1.16.0/behavior/panic.json"
 		},
 		"minecraft:behavior.peek": {
-			"$ref": "../../1.16.0/behavior/peek.json"
+			"$ref": "../../1.21.30/behavior/peek.json"
 		},
 		"minecraft:behavior.pet_sleep_with_owner": {
 			"$ref": "../../1.16.0/behavior/pet_sleep_with_owner.json"
@@ -544,6 +544,9 @@
 		},
 		"minecraft:behavior.move_around_target": {
 			"$ref": "./move_around_target.json"
+		},
+		"minecraft:behavior.move_away_from_target": {
+			"$ref": "../../1.21.20/behavior/move_away_from_target.json"
 		}
 	}
 }

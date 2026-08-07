@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Allows the enderman to take a block and carry it around.",
+	"additionalProperties": false,
+	"deprecated": true,
+	"doNotSuggest": true,
+	"deprecationMessage": "Deprecated in format_version 1.21.100; use `minecraft:behavior.take_block` instead."
+}

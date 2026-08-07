@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"deprecated": true,
+	"doNotSuggest": true,
+	"deprecationMessage": "Removed in format_version 1.21.30; this behavior has no replacement."
+}

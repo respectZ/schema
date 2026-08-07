@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Allows mob to move towards its current target captain.",
+	"additionalProperties": false,
+	"deprecated": true,
+	"doNotSuggest": true,
+	"deprecationMessage": "Deprecated in format_version 1.26.20; use `minecraft:behavior.follow_target_leader` instead."
+}

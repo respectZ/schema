@@ -111,10 +111,10 @@
 			"$ref": "../../1.19.0/behavior/emerge.json"
 		},
 		"minecraft:behavior.enderman_leave_block": {
-			"$ref": "../../1.16.0/behavior/enderman_leave_block.json"
+			"$ref": "../../1.21.100/behavior/enderman_leave_block.json"
 		},
 		"minecraft:behavior.enderman_take_block": {
-			"$ref": "../../1.16.0/behavior/enderman_take_block.json"
+			"$ref": "../../1.21.100/behavior/enderman_take_block.json"
 		},
 		"minecraft:behavior.equip_item": {
 			"$ref": "../../1.16.0/behavior/equip_item.json"
@@ -288,7 +288,7 @@
 			"$ref": "../../1.16.100/behavior/move_towards_home_restriction.json"
 		},
 		"minecraft:behavior.move_towards_restriction": {
-			"$ref": "../../1.16.0/behavior/move_towards_restriction.json"
+			"$ref": "../../1.16.100/behavior/move_towards_restriction.json"
 		},
 		"minecraft:behavior.move_towards_target": {
 			"$ref": "../../1.16.0/behavior/move_towards_target.json"
@@ -547,6 +547,12 @@
 		},
 		"minecraft:behavior.work_composter": {
 			"$ref": "../../1.16.0/behavior/work_composter.json"
+		},
+		"minecraft:behavior.move_away_from_target": {
+			"$ref": "../../1.21.20/behavior/move_away_from_target.json"
+		},
+		"minecraft:behavior.peek": {
+			"$ref": "../../1.21.30/behavior/peek.json"
 		}
 	}
 }
