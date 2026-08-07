@@ -9,7 +9,7 @@
 		"operator": true,
 		"value": {
 			"description": "The weather condition to test.",
-			"$ref": "../../general.json#/$defs/weather_type"
+			"$ref": "../../general.json#/$defs/weather_type_2"
 		}
 	},
 	"required": ["value"]
