@@ -1,0 +1,95 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Allows an entity to attack the closest target within a given subset of specific target types.",
+	"additionalProperties": false,
+	"properties": {
+		"attack_interval": {
+			"$ref": "../float_range.json",
+			"description": "Time range (in seconds) between searching for an attack target, range is in (0, \"attack_interval\"]."
+		},
+		"attack_owner": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, this entity can attack its owner."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"entity_types": {
+			"$ref": "../entity_types.json",
+			"default": [],
+			"description": "List of entity types that this mob considers valid targets"
+		},
+		"must_reach": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, this entity requires a path to the target."
+		},
+		"must_see": {
+			"type": "boolean",
+			"default": false,
+			"description": "Determines if target-validity requires this entity to be in range only, or both in range and in sight."
+		},
+		"must_see_forget_duration": {
+			"type": "number",
+			"default": 3,
+			"description": "Time (in seconds) the target must not be seen by this entity to become invalid. Used only if \"must_see\" is true."
+		},
+		"persist_time": {
+			"type": "number",
+			"default": 0,
+			"description": "Time (in seconds) this entity can continue attacking the target after the target is no longer valid."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"reselect_targets": {
+			"type": "boolean",
+			"default": false,
+			"description": "Allows the attacking entity to update the nearest target, otherwise a target is only reselected after each \"scan_interval\" or \"attack_interval\"."
+		},
+		"scan_interval": {
+			"type": "integer",
+			"default": 10,
+			"description": "If \"attack_interval\" is 0 or isn't declared, then between attacks: scanning for a new target occurs every amount of ticks equal to \"scan_interval\", minimum value is 1."
+		},
+		"set_persistent": {
+			"type": "boolean",
+			"default": false,
+			"description": "Allows the actor to be set to persist upon targeting a player"
+		},
+		"target_acquisition_probability": {
+			"type": "number",
+			"default": 1,
+			"description": "Probability (0-1) that the goal will succeed when a candidate target passes all filters."
+		},
+		"target_invisible_multiplier": {
+			"type": "number",
+			"default": 0.699999988079071,
+			"description": "Multiplied with the target's armor coverage percentage to modify \"max_dist\" when detecting an invisible target."
+		},
+		"target_search_height": {
+			"type": "number",
+			"default": -1,
+			"description": "Maximum vertical target-search distance, if it's greater than the target type's \"max_dist\". A negative value defaults to \"entity_types\" greatest \"max_dist\". Value must be >= -1."
+		},
+		"target_sneak_visibility_multiplier": {
+			"type": "number",
+			"default": 0.800000011920929,
+			"description": "Multiplied with the target type's \"max_dist\" when trying to detect a sneaking target."
+		},
+		"within_radius": {
+			"type": "number",
+			"default": 0,
+			"description": "Maximum distance this entity can be from the target when following it, otherwise the target becomes invalid. This value is only used if the entity doesn't declare \"minecraft:follow_range\"."
+		}
+	}
+}

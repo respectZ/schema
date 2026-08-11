@@ -56,14 +56,8 @@
 		"minecraft:behavior.find_cover": {
 			"$ref": "../../1.16.0/behavior/find_cover.json"
 		},
-		"minecraft:behavior.float_tempt": {
-			"$ref": "../../1.16.0/behavior/float_tempt.json"
-		},
 		"minecraft:behavior.follow_target_captain": {
 			"$ref": "../../1.16.0/behavior/follow_target_captain.json"
-		},
-		"minecraft:behavior.follow_target_leader": {
-			"$ref": "../../1.26.20/behavior/follow_target_leader.json"
 		},
 		"minecraft:behavior.go_and_give_items_to_noteblock": {
 			"$ref": "../../1.16.0/behavior/go_and_give_items_to_noteblock.json"
@@ -108,7 +102,7 @@
 			"$ref": "../../1.16.0/behavior/move_to_village.json"
 		},
 		"minecraft:behavior.nearest_prioritized_attackable_target": {
-			"$ref": "../../1.16.0/behavior/nearest_prioritized_attackable_target.json"
+			"$ref": "../../1.20.30/behavior/nearest_prioritized_attackable_target.json"
 		},
 		"minecraft:behavior.play_dead": {
 			"$ref": "../../1.16.0/behavior/play_dead.json"
@@ -152,9 +146,6 @@
 		"minecraft:behavior.trade_interest": {
 			"$ref": "../../1.16.0/behavior/trade_interest.json"
 		},
-		"minecraft:behavior.transport_items": {
-			"$ref": "../../1.16.0/behavior/transport_items.json"
-		},
 		"minecraft:behavior.work": {
 			"$ref": "../../1.16.0/behavior/work.json"
 		},
@@ -180,7 +171,7 @@
 			"$ref": "../../1.16.0/behavior/circle_around_anchor.json"
 		},
 		"minecraft:behavior.controlled_by_player": {
-			"$ref": "../../1.16.0/behavior/controlled_by_player.json"
+			"$ref": "../../1.16.100/behavior/controlled_by_player.json"
 		},
 		"minecraft:behavior.defend_village_target": {
 			"$ref": "../../1.16.0/behavior/defend_village_target.json"
@@ -288,7 +279,7 @@
 			"$ref": "../../1.16.0/behavior/make_love.json"
 		},
 		"minecraft:behavior.melee_attack": {
-			"$ref": "../../1.16.0/behavior/melee_attack.json"
+			"$ref": "../../1.20.30/behavior/melee_attack.json"
 		},
 		"minecraft:behavior.mount_pathing": {
 			"$ref": "../../1.16.0/behavior/mount_pathing.json"
@@ -312,7 +303,7 @@
 			"$ref": "../../1.16.0/behavior/move_towards_target.json"
 		},
 		"minecraft:behavior.nearest_attackable_target": {
-			"$ref": "../../1.16.0/behavior/nearest_attackable_target.json"
+			"$ref": "../../1.19.80/behavior/nearest_attackable_target.json"
 		},
 		"minecraft:behavior.ocelot_sit_on_block": {
 			"$ref": "../../1.16.0/behavior/ocelot_sit_on_block.json"
@@ -390,7 +381,7 @@
 			"$ref": "../../1.16.0/behavior/run_around_like_crazy.json"
 		},
 		"minecraft:behavior.send_event": {
-			"$ref": "../../1.16.0/behavior/send_event.json"
+			"$ref": "../../1.16.100/behavior/send_event.json"
 		},
 		"minecraft:behavior.share_items": {
 			"$ref": "../../1.16.0/behavior/share_items.json"
@@ -543,7 +534,7 @@
 			"$ref": "./jump_around_target.json"
 		},
 		"minecraft:behavior.move_around_target": {
-			"$ref": "./move_around_target.json"
+			"$ref": "../../1.21.20/behavior/move_around_target.json"
 		},
 		"minecraft:behavior.move_away_from_target": {
 			"$ref": "../../1.21.20/behavior/move_away_from_target.json"

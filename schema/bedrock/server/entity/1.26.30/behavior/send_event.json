@@ -1,0 +1,114 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Allows the mob to send an event to another mob.",
+	"additionalProperties": false,
+	"properties": {
+		"cast_duration": {
+			"type": "number",
+			"description": "Time in seconds for the entire event sending process"
+		},
+		"event_choices": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"cast_duration": {
+						"type": "number",
+						"default": 0
+					},
+					"cooldown_time": {
+						"type": "number",
+						"default": 0
+					},
+					"filters": {
+						"$ref": "../../../../../vanilla/server/filter/entity/_index.json"
+					},
+					"max_activation_range": {
+						"type": "number",
+						"default": 32
+					},
+					"min_activation_range": {
+						"type": "number",
+						"default": 0
+					},
+					"particle_color": {
+						"type": "string"
+					},
+					"sequence": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"base_delay": {
+									"type": "number",
+									"default": 0
+								},
+								"event": {
+									"type": "string"
+								},
+								"sound_event": {
+									"type": "string"
+								}
+							}
+						}
+					},
+					"start_sound_event": {
+						"type": "string"
+					},
+					"weight": {
+						"type": "number",
+						"default": 1
+					}
+				}
+			},
+			"description": "List of possible events to send with conditions, weights, and targeting parameters."
+		},
+		"look_at_target": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true, the mob will face the entity it sends an event to"
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"sequence": {
+			"type": "array",
+			"description": "List of events to send",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"base_delay": {
+						"type": "number",
+						"description": "Delay, in seconds, after which this event fires."
+					},
+					"event": {
+						"type": "string",
+						"description": "Name of the event to fire."
+					},
+					"sound_event": {
+						"$ref": "../../../../../vanilla/server/level_sound.json",
+						"description": "Sound played at this step of the sequence."
+					}
+				}
+			}
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"jump",
+					"look",
+					"move"
+				]
+			},
+			"default": []
+		}
+	}
+}

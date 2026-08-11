@@ -30,10 +30,10 @@
 			"$ref": "../../1.16.0/behavior/breed.json"
 		},
 		"minecraft:behavior.celebrate": {
-			"$ref": "../../1.16.0/behavior/celebrate.json"
+			"$ref": "./celebrate.json"
 		},
 		"minecraft:behavior.celebrate_survive": {
-			"$ref": "../../1.16.0/behavior/celebrate_survive.json"
+			"$ref": "./celebrate_survive.json"
 		},
 		"minecraft:behavior.charge_attack": {
 			"$ref": "../../1.16.0/behavior/charge_attack.json"
@@ -45,7 +45,7 @@
 			"$ref": "../../1.16.0/behavior/circle_around_anchor.json"
 		},
 		"minecraft:behavior.controlled_by_player": {
-			"$ref": "../../1.16.0/behavior/controlled_by_player.json"
+			"$ref": "../../1.16.100/behavior/controlled_by_player.json"
 		},
 		"minecraft:behavior.croak": {
 			"$ref": "../../1.16.0/behavior/croak.json"
@@ -66,7 +66,7 @@
 			"$ref": "../../1.16.0/behavior/door_interact.json"
 		},
 		"minecraft:behavior.dragonchargeplayer": {
-			"$ref": "../../1.16.0/behavior/dragonchargeplayer.json"
+			"$ref": "../../1.26.0/behavior/dragonchargeplayer.json"
 		},
 		"minecraft:behavior.dragondeath": {
 			"$ref": "../../1.16.0/behavior/dragondeath.json"
@@ -84,7 +84,7 @@
 			"$ref": "../../1.16.0/behavior/dragonscanning.json"
 		},
 		"minecraft:behavior.dragonstrafeplayer": {
-			"$ref": "../../1.16.0/behavior/dragonstrafeplayer.json"
+			"$ref": "../../1.26.0/behavior/dragonstrafeplayer.json"
 		},
 		"minecraft:behavior.dragontakeoff": {
 			"$ref": "../../1.16.0/behavior/dragontakeoff.json"
@@ -96,7 +96,7 @@
 			"$ref": "../../1.16.0/behavior/drink_potion.json"
 		},
 		"minecraft:behavior.drop_item_for": {
-			"$ref": "../../1.16.0/behavior/drop_item_for.json"
+			"$ref": "./drop_item_for.json"
 		},
 		"minecraft:behavior.eat_block": {
 			"$ref": "../../1.16.0/behavior/eat_block.json"
@@ -144,16 +144,16 @@
 			"$ref": "../../1.16.0/behavior/float.json"
 		},
 		"minecraft:behavior.float_tempt": {
-			"$ref": "../../1.16.0/behavior/float_tempt.json"
+			"$ref": "../../1.21.80/behavior/float_tempt.json"
 		},
 		"minecraft:behavior.float_wander": {
-			"$ref": "../../1.16.0/behavior/float_wander.json"
+			"$ref": "../../1.21.80/behavior/float_wander.json"
 		},
 		"minecraft:behavior.follow_caravan": {
 			"$ref": "../../1.16.0/behavior/follow_caravan.json"
 		},
 		"minecraft:behavior.follow_mob": {
-			"$ref": "../../1.16.0/behavior/follow_mob.json"
+			"$ref": "../../1.21.80/behavior/follow_mob.json"
 		},
 		"minecraft:behavior.follow_owner": {
 			"$ref": "../../1.16.0/behavior/follow_owner.json"
@@ -163,9 +163,6 @@
 		},
 		"minecraft:behavior.follow_target_captain": {
 			"$ref": "../../1.16.0/behavior/follow_target_captain.json"
-		},
-		"minecraft:behavior.follow_target_leader": {
-			"$ref": "../../1.26.20/behavior/follow_target_leader.json"
 		},
 		"minecraft:behavior.go_and_give_items_to_noteblock": {
 			"$ref": "../../1.16.0/behavior/go_and_give_items_to_noteblock.json"
@@ -213,7 +210,7 @@
 			"$ref": "../../1.16.0/behavior/lay_down.json"
 		},
 		"minecraft:behavior.lay_egg": {
-			"$ref": "../../1.16.0/behavior/lay_egg.json"
+			"$ref": "./lay_egg.json"
 		},
 		"minecraft:behavior.leap_at_target": {
 			"$ref": "../../1.16.0/behavior/leap_at_target.json"
@@ -234,7 +231,7 @@
 			"$ref": "../../1.16.0/behavior/make_love.json"
 		},
 		"minecraft:behavior.melee_attack": {
-			"$ref": "../../1.16.0/behavior/melee_attack.json"
+			"$ref": "../../1.20.30/behavior/melee_attack.json"
 		},
 		"minecraft:behavior.melee_box_attack": {
 			"$ref": "../../1.20.50/behavior/melee_box_attack.json"
@@ -246,7 +243,7 @@
 			"$ref": "../../1.16.0/behavior/mount_pathing.json"
 		},
 		"minecraft:behavior.move_around_target": {
-			"$ref": "../../1.21.30/behavior/move_around_target.json"
+			"$ref": "../../1.21.20/behavior/move_around_target.json"
 		},
 		"minecraft:behavior.move_indoors": {
 			"$ref": "../../1.16.0/behavior/move_indoors.json"
@@ -297,10 +294,10 @@
 			"$ref": "../../1.18.0/behavior/nap.json"
 		},
 		"minecraft:behavior.nearest_attackable_target": {
-			"$ref": "../../1.16.0/behavior/nearest_attackable_target.json"
+			"$ref": "../../1.26.0/behavior/nearest_attackable_target.json"
 		},
 		"minecraft:behavior.nearest_prioritized_attackable_target": {
-			"$ref": "../../1.16.0/behavior/nearest_prioritized_attackable_target.json"
+			"$ref": "../../1.20.30/behavior/nearest_prioritized_attackable_target.json"
 		},
 		"minecraft:behavior.ocelot_sit_on_block": {
 			"$ref": "../../1.16.0/behavior/ocelot_sit_on_block.json"
@@ -336,7 +333,7 @@
 			"$ref": "../../1.16.0/behavior/play.json"
 		},
 		"minecraft:behavior.play_dead": {
-			"$ref": "../../1.16.0/behavior/play_dead.json"
+			"$ref": "./play_dead.json"
 		},
 		"minecraft:behavior.player_ride_tamed": {
 			"$ref": "../../1.16.0/behavior/player_ride_tamed.json"
@@ -345,7 +342,7 @@
 			"$ref": "../../1.16.0/behavior/raid_garden.json"
 		},
 		"minecraft:behavior.ram_attack": {
-			"$ref": "../../1.16.0/behavior/ram_attack.json"
+			"$ref": "./ram_attack.json"
 		},
 		"minecraft:behavior.random_breach": {
 			"$ref": "../../1.16.0/behavior/random_breach.json"
@@ -363,7 +360,7 @@
 			"$ref": "../../1.16.0/behavior/random_look_around_and_sit.json"
 		},
 		"minecraft:behavior.random_search_and_dig": {
-			"$ref": "../../1.20.0/behavior/random_search_and_dig.json"
+			"$ref": "./random_search_and_dig.json"
 		},
 		"minecraft:behavior.random_sitting": {
 			"$ref": "../../1.16.0/behavior/random_sitting.json"
@@ -402,7 +399,7 @@
 			"$ref": "../../1.16.0/behavior/scared.json"
 		},
 		"minecraft:behavior.send_event": {
-			"$ref": "../../1.16.0/behavior/send_event.json"
+			"$ref": "../../1.16.100/behavior/send_event.json"
 		},
 		"minecraft:behavior.share_items": {
 			"$ref": "../../1.16.0/behavior/share_items.json"
@@ -510,16 +507,16 @@
 			"$ref": "../../1.21.20/behavior/teleport_to_owner.json"
 		},
 		"minecraft:behavior.tempt": {
-			"$ref": "../../1.16.0/behavior/tempt.json"
+			"$ref": "../../1.21.80/behavior/tempt.json"
 		},
 		"minecraft:behavior.timer_flag_1": {
-			"$ref": "../../1.20.0/behavior/timer_flag_1.json"
+			"$ref": "../../1.26.0/behavior/timer_flag_1.json"
 		},
 		"minecraft:behavior.timer_flag_2": {
-			"$ref": "../../1.20.0/behavior/timer_flag_2.json"
+			"$ref": "../../1.26.0/behavior/timer_flag_2.json"
 		},
 		"minecraft:behavior.timer_flag_3": {
-			"$ref": "../../1.20.0/behavior/timer_flag_3.json"
+			"$ref": "../../1.26.0/behavior/timer_flag_3.json"
 		},
 		"minecraft:behavior.trade_interest": {
 			"$ref": "../../1.16.0/behavior/trade_interest.json"
@@ -528,7 +525,7 @@
 			"$ref": "../../1.16.0/behavior/trade_with_player.json"
 		},
 		"minecraft:behavior.transport_items": {
-			"$ref": "../../1.16.0/behavior/transport_items.json"
+			"$ref": "../../1.21.100/behavior/transport_items.json"
 		},
 		"minecraft:behavior.use_kinetic_weapon": {
 			"$ref": "../../1.21.130/behavior/use_kinetic_weapon.json"

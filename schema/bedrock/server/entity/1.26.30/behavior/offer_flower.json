@@ -1,0 +1,52 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Allows the mob to offer a flower to another mob with the minecraft:take_flower behavior.",
+	"additionalProperties": false,
+	"properties": {
+		"chance_to_start": {
+			"type": "number",
+			"default": 0.0001250000059371814,
+			"description": "Percent chance that the mob will start this goal from 0.0 to 1.0 (where 1.0 = 100%). Value must be <= 1."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "Conditions that need to be met for the behavior to start."
+		},
+		"max_head_rotation_y": {
+			"type": "number",
+			"default": 30,
+			"description": "Maximum rotation (in degrees), on the Y-axis, this entity can rotate its head while trying to look at the target."
+		},
+		"max_offer_flower_duration": {
+			"type": "number",
+			"default": 20,
+			"description": "The max amount of time (in seconds) that the mob will offer the flower for before exiting the Goal."
+		},
+		"max_rotation_x": {
+			"type": "number",
+			"default": 30,
+			"description": "Maximum rotation (in degrees), on the X-axis, this entity can rotate while trying to look at the target."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"search_area": {
+			"type": "array",
+			"items": {
+				"type": "number"
+			},
+			"description": "The dimensions of the AABB used to search for a potential mob to offer flower to."
+		}
+	}
+}

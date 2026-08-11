@@ -5,14 +5,18 @@
 	"type": "object",
 	"properties": {
 		"admire_item_sound": {
-			"type": "string",
+			"$ref": "../../../../../vanilla/server/level_sound.json",
 			"description": "The sound event to play when admiring the item"
 		},
 		"control_flags": {
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": ["jump", "look", "move"]
+				"enum": [
+					"jump",
+					"look",
+					"move"
+				]
 			},
 			"default": []
 		},
@@ -37,43 +41,9 @@
 					"default": 0
 				},
 				{
-					"type": "array",
-					"items": {
-						"$ref": "#/$defs/sound_interval"
-					}
-				},
-				{
-					"$ref": "#/$defs/sound_interval"
+					"$ref": "../float_range.json"
 				}
 			]
-		}
-	},
-	"$defs": {
-		"item_floatrange": {
-			"type": "object",
-			"properties": {
-				"max": {
-					"type": "number",
-					"default": 0
-				},
-				"min": {
-					"type": "number",
-					"default": 0
-				}
-			},
-			"additionalProperties": false
-		},
-		"sound_interval": {
-			"type": "object",
-			"properties": {
-				"0": {
-					"type": "integer"
-				},
-				"1": {
-					"type": "integer"
-				}
-			},
-			"additionalProperties": false
 		}
 	},
 	"additionalProperties": false

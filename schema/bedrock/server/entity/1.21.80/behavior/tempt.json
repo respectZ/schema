@@ -1,0 +1,61 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"title": "Behavior Tempt",
+	"description": "Allows the mob to be tempted by food they like.",
+	"additionalProperties": false,
+	"properties": {
+		"can_get_scared": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the entity can be scared while tempted."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"jump",
+					"look",
+					"move"
+				]
+			},
+			"default": []
+		},
+		"items": {
+			"type": "array",
+			"description": "Items that tempt this entity.",
+			"items": {
+				"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+			}
+		},
+		"on_end": {
+			"$ref": "../../1.16.0/triggers.json",
+			"description": "The \"on_end\" field specifies the event to trigger when the goal ends"
+		},
+		"on_start": {
+			"$ref": "../../1.16.0/triggers.json",
+			"description": "The \"on_start\" field specifies the event to trigger when the goal starts"
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1,
+			"description": "Movement speed multiplier while tempted."
+		},
+		"stop_distance": {
+			"type": "number",
+			"default": 1.5,
+			"description": "The distance at which the mob will stop following the player."
+		},
+		"within_radius": {
+			"type": "number",
+			"default": 0,
+			"description": "Radius in blocks in which the entity is tempted."
+		}
+	}
+}

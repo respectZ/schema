@@ -1,0 +1,44 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Allows this entity to damage a target by using a running attack.",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"max_distance": {
+			"type": "number",
+			"default": 3,
+			"description": "A charge attack cannot start if the entity is farther than this distance to the target."
+		},
+		"min_distance": {
+			"type": "number",
+			"default": 2,
+			"description": "A charge attack cannot start if the entity is closer than this distance to the target."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"sound_event": {
+			"type": "string"
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1,
+			"description": "Modifies the entity's speed when charging toward the target."
+		},
+		"success_rate": {
+			"type": "number",
+			"default": 0.1428000032901764,
+			"description": "Percent chance this entity will start a charge attack, if not already attacking (1.0 = 100%)."
+		}
+	}
+}

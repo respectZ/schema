@@ -1,0 +1,71 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Controls specific attack behavior for Ocelots.",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"cooldown_time": {
+			"type": "number",
+			"default": 1,
+			"description": "Time (in seconds) between attacks. Value must be > 0."
+		},
+		"max_distance": {
+			"type": "number",
+			"default": 15,
+			"description": "Max distance from the target, this entity will use this attack behavior. Value must be > 0."
+		},
+		"max_sneak_range": {
+			"type": "number",
+			"default": 15,
+			"description": "Max distance from the target, this entity starts sneaking. Value must be > 0."
+		},
+		"max_sprint_range": {
+			"type": "number",
+			"default": 4,
+			"description": "Max distance from the target, this entity starts sprinting (sprinting takes priority over sneaking). Value must be > 0."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"reach_multiplier": {
+			"type": "number",
+			"default": 2,
+			"description": "Used with the base size of the entity to determine minimum target-distance before trying to deal attack damage. Value must be > 0."
+		},
+		"sneak_speed_multiplier": {
+			"type": "number",
+			"default": 0.6000000238418579,
+			"description": "Modifies the attacking entity's movement speed while sneaking. Value must be > 0."
+		},
+		"sprint_speed_multiplier": {
+			"type": "number",
+			"default": 1.3300000429153442,
+			"description": "Modifies the attacking entity's movement speed while sprinting. Value must be > 0."
+		},
+		"walk_speed_multiplier": {
+			"type": "number",
+			"default": 0.800000011920929,
+			"description": "Modifies the attacking entity's movement speed when not sneaking or sprinting, but still within attack range. Value must be > 0."
+		},
+		"x_max_rotation": {
+			"type": "number",
+			"default": 30,
+			"description": "Maximum rotation (in degrees), on the X-axis, this entity can rotate while trying to look at the target. Value must be > 0."
+		},
+		"y_max_head_rotation": {
+			"type": "number",
+			"default": 30,
+			"description": "Maximum rotation (in degrees), on the Y-axis, this entity's head can rotate while trying to look at the target. Value must be > 0."
+		}
+	}
+}

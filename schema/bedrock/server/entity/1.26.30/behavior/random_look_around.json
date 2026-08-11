@@ -1,0 +1,44 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Allows the mob to randomly look around.",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"jump",
+					"look",
+					"move"
+				]
+			},
+			"default": []
+		},
+		"look_time": {
+			"$ref": "../../1.26.0/strict_int_range.json",
+			"description": "The range of time in seconds the mob will stay looking in a random direction before looking elsewhere"
+		},
+		"max_angle_of_view_horizontal": {
+			"type": "number",
+			"default": 180,
+			"description": "The rightmost angle a mob can look at on the horizontal plane with respect to its initial facing direction."
+		},
+		"min_angle_of_view_horizontal": {
+			"type": "number",
+			"default": -180,
+			"description": "The leftmost angle a mob can look at on the horizontal plane with respect to its initial facing direction."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"probability": {
+			"type": "number",
+			"default": 0.019999999552965164,
+			"description": "The probability of randomly looking around."
+		}
+	}
+}

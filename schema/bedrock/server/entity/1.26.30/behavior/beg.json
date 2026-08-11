@@ -1,0 +1,49 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Allows this mob to look at and follow the player that holds food they like.",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"items": {
+			"type": "array",
+			"description": "List of items that this mob likes",
+			"items": {
+				"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+			},
+			"default": []
+		},
+		"look_distance": {
+			"type": "number",
+			"default": 8,
+			"description": "Distance in blocks the mob will beg from"
+		},
+		"look_time": {
+			"oneOf": [
+				{
+					"type": "array",
+					"items": {
+						"type": "number",
+						"minimum": 0
+					},
+					"minItems": 2,
+					"maxItems": 2,
+					"description": "Range [min, max] of look time in seconds."
+				}
+			],
+			"description": "The range of time in seconds this mob will stare at the player holding a food they like, begging for it"
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		}
+	}
+}

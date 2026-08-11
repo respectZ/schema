@@ -1,0 +1,66 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Enables the mob to admire items that have been configured as admirable.",
+	"additionalProperties": false,
+	"properties": {
+		"admire_item_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "The sound event to play when admiring the item"
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"on_admire_item_start": {
+			"$ref": "../../1.16.0/triggers.json",
+			"description": "Event to run when the mob starts admiring an item."
+		},
+		"on_admire_item_stop": {
+			"$ref": "../../1.16.0/triggers.json",
+			"description": "Event to run when the mob stops admiring an item."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"sound_interval": {
+			"$ref": "../float_range.json",
+			"default": 0,
+			"description": "The range of time in seconds to randomly wait before playing the sound again. Can be a number, an array [min, max], or an object with range_min and range_max."
+		}
+	},
+	"$defs": {
+		"item_floatrange": {
+			"type": "object",
+			"properties": {
+				"max": {
+					"type": "number",
+					"default": 0
+				},
+				"min": {
+					"type": "number",
+					"default": 0
+				}
+			},
+			"additionalProperties": false
+		},
+		"sound_interval": {
+			"type": "object",
+			"properties": {
+				"0": {
+					"type": "integer"
+				},
+				"1": {
+					"type": "integer"
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}

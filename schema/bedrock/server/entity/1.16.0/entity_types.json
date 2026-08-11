@@ -10,11 +10,6 @@
 				"default": false,
 				"description": "If true, the mob will check if its outnumbered"
 			},
-			"cooldown": {
-				"type": "integer",
-				"default": 0,
-				"description": "The amount of time in seconds that the mob has to wait before selecting a target of the same type again"
-			},
 			"filters": {
 				"$ref": "../../../../vanilla/server/filter/entity/_index.json",
 				"description": "Conditions that make this entry in the list valid"

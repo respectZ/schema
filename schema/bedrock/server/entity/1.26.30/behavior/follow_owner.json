@@ -1,0 +1,56 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Allows a mob to follow the player that owns it.",
+	"additionalProperties": false,
+	"properties": {
+		"can_teleport": {
+			"type": "boolean",
+			"default": true,
+			"description": "Defines if the mob will teleport to its owner when too far away."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"ignore_vibration": {
+			"type": "boolean",
+			"default": false,
+			"description": "Defines if the mob should disregard following its owner after detecting a recent vibration."
+		},
+		"max_distance": {
+			"type": "number",
+			"default": 60,
+			"description": "The maximum distance the mob can be from its owner to start following it. Applicable only when \"can_teleport\" is set to false."
+		},
+		"post_teleport_distance": {
+			"type": "integer",
+			"default": 3,
+			"description": "Defines how far (in blocks) the entity will be from its owner after teleporting. If not specified, it defaults to \"stop_distance\" + 1, allowing the entity to seamlessly resume navigation."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1,
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"start_distance": {
+			"type": "number",
+			"default": 10,
+			"description": "The minimum distance the mob must be from its owner to start following it."
+		},
+		"stop_distance": {
+			"type": "number",
+			"default": 2,
+			"description": "The distance at which the mob will stop following its owner."
+		}
+	}
+}

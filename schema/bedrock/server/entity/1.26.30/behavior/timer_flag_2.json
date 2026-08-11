@@ -1,0 +1,53 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Fires an event when this behavior starts, then waits for a duration before stopping. When stopping due to that timeout or due to being interrupted by another behavior, fires another event. query.timer_flag_2 will return 1.0 on both the client and server when this behavior is running, and 0.0 otherwise.",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			}
+		},
+		"cooldown_range": {
+			"$ref": "../float_range.json",
+			"description": "Goal cooldown range in seconds. Can be a range object or a single number."
+		},
+		"duration_range": {
+			"$ref": "../float_range.json",
+			"description": "Goal duration range in seconds. Can be a range object or a single number."
+		},
+		"on_end": {
+			"$ref": "../../1.16.0/triggers.json",
+			"description": "Event(s) to run when the goal ends."
+		},
+		"on_start": {
+			"$ref": "../../1.16.0/triggers.json",
+			"description": "Event(s) to run when the goal starts."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		}
+	},
+	"$defs": {
+		"item_floatrange": {
+			"type": "object",
+			"properties": {
+				"max": {
+					"type": "number",
+					"default": 0
+				},
+				"min": {
+					"type": "number",
+					"default": 0
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}

@@ -1,0 +1,66 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Behavior Jump To Block",
+	"description": "Allows an entity to jump to another random block.",
+	"type": "object",
+	"properties": {
+		"cooldown_range": {
+			"$ref": "../../1.26.0/strict_float_range.json",
+			"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
+		},
+		"forbidden_blocks": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
+			},
+			"description": "Blocks that the mob can't jump to."
+		},
+		"max_velocity": {
+			"type": "number",
+			"default": 1.5,
+			"description": "The maximum velocity with which the mob can jump."
+		},
+		"minimum_distance": {
+			"type": "integer",
+			"default": 2,
+			"description": "The minimum distance (in blocks) from the mob to a block, in order to consider jumping to it."
+		},
+		"minimum_path_length": {
+			"type": "integer",
+			"default": 5,
+			"description": "The minimum length (in blocks) of the mobs path to a block, in order to consider jumping to it."
+		},
+		"preferred_blocks": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
+			},
+			"description": "Blocks that the mob prefers jumping to."
+		},
+		"preferred_blocks_chance": {
+			"type": "number",
+			"default": 1,
+			"description": "Chance (between 0.0 and 1.0) that the mob will jump to a preferred block, if in range. Only matters if preferred blocks are defined."
+		},
+		"priority": {
+			"type": "integer",
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"scale_factor": {
+			"type": "number",
+			"default": 0.7,
+			"description": "The scalefactor of the bounding box of the mob while it is jumping."
+		},
+		"search_height": {
+			"type": "integer",
+			"default": 10,
+			"description": "The height (in blocks, in range [2, 15]) of the search box, centered around the mob."
+		},
+		"search_width": {
+			"type": "integer",
+			"default": 8,
+			"description": "The width (in blocks, in range [2, 15]) of the search box, centered around the mob."
+		}
+	},
+	"additionalProperties": false
+}

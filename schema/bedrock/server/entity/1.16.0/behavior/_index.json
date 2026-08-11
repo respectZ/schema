@@ -44,9 +44,6 @@
 		"minecraft:behavior.circle_around_anchor": {
 			"$ref": "./circle_around_anchor.json"
 		},
-		"minecraft:behavior.controlled_by_player": {
-			"$ref": "./controlled_by_player.json"
-		},
 		"minecraft:behavior.croak": {
 			"$ref": "./croak.json"
 		},
@@ -130,9 +127,6 @@
 		},
 		"minecraft:behavior.float": {
 			"$ref": "./float.json"
-		},
-		"minecraft:behavior.float_tempt": {
-			"$ref": "./float_tempt.json"
 		},
 		"minecraft:behavior.float_wander": {
 			"$ref": "./float_wander.json"
@@ -451,9 +445,6 @@
 		},
 		"minecraft:behavior.trade_with_player": {
 			"$ref": "./trade_with_player.json"
-		},
-		"minecraft:behavior.transport_items": {
-			"$ref": "./transport_items.json"
 		},
 		"minecraft:behavior.vex_copy_owner_target": {
 			"$ref": "./vex_copy_owner_target.json"

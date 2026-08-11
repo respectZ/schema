@@ -1,0 +1,46 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Allows an entity to randomly move through water.",
+	"additionalProperties": false,
+	"properties": {
+		"avoid_surface": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true, the mob will avoid surface water blocks by swimming below them"
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"interval": {
+			"type": "integer",
+			"default": 120,
+			"description": "A random value to determine when to randomly move somewhere. This has a 1/interval chance to choose this goal"
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1,
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"xz_dist": {
+			"type": "integer",
+			"default": 10,
+			"description": "Distance in blocks on ground that the mob will look for a new spot to move to. Must be at least 1"
+		},
+		"y_dist": {
+			"type": "integer",
+			"default": 7,
+			"description": "Distance in blocks that the mob will look up or down for a new spot to move to. Must be at least 1"
+		}
+	}
+}

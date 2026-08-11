@@ -1,0 +1,74 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Behavior Play Dead",
+	"description": "Allows this entity to pretend to be dead to avoid being targeted by attackers.",
+	"type": "object",
+	"properties": {
+		"apply_regeneration": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the mob will receive the regeneration effect while playing dead."
+		},
+		"control_flags": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "string",
+				"enum": [
+					"jump",
+					"look",
+					"move"
+				]
+			}
+		},
+		"damage_sources": {
+			"$ref": "../../../../../vanilla/server/damage_type.json",
+			"description": "The list of Entity Damage Sources that will cause this mob to play dead."
+		},
+		"duration": {
+			"type": "number",
+			"default": 1,
+			"description": "The amount of time the mob will remain playing dead (in seconds)."
+		},
+		"filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "The list of other triggers that are required for the mob to activate play dead"
+		},
+		"force_below_health": {
+			"type": "integer",
+			"default": 0,
+			"description": "The amount of health at which damage will cause the mob to play dead."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"random_damage_range": {
+			"$ref": "../../1.26.0/strict_int_range.json",
+			"description": "The range of damage that may cause the goal to start depending on randomness."
+		},
+		"random_start_chance": {
+			"type": "number",
+			"default": 1,
+			"description": "The likelihood of this goal starting upon taking damage."
+		}
+	},
+	"$defs": {
+		"item_floatrange": {
+			"type": "object",
+			"properties": {
+				"max": {
+					"type": "number",
+					"default": 0
+				},
+				"min": {
+					"type": "number",
+					"default": 0
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

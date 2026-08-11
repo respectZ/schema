@@ -1,0 +1,36 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Allows the entity to be controlled by the player using an item in the item_controllable property (required). On every tick, the entity will attempt to rotate towards where the player is facing with the control item whilst simultaneously moving forward.",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"fractional_rotation": {
+			"type": "number",
+			"default": 0.5,
+			"description": "The entity will attempt to rotate to face where the player is facing each tick."
+		},
+		"fractional_rotation_limit": {
+			"type": "number",
+			"default": 5,
+			"description": "Limits the total degrees the entity can rotate to face where the player is facing on each tick."
+		},
+		"mount_speed_multiplier": {
+			"type": "number",
+			"default": 1,
+			"description": "Speed multiplier of mount when controlled by player."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		}
+	}
+}

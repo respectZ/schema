@@ -1,8 +1,12 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
 	"title": "Behavior Follow Target Leader",
 	"description": "Allows mob to move towards its target leader.",
-	"type": "object",
+	"required": [
+		"leader_filters"
+	],
+	"additionalProperties": false,
 	"properties": {
 		"always_look_for_leader": {
 			"type": "boolean",
@@ -13,7 +17,11 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": ["jump", "look", "move"]
+				"enum": [
+					"jump",
+					"look",
+					"move"
+				]
 			},
 			"default": []
 		},
@@ -46,6 +54,5 @@
 			"default": 0,
 			"description": "Defines the maximum distance in blocks a mob can get from its target leader before giving up trying to follow it."
 		}
-	},
-	"additionalProperties": false
+	}
 }

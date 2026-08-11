@@ -1,0 +1,99 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"title": "Behavior Float Wander",
+	"description": "Allows the mob to float around like the Ghast.",
+	"additionalProperties": false,
+	"properties": {
+		"additional_collision_buffer": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, the mob will have an additional buffer zone around it to avoid collisions with blocks when picking a position to wander to."
+		},
+		"allow_navigating_through_liquids": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true allows the mob to navigate through liquids on its way to the target position."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"jump",
+					"look",
+					"move"
+				]
+			},
+			"default": []
+		},
+		"float_duration": {
+			"oneOf": [
+				{
+					"type": "number",
+					"minimum": 0,
+					"description": "Fixed duration in seconds of each float."
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "number",
+						"minimum": 0
+					},
+					"minItems": 2,
+					"maxItems": 2,
+					"description": "Range [min, max] of the random float duration in seconds."
+				}
+			],
+			"description": "Duration of each float."
+		},
+		"must_reach": {
+			"type": "boolean",
+			"description": "Whether the entity must reach the chosen position before reselecting."
+		},
+		"navigate_around_surface": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, will prioritize finding random positions in the vicinity of surfaces, i.e. blocks that are not Air or Liquid."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"random_reselect": {
+			"type": "boolean",
+			"description": "Whether a new position is reselected while the entity floats."
+		},
+		"surface_xz_dist": {
+			"type": "integer",
+			"default": 8,
+			"description": "The horizontal distance in blocks that the goal will check for a surface from a candidate position. Only valid when `navigate_around_surface` is true."
+		},
+		"surface_y_dist": {
+			"type": "integer",
+			"default": 8,
+			"description": "The vertical distance in blocks that the goal will check for a surface from a candidate position. Only valid when `navigate_around_surface` is true."
+		},
+		"use_home_position_restriction": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true, the mob will respect home position restrictions when choosing new target positions. If false, it will choose target position without considering home restrictions"
+		},
+		"xz_dist": {
+			"type": "integer",
+			"default": 10,
+			"description": "Maximum horizontal distance in blocks of the random position."
+		},
+		"y_dist": {
+			"type": "integer",
+			"default": 7,
+			"description": "Maximum vertical distance in blocks of the random position."
+		},
+		"y_offset": {
+			"type": "number",
+			"default": 0,
+			"description": "Vertical offset applied to the chosen position."
+		}
+	}
+}

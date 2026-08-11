@@ -1,0 +1,61 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Allows the entity to stay in a village and defend the village from aggressors. If a player is in bad standing with the village this goal will cause the entity to attack the player regardless of filter conditions.",
+	"additionalProperties": false,
+	"properties": {
+		"attack_chance": {
+			"type": "number",
+			"default": 0.05000000074505806,
+			"description": "The percentage chance that the entity has to attack aggressors of its village, where 1.0 = 100%. Value must be <= 1."
+		},
+		"attack_owner": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, this entity can attack its owner."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"entity_types": {
+			"$ref": "../entity_types.json",
+			"default": [],
+			"description": "Filters which types of targets are valid for this entity."
+		},
+		"must_reach": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, this entity requires a path to the target."
+		},
+		"must_see": {
+			"type": "boolean",
+			"default": false,
+			"description": "Determines if target-validity requires this entity to be in range only, or both in range and in sight."
+		},
+		"must_see_forget_duration": {
+			"type": "number",
+			"default": 3,
+			"description": "Time (in seconds) the target must not be seen by this entity to become invalid. Used only if \"must_see\" is true."
+		},
+		"persist_time": {
+			"type": "number",
+			"default": 0,
+			"description": "Time (in seconds) this entity can continue attacking the target after the target is no longer valid."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"within_radius": {
+			"type": "number",
+			"default": 0,
+			"description": "Maximum distance this entity can be from the target when following it, otherwise the target becomes invalid. This value is only used if the entity doesn't declare \"minecraft:follow_range\"."
+		}
+	}
+}
