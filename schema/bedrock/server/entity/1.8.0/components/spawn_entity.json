@@ -20,7 +20,7 @@
 		}
 	},
 	"$defs": {
-		"entities": {
+		"spawn_entity": {
 			"type": "object",
 			"additionalProperties": false,
 			"properties": {
