@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$ref": "../navigation.json",
 	"title": "Navigation Float",
 	"description": "Allows this entity to generate paths by flying around the air like the regular Ghast.",
 	"type": "object",

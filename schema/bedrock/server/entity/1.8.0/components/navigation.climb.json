@@ -1,6 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$ref": "../navigation.json",
 	"title": "Navigation Climb",
 	"description": "Allows this entity to generate paths that include vertical walls like the vanilla Spiders do.",
 	"type": "object",

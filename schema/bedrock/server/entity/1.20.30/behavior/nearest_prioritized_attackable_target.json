@@ -38,8 +38,7 @@
 				{
 					"$ref": "#/$defs/entity_types"
 				}
-			],
-			"$ref": "../../1.19.80/entity_types.json"
+			]
 		},
 		"hurt_owner": {
 			"type": "boolean",
