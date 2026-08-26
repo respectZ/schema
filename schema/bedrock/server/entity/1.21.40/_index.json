@@ -28,6 +28,7 @@
 					"title": "Component Groups",
 					"description": "Named groups of components that can be added or removed as a unit via events.",
 					"additionalProperties": {
+						"unevaluatedProperties": false,
 						"allOf": [
 							{ "$ref": "./components/_index.json" },
 							{ "$ref": "./behavior/_index.json" },
@@ -36,6 +37,7 @@
 					}
 				},
 				"components": {
+					"unevaluatedProperties": false,
 					"allOf": [
 						{ "$ref": "./components/_index.json" },
 						{ "$ref": "./behavior/_index.json" },

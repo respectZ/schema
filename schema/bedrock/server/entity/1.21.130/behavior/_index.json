@@ -3,7 +3,6 @@
 	"type": "object",
 	"title": "Entity Behavior Goals",
 	"description": "Entity AI goal behaviors. Each property is a known behavior name and its value is the behavior's configuration.",
-	"unevaluatedProperties": false,
 	"properties": {
 		"minecraft:behavior.admire_item": {
 			"$ref": "../../1.16.0/behavior/admire_item.json"

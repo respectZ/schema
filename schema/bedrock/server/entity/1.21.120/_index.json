@@ -3,17 +3,12 @@
 	"type": "object",
 	"title": "Minecraft Bedrock Entity 1.21.120",
 	"description": "Entity behavior definition for format_version 1.21.120.",
-	"required": [
-		"format_version",
-		"minecraft:entity"
-	],
+	"required": ["format_version", "minecraft:entity"],
 	"additionalProperties": false,
 	"properties": {
 		"format_version": {
 			"type": "string",
-			"enum": [
-				"1.21.120"
-			]
+			"enum": ["1.21.120"]
 		},
 		"use_beta_features": {
 			"type": "boolean"
@@ -22,10 +17,7 @@
 			"type": "object",
 			"title": "Entity",
 			"description": "Root entity definition object.",
-			"required": [
-				"description",
-				"components"
-			],
+			"required": ["description", "components"],
 			"additionalProperties": false,
 			"properties": {
 				"description": {
@@ -36,6 +28,7 @@
 					"title": "Component Groups",
 					"description": "Named groups of components that can be added or removed as a unit via events.",
 					"additionalProperties": {
+						"unevaluatedProperties": false,
 						"allOf": [
 							{
 								"$ref": "./components/_index.json"
@@ -50,6 +43,7 @@
 					}
 				},
 				"components": {
+					"unevaluatedProperties": false,
 					"allOf": [
 						{
 							"$ref": "./components/_index.json"

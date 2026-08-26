@@ -3,7 +3,6 @@
 	"type": "object",
 	"title": "Entity Components",
 	"description": "Entity component map. Each property is a known component name and its value is the component's configuration.",
-	"unevaluatedProperties": false,
 	"properties": {
 		"minecraft:absorption": {
 			"$ref": "./absorption.json"
