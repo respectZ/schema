@@ -63,18 +63,12 @@
 			"additionalProperties": false
 		},
 		"item_floatrange": {
-			"type": "object",
-			"properties": {
-				"max": {
-					"type": "number",
-					"default": 0
-				},
-				"min": {
-					"type": "number",
-					"default": 0
-				}
+			"type": "array",
+			"items": {
+				"type": "number"
 			},
-			"additionalProperties": false
+			"minItems": 2,
+			"maxItems": 2
 		}
 	},
 	"additionalProperties": false
