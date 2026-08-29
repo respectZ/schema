@@ -5,15 +5,38 @@
 	"description": "Sets the entity's delay between playing its ambient sound.",
 	"additionalProperties": false,
 	"properties": {
-		"value": {
-			"type": "number",
-			"default": 8.0,
-			"description": "Minimum time in seconds before the entity plays its ambient sound again."
+		"event_name": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"default": "ambient",
+			"description": "Level sound event to be played as the ambient sound."
+		},
+		"event_names": {
+			"type": "array",
+			"description": "List of dynamic level sound events, with conditions for choosing between them. Evaluated in order, first one wins. If none evaluate to true, 'event_name' will take precedence.",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"condition": {
+						"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
+						"description": "The condition that must be satisfied to select the given ambient sound"
+					},
+					"event_name": {
+						"$ref": "../../../../../vanilla/server/level_sound.json",
+						"description": "Level sound event to be played as the ambient sound"
+					}
+				}
+			}
 		},
 		"range": {
 			"type": "number",
-			"default": 16.0,
+			"default": 16,
 			"description": "Maximum time in seconds to randomly add to the ambient sound delay time."
+		},
+		"value": {
+			"type": "number",
+			"default": 8,
+			"description": "Minimum time in seconds before the entity plays its ambient sound again."
 		}
 	}
 }
