@@ -90,7 +90,7 @@
 		"mutation_strategy": {
 			"type": "string",
 			"enum": ["none", "random"],
-			"default": "non"
+			"default": "none"
 		}
 	},
 	"$defs": {
