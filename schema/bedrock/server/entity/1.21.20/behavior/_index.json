@@ -236,7 +236,7 @@
 			"$ref": "../../1.16.0/behavior/follow_mob.json"
 		},
 		"minecraft:behavior.follow_owner": {
-			"$ref": "../../1.16.0/behavior/follow_owner.json"
+			"$ref": "./follow_owner.json"
 		},
 		"minecraft:behavior.follow_parent": {
 			"$ref": "../../1.16.0/behavior/follow_parent.json"

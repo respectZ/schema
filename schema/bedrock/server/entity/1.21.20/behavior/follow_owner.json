@@ -1,7 +1,8 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"type": "object",
-	"description": "Allows a mob to follow the player that owns it.",
+	"title": "Behavior Follow Owner",
+	"description": "Allows the mob to follow the player that owns them.",
 	"additionalProperties": false,
 	"properties": {
 		"can_teleport": {
@@ -22,11 +23,6 @@
 			"default": false,
 			"description": "Defines if the mob should disregard following its owner after detecting a recent vibration."
 		},
-		"max_distance": {
-			"type": "number",
-			"default": 60,
-			"description": "The maximum distance the mob can be from its owner to start following it. Applicable only when \"can_teleport\" is set to false."
-		},
 		"post_teleport_distance": {
 			"type": "integer",
 			"default": 3,
@@ -39,18 +35,18 @@
 		},
 		"speed_multiplier": {
 			"type": "number",
-			"default": 1,
-			"description": "Movement speed multiplier of the mob when using this AI Goal"
+			"default": 1.0,
+			"description": "Movement speed multiplier while following."
 		},
 		"start_distance": {
 			"type": "number",
-			"default": 10,
-			"description": "The minimum distance the mob must be from its owner to start following it."
+			"default": 10.0,
+			"description": "Distance in blocks at which the entity starts following the owner."
 		},
 		"stop_distance": {
 			"type": "number",
-			"default": 2,
-			"description": "The distance at which the mob will stop following its owner."
+			"default": 2.0,
+			"description": "Distance in blocks at which the entity stops following the owner."
 		}
 	}
 }
