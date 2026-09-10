@@ -60,6 +60,10 @@
 					"description": "Rainy weather."
 				},
 				{
+					"const": "snow",
+					"description": "Snowy weather."
+				},
+				{
 					"const": "thunderstorm",
 					"description": "Thunderstorm weather."
 				}
