@@ -3,9 +3,7 @@
 	"type": "object",
 	"title": "Minecraft Bedrock Entity File",
 	"description": "Schema for entity behavior definition files used by behavior packs.",
-	"required": [
-		"format_version"
-	],
+	"required": ["format_version"],
 	"properties": {
 		"format_version": {
 			"enum": [

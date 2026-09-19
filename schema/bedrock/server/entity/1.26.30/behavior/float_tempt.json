@@ -23,11 +23,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				]
+				"enum": ["jump", "look", "move"]
 			},
 			"default": []
 		},
@@ -39,13 +35,11 @@
 			"default": [],
 			"description": "List of items that can tempt the mob."
 		},
-		"on_end": {
-			"$ref": "../../1.16.0/triggers.json",
-			"description": "The \"on_end\" field specifies the event to trigger when the goal ends"
+		"on_tempt_end": {
+			"$ref": "../../1.16.0/triggers.json"
 		},
-		"on_start": {
-			"$ref": "../../1.16.0/triggers.json",
-			"description": "The \"on_start\" field specifies the event to trigger when the goal starts"
+		"on_tempt_start": {
+			"$ref": "../../1.16.0/triggers.json"
 		},
 		"priority": {
 			"type": "integer",
@@ -54,15 +48,27 @@
 		"sound_interval": {
 			"oneOf": [
 				{
-					"type": "integer"
+					"type": "number"
 				},
 				{
 					"type": "array",
 					"items": {
-						"type": "integer"
+						"type": "number"
 					},
 					"minItems": 2,
 					"maxItems": 2
+				},
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"range_min": {
+							"type": "number"
+						},
+						"range_max": {
+							"type": "number"
+						}
+					}
 				}
 			],
 			"description": "Range of random ticks to wait between tempt sounds."

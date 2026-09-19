@@ -5,10 +5,17 @@
 	"additionalProperties": false,
 	"properties": {
 		"damage_sources": {
-			"type": "array",
-			"items": {
-				"type": "string"
-			},
+			"oneOf": [
+				{
+					"$ref": "../../../../../vanilla/server/damage_type.json"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../../../../vanilla/server/damage_type.json"
+					}
+				}
+			],
 			"description": "The list of Entity Damage Sources that will cause this mob to panic"
 		},
 		"force": {
@@ -20,6 +27,9 @@
 			"type": "boolean",
 			"default": false,
 			"description": "If true, the mob will not panic in response to damage from other mobs. This overrides the damage types in \"damage_sources\""
+		},
+		"panic_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json"
 		},
 		"prefer_water": {
 			"type": "boolean",
@@ -35,6 +45,33 @@
 			"type": "number",
 			"default": 1,
 			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"sound_interval": {
+			"oneOf": [
+				{
+					"type": "number"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "number"
+					},
+					"minItems": 2,
+					"maxItems": 2
+				},
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"range_min": {
+							"type": "number"
+						},
+						"range_max": {
+							"type": "number"
+						}
+					}
+				}
+			]
 		},
 		"control_flags": {
 			"type": "array",

@@ -1,0 +1,68 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Behavior Work",
+	"description": "Allows the NPC to use the POI.",
+	"type": "object",
+	"properties": {
+		"active_time": {
+			"type": "integer",
+			"default": 0,
+			"description": "The amount of ticks the NPC will stay in their the work location",
+			"minimum": 0
+		},
+		"can_work_in_rain": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, this entity can work when their jobsite POI is being rained on."
+		},
+		"control_flags": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			}
+		},
+		"goal_cooldown": {
+			"type": "integer",
+			"default": 0,
+			"description": "The amount of ticks the goal will be on cooldown before it can be used again",
+			"minimum": 0
+		},
+		"on_arrival": {
+			"$ref": "../../1.16.0/triggers.json",
+			"description": "Event to run when the mob reaches their jobsite."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal.",
+			"minimum": 0
+		},
+		"sound_delay_max": {
+			"type": "integer",
+			"default": 0,
+			"description": "The max interval in which a sound will play.",
+			"minimum": 0
+		},
+		"sound_delay_min": {
+			"type": "integer",
+			"default": 0,
+			"description": "The min interval in which a sound will play.",
+			"minimum": 0
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 0.5,
+			"description": "Movement speed multiplier of the mob when using this AI Goal Value must be > 0.",
+			"minimum": 0
+		},
+		"work_in_rain_tolerance": {
+			"type": "integer",
+			"default": -1,
+			"description": "If \"can_work_in_rain\" is false, this is the maximum number of ticks left in the goal where rain will not interrupt the goal",
+			"minimum": 0
+		}
+	},
+	"additionalProperties": false
+}

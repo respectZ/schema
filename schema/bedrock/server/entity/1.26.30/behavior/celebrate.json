@@ -1,0 +1,120 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Behavior Celebrate",
+	"description": "Allows this entity to celebrate surviving a raid by making celebration sounds and jumping.",
+	"type": "object",
+	"properties": {
+		"celebration_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"default": "celebrate",
+			"description": "The sound event to trigger during the celebration."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"duration": {
+			"type": "number",
+			"default": 30,
+			"description": "The duration in seconds that the celebration lasts for.",
+			"minimum": 0
+		},
+		"jump_interval": {
+			"$ref": "../../1.26.0/strict_float_range.json",
+			"description": "Minimum and maximum time between jumping (positive, in seconds). Check that the limits imposed on the range (minimum, maximum and maximum distance between values) are respected",
+			"anyOf": [
+				{
+					"type": "number",
+					"minimum": 0
+				},
+				{
+					"type": "array",
+					"items": {
+						"minimum": 0
+					}
+				},
+				{
+					"type": "object",
+					"properties": {
+						"min": {
+							"minimum": 0
+						},
+						"max": {
+							"minimum": 0
+						},
+						"range_min": {
+							"minimum": 0
+						},
+						"range_max": {
+							"minimum": 0
+						}
+					}
+				}
+			]
+		},
+		"on_celebration_end_event": {
+			"$ref": "../../1.16.0/triggers.json",
+			"description": "The event to trigger when the goal's duration expires."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal.",
+			"minimum": 0
+		},
+		"sound_interval": {
+			"$ref": "../../1.26.0/strict_float_range.json",
+			"description": "Minimum and maximum time between sound events (positive, in seconds). Check that the limits imposed on the range (minimum, maximum and maximum distance between values) are respected",
+			"anyOf": [
+				{
+					"type": "number",
+					"minimum": 0
+				},
+				{
+					"type": "array",
+					"items": {
+						"minimum": 0
+					}
+				},
+				{
+					"type": "object",
+					"properties": {
+						"min": {
+							"minimum": 0
+						},
+						"max": {
+							"minimum": 0
+						},
+						"range_min": {
+							"minimum": 0
+						},
+						"range_max": {
+							"minimum": 0
+						}
+					}
+				}
+			]
+		}
+	},
+	"$defs": {
+		"item_floatrange": {
+			"type": "object",
+			"properties": {
+				"max": {
+					"type": "number",
+					"default": 0
+				},
+				"min": {
+					"type": "number",
+					"default": 0
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

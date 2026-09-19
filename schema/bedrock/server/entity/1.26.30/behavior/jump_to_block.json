@@ -17,7 +17,36 @@
 					"maxItems": 2
 				}
 			],
-			"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
+			"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump.",
+			"anyOf": [
+				{
+					"type": "number",
+					"minimum": 0
+				},
+				{
+					"type": "array",
+					"items": {
+						"minimum": 0
+					}
+				},
+				{
+					"type": "object",
+					"properties": {
+						"min": {
+							"minimum": 0
+						},
+						"max": {
+							"minimum": 0
+						},
+						"range_min": {
+							"minimum": 0
+						},
+						"range_max": {
+							"minimum": 0
+						}
+					}
+				}
+			]
 		},
 		"forbidden_blocks": {
 			"type": "array",
@@ -51,11 +80,14 @@
 		"preferred_blocks_chance": {
 			"type": "number",
 			"default": 1,
-			"description": "Chance (between 0.0 and 1.0) that the mob will jump to a preferred block, if in range. Only matters if preferred blocks are defined."
+			"description": "Chance (between 0.0 and 1.0) that the mob will jump to a preferred block, if in range. Only matters if preferred blocks are defined.",
+			"minimum": 0,
+			"maximum": 1.0
 		},
 		"priority": {
 			"type": "integer",
-			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal.",
+			"minimum": 0
 		},
 		"scale_factor": {
 			"type": "number",
@@ -65,12 +97,16 @@
 		"search_height": {
 			"type": "integer",
 			"default": 10,
-			"description": "The height (in blocks, in range [2, 15]) of the search box, centered around the mob."
+			"description": "The height (in blocks, in range [2, 15]) of the search box, centered around the mob.",
+			"minimum": 1,
+			"maximum": 15
 		},
 		"search_width": {
 			"type": "integer",
 			"default": 8,
-			"description": "The width (in blocks, in range [2, 15]) of the search box, centered around the mob."
+			"description": "The width (in blocks, in range [2, 15]) of the search box, centered around the mob.",
+			"minimum": 1,
+			"maximum": 15
 		},
 		"control_flags": {
 			"type": "array",

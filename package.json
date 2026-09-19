@@ -9,7 +9,8 @@
 	"devDependencies": {
 		"@minecraft/vanilla-data": "^1.26.30",
 		"@types/bun": "latest",
-		"jsdom": "^29.1.1",
+		"@types/jsdom": "^30.0.0",
+		"jsdom": "^30.0.1",
 		"prettier": "^3.8.3",
 		"prettier-plugin-organize-imports": "^4.3.0",
 		"tiny-jsonc": "^1.0.2"

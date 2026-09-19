@@ -1,0 +1,53 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			}
+		},
+		"cooldown_time": {
+			"type": "number",
+			"default": 0,
+			"description": "Time in seconds the mob has to wait before using the goal again",
+			"minimum": 0
+		},
+		"duration": {
+			"type": "number",
+			"default": 1,
+			"description": "Amount of time in seconds that the entity will chat with another entity",
+			"minimum": 0
+		},
+		"mingle_distance": {
+			"type": "number",
+			"default": 2,
+			"description": "The distance from its partner that this entity will mingle. If the entity type is not the same as the entity, this value needs to be identical on both entities.",
+			"minimum": 0
+		},
+		"mingle_partner_type": {
+			"type": "string",
+			"description": "The entity type that this entity is allowed to mingle with"
+		},
+		"poi_type": {
+			"type": "string",
+			"enum": ["bed", "meeting_area", "jobsite"]
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal.",
+			"minimum": 0
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1,
+			"description": "Movement speed multiplier of the mob when using this goal.",
+			"minimum": 0
+		}
+	}
+}

@@ -8,17 +8,42 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				]
+				"enum": ["jump", "look", "move"]
 			},
 			"default": []
 		},
 		"duration": {
 			"$ref": "../../1.26.0/strict_float_range.json",
-			"description": "Random range in seconds after which the croaking stops. Can also be a constant. Check that the limits imposed on the range (minimum, maximum and maximum distance between values) are respected"
+			"description": "Random range in seconds after which the croaking stops. Can also be a constant. Check that the limits imposed on the range (minimum, maximum and maximum distance between values) are respected",
+			"anyOf": [
+				{
+					"type": "number",
+					"minimum": 0
+				},
+				{
+					"type": "array",
+					"items": {
+						"minimum": 0
+					}
+				},
+				{
+					"type": "object",
+					"properties": {
+						"min": {
+							"minimum": 0
+						},
+						"max": {
+							"minimum": 0
+						},
+						"range_min": {
+							"minimum": 0
+						},
+						"range_max": {
+							"minimum": 0
+						}
+					}
+				}
+			]
 		},
 		"filters": {
 			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
@@ -26,12 +51,42 @@
 		},
 		"interval": {
 			"$ref": "../../1.26.0/strict_float_range.json",
-			"description": "Random range in seconds between runs of this behavior. Can also be a constant. Check that the limits imposed on the range (minimum, maximum and maximum distance between values) are respected"
+			"description": "Random range in seconds between runs of this behavior. Can also be a constant. Check that the limits imposed on the range (minimum, maximum and maximum distance between values) are respected",
+			"anyOf": [
+				{
+					"type": "number",
+					"minimum": 0
+				},
+				{
+					"type": "array",
+					"items": {
+						"minimum": 0
+					}
+				},
+				{
+					"type": "object",
+					"properties": {
+						"min": {
+							"minimum": 0
+						},
+						"max": {
+							"minimum": 0
+						},
+						"range_min": {
+							"minimum": 0
+						},
+						"range_max": {
+							"minimum": 0
+						}
+					}
+				}
+			]
 		},
 		"priority": {
 			"type": "integer",
 			"default": 0,
-			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal.",
+			"minimum": 0
 		}
 	},
 	"$defs": {

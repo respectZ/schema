@@ -32,8 +32,7 @@
 		},
 		"item_table": {
 			"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
-			"description": "File path relative to the resource pack root for items to spawn list (loot table format).",
-			"type": "string"
+			"description": "File path relative to the resource pack root for items to spawn list (loot table format)."
 		},
 		"on_digging_start": {
 			"$ref": "../../1.16.0/triggers.json",
@@ -62,7 +61,8 @@
 		"priority": {
 			"type": "integer",
 			"default": 0,
-			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal.",
+			"minimum": 0
 		},
 		"search_range_xz": {
 			"type": "integer",
@@ -77,17 +77,20 @@
 		"spawn_item_after_seconds": {
 			"type": "number",
 			"default": 0,
-			"description": "Digging duration before spawning item in seconds."
+			"description": "Digging duration before spawning item in seconds.",
+			"minimum": 0
 		},
 		"spawn_item_pos_offset": {
 			"type": "number",
 			"default": 0,
-			"description": "Distance to offset the item's spawn location in the direction the mob is facing."
+			"description": "Distance to offset the item's spawn location in the direction the mob is facing.",
+			"minimum": 0
 		},
 		"speed_multiplier": {
 			"type": "number",
 			"default": 1,
-			"description": "Searching movement speed multiplier."
+			"description": "Searching movement speed multiplier.",
+			"minimum": 0
 		},
 		"target_blocks": {
 			"type": "array",

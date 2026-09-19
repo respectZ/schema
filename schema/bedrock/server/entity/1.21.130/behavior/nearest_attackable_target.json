@@ -5,16 +5,8 @@
 	"type": "object",
 	"properties": {
 		"attack_interval": {
-			"oneOf": [
-				{
-					"$ref": "#/$defs/item_floatrange",
-					"description": "Time range (in seconds) between searching for an attack target, range is in (0, \"attack_interval\"]. Only used if \"attack_interval\" is greater than 0, otherwise \"scan_interval\" is used."
-				},
-				{
-					"type": "integer",
-					"description": "Minimum number of ticks between attacks on the same target."
-				}
-			]
+			"$ref": "#/$defs/item_floatrange",
+			"description": "Minimum number of ticks between attacks on the same target."
 		},
 		"attack_owner": {
 			"type": "boolean",
@@ -111,18 +103,25 @@
 	},
 	"$defs": {
 		"item_floatrange": {
-			"type": "object",
-			"properties": {
-				"max": {
-					"type": "number",
-					"default": 0
+			"oneOf": [
+				{
+					"type": ["number", "boolean"]
 				},
-				"min": {
-					"type": "number",
-					"default": 0
+				{
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {}
+				},
+				{
+					"type": "object",
+					"required": ["range_min", "range_max"],
+					"properties": {
+						"range_max": {},
+						"range_min": {}
+					}
 				}
-			},
-			"additionalProperties": false
+			]
 		},
 		"entity_types": {
 			"type": "object",

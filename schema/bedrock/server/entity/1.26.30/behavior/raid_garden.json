@@ -23,22 +23,26 @@
 		"eat_delay": {
 			"type": "integer",
 			"default": 2,
-			"description": "Time in seconds between each time it eats/raids"
+			"description": "Time in seconds between each time it eats/raids",
+			"minimum": 0
 		},
 		"full_delay": {
 			"type": "integer",
 			"default": 100,
-			"description": "Amount of time in seconds before this mob wants to eat/raid again after eating its maximum"
+			"description": "Amount of time in seconds before this mob wants to eat/raid again after eating its maximum",
+			"minimum": 0
 		},
 		"goal_radius": {
 			"type": "number",
 			"default": 0.5,
-			"description": "Distance in blocks within the mob considers it has reached the goal. This is the \"wiggle room\" to stop the AI from bouncing back and forth trying to reach a specific spot. Value must be > 0."
+			"description": "Distance in blocks within the mob considers it has reached the goal. This is the \"wiggle room\" to stop the AI from bouncing back and forth trying to reach a specific spot. Value must be > 0.",
+			"minimum": 0
 		},
 		"initial_eat_delay": {
 			"type": "integer",
 			"default": 0,
-			"description": "Time in seconds before starting to eat/raid once it arrives at it"
+			"description": "Time in seconds before starting to eat/raid once it arrives at it",
+			"minimum": 0
 		},
 		"max_to_eat": {
 			"type": "integer",
@@ -48,22 +52,26 @@
 		"priority": {
 			"type": "integer",
 			"default": 0,
-			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal.",
+			"minimum": 0
 		},
 		"search_height": {
 			"type": "integer",
 			"default": 1,
-			"description": "Height in blocks the mob will look for crops to eat Value must be > 0."
+			"description": "Height in blocks the mob will look for crops to eat Value must be > 0.",
+			"minimum": 0
 		},
 		"search_range": {
 			"type": "integer",
 			"default": 0,
-			"description": "Distance in blocks the mob will look for crops to eat Value must be > 0."
+			"description": "Distance in blocks the mob will look for crops to eat Value must be > 0.",
+			"minimum": 0
 		},
 		"speed_multiplier": {
 			"type": "number",
 			"default": 1,
-			"description": "Movement speed multiplier of the mob when using this goal."
+			"description": "Movement speed multiplier of the mob when using this goal.",
+			"minimum": 0
 		}
 	}
 }

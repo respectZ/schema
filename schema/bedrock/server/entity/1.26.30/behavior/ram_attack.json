@@ -19,7 +19,36 @@
 		},
 		"cooldown_range": {
 			"$ref": "../float_range.json",
-			"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
+			"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack.",
+			"anyOf": [
+				{
+					"type": "number",
+					"minimum": 0
+				},
+				{
+					"type": "array",
+					"items": {
+						"minimum": 0
+					}
+				},
+				{
+					"type": "object",
+					"properties": {
+						"min": {
+							"minimum": 0
+						},
+						"max": {
+							"minimum": 0
+						},
+						"range_min": {
+							"minimum": 0
+						},
+						"range_max": {
+							"minimum": 0
+						}
+					}
+				}
+			]
 		},
 		"knockback_force": {
 			"type": "number",
@@ -58,7 +87,8 @@
 		"priority": {
 			"type": "integer",
 			"default": 0,
-			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal.",
+			"minimum": 0
 		},
 		"ram_distance": {
 			"type": "integer",

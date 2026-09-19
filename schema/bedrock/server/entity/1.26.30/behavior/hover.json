@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Behavior Hover",
+	"description": "Allows the mob to hover in place.",
+	"type": "object",
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"minimum": 0
+		}
+	},
+	"additionalProperties": false
+}

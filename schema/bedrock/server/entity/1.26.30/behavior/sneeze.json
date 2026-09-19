@@ -29,8 +29,7 @@
 		},
 		"loot_table": {
 			"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
-			"description": "Loot table to select dropped items from.",
-			"type": "string"
+			"description": "Loot table to select dropped items from."
 		},
 		"prepare_sound": {
 			"$ref": "../../../../../vanilla/server/level_sound.json",
@@ -45,7 +44,8 @@
 		"priority": {
 			"type": "integer",
 			"default": 0,
-			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal.",
+			"minimum": 0
 		},
 		"probability": {
 			"type": "number",

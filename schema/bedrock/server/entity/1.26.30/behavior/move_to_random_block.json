@@ -1,0 +1,38 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Behavior Move To Random Block",
+	"description": "Allows mob to move towards a random block.",
+	"type": "object",
+	"properties": {
+		"block_distance": {
+			"type": "number",
+			"default": 16,
+			"description": "Defines the distance from the mob, in blocks, that the block to move to will be chosen."
+		},
+		"control_flags": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			}
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal.",
+			"minimum": 0
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1,
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"within_radius": {
+			"type": "number",
+			"default": 0,
+			"description": "Defines the distance in blocks the mob has to be from the block for the movement to be finished."
+		}
+	},
+	"additionalProperties": false
+}

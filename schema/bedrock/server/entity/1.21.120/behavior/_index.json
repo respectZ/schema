@@ -8,7 +8,7 @@
 			"$ref": "../../1.16.0/behavior/admire_item.json"
 		},
 		"minecraft:behavior.aquatic_charge_attack": {
-			"$ref": "../../1.16.0/behavior/aquatic_charge_attack.json"
+			"$ref": "./aquatic_charge_attack.json"
 		},
 		"minecraft:behavior.avoid_block": {
 			"$ref": "../../1.16.0/behavior/avoid_block.json"
@@ -41,10 +41,10 @@
 			"$ref": "../../1.16.0/behavior/charge_held_item.json"
 		},
 		"minecraft:behavior.circle_around_anchor": {
-			"$ref": "../../1.16.0/behavior/circle_around_anchor.json"
+			"$ref": "../../1.21.100/behavior/circle_around_anchor.json"
 		},
 		"minecraft:behavior.controlled_by_player": {
-			"$ref": "../../1.16.100/behavior/controlled_by_player.json"
+			"$ref": "../../1.21.100/behavior/controlled_by_player.json"
 		},
 		"minecraft:behavior.croak": {
 			"$ref": "../../1.16.0/behavior/croak.json"

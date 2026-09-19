@@ -8,7 +8,7 @@
 			"$ref": "./admire_item.json"
 		},
 		"minecraft:behavior.aquatic_charge_attack": {
-			"$ref": "../../1.16.0/behavior/aquatic_charge_attack.json"
+			"$ref": "../../1.26.0/behavior/aquatic_charge_attack.json"
 		},
 		"minecraft:behavior.avoid_block": {
 			"$ref": "../../1.16.0/behavior/avoid_block.json"
@@ -41,10 +41,10 @@
 			"$ref": "../../1.16.0/behavior/charge_held_item.json"
 		},
 		"minecraft:behavior.circle_around_anchor": {
-			"$ref": "../../1.16.0/behavior/circle_around_anchor.json"
+			"$ref": "../../1.21.100/behavior/circle_around_anchor.json"
 		},
 		"minecraft:behavior.controlled_by_player": {
-			"$ref": "../../1.16.100/behavior/controlled_by_player.json"
+			"$ref": "../../1.21.100/behavior/controlled_by_player.json"
 		},
 		"minecraft:behavior.croak": {
 			"$ref": "../../1.16.0/behavior/croak.json"
@@ -56,7 +56,7 @@
 			"$ref": "../../1.16.0/behavior/defend_village_target.json"
 		},
 		"minecraft:behavior.delayed_attack": {
-			"$ref": "../../1.16.0/behavior/delayed_attack.json"
+			"$ref": "../../1.26.0/behavior/delayed_attack.json"
 		},
 		"minecraft:behavior.dig": {
 			"$ref": "../../1.19.0/behavior/dig.json"
@@ -137,7 +137,7 @@
 			"$ref": "../../1.21.30/behavior/fire_at_target.json"
 		},
 		"minecraft:behavior.flee_sun": {
-			"$ref": "../../1.16.0/behavior/flee_sun.json"
+			"$ref": "./flee_sun.json"
 		},
 		"minecraft:behavior.float": {
 			"$ref": "../../1.21.130/behavior/float.json"
@@ -155,7 +155,7 @@
 			"$ref": "../../1.21.80/behavior/follow_mob.json"
 		},
 		"minecraft:behavior.follow_owner": {
-			"$ref": "../../1.21.20/behavior/follow_owner.json"
+			"$ref": "./follow_owner.json"
 		},
 		"minecraft:behavior.follow_parent": {
 			"$ref": "../../1.16.0/behavior/follow_parent.json"
@@ -233,13 +233,13 @@
 			"$ref": "../../1.16.0/behavior/make_love.json"
 		},
 		"minecraft:behavior.melee_attack": {
-			"$ref": "../../1.20.30/behavior/melee_attack.json"
+			"$ref": "../../1.26.0/behavior/melee_attack.json"
 		},
 		"minecraft:behavior.melee_box_attack": {
-			"$ref": "../../1.20.50/behavior/melee_box_attack.json"
+			"$ref": "../../1.26.0/behavior/melee_box_attack.json"
 		},
 		"minecraft:behavior.mingle": {
-			"$ref": "../../1.16.0/behavior/mingle.json"
+			"$ref": "./mingle.json"
 		},
 		"minecraft:behavior.mount_pathing": {
 			"$ref": "../../1.16.0/behavior/mount_pathing.json"
@@ -263,7 +263,7 @@
 			"$ref": "../../1.16.0/behavior/move_to_land.json"
 		},
 		"minecraft:behavior.move_to_lava": {
-			"$ref": "../../1.16.0/behavior/move_to_lava.json"
+			"$ref": "../../1.26.10/behavior/move_to_lava.json"
 		},
 		"minecraft:behavior.move_to_liquid": {
 			"$ref": "../../1.16.0/behavior/move_to_liquid.json"
@@ -278,7 +278,7 @@
 			"$ref": "../../1.16.0/behavior/move_to_village.json"
 		},
 		"minecraft:behavior.move_to_water": {
-			"$ref": "../../1.16.0/behavior/move_to_water.json"
+			"$ref": "../../1.26.10/behavior/move_to_water.json"
 		},
 		"minecraft:behavior.move_towards_dwelling_restriction": {
 			"$ref": "../../1.16.100/behavior/move_towards_dwelling_restriction.json"
@@ -287,7 +287,7 @@
 			"$ref": "../../1.16.100/behavior/move_towards_home_restriction.json"
 		},
 		"minecraft:behavior.move_towards_restriction": {
-			"$ref": "../../1.16.100/behavior/move_towards_restriction.json"
+			"$ref": "../../1.26.0/behavior/move_towards_restriction.json"
 		},
 		"minecraft:behavior.move_towards_target": {
 			"$ref": "../../1.16.0/behavior/move_towards_target.json"
@@ -302,10 +302,10 @@
 			"$ref": "../../1.20.30/behavior/nearest_prioritized_attackable_target.json"
 		},
 		"minecraft:behavior.ocelot_sit_on_block": {
-			"$ref": "../../1.16.0/behavior/ocelot_sit_on_block.json"
+			"$ref": "../../1.26.10/behavior/ocelot_sit_on_block.json"
 		},
 		"minecraft:behavior.ocelotattack": {
-			"$ref": "../../1.16.0/behavior/ocelotattack.json"
+			"$ref": "../../1.26.10/behavior/ocelotattack.json"
 		},
 		"minecraft:behavior.offer_flower": {
 			"$ref": "../../1.16.0/behavior/offer_flower.json"
@@ -341,7 +341,7 @@
 			"$ref": "../../1.16.0/behavior/player_ride_tamed.json"
 		},
 		"minecraft:behavior.raid_garden": {
-			"$ref": "../../1.16.0/behavior/raid_garden.json"
+			"$ref": "../../1.26.10/behavior/raid_garden.json"
 		},
 		"minecraft:behavior.ram_attack": {
 			"$ref": "../../1.26.10/behavior/ram_attack.json"
@@ -416,7 +416,7 @@
 			"$ref": "../../1.16.0/behavior/skeleton_horse_trap.json"
 		},
 		"minecraft:behavior.sleep": {
-			"$ref": "../../1.16.0/behavior/sleep.json"
+			"$ref": "./sleep.json"
 		},
 		"minecraft:behavior.slime_attack": {
 			"$ref": "../../1.16.0/behavior/slime_attack.json"
@@ -467,7 +467,7 @@
 			"$ref": "../../1.16.0/behavior/stay_while_sitting.json"
 		},
 		"minecraft:behavior.stomp_attack": {
-			"$ref": "../../1.19.0/behavior/stomp_attack.json"
+			"$ref": "../../1.26.0/behavior/stomp_attack.json"
 		},
 		"minecraft:behavior.stomp_turtle_egg": {
 			"$ref": "../../1.16.0/behavior/stomp_turtle_egg.json"
@@ -485,7 +485,7 @@
 			"$ref": "../../1.16.0/behavior/swim_idle.json"
 		},
 		"minecraft:behavior.swim_up_for_breath": {
-			"$ref": "../../1.21.20/behavior/swim_up_for_breath.json"
+			"$ref": "swim_up_for_breath.json"
 		},
 		"minecraft:behavior.swim_wander": {
 			"$ref": "../../1.16.0/behavior/swim_wander.json"
@@ -548,7 +548,7 @@
 			"$ref": "../../1.16.0/behavior/work.json"
 		},
 		"minecraft:behavior.work_composter": {
-			"$ref": "../../1.16.0/behavior/work_composter.json"
+			"$ref": "../../1.26.10/behavior/work_composter.json"
 		},
 		"minecraft:behavior.move_away_from_target": {
 			"$ref": "../../1.21.20/behavior/move_away_from_target.json"

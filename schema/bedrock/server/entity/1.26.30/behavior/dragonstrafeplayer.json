@@ -7,7 +7,8 @@
 		"active_speed": {
 			"type": "number",
 			"default": 0.6000000238418579,
-			"description": "The speed this entity moves when this behavior has started or while it's active."
+			"description": "The speed this entity moves when this behavior has started or while it's active.",
+			"minimum": 0
 		},
 		"control_flags": {
 			"type": "array",
@@ -20,27 +21,33 @@
 		"fireball_range": {
 			"type": "number",
 			"default": 64,
-			"description": "Maximum distance of this entity's fireball attack while strafing. Value must be > 0."
+			"description": "Maximum distance of this entity's fireball attack while strafing. Value must be > 0.",
+			"minimum": 0
 		},
 		"flight_speed": {
 			"type": "number",
 			"default": 0.6000000238418579,
-			"description": "The speed this entity moves while this behavior is not active."
+			"description": "The speed this entity moves while this behavior is not active.",
+			"minimum": 0
 		},
 		"priority": {
 			"type": "integer",
 			"default": 0,
-			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal.",
+			"minimum": 0
 		},
 		"switch_direction_probability": {
 			"type": "number",
 			"default": 0.125,
-			"description": "Percent chance to to switch this entity's strafe direction between clockwise and counterclockwise. Switch direction chance occurs each time a new target is chosen (1.0 = 100%). Value must be <= 1."
+			"description": "Percent chance to to switch this entity's strafe direction between clockwise and counterclockwise. Switch direction chance occurs each time a new target is chosen (1.0 = 100%). Value must be <= 1.",
+			"minimum": 0,
+			"maximum": 1.0
 		},
 		"target_in_range_and_in_view_time": {
 			"type": "number",
 			"default": 0.25,
-			"description": "Time (in seconds) the target must be in fireball range, and in view [ie, no solid terrain in-between the target and this entity], before a fireball can be shot. Value must be > 0."
+			"description": "Time (in seconds) the target must be in fireball range, and in view [ie, no solid terrain in-between the target and this entity], before a fireball can be shot. Value must be > 0.",
+			"minimum": 0
 		},
 		"target_zone": {
 			"$ref": "../float_range.json",
@@ -49,12 +56,14 @@
 		"turn_speed": {
 			"type": "number",
 			"default": 0.699999988079071,
-			"description": "The speed at which this entity turns while using this behavior."
+			"description": "The speed at which this entity turns while using this behavior.",
+			"minimum": 0
 		},
 		"view_angle": {
 			"type": "number",
 			"default": 10,
-			"description": "The target must be within \"view_angle\" degrees of the dragon's current rotation before a fireball can be shot. Value must be > 0."
+			"description": "The target must be within \"view_angle\" degrees of the dragon's current rotation before a fireball can be shot. Value must be > 0.",
+			"minimum": 0
 		}
 	}
 }

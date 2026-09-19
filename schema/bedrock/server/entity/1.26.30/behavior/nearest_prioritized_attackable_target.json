@@ -9,6 +9,10 @@
 			"default": 0,
 			"description": "Time in seconds before selecting a target"
 		},
+		"attack_owner": {
+			"type": "boolean",
+			"default": false
+		},
 		"control_flags": {
 			"type": "array",
 			"default": [],
@@ -16,11 +20,6 @@
 				"type": "string",
 				"enum": ["jump", "look", "move"]
 			}
-		},
-		"cooldown": {
-			"type": "number",
-			"default": 0,
-			"description": "The amount of time in seconds that the mob has to wait before selecting a target of the same type again"
 		},
 		"entity_types": {
 			"$ref": "../entity_types.json",
@@ -45,17 +44,20 @@
 		"must_see_forget_duration": {
 			"type": "number",
 			"default": 3,
-			"description": "Determines the amount of time in seconds that this mob will look for a target before forgetting about it and looking for a new one when the target isn't visible any more"
+			"description": "Determines the amount of time in seconds that this mob will look for a target before forgetting about it and looking for a new one when the target isn't visible any more",
+			"minimum": 0
 		},
 		"persist_time": {
 			"type": "number",
 			"default": 0,
-			"description": "Time in seconds for a valid target to stay targeted when it becomes an invalid target."
+			"description": "Time in seconds for a valid target to stay targeted when it becomes an invalid target.",
+			"minimum": 0
 		},
 		"priority": {
 			"type": "integer",
 			"default": 0,
-			"description": "Specifies the priority in which filtered enemy types should be attacked. Lower number means higher priority."
+			"description": "Specifies the priority in which filtered enemy types should be attacked. Lower number means higher priority.",
+			"minimum": 0
 		},
 		"reselect_targets": {
 			"type": "boolean",
@@ -65,22 +67,37 @@
 		"scan_interval": {
 			"type": "integer",
 			"default": 10,
-			"description": "How many ticks to wait between scanning for a target."
+			"description": "How many ticks to wait between scanning for a target.",
+			"minimum": 1.0
 		},
 		"set_persistent": {
 			"type": "boolean",
 			"default": false,
 			"description": "Allows the actor to be set to persist upon targeting a player"
 		},
+		"target_acquisition_probability": {
+			"type": "number",
+			"default": 1
+		},
+		"target_invisible_multiplier": {
+			"type": "number",
+			"default": 0.699999988079071
+		},
 		"target_search_height": {
 			"type": "number",
 			"default": -1,
-			"description": "Height in blocks to search for a target mob. -1.0f means the height does not matter."
+			"description": "Height in blocks to search for a target mob. -1.0f means the height does not matter.",
+			"minimum": -1.0
+		},
+		"target_sneak_visibility_multiplier": {
+			"type": "number",
+			"default": 0.800000011920929
 		},
 		"within_radius": {
 			"type": "number",
 			"default": 0,
-			"description": "Distance in blocks that the target can be within to launch an attack"
+			"description": "Distance in blocks that the target can be within to launch an attack",
+			"minimum": 0
 		}
 	},
 	"$defs": {

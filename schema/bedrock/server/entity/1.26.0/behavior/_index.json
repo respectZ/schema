@@ -8,7 +8,7 @@
 			"$ref": "../../1.16.0/behavior/admire_item.json"
 		},
 		"minecraft:behavior.aquatic_charge_attack": {
-			"$ref": "../../1.16.0/behavior/aquatic_charge_attack.json"
+			"$ref": "./aquatic_charge_attack.json"
 		},
 		"minecraft:behavior.avoid_block": {
 			"$ref": "../../1.16.0/behavior/avoid_block.json"
@@ -41,10 +41,10 @@
 			"$ref": "../../1.16.0/behavior/charge_held_item.json"
 		},
 		"minecraft:behavior.circle_around_anchor": {
-			"$ref": "../../1.16.0/behavior/circle_around_anchor.json"
+			"$ref": "../../1.21.100/behavior/circle_around_anchor.json"
 		},
 		"minecraft:behavior.controlled_by_player": {
-			"$ref": "../../1.16.100/behavior/controlled_by_player.json"
+			"$ref": "../../1.21.100/behavior/controlled_by_player.json"
 		},
 		"minecraft:behavior.croak": {
 			"$ref": "../../1.16.0/behavior/croak.json"
@@ -56,7 +56,7 @@
 			"$ref": "../../1.16.0/behavior/defend_village_target.json"
 		},
 		"minecraft:behavior.delayed_attack": {
-			"$ref": "../../1.16.0/behavior/delayed_attack.json"
+			"$ref": "./delayed_attack.json"
 		},
 		"minecraft:behavior.dig": {
 			"$ref": "../../1.19.0/behavior/dig.json"
@@ -230,10 +230,10 @@
 			"$ref": "../../1.16.0/behavior/make_love.json"
 		},
 		"minecraft:behavior.melee_attack": {
-			"$ref": "../../1.20.30/behavior/melee_attack.json"
+			"$ref": "./melee_attack.json"
 		},
 		"minecraft:behavior.melee_box_attack": {
-			"$ref": "../../1.20.50/behavior/melee_box_attack.json"
+			"$ref": "./melee_box_attack.json"
 		},
 		"minecraft:behavior.mingle": {
 			"$ref": "../../1.16.0/behavior/mingle.json"
@@ -284,7 +284,7 @@
 			"$ref": "../../1.16.100/behavior/move_towards_home_restriction.json"
 		},
 		"minecraft:behavior.move_towards_restriction": {
-			"$ref": "../../1.16.100/behavior/move_towards_restriction.json"
+			"$ref": "./move_towards_restriction.json"
 		},
 		"minecraft:behavior.move_towards_target": {
 			"$ref": "../../1.16.0/behavior/move_towards_target.json"
@@ -464,7 +464,7 @@
 			"$ref": "../../1.16.0/behavior/stay_while_sitting.json"
 		},
 		"minecraft:behavior.stomp_attack": {
-			"$ref": "../../1.16.0/behavior/stomp_attack.json"
+			"$ref": "./stomp_attack.json"
 		},
 		"minecraft:behavior.stomp_turtle_egg": {
 			"$ref": "../../1.16.0/behavior/stomp_turtle_egg.json"

@@ -1,0 +1,61 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Behavior Go And Give Items To Noteblock",
+	"description": "The entity will attempt to toss the items from its inventory to a nearby recently played noteblock.",
+	"type": "object",
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"listen_time": {
+			"type": "integer",
+			"default": 30,
+			"description": "Sets the time an entity should continue delivering items to a noteblock after hearing it."
+		},
+		"on_item_throw": {
+			"type": "array",
+			"items": {
+				"$ref": "../../1.16.0/triggers.json"
+			},
+			"default": [],
+			"description": "Event(s) to run when this mob throws items."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal.",
+			"minimum": 0
+		},
+		"reach_block_distance": {
+			"type": "number",
+			"default": 3,
+			"description": "Sets the desired distance to be reached before throwing the items towards the block."
+		},
+		"run_speed": {
+			"type": "number",
+			"default": 1,
+			"description": "Sets the entity's speed when running toward the block."
+		},
+		"throw_force": {
+			"type": "number",
+			"default": 0.20000000298023224,
+			"description": "Sets the throw force."
+		},
+		"throw_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"default": "charge",
+			"description": "Sound to play when this mob throws an item."
+		},
+		"vertical_throw_mul": {
+			"type": "number",
+			"default": 1.5,
+			"description": "Sets the vertical throw multiplier that is applied on top of the throw force in the vertical direction."
+		}
+	},
+	"additionalProperties": false
+}

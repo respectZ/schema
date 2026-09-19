@@ -7,7 +7,8 @@
 		"attack_cooldown": {
 			"type": "number",
 			"default": 0.5,
-			"description": "The cooldown time in seconds before this goal can be used again."
+			"description": "The cooldown time in seconds before this goal can be used again.",
+			"minimum": 0
 		},
 		"attack_range": {
 			"$ref": "../../1.26.0/strict_float_range.json",
@@ -17,11 +18,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				]
+				"enum": ["jump", "look", "move"]
 			},
 			"default": []
 		},
@@ -52,26 +49,25 @@
 			"items": {
 				"type": "number"
 			},
-			"default": [
-				0,
-				0,
-				0
-			]
+			"default": [0, 0, 0]
 		},
 		"post_shoot_delay": {
 			"type": "number",
 			"default": 0.20000000298023224,
-			"description": "Time in seconds between firing the projectile and ending the goal."
+			"description": "Time in seconds between firing the projectile and ending the goal.",
+			"minimum": 0
 		},
 		"pre_shoot_delay": {
 			"type": "number",
 			"default": 0.75,
-			"description": "Time in seconds before firing the projectile."
+			"description": "Time in seconds before firing the projectile.",
+			"minimum": 0
 		},
 		"priority": {
 			"type": "integer",
 			"default": 0,
-			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal.",
+			"minimum": 0
 		},
 		"projectile_def": {
 			"type": "string",
@@ -95,11 +91,7 @@
 			"items": {
 				"type": "number"
 			},
-			"default": [
-				0,
-				0,
-				0
-			]
+			"default": [0, 0, 0]
 		}
 	},
 	"$defs": {

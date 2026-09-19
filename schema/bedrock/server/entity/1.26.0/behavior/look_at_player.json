@@ -40,9 +40,6 @@
 			"type": "number",
 			"default": 0.019999999552965164,
 			"description": "The probability of looking at the target. A value of 1.00 is 100%. Value must be <= 1."
-		},
-		"target_distance": {
-			"type": "number"
 		}
 	},
 	"$defs": {

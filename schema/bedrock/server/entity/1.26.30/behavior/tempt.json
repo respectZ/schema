@@ -23,11 +23,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				]
+				"enum": ["jump", "look", "move"]
 			},
 			"default": []
 		},
@@ -39,13 +35,11 @@
 			},
 			"default": []
 		},
-		"on_end": {
-			"$ref": "../../1.16.0/triggers.json",
-			"description": "The \"on_end\" field specifies the event to trigger when the goal ends"
+		"on_tempt_end": {
+			"$ref": "../../1.16.0/triggers.json"
 		},
-		"on_start": {
-			"$ref": "../../1.16.0/triggers.json",
-			"description": "The \"on_start\" field specifies the event to trigger when the goal starts"
+		"on_tempt_start": {
+			"$ref": "../../1.16.0/triggers.json"
 		},
 		"priority": {
 			"type": "integer",
@@ -53,8 +47,32 @@
 			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
 		},
 		"sound_interval": {
-			"type": "integer",
-			"description": "Range of random ticks to wait between tempt sounds. Can be a number, an array [min, max], or an object with range_min/range_max or min/max."
+			"oneOf": [
+				{
+					"type": "number"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "number"
+					},
+					"minItems": 2,
+					"maxItems": 2
+				},
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"range_min": {
+							"type": "number"
+						},
+						"range_max": {
+							"type": "number"
+						}
+					}
+				}
+			],
+			"description": "Range of random ticks to wait between tempt sounds."
 		},
 		"speed_multiplier": {
 			"type": "number",

@@ -7,17 +7,20 @@
 		"catch_up_multiplier": {
 			"type": "number",
 			"default": 2.5,
-			"description": "The multiplier this entity's speed is modified by when matching another entity's direction."
+			"description": "The multiplier this entity's speed is modified by when matching another entity's direction.",
+			"minimum": 0
 		},
 		"catch_up_threshold": {
 			"type": "number",
 			"default": 12,
-			"description": "Distance, from the entity being followed, at which this entity will speed up to reach that entity."
+			"description": "Distance, from the entity being followed, at which this entity will speed up to reach that entity.",
+			"minimum": 0
 		},
 		"chance_to_stop": {
 			"type": "number",
 			"default": 0.0333,
-			"description": "Percent chance to stop following the current entity, if they're riding another entity or they're not swimming. 1.0 = 100%"
+			"description": "Percent chance to stop following the current entity, if they're riding another entity or they're not swimming. 1.0 = 100%",
+			"minimum": 0
 		},
 		"entity_types": {
 			"$ref": "../entity_types.json",
@@ -26,36 +29,43 @@
 		"match_direction_threshold": {
 			"type": "number",
 			"default": 2,
-			"description": "Distance, from the entity being followed, at which this entity will try to match that entity's direction"
+			"description": "Distance, from the entity being followed, at which this entity will try to match that entity's direction",
+			"minimum": 0
 		},
 		"priority": {
 			"type": "integer",
-			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal.",
+			"minimum": 0
 		},
 		"search_range": {
 			"type": "number",
 			"default": 20,
-			"description": "Radius around this entity to search for another entity to follow."
+			"description": "Radius around this entity to search for another entity to follow.",
+			"minimum": 0
 		},
 		"speed_multiplier": {
 			"type": "number",
 			"default": 1.5,
-			"description": "The multiplier this entity's speed is modified by when trying to catch up to the entity being followed."
+			"description": "The multiplier this entity's speed is modified by when trying to catch up to the entity being followed.",
+			"minimum": 0
 		},
 		"state_check_interval": {
 			"type": "number",
 			"default": 0.5,
-			"description": "Time (in seconds) between checks to determine if this entity should catch up to the entity being followed or match the direction of the entity being followed."
+			"description": "Time (in seconds) between checks to determine if this entity should catch up to the entity being followed or match the direction of the entity being followed.",
+			"minimum": 0
 		},
 		"stop_distance": {
 			"type": "number",
 			"default": 5,
-			"description": "Distance, from the entity being followed, at which this entity will stop following that entity."
+			"description": "Distance, from the entity being followed, at which this entity will stop following that entity.",
+			"minimum": 0
 		},
 		"success_rate": {
 			"type": "number",
 			"default": 0.1,
-			"description": "Percent chance to start following another entity, if not already doing so. 1.0 = 100%"
+			"description": "Percent chance to start following another entity, if not already doing so. 1.0 = 100%",
+			"minimum": 0
 		},
 		"control_flags": {
 			"type": "array",

@@ -53,7 +53,7 @@
 		"inner_boundary_time_increase": {
 			"type": "number",
 			"default": 0.25,
-			"description": "Time, in seconds, added to the attack path recalculation interval when the target is beyond \"path_inner_boundary\"."
+			"minimum": 0
 		},
 		"max_path_time": {
 			"type": "number",
@@ -81,31 +81,26 @@
 		"outer_boundary_time_increase": {
 			"type": "number",
 			"default": 0.5,
-			"description": "Time, in seconds, added to the attack path recalculation interval when the target is beyond \"path_outer_boundary\"."
+			"minimum": 0
 		},
 		"path_fail_time_increase": {
 			"type": "number",
 			"default": 0.75,
-			"description": "Time, in seconds, added to the attack path recalculation interval when the mob cannot move along the current path."
+			"minimum": 0
 		},
 		"path_inner_boundary": {
 			"type": "number",
 			"default": 16,
-			"description": "Distance at which to increase attack path recalculation by \"inner_boundary_time_increase\"."
+			"minimum": 0
 		},
 		"path_outer_boundary": {
 			"type": "number",
 			"default": 32,
-			"description": "Distance at which to increase attack path recalculation by \"outer_boundary_time_increase\"."
+			"minimum": 0
 		},
 		"priority": {
 			"type": "integer",
 			"default": 0
-		},
-		"random_stop_interval": {
-			"type": "integer",
-			"default": 0,
-			"description": "Defines a 1-in-N chance for the mob to stop its current attack, where N equals \"random_stop_interval\"."
 		},
 		"reposition_distance": {
 			"$ref": "#/$defs/item_floatrange",
@@ -115,6 +110,11 @@
 			"type": "number",
 			"default": 1,
 			"description": "Multiplier applied to the mob's movement speed while repositioning."
+		},
+		"random_stop_interval": {
+			"type": "integer",
+			"default": 0,
+			"minimum": 0
 		},
 		"require_complete_path": {
 			"type": "boolean",
@@ -138,8 +138,7 @@
 		},
 		"weapon_reach_multiplier": {
 			"type": "number",
-			"default": 1,
-			"description": "Multiplier applied to the item's \"minecraft:kinetic_weapon\" component's \"reach\"."
+			"minimum": 0
 		},
 		"x_max_rotation": {
 			"type": "number",
@@ -149,7 +148,7 @@
 		"y_max_head_rotation": {
 			"type": "number",
 			"default": 30,
-			"description": "Maximum rotation, in degrees, on the Y-axis while the mob is trying to look at its target."
+			"minimum": 0
 		}
 	},
 	"$defs": {

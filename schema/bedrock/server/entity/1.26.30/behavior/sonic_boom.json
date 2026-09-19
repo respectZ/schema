@@ -1,0 +1,82 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Behavior Sonic Boom",
+	"description": "Allows this entity to perform a 'sonic boom' ranged attack.",
+	"type": "object",
+	"properties": {
+		"attack_cooldown": {
+			"type": "number",
+			"default": 5,
+			"description": "Cooldown in seconds required after using this attack until the entity can use sonic boom again."
+		},
+		"attack_damage": {
+			"type": "number",
+			"default": 30,
+			"description": "Attack damage of the sonic boom."
+		},
+		"attack_range_horizontal": {
+			"type": "number",
+			"default": 15,
+			"description": "Horizontal range (in blocks) at which the sonic boom can damage the target."
+		},
+		"attack_range_vertical": {
+			"type": "number",
+			"default": 20,
+			"description": "Vertical range (in blocks) at which the sonic boom can damage the target."
+		},
+		"attack_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "Sound event for the attack."
+		},
+		"charge_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "Sound event for the charge up."
+		},
+		"control_flags": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			}
+		},
+		"duration": {
+			"type": "number",
+			"default": 0,
+			"description": "Goal duration in seconds",
+			"minimum": 0
+		},
+		"duration_until_attack_sound": {
+			"type": "number",
+			"default": 1.7000000476837158,
+			"description": "Duration in seconds until the attack sound is played."
+		},
+		"knockback_height_cap": {
+			"type": "number",
+			"default": 0,
+			"description": "Height cap of the attack knockback's vertical delta."
+		},
+		"knockback_horizontal_strength": {
+			"type": "number",
+			"default": 0,
+			"description": "Horizontal strength of the attack's knockback applied to the attack target."
+		},
+		"knockback_vertical_strength": {
+			"type": "number",
+			"default": 0,
+			"description": "Vertical strength of the attack's knockback applied to the attack target."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal.",
+			"minimum": 0
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1,
+			"description": "This multiplier modifies the attacking entity's speed when moving toward the target."
+		}
+	},
+	"additionalProperties": false
+}
