@@ -14,16 +14,16 @@
 			"default": [],
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				]
+				"enum": ["jump", "look", "move"]
 			}
 		},
 		"damage_sources": {
-			"$ref": "../../../../../vanilla/server/damage_type.json",
-			"description": "The list of Entity Damage Sources that will cause this mob to play dead."
+			"type": "array",
+			"description": "The list of Entity Damage Sources that will cause this mob to play dead.",
+			"items": {
+				"$ref": "../../../../../vanilla/server/damage_type.json"
+			},
+			"default": []
 		},
 		"duration": {
 			"type": "number",
