@@ -37,6 +37,10 @@
 				}
 			]
 		},
+		"breedItems": {
+			"doNotSuggest": true,
+			"$ref": "#/properties/breed_items"
+		},
 		"breeds_with": {
 			"oneOf": [
 				{
@@ -50,10 +54,6 @@
 					"$ref": "#/$defs/breeds_with"
 				}
 			]
-		},
-		"breedItems": {
-			"doNotSuggest": true,
-			"$ref": "#/properties/breed_items"
 		},
 		"causes_pregnancy": {
 			"type": "boolean",

@@ -15,6 +15,7 @@
 		},
 		"breed_cooldown": {
 			"type": "number",
+			"minimum": 0,
 			"default": 60,
 			"description": "Time in seconds before the Entity can breed again."
 		},
@@ -36,6 +37,16 @@
 			"doNotSuggest": true,
 			"$ref": "#/properties/breed_items"
 		},
+		"breeds_with": {
+			"type": "object",
+			"propertyNames": {
+				"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier"
+			},
+			"additionalProperties": {
+				"$ref": "../../1.16.0/triggers.json"
+			},
+			"description": "The entity definitions that this entity can breed with."
+		},
 		"causes_pregnancy": {
 			"type": "boolean",
 			"default": false,
@@ -56,23 +67,9 @@
 			"description": "The list of nearby block requirements to get the entity into the 'love' state."
 		},
 		"extra_baby_chance": {
-			"oneOf": [
-				{
-					"type": "number"
-				},
-				{
-					"type": "object",
-					"additionalProperties": false,
-					"properties": {
-						"range_min": {
-							"type": "number"
-						},
-						"range_max": {
-							"type": "number"
-						}
-					}
-				}
-			],
+			"type": "number",
+			"minimum": 0,
+			"maximum": 1,
 			"default": 0,
 			"description": "Chance that up to 16 babies will spawn."
 		},
@@ -103,7 +100,7 @@
 		"environment_requirements": {
 			"type": "object",
 			"properties": {
-				"block_types": {
+				"blocks": {
 					"oneOf": [
 						{
 							"type": "array",
@@ -114,15 +111,18 @@
 						{
 							"$ref": "../../../../../vanilla/server/block_descriptor.json"
 						}
-					],
-					"description": "The block types required nearby for the entity to breed."
+					]
 				},
 				"count": {
 					"type": "integer",
+					"default": 1,
 					"description": "The number of the required block types nearby for the entity to breed."
 				},
 				"radius": {
-					"type": "number",
+					"type": "integer",
+					"minimum": 0,
+					"maximum": 16,
+					"default": 5,
 					"description": "How many blocks radius from the mob's center to search in for the required blocks. Bounded between 0 and 16."
 				}
 			},
