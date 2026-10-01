@@ -410,7 +410,8 @@
 							"deprecated": true,
 							"type": "boolean",
 							"default": false,
-							"description": "If true, damage will be randomized based on damage and speed"
+							"description": "If true, damage will be randomized based on damage and speed",
+							"deprecationMessage": "Changed into difficulty_randomization subcomponents at on_hit/impact_damage."
 						},
 						"semirandomdiffdamage": {
 							"doNotSuggest": true,
