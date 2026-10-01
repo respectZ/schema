@@ -40,11 +40,18 @@
 			}
 		},
 		"remove_effects": {
-			"type": "array",
-			"description": "List of effect names to remove from this entity after adding this component.",
-			"items": {
-				"$ref": "../../../../../vanilla/server/effect_type.json"
-			}
+			"oneOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../../../../vanilla/server/effect_type.json"
+					}
+				},
+				{
+					"$ref": "../../../../../vanilla/server/effect_type.json"
+				}
+			],
+			"description": "List of effect names to remove from this entity after adding this component."
 		}
 	}
 }
