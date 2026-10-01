@@ -28,9 +28,21 @@
 			"default": 120,
 			"description": "Time in ticks between home checks."
 		},
+		"on_failed": {
+			"type": "array",
+			"items": {
+				"$ref": "../../1.16.0/triggers.json"
+			},
+			"default": [],
+			"description": "Event(s) to run when this goal fails."
+		},
 		"on_home": {
-			"type": "string",
-			"description": "Event to run when the entity arrives home."
+			"type": "array",
+			"items": {
+				"$ref": "../../1.16.0/triggers.json"
+			},
+			"default": [],
+			"description": "Event(s) to run when this mob gets home."
 		},
 		"speed_multiplier": {
 			"type": "number",
