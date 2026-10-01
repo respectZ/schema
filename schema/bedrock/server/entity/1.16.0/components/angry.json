@@ -57,7 +57,14 @@
 			"$ref": "#/properties/broadcast_targets"
 		},
 		"calm_event": {
-			"type": "string",
+			"oneOf": [
+				{
+					"type": "string"
+				},
+				{
+					"$ref": "../triggers.json"
+				}
+			],
 			"description": "The event to run when the entity stops being angry."
 		},
 		"calmEvent": {
