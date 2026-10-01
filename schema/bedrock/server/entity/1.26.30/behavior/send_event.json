@@ -1,0 +1,102 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Allows the mob to send an event to another mob.",
+	"additionalProperties": false,
+	"properties": {
+		"event_choices": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"cast_duration": {
+						"type": "number",
+						"default": 0
+					},
+					"cooldown_time": {
+						"type": "number",
+						"default": 0
+					},
+					"do_casting": {
+						"type": "boolean",
+						"default": true
+					},
+					"filters": {
+						"$ref": "../../../../../vanilla/server/filter/entity/_index.json"
+					},
+					"look_at_target": {
+						"type": "boolean",
+						"default": true
+					},
+					"max_activation_range": {
+						"type": "number",
+						"default": 32
+					},
+					"min_activation_range": {
+						"type": "number",
+						"default": 0
+					},
+					"particle_color": {
+						"oneOf": [
+							{
+								"type": "string",
+								"pattern": "^#[0-9a-fA-F]{6}$"
+							},
+							{
+								"type": "array",
+								"minItems": 3,
+								"maxItems": 4,
+								"items": {
+									"type": "integer",
+									"minimum": 0,
+									"maximum": 255
+								}
+							}
+						]
+					},
+					"sequence": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"base_delay": {
+									"type": "number",
+									"default": 0
+								},
+								"event": {
+									"type": "string"
+								},
+								"sound_event": {
+									"type": "string"
+								}
+							}
+						}
+					},
+					"start_sound_event": {
+						"type": "string"
+					},
+					"weight": {
+						"type": "number",
+						"default": 1
+					}
+				}
+			},
+			"description": "List of possible events to send with conditions, weights, and targeting parameters."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		}
+	}
+}

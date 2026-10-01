@@ -1,0 +1,111 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Behavior Fire At Target",
+	"description": "Allows an entity to attack by firing a shot with a delay. Anchor and offset parameters of this component overrides the anchor and offset from projectile component.",
+	"type": "object",
+	"properties": {
+		"attack_cooldown": {
+			"type": "number",
+			"default": 0.5,
+			"description": "The cooldown time in seconds before this goal can be used again."
+		},
+		"attack_range": {
+			"$ref": "#/$defs/item_floatrange",
+			"description": "Target needs to be within this range for the attack to happen."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "Conditions that need to be met for the behavior to start."
+		},
+		"max_head_rotation_x": {
+			"type": "number",
+			"default": 30,
+			"description": "Maximum head rotation (in degrees), on the X-axis, that this entity can apply while trying to look at the target."
+		},
+		"max_head_rotation_y": {
+			"type": "number",
+			"default": 30,
+			"description": "Maximum head rotation (in degrees), on the Y-axis, that this entity can apply while trying to look at the target."
+		},
+		"owner_anchor": {
+			"type": "object",
+			"default": 2,
+			"description": "Entity anchor for the projectile spawn location."
+		},
+		"owner_offset": {
+			"description": "Offset vector from the owner_anchor.",
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"type": "number"
+			},
+			"default": [0, 0, 0]
+		},
+		"post_shoot_delay": {
+			"type": "number",
+			"default": 0.20000000298023224,
+			"description": "Time in seconds between firing the projectile and ending the goal."
+		},
+		"pre_shoot_delay": {
+			"type": "number",
+			"default": 0.75,
+			"description": "Time in seconds before firing the projectile."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"projectile_def": {
+			"type": "string",
+			"description": "Actor definition to use as projectile for the ranged attack. The actor must be a projectile. This field is required for the goal to be usable."
+		},
+		"ranged_fov": {
+			"type": "number",
+			"default": 90,
+			"description": "Field of view (in degrees) when using sensing to detect a target for attack."
+		},
+		"target_anchor": {
+			"type": "object",
+			"default": 2,
+			"description": "Entity anchor for projectile target."
+		},
+		"target_offset": {
+			"description": "Offset vector from the target_anchor.",
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"type": "number"
+			},
+			"default": [0, 0, 0]
+		}
+	},
+	"$defs": {
+		"item_floatrange": {
+			"type": "object",
+			"properties": {
+				"max": {
+					"type": "number",
+					"default": 0
+				},
+				"min": {
+					"type": "number",
+					"default": 0,
+					"minimum": 0
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

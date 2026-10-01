@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Mob Effect Immunity",
+	"description": "Entities with this component will have an immunity to the provided mob effects.",
+	"type": "object",
+	"properties": {
+		"mob_effects": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/effect_type.json"
+			},
+			"description": "List of names of effects the entity is immune to."
+		}
+	},
+	"additionalProperties": false
+}

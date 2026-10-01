@@ -1,0 +1,132 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Causes an entity to circle around an anchor point placed near a point or target.",
+	"additionalProperties": false,
+	"properties": {
+		"angle_change": {
+			"type": "number",
+			"default": 15,
+			"description": "Number of degrees to change this entity's facing by, when the entity selects its next anchor point."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"goal_radius": {
+			"type": "number",
+			"default": 0.5,
+			"description": "Maximum distance from the anchor-point in which this entity considers itself to have reached the anchor point."
+		},
+		"height_above_target_range": {
+			"$ref": "../float_range.json",
+			"description": "The number of blocks above the target that the next anchor point can be set.",
+			"anyOf": [
+				{
+					"type": "number",
+					"minimum": 0
+				},
+				{
+					"type": "array",
+					"items": {
+						"minimum": 0
+					}
+				},
+				{
+					"type": "object",
+					"properties": {
+						"min": {
+							"minimum": 0
+						},
+						"max": {
+							"minimum": 0
+						},
+						"range_min": {
+							"minimum": 0
+						},
+						"range_max": {
+							"minimum": 0
+						}
+					}
+				}
+			]
+		},
+		"height_adjustment_chance": {
+			"type": "number",
+			"default": 0.0028570001013576984,
+			"description": "Percent chance to determine how often to increase or decrease the current height around the anchor point."
+		},
+		"height_offset_range": {
+			"$ref": "../float_range.json",
+			"description": "Vertical distance from the anchor point this entity must stay within, upon a successful height adjustment."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal.",
+			"minimum": 0
+		},
+		"radius_adjustment_chance": {
+			"type": "number",
+			"default": 0.004000000189989805,
+			"description": "Percent chance to determine how often to increase the size of the current movement radius around the anchor point."
+		},
+		"radius_change": {
+			"type": "number",
+			"default": 1,
+			"description": "The number of blocks to increase the current movement radius by, upon successful \"radius_adjustment_chance\"."
+		},
+		"radius_range": {
+			"$ref": "../float_range.json",
+			"description": "Horizontal distance from the anchor point this entity must stay within upon a successful radius adjustment.",
+			"anyOf": [
+				{
+					"type": "number",
+					"minimum": 0
+				},
+				{
+					"type": "array",
+					"items": {
+						"minimum": 0
+					}
+				},
+				{
+					"type": "object",
+					"properties": {
+						"min": {
+							"minimum": 0
+						},
+						"max": {
+							"minimum": 0
+						},
+						"range_min": {
+							"minimum": 0
+						},
+						"range_max": {
+							"minimum": 0
+						}
+					}
+				}
+			]
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1,
+			"description": "Multiplies the speed at which this entity travels to its next desired position."
+		},
+		"height_change_chance": {
+			"type": "integer",
+			"default": 350,
+			"description": "Chance per tick to change height (out of 1000)."
+		},
+		"radius_change_chance": {
+			"type": "integer",
+			"default": 250,
+			"description": "Chance per tick to change the circle radius (out of 1000)."
+		}
+	}
+}

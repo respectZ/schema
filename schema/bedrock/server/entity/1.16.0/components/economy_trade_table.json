@@ -1,0 +1,89 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Economy Trade Table",
+	"description": "Defines this entity's ability to trade with players.",
+	"type": "object",
+	"properties": {
+		"convert_trades_economy": {
+			"type": "boolean",
+			"default": false,
+			"description": "Determines when the mob transforms, if the trades should be converted when the new mob has a economy_trade_table."
+		},
+		"cured_discount": {
+			"oneOf": [
+				{
+					"type": "integer"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "integer"
+					},
+					"minItems": 2,
+					"maxItems": 2
+				}
+			],
+			"description": "How much should the discount be modified by when the player has cured the Zombie Villager."
+		},
+		"display_name": {
+			"type": "string",
+			"description": "Name to be displayed while trading with this entity"
+		},
+		"hero_demand_discount": {
+			"type": "integer",
+			"default": -4,
+			"description": "Used in legacy prices to determine how much should Demand be modified by when the player has the Hero of the Village mob effect"
+		},
+		"max_cured_discount": {
+			"oneOf": [
+				{
+					"type": "integer"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "integer"
+					},
+					"minItems": 2,
+					"maxItems": 2
+				}
+			],
+			"description": "The max the discount can be modified by when the player has cured the Zombie Villager."
+		},
+		"max_nearby_cured_discount": {
+			"type": "integer",
+			"default": -200,
+			"description": "The max the discount can be modified by when the player has cured a nearby Zombie Villager. Only used when use_legacy_price_formula is true, otherwise max_cured_discount (low) is used."
+		},
+		"nearby_cured_discount": {
+			"type": "integer",
+			"default": -20,
+			"description": "How much should the discount be modified by when the player has cured a nearby Zombie Villager"
+		},
+		"new_screen": {
+			"type": "boolean",
+			"default": false,
+			"description": "Used to determine if trading with entity opens the new trade screen"
+		},
+		"persist_trades": {
+			"type": "boolean",
+			"default": false,
+			"description": "Determines if the trades should persist when the mob transforms."
+		},
+		"show_trade_screen": {
+			"type": "boolean",
+			"default": true,
+			"description": "Show an in game trade screen when interacting with the mob."
+		},
+		"table": {
+			"$ref": "../../../../../vanilla/server/paths.json#/$defs/trading_path",
+			"description": "File path relative to the resource pack root for this entity's trades"
+		},
+		"use_legacy_price_formula": {
+			"type": "boolean",
+			"default": false,
+			"description": "Determines whether the legacy formula is used to determines the trade prices."
+		}
+	},
+	"additionalProperties": false
+}

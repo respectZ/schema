@@ -1,0 +1,64 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Allows this entity to use a laser beam attack. Can only be used by Guardians and Elder Guardians.",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"elder_extra_magic_damage": {
+			"type": "integer",
+			"default": 2,
+			"description": "Amount of additional damage dealt from an elder guardian's magic attack. Value must be > 0.",
+			"minimum": 0
+		},
+		"hard_mode_extra_magic_damage": {
+			"type": "integer",
+			"default": 2,
+			"description": "In hard difficulty, amount of additional damage dealt from a guardian's magic attack. Value must be > 0.",
+			"minimum": 0
+		},
+		"magic_damage": {
+			"type": "integer",
+			"default": 1,
+			"description": "Amount of damage dealt from a guardian's magic attack. Magic attack damage is added to the guardian's base attack damage. Value must be > 0.",
+			"minimum": 0
+		},
+		"min_distance": {
+			"type": "number",
+			"default": 3,
+			"description": "Guardian attack behavior stops if the target is closer than this distance (doesn't apply to elders).",
+			"minimum": 0
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal.",
+			"minimum": 0
+		},
+		"sound_delay_time": {
+			"type": "number",
+			"default": 0.5,
+			"description": "Time (in seconds) to wait after starting an attack before playing the guardian attack sound. Value must be > 0.",
+			"minimum": 0
+		},
+		"x_max_rotation": {
+			"type": "number",
+			"default": 90,
+			"description": "Maximum rotation (in degrees), on the X-axis, this entity can rotate while trying to look at the target. Value must be > 0.",
+			"minimum": 0
+		},
+		"y_max_head_rotation": {
+			"type": "number",
+			"default": 90,
+			"description": "Maximum rotation (in degrees), on the Y-axis, this entity can rotate its head while trying to look at the target. Value must be > 0.",
+			"minimum": 0
+		}
+	}
+}

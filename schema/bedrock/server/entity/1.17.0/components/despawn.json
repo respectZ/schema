@@ -1,0 +1,65 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Despawn",
+	"description": "Despawns the Actor when the despawn rules or optional filters evaluate to true.",
+	"type": "object",
+	"properties": {
+		"despawn_from_chance": {
+			"type": "boolean",
+			"default": true,
+			"description": "Determines if \"min_range_random_chance\" is used in the standard despawn rules"
+		},
+		"despawn_from_distance": {
+			"$ref": "#/$defs/despawn_from_distance",
+			"description": "Specifies if the 'min_distance' and 'max_distance' are used in the standard despawn rules."
+		},
+		"despawn_from_inactivity": {
+			"type": "boolean",
+			"default": true,
+			"description": "Determines if the \"min_range_inactivity_timer\" is used in the standard despawn rules."
+		},
+		"despawn_from_simulation_edge": {
+			"type": "boolean",
+			"default": true,
+			"description": "Determines if the mob is instantly despawned at the edge of simulation distance in the standard despawn rules."
+		},
+		"filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "The list of conditions that must be satisfied before the Actor is despawned. If a filter is defined then standard despawn rules are ignored."
+		},
+		"min_range_inactivity_timer": {
+			"type": "integer",
+			"default": 30,
+			"description": "The amount of time in seconds that the mob must be inactive."
+		},
+		"min_range_random_chance": {
+			"type": "integer",
+			"default": 800,
+			"description": "A random chance between 1 and the given value."
+		},
+		"remove_child_entities": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, all entities linked to this entity in a child relationship (eg. leashed) will also be despawned."
+		}
+	},
+	"$defs": {
+		"despawn_from_distance": {
+			"type": "object",
+			"properties": {
+				"max_distance": {
+					"type": "integer",
+					"default": 128,
+					"description": "Maximum distance for standard despawn rules to instantly despawn the mob."
+				},
+				"min_distance": {
+					"type": "integer",
+					"default": 32,
+					"description": "Minimum distance for standard despawn rules to try to despawn the mob."
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

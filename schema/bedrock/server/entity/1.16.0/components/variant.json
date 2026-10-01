@@ -1,0 +1,14 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"title": "Variant",
+	"description": "Used to differentiate the component group of a variant of an entity from others (e.g. ocelot, villager)",
+	"additionalProperties": false,
+	"properties": {
+		"value": {
+			"type": "integer",
+			"default": 0,
+			"description": "The ID of the variant. By convention, 0 is the ID of the base entity."
+		}
+	}
+}

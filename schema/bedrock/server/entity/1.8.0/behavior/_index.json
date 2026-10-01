@@ -3,11 +3,7 @@
 	"type": "object",
 	"title": "Entity Behavior Goals",
 	"description": "Entity AI goal behaviors. Each property is a known behavior name and its value is the behavior's configuration.",
-	"unevaluatedProperties": false,
 	"properties": {
-		"minecraft:behavior.scared": {
-			"$ref": "./scared.json"
-		},
 		"minecraft:behavior.avoid_mob_type": {
 			"$ref": "./avoid_mob_type.json"
 		},
@@ -292,9 +288,6 @@
 		},
 		"minecraft:behavior.stomp_turtle_egg": {
 			"$ref": "./stomp_turtle_egg.json"
-		},
-		"minecraft:behavior.summon_entity": {
-			"$ref": "./summon_entity.json"
 		},
 		"minecraft:behavior.swell": {
 			"$ref": "./swell.json"

@@ -1,0 +1,23 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Behavior Follow Target Captain",
+	"description": "Allows mob to move towards its current target captain.",
+	"type": "object",
+	"properties": {
+		"follow_distance": {
+			"type": "number",
+			"default": 0,
+			"description": "Defines the distance in blocks the mob will stay from its target while following."
+		},
+		"priority": {
+			"type": "integer",
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"within_radius": {
+			"type": "number",
+			"default": 0,
+			"description": "Defines the maximum distance in blocks a mob can get from its target captain before giving up trying to follow it."
+		}
+	},
+	"additionalProperties": false
+}

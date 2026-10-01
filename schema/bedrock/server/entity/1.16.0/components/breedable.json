@@ -1,0 +1,273 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Breedable",
+	"description": "Allows an entity to establish a way to get into the love state used for breeding.",
+	"type": "object",
+	"properties": {
+		"allow_sitting": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, entities can breed while sitting"
+		},
+		"allowSitting": {
+			"doNotSuggest": true,
+			"$ref": "#/properties/allow_sitting"
+		},
+		"blend_attributes": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true, the entities will blend their attributes in the offspring after they breed. For example, horses blend their health, movement, and jump_strength in their offspring."
+		},
+		"breed_cooldown": {
+			"type": "number",
+			"default": 60,
+			"description": "Time in seconds before the Entity can breed again."
+		},
+		"breed_items": {
+			"description": "The list of items that can be used to get the entity into the 'love' state. Can be a single item or an array.",
+			"oneOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+					}
+				},
+				{
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+				}
+			]
+		},
+		"breedItems": {
+			"doNotSuggest": true,
+			"$ref": "#/properties/breed_items"
+		},
+		"breeds_with": {
+			"description": "The entity definitions that this entity can breed with. Can be a single object or an array.",
+			"oneOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/breeds_with"
+					}
+				},
+				{
+					"$ref": "#/$defs/breeds_with"
+				}
+			]
+		},
+		"causes_pregnancy": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, the entity will become pregnant instead of spawning a baby."
+		},
+		"deny_parents_variant": {
+			"$ref": "#/$defs/deny_parents_variant",
+			"description": "Determines how likely the baby of parents with the same variant will deny that variant and take a random variant within the given range instead."
+		},
+		"environment_requirements": {
+			"oneOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/environment_requirements"
+					}
+				},
+				{
+					"$ref": "#/$defs/environment_requirements"
+				}
+			],
+			"description": "The list of nearby block requirements to get the entity into the 'love' state."
+		},
+		"extra_baby_chance": {
+			"oneOf": [
+				{
+					"type": "number"
+				},
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"range_min": {
+							"type": "number"
+						},
+						"range_max": {
+							"type": "number"
+						}
+					}
+				}
+			],
+			"default": 0,
+			"description": "Chance that up to 16 babies will spawn."
+		},
+		"extraBabyChance": {
+			"doNotSuggest": true,
+			"$ref": "#/properties/extra_baby_chance"
+		},
+		"inherit_tamed": {
+			"type": "boolean",
+			"description": "If true, the entity born will be automatically tamed."
+		},
+		"love_filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "The filters to run when attempting to fall in love."
+		},
+		"mutation_factor": {
+			"$ref": "#/$defs/mutation_factor",
+			"description": "Determines how likely the babies are to NOT inherit one of their parent's variances."
+		},
+		"require_full_health": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, the entity needs to be at full health before it can breed."
+		},
+		"require_tame": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true, the entities need to be tamed first before they can breed."
+		},
+		"requireTame": {
+			"doNotSuggest": true,
+			"$ref": "#/properties/require_tame"
+		}
+	},
+	"$defs": {
+		"breeds_with": {
+			"type": "object",
+			"properties": {
+				"baby_type": {
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+					"description": "The entity definition of this entity's babies."
+				},
+				"breed_event": {
+					"description": "Event to run when this entity breeds. Can be a simple event name string or a trigger object with event and optional filters.",
+					"oneOf": [
+						{
+							"type": "string"
+						},
+						{
+							"$ref": "../triggers.json"
+						}
+					]
+				},
+				"mate_type": {
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+					"description": "The entity definition that this entity can mate with."
+				}
+			},
+			"additionalProperties": true
+		},
+		"deny_parents_variant": {
+			"type": "object",
+			"properties": {
+				"chance": {
+					"type": "number",
+					"description": "The percentage chance of denying the parents' variant."
+				},
+				"max_variant": {
+					"type": "number",
+					"description": "The inclusive maximum of the variant range."
+				},
+				"min_variant": {
+					"type": "number",
+					"description": "The inclusive minimum of the variant range."
+				}
+			},
+			"additionalProperties": false
+		},
+		"environment_requirements": {
+			"type": "object",
+			"properties": {
+				"block_types": {
+					"oneOf": [
+						{
+							"type": "array",
+							"items": {
+								"$ref": "../../../../../vanilla/server/block_descriptor.json"
+							}
+						},
+						{
+							"$ref": "../../../../../vanilla/server/block_descriptor.json"
+						}
+					],
+					"description": "The block types required nearby for the entity to breed."
+				},
+				"count": {
+					"type": "integer",
+					"description": "The number of the required block types nearby for the entity to breed."
+				},
+				"radius": {
+					"type": "number",
+					"description": "How many blocks radius from the mob's center to search in for the required blocks. Bounded between 0 and 16."
+				}
+			},
+			"additionalProperties": false
+		},
+		"mutation_factor": {
+			"type": "object",
+			"properties": {
+				"color": {
+					"description": "The percentage chance of denying the parents' variant.",
+					"oneOf": [
+						{
+							"type": "number"
+						},
+						{
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"range_min": {
+									"type": "number"
+								},
+								"range_max": {
+									"type": "number"
+								}
+							}
+						}
+					]
+				},
+				"extra_variant": {
+					"description": "The percentage chance of a mutation on the entity's extra variant type.",
+					"oneOf": [
+						{
+							"type": "number"
+						},
+						{
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"range_min": {
+									"type": "number"
+								},
+								"range_max": {
+									"type": "number"
+								}
+							}
+						}
+					]
+				},
+				"variant": {
+					"description": "The percentage chance of a mutation on the entity's variant type.",
+					"oneOf": [
+						{
+							"type": "number"
+						},
+						{
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"range_min": {
+									"type": "number"
+								},
+								"range_max": {
+									"type": "number"
+								}
+							}
+						}
+					]
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

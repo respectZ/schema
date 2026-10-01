@@ -1,0 +1,14 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Movement Sound Distance Offset",
+	"description": "Sets the offset used to determine the next step distance for playing a movement sound.",
+	"type": "object",
+	"properties": {
+		"value": {
+			"type": "number",
+			"default": 1,
+			"description": "The higher the number, the less often the movement sound will be played."
+		}
+	},
+	"additionalProperties": false
+}

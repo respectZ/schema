@@ -1,0 +1,53 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Allows this entity to use a flame-breath attack.",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"cooldown_time": {
+			"type": "number",
+			"default": 10,
+			"description": "Time (in seconds) between each start of the cycle to roar, then breath flame."
+		},
+		"flame_time": {
+			"type": "number",
+			"default": 0.5,
+			"description": "Time (in seconds), after roar, to breath flame."
+		},
+		"ground_flame_count": {
+			"type": "integer",
+			"default": 4,
+			"description": "Number of ground flame-breath attacks to use before flight-takeoff."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal.",
+			"minimum": 0
+		},
+		"roar_time": {
+			"type": "number",
+			"default": 2,
+			"description": "Time (in seconds) to roar, before breathing flame."
+		},
+		"smoke_color": {
+			"type": "string"
+		},
+		"smoke_radius": {
+			"type": "number",
+			"default": 5
+		},
+		"smoke_time": {
+			"type": "number",
+			"default": 10
+		}
+	}
+}

@@ -1,0 +1,62 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Damage Sensor",
+	"description": "Defines what events to call when this entity is damaged by specific entities or items.",
+	"type": "object",
+	"properties": {
+		"triggers": {
+			"description": "List of triggers with the events to call when taking specific kinds of damage.",
+			"oneOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/triggers"
+					}
+				},
+				{
+					"$ref": "#/$defs/triggers"
+				}
+			]
+		}
+	},
+	"additionalProperties": false,
+	"$defs": {
+		"triggers": {
+			"type": "object",
+			"properties": {
+				"cause": {
+					"$ref": "../../../../../vanilla/server/damage_type.json",
+					"description": "Type of damage that triggers the events."
+				},
+				"damage_modifier": {
+					"type": "number",
+					"default": 0,
+					"description": "A modifier that adds/removes to the base damage received from the specified damage cause."
+				},
+				"damage_multiplier": {
+					"type": "number",
+					"default": 1,
+					"description": "A multiplier that modifies the base damage received from the specified damage cause."
+				},
+				"deals_damage": {
+					"type": "boolean",
+					"default": false,
+					"description": "Defines how received damage affects the entity."
+				},
+				"event": {
+					"type": "string",
+					"description": "Event to emit when the trigger conditions are met."
+				},
+				"filters": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": "Filter conditions for when this trigger applies."
+				},
+				"on_damage": {
+					"$ref": "../triggers.json",
+					"description": "Defines which entities the trigger applies to, and which event to emit when damaged."
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}

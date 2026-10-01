@@ -6,7 +6,7 @@ interface RefIssue {
 	schema: string;
 	ref: string;
 	resolved: string;
-	kind: "missing";
+	kind: "missing" | "fragment";
 }
 
 function collectRefs(value: unknown, refs: string[]): void {
@@ -23,20 +23,50 @@ function collectRefs(value: unknown, refs: string[]): void {
 	}
 }
 
-function resolveRef(ref: string, fromFile: string): string {
+function resolveRef(ref: string, fromFile: string): { path: string; fragment?: string } {
 	const hashIndex = ref.indexOf("#");
 	const pathPart = hashIndex === -1 ? ref : ref.slice(0, hashIndex);
-	if (pathPart === "") return fromFile;
-	if (/^[a-z][a-z0-9+\-.]*:\/\//i.test(pathPart)) return pathPart;
-	if (isAbsolute(pathPart)) return pathPart;
-	if (pathPart.startsWith("schema/")) return pathPart;
-	return resolve(dirname(fromFile), pathPart);
+	const fragment = hashIndex === -1 ? undefined : ref.slice(hashIndex + 1);
+	if (pathPart === "") return { path: fromFile, fragment };
+	if (/^[a-z][a-z0-9+\-.]*:\/\//i.test(pathPart)) return { path: pathPart, fragment };
+	if (isAbsolute(pathPart)) return { path: pathPart, fragment };
+	if (pathPart.startsWith("schema/")) return { path: pathPart, fragment };
+	return { path: resolve(dirname(fromFile), pathPart), fragment };
+}
+
+function resolvePointer(value: unknown, fragment: string): boolean {
+	let decoded: string;
+	try {
+		decoded = decodeURIComponent(fragment);
+	} catch {
+		return false;
+	}
+	if (decoded === "") return true;
+	if (!decoded.startsWith("/")) return findAnchor(value, decoded);
+	let current = value;
+	for (const rawPart of decoded.slice(1).split("/")) {
+		const part = rawPart.replace(/~1/g, "/").replace(/~0/g, "~");
+		if (current === null || typeof current !== "object") return false;
+		if (!Object.prototype.hasOwnProperty.call(current, part)) return false;
+		current = (current as Record<string, unknown>)[part];
+	}
+	return true;
+}
+
+function findAnchor(value: unknown, anchor: string): boolean {
+	if (value === null || typeof value !== "object") return false;
+	if (Array.isArray(value)) return value.some((item) => findAnchor(item, anchor));
+	const obj = value as Record<string, unknown>;
+	if (obj.$anchor === anchor || obj.$dynamicAnchor === anchor || obj.$id === `#${anchor}`)
+		return true;
+	return Object.values(obj).some((item) => findAnchor(item, anchor));
 }
 
 async function main() {
 	const root = "schema";
 	const issues: RefIssue[] = [];
 	const seen = new Set<string>();
+	const parsedFiles = new Map<string, unknown>();
 	let fileCount = 0;
 	for await (const entry of new Bun.Glob(join(root, "**/*.json")).scan()) {
 		const file = entry.replace(/\\/g, "/");
@@ -57,9 +87,24 @@ async function main() {
 			seen.add(key);
 
 			const resolved = resolveRef(ref, file);
-			if (resolved.startsWith("http://") || resolved.startsWith("https://")) continue;
-			if (!existsSync(resolved)) {
-				issues.push({ schema: file, ref, resolved, kind: "missing" });
+			if (resolved.path.startsWith("http://") || resolved.path.startsWith("https://")) continue;
+			if (!existsSync(resolved.path)) {
+				issues.push({ schema: file, ref, resolved: resolved.path, kind: "missing" });
+				continue;
+			}
+			if (resolved.fragment !== undefined && resolved.fragment !== "") {
+				let target = parsedFiles.get(resolved.path);
+				if (target === undefined) {
+					try {
+						target = await readJson(resolved.path);
+						parsedFiles.set(resolved.path, target);
+					} catch {
+						continue;
+					}
+				}
+				if (!resolvePointer(target, resolved.fragment)) {
+					issues.push({ schema: file, ref, resolved: resolved.path, kind: "fragment" });
+				}
 			}
 		}
 	}
@@ -70,7 +115,7 @@ async function main() {
 	}
 
 	for (const i of issues) {
-		console.log(`MISSING: ${i.ref}`);
+		console.log(`${i.kind === "missing" ? "MISSING" : "INVALID FRAGMENT"}: ${i.ref}`);
 		console.log(`  in:       ${i.schema}`);
 		console.log(`  resolved: ${i.resolved}`);
 	}

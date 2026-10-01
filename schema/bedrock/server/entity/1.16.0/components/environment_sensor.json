@@ -1,0 +1,23 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"title": "Environment Sensor",
+	"description": "Creates a trigger based on environment conditions.",
+	"additionalProperties": false,
+	"properties": {
+		"triggers": {
+			"description": "The list of triggers that fire when the environment conditions match the given filter criteria.",
+			"oneOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../triggers.json"
+					}
+				},
+				{
+					"$ref": "../triggers.json"
+				}
+			]
+		}
+	}
+}

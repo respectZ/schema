@@ -1,0 +1,97 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Allows a mob to be tempted by a player holding a specific item. Uses pathfinding for movement.",
+	"additionalProperties": false,
+	"properties": {
+		"can_get_scared": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, the mob can stop being tempted if the player moves too fast while close to this mob."
+		},
+		"can_tempt_vertically": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, vertical distance to the player will be considered when tempting."
+		},
+		"can_tempt_while_ridden": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, the mob can be tempted even if it has a passenger (i.e. if being ridden)."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"items": {
+			"type": "array",
+			"description": "List of items that can tempt the mob.",
+			"items": {
+				"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+			},
+			"default": []
+		},
+		"on_tempt_end": {
+			"$ref": "../../1.16.0/triggers.json"
+		},
+		"on_tempt_start": {
+			"$ref": "../../1.16.0/triggers.json"
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"sound_interval": {
+			"oneOf": [
+				{
+					"type": "number"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "number"
+					},
+					"minItems": 2,
+					"maxItems": 2
+				},
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"range_min": {
+							"type": "number"
+						},
+						"range_max": {
+							"type": "number"
+						}
+					}
+				}
+			],
+			"description": "Range of random ticks to wait between tempt sounds."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1,
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"stop_distance": {
+			"type": "number",
+			"default": 1.5,
+			"description": "The distance at which the mob will stop following the player."
+		},
+		"tempt_sound": {
+			"type": "string",
+			"description": "Sound to play while the mob is being tempted."
+		},
+		"within_radius": {
+			"type": "number",
+			"default": 0,
+			"description": "Distance in blocks this mob can get tempted by a player holding an item they like."
+		}
+	}
+}

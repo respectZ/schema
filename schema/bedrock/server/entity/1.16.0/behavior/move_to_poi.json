@@ -1,0 +1,33 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Behavior Move To Poi",
+	"description": "Allows the mob to move to a POI if able to.",
+	"type": "object",
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			}
+		},
+		"poi_type": {
+			"type": "string",
+			"default": "null",
+			"description": "Tells the goal what POI type it should be looking for",
+			"enum": ["bed", "jobsite", "meeting_area"]
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1,
+			"description": "Movement speed multiplier of the mob when using this goal."
+		}
+	},
+	"additionalProperties": false
+}

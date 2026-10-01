@@ -1,0 +1,100 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Pushable By Entity",
+	"description": "Allows an entity to be pushed by other entities.",
+	"type": "object",
+	"properties": {
+		"presets": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/entity_pushablebyentitypreset"
+			},
+			"default": [],
+			"description": "Defines how this entity behaves when pushed by another entity. The first preset whose \"filter\" conditions are met will be applied; if none match, a default configuration is used instead."
+		}
+	},
+	"$defs": {
+		"entity_pushablebyentitypreset": {
+			"type": "object",
+			"properties": {
+				"filters": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": "Conditions that must be met for this preset to be applied."
+				},
+				"kick_speed_scale": {
+					"type": "number",
+					"default": 2,
+					"description": "Multiplier applied to the pushing entity's movement speed to determine kick force. Only used when push_mode is \"ball\"."
+				},
+				"max_distance": {
+					"type": "number",
+					"default": 3.4028234663852886e38,
+					"description": "Maximum horizontal distance between the center of the pushed entity and the collision of the pushing entity for push forces to be applied. Entities further apart than this will not push each other."
+				},
+				"max_kick_speed": {
+					"type": "number",
+					"default": 0.5,
+					"description": "Maximum speed the entity can be pushed back at, regardless of how fast the pushing entity is moving. Only used when push_mode is \"ball\"."
+				},
+				"min_distance": {
+					"type": "number",
+					"default": 0.009999999776482582,
+					"description": "Minimum horizontal distance between the centers of the two entities for push forces to be applied. Entities closer than this will not push each other."
+				},
+				"min_kick_speed": {
+					"type": "number",
+					"default": 0,
+					"description": "Minimum speed the the entity will be pushed back at, regardless of how slowly the pushing entity is moving. Only used when push_mode is \"ball\"."
+				},
+				"play_sound": {
+					"type": "boolean",
+					"default": false,
+					"description": "If the \"pushed_by_player\" sound should be played when the entity is pushed by any other entity (despite the sound name)."
+				},
+				"play_sound_cooldown_in_seconds": {
+					"type": "number",
+					"default": 0.20000000298023224,
+					"description": "Cooldown in seconds between sounds. A lower number results in more sounds."
+				},
+				"play_sound_impulse_threshold": {
+					"type": "number",
+					"default": 0.20000000298023224,
+					"description": "Minimum change of velocity needed to trigger the push sound. A lower value means higher sensitivity."
+				},
+				"push_mode": {
+					"type": "string",
+					"default": "default",
+					"enum": ["ball", "default", "legacy_boat", "legacy_minecart", "none"],
+					"description": "Defines the type of push vector calculation applied to the entity: - \"none\": The entity cannot be pushed."
+				},
+				"push_scale_other": {
+					"type": "number",
+					"default": 1,
+					"description": "Scales how much push force this entity applies to the other entity when colliding. A value of 1.0 applies full force, 0.5 applies half."
+				},
+				"push_scale_self": {
+					"type": "number",
+					"default": 1,
+					"description": "Scales how much this entity pushes itself away when colliding with another entity. A value of 1.0 applies full force, 0.5 applies half."
+				},
+				"require_collision_overlap": {
+					"type": "boolean",
+					"default": true,
+					"description": "When true, entities will not push each other unless their collision boxes overlap."
+				},
+				"strength_multiplier": {
+					"type": "number",
+					"default": 0.05000000074505806,
+					"description": "Multiplier applied to the push strength. Higher values result in stronger pushes."
+				},
+				"vertical_kick_multiplier": {
+					"type": "number",
+					"default": 0.30000001192092896,
+					"description": "Multiplier for the upward force applied when the entity is pushed while on the ground. A value of 0 keeps the entity flat. Only used when push_mode is \"ball\"."
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

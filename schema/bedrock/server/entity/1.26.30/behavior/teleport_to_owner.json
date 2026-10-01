@@ -1,0 +1,60 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Allows an entity to teleport to its owner.",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			}
+		},
+		"cooldown": {
+			"type": "number",
+			"minimum": 0,
+			"default": 1,
+			"description": "The time in seconds that must pass for the entity to be able to try to teleport again."
+		},
+		"filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "Conditions to be satisfied for the entity to teleport to its owner."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal.",
+			"minimum": 0
+		}
+	},
+	"$defs": {
+		"filters": {
+			"type": "object",
+			"properties": {
+				"domain": {
+					"type": "object",
+					"description": "The domain the test should be performed in."
+				},
+				"operator": {
+					"type": "object",
+					"description": "The comparison to apply with 'value'."
+				},
+				"subject": {
+					"type": "object",
+					"description": "The subject of this filter test."
+				},
+				"test": {
+					"type": "string",
+					"description": "The name of the test to apply."
+				},
+				"value": {
+					"type": "object",
+					"description": "The value being compared with the test."
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}

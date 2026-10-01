@@ -1,0 +1,36 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Inside Block Notifier",
+	"description": "Verifies whether the entity is inside any of the listed blocks.",
+	"type": "object",
+	"properties": {
+		"block_list": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/block_list"
+			},
+			"description": "List of blocks, with certain block states, that we are monitoring to see if the entity is inside."
+		}
+	},
+	"$defs": {
+		"block_list": {
+			"type": "object",
+			"properties": {
+				"block": {
+					"$ref": "../../../../../vanilla/server/block_descriptor.json",
+					"description": "The block to monitor, including name and optional states."
+				},
+				"entered_block_event": {
+					"$ref": "../../1.16.0/triggers.json",
+					"description": "Event to fire when the entity enters the block."
+				},
+				"exited_block_event": {
+					"$ref": "../../1.16.0/triggers.json",
+					"description": "Event to fire when the entity exits the block."
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

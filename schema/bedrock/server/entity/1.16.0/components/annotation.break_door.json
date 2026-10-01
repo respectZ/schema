@@ -1,0 +1,21 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Annotation Break Door",
+	"description": "Allows an entity to break doors, assuming that that flags set up for the component to use in navigation.",
+	"type": "object",
+	"properties": {
+		"break_time": {
+			"type": "integer",
+			"minimum": 0,
+			"default": 12,
+			"description": "The time in seconds required to break through doors."
+		},
+		"min_difficulty": {
+			"type": "string",
+			"default": "hard",
+			"description": "The minimum difficulty that the world must be on for this entity to break doors.",
+			"enum": ["peaceful", "easy", "normal", "hard"]
+		}
+	},
+	"additionalProperties": false
+}

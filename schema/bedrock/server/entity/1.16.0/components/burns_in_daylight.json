@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"title": "Burns In Daylight",
+	"description": "Sets that this entity burns in daylight.",
+	"additionalProperties": false,
+	"properties": {}
+}

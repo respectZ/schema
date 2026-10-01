@@ -1,0 +1,43 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Attack Damage",
+	"description": "Specifies how much damage is dealt by the entity when it attacks.",
+	"type": "object",
+	"properties": {
+		"min": {
+			"type": "integer"
+		},
+		"max": {
+			"type": "integer"
+		},
+		"value": {
+			"oneOf": [
+				{
+					"type": "integer"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "integer"
+					},
+					"minItems": 2,
+					"maxItems": 2
+				},
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"range_min": {
+							"type": "integer"
+						},
+						"range_max": {
+							"type": "integer"
+						}
+					}
+				}
+			],
+			"description": "How much an attack should damage a target."
+		}
+	},
+	"additionalProperties": false
+}

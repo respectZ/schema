@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Movement Dolphin",
+	"description": "This component can control how dolphins move, in a dolphin-esque style.",
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false
+}

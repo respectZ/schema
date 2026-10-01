@@ -1,0 +1,57 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Behavior Fertilize Farm Block",
+	"description": "Allows the mob to search within an area for a growable crop block. If found, the mob will use any available fertilizer in their inventory on the crop. This goal will not execute if the mob does not have a fertilizer item in its inventory.",
+	"type": "object",
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"goal_radius": {
+			"type": "number",
+			"default": 1.5,
+			"description": "Distance in blocks within the mob considers it has reached it's target position. Value must be > 0."
+		},
+		"max_fertilizer_usage": {
+			"type": "integer",
+			"default": 1,
+			"description": "The maximum number of times the mob will use fertilzer on the target block. Value must be > 0."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"search_cooldown_max_seconds": {
+			"type": "number",
+			"default": 8,
+			"description": "The maximum amount of time in seconds that the goal can take before searching again. The time is chosen between 0 and this number. Value must be > 0."
+		},
+		"search_count": {
+			"type": "integer",
+			"default": 9,
+			"description": "The number of randomly selected blocks each tick that the mob will check within its search range and height for a valid block to move to."
+		},
+		"search_height": {
+			"type": "integer",
+			"default": 1,
+			"description": "The height in blocks the mob will search within to find a valid target position. Value must be > 0."
+		},
+		"search_range": {
+			"type": "integer",
+			"default": 1,
+			"description": "The distance in blocks the mob will search within to find a valid target position. Value must be > 0."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 0.5,
+			"description": "Movement speed multiplier of the mob when using this goal."
+		}
+	},
+	"additionalProperties": false
+}

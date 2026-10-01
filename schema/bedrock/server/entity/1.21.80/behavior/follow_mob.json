@@ -1,0 +1,54 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"title": "Behavior Follow Mob",
+	"description": "Allows the mob to follow other mobs.",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"jump",
+					"look",
+					"move"
+				]
+			},
+			"default": []
+		},
+		"filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "If non-empty, provides criteria for filtering which nearby Mobs can be followed."
+		},
+		"preferred_actor_type": {
+			"type": "string",
+			"description": "The type of actor to prefer following. If left unspecified, a random actor among those in range will be chosen."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"search_range": {
+			"type": "integer",
+			"default": 0,
+			"description": "Horizontal search range in blocks."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1,
+			"description": "Movement speed multiplier while following."
+		},
+		"stop_distance": {
+			"type": "number",
+			"default": 2,
+			"description": "Distance in blocks at which the entity stops following."
+		},
+		"use_home_position_restriction": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true, the mob will respect the 'minecraft:home' component's 'restriction_radius' field when choosing a target to follow."
+		}
+	}
+}

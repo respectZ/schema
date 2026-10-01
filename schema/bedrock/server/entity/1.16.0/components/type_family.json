@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"title": "Type Family",
+	"description": "Defines the families this entity belongs to.",
+	"additionalProperties": false,
+	"properties": {
+		"family": {
+			"type": "array",
+			"description": "List of family names.",
+			"items": {
+				"$ref": "../../../../../vanilla/server/type_family.json"
+			}
+		}
+	}
+}

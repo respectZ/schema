@@ -1,0 +1,68 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Conditional Bandwidth Optimization",
+	"description": "Defines the Conditional Spatial Update Bandwidth Optimizations of this entity.",
+	"type": "object",
+	"properties": {
+		"conditional_values": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/conditional_values"
+			},
+			"description": "The object containing the conditional bandwidth optimization values."
+		},
+		"default_values": {
+			"$ref": "#/$defs/default_values",
+			"description": "The object containing the default bandwidth optimization values."
+		}
+	},
+	"$defs": {
+		"conditional_values": {
+			"type": "object",
+			"properties": {
+				"conditional_values": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": "Conditions that must be met for these optimization values to be used."
+				},
+				"max_dropped_ticks": {
+					"type": "integer",
+					"default": 10,
+					"description": "In relation to the optimization value, determines the maximum ticks spatial update packets can be not sent. Value must be >= 0."
+				},
+				"max_optimized_distance": {
+					"type": "number",
+					"default": 80,
+					"description": "The maximum distance considered during bandwidth optimizations."
+				},
+				"use_motion_prediction_hints": {
+					"type": "boolean",
+					"default": false,
+					"description": "When set to true, smaller motion packets will be sent during drop packet intervals, resulting in the same amount of packets being sent as without optimizations but with much less data being sent."
+				}
+			},
+			"additionalProperties": false
+		},
+		"default_values": {
+			"type": "object",
+			"properties": {
+				"max_dropped_ticks": {
+					"type": "integer",
+					"default": 10,
+					"description": "Determines the maximum ticks spatial update packets can be not sent."
+				},
+				"max_optimized_distance": {
+					"type": "number",
+					"default": 80,
+					"description": "The maximum distance considered during bandwidth optimizations."
+				},
+				"use_motion_prediction_hints": {
+					"type": "boolean",
+					"default": false,
+					"description": "When true, smaller motion packets will be sent during drop packet intervals."
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

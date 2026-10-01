@@ -12,11 +12,13 @@
 		},
 		"is_experimental": {
 			"type": "boolean",
+			"default": false,
 			"title": "Is Experimental",
 			"description": "Whether this entity is experimental and only enabled with the experimental toggle."
 		},
 		"is_summonable": {
 			"type": "boolean",
+			"default": false,
 			"title": "Is Summonable",
 			"description": "Whether this entity can be summoned via the /summon command."
 		},
@@ -26,6 +28,7 @@
 		},
 		"is_spawnable": {
 			"type": "boolean",
+			"default": false,
 			"title": "Is Spawnable",
 			"description": "Whether this entity has a spawn egg in the creative inventory."
 		}

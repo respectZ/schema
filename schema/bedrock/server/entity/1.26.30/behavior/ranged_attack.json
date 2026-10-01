@@ -1,0 +1,100 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Allows an entity to attack by using ranged shots. \"charge_shoot_trigger\" must be greater than 0 to enable charged up burst-shot attacks. Requires minecraft:shooter to define projectile behaviour.",
+	"additionalProperties": false,
+	"properties": {
+		"attack_interval": {
+			"$ref": "../float_range.json",
+			"description": "Reload-time range (in seconds), when not using a charged shot."
+		},
+		"attack_interval_max": {
+			"type": "number",
+			"default": 0,
+			"description": "Maximum bound for reload-time range (in seconds), when not using a charged shot. Reload-time range scales with target-distance."
+		},
+		"attack_interval_min": {
+			"type": "number",
+			"default": 0,
+			"description": "Minimum bound for reload-time range (in seconds), when not using a charged shot. Reload-time range scales with target-distance."
+		},
+		"attack_radius": {
+			"type": "number",
+			"default": 0,
+			"description": "Minimum distance to target before this entity will attempt to shoot. Value must be > 0."
+		},
+		"attack_radius_min": {
+			"type": "number",
+			"default": 0,
+			"description": "Minimum distance the target can be for this mob to fire. If the target is closer, this mob will move first before firing Value must be > 0."
+		},
+		"burst_interval": {
+			"type": "number",
+			"default": 0,
+			"description": "Time (in seconds) between each individual shot when firing a burst of shots from a charged up attack. Value must be > 0."
+		},
+		"burst_shots": {
+			"type": "integer",
+			"default": 1,
+			"description": "Number of shots fired every time the attacking entity uses a charged up attack."
+		},
+		"charge_charged_trigger": {
+			"type": "number",
+			"default": 0,
+			"description": "Time (in seconds, then add \"charge_shoot_trigger\"), before a charged up attack is done charging. Charge-time decays while target is not in sight. Value must be > 0."
+		},
+		"charge_shoot_trigger": {
+			"type": "number",
+			"default": 0,
+			"description": "Amount of time (in seconds, then doubled) a charged shot must be charging before reloading burst shots. Charge-time decays while target is not in sight. Value must be > 0."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"ranged_fov": {
+			"type": "number",
+			"default": 90,
+			"description": "Field of view (in degrees) when using sensing to detect a target for attack."
+		},
+		"set_persistent": {
+			"type": "boolean",
+			"default": false,
+			"description": "Allows the actor to be set to persist upon targeting a player"
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1,
+			"description": "During attack behavior, this multiplier modifies the entity's speed when moving toward the target. Value must be > 0."
+		},
+		"swing": {
+			"type": "boolean",
+			"default": false,
+			"description": "If a swing animation (using variable.attack_time) exists, this causes the actor to swing their arm(s) upon firing the ranged attack."
+		},
+		"target_in_sight_time": {
+			"type": "number",
+			"default": 1,
+			"description": "Minimum amount of time (in seconds) the attacking entity needs to see the target before moving toward it. Value must be > 0."
+		},
+		"x_max_rotation": {
+			"type": "number",
+			"default": 30,
+			"description": "Maximum rotation (in degrees), on the X-axis, this entity can rotate while trying to look at the target."
+		},
+		"y_max_head_rotation": {
+			"type": "number",
+			"default": 30,
+			"description": "Maximum rotation (in degrees), on the Y-axis, this entity can rotate its head while trying to look at the target."
+		}
+	}
+}

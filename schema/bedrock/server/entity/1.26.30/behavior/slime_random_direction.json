@@ -1,0 +1,37 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Allows the entity to move in random directions like a slime.",
+	"additionalProperties": false,
+	"properties": {
+		"add_random_time_range": {
+			"type": "integer",
+			"default": 3,
+			"description": "Additional time (in whole seconds), chosen randomly in the range of [0, \"add_random_time_range\"], to add to \"min_change_direction_time\"."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"min_change_direction_time": {
+			"type": "number",
+			"default": 2,
+			"description": "Constant minimum time (in seconds) to wait before choosing a new direction."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal.",
+			"minimum": 0
+		},
+		"turn_range": {
+			"type": "integer",
+			"default": 360,
+			"description": "Maximum rotation angle range (in degrees) when randomly choosing a new direction."
+		}
+	}
+}

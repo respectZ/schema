@@ -1,0 +1,43 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Bounciness",
+	"description": "Defines the bounciness of this entity.",
+	"type": "object",
+	"properties": {
+		"min": {
+			"type": "number"
+		},
+		"max": {
+			"type": "number"
+		},
+		"value": {
+			"description": "The bounciness value. 0.0 means no bounciness, 1.0 means maximum bounciness.",
+			"oneOf": [
+				{
+					"$ref": "#/$defs/value"
+				},
+				{
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1,
+					"default": 0
+				}
+			]
+		}
+	},
+	"$defs": {
+		"value": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"range_max": {
+					"type": "number"
+				},
+				"range_min": {
+					"type": "number"
+				}
+			}
+		}
+	},
+	"additionalProperties": false
+}

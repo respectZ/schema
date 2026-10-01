@@ -1,0 +1,99 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Flocking",
+	"description": "Allows entities to flock in groups in water or not.",
+	"type": "object",
+	"properties": {
+		"block_distance": {
+			"type": "number",
+			"default": 0,
+			"description": "The amount of blocks away the entity will look at to push away from."
+		},
+		"block_weight": {
+			"type": "number",
+			"default": 0,
+			"description": "The weight of the push back away from blocks."
+		},
+		"breach_influence": {
+			"type": "number",
+			"default": 0,
+			"description": "The amount of push back given to a flocker that breaches out of the water."
+		},
+		"cohesion_threshold": {
+			"type": "number",
+			"default": 1,
+			"description": "The threshold in which to start applying cohesion."
+		},
+		"cohesion_weight": {
+			"type": "number",
+			"default": 1,
+			"description": "The weight applied for the cohesion steering of the flock."
+		},
+		"goal_weight": {
+			"type": "number",
+			"default": 0,
+			"description": "The weight on which to apply on the goal output."
+		},
+		"high_flock_limit": {
+			"type": "integer",
+			"default": 0,
+			"description": "Determines the high bound amount of entities that can be allowed in the flock."
+		},
+		"in_water": {
+			"type": "boolean",
+			"default": false,
+			"description": "Tells the Flocking Component if the entity exists in water."
+		},
+		"influence_radius": {
+			"type": "number",
+			"default": 0,
+			"description": "The area around the entity that allows others to be added to the flock."
+		},
+		"innner_cohesion_threshold": {
+			"type": "number",
+			"default": 0,
+			"description": "The distance in which the flocker will stop applying cohesion."
+		},
+		"loner_chance": {
+			"type": "number",
+			"default": 0,
+			"description": "The percentage chance between 0-1 that a fish will spawn and not want to join flocks. Invalid values will be capped at the end points."
+		},
+		"low_flock_limit": {
+			"type": "integer",
+			"default": 0,
+			"description": "Determines the low bound amount of entities that can be allowed in the flock."
+		},
+		"match_variants": {
+			"type": "boolean",
+			"default": false,
+			"description": "Tells the flockers that they can only match similar entities that also match the variant, mark variants, and color data of the other potential flockers."
+		},
+		"max_height": {
+			"type": "number",
+			"default": 0,
+			"description": "The max height allowable in the air or water."
+		},
+		"min_height": {
+			"type": "number",
+			"default": 0,
+			"description": "The min height allowable in the air or water."
+		},
+		"separation_threshold": {
+			"type": "number",
+			"default": 2,
+			"description": "The distance that is determined to be to close to another flocking and to start applying separation."
+		},
+		"separation_weight": {
+			"type": "number",
+			"default": 1,
+			"description": "The weight applied to the separation of the flock."
+		},
+		"use_center_of_mass": {
+			"type": "boolean",
+			"default": false,
+			"description": "Tells the flockers that they will follow flocks based on the center of mass."
+		}
+	},
+	"additionalProperties": false
+}

@@ -1,0 +1,81 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Healable",
+	"description": "How entities heal.",
+	"type": "object",
+	"properties": {
+		"filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "The filter group that defines the conditions for using this item to heal the entity."
+		},
+		"force_use": {
+			"type": "boolean",
+			"default": false,
+			"description": "Determines if item can be used regardless of entity being at full health."
+		},
+		"items": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/items"
+			},
+			"description": "The array of items that can be used to heal this entity."
+		}
+	},
+	"$defs": {
+		"items": {
+			"type": "object",
+			"properties": {
+				"effects": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/effects"
+					}
+				},
+				"heal_amount": {
+					"type": "integer",
+					"default": 1,
+					"description": "The amount of health this entity gains when fed this item."
+				},
+				"item": {
+					"$ref": "../../../../../vanilla/server/item_descriptor.json",
+					"description": "Item identifier that can be used to heal this entity."
+				},
+				"result_item": {
+					"$ref": "../../../../../vanilla/server/item_descriptor.json",
+					"description": "The item that is given back to the player when they heal the entity. If not specified, the item used to heal is consumed."
+				}
+			},
+			"additionalProperties": false
+		},
+		"effects": {
+			"type": "object",
+			"properties": {
+				"amplifier": {
+					"type": "number",
+					"description": "The amplifier of the effect to apply to the entity."
+				},
+				"chance": {
+					"type": "number",
+					"description": "The chance the effect will be applied to the entity."
+				},
+				"duration": {
+					"oneOf": [
+						{
+							"type": "number",
+							"description": "The duration in seconds of the effect to apply."
+						},
+						{
+							"enum": ["infinite"]
+						}
+					]
+				},
+				"name": {
+					"$ref": "../../../../../vanilla/server/effect_type.json",
+					"description": "The identifier of the effect to apply."
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

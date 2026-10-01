@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Player Level",
+	"description": "Defines the player's hunger.",
+	"type": "object",
+	"properties": {
+		"max": {
+			"type": "integer"
+		},
+		"value": {
+			"type": "integer"
+		}
+	},
+	"additionalProperties": false
+}

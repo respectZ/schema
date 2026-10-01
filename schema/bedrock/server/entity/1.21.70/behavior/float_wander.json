@@ -1,0 +1,74 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"title": "Behavior Float Wander",
+	"description": "Allows the mob to float around like the Ghast.",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"jump",
+					"look",
+					"move"
+				]
+			},
+			"default": []
+		},
+		"float_duration": {
+			"oneOf": [
+				{
+					"type": "number",
+					"minimum": 0,
+					"description": "Fixed duration in seconds of each float."
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "number",
+						"minimum": 0
+					},
+					"minItems": 2,
+					"maxItems": 2,
+					"description": "Range [min, max] of the random float duration in seconds."
+				}
+			],
+			"description": "Duration of each float."
+		},
+		"must_reach": {
+			"type": "boolean",
+			"description": "Whether the entity must reach the chosen position before reselecting."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"random_reselect": {
+			"type": "boolean",
+			"description": "Whether a new position is reselected while the entity floats."
+		},
+		"use_home_position_restriction": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true, the mob will respect home position restrictions when choosing new target positions. If false, it will choose target position without considering home restrictions"
+		},
+		"xz_dist": {
+			"type": "integer",
+			"default": 10,
+			"description": "Maximum horizontal distance in blocks of the random position."
+		},
+		"y_dist": {
+			"type": "integer",
+			"default": 7,
+			"description": "Maximum vertical distance in blocks of the random position."
+		},
+		"y_offset": {
+			"type": "number",
+			"default": 0,
+			"description": "Vertical offset applied to the chosen position."
+		}
+	}
+}

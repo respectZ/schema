@@ -1,0 +1,21 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Entity Event Trigger",
+	"description": "A trigger that fires a named event when a condition is met.",
+	"type": "object",
+	"unevaluatedProperties": false,
+	"properties": {
+		"event": {
+			"type": "string",
+			"description": "The name of the event to run when this trigger fires."
+		},
+		"target": {
+			"$ref": "../../../../vanilla/server/filter/general.json#/$defs/filter_subject",
+			"description": "The subject of the trigger. Defaults to 'self'."
+		},
+		"filters": {
+			"$ref": "../../../../vanilla/server/filter/entity/_index.json",
+			"description": "Optional. Filter conditions that must be met for the event to fire."
+		}
+	}
+}

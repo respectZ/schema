@@ -1,0 +1,19 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Player Experience",
+	"description": "Defines how much experience each player action should take.",
+	"type": "object",
+	"properties": {
+		"max": {
+			"type": "integer",
+			"default": 5,
+			"description": "The maximum player experience of this entity."
+		},
+		"value": {
+			"type": "integer",
+			"default": 1,
+			"description": "The initial value of the player experience."
+		}
+	},
+	"additionalProperties": false
+}

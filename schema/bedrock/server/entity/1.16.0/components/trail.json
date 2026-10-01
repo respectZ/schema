@@ -1,0 +1,27 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Trail",
+	"description": "Causes an entity to leave a trail of blocks as it moves about the world.",
+	"type": "object",
+	"properties": {
+		"block_type": {
+			"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+			"description": "The type of block you wish to be spawned by the entity as it move about the world. Solid blocks may not be spawned at an offset of (0,0,0)."
+		},
+		"spawn_filter": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "One or more conditions that must be met in order to cause the chosen block type to spawn."
+		},
+		"spawn_offset": {
+			"type": "array",
+			"items": {
+				"type": "number"
+			},
+			"minItems": 3,
+			"maxItems": 3,
+			"default": [0, 0, 0],
+			"description": "The distance from the entities current position to spawn the block."
+		}
+	},
+	"additionalProperties": false
+}

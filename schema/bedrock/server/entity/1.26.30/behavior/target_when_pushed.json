@@ -1,0 +1,97 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Allows the mob to target another mob when it is pushed by that mob.",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			}
+		},
+		"entity_types": {
+			"$ref": "../entity_types.json",
+			"default": [],
+			"description": "List of entity types that can trigger this mob to begin targeting"
+		},
+		"percent_chance": {
+			"type": "number",
+			"default": 0,
+			"description": "The probability that the mob will target another mob when pushed. A value of 100 is 100%"
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"minimum": 0
+		}
+	},
+	"$defs": {
+		"entity_types_entity_types": {
+			"type": "object",
+			"properties": {
+				"check_if_outnumbered": {
+					"type": "boolean",
+					"default": false,
+					"description": "If true, the mob will check if its outnumbered"
+				},
+				"cooldown": {
+					"type": "integer",
+					"default": 0,
+					"description": "The amount of time in seconds that the mob has to wait before selecting a target of the same type again"
+				},
+				"filters": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": "Conditions that make this entry in the list valid"
+				},
+				"max_dist": {
+					"type": "number",
+					"default": 16,
+					"description": "Maximum distance this mob can be away to be a valid choice"
+				},
+				"max_flee": {
+					"type": "number",
+					"default": 10,
+					"description": "Maximum distance this mob can be from the target to stop fleeing"
+				},
+				"max_height": {
+					"type": "number",
+					"default": -1,
+					"description": "Maximum height this mob can be away to be a valid choice"
+				},
+				"must_see": {
+					"type": "boolean",
+					"description": "If true, the mob has to be visible to be a valid choice"
+				},
+				"must_see_forget_duration": {
+					"type": "integer",
+					"default": 3,
+					"description": "Determines the amount of time in seconds that this mob will look for a target before forgetting about it and looking for a new one when the target isn't visible any more"
+				},
+				"priority": {
+					"type": "integer",
+					"default": 0,
+					"description": "Priority for this mob type"
+				},
+				"reevaluate_description": {
+					"type": "boolean",
+					"default": false,
+					"description": "If true, the mob will stop being targeted if it stops meeting any conditions."
+				},
+				"sprint_speed_multiplier": {
+					"type": "number",
+					"default": 1,
+					"description": "Multiplier for the sprinting speed. A value of 1.0 means the speed is unchanged"
+				},
+				"walk_speed_multiplier": {
+					"type": "number",
+					"default": 1,
+					"description": "Multiplier for the walking speed. A value of 1.0 means the speed is unchanged"
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}

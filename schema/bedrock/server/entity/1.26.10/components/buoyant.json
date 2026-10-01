@@ -1,0 +1,52 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Buoyant",
+	"description": "Enables an entity to float on the specified liquid blocks.",
+	"type": "object",
+	"properties": {
+		"apply_gravity": {
+			"type": "boolean",
+			"default": true,
+			"description": "Applies gravity each tick. Causes \"movement_type\" to be more impactful, but also gravity to be applied more intensely outside liquids."
+		},
+		"base_buoyancy": {
+			"type": "number",
+			"default": 1,
+			"description": "Base buoyancy used to calculate how much will a entity float."
+		},
+		"big_wave_probability": {
+			"type": "number",
+			"default": 0.03,
+			"description": "Probability for a big wave hitting the entity. Only used if \"movement_type\" is \"waves\"."
+		},
+		"big_wave_speed": {
+			"type": "number",
+			"default": 10,
+			"description": "Multiplier for the speed to make a big wave. Triggered depending on \"big_wave_probability\"."
+		},
+		"can_auto_step_from_liquid": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the entity can move out of a liquid block to a neighboring solid block if pushed against it."
+		},
+		"drag_down_on_buoyancy_removed": {
+			"type": "number",
+			"default": 0,
+			"description": "How much an entity will be dragged down when the component is removed."
+		},
+		"liquid_blocks": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/block_descriptor.json"
+			},
+			"description": "List of blocks this entity can float on. Must be a liquid block."
+		},
+		"movement_type": {
+			"type": "string",
+			"default": "waves",
+			"enum": ["waves", "bobbing", "none"],
+			"description": "Type of vertical movement applied to the entity: \"waves\", simulates wave movement based on the entity speed. \"bobbing\", simulates waves going through. \"none\", simulates waves going through."
+		}
+	},
+	"additionalProperties": false
+}

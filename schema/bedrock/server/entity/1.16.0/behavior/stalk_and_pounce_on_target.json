@@ -1,0 +1,76 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Behavior Stalk And Pounce On Target",
+	"description": "Allows a mob to stalk a target, then once within range pounce onto a target, on success the target will be attacked dealing damage defined by the attack component. On failure, the mob will risk getting stuck.",
+	"type": "object",
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			}
+		},
+		"interest_time": {
+			"type": "number",
+			"default": 2,
+			"description": "The amount of time the mob will be interested before pouncing. This happens when the mob is within range of pouncing"
+		},
+		"leap_dist": {
+			"type": "number",
+			"default": 0.800000011920929,
+			"description": "The distance in blocks the mob jumps in the direction of its target"
+		},
+		"leap_distance": {
+			"type": "number",
+			"default": 0.8,
+			"description": "The distance in blocks the mob jumps in the direction of its target"
+		},
+		"leap_height": {
+			"type": "number",
+			"default": 0.8999999761581421,
+			"description": "The height in blocks the mob jumps when leaping at its target"
+		},
+		"max_stalk_dist": {
+			"type": "number",
+			"default": 10,
+			"description": "The maximum distance away a target can be before the mob gives up on stalking"
+		},
+		"pounce_max_dist": {
+			"type": "number",
+			"default": 5,
+			"description": "The maximum distance away from the target in blocks to begin pouncing at the target"
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"set_persistent": {
+			"type": "boolean",
+			"default": false,
+			"description": "Allows the actor to be set to persist upon targeting a player"
+		},
+		"stalk_speed": {
+			"type": "number",
+			"default": 1.2000000476837158,
+			"description": "The movement speed in which you stalk your target"
+		},
+		"strike_dist": {
+			"type": "number",
+			"default": 2,
+			"description": "The max distance away from the target when landing from the pounce that will still result in damaging the target"
+		},
+		"stuck_blocks": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "Blocks that the mob can get stuck in after a pounce."
+		},
+		"stuck_time": {
+			"type": "number",
+			"default": 2,
+			"description": "The amount of time the mob will be stuck if they fail and land on a block they can be stuck on"
+		}
+	},
+	"additionalProperties": false
+}

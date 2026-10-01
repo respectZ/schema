@@ -3,7 +3,6 @@
 	"type": "object",
 	"title": "Event Trigger",
 	"description": "A trigger that fires a named event when a condition is met.",
-	"required": ["event"],
 	"additionalProperties": false,
 	"properties": {
 		"event": {

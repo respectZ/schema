@@ -1,0 +1,85 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Allows the mob to enter the panic state, which makes it run around and away from the damage source that made it enter this state.",
+	"additionalProperties": false,
+	"properties": {
+		"damage_sources": {
+			"oneOf": [
+				{
+					"$ref": "../../../../../vanilla/server/damage_type.json"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../../../../vanilla/server/damage_type.json"
+					}
+				}
+			],
+			"description": "The list of Entity Damage Sources that will cause this mob to panic"
+		},
+		"force": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, this mob will not stop panicking until it can't move anymore or the goal is removed from it"
+		},
+		"ignore_mob_damage": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, the mob will not panic in response to damage from other mobs. This overrides the damage types in \"damage_sources\""
+		},
+		"panic_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json"
+		},
+		"prefer_water": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, the mob will prefer water over land"
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1,
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"sound_interval": {
+			"oneOf": [
+				{
+					"type": "number"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "number"
+					},
+					"minItems": 2,
+					"maxItems": 2
+				},
+				{
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"range_min": {
+							"type": "number"
+						},
+						"range_max": {
+							"type": "number"
+						}
+					}
+				}
+			]
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		}
+	}
+}

@@ -1,0 +1,108 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "A behavior that enables a mob to transport items from and to containers.",
+	"additionalProperties": false,
+	"properties": {
+		"allow_simultaneous_interaction": {
+			"type": "boolean",
+			"default": false,
+			"description": "When true the mob will wait until a container is not used by other entities before starting to interact with it."
+		},
+		"allowed_items": {
+			"type": "array",
+			"description": "A list of item descriptors that are the only items the mob is allowed to transport.",
+			"items": {
+				"$ref": "../../../../../vanilla/server/item_descriptor.json"
+			},
+			"default": []
+		},
+		"control_flags": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			}
+		},
+		"destination_container_types": {
+			"type": "array",
+			"description": "A list of block descriptors that should be container types to put items in. Can be simple block identifier strings or objects with name, states, and tags.",
+			"items": {
+				"$ref": "../../../../../vanilla/server/block_descriptor.json"
+			},
+			"default": []
+		},
+		"disallowed_items": {
+			"type": "array",
+			"description": "A list of item descriptors that are the mob is not allowed to transport. If non-empty \"allowed_items\" must be empty.",
+			"items": {
+				"$ref": "../../../../../vanilla/server/item_descriptor.json"
+			},
+			"default": []
+		},
+		"idle_cooldown": {
+			"type": "integer",
+			"default": 20,
+			"description": "When the mob cannot find a container in which to get or put items, the goal will stop being active for this amount of time in seconds."
+		},
+		"initial_cooldown": {
+			"type": "integer",
+			"default": 0,
+			"description": "How long the mob will wait after spawning or getting the goal added before the goal can start."
+		},
+		"interaction_time": {
+			"type": "number",
+			"default": 3,
+			"description": "The amount of time in seconds spent interacting with the containers.",
+			"minimum": 0
+		},
+		"max_stack_size": {
+			"type": "integer",
+			"default": 64,
+			"description": "The maximum stack size that the mob will try to take from a container. Value must be >= 1. Value must be <= 64.",
+			"minimum": 1.0,
+			"maximum": 64.0
+		},
+		"max_visited_containers": {
+			"type": "integer",
+			"default": 16,
+			"description": "The maximum number of containers that the mob will try to take/place items from before going on cooldown and starting over."
+		},
+		"place_strategy": {
+			"type": "string",
+			"default": "any",
+			"description": "The strategy to use for placing the transported item.",
+			"enum": ["any", "with_matching", "with_matching_or_empty"]
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"minimum": 0
+		},
+		"search_distance": {
+			"type": "array",
+			"minItems": 2,
+			"maxItems": 2,
+			"items": {
+				"type": "number"
+			},
+			"default": [64, 32],
+			"description": "The maximum search distance horizontally and vertically at which to find containers for taking or placing items."
+		},
+		"search_strategy": {
+			"type": "string",
+			"default": "random",
+			"description": "The strategy to use for finding source or destination containers. The nearest valid container or a random valid container in range.",
+			"enum": ["nearest", "random"]
+		},
+		"source_container_types": {
+			"type": "array",
+			"description": "A list of block descriptors that should be container types to take items from. Can be simple block identifier strings or objects with name, states, and tags.",
+			"items": {
+				"$ref": "../../../../../vanilla/server/block_descriptor.json"
+			},
+			"default": []
+		}
+	}
+}

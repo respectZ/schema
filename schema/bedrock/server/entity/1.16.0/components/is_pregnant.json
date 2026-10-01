@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Is Pregnant",
+	"description": "Sets that this entity is currently pregnant.",
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false
+}

@@ -1,0 +1,54 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Allows the mob to target another mob that hurts their owner.",
+	"additionalProperties": false,
+	"properties": {
+		"attack_owner": {
+			"type": "boolean",
+			"default": false
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"entity_types": {
+			"$ref": "../entity_types.json",
+			"default": [],
+			"description": "List of entity types that this mob can target if they hurt their owner"
+		},
+		"must_reach": {
+			"type": "boolean",
+			"default": false
+		},
+		"must_see": {
+			"type": "boolean",
+			"default": false
+		},
+		"must_see_forget_duration": {
+			"type": "number",
+			"default": 3,
+			"minimum": 0
+		},
+		"persist_time": {
+			"type": "number",
+			"default": 0,
+			"minimum": 0
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal.",
+			"minimum": 0
+		},
+		"within_radius": {
+			"type": "number",
+			"default": 0,
+			"minimum": 0
+		}
+	}
+}

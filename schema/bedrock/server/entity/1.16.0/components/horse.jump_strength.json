@@ -1,0 +1,42 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Horse Jump Strength",
+	"description": "Determines the jump height for a horse or similar entity, like a donkey.",
+	"type": "object",
+	"properties": {
+		"min": {
+			"type": "integer"
+		},
+		"max": {
+			"type": "integer"
+		},
+		"value": {
+			"description": "Value of jump strength the entity has when spawned.",
+			"oneOf": [
+				{
+					"$ref": "#/$defs/value"
+				},
+				{
+					"type": "number"
+				}
+			]
+		}
+	},
+	"$defs": {
+		"value": {
+			"type": "object",
+			"properties": {
+				"range_max": {
+					"type": "number",
+					"description": "Defines the maximum strength level."
+				},
+				"range_min": {
+					"type": "number",
+					"description": "Defines the minimum strength level."
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

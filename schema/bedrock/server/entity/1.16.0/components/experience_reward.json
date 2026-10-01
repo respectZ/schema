@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Experience Reward",
+	"description": ".",
+	"type": "object",
+	"properties": {
+		"on_bred": {
+			"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression",
+			"description": "A Molang expression defining the amount of experience rewarded when this entity is successfully bred."
+		},
+		"on_death": {
+			"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression",
+			"description": "A Molang expression defining the amount of experience rewarded when this entity dies."
+		}
+	},
+	"additionalProperties": false
+}

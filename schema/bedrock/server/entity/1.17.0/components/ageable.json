@@ -1,0 +1,83 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Ageable",
+	"description": "Adds a timer for the entity to grow up. It can be accelerated by giving the entity the items it likes as defined by feed_items.",
+	"type": "object",
+	"properties": {
+		"drop_items": {
+			"description": "List of items that are dropped when an entity grows up",
+			"oneOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+					}
+				},
+				{
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+				}
+			]
+		},
+		"duration": {
+			"type": "number",
+			"default": 1200,
+			"description": "Length of time before an entity grows up (-1 to always stay a baby)"
+		},
+		"feed_items": {
+			"oneOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/feed_items"
+					},
+					"description": "List of items that can be fed to an entity to age them up. Can be a single item string, an array of strings, or an array of objects with item and growth properties."
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+					}
+				},
+				{
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+				}
+			]
+		},
+		"feedItems": {
+			"doNotSuggest": true,
+			"$ref": "#/properties/feed_items"
+		},
+		"grow_up": {
+			"description": "Event to fire when an entity grows up. Can be an object with event and target properties, or a simple event string.",
+			"oneOf": [
+				{
+					"$ref": "../../1.16.0/triggers.json"
+				},
+				{
+					"type": "string"
+				}
+			]
+		},
+		"transform_item": {
+			"description": "The feed item used will transform to this item upon successful interaction. Format: itemName:auxValue",
+			"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+		}
+	},
+	"$defs": {
+		"feed_items": {
+			"type": "object",
+			"properties": {
+				"growth": {
+					"type": "number",
+					"description": "How much the entity ages when fed this item."
+				},
+				"item": {
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+					"description": "The item identifier."
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

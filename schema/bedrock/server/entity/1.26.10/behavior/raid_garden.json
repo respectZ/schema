@@ -1,0 +1,70 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"blocks": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
+			},
+			"default": [],
+			"description": "Block identifiers the entity considers as garden crops."
+		},
+		"control_flags": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			}
+		},
+		"eat_delay": {
+			"type": "integer",
+			"default": 2,
+			"description": "Time in ticks between eating each block."
+		},
+		"full_delay": {
+			"type": "integer",
+			"default": 100,
+			"description": "Time in ticks before the entity stops raiding after eating."
+		},
+		"goal_radius": {
+			"type": "number",
+			"default": 0.5,
+			"description": "Distance in blocks at which the entity is considered to have reached the crop."
+		},
+		"initial_eat_delay": {
+			"type": "integer",
+			"default": 0
+		},
+		"max_to_eat": {
+			"type": "integer",
+			"default": 6,
+			"description": "Maximum number of blocks the entity will eat per raid."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"search_count": {
+			"type": "integer",
+			"default": 10
+		},
+		"search_height": {
+			"type": "integer",
+			"default": 1
+		},
+		"search_range": {
+			"type": "integer",
+			"default": 0,
+			"description": "Horizontal search range in blocks."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1,
+			"description": "Movement speed multiplier while raiding."
+		}
+	}
+}

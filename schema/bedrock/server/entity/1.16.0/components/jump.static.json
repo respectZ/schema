@@ -1,0 +1,14 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"title": "Jump Static",
+	"description": "Gives the entity the ability to jump.",
+	"additionalProperties": false,
+	"properties": {
+		"jump_power": {
+			"type": "number",
+			"default": 0.42,
+			"description": "The initial vertical velocity for the jump."
+		}
+	}
+}

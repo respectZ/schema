@@ -1,0 +1,171 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Behavior Use Kinetic Weapon",
+	"description": "Enables a mob to use kinetic weaponry by intermittently charging at its target and repositioning afterward.",
+	"type": "object",
+	"properties": {
+		"approach_distance": {
+			"type": "number",
+			"default": 8,
+			"description": "The distance to the target within which the mob begins using its kinetic weapon."
+		},
+		"attack_once": {
+			"type": "boolean",
+			"default": false,
+			"description": "Allows the mob to perform this melee attack behavior only once during its lifetime."
+		},
+		"attack_types": {
+			"type": "string",
+			"description": "Defines the entity types this entity will attack."
+		},
+		"can_spread_on_fire": {
+			"type": "boolean",
+			"default": false,
+			"description": "Allows the mob, if on fire and empty handed, to ignite its target upon a successful attack."
+		},
+		"control_flags": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			}
+		},
+		"cooldown_distance": {
+			"$ref": "#/$defs/item_floatrange",
+			"description": "The distance the mob retreats to after all of the item's \"minecraft:kinetic_weapon\" component's \"max_duration\" values have elapsed."
+		},
+		"cooldown_speed_multiplier": {
+			"type": "number",
+			"default": 1,
+			"description": "Multiplier applied to the mob's movement speed while on cooldown."
+		},
+		"cooldown_time": {
+			"type": "number",
+			"default": 1,
+			"description": "Cooldown time, in seconds, between consecutive attacks."
+		},
+		"hijack_mount_navigation": {
+			"type": "boolean",
+			"default": false,
+			"description": "Allows the mob to override its mount's navigation behavior with the logic defined by this goal."
+		},
+		"inner_boundary_time_increase": {
+			"type": "number",
+			"default": 0.25,
+			"minimum": 0
+		},
+		"max_path_time": {
+			"type": "number",
+			"default": 0.550000011920929,
+			"description": "Maximum base time, in seconds, before recalculating a new attack path to the target (before increases are applied)."
+		},
+		"melee_fov": {
+			"type": "number",
+			"default": 90,
+			"description": "Field of view, in degrees, used by the hard-coded sensing component to detect a valid attack target."
+		},
+		"min_path_time": {
+			"type": "number",
+			"default": 0.20000000298023224,
+			"description": "Minimum base time, in seconds, before recalculating a new attack path to the target (before increases are applied)."
+		},
+		"on_attack": {
+			"$ref": "../../1.16.0/triggers.json",
+			"description": "Defines the event to trigger when this entity successfully attacks."
+		},
+		"on_kill": {
+			"$ref": "../../1.16.0/triggers.json",
+			"description": "Defines the event to trigger when this entity kills the target."
+		},
+		"outer_boundary_time_increase": {
+			"type": "number",
+			"default": 0.5,
+			"minimum": 0
+		},
+		"path_fail_time_increase": {
+			"type": "number",
+			"default": 0.75,
+			"minimum": 0
+		},
+		"path_inner_boundary": {
+			"type": "number",
+			"default": 16,
+			"minimum": 0
+		},
+		"path_outer_boundary": {
+			"type": "number",
+			"default": 32,
+			"minimum": 0
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0
+		},
+		"reposition_distance": {
+			"$ref": "#/$defs/item_floatrange",
+			"description": "The distance the mob retreats to once the target is closer than the midpoint of the item's \"minecraft:kinetic_weapon\" component's minimum and maximum \"reach\"."
+		},
+		"reposition_speed_multiplier": {
+			"type": "number",
+			"default": 1,
+			"description": "Multiplier applied to the mob's movement speed while repositioning."
+		},
+		"random_stop_interval": {
+			"type": "integer",
+			"default": 0,
+			"minimum": 0
+		},
+		"require_complete_path": {
+			"type": "boolean",
+			"default": false,
+			"description": "Specifies whether a full navigation path from the mob to the target is required."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1,
+			"description": "Multiplier applied to the mob's movement speed when moving toward its target."
+		},
+		"track_target": {
+			"type": "boolean",
+			"default": false,
+			"description": "Allows the mob to track its target even if it lacks a hard-coded sensing component."
+		},
+		"weapon_min_speed_multiplier": {
+			"type": "number",
+			"default": 1,
+			"description": "Multiplier applied to each \"min_speed\" and \"min_relative_speed\" condition in the item's \"minecraft:kinetic_weapon\" component."
+		},
+		"weapon_reach_multiplier": {
+			"type": "number",
+			"minimum": 0
+		},
+		"x_max_rotation": {
+			"type": "number",
+			"default": 30,
+			"description": "Maximum rotation, in degrees, on the X-axis while the mob is trying to look at its target."
+		},
+		"y_max_head_rotation": {
+			"type": "number",
+			"default": 30,
+			"minimum": 0
+		}
+	},
+	"$defs": {
+		"item_floatrange": {
+			"type": "object",
+			"properties": {
+				"max": {
+					"type": "number",
+					"default": 0
+				},
+				"min": {
+					"type": "number",
+					"default": 0
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

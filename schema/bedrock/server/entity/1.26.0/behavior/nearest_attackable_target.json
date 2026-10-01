@@ -1,0 +1,100 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"title": "Behavior Nearest Attackable Target",
+	"description": "Allows the mob to check for and pursue the nearest valid target.",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal.",
+			"minimum": 0
+		},
+		"attack_interval": {
+			"$ref": "../strict_float_range.json",
+			"default": {
+				"min": 0,
+				"max": 0
+			},
+			"description": "Minimum number of ticks between attacks on the same target."
+		},
+		"entity_types": {
+			"$ref": "../../1.16.0/entity_types.json",
+			"description": "Entity types that may be targeted."
+		},
+		"must_reach": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the entity must reach the target to attack."
+		},
+		"must_see": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the entity must see the target to attack."
+		},
+		"must_see_forget_duration": {
+			"type": "number",
+			"default": 3,
+			"description": "Time in seconds before losing a target that is no longer visible.",
+			"minimum": 0
+		},
+		"persist_time": {
+			"type": "number",
+			"default": 0,
+			"description": "Time in seconds the target is remembered after losing it.",
+			"minimum": 0
+		},
+		"reselect_targets": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether to reselect targets when the current target dies."
+		},
+		"scan_interval": {
+			"type": "integer",
+			"default": 10,
+			"description": "Time in ticks between scans for new targets.",
+			"minimum": 1
+		},
+		"target_search_height": {
+			"type": "number",
+			"default": -1,
+			"description": "Vertical search range for targets. -1 means unlimited.",
+			"minimum": -1
+		},
+		"within_radius": {
+			"type": "number",
+			"default": 0,
+			"description": "Search radius in blocks.",
+			"minimum": 0
+		},
+		"attack_owner": {
+			"type": "boolean",
+			"default": false
+		},
+		"set_persistent": {
+			"type": "boolean",
+			"default": false
+		},
+		"target_invisible_multiplier": {
+			"type": "number",
+			"default": 0.699999988079071
+		},
+		"target_sneak_visibility_multiplier": {
+			"type": "number",
+			"default": 0.800000011920929
+		},
+		"target_acquisition_probability": {
+			"type": "number",
+			"default": 1
+		}
+	}
+}

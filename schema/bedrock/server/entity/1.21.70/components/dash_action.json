@@ -1,0 +1,35 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Dash Action",
+	"description": "Ability for a rideable entity to dash.",
+	"type": "object",
+	"properties": {
+		"can_dash_underwater": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the entity can dash underwater. Default value is false."
+		},
+		"cooldown_time": {
+			"type": "number",
+			"default": 1,
+			"description": "The dash cooldown in seconds. Default value is 1.000000."
+		},
+		"direction": {
+			"type": "string",
+			"default": "entity",
+			"description": "Should the momentum be applied in the direction of the 'entity' or 'passenger'.",
+			"enum": ["entity", "passenger"]
+		},
+		"horizontal_momentum": {
+			"type": "number",
+			"default": 1,
+			"description": "Horizontal momentum of the dash."
+		},
+		"vertical_momentum": {
+			"type": "number",
+			"default": 1,
+			"description": "Vertical momentum of the dash."
+		}
+	},
+	"additionalProperties": false
+}

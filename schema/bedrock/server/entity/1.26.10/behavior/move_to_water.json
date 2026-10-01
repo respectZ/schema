@@ -1,0 +1,50 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			}
+		},
+		"goal_radius": {
+			"type": "number",
+			"default": 0.5,
+			"description": "Distance in blocks at which the entity is considered to have reached the water."
+		},
+		"material_type": {
+			"type": "string",
+			"enum": ["Any", "Water", "Lava"],
+			"default": "Any"
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"search_count": {
+			"type": "integer",
+			"default": 10,
+			"description": "Maximum number of blocks to search."
+		},
+		"search_height": {
+			"type": "integer",
+			"default": 1,
+			"description": "Vertical search range in blocks."
+		},
+		"search_range": {
+			"type": "integer",
+			"default": 0,
+			"description": "Horizontal search range in blocks."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1,
+			"description": "Movement speed multiplier while moving to water."
+		}
+	}
+}

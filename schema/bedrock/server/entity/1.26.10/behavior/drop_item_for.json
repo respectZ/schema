@@ -1,0 +1,100 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"title": "Behavior Drop Item For",
+	"description": "Allows the mob to move near a target and drop an item.",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"cooldown": {
+			"type": "number",
+			"default": 0.25
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"drop_item_chance": {
+			"type": "number",
+			"default": 1,
+			"description": "Chance per tick to drop an item."
+		},
+		"entity_types": {
+			"$ref": "../../1.16.0/entity_types.json",
+			"description": "Entity types the entity will drop items for."
+		},
+		"goal_radius": {
+			"type": "number",
+			"default": 0.5,
+			"description": "Distance in blocks at which the entity is considered to have reached the drop location."
+		},
+		"loot_table": {
+			"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
+			"description": "Path to the loot table used to determine the dropped item."
+		},
+		"max_head_look_at_height": {
+			"type": "number",
+			"default": 10
+		},
+		"minimum_teleport_distance": {
+			"type": "number",
+			"default": 2
+		},
+		"offering_distance": {
+			"type": "number",
+			"default": 1,
+			"description": "Distance in blocks at which the item is offered."
+		},
+		"on_drop_attempt": {
+			"$ref": "../../1.16.0/triggers.json",
+			"description": "Event to run when the entity attempts to drop an item."
+		},
+		"search_count": {
+			"type": "integer",
+			"default": 0
+		},
+		"search_height": {
+			"type": "integer",
+			"default": 1,
+			"description": "Vertical range to search for the drop location."
+		},
+		"search_range": {
+			"type": "integer",
+			"default": 0,
+			"description": "Horizontal range to search for the drop location."
+		},
+		"seconds_before_pickup": {
+			"type": "number",
+			"default": 0
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1,
+			"description": "Movement speed multiplier while moving to drop the item."
+		},
+		"target_range": {
+			"type": "array",
+			"items": {
+				"type": "number"
+			}
+		},
+		"teleport_offset": {
+			"type": "array",
+			"items": {
+				"type": "number"
+			}
+		},
+		"time_of_day_range": {
+			"$ref": "../../1.26.0/strict_float_range.json",
+			"description": "Time of day range during which the entity will drop items."
+		}
+	}
+}

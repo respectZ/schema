@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Player Exhaustion",
+	"description": "Defines the player's exhaustion level.",
+	"type": "object",
+	"properties": {
+		"max": {
+			"type": "integer",
+			"description": "A maximum value for a player's exhaustion."
+		},
+		"value": {
+			"type": "integer",
+			"description": "The initial value of a player's exhaustion level."
+		}
+	},
+	"additionalProperties": false
+}

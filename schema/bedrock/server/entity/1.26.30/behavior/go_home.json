@@ -1,0 +1,58 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "Allows the mob to move back to the position they were spawned.",
+	"additionalProperties": false,
+	"properties": {
+		"calculate_new_path_radius": {
+			"type": "number",
+			"default": 2,
+			"description": "Distance in blocks that the mob is considered close enough to the end of the current path. A new path will then be calculated to continue toward home."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			},
+			"default": []
+		},
+		"goal_radius": {
+			"type": "number",
+			"default": 0.5,
+			"description": "Distance in blocks within the mob considers it has reached the goal. This is the \"wiggle room\" to stop the AI from bouncing back and forth trying to reach a specific spot."
+		},
+		"interval": {
+			"type": "integer",
+			"default": 120,
+			"description": "A random value to determine when to randomly move somewhere. This has a 1/interval chance to choose this goal."
+		},
+		"on_failed": {
+			"type": "array",
+			"items": {
+				"$ref": "../../1.16.0/triggers.json"
+			},
+			"default": [],
+			"description": "Event(s) to run when this goal fails."
+		},
+		"on_home": {
+			"type": "array",
+			"items": {
+				"$ref": "../../1.16.0/triggers.json"
+			},
+			"default": [],
+			"description": "Event(s) to run when this mob gets home."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal.",
+			"minimum": 0
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1,
+			"description": "Movement speed multiplier of the mob when using this AI Goal."
+		}
+	}
+}

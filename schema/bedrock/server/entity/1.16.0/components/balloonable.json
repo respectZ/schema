@@ -1,0 +1,32 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Balloonable",
+	"description": "Allows this entity to have a balloon attached and defines the conditions and events for this entity when is ballooned.",
+	"type": "object",
+	"properties": {
+		"mass": {
+			"type": "number",
+			"default": 1,
+			"description": "Mass that this entity will have when computing balloon pull forces."
+		},
+		"max_distance": {
+			"type": "number",
+			"default": 10,
+			"description": "Distance in blocks at which the balloon breaks."
+		},
+		"on_balloon": {
+			"$ref": "../triggers.json",
+			"description": "Event to call when this entity is ballooned."
+		},
+		"on_unballoon": {
+			"$ref": "../triggers.json",
+			"description": "Event to call when this entity is unballooned."
+		},
+		"soft_distance": {
+			"type": "number",
+			"default": 2,
+			"description": "Distance in blocks at which the 'spring' effect that lifts it."
+		}
+	},
+	"additionalProperties": false
+}

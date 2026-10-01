@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Vibration Damper",
+	"description": "Vibrations emitted by an entity with this component will be ignored.",
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false
+}

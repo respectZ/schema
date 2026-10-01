@@ -1,0 +1,61 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"title": "Behavior Lay Egg",
+	"description": "Allows the mob to lay an egg block on a sand block if the mob is pregnant.",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"jump",
+					"look",
+					"move"
+				]
+			},
+			"default": []
+		},
+		"goal_radius": {
+			"type": "number",
+			"default": 0.5,
+			"description": "Distance in blocks at which the entity is considered to have reached the laying location."
+		},
+		"lay_seconds": {
+			"type": "number",
+			"default": 10,
+			"description": "Duration of the laying egg process in seconds. From 1.26.10 onward, `lay_seconds` only accepts values greater than or equal to 0; entity JSON with negative values will fail to load.",
+			"minimum": 0
+		},
+		"on_lay": {
+			"type": "string",
+			"description": "Event to run when the egg is laid."
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"search_count": {
+			"type": "integer",
+			"default": 10,
+			"description": "Maximum number of blocks to search."
+		},
+		"search_height": {
+			"type": "integer",
+			"default": 1,
+			"description": "Vertical search range in blocks."
+		},
+		"search_range": {
+			"type": "integer",
+			"default": 0,
+			"description": "Horizontal search range in blocks."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 1,
+			"description": "Movement speed multiplier while looking for a laying location."
+		}
+	}
+}

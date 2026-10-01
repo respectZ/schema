@@ -1,0 +1,8 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Can Join Raid",
+	"description": "Specifies if an entity can join a raid.",
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false
+}

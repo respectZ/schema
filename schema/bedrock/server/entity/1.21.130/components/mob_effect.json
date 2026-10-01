@@ -1,0 +1,44 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Mob Effect",
+	"description": "A component that applies a mob effect to entities that get within range.",
+	"type": "object",
+	"properties": {
+		"ambient": {
+			"type": "boolean",
+			"default": false,
+			"description": "If the effect is considered an ambient effect (like the ones applied by Beacons or Conduits)."
+		},
+		"cooldown_time": {
+			"type": "integer",
+			"default": 0,
+			"description": "Time in seconds to wait between each application of the effect."
+		},
+		"effect_range": {
+			"type": "number",
+			"default": 0.2,
+			"description": "How close a hostile entity must be to have the mob effect applied."
+		},
+		"effect_time": {
+			"oneOf": [
+				{
+					"type": "integer",
+					"default": 10
+				},
+				{
+					"const": "infinite"
+				}
+			],
+			"description": "How long the applied mob effect lasts in seconds. Can also be set to \"infinite\""
+		},
+		"entity_filter": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "The set of entities that are valid to apply the mob effect to."
+		},
+		"mob_effect": {
+			"$ref": "../../../../../vanilla/server/effect_type.json",
+			"description": "The mob effect that is applied to entities that enter this entities effect range."
+		}
+	},
+	"additionalProperties": false
+}

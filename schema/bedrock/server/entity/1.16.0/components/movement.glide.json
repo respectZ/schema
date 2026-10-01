@@ -1,0 +1,23 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Movement Glide",
+	"description": "This move control causes the mob to glide.",
+	"type": "object",
+	"properties": {
+		"max_turn": {
+			"type": "number",
+			"default": 30,
+			"description": "The maximum number in degrees the mob can turn per tick."
+		},
+		"speed_when_turning": {
+			"type": "number",
+			"default": 0.2,
+			"description": "Speed that the mob adjusts to when it has to turn quickly."
+		},
+		"start_speed": {
+			"type": "number",
+			"default": 0.1
+		}
+	},
+	"additionalProperties": false
+}

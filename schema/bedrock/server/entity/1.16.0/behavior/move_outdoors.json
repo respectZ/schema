@@ -1,0 +1,52 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Behavior Move Outdoors",
+	"description": "Allows this entity to move outdoors.",
+	"type": "object",
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"]
+			}
+		},
+		"goal_radius": {
+			"type": "number",
+			"default": 2,
+			"description": "The radius away from the target block to count as reaching the goal"
+		},
+		"priority": {
+			"type": "integer",
+			"default": 0,
+			"description": "As priority approaches 0, the priority is increased. The higher the priority, the sooner this behavior will be executed as a goal."
+		},
+		"search_count": {
+			"type": "integer",
+			"default": 10,
+			"description": "The amount of times to try finding a random outdoors position before failing"
+		},
+		"search_height": {
+			"type": "integer",
+			"default": 5,
+			"description": "The y range to search for an outdoors position for"
+		},
+		"search_range": {
+			"type": "integer",
+			"default": 15,
+			"description": "The x and z range to search for an outdoors position for"
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"default": 0.5,
+			"description": "The movement speed modifier to apply to the entity while it is moving outdoors"
+		},
+		"timeout_cooldown": {
+			"type": "number",
+			"default": 8,
+			"description": "The cooldown time in seconds before the goal can be reused after pathfinding fails"
+		}
+	},
+	"additionalProperties": false
+}

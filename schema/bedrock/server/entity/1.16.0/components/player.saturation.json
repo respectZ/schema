@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Player Saturation",
+	"description": "Defines the player's need for food.",
+	"type": "object",
+	"properties": {
+		"max": {
+			"type": "integer",
+			"description": "The maximum player saturation value."
+		},
+		"value": {
+			"type": "integer",
+			"description": "The initial value of player saturation."
+		}
+	},
+	"additionalProperties": false
+}

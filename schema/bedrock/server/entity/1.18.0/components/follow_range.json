@@ -1,0 +1,44 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Follow Range",
+	"description": "Defines the maximum range, in blocks, that a mob will pursue a target. This affects AI behaviors like chasing players or attacking.",
+	"type": "object",
+	"properties": {
+		"min": {
+			"type": "integer"
+		},
+		"max": {
+			"type": "integer",
+			"minimum": 0,
+			"description": "Maximum follow distance in blocks. The entity will not pursue targets beyond this range."
+		},
+		"value": {
+			"description": "The default follow range in blocks. Entities will attempt to stay within this radius of their target.",
+			"oneOf": [
+				{
+					"type": "integer",
+					"minimum": 0,
+					"default": 20
+				},
+				{
+					"$ref": "#/$defs/value"
+				}
+			]
+		}
+	},
+	"$defs": {
+		"value": {
+			"type": "object",
+			"properties": {
+				"range_max": {
+					"type": "integer"
+				},
+				"range_min": {
+					"type": "integer"
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}
