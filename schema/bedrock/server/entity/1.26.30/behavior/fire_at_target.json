@@ -37,7 +37,7 @@
 			"description": "Maximum head rotation (in degrees), on the Y-axis, that this entity can apply while trying to look at the target."
 		},
 		"owner_anchor": {
-			"type": "object",
+			"type": "integer",
 			"default": 2,
 			"description": "Entity anchor for the projectile spawn location."
 		},
