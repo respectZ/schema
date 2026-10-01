@@ -29,8 +29,18 @@
 				{
 					"type": "array",
 					"items": {
-						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+						"anyOf": [
+							{
+								"$ref": "#/$defs/breed_items"
+							},
+							{
+								"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+							}
+						]
 					}
+				},
+				{
+					"$ref": "#/$defs/breed_items"
 				},
 				{
 					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
@@ -131,6 +141,18 @@
 		}
 	},
 	"$defs": {
+		"breed_items": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"item": {
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+				},
+				"result_item": {
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+				}
+			}
+		},
 		"breeds_with": {
 			"type": "object",
 			"properties": {
