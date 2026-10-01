@@ -87,7 +87,7 @@
 			"description": "Field of view (in degrees) when using sensing to detect a target for attack."
 		},
 		"target_anchor": {
-			"type": "object",
+			"type": "integer",
 			"default": 2,
 			"description": "Entity anchor for projectile target."
 		},
