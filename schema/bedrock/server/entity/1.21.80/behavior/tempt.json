@@ -10,6 +10,11 @@
 			"default": false,
 			"description": "Whether the entity can be scared while tempted."
 		},
+		"can_tempt_vertically": {
+			"type": "boolean",
+			"description": "If true, vertical distance to the player will be considered when tempting.",
+			"default": false
+		},
 		"control_flags": {
 			"type": "array",
 			"items": {
