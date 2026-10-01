@@ -19,11 +19,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				]
+				"enum": ["jump", "look", "move"]
 			},
 			"default": []
 		},
@@ -46,6 +42,11 @@
 				}
 			],
 			"description": "Duration of each float."
+		},
+		"float_wander_has_move_control": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true, the MoveControl flag will be added to the behavior which means that it can no longer be active at the same time as other behaviors with MoveControl."
 		},
 		"must_reach": {
 			"type": "boolean",
