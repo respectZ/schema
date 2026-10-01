@@ -39,12 +39,12 @@
 		"landing_distance_from_target": {
 			"oneOf": [
 				{
-					"type": "integer"
+					"type": "number"
 				},
 				{
 					"type": "array",
 					"items": {
-						"type": "integer"
+						"type": "number"
 					},
 					"minItems": 2,
 					"maxItems": 2
@@ -94,12 +94,12 @@
 		"valid_distance_to_target": {
 			"oneOf": [
 				{
-					"type": "integer"
+					"type": "number"
 				},
 				{
 					"type": "array",
 					"items": {
-						"type": "integer"
+						"type": "number"
 					},
 					"minItems": 2,
 					"maxItems": 2
