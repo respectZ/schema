@@ -10,10 +10,7 @@
 			"description": "If true, the entities will blend their attributes in the offspring after they breed."
 		},
 		"deny_parents_variant": {
-			"type": "array",
-			"items": {
-				"$ref": "#/$defs/deny_parents_variant"
-			},
+			"$ref": "#/$defs/deny_parents_variant",
 			"description": "Determines how likely the baby of parents with the same variant will deny that variant and take a random variant within the given range instead."
 		},
 		"inherit_tamed": {
@@ -22,10 +19,7 @@
 			"description": "If true, the babies will be automatically tamed if its parents are."
 		},
 		"mutation_factor": {
-			"type": "array",
-			"items": {
-				"$ref": "#/$defs/mutation_factor"
-			},
+			"$ref": "#/$defs/mutation_factor",
 			"description": "Determines how likely the babies are to NOT inherit one of their parent's variances. Values are between 0.0 and 1.0, with a higher number meaning more likely to mutate."
 		},
 		"offspring_pairs": {
