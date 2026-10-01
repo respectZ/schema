@@ -5,20 +5,20 @@
 	"type": "object",
 	"properties": {
 		"min": {
-			"type": "integer"
+			"type": "number"
 		},
 		"max": {
-			"type": "integer"
+			"type": "number"
 		},
 		"value": {
 			"oneOf": [
 				{
-					"type": "integer"
+					"type": "number"
 				},
 				{
 					"type": "array",
 					"items": {
-						"type": "integer"
+						"type": "number"
 					},
 					"minItems": 2,
 					"maxItems": 2
@@ -28,10 +28,10 @@
 					"additionalProperties": false,
 					"properties": {
 						"range_min": {
-							"type": "integer"
+							"type": "number"
 						},
 						"range_max": {
-							"type": "integer"
+							"type": "number"
 						}
 					}
 				}

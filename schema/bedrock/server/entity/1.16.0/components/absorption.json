@@ -6,25 +6,25 @@
 	"additionalProperties": false,
 	"properties": {
 		"min": {
-			"type": "integer"
+			"type": "number"
 		},
 		"max": {
-			"type": "integer"
+			"type": "number"
 		},
 		"value": {
 			"oneOf": [
 				{
-					"type": "integer"
+					"type": "number"
 				},
 				{
 					"type": "object",
 					"additionalProperties": false,
 					"properties": {
 						"range_min": {
-							"type": "integer"
+							"type": "number"
 						},
 						"range_max": {
-							"type": "integer"
+							"type": "number"
 						}
 					}
 				}

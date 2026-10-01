@@ -5,10 +5,10 @@
 	"type": "object",
 	"properties": {
 		"min": {
-			"type": "integer"
+			"type": "number"
 		},
 		"max": {
-			"type": "integer",
+			"type": "number",
 			"minimum": 0,
 			"description": "Maximum follow distance in blocks. The entity will not pursue targets beyond this range."
 		},
@@ -16,7 +16,7 @@
 			"description": "The default follow range in blocks. Entities will attempt to stay within this radius of their target.",
 			"oneOf": [
 				{
-					"type": "integer",
+					"type": "number",
 					"minimum": 0,
 					"default": 20
 				},
@@ -31,10 +31,10 @@
 			"type": "object",
 			"properties": {
 				"range_max": {
-					"type": "integer"
+					"type": "number"
 				},
 				"range_min": {
-					"type": "integer"
+					"type": "number"
 				}
 			},
 			"additionalProperties": false

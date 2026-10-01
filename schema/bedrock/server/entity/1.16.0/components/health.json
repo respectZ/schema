@@ -5,10 +5,10 @@
 	"type": "object",
 	"properties": {
 		"min": {
-			"type": "integer"
+			"type": "number"
 		},
 		"max": {
-			"type": "integer",
+			"type": "number",
 			"default": 20,
 			"description": "Maximum health this entity can have. Can be higher than the starting value to allow healing beyond initial health."
 		},
@@ -16,7 +16,7 @@
 			"description": "Starting health for this entity in health points (1 point = half a heart).",
 			"oneOf": [
 				{
-					"type": "integer",
+					"type": "number",
 					"default": 20
 				},
 				{
@@ -30,10 +30,10 @@
 			"type": "object",
 			"properties": {
 				"range_max": {
-					"type": "integer"
+					"type": "number"
 				},
 				"range_min": {
-					"type": "integer"
+					"type": "number"
 				}
 			},
 			"additionalProperties": false
