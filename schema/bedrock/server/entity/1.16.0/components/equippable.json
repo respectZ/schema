@@ -33,11 +33,11 @@
 						"description": "Text to be displayed when the entity can be equipped with this item when playing with Touch-screen controls."
 					},
 					"on_equip": {
-						"type": "string",
+						"$ref": "../triggers.json",
 						"description": "Event to trigger when this entity is equipped with this item."
 					},
 					"on_unequip": {
-						"type": "string",
+						"$ref": "../triggers.json",
 						"description": "Event to trigger when this item is removed from this entity."
 					}
 				}
