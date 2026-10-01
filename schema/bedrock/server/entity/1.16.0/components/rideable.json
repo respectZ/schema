@@ -104,7 +104,14 @@
 					"description": "Angle in degrees that a rider is allowed to rotate while riding this entity. Omit this property for no limit."
 				},
 				"rotate_rider_by": {
-					"type": "number",
+					"oneOf": [
+						{
+							"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string"
+						},
+						{
+							"type": "number"
+						}
+					],
 					"description": "Offset to rotate riders by."
 				},
 				"third_person_camera_radius": {
