@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"title": "Annotation Open Door",
-	"description": "Allows the entity to open doors.",
-	"type": "object",
-	"properties": {},
-	"additionalProperties": false
-}

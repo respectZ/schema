@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "triggers": {
+      "$ref": "../../legacy/components/environment_sensor.json#/$defs/triggers",
+      "description": "The list of triggers that fire when the environment conditions match the given filter criteria."
+    }
+  },
+  "additionalProperties": false,
+  "description": "Creates a trigger based on environment conditions."
+}

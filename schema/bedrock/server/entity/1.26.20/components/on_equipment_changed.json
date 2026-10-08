@@ -1,31 +1,44 @@
 {
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"title": "On Equipment Changed",
-	"description": "Triggers events when equipment is equipped or unequipped.",
-	"type": "object",
-	"properties": {
-		"slots": {
-			"type": "array",
-			"items": {
-				"type": "object",
-				"properties": {
-					"slot": {
-						"type": "string",
-						"description": "The equipment slot to watch for changes."
-					},
-					"on_equip": {
-						"$ref": "../../1.16.0/triggers.json",
-						"description": "Event to fire when equipment is equipped to this slot."
-					},
-					"on_unequip": {
-						"$ref": "../../1.16.0/triggers.json",
-						"description": "Event to fire when equipment is unequipped from this slot."
-					}
-				},
-				"additionalProperties": false
-			},
-			"description": "List of equipment slots and their equip/unequip triggers."
-		}
-	},
-	"additionalProperties": false
+  "type": "object",
+  "properties": {
+    "slots": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "properties": {
+          "on_equip": {
+            "type": "string",
+            "default": "",
+            "description": ""
+          },
+          "on_unequip": {
+            "type": "string",
+            "default": "",
+            "description": ""
+          },
+          "slot": {
+            "type": "string",
+            "anyOf": [
+              {
+                "$ref": "../../../../../vanilla/server/equipment_slot.json",
+                "description": ""
+              },
+              {
+                "pattern": "^(?:[sS][lL][oO][tT]\\.[wW][eE][aA][pP][oO][nN]\\.[mM][aA][iI][nN][hH][aA][nN][dD]|[sS][lL][oO][tT]\\.[wW][eE][aA][pP][oO][nN]\\.[oO][fF][fF][hH][aA][nN][dD]|[sS][lL][oO][tT]\\.[aA][rR][mM][oO][rR]\\.[hH][eE][aA][dD]|[sS][lL][oO][tT]\\.[aA][rR][mM][oO][rR]\\.[cC][hH][eE][sS][tT]|[sS][lL][oO][tT]\\.[aA][rR][mM][oO][rR]\\.[lL][eE][gG][sS]|[sS][lL][oO][tT]\\.[aA][rR][mM][oO][rR]\\.[fF][eE][eE][tT]|[sS][lL][oO][tT]\\.[aA][rR][mM][oO][rR]\\.[bB][oO][dD][yY])(?![\\s\\S])",
+                "description": ""
+              }
+            ],
+            "default": "slot.weapon.mainhand",
+            "description": ""
+          }
+        },
+        "additionalProperties": false,
+        "description": ""
+      },
+      "description": ""
+    }
+  },
+  "additionalProperties": false,
+  "description": ""
 }

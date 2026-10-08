@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "is_pushable": {
+      "type": "boolean",
+      "default": true,
+      "description": ""
+    },
+    "is_pushable_by_piston": {
+      "type": "boolean",
+      "default": true,
+      "description": ""
+    }
+  },
+  "additionalProperties": false,
+  "description": ""
+}

@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "mob_effects": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "../../../../../vanilla/server/effect_type.json",
+            "description": "List of names of effects the entity is immune to."
+          },
+          {
+            "type": "string",
+            "description": "List of names of effects the entity is immune to."
+          }
+        ],
+        "description": "List of names of effects the entity is immune to."
+      },
+      "description": "List of names of effects the entity is immune to."
+    }
+  },
+  "additionalProperties": false,
+  "description": "Entities with this component will have an immunity to the provided mob effects."
+}

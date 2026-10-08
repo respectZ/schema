@@ -1,0 +1,56 @@
+{
+  "anyOf": [
+    {
+      "$ref": "#/$defs/definition",
+      "description": "Defines this entity's inventory properties."
+    },
+    {
+      "type": "null",
+      "description": "Defines this entity's inventory properties."
+    }
+  ],
+  "$defs": {
+    "definition": {
+      "type": "object",
+      "properties": {
+        "additional_slots_per_strength": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "default": 0,
+          "description": "Number of slots that this entity can gain per extra strength."
+        },
+        "can_be_siphoned_from": {
+          "type": "boolean",
+          "default": false,
+          "description": "If true, the contents of this inventory can be removed by a hopper."
+        },
+        "container_type": {
+          "type": "string",
+          "default": "none",
+          "description": "Type of container this entity has. Can be horse, minecart_chest, chest_boat, minecart_hopper, inventory, container or hopper."
+        },
+        "inventory_size": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "default": 5,
+          "description": "Number of slots the container has."
+        },
+        "private": {
+          "type": "boolean",
+          "default": false,
+          "description": "If true, the entity will not drop its inventory on death."
+        },
+        "restrict_to_owner": {
+          "type": "boolean",
+          "default": false,
+          "description": "If true, the entity's inventory can only be accessed by its owner or itself."
+        }
+      },
+      "additionalProperties": false,
+      "description": "Defines this entity's inventory properties."
+    }
+  },
+  "description": "Defines this entity's inventory properties."
+}

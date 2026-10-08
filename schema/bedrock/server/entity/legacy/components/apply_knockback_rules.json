@@ -1,0 +1,48 @@
+{
+  "type": "object",
+  "$defs": {
+    "preset": {
+      "type": "object",
+      "properties": {
+        "check_if_target_is_immersed_in_water": {
+          "type": "boolean",
+          "default": false,
+          "description": ""
+        },
+        "filter": {
+          "$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+          "description": ""
+        },
+        "horizontal_power": {
+          "type": "number",
+          "default": 1,
+          "description": ""
+        },
+        "vertical_power": {
+          "type": "number",
+          "default": 0.4,
+          "description": ""
+        },
+        "vertical_velocity_cap": {
+          "type": "number",
+          "default": 0.4,
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": ""
+    }
+  },
+  "properties": {
+    "presets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/preset",
+        "description": ""
+      },
+      "description": ""
+    }
+  },
+  "additionalProperties": false,
+  "description": ""
+}

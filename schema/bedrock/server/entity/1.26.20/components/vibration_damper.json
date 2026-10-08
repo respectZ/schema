@@ -1,0 +1,6 @@
+{
+  "type": "object",
+  "properties": {},
+  "additionalProperties": false,
+  "description": "Vibrations emitted by an entity with this component will be ignored."
+}

@@ -1,0 +1,97 @@
+{
+  "type": "object",
+  "properties": {
+    "hitboxes": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/hitbox",
+          "description": "Comma seperated list of hitboxes."
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/hitbox",
+            "description": "Comma seperated list of hitboxes."
+          },
+          "description": "Comma seperated list of hitboxes."
+        }
+      ],
+      "description": "Comma seperated list of hitboxes."
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "hitbox": {
+      "type": "object",
+      "properties": {
+        "height": {
+          "type": "number",
+          "minimum": -3.4028234663852886e+38,
+          "maximum": 3.4028234663852886e+38,
+          "default": 1,
+          "description": ""
+        },
+        "pivot": {
+          "anyOf": [
+            {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "type": "number",
+                "minimum": -3.4028234663852886e+38,
+                "maximum": 3.4028234663852886e+38,
+                "description": ""
+              },
+              "description": ""
+            },
+            {
+              "type": "object",
+              "properties": {
+                "x": {
+                  "type": "number",
+                  "minimum": -3.4028234663852886e+38,
+                  "maximum": 3.4028234663852886e+38,
+                  "default": 0,
+                  "description": ""
+                },
+                "y": {
+                  "type": "number",
+                  "minimum": -3.4028234663852886e+38,
+                  "maximum": 3.4028234663852886e+38,
+                  "default": 0,
+                  "description": ""
+                },
+                "z": {
+                  "type": "number",
+                  "minimum": -3.4028234663852886e+38,
+                  "maximum": 3.4028234663852886e+38,
+                  "default": 0,
+                  "description": ""
+                }
+              },
+              "additionalProperties": false,
+              "description": ""
+            }
+          ],
+          "default": [
+            0,
+            0,
+            0
+          ],
+          "description": ""
+        },
+        "width": {
+          "type": "number",
+          "minimum": -3.4028234663852886e+38,
+          "maximum": 3.4028234663852886e+38,
+          "default": 1,
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": "Comma seperated list of hitboxes."
+    }
+  },
+  "description": "List of hitboxes for melee and ranged hits against the entity."
+}

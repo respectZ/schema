@@ -1,0 +1,50 @@
+{
+  "type": "object",
+  "properties": {
+    "cause": {
+      "$ref": "../../../../../vanilla/server/damage_type.json",
+      "description": "The type of damage that is applied to entities that enter the damage range."
+    },
+    "damage_cooldown": {
+      "type": "number",
+      "minimum": -3.4028234663852886e+38,
+      "maximum": 3.4028234663852886e+38,
+      "default": 0,
+      "description": "Attack cooldown (in seconds) for how often this entity can attack a target."
+    },
+    "damage_per_tick": {
+      "type": "integer",
+      "minimum": -2147483648,
+      "maximum": 2147483647,
+      "default": 2,
+      "description": "How much damage per tick is applied to entities that enter the damage range."
+    },
+    "damage_range": {
+      "type": "number",
+      "minimum": -3.4028234663852886e+38,
+      "maximum": 3.4028234663852886e+38,
+      "default": 0.2,
+      "description": "How close a hostile entity must be to have the damage applied."
+    },
+    "death_message_override": {
+      "type": "string",
+      "description": "A localization key to use as the death message when the area attack kills an entity. If empty, the default death message for the damage cause is used."
+    },
+    "entity_filter": {
+      "$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+      "description": "The set of entities that are valid to apply the damage to when within range."
+    },
+    "play_attack_sound": {
+      "type": "boolean",
+      "default": true,
+      "description": "If the entity should play their attack sound when attacking a target."
+    },
+    "use_self_as_damage_source": {
+      "type": "boolean",
+      "default": true,
+      "description": "If the entity should use itself as the damage source when attacking a target. If set to `false`, the target entity won't retaliate and its `minecraft:damage_sensor` won't be able to identify the attacker as the damage source."
+    }
+  },
+  "additionalProperties": false,
+  "description": "A component that does damage to entities that get within range."
+}

@@ -1,0 +1,65 @@
+{
+  "anyOf": [
+    {
+      "type": "object",
+      "properties": {
+        "convert_trades_economy": {
+          "$ref": "../../legacy/components/economy_trade_table.json#/anyOf/0/properties/convert_trades_economy",
+          "description": "Whether legacy trade data is converted into economy trade data."
+        },
+        "cured_discount": {
+          "$ref": "../../legacy/components/economy_trade_table.json#/anyOf/0/properties/cured_discount",
+          "description": "Range of cured villager discounts applied to trade prices."
+        },
+        "display_name": {
+          "$ref": "../../legacy/components/economy_trade_table.json#/anyOf/0/properties/display_name",
+          "description": "The entity localization key used for the trading UI display name."
+        },
+        "hero_demand_discount": {
+          "$ref": "../../legacy/components/economy_trade_table.json#/anyOf/0/properties/hero_demand_discount",
+          "description": "Additional demand discount applied while the player has Hero of the Village."
+        },
+        "max_cured_discount": {
+          "$ref": "../../legacy/components/economy_trade_table.json#/anyOf/0/properties/max_cured_discount",
+          "description": "Maximum allowed range for cured villager discounts."
+        },
+        "max_nearby_cured_discount": {
+          "$ref": "../../legacy/components/economy_trade_table.json#/anyOf/0/properties/max_nearby_cured_discount",
+          "description": "Most negative nearby cured villager discount allowed by legacy pricing."
+        },
+        "nearby_cured_discount": {
+          "$ref": "../../legacy/components/economy_trade_table.json#/anyOf/0/properties/nearby_cured_discount",
+          "description": "Nearby cured villager discount step applied by legacy pricing."
+        },
+        "new_screen": {
+          "$ref": "../../legacy/components/economy_trade_table.json#/anyOf/0/properties/new_screen",
+          "description": "Whether this trader uses the newer trade screen implementation."
+        },
+        "persist_trades": {
+          "$ref": "../../legacy/components/economy_trade_table.json#/anyOf/0/properties/persist_trades",
+          "description": "Whether generated offers are persisted with the actor save data."
+        },
+        "show_trade_screen": {
+          "$ref": "../../legacy/components/economy_trade_table.json#/anyOf/0/properties/show_trade_screen",
+          "description": "Whether interacting with this trader opens the trade screen."
+        },
+        "table": {
+          "$ref": "../../legacy/components/economy_trade_table.json#/anyOf/0/properties/table",
+          "description": "Path to the trade table JSON that defines available offers."
+        },
+        "use_legacy_price_formula": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether legacy price calculations are used instead of the newer pricing formula."
+        }
+      },
+      "additionalProperties": false,
+      "description": "Defines this entity's ability to trade with players."
+    },
+    {
+      "type": "null",
+      "description": "Defines this entity's ability to trade with players."
+    }
+  ],
+  "description": "Defines this entity's ability to trade with players."
+}

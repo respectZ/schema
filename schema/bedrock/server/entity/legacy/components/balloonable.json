@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "mass": {
+      "type": "number",
+      "default": 1,
+      "description": ""
+    },
+    "max_distance": {
+      "type": "number",
+      "default": 10,
+      "description": ""
+    },
+    "on_balloon": {
+      "$ref": "./ageable.json#/$defs/growth_event",
+      "description": ""
+    },
+    "on_unballoon": {
+      "$ref": "./ageable.json#/$defs/growth_event",
+      "description": ""
+    },
+    "soft_distance": {
+      "type": "number",
+      "default": 2,
+      "description": ""
+    }
+  },
+  "additionalProperties": false,
+  "description": ""
+}

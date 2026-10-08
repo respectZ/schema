@@ -1,0 +1,6 @@
+{
+  "type": "object",
+  "properties": {},
+  "additionalProperties": false,
+  "description": "An entity with this component will NEVER persist, and forever disappear when unloaded."
+}

@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "max": {
+      "type": "integer",
+      "default": 5,
+      "minimum": -2147483648,
+      "maximum": 2147483647,
+      "description": "The maximum strength of this entity"
+    },
+    "value": {
+      "type": "integer",
+      "default": 1,
+      "minimum": -2147483648,
+      "maximum": 2147483647,
+      "description": "The initial value of the strength"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Defines the strength of this entity."
+}

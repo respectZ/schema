@@ -1,0 +1,51 @@
+{
+  "type": "object",
+  "properties": {
+    "can_dash_underwater": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the entity can dash underwater"
+    },
+    "cooldown_time": {
+      "type": "number",
+      "minimum": -3.4028234663852886e+38,
+      "maximum": 3.4028234663852886e+38,
+      "default": 1,
+      "description": "The dash cooldown in seconds. Default value is \"1.000000\"."
+    },
+    "direction": {
+      "type": "string",
+      "anyOf": [
+        {
+          "enum": [
+            "entity",
+            "passenger"
+          ],
+          "description": "Should the momentum be applied in the direction of the 'entity' or 'passenger'. When 'entity' is used the momentum is applied horizontally according to the direction the entity is looking, using only the entity's yaw. When 'passenger' is used the momentum will be applied in the direction the controlling passenger is looking, using the passenger's pitch and yaw."
+        },
+        {
+          "pattern": "^(?:[eE][nN][tT][iI][tT][yY]|[pP][aA][sS][sS][eE][nN][gG][eE][rR])$",
+          "description": "Should the momentum be applied in the direction of the 'entity' or 'passenger'. When 'entity' is used the momentum is applied horizontally according to the direction the entity is looking, using only the entity's yaw. When 'passenger' is used the momentum will be applied in the direction the controlling passenger is looking, using the passenger's pitch and yaw."
+        }
+      ],
+      "default": "entity",
+      "description": "Should the momentum be applied in the direction of the 'entity' or 'passenger'. When 'entity' is used the momentum is applied horizontally according to the direction the entity is looking, using only the entity's yaw. When 'passenger' is used the momentum will be applied in the direction the controlling passenger is looking, using the passenger's pitch and yaw."
+    },
+    "horizontal_momentum": {
+      "type": "number",
+      "minimum": -3.4028234663852886e+38,
+      "maximum": 3.4028234663852886e+38,
+      "default": 1,
+      "description": "Horizontal momentum of the dash."
+    },
+    "vertical_momentum": {
+      "type": "number",
+      "minimum": -3.4028234663852886e+38,
+      "maximum": 3.4028234663852886e+38,
+      "default": 1,
+      "description": "Vertical momentum of the dash."
+    }
+  },
+  "additionalProperties": false,
+  "description": "Ability for a rideable entity to dash."
+}

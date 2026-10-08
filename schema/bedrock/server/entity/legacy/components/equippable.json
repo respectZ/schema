@@ -1,0 +1,177 @@
+{
+  "anyOf": [
+    {
+      "$ref": "#/$defs/definition",
+      "description": "Defines an entity's behavior for having items equipped to it."
+    },
+    {
+      "type": "null",
+      "description": "Defines an entity's behavior for having items equipped to it."
+    }
+  ],
+  "$defs": {
+    "definition": {
+      "type": "object",
+      "properties": {
+        "slots": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/slot",
+                "description": "List of slots and the item that can be equipped."
+              },
+              {
+                "type": "null",
+                "description": "List of slots and the item that can be equipped."
+              }
+            ],
+            "description": "List of slots and the item that can be equipped."
+          },
+          "default": [],
+          "description": "List of slots and the item that can be equipped."
+        }
+      },
+      "additionalProperties": false,
+      "description": "Defines an entity's behavior for having items equipped to it."
+    },
+    "event": {
+      "type": "object",
+      "properties": {
+        "event": {
+          "$ref": "./ageable.json#/$defs/growth_event/properties/event",
+          "description": ""
+        },
+        "filters": {
+          "$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+          "description": ""
+        },
+        "target": {
+          "type": "string",
+          "anyOf": [
+            {
+              "$ref": "./ageable.json#/$defs/growth_event/properties/target",
+              "description": ""
+            },
+            {
+              "pattern": "^(?:[bB][aA][bB][yY]|[bB][lL][oO][cC][kK]|[dD][aA][mM][aA][gG][eE][rR]|[hH][oO][lL][dD][eE][rR]|[iI][tT][eE][mM]|[oO][tT][hH][eE][rR]|[pP][aA][rR][eE][nN][tT]|[pP][lL][aA][yY][eE][rR]|[sS][eE][lL][fF]|[tT][aA][rR][gG][eE][tT])$",
+              "description": ""
+            }
+          ],
+          "default": "self",
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": ""
+    },
+    "item_descriptor": {
+      "anyOf": [
+        {
+          "$ref": "../../../../../vanilla/server/item_descriptor.json",
+          "description": ""
+        },
+        {
+          "$ref": "#/$defs/item_name",
+          "description": ""
+        },
+        {
+          "$ref": "#/$defs/item_object",
+          "description": ""
+        }
+      ],
+      "description": ""
+    },
+    "item_name": {
+      "anyOf": [
+        {
+          "$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+          "description": ""
+        },
+        {
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "description": ""
+    },
+    "item_object": {
+      "type": "object",
+      "properties": {
+        "item": {
+          "$ref": "#/$defs/item_name",
+          "description": ""
+        },
+        "tags": {
+          "$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "item"
+          ],
+          "description": ""
+        },
+        {
+          "required": [
+            "tags"
+          ],
+          "description": ""
+        }
+      ],
+      "description": ""
+    },
+    "slot": {
+      "type": "object",
+      "properties": {
+        "accepted_items": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/item_descriptor",
+              "description": "The list of items that can go in this slot."
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/item_descriptor",
+                "description": "The list of items that can go in this slot."
+              },
+              "description": "The list of items that can go in this slot."
+            }
+          ],
+          "description": "The list of items that can go in this slot."
+        },
+        "interact_text": {
+          "type": "string",
+          "default": "",
+          "description": "Text to be displayed when the entity can be equipped with this item when playing with Touch-screen controls."
+        },
+        "item": {
+          "$ref": "#/$defs/item_descriptor",
+          "description": "Identifier of the item that can be equipped for this slot."
+        },
+        "on_equip": {
+          "$ref": "#/$defs/event",
+          "description": "Event to trigger when this entity is equipped with this item."
+        },
+        "on_unequip": {
+          "$ref": "#/$defs/event",
+          "description": "Event to trigger when this item is removed from this entity."
+        },
+        "slot": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "default": 0,
+          "description": "The slot number of this slot."
+        }
+      },
+      "additionalProperties": false,
+      "description": "List of slots and the item that can be equipped."
+    }
+  },
+  "description": "Defines an entity's behavior for having items equipped to it."
+}

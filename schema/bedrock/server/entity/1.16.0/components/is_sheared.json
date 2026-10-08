@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"type": "object",
-	"title": "Is Sheared",
-	"description": "Sets that this entity is currently sheared.",
-	"additionalProperties": false,
-	"properties": {}
-}

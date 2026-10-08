@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "block_list": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/block_event",
+        "description": "List of blocks, with certain block states, that we are monitoring to see if the entity is inside."
+      },
+      "description": "List of blocks, with certain block states, that we are monitoring to see if the entity is inside."
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "block_event": {
+      "type": "object",
+      "properties": {
+        "block": {
+          "$ref": "../../../../../vanilla/server/block_descriptor.json#/$defs/block_without_tags",
+          "description": ""
+        },
+        "entered_block_event": {
+          "$ref": "./ageable.json#/$defs/growth_event",
+          "description": ""
+        },
+        "exited_block_event": {
+          "$ref": "./ageable.json#/$defs/growth_event",
+          "description": ""
+        }
+      },
+      "required": [
+        "block"
+      ],
+      "additionalProperties": false,
+      "description": "List of blocks, with certain block states, that we are monitoring to see if the entity is inside."
+    }
+  },
+  "description": "Verifies whether the entity is inside any of the listed blocks."
+}

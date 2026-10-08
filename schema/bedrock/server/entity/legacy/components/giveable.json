@@ -1,0 +1,58 @@
+{
+  "$ref": "#/$defs/triggers",
+  "$defs": {
+    "trigger": {
+      "type": "object",
+      "properties": {
+        "cooldown": {
+          "type": "number",
+          "minimum": -3.4028234663852886e+38,
+          "maximum": 3.4028234663852886e+38,
+          "default": 0,
+          "description": "An optional cool down in seconds to prevent spamming interactions."
+        },
+        "items": {
+          "anyOf": [
+            {
+              "$ref": "./boostable.json#/$defs/boost_item/properties/item",
+              "description": "The list of items that can be given to the entity to place in their inventory."
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "./boostable.json#/$defs/boost_item/properties/item",
+                "description": "The list of items that can be given to the entity to place in their inventory."
+              },
+              "description": "The list of items that can be given to the entity to place in their inventory."
+            }
+          ],
+          "description": "The list of items that can be given to the entity to place in their inventory."
+        },
+        "on_give": {
+          "$ref": "./ageable.json#/$defs/growth_event",
+          "description": "Event to fire when the correct item is given."
+        }
+      },
+      "additionalProperties": false,
+      "description": "Defines sets of items that can be used to trigger events when used on this entity. The item will also be taken and placed in the entity's inventory."
+    },
+    "triggers": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/trigger",
+          "description": "Defines sets of items that can be used to trigger events when used on this entity. The item will also be taken and placed in the entity's inventory."
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/trigger",
+            "description": "Defines sets of items that can be used to trigger events when used on this entity. The item will also be taken and placed in the entity's inventory."
+          },
+          "description": "Defines sets of items that can be used to trigger events when used on this entity. The item will also be taken and placed in the entity's inventory."
+        }
+      ],
+      "description": "Defines sets of items that can be used to trigger events when used on this entity. The item will also be taken and placed in the entity's inventory."
+    }
+  },
+  "description": "Defines sets of items that can be used to trigger events when used on this entity. The item will also be taken and placed in the entity's inventory."
+}

@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "filters": {
+      "$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+      "description": "The list of conditions that must be satisfied for other entities to be counted towards group size."
+    },
+    "radius": {
+      "type": "number",
+      "description": "Radius from center of entity."
+    }
+  },
+  "additionalProperties": false,
+  "description": "Keeps track of entity group size in the given radius."
+}

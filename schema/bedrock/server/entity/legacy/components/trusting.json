@@ -1,0 +1,53 @@
+{
+  "type": "object",
+  "properties": {
+    "probability": {
+      "type": "number",
+      "minimum": -3.4028234663852886e+38,
+      "maximum": 3.4028234663852886e+38,
+      "default": 1,
+      "description": "The chance of the entity trusting with each item use between 0.0 and 1.0, where 1.0 is 100%."
+    },
+    "trust_event": {
+      "$ref": "./ageable.json#/$defs/growth_event",
+      "description": "Event to run when this entity becomes trusting."
+    },
+    "trust_items": {
+      "anyOf": [
+        {
+          "anyOf": [
+            {
+              "type": "string",
+              "description": "The list of items that can be used to get the entity to trust players."
+            },
+            {
+              "$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+              "description": "The list of items that can be used to get the entity to trust players."
+            }
+          ],
+          "description": "The list of items that can be used to get the entity to trust players."
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string",
+                "description": "The list of items that can be used to get the entity to trust players."
+              },
+              {
+                "$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+                "description": "The list of items that can be used to get the entity to trust players."
+              }
+            ],
+            "description": "The list of items that can be used to get the entity to trust players."
+          },
+          "description": "The list of items that can be used to get the entity to trust players."
+        }
+      ],
+      "description": "The list of items that can be used to get the entity to trust players."
+    }
+  },
+  "additionalProperties": false,
+  "description": "Defines the rules for a mob to trust players."
+}

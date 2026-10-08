@@ -1,0 +1,67 @@
+{
+  "type": "object",
+  "properties": {
+    "allow_invulnerable": {
+      "description": ""
+    },
+    "field_of_view": {
+      "$ref": "./looked_at.json#/properties/field_of_view",
+      "description": ""
+    },
+    "filters": {
+      "$ref": "./looked_at.json#/properties/filters",
+      "description": ""
+    },
+    "find_players_only": {
+      "$ref": "./looked_at.json#/properties/find_players_only",
+      "description": ""
+    },
+    "line_of_sight_obstruction_type": {
+      "$ref": "./looked_at.json#/properties/line_of_sight_obstruction_type",
+      "description": ""
+    },
+    "look_at_locations": {
+      "$ref": "./looked_at.json#/properties/look_at_locations",
+      "description": ""
+    },
+    "look_cooldown": {
+      "$ref": "./looked_at.json#/properties/looked_at_cooldown",
+      "description": ""
+    },
+    "look_event": {
+      "$ref": "./looked_at.json#/properties/looked_at_event",
+      "description": ""
+    },
+    "looked_at_cooldown": {
+      "$ref": "./looked_at.json#/properties/looked_at_cooldown",
+      "description": ""
+    },
+    "looked_at_event": {
+      "$ref": "./looked_at.json#/properties/looked_at_event",
+      "description": ""
+    },
+    "min_looked_at_duration": {
+      "$ref": "./looked_at.json#/properties/min_looked_at_duration",
+      "description": ""
+    },
+    "not_looked_at_event": {
+      "$ref": "./looked_at.json#/properties/not_looked_at_event",
+      "description": ""
+    },
+    "scale_fov_by_distance": {
+      "$ref": "./looked_at.json#/properties/scale_fov_by_distance",
+      "description": ""
+    },
+    "search_radius": {
+      "$ref": "./looked_at.json#/properties/search_radius",
+      "description": ""
+    },
+    "set_target": {
+      "type": "boolean",
+      "default": true,
+      "description": ""
+    }
+  },
+  "additionalProperties": false,
+  "description": ""
+}

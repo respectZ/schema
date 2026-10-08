@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "max_turn": {
+      "type": "number",
+      "default": 30,
+      "description": ""
+    },
+    "speed_when_turning": {
+      "type": "number",
+      "default": 0.2,
+      "description": ""
+    },
+    "start_speed": {
+      "type": "number",
+      "default": 0.1,
+      "description": ""
+    }
+  },
+  "additionalProperties": false,
+  "description": ""
+}

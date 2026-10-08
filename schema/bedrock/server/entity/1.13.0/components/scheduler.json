@@ -1,0 +1,33 @@
+{
+  "anyOf": [
+    {
+      "type": "object",
+      "properties": {
+        "max_delay_secs": {
+          "$ref": "../../legacy/components/scheduler.json#/$defs/delay_seconds",
+          "description": ""
+        },
+        "min_delay_secs": {
+          "$ref": "../../legacy/components/scheduler.json#/$defs/delay_seconds",
+          "description": ""
+        },
+        "scheduled_events": {
+          "type": "array",
+          "items": {
+            "$ref": "../../legacy/components/scheduler.json#/$defs/event",
+            "description": "The list of triggers that fire when the conditions match the given filter criteria. If any filter criteria overlap the first defined event will be picked."
+          },
+          "default": [],
+          "description": "The list of triggers that fire when the conditions match the given filter criteria. If any filter criteria overlap the first defined event will be picked."
+        }
+      },
+      "additionalProperties": false,
+      "description": "Fires off scheduled mob events at time of day events."
+    },
+    {
+      "type": "null",
+      "description": "Fires off scheduled mob events at time of day events."
+    }
+  ],
+  "description": "Fires off scheduled mob events at time of day events."
+}

@@ -1,41 +1,91 @@
 {
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"title": "Jump Dynamic",
-	"description": "Defines a dynamic type jump control that will change jump properties based on the speed modifier of the mob. Requires `minecraft:movement.skip` to be used.",
-	"type": "object",
-	"properties": {
-		"fast_skip_data": {
-			"$ref": "#/$defs/skip_data",
-			"description": "The jump data used for the fast skip."
-		},
-		"regular_skip_data": {
-			"$ref": "#/$defs/skip_data",
-			"description": "The jump data used for the regular skip."
-		}
-	},
-	"$defs": {
-		"skip_data": {
-			"type": "object",
-			"properties": {
-				"animation_duration": {
-					"type": "number",
-					"description": "The duration of the jump animation."
-				},
-				"distance_scale": {
-					"type": "number",
-					"description": "The distance scale of the jump."
-				},
-				"height": {
-					"type": "number",
-					"description": "The height of the jump."
-				},
-				"jump_delay": {
-					"type": "number",
-					"description": "The delay of the jump."
-				}
-			},
-			"additionalProperties": false
-		}
-	},
-	"additionalProperties": false
+  "type": "object",
+  "properties": {
+    "fast_skip_data": {
+      "$ref": "#/$defs/fast_skip_data",
+      "default": {
+        "animation_duration": 1,
+        "distance_scale": 1,
+        "height": 0.1,
+        "jump_delay": 30
+      },
+      "description": ""
+    },
+    "regular_skip_data": {
+      "$ref": "#/$defs/regular_skip_data",
+      "default": {
+        "animation_duration": 1,
+        "distance_scale": 1,
+        "height": 0.1,
+        "jump_delay": 30
+      },
+      "description": ""
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "fast_skip_data": {
+      "type": "object",
+      "properties": {
+        "animation_duration": {
+          "type": "integer",
+          "default": 1,
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "description": ""
+        },
+        "distance_scale": {
+          "type": "number",
+          "default": 1,
+          "description": ""
+        },
+        "height": {
+          "type": "number",
+          "default": 0.1,
+          "description": ""
+        },
+        "jump_delay": {
+          "type": "integer",
+          "default": 30,
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": ""
+    },
+    "regular_skip_data": {
+      "type": "object",
+      "properties": {
+        "animation_duration": {
+          "type": "integer",
+          "default": 1,
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "description": ""
+        },
+        "distance_scale": {
+          "type": "number",
+          "default": 1,
+          "description": ""
+        },
+        "height": {
+          "type": "number",
+          "default": 0.1,
+          "description": ""
+        },
+        "jump_delay": {
+          "type": "integer",
+          "default": 30,
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": ""
+    }
+  },
+  "description": ""
 }

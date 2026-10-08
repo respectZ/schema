@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"title": "Underwater Mount Breathing",
-	"description": "Pauses this entity's breathing under water.",
-	"type": "object",
-	"properties": {},
-	"additionalProperties": false
-}

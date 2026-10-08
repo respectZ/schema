@@ -1,0 +1,184 @@
+{
+  "type": "object",
+  "properties": {
+    "controlling_seat": {
+      "type": "integer",
+      "minimum": -2147483648,
+      "maximum": 2147483647,
+      "default": 0,
+      "description": "The seat that designates the driver of the entity. Entities with the \"minecraft:behavior.controlled_by_player\" goal ignore this field and give control to any player in any seat."
+    },
+    "crouching_skip_interact": {
+      "type": "boolean",
+      "default": true,
+      "description": "If true, this entity can't be interacted with if the entity interacting with it is crouching."
+    },
+    "dismount_mode": {
+      "type": "string",
+      "pattern": "^(?:[dD][eE][fF][aA][uU][lL][tT]|[oO][nN]_[tT][oO][pP]_[cC][eE][nN][tT][eE][rR]|[lL][oO][oO][kK]_[dD][iI][rR][eE][cC][tT][iI][oO][nN])$",
+      "default": "default",
+      "description": "Defines where riders are placed when dismounting this entity:\n- \"default\", riders are placed on a valid ground position around the entity, or at the center of the entity's collision box if none is found.\n- \"on_top_center\", riders are placed at the center of the top of the entity's collision box.\n- \"look_direction\", riders are placed at the center of the top neighboring block in the riders look direction on a block that is not lava."
+    },
+    "family_types": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "anyOf": [
+          {
+            "$ref": "../../../../../vanilla/server/type_family.json",
+            "description": "List of entities that can ride this entity."
+          },
+          {
+            "type": "string",
+            "description": "List of entities that can ride this entity."
+          }
+        ],
+        "description": "List of entities that can ride this entity."
+      },
+      "default": [],
+      "description": "List of entities that can ride this entity."
+    },
+    "interact_text": {
+      "type": "string",
+      "default": "",
+      "description": "The text to display when the player can interact with the entity when playing with touch-screen controls."
+    },
+    "on_rider_enter_event": {
+      "type": "string",
+      "default": "",
+      "description": "Event to execute on the owner entity when an entity starts riding it."
+    },
+    "on_rider_exit_event": {
+      "type": "string",
+      "default": "",
+      "description": "Event to execute on the owner entity when an entity stops riding it."
+    },
+    "passenger_max_width": {
+      "type": "number",
+      "minimum": -3.4028234663852886e+38,
+      "maximum": 3.4028234663852886e+38,
+      "default": 0,
+      "description": "The max width a mob can have to be a rider. A value of 0 ignores this parameter."
+    },
+    "pull_in_entities": {
+      "type": "boolean",
+      "default": false,
+      "description": "If true, this entity will pull entities matching the specified \"family_types\" into any available seats. Entities that are leashed will only be pulled in if their distance to their leash holder is less than the \"hard_distance\" defined in their own \"minecraft:leashable\" component."
+    },
+    "rider_can_interact": {
+      "type": "boolean",
+      "default": false,
+      "description": "If true, this entity will be picked when looked at by the rider."
+    },
+    "seat_count": {
+      "type": "integer",
+      "minimum": -2147483648,
+      "maximum": 2147483647,
+      "default": 1,
+      "description": "The number of entities that can ride this entity at the same time."
+    },
+    "seats": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/seat",
+        "description": "The list of positions and number of riders for each position for entities riding this entity."
+      },
+      "default": [],
+      "description": "The list of positions and number of riders for each position for entities riding this entity."
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "seat": {
+      "type": "object",
+      "properties": {
+        "camera_relax_distance_smoothing": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 32,
+          "description": ""
+        },
+        "lock_rider_rotation": {
+          "type": "number",
+          "minimum": -3.4028234663852886e+38,
+          "maximum": 3.4028234663852886e+38,
+          "description": "Angle in degrees that a rider is allowed to rotate while riding this entity. Omit this property for no limit."
+        },
+        "max_rider_count": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "description": "Defines the maximum number of riders that can be riding this entity for this seat to be valid."
+        },
+        "min_rider_count": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "default": 0,
+          "description": "Defines the minimum number of riders that need to be riding this entity before this seat can be used."
+        },
+        "position": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "number",
+            "minimum": -3.4028234663852886e+38,
+            "maximum": 3.4028234663852886e+38,
+            "description": "Position of this seat relative to this entity's position."
+          },
+          "default": [
+            0,
+            0,
+            0
+          ],
+          "description": "Position of this seat relative to this entity's position."
+        },
+        "rotate_rider_by": {
+          "$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression",
+          "anyOf": [
+            {
+              "type": [
+                "number",
+                "string"
+              ],
+              "description": "Offset to rotate riders by."
+            },
+            {
+              "$ref": "../../../../../vanilla/definition/molang.json#/$defs/versioned",
+              "type": "object",
+              "properties": {
+                "expression": {
+                  "$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
+                  "description": ""
+                },
+                "version": {
+                  "type": "integer",
+                  "minimum": -32768,
+                  "maximum": 32767,
+                  "description": ""
+                }
+              },
+              "required": [
+                "expression",
+                "version"
+              ],
+              "additionalProperties": false,
+              "description": "Offset to rotate riders by."
+            }
+          ],
+          "description": "Offset to rotate riders by."
+        },
+        "third_person_camera_radius": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 64,
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": "The list of positions and number of riders for each position for entities riding this entity."
+    }
+  },
+  "description": "Determines whether this entity can be ridden. Allows specifying the different seat positions and amount."
+}

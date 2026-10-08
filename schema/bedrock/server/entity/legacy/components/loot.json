@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "table": {
+      "anyOf": [
+        {
+          "$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
+          "description": "The path to the loot table, relative to the Behavior Pack's root."
+        },
+        {
+          "type": "string",
+          "description": "The path to the loot table, relative to the Behavior Pack's root."
+        }
+      ],
+      "description": "The path to the loot table, relative to the Behavior Pack's root."
+    }
+  },
+  "additionalProperties": false,
+  "description": "Sets the loot table for what items this entity drops upon death."
+}

@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "interval": {
+      "anyOf": [
+        {
+          "$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
+          "description": "A Molang expression defining the inter-beat interval in seconds. A value of zero or less means no heartbeat."
+        },
+        {
+          "type": "number",
+          "description": "A Molang expression defining the inter-beat interval in seconds. A value of zero or less means no heartbeat."
+        },
+        {
+          "type": "boolean",
+          "description": "A Molang expression defining the inter-beat interval in seconds. A value of zero or less means no heartbeat."
+        }
+      ],
+      "default": 1,
+      "description": "A Molang expression defining the inter-beat interval in seconds. A value of zero or less means no heartbeat."
+    },
+    "sound_event": {
+      "anyOf": [
+        {
+          "$ref": "../../../../../vanilla/server/level_sound.json",
+          "description": "Level sound event to be played as the heartbeat sound."
+        },
+        {
+          "type": "string",
+          "description": "Level sound event to be played as the heartbeat sound."
+        }
+      ],
+      "default": "heartbeat",
+      "description": "Level sound event to be played as the heartbeat sound."
+    }
+  },
+  "additionalProperties": false,
+  "description": "Defines the entity's heartbeat."
+}

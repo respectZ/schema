@@ -1,0 +1,6 @@
+{
+  "type": "object",
+  "properties": {},
+  "additionalProperties": false,
+  "description": "Causes the entity's body rotation to match the one of their head.\nDoes not override the \"minecraft:body_rotation_blocked\" component."
+}

@@ -1,0 +1,4 @@
+{
+  "$ref": "./navigation.walk.json",
+  "description": "Allows this entity to generate paths by flying around the air like the regular Ghast."
+}

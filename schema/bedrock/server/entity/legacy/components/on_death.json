@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "event": {
+      "type": "string",
+      "description": "The event to run when the conditions for this trigger are met."
+    },
+    "filters": {
+      "$ref": "../../../../../vanilla/server/filter/entity/_index.json#/$defs/filter_item",
+      "description": "The list of conditions for this trigger to execute."
+    },
+    "target": {
+      "type": "string",
+      "enum": [
+        "baby",
+        "block",
+        "damager",
+        "holder",
+        "other",
+        "parent",
+        "player",
+        "self",
+        "target"
+      ],
+      "description": "The target of the event."
+    }
+  },
+  "additionalProperties": false,
+  "description": "Adds a trigger to call on this entity's death."
+}

@@ -1,0 +1,4 @@
+{
+  "$ref": "./on_death.json",
+  "description": "Only usable by the Ender Dragon. Adds a trigger to call when this entity lands."
+}

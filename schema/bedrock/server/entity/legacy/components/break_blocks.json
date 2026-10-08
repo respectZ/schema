@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "breakable_blocks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "anyOf": [
+          {
+            "$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+            "description": "A list of the blocks that can be broken as this entity moves around"
+          },
+          {
+            "type": "string",
+            "description": "A list of the blocks that can be broken as this entity moves around"
+          }
+        ],
+        "description": "A list of the blocks that can be broken as this entity moves around"
+      },
+      "description": "A list of the blocks that can be broken as this entity moves around"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Specifies the blocks that this entity can break as it moves around."
+}

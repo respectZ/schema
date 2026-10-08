@@ -1,0 +1,57 @@
+{
+  "type": "object",
+  "properties": {
+    "max": {
+      "type": "number",
+      "description": ""
+    },
+    "min": {
+      "type": "number",
+      "description": ""
+    },
+    "value": {
+      "$ref": "#/$defs/value_range",
+      "description": ""
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "value_range": {
+      "anyOf": [
+        {
+          "type": "number",
+          "description": ""
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "description": ""
+          },
+          "minItems": 2,
+          "maxItems": 2,
+          "description": ""
+        },
+        {
+          "type": "object",
+          "properties": {
+            "range_max": {
+              "type": "number",
+              "default": 0,
+              "description": ""
+            },
+            "range_min": {
+              "type": "number",
+              "default": 0,
+              "description": ""
+            }
+          },
+          "additionalProperties": false,
+          "description": ""
+        }
+      ],
+      "description": ""
+    }
+  },
+  "description": ""
+}

@@ -1,0 +1,141 @@
+{
+  "type": "object",
+  "properties": {
+    "angrySound": {
+      "$ref": "#/properties/angry_sound",
+      "doNotSuggest": true,
+      "description": ""
+    },
+    "angry_sound": {
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "The sound event to play when the mob is angry"
+        },
+        {
+          "$ref": "../../../../../vanilla/server/level_sound.json",
+          "description": "The sound event to play when the mob is angry"
+        }
+      ],
+      "default": "",
+      "description": "The sound event to play when the mob is angry"
+    },
+    "broadcastAnger": {
+      "$ref": "#/properties/broadcast_anger",
+      "doNotSuggest": true,
+      "description": ""
+    },
+    "broadcastAngerWhenDying": {
+      "$ref": "#/properties/broadcast_anger_when_dying",
+      "doNotSuggest": true,
+      "description": ""
+    },
+    "broadcastFilters": {
+      "$ref": "#/properties/broadcast_filters",
+      "doNotSuggest": true,
+      "description": ""
+    },
+    "broadcastRange": {
+      "$ref": "#/properties/broadcast_range",
+      "doNotSuggest": true,
+      "description": ""
+    },
+    "broadcastTargets": {
+      "$ref": "#/properties/broadcast_targets",
+      "doNotSuggest": true,
+      "description": ""
+    },
+    "broadcast_anger": {
+      "type": "boolean",
+      "default": false,
+      "description": "If true, other entities of the same entity definition within the broadcastRange will also become angry"
+    },
+    "broadcast_anger_on_attack": {
+      "type": "boolean",
+      "default": false,
+      "description": "If true, other entities of the same entity definition within the broadcastRange will also become angry whenever this mob attacks"
+    },
+    "broadcast_anger_on_being_attacked": {
+      "type": "boolean",
+      "default": false,
+      "description": "If true, other entities of the same entity definition within the broadcastRange will also become angry whenever this mob is attacked"
+    },
+    "broadcast_anger_when_dying": {
+      "type": "boolean",
+      "default": true,
+      "description": "If false, when this mob is killed it does not spread its anger to other entities of the same entity definition within the broadcastRange"
+    },
+    "broadcast_filters": {
+      "$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+      "description": "Conditions that make this entry in the list valid"
+    },
+    "broadcast_range": {
+      "type": "integer",
+      "minimum": -2147483648,
+      "maximum": 2147483647,
+      "default": 20,
+      "description": "Distance in blocks within which other entities of the same entity definition will become angry"
+    },
+    "broadcast_targets": {
+      "anyOf": [
+        {
+          "type": "string",
+          "description": "A list of entity families to broadcast anger to"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "A list of entity families to broadcast anger to"
+          },
+          "description": "A list of entity families to broadcast anger to"
+        }
+      ],
+      "description": "A list of entity families to broadcast anger to"
+    },
+    "calmEvent": {
+      "$ref": "#/properties/calm_event",
+      "doNotSuggest": true,
+      "description": ""
+    },
+    "calm_event": {
+      "$ref": "./ageable.json#/$defs/growth_event",
+      "description": "Event to run after the number of seconds specified in duration expires (when the entity stops being 'angry')"
+    },
+    "duration": {
+      "type": "integer",
+      "minimum": -2147483648,
+      "maximum": 2147483647,
+      "default": 25,
+      "description": "The amount of time in seconds that the entity will be angry"
+    },
+    "durationDelta": {
+      "$ref": "#/properties/duration_delta",
+      "doNotSuggest": true,
+      "description": ""
+    },
+    "duration_delta": {
+      "type": "integer",
+      "minimum": -2147483648,
+      "maximum": 2147483647,
+      "default": 0,
+      "description": "Variance in seconds added to the duration [-delta, delta]"
+    },
+    "filters": {
+      "$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+      "description": "Filter out mob types that it should not attack while angry (other Piglins)"
+    },
+    "soundInterval": {
+      "$ref": "#/properties/sound_interval",
+      "doNotSuggest": true,
+      "description": ""
+    },
+    "sound_interval": {
+      "$ref": "./looked_at.json#/properties/looked_at_cooldown",
+      "default": 0,
+      "description": "The range of time in seconds to randomly wait before playing the sound again"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Defines the entity's 'angry' state using a timer."
+}

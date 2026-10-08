@@ -1,0 +1,6 @@
+{
+  "type": "object",
+  "properties": {},
+  "additionalProperties": false,
+  "description": "Prevents the entity from changing dimension through portals."
+}

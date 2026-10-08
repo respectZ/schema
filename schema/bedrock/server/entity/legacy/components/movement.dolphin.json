@@ -1,0 +1,7 @@
+{
+  "not": true,
+  "deprecated": true,
+  "doNotSuggest": true,
+  "deprecationMessage": "Internal only",
+  "description": ""
+}

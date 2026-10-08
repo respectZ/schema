@@ -1,0 +1,483 @@
+{
+  "anyOf": [
+    {
+      "$ref": "#/$defs/interaction",
+      "description": "Defines interactions with this entity."
+    },
+    {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/interaction",
+            "description": "Defines interactions with this entity."
+          },
+          {
+            "type": "null",
+            "description": "Defines interactions with this entity."
+          }
+        ],
+        "description": "Defines interactions with this entity."
+      },
+      "description": "Defines interactions with this entity."
+    },
+    {
+      "type": "null",
+      "description": "Defines interactions with this entity."
+    }
+  ],
+  "$defs": {
+    "add_items": {
+      "type": "object",
+      "properties": {
+        "table": {
+          "$ref": "#/$defs/loot_table_reference",
+          "default": "",
+          "description": "File path, relative to the Behavior Pack's path, to the loot table file."
+        }
+      },
+      "additionalProperties": false,
+      "description": "Loot table with items to add to the player's inventory upon successful interaction."
+    },
+    "copper_event": {
+      "type": "string",
+      "enum": [
+        "none",
+        "wax_on",
+        "wax_off",
+        "scrape"
+      ],
+      "description": ""
+    },
+    "entity_reference": {
+      "anyOf": [
+        {
+          "$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+          "description": "List of entities to spawn when the interaction occurs."
+        },
+        {
+          "type": "string",
+          "description": "List of entities to spawn when the interaction occurs."
+        }
+      ],
+      "description": "List of entities to spawn when the interaction occurs."
+    },
+    "float_value": {
+      "type": "number",
+      "minimum": -3.4028234663852886e+38,
+      "maximum": 3.4028234663852886e+38,
+      "description": ""
+    },
+    "int32_value": {
+      "type": "integer",
+      "minimum": -2147483648,
+      "maximum": 2147483647,
+      "description": ""
+    },
+    "interaction": {
+      "type": "object",
+      "properties": {
+        "add_items": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/add_items",
+              "description": "Loot table with items to add to the player's inventory upon successful interaction."
+            },
+            {
+              "type": "null",
+              "description": "Loot table with items to add to the player's inventory upon successful interaction."
+            }
+          ],
+          "description": "Loot table with items to add to the player's inventory upon successful interaction."
+        },
+        "admire": {
+          "type": "boolean",
+          "default": false,
+          "description": ""
+        },
+        "barter": {
+          "type": "boolean",
+          "default": false,
+          "description": ""
+        },
+        "cooldown": {
+          "$ref": "#/$defs/float_value",
+          "default": 0,
+          "description": "Time in seconds before this entity can be interacted with again."
+        },
+        "cooldown_after_being_attacked": {
+          "$ref": "#/$defs/float_value",
+          "default": 0,
+          "description": "Time in seconds before this entity can be interacted with after being attacked."
+        },
+        "drop_item_slot": {
+          "$ref": "#/$defs/int32_value",
+          "description": "The entity's slot to remove and drop the item from, if any, upon successful interaction. Inventory slots are denoted by positive numbers. Equipment slots are denoted by 'slot.weapon.mainhand', 'slot.weapon.offhand', 'slot.armor.head', 'slot.armor.chest', 'slot.armor.legs', 'slot.armor.feet' and 'slot.armor.body'."
+        },
+        "drop_item_y_offset": {
+          "$ref": "#/$defs/float_value",
+          "default": 0,
+          "description": "Will offset the item drop position this amount in the y direction. Requires \"drop_item_slot\" to be specified."
+        },
+        "equip_item_slot": {
+          "$ref": "#/$defs/int32_value",
+          "description": "The entity's slot to equip the item to, if any, upon successful interaction. Inventory slots are denoted by positive numbers. Equipment slots are denoted by 'slot.weapon.mainhand', 'slot.weapon.offhand', 'slot.armor.head', 'slot.armor.chest', 'slot.armor.legs', 'slot.armor.feet' and 'slot.armor.body'."
+        },
+        "event": {
+          "$ref": "../../1.26.40/components/on_death.json#/properties/event",
+          "description": ""
+        },
+        "filters": {
+          "$ref": "../../1.26.40/components/on_death.json#/properties/filters",
+          "description": ""
+        },
+        "give_item": {
+          "type": "boolean",
+          "default": false,
+          "description": ""
+        },
+        "health_amount": {
+          "$ref": "#/$defs/int32_value",
+          "default": 0,
+          "description": "The amount of health this entity will recover or lose when interacting with this item. Negative values will harm the entity."
+        },
+        "hurt_item": {
+          "$ref": "#/$defs/int32_value",
+          "default": 0,
+          "description": "The amount of damage the item will take when used to interact with this entity. A value of 0 means the item won't lose durability."
+        },
+        "interact_text": {
+          "type": "string",
+          "default": "",
+          "description": "Text to show when the player is able to interact in this way with this entity when playing with touch-screen controls."
+        },
+        "on_interact": {
+          "$ref": "../../1.26.40/components/on_death.json",
+          "description": "Event to fire when the interaction occurs."
+        },
+        "particle_on_start": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/particle_on_start",
+              "description": "Particle effect that will be triggered at the start of the interaction."
+            },
+            {
+              "type": "null",
+              "description": "Particle effect that will be triggered at the start of the interaction."
+            }
+          ],
+          "description": "Particle effect that will be triggered at the start of the interaction."
+        },
+        "play_sounds": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/sound_reference",
+              "description": "List of sounds to play when the interaction occurs."
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/sound_reference",
+                "description": "List of sounds to play when the interaction occurs."
+              },
+              "description": "List of sounds to play when the interaction occurs."
+            }
+          ],
+          "default": [],
+          "description": "List of sounds to play when the interaction occurs."
+        },
+        "repair_entity_item": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/repair_entity_item",
+              "description": "Allows to repair one of the entity's items."
+            },
+            {
+              "type": "null",
+              "description": "Allows to repair one of the entity's items."
+            }
+          ],
+          "description": "Allows to repair one of the entity's items."
+        },
+        "spawn_entities": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/entity_reference",
+              "description": "List of entities to spawn when the interaction occurs."
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/entity_reference",
+                "description": "List of entities to spawn when the interaction occurs."
+              },
+              "description": "List of entities to spawn when the interaction occurs."
+            }
+          ],
+          "default": [],
+          "description": "List of entities to spawn when the interaction occurs."
+        },
+        "spawn_items": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/spawn_items",
+              "description": "Loot table with items to drop on the ground upon successful interaction."
+            },
+            {
+              "type": "null",
+              "description": "Loot table with items to drop on the ground upon successful interaction."
+            }
+          ],
+          "description": "Loot table with items to drop on the ground upon successful interaction."
+        },
+        "swing": {
+          "type": "boolean",
+          "default": false,
+          "description": "If true, the player will do the 'swing' animation when interacting with this entity."
+        },
+        "take_item": {
+          "type": "boolean",
+          "default": false,
+          "description": ""
+        },
+        "target": {
+          "$ref": "../../1.26.40/components/on_death.json#/properties/target",
+          "description": ""
+        },
+        "transform_to_item": {
+          "$ref": "#/$defs/item_reference",
+          "default": "",
+          "description": "The item used will transform to this item upon successful interaction. Format: itemName:auxValue"
+        },
+        "use_item": {
+          "type": "boolean",
+          "default": false,
+          "description": "If true, the interaction will use an item."
+        },
+        "vibration": {
+          "$ref": "#/$defs/vibration",
+          "default": "entity_interact",
+          "description": "Vibration to emit when the interaction occurs. Admitted values are none (no vibration emitted), shear, entity_die, entity_act, entity_interact."
+        }
+      },
+      "additionalProperties": false,
+      "description": "Defines interactions with this entity."
+    },
+    "item_reference": {
+      "anyOf": [
+        {
+          "$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+          "description": "The item used will transform to this item upon successful interaction. Format: itemName:auxValue"
+        },
+        {
+          "type": "string",
+          "description": "The item used will transform to this item upon successful interaction. Format: itemName:auxValue"
+        }
+      ],
+      "description": "The item used will transform to this item upon successful interaction. Format: itemName:auxValue"
+    },
+    "loot_table_reference": {
+      "type": "string",
+      "description": "File path, relative to the Behavior Pack's path, to the loot table file."
+    },
+    "particle_on_start": {
+      "type": "object",
+      "properties": {
+        "copper_event": {
+          "$ref": "#/$defs/copper_event",
+          "default": "none",
+          "description": ""
+        },
+        "particle_offset_towards_interactor": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether or not the particle will appear closer to who performed the interaction."
+        },
+        "particle_type": {
+          "$ref": "#/$defs/particle_type",
+          "default": "none",
+          "description": "The type of particle that will be spawned."
+        },
+        "particle_y_offset": {
+          "$ref": "#/$defs/float_value",
+          "default": 0,
+          "description": "Will offset the particle this amount in the y direction."
+        }
+      },
+      "additionalProperties": false,
+      "description": "Particle effect that will be triggered at the start of the interaction."
+    },
+    "particle_type": {
+      "type": "string",
+      "anyOf": [
+        {
+          "$ref": "../../../../../vanilla/server/particle_type.json",
+          "enum": [
+            "none",
+            "bubble",
+            "bubblemanual",
+            "crit",
+            "blockforcefield",
+            "smoke",
+            "explode",
+            "evaporation",
+            "flame",
+            "candleflame",
+            "lava",
+            "largesmoke",
+            "reddust",
+            "risingborderdust",
+            "iconcrack",
+            "snowballpoof",
+            "largeexplode",
+            "hugeexplosion",
+            "breezewindexplosion",
+            "mobflame",
+            "heart",
+            "terrain",
+            "townaura",
+            "portal",
+            "watersplash",
+            "watersplashmanual",
+            "waterwake",
+            "dripwater",
+            "driplava",
+            "driphoney",
+            "stalactitedripwater",
+            "stalactitedriplava",
+            "fallingdust",
+            "mobspell",
+            "mobspellambient",
+            "mobspellinstantaneous",
+            "ink",
+            "slime",
+            "rainsplash",
+            "villagerangry",
+            "villagerhappy",
+            "enchantingtable",
+            "trackingemitter",
+            "note",
+            "witchspell",
+            "carrotboost",
+            "mobappearance",
+            "endrod",
+            "dragonbreath",
+            "spit",
+            "totem",
+            "food",
+            "fireworksstarter",
+            "fireworks",
+            "fireworksoverlay",
+            "balloongas",
+            "coloredflame",
+            "sparkler",
+            "conduit",
+            "bubblecolumnup",
+            "bubblecolumndown",
+            "sneeze",
+            "shulkerbullet",
+            "bleach",
+            "dragondestroyblock",
+            "myceliumdust",
+            "fallingborderdust",
+            "campfiresmoke",
+            "campfiresmoketall",
+            "dragonbreathfire",
+            "dragonbreathtrail",
+            "soul",
+            "obsidiantear",
+            "portalreverse",
+            "snowflake",
+            "wax",
+            "electricspark",
+            "shriek",
+            "sculksoul",
+            "sonicexplosion",
+            "dustplume",
+            "whitesmoke",
+            "wolfarmorcrack",
+            "creakingcrumble",
+            "paleoakleaves",
+            "eyeblossomopen",
+            "eyeblossomclose",
+            "blueflame",
+            "greenflame",
+            "pausemobgrowth",
+            "resetmobgrowth",
+            "sulfurcube"
+          ],
+          "description": "The type of particle that will be spawned."
+        },
+        {
+          "enum": [
+            "iceballbreak",
+            "orangepoplarleaves",
+            "redpoplarleaves",
+            "yellowpoplarleaves"
+          ],
+          "description": "The type of particle that will be spawned."
+        }
+      ],
+      "description": "The type of particle that will be spawned."
+    },
+    "repair_entity_item": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "$ref": "#/$defs/int32_value",
+          "default": 1,
+          "description": "How much of the item durability should be restored upon interaction."
+        },
+        "slot": {
+          "type": "string",
+          "description": "The entity's slot containing the item to be repaired. Inventory slots are denoted by positive numbers. Equipment slots are denoted by 'slot.weapon.mainhand', 'slot.weapon.offhand', 'slot.armor.head', 'slot.armor.chest', 'slot.armor.legs', 'slot.armor.feet' and 'slot.armor.body'."
+        }
+      },
+      "additionalProperties": false,
+      "description": "Allows to repair one of the entity's items."
+    },
+    "sound_reference": {
+      "type": "string",
+      "anyOf": [
+        {
+          "$ref": "../../../../../vanilla/server/level_sound.json",
+          "description": "List of sounds to play when the interaction occurs."
+        },
+        {
+          "type": "string",
+          "description": "List of sounds to play when the interaction occurs."
+        }
+      ],
+      "description": "List of sounds to play when the interaction occurs."
+    },
+    "spawn_items": {
+      "type": "object",
+      "properties": {
+        "table": {
+          "$ref": "#/$defs/loot_table_reference",
+          "default": "",
+          "description": "File path, relative to the Behavior Pack's path, to the loot table file."
+        },
+        "y_offset": {
+          "$ref": "#/$defs/float_value",
+          "default": 1,
+          "description": "Will offset the items spawn position this amount in the y direction."
+        }
+      },
+      "additionalProperties": false,
+      "description": "Loot table with items to drop on the ground upon successful interaction."
+    },
+    "vibration": {
+      "type": "string",
+      "enum": [
+        "none",
+        "entity_act",
+        "entity_die",
+        "entity_interact",
+        "shear"
+      ],
+      "description": "Vibration to emit when the interaction occurs. Admitted values are none (no vibration emitted), shear, entity_die, entity_act, entity_interact."
+    }
+  },
+  "description": "Defines interactions with this entity."
+}

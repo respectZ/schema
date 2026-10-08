@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"title": "Suspect Tracking",
-	"description": "Allows this entity to remember suspicious locations.",
-	"type": "object",
-	"properties": {},
-	"additionalProperties": false
-}

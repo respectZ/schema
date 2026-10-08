@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "max_turn": {
+      "type": "number",
+      "default": 30,
+      "description": ""
+    },
+    "sway_amplitude": {
+      "type": "number",
+      "default": 0.05,
+      "description": ""
+    },
+    "sway_frequency": {
+      "type": "number",
+      "default": 0.5,
+      "description": ""
+    }
+  },
+  "additionalProperties": false,
+  "description": ""
+}

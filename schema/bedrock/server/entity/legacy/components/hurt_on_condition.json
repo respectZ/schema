@@ -1,0 +1,48 @@
+{
+  "type": "object",
+  "properties": {
+    "damage_conditions": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/condition",
+          "description": "List of damage conditions that when met can cause damage to the entity."
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/condition",
+            "description": "List of damage conditions that when met can cause damage to the entity."
+          },
+          "description": "List of damage conditions that when met can cause damage to the entity."
+        }
+      ],
+      "description": "List of damage conditions that when met can cause damage to the entity."
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "condition": {
+      "type": "object",
+      "properties": {
+        "cause": {
+          "$ref": "../../../../../vanilla/server/damage_type.json",
+          "description": "The kind of damage that is caused to the entity. Various armors and spells use this to determine if the entity is immune."
+        },
+        "damage_per_tick": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "default": 1,
+          "description": "The amount of damage done each tick that the conditions are met."
+        },
+        "filters": {
+          "$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+          "description": "The set of conditions that must be satisfied before the entity takes the defined damage."
+        }
+      },
+      "additionalProperties": false,
+      "description": "List of damage conditions that when met can cause damage to the entity."
+    }
+  },
+  "description": "Defines a set of conditions under which an entity should take damage."
+}

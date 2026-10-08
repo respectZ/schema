@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "interact_text": {
+      "type": "string",
+      "description": "The text that will display when interacting with this entity with a dye when playing with Touch-screen controls."
+    }
+  },
+  "additionalProperties": false,
+  "description": "Allows dyes to be used on this entity to change its color."
+}

@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "distance_to_players": {
+      "type": "number",
+      "minimum": 128,
+      "default": 128,
+      "description": ""
+    },
+    "never_despawn": {
+      "type": "boolean",
+      "default": true,
+      "description": ""
+    },
+    "radius": {
+      "type": "integer",
+      "minimum": 2,
+      "maximum": 6,
+      "default": 2,
+      "description": ""
+    }
+  },
+  "additionalProperties": false,
+  "description": ""
+}

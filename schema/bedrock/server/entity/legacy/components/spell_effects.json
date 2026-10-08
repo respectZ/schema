@@ -1,0 +1,113 @@
+{
+  "type": "object",
+  "properties": {
+    "add_effects": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/added_effect",
+        "description": ""
+      },
+      "default": [],
+      "description": ""
+    },
+    "remove_effects": {
+      "anyOf": [
+        {
+          "anyOf": [
+            {
+              "$ref": "../../../../../vanilla/server/effect_type.json",
+              "description": ""
+            },
+            {
+              "type": "string",
+              "description": ""
+            }
+          ],
+          "description": ""
+        },
+        {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "../../../../../vanilla/server/effect_type.json",
+                "description": ""
+              },
+              {
+                "type": "string",
+                "description": ""
+              }
+            ],
+            "description": ""
+          },
+          "description": ""
+        }
+      ],
+      "description": ""
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "added_effect": {
+      "type": "object",
+      "properties": {
+        "ambient": {
+          "type": "boolean",
+          "default": false,
+          "description": ""
+        },
+        "amplifier": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "default": 0,
+          "description": ""
+        },
+        "display_on_screen_animation": {
+          "type": "boolean",
+          "default": false,
+          "description": ""
+        },
+        "duration": {
+          "anyOf": [
+            {
+              "type": "number",
+              "description": ""
+            },
+            {
+              "type": "string",
+              "enum": [
+                "infinite"
+              ],
+              "description": ""
+            }
+          ],
+          "default": 0,
+          "description": ""
+        },
+        "effect": {
+          "anyOf": [
+            {
+              "$ref": "../../../../../vanilla/server/effect_type.json",
+              "description": ""
+            },
+            {
+              "type": "string",
+              "description": ""
+            }
+          ],
+          "default": "",
+          "description": ""
+        },
+        "visible": {
+          "type": "boolean",
+          "default": true,
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": ""
+    }
+  },
+  "description": ""
+}

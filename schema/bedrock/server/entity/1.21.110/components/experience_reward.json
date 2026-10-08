@@ -1,0 +1,70 @@
+{
+  "type": "object",
+  "properties": {
+    "on_bred": {
+      "$ref": "#/$defs/expression",
+      "description": "A Molang expression defining the amount of experience rewarded when this entity is successfully bred. An array of expressions adds each expression's result together for a final total."
+    },
+    "on_bred_array": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/expression",
+        "description": ""
+      },
+      "deprecated": true,
+      "description": ""
+    },
+    "on_death": {
+      "$ref": "#/$defs/expression",
+      "description": "A Molang expression defining the amount of experience rewarded when this entity dies. An array of expressions adds each expression's result together for a final total."
+    },
+    "on_death_array": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/expression",
+        "description": ""
+      },
+      "deprecated": true,
+      "description": ""
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "expression": {
+      "$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression",
+      "anyOf": [
+        {
+          "type": [
+            "number",
+            "string"
+          ],
+          "description": ""
+        },
+        {
+          "$ref": "../../../../../vanilla/definition/molang.json#/$defs/versioned",
+          "type": "object",
+          "properties": {
+            "expression": {
+              "$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
+              "description": ""
+            },
+            "version": {
+              "type": "integer",
+              "minimum": -32768,
+              "maximum": 32767,
+              "description": ""
+            }
+          },
+          "required": [
+            "expression",
+            "version"
+          ],
+          "additionalProperties": false,
+          "description": ""
+        }
+      ],
+      "description": ""
+    }
+  },
+  "description": "."
+}

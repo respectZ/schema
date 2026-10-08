@@ -1,0 +1,1046 @@
+{
+  "type": "object",
+  "properties": {
+    "anchor": {
+      "type": "string",
+      "anyOf": [
+        {
+          "enum": [
+            "origin",
+            "eye_height",
+            "middle"
+          ],
+          "description": ""
+        },
+        {
+          "pattern": "^(?:[oO][rR][iI][gG][iI][nN]|[eE][yY][eE]_[hH][eE][iI][gG][hH][tT]|[mM][iI][dD][dD][lL][eE])$",
+          "description": ""
+        }
+      ],
+      "default": "origin",
+      "description": ""
+    },
+    "angle_offset": {
+      "type": "number",
+      "minimum": -3.4028234663852886e+38,
+      "maximum": 3.4028234663852886e+38,
+      "default": 0,
+      "description": ""
+    },
+    "catch_fire": {
+      "type": "boolean",
+      "default": false,
+      "description": ""
+    },
+    "crit_particle_on_hurt": {
+      "type": "boolean",
+      "default": false,
+      "description": ""
+    },
+    "destroy_on_hurt": {
+      "type": "boolean",
+      "default": false,
+      "description": ""
+    },
+    "gravity": {
+      "type": "number",
+      "minimum": -3.4028234663852886e+38,
+      "maximum": 3.4028234663852886e+38,
+      "default": 0.05,
+      "description": ""
+    },
+    "hit_ground_sound": {
+      "anyOf": [
+        {
+          "$ref": "../../../../../vanilla/server/level_sound.json",
+          "description": ""
+        },
+        {
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "default": "",
+      "description": ""
+    },
+    "hit_nearest_passenger": {
+      "type": "boolean",
+      "default": false,
+      "description": ""
+    },
+    "hit_sound": {
+      "anyOf": [
+        {
+          "$ref": "../../../../../vanilla/server/level_sound.json",
+          "description": ""
+        },
+        {
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "default": "",
+      "description": ""
+    },
+    "hit_water": {
+      "type": "boolean",
+      "default": false,
+      "description": ""
+    },
+    "homing": {
+      "type": "boolean",
+      "default": false,
+      "description": ""
+    },
+    "ignored_entities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entity_name",
+        "description": ""
+      },
+      "default": [],
+      "description": ""
+    },
+    "inertia": {
+      "type": "number",
+      "minimum": -3.4028234663852886e+38,
+      "maximum": 3.4028234663852886e+38,
+      "default": 0.99,
+      "description": ""
+    },
+    "is_dangerous": {
+      "type": "boolean",
+      "default": false,
+      "description": ""
+    },
+    "isolated_physics": {
+      "type": "boolean",
+      "default": true,
+      "description": ""
+    },
+    "lightning": {
+      "type": "boolean",
+      "default": false,
+      "description": ""
+    },
+    "liquid_inertia": {
+      "type": "number",
+      "minimum": -3.4028234663852886e+38,
+      "maximum": 3.4028234663852886e+38,
+      "default": 0.6,
+      "description": ""
+    },
+    "multiple_targets": {
+      "type": "boolean",
+      "default": false,
+      "description": ""
+    },
+    "offset": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "minimum": -3.4028234663852886e+38,
+        "maximum": 3.4028234663852886e+38,
+        "description": ""
+      },
+      "minItems": 3,
+      "maxItems": 3,
+      "default": [
+        0,
+        0,
+        0
+      ],
+      "description": ""
+    },
+    "on_fire_time": {
+      "type": "number",
+      "minimum": -3.4028234663852886e+38,
+      "maximum": 3.4028234663852886e+38,
+      "default": 5,
+      "description": ""
+    },
+    "on_hit": {
+      "$ref": "#/$defs/on_hit",
+      "description": ""
+    },
+    "particle": {
+      "$ref": "#/$defs/particle",
+      "default": "iconcrack",
+      "description": ""
+    },
+    "potion_effect": {
+      "type": "integer",
+      "minimum": -2147483648,
+      "maximum": 2147483647,
+      "default": -1,
+      "description": ""
+    },
+    "power": {
+      "type": "number",
+      "minimum": -3.4028234663852886e+38,
+      "maximum": 3.4028234663852886e+38,
+      "default": 1.3,
+      "description": ""
+    },
+    "reflect_immunity": {
+      "type": "number",
+      "minimum": -3.4028234663852886e+38,
+      "maximum": 3.4028234663852886e+38,
+      "default": 0,
+      "description": ""
+    },
+    "reflect_on_hurt": {
+      "type": "boolean",
+      "default": false,
+      "description": ""
+    },
+    "shoot_sound": {
+      "anyOf": [
+        {
+          "$ref": "../../../../../vanilla/server/level_sound.json",
+          "description": ""
+        },
+        {
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "default": "",
+      "description": ""
+    },
+    "shoot_target": {
+      "type": "boolean",
+      "default": true,
+      "description": ""
+    },
+    "should_bounce": {
+      "type": "string",
+      "anyOf": [
+        {
+          "enum": [
+            "no",
+            "if_invulnerable",
+            "if_no_damage_dealt"
+          ],
+          "description": ""
+        },
+        {
+          "pattern": "^(?:[nN][oO]|[iI][fF]_[iI][nN][vV][uU][lL][nN][eE][rR][aA][bB][lL][eE]|[iI][fF]_[nN][oO]_[dD][aA][mM][aA][gG][eE]_[dD][eE][aA][lL][tT])$",
+          "description": ""
+        }
+      ],
+      "default": "no",
+      "description": ""
+    },
+    "splash_range": {
+      "type": "number",
+      "minimum": -3.4028234663852886e+38,
+      "maximum": 3.4028234663852886e+38,
+      "default": 4,
+      "description": ""
+    },
+    "spread_fire": {
+      "type": "boolean",
+      "default": true,
+      "description": ""
+    },
+    "stop_on_hurt": {
+      "type": "boolean",
+      "default": false,
+      "description": ""
+    },
+    "uncertainty_base": {
+      "type": "number",
+      "minimum": -3.4028234663852886e+38,
+      "maximum": 3.4028234663852886e+38,
+      "default": 0,
+      "description": ""
+    },
+    "uncertainty_multiplier": {
+      "type": "number",
+      "minimum": -3.4028234663852886e+38,
+      "maximum": 3.4028234663852886e+38,
+      "default": 0,
+      "description": ""
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "arrow_effect": {
+      "type": "object",
+      "properties": {
+        "apply_effect_to_blocking_targets": {
+          "type": "boolean",
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": ""
+    },
+    "catch_fire": {
+      "type": "object",
+      "properties": {
+        "fire_affected_by_griefing": {
+          "type": "boolean",
+          "description": ""
+        },
+        "on_fire_time": {
+          "type": "number",
+          "minimum": -3.4028234663852886e+38,
+          "maximum": 3.4028234663852886e+38,
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": ""
+    },
+    "damage_range": {
+      "type": "object",
+      "properties": {
+        "max": {
+          "type": "number",
+          "minimum": -3.4028234663852886e+38,
+          "maximum": 3.4028234663852886e+38,
+          "description": ""
+        },
+        "min": {
+          "type": "number",
+          "minimum": -3.4028234663852886e+38,
+          "maximum": 3.4028234663852886e+38,
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": ""
+    },
+    "definition_event": {
+      "type": "object",
+      "properties": {
+        "affect_projectile": {
+          "type": "boolean",
+          "description": ""
+        },
+        "affect_shooter": {
+          "type": "boolean",
+          "description": ""
+        },
+        "affect_splash_area": {
+          "type": "boolean",
+          "description": ""
+        },
+        "affect_target": {
+          "type": "boolean",
+          "description": ""
+        },
+        "event_trigger": {
+          "$ref": "#/$defs/trigger",
+          "description": ""
+        },
+        "splash_area": {
+          "type": "number",
+          "minimum": -3.4028234663852886e+38,
+          "maximum": 3.4028234663852886e+38,
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": ""
+    },
+    "difficulty_randomization": {
+      "type": "string",
+      "anyOf": [
+        {
+          "enum": [
+            "none",
+            "additive",
+            "multiplicative"
+          ],
+          "description": ""
+        },
+        {
+          "pattern": "^(?:[nN][oO][nN][eE]|[aA][dD][dD][iI][tT][iI][vV][eE]|[mM][uU][lL][tT][iI][pP][lL][iI][cC][aA][tT][iI][vV][eE])$",
+          "description": ""
+        }
+      ],
+      "description": ""
+    },
+    "douse_fire": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false,
+      "description": ""
+    },
+    "duration": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": ""
+        },
+        {
+          "type": "string",
+          "anyOf": [
+            {
+              "enum": [
+                "infinite"
+              ],
+              "description": ""
+            },
+            {
+              "pattern": "^(?:[iI][nN][fF][iI][nN][iI][tT][eE])$",
+              "description": ""
+            }
+          ],
+          "description": ""
+        }
+      ],
+      "description": ""
+    },
+    "effect_entry": {
+      "type": "object",
+      "properties": {
+        "amplifier": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "description": ""
+        },
+        "durationeasy": {
+          "$ref": "#/$defs/optional_duration",
+          "description": ""
+        },
+        "durationhard": {
+          "$ref": "#/$defs/optional_duration",
+          "description": ""
+        },
+        "durationnormal": {
+          "$ref": "#/$defs/optional_duration",
+          "description": ""
+        },
+        "effect": {
+          "$ref": "#/$defs/effect_name",
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": ""
+    },
+    "effect_name": {
+      "anyOf": [
+        {
+          "$ref": "../../../../../vanilla/server/effect_type.json",
+          "description": ""
+        },
+        {
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "description": ""
+    },
+    "entity_name": {
+      "anyOf": [
+        {
+          "$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+          "description": ""
+        },
+        {
+          "type": "string",
+          "description": ""
+        }
+      ],
+      "description": ""
+    },
+    "filter": {
+      "$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+      "description": ""
+    },
+    "freeze_on_hit": {
+      "type": "object",
+      "properties": {
+        "shape": {
+          "$ref": "#/$defs/freeze_shape",
+          "description": ""
+        },
+        "size": {
+          "type": "number",
+          "minimum": -3.4028234663852886e+38,
+          "maximum": 3.4028234663852886e+38,
+          "description": ""
+        },
+        "snap_to_block": {
+          "type": "boolean",
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": ""
+    },
+    "freeze_shape": {
+      "type": "string",
+      "anyOf": [
+        {
+          "enum": [
+            "cube",
+            "sphere"
+          ],
+          "description": ""
+        },
+        {
+          "pattern": "^(?:[cC][uU][bB][eE]|[sS][pP][hH][eE][rR][eE])$",
+          "description": ""
+        }
+      ],
+      "description": ""
+    },
+    "grant_xp": {
+      "type": "object",
+      "properties": {
+        "maxXP": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "description": ""
+        },
+        "minXP": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": ""
+    },
+    "hurt_owner": {
+      "type": "object",
+      "properties": {
+        "ignite": {
+          "type": "boolean",
+          "description": ""
+        },
+        "knockback": {
+          "type": "boolean",
+          "description": ""
+        },
+        "owner_damage": {
+          "type": "number",
+          "minimum": -3.4028234663852886e+38,
+          "maximum": 3.4028234663852886e+38,
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": ""
+    },
+    "ignite": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false,
+      "description": ""
+    },
+    "impact_damage": {
+      "type": "object",
+      "properties": {
+        "apply_knockback_to_blocking_targets": {
+          "type": "boolean",
+          "description": ""
+        },
+        "catch_fire": {
+          "type": "boolean",
+          "description": ""
+        },
+        "ceil_pre_critical_damage": {
+          "type": "boolean",
+          "description": ""
+        },
+        "channeling": {
+          "type": "boolean",
+          "description": ""
+        },
+        "damage": {
+          "$ref": "#/$defs/damage_range",
+          "description": ""
+        },
+        "destroy_on_hit": {
+          "type": "boolean",
+          "description": ""
+        },
+        "destroy_on_hit_requires_damage": {
+          "type": "boolean",
+          "description": ""
+        },
+        "difficulty_randomization": {
+          "$ref": "#/$defs/difficulty_randomization",
+          "description": ""
+        },
+        "filter": {
+          "type": "string",
+          "description": ""
+        },
+        "knockback": {
+          "type": "boolean",
+          "description": ""
+        },
+        "max_critical_damage": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "description": ""
+        },
+        "min_critical_damage": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "description": ""
+        },
+        "power_multiplier": {
+          "type": "number",
+          "minimum": -3.4028234663852886e+38,
+          "maximum": 3.4028234663852886e+38,
+          "description": ""
+        },
+        "set_last_hurt_requires_damage": {
+          "type": "boolean",
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": ""
+    },
+    "mob_effect": {
+      "type": "object",
+      "properties": {
+        "effects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/effect_entry",
+            "description": ""
+          },
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": ""
+    },
+    "on_hit": {
+      "type": "object",
+      "properties": {
+        "arrow_effect": {
+          "$ref": "#/$defs/arrow_effect",
+          "description": ""
+        },
+        "catch_fire": {
+          "$ref": "#/$defs/catch_fire",
+          "description": ""
+        },
+        "definition_event": {
+          "$ref": "#/$defs/definition_event",
+          "description": ""
+        },
+        "douse_fire": {
+          "$ref": "#/$defs/douse_fire",
+          "description": ""
+        },
+        "freeze_on_hit": {
+          "$ref": "#/$defs/freeze_on_hit",
+          "description": ""
+        },
+        "grant_xp": {
+          "$ref": "#/$defs/grant_xp",
+          "description": ""
+        },
+        "hurt_owner": {
+          "$ref": "#/$defs/hurt_owner",
+          "description": ""
+        },
+        "ignite": {
+          "$ref": "#/$defs/ignite",
+          "description": ""
+        },
+        "impact_damage": {
+          "$ref": "#/$defs/impact_damage",
+          "description": ""
+        },
+        "mob_effect": {
+          "$ref": "#/$defs/mob_effect",
+          "description": ""
+        },
+        "particle_on_hit": {
+          "$ref": "#/$defs/particle_on_hit",
+          "description": ""
+        },
+        "remove_on_hit": {
+          "$ref": "#/$defs/remove_on_hit",
+          "description": ""
+        },
+        "spawn_aoe_cloud": {
+          "$ref": "#/$defs/spawn_aoe_cloud",
+          "description": ""
+        },
+        "spawn_chance": {
+          "$ref": "#/$defs/spawn_chance",
+          "description": ""
+        },
+        "stick_in_ground": {
+          "$ref": "#/$defs/stick_in_ground",
+          "description": ""
+        },
+        "teleport_owner": {
+          "$ref": "#/$defs/teleport_owner",
+          "description": ""
+        },
+        "thrown_potion_effect": {
+          "$ref": "#/$defs/thrown_potion_effect",
+          "description": ""
+        },
+        "wind_burst_on_hit": {
+          "$ref": "#/$defs/wind_burst_on_hit",
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": ""
+    },
+    "optional_duration": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/duration",
+          "description": ""
+        },
+        {
+          "const": false,
+          "description": ""
+        }
+      ],
+      "description": ""
+    },
+    "particle": {
+      "type": "string",
+      "anyOf": [
+        {
+          "enum": [
+            "balloongas",
+            "bleach",
+            "blockforcefield",
+            "blueflame",
+            "breezewindexplosion",
+            "bubble",
+            "bubblecolumndown",
+            "bubblecolumnup",
+            "bubblemanual",
+            "campfiresmoke",
+            "campfiresmoketall",
+            "candleflame",
+            "carrotboost",
+            "coloredflame",
+            "conduit",
+            "creakingcrumble",
+            "crit",
+            "dragonbreath",
+            "dragonbreathfire",
+            "dragonbreathtrail",
+            "dragondestroyblock",
+            "driphoney",
+            "driplava",
+            "dripwater",
+            "dustplume",
+            "electricspark",
+            "enchantingtable",
+            "endrod",
+            "evaporation",
+            "explode",
+            "eyeblossomclose",
+            "eyeblossomopen",
+            "fallingborderdust",
+            "fallingdust",
+            "fireworks",
+            "fireworksoverlay",
+            "fireworksstarter",
+            "flame",
+            "food",
+            "greenflame",
+            "heart",
+            "hugeexplosion",
+            "iceballbreak",
+            "iconcrack",
+            "ink",
+            "largeexplode",
+            "largesmoke",
+            "lava",
+            "mobappearance",
+            "mobflame",
+            "mobspell",
+            "mobspellambient",
+            "mobspellinstantaneous",
+            "myceliumdust",
+            "none",
+            "note",
+            "obsidiantear",
+            "orangepoplarleaves",
+            "paleoakleaves",
+            "pausemobgrowth",
+            "portal",
+            "portalreverse",
+            "rainsplash",
+            "reddust",
+            "redpoplarleaves",
+            "resetmobgrowth",
+            "risingborderdust",
+            "sculksoul",
+            "shriek",
+            "shulkerbullet",
+            "slime",
+            "smoke",
+            "sneeze",
+            "snowballpoof",
+            "snowflake",
+            "sonicexplosion",
+            "soul",
+            "sparkler",
+            "spit",
+            "stalactitedriplava",
+            "stalactitedripwater",
+            "sulfurcube",
+            "terrain",
+            "totem",
+            "townaura",
+            "trackingemitter",
+            "villagerangry",
+            "villagerhappy",
+            "watersplash",
+            "watersplashmanual",
+            "waterwake",
+            "wax",
+            "whitesmoke",
+            "witchspell",
+            "wolfarmorcrack",
+            "yellowpoplarleaves"
+          ],
+          "description": ""
+        },
+        {
+          "pattern": "^(?:[bB][aA][lL][lL][oO][oO][nN][gG][aA][sS]|[bB][lL][eE][aA][cC][hH]|[bB][lL][oO][cC][kK][fF][oO][rR][cC][eE][fF][iI][eE][lL][dD]|[bB][lL][uU][eE][fF][lL][aA][mM][eE]|[bB][rR][eE][eE][zZ][eE][wW][iI][nN][dD][eE][xX][pP][lL][oO][sS][iI][oO][nN]|[bB][uU][bB][bB][lL][eE]|[bB][uU][bB][bB][lL][eE][cC][oO][lL][uU][mM][nN][dD][oO][wW][nN]|[bB][uU][bB][bB][lL][eE][cC][oO][lL][uU][mM][nN][uU][pP]|[bB][uU][bB][bB][lL][eE][mM][aA][nN][uU][aA][lL]|[cC][aA][mM][pP][fF][iI][rR][eE][sS][mM][oO][kK][eE]|[cC][aA][mM][pP][fF][iI][rR][eE][sS][mM][oO][kK][eE][tT][aA][lL][lL]|[cC][aA][nN][dD][lL][eE][fF][lL][aA][mM][eE]|[cC][aA][rR][rR][oO][tT][bB][oO][oO][sS][tT]|[cC][oO][lL][oO][rR][eE][dD][fF][lL][aA][mM][eE]|[cC][oO][nN][dD][uU][iI][tT]|[cC][rR][eE][aA][kK][iI][nN][gG][cC][rR][uU][mM][bB][lL][eE]|[cC][rR][iI][tT]|[dD][rR][aA][gG][oO][nN][bB][rR][eE][aA][tT][hH]|[dD][rR][aA][gG][oO][nN][bB][rR][eE][aA][tT][hH][fF][iI][rR][eE]|[dD][rR][aA][gG][oO][nN][bB][rR][eE][aA][tT][hH][tT][rR][aA][iI][lL]|[dD][rR][aA][gG][oO][nN][dD][eE][sS][tT][rR][oO][yY][bB][lL][oO][cC][kK]|[dD][rR][iI][pP][hH][oO][nN][eE][yY]|[dD][rR][iI][pP][lL][aA][vV][aA]|[dD][rR][iI][pP][wW][aA][tT][eE][rR]|[dD][uU][sS][tT][pP][lL][uU][mM][eE]|[eE][lL][eE][cC][tT][rR][iI][cC][sS][pP][aA][rR][kK]|[eE][nN][cC][hH][aA][nN][tT][iI][nN][gG][tT][aA][bB][lL][eE]|[eE][nN][dD][rR][oO][dD]|[eE][vV][aA][pP][oO][rR][aA][tT][iI][oO][nN]|[eE][xX][pP][lL][oO][dD][eE]|[eE][yY][eE][bB][lL][oO][sS][sS][oO][mM][cC][lL][oO][sS][eE]|[eE][yY][eE][bB][lL][oO][sS][sS][oO][mM][oO][pP][eE][nN]|[fF][aA][lL][lL][iI][nN][gG][bB][oO][rR][dD][eE][rR][dD][uU][sS][tT]|[fF][aA][lL][lL][iI][nN][gG][dD][uU][sS][tT]|[fF][iI][rR][eE][wW][oO][rR][kK][sS]|[fF][iI][rR][eE][wW][oO][rR][kK][sS][oO][vV][eE][rR][lL][aA][yY]|[fF][iI][rR][eE][wW][oO][rR][kK][sS][sS][tT][aA][rR][tT][eE][rR]|[fF][lL][aA][mM][eE]|[fF][oO][oO][dD]|[gG][rR][eE][eE][nN][fF][lL][aA][mM][eE]|[hH][eE][aA][rR][tT]|[hH][uU][gG][eE][eE][xX][pP][lL][oO][sS][iI][oO][nN]|[iI][cC][eE][bB][aA][lL][lL][bB][rR][eE][aA][kK]|[iI][cC][oO][nN][cC][rR][aA][cC][kK]|[iI][nN][kK]|[lL][aA][rR][gG][eE][eE][xX][pP][lL][oO][dD][eE]|[lL][aA][rR][gG][eE][sS][mM][oO][kK][eE]|[lL][aA][vV][aA]|[mM][oO][bB][aA][pP][pP][eE][aA][rR][aA][nN][cC][eE]|[mM][oO][bB][fF][lL][aA][mM][eE]|[mM][oO][bB][sS][pP][eE][lL][lL]|[mM][oO][bB][sS][pP][eE][lL][lL][aA][mM][bB][iI][eE][nN][tT]|[mM][oO][bB][sS][pP][eE][lL][lL][iI][nN][sS][tT][aA][nN][tT][aA][nN][eE][oO][uU][sS]|[mM][yY][cC][eE][lL][iI][uU][mM][dD][uU][sS][tT]|[nN][oO][nN][eE]|[nN][oO][tT][eE]|[oO][bB][sS][iI][dD][iI][aA][nN][tT][eE][aA][rR]|[oO][rR][aA][nN][gG][eE][pP][oO][pP][lL][aA][rR][lL][eE][aA][vV][eE][sS]|[pP][aA][lL][eE][oO][aA][kK][lL][eE][aA][vV][eE][sS]|[pP][aA][uU][sS][eE][mM][oO][bB][gG][rR][oO][wW][tT][hH]|[pP][oO][rR][tT][aA][lL]|[pP][oO][rR][tT][aA][lL][rR][eE][vV][eE][rR][sS][eE]|[rR][aA][iI][nN][sS][pP][lL][aA][sS][hH]|[rR][eE][dD][dD][uU][sS][tT]|[rR][eE][dD][pP][oO][pP][lL][aA][rR][lL][eE][aA][vV][eE][sS]|[rR][eE][sS][eE][tT][mM][oO][bB][gG][rR][oO][wW][tT][hH]|[rR][iI][sS][iI][nN][gG][bB][oO][rR][dD][eE][rR][dD][uU][sS][tT]|[sS][cC][uU][lL][kK][sS][oO][uU][lL]|[sS][hH][rR][iI][eE][kK]|[sS][hH][uU][lL][kK][eE][rR][bB][uU][lL][lL][eE][tT]|[sS][lL][iI][mM][eE]|[sS][mM][oO][kK][eE]|[sS][nN][eE][eE][zZ][eE]|[sS][nN][oO][wW][bB][aA][lL][lL][pP][oO][oO][fF]|[sS][nN][oO][wW][fF][lL][aA][kK][eE]|[sS][oO][nN][iI][cC][eE][xX][pP][lL][oO][sS][iI][oO][nN]|[sS][oO][uU][lL]|[sS][pP][aA][rR][kK][lL][eE][rR]|[sS][pP][iI][tT]|[sS][tT][aA][lL][aA][cC][tT][iI][tT][eE][dD][rR][iI][pP][lL][aA][vV][aA]|[sS][tT][aA][lL][aA][cC][tT][iI][tT][eE][dD][rR][iI][pP][wW][aA][tT][eE][rR]|[sS][uU][lL][fF][uU][rR][cC][uU][bB][eE]|[tT][eE][rR][rR][aA][iI][nN]|[tT][oO][tT][eE][mM]|[tT][oO][wW][nN][aA][uU][rR][aA]|[tT][rR][aA][cC][kK][iI][nN][gG][eE][mM][iI][tT][tT][eE][rR]|[vV][iI][lL][lL][aA][gG][eE][rR][aA][nN][gG][rR][yY]|[vV][iI][lL][lL][aA][gG][eE][rR][hH][aA][pP][pP][yY]|[wW][aA][tT][eE][rR][sS][pP][lL][aA][sS][hH]|[wW][aA][tT][eE][rR][sS][pP][lL][aA][sS][hH][mM][aA][nN][uU][aA][lL]|[wW][aA][tT][eE][rR][wW][aA][kK][eE]|[wW][aA][xX]|[wW][hH][iI][tT][eE][sS][mM][oO][kK][eE]|[wW][iI][tT][cC][hH][sS][pP][eE][lL][lL]|[wW][oO][lL][fF][aA][rR][mM][oO][rR][cC][rR][aA][cC][kK]|[yY][eE][lL][lL][oO][wW][pP][oO][pP][lL][aA][rR][lL][eE][aA][vV][eE][sS])$",
+          "description": ""
+        }
+      ],
+      "description": ""
+    },
+    "particle_item_map": {
+      "anyOf": [
+        {
+          "type": "object",
+          "patternProperties": {
+            "^": {
+              "$ref": "#/$defs/filter",
+              "description": ""
+            }
+          },
+          "additionalProperties": false,
+          "description": ""
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/particle_item_pair",
+            "description": ""
+          },
+          "description": ""
+        },
+        {
+          "const": false,
+          "description": ""
+        }
+      ],
+      "description": ""
+    },
+    "particle_item_pair": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": ""
+        },
+        "value": {
+          "$ref": "#/$defs/filter",
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "key",
+        "value"
+      ],
+      "description": ""
+    },
+    "particle_on_hit": {
+      "type": "object",
+      "properties": {
+        "num_particles": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "description": ""
+        },
+        "on_entity_hit": {
+          "type": "boolean",
+          "description": ""
+        },
+        "on_other_hit": {
+          "type": "boolean",
+          "description": ""
+        },
+        "particle_item_name": {
+          "$ref": "#/$defs/particle_item_map",
+          "description": ""
+        },
+        "particle_type": {
+          "$ref": "#/$defs/particle",
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": ""
+    },
+    "remove_on_hit": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false,
+      "description": ""
+    },
+    "spawn_aoe_cloud": {
+      "type": "object",
+      "properties": {
+        "affect_owner": {
+          "type": "boolean",
+          "description": ""
+        },
+        "duration": {
+          "$ref": "#/$defs/duration",
+          "description": ""
+        },
+        "particle": {
+          "$ref": "#/$defs/particle",
+          "description": ""
+        },
+        "potion": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "description": ""
+        },
+        "radius": {
+          "type": "number",
+          "minimum": -3.4028234663852886e+38,
+          "maximum": 3.4028234663852886e+38,
+          "description": ""
+        },
+        "radius_on_use": {
+          "type": "number",
+          "minimum": -3.4028234663852886e+38,
+          "maximum": 3.4028234663852886e+38,
+          "description": ""
+        },
+        "reapplication_delay": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": ""
+    },
+    "spawn_chance": {
+      "type": "object",
+      "properties": {
+        "first_spawn_chance": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": ""
+        },
+        "first_spawn_count": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "description": ""
+        },
+        "on_spawn": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/trigger",
+            "description": ""
+          },
+          "description": ""
+        },
+        "second_spawn_chance": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": ""
+        },
+        "second_spawn_count": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "description": ""
+        },
+        "spawn_baby": {
+          "type": "boolean",
+          "description": ""
+        },
+        "spawn_definition": {
+          "$ref": "#/$defs/entity_name",
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": ""
+    },
+    "stick_in_ground": {
+      "type": "object",
+      "properties": {
+        "shake_time": {
+          "type": "number",
+          "minimum": -3.4028234663852886e+38,
+          "maximum": 3.4028234663852886e+38,
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": ""
+    },
+    "teleport_owner": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false,
+      "description": ""
+    },
+    "thrown_potion_effect": {
+      "type": "object",
+      "properties": {
+        "effect": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": ""
+    },
+    "trigger": {
+      "$ref": "../../1.26.40/components/on_death.json",
+      "description": ""
+    },
+    "wind_burst_on_hit": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false,
+      "description": ""
+    }
+  },
+  "description": ""
+}

@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "end_scale": {
+      "type": "number",
+      "default": 1,
+      "description": "Ending scale of the entity when it's fully grown."
+    },
+    "start_scale": {
+      "type": "number",
+      "default": 1,
+      "description": "Initial scale of the newborn entity."
+    }
+  },
+  "additionalProperties": false,
+  "description": "Defines the entity's size interpolation based on the entity's age."
+}

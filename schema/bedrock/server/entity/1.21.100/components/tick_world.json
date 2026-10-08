@@ -1,0 +1,10 @@
+{
+  "$ref": "../../legacy/components/tick_world.json",
+  "properties": {
+    "distance_to_players": {
+      "maximum": 1.7976931348623157e+308,
+      "description": ""
+    }
+  },
+  "description": ""
+}

@@ -1,0 +1,91 @@
+{
+  "type": "object",
+  "properties": {
+    "fast_skip_data": {
+      "$ref": "#/$defs/fast_skip_data",
+      "default": {
+        "animation_duration": 1,
+        "distance_scale": 1.75,
+        "height": 0.15,
+        "jump_delay": 1
+      },
+      "description": ""
+    },
+    "regular_skip_data": {
+      "$ref": "#/$defs/regular_skip_data",
+      "default": {
+        "animation_duration": 3,
+        "distance_scale": 0.8,
+        "height": 0.1,
+        "jump_delay": 20
+      },
+      "description": ""
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "fast_skip_data": {
+      "type": "object",
+      "properties": {
+        "animation_duration": {
+          "type": "integer",
+          "default": 1,
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "description": ""
+        },
+        "distance_scale": {
+          "type": "number",
+          "default": 1.75,
+          "description": ""
+        },
+        "height": {
+          "type": "number",
+          "default": 0.15,
+          "description": ""
+        },
+        "jump_delay": {
+          "type": "integer",
+          "default": 1,
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": ""
+    },
+    "regular_skip_data": {
+      "type": "object",
+      "properties": {
+        "animation_duration": {
+          "type": "integer",
+          "default": 3,
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "description": ""
+        },
+        "distance_scale": {
+          "type": "number",
+          "default": 0.8,
+          "description": ""
+        },
+        "height": {
+          "type": "number",
+          "default": 0.1,
+          "description": ""
+        },
+        "jump_delay": {
+          "type": "integer",
+          "default": 20,
+          "minimum": -2147483648,
+          "maximum": 2147483647,
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "description": ""
+    }
+  },
+  "description": ""
+}

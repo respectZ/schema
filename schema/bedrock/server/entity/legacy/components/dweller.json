@@ -1,0 +1,58 @@
+{
+  "type": "object",
+  "properties": {
+    "can_find_poi": {
+      "type": "boolean",
+      "default": false,
+      "description": ""
+    },
+    "can_migrate": {
+      "type": "boolean",
+      "default": false,
+      "description": ""
+    },
+    "dweller_role": {
+      "type": "string",
+      "default": "",
+      "description": ""
+    },
+    "dwelling_bounds_tolerance": {
+      "type": "number",
+      "default": 10,
+      "description": ""
+    },
+    "dwelling_type": {
+      "type": "string",
+      "default": "",
+      "description": ""
+    },
+    "first_founding_reward": {
+      "type": "integer",
+      "minimum": -2147483648,
+      "maximum": 2147483647,
+      "default": 0,
+      "description": ""
+    },
+    "preferred_profession": {
+      "type": "string",
+      "default": "",
+      "description": ""
+    },
+    "update_interval_base": {
+      "type": "integer",
+      "minimum": -2147483648,
+      "maximum": 2147483647,
+      "default": 0,
+      "description": ""
+    },
+    "update_interval_variant": {
+      "type": "integer",
+      "minimum": -2147483648,
+      "maximum": 2147483647,
+      "default": 0,
+      "description": ""
+    }
+  },
+  "additionalProperties": false,
+  "description": ""
+}
