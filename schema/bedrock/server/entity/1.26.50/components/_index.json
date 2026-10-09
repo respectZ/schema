@@ -60,6 +60,9 @@
 		"minecraft:block_climber": {
 			"$ref": "../../1.26.20/components/block_climber.json"
 		},
+		"minecraft:block_movement_slowdown_immunity": {
+			"$ref": "../../1.26.50/components/block_movement_slowdown_immunity.json"
+		},
 		"minecraft:block_sensor": {
 			"$ref": "../../legacy/components/block_sensor.json"
 		},
@@ -110,6 +113,9 @@
 		},
 		"minecraft:can_power_jump": {
 			"$ref": "../../1.21.120/components/can_power_jump.json"
+		},
+		"minecraft:can_stand_on_powder_snow": {
+			"$ref": "../../1.26.50/components/can_stand_on_powder_snow.json"
 		},
 		"minecraft:cannot_be_attacked": {
 			"$ref": "../../1.26.40/components/cannot_be_attacked.json"
@@ -206,6 +212,9 @@
 		},
 		"minecraft:free_camera_controlled": {
 			"$ref": "../../legacy/components/free_camera_controlled.json"
+		},
+		"minecraft:freezing_vulnerable": {
+			"$ref": "../../1.26.50/components/freezing_vulnerable.json"
 		},
 		"minecraft:friction_modifier": {
 			"$ref": "../../legacy/components/friction_modifier.json"
@@ -428,6 +437,9 @@
 		},
 		"minecraft:navigation.walk": {
 			"$ref": "../../legacy/components/navigation.walk.json"
+		},
+		"minecraft:not_pickable_from_inside": {
+			"$ref": "../../1.26.40/components/not_pickable_from_inside.json"
 		},
 		"minecraft:npc": {
 			"$ref": "../../legacy/components/npc.json"

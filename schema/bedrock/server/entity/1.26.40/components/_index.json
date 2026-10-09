@@ -429,6 +429,9 @@
 		"minecraft:navigation.walk": {
 			"$ref": "../../legacy/components/navigation.walk.json"
 		},
+		"minecraft:not_pickable_from_inside": {
+			"$ref": "../../1.26.40/components/not_pickable_from_inside.json"
+		},
 		"minecraft:npc": {
 			"$ref": "../../legacy/components/npc.json"
 		},

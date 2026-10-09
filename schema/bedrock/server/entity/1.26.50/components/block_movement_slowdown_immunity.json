@@ -1,0 +1,306 @@
+{
+	"type": "object",
+	"properties": {
+		"blocks": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/block_descriptor",
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"description": "",
+	"$defs": {
+		"block_descriptor": {
+			"anyOf": [
+				{
+					"allOf": [
+						{
+							"$ref": "../../../../../vanilla/server/block_descriptor.json",
+							"description": ""
+						},
+						{
+							"anyOf": [
+								{
+									"type": "string",
+									"minLength": 1,
+									"description": ""
+								},
+								{
+									"$ref": "#/$defs/block_proxy",
+									"description": ""
+								}
+							],
+							"description": ""
+						}
+					],
+					"description": ""
+				},
+				{
+					"allOf": [
+						{
+							"$ref": "#/$defs/block_name",
+							"description": ""
+						},
+						{
+							"minLength": 1,
+							"description": ""
+						}
+					],
+					"description": ""
+				},
+				{
+					"$ref": "#/$defs/block_proxy",
+					"description": ""
+				}
+			],
+			"properties": {
+				"name": {
+					"$ref": "#/$defs/block_name",
+					"description": ""
+				},
+				"states": {
+					"$ref": "#/$defs/block_states",
+					"description": ""
+				},
+				"tags": {
+					"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
+					"description": ""
+				}
+			},
+			"allOf": [
+				{
+					"anyOf": [
+						{
+							"required": [
+								"name"
+							],
+							"properties": {
+								"name": {
+									"minLength": 1,
+									"description": ""
+								}
+							},
+							"description": ""
+						},
+						{
+							"required": [
+								"tags"
+							],
+							"properties": {
+								"tags": {
+									"minLength": 1,
+									"description": ""
+								}
+							},
+							"description": ""
+						}
+					],
+					"description": ""
+				},
+				{
+					"if": {
+						"required": [
+							"tags"
+						],
+						"properties": {
+							"tags": {
+								"minLength": 1,
+								"description": ""
+							}
+						},
+						"description": ""
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"anyOf": [
+									{
+										"type": "object",
+										"maxProperties": 0,
+										"additionalProperties": false,
+										"description": ""
+									},
+									{
+										"type": "array",
+										"maxItems": 0,
+										"description": ""
+									}
+								],
+								"description": ""
+							}
+						},
+						"description": ""
+					},
+					"description": ""
+				}
+			],
+			"additionalProperties": false,
+			"description": ""
+		},
+		"block_name": {
+			"anyOf": [
+				{
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+					"description": ""
+				},
+				{
+					"type": "string",
+					"description": ""
+				}
+			],
+			"description": ""
+		},
+		"block_proxy": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"$ref": "#/$defs/block_name",
+					"description": ""
+				},
+				"states": {
+					"$ref": "#/$defs/block_states",
+					"description": ""
+				},
+				"tags": {
+					"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"allOf": [
+				{
+					"anyOf": [
+						{
+							"required": [
+								"name"
+							],
+							"properties": {
+								"name": {
+									"minLength": 1,
+									"description": ""
+								}
+							},
+							"description": ""
+						},
+						{
+							"required": [
+								"tags"
+							],
+							"properties": {
+								"tags": {
+									"minLength": 1,
+									"description": ""
+								}
+							},
+							"description": ""
+						}
+					],
+					"description": ""
+				},
+				{
+					"if": {
+						"required": [
+							"tags"
+						],
+						"properties": {
+							"tags": {
+								"minLength": 1,
+								"description": ""
+							}
+						},
+						"description": ""
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"anyOf": [
+									{
+										"type": "object",
+										"maxProperties": 0,
+										"additionalProperties": false,
+										"description": ""
+									},
+									{
+										"type": "array",
+										"maxItems": 0,
+										"description": ""
+									}
+								],
+								"description": ""
+							}
+						},
+						"description": ""
+					},
+					"description": ""
+				}
+			],
+			"description": ""
+		},
+		"block_state_entry": {
+			"type": "object",
+			"required": [
+				"key",
+				"value"
+			],
+			"properties": {
+				"key": {
+					"type": "string",
+					"description": ""
+				},
+				"value": {
+					"$ref": "#/$defs/block_state_value",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		},
+		"block_state_value": {
+			"anyOf": [
+				{
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"description": ""
+				},
+				{
+					"type": "boolean",
+					"description": ""
+				},
+				{
+					"type": "string",
+					"description": ""
+				}
+			],
+			"description": ""
+		},
+		"block_states": {
+			"anyOf": [
+				{
+					"type": "object",
+					"patternProperties": {
+						"^[\\s\\S]*$": {
+							"$ref": "#/$defs/block_state_value",
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": ""
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/block_state_entry",
+						"description": ""
+					},
+					"description": ""
+				}
+			],
+			"description": ""
+		}
+	}
+}
