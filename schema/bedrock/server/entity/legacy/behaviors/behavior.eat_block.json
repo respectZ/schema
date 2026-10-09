@@ -5,11 +5,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				],
+				"enum": ["jump", "look", "move"],
 				"description": ""
 			},
 			"default": [],
@@ -46,17 +42,13 @@
 			"description": ""
 		},
 		"success_chance": {
-			"type": [
-				"number",
-				"string",
-				"boolean"
-			],
+			"type": ["number", "string", "boolean"],
 			"description": "A molang expression defining the success chance the entity has to consume a block."
 		},
 		"time_until_eat": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 1.7999999523162842,
 			"description": "The amount of time (in seconds) it takes for the block to be eaten upon a successful eat attempt."
 		}

@@ -1,6 +1,6 @@
 {
-  "type": "object",
-  "properties": {},
-  "additionalProperties": false,
-  "description": "Defines the entity's 'out of control' state."
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false,
+	"description": "Defines the entity's 'out of control' state."
 }

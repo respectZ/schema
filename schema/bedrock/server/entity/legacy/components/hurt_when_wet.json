@@ -1,24 +1,21 @@
 {
-  "anyOf": [
-    {
-      "type": "boolean",
-      "description": ""
-    },
-    {
-      "type": "object",
-      "properties": {
-        "value": {
-          "type": [
-            "boolean",
-            "number"
-          ],
-          "description": ""
-        }
-      },
-      "additionalProperties": false,
-      "description": ""
-    }
-  ],
-  "deprecated": true,
-  "description": ""
+	"anyOf": [
+		{
+			"type": "boolean",
+			"description": ""
+		},
+		{
+			"type": "object",
+			"properties": {
+				"value": {
+					"type": ["boolean", "number"],
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		}
+	],
+	"deprecated": true,
+	"description": ""
 }

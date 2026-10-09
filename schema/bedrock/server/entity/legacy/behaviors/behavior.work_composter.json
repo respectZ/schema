@@ -31,11 +31,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				],
+				"enum": ["jump", "look", "move"],
 				"description": ""
 			},
 			"default": [],
@@ -83,7 +79,7 @@
 		"speed_multiplier": {
 			"type": "number",
 			"exclusiveMinimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.5,
 			"description": "Movement speed multiplier of the mob when using this AI Goal"
 		},

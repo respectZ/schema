@@ -8,11 +8,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -26,8 +22,8 @@
 		},
 		"eat_animation_time": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Sets the time in seconds the eat animation should play for."
 		},
 		"eat_mob_sound": {
@@ -46,20 +42,20 @@
 		},
 		"pull_in_force": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Sets the force which the mob-to-be-eaten is pulled towards the eating mob."
 		},
 		"reach_mob_distance": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Sets the desired distance to be reached before eating the mob."
 		},
 		"run_speed": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Sets the entity's speed when running toward the target."
 		}
 	},

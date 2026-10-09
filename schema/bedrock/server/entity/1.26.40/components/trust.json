@@ -1,4 +1,4 @@
 {
-  "$ref": "../../legacy/components/trust.json",
-  "description": ""
+	"$ref": "../../legacy/components/trust.json",
+	"description": ""
 }

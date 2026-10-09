@@ -1,6 +1,6 @@
 {
-  "type": "object",
-  "properties": {},
-  "additionalProperties": false,
-  "description": "Specifies if an entity can join a raid."
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false,
+	"description": "Specifies if an entity can join a raid."
 }

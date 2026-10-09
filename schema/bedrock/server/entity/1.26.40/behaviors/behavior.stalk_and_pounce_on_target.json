@@ -8,11 +8,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -26,32 +22,32 @@
 		},
 		"interest_time": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The amount of time the mob will be interested before pouncing. This happens when the mob is within range of pouncing"
 		},
 		"leap_dist": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": ""
 		},
 		"leap_height": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The height in blocks the mob jumps when leaping at its target"
 		},
 		"max_stalk_dist": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The maximum distance away a target can be before the mob gives up on stalking"
 		},
 		"pounce_max_dist": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The maximum distance away from the target in blocks to begin pouncing at the target"
 		},
 		"priority": {
@@ -66,14 +62,14 @@
 		},
 		"stalk_speed": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The movement speed in which you stalk your target"
 		},
 		"strike_dist": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The max distance away from the target when landing from the pounce that will still result in damaging the target"
 		},
 		"stuck_blocks": {
@@ -82,8 +78,8 @@
 		},
 		"stuck_time": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The amount of time the mob will be stuck if they fail and land on a block they can be stuck on"
 		}
 	},

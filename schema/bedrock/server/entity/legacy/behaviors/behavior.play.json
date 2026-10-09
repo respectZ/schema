@@ -4,7 +4,7 @@
 		"chance_to_start": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.0024999999441206455,
 			"description": "Percent chance that the mob will start this goal, from 0 to 1."
 		},
@@ -12,11 +12,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				],
+				"enum": ["jump", "look", "move"],
 				"description": ""
 			},
 			"default": [],
@@ -184,7 +180,7 @@
 		"max_play_duration_seconds": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 50.0,
 			"description": "The max amount of seconds that the mob will play for before exiting the Goal."
 		},
@@ -212,7 +208,7 @@
 		"speed_multiplier": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 1.0,
 			"description": "Movement speed multiplier of the mob when using this AI Goal."
 		}

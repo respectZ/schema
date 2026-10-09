@@ -1,15 +1,15 @@
 {
-  "type": "object",
-  "properties": {
-    "chance": {
-      "$ref": "../../legacy/components/grows_crop.json#/properties/chance",
-      "description": "Value between 0-1. Chance of success per tick"
-    },
-    "charges": {
-      "$ref": "../../legacy/components/grows_crop.json#/properties/charges",
-      "description": "Number of charges"
-    }
-  },
-  "additionalProperties": false,
-  "description": "Could increase crop growth when entity walks over crop"
+	"type": "object",
+	"properties": {
+		"chance": {
+			"$ref": "../../legacy/components/grows_crop.json#/properties/chance",
+			"description": "Value between 0-1. Chance of success per tick"
+		},
+		"charges": {
+			"$ref": "../../legacy/components/grows_crop.json#/properties/charges",
+			"description": "Number of charges"
+		}
+	},
+	"additionalProperties": false,
+	"description": "Could increase crop growth when entity walks over crop"
 }

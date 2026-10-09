@@ -8,8 +8,8 @@
 		},
 		"broadcast_range": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Range in blocks for how far to broadcast."
 		},
 		"control_flags": {
@@ -18,11 +18,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -36,8 +32,8 @@
 		},
 		"min_radius": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Minimum distance the target must be for the mob to run this goal."
 		},
 		"priority": {

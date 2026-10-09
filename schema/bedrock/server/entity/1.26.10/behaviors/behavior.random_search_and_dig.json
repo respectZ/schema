@@ -8,11 +8,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -30,14 +26,14 @@
 			"properties": {
 				"max": {
 					"type": "number",
-					"minimum": -3.4028234663852886e+38,
-					"maximum": 3.4028234663852886e+38,
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				},
 				"min": {
 					"type": "number",
-					"minimum": -3.4028234663852886e+38,
-					"maximum": 3.4028234663852886e+38,
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				}
 			},
@@ -49,14 +45,14 @@
 			"properties": {
 				"max": {
 					"type": "number",
-					"minimum": -3.4028234663852886e+38,
-					"maximum": 3.4028234663852886e+38,
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				},
 				"min": {
 					"type": "number",
-					"minimum": -3.4028234663852886e+38,
-					"maximum": 3.4028234663852886e+38,
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				}
 			},
@@ -70,8 +66,8 @@
 		},
 		"goal_radius": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Distance in blocks within the entity to considers it has reached it's target position."
 		},
 		"item_table": {
@@ -284,20 +280,20 @@
 		},
 		"spawn_item_after_seconds": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Digging duration before spawning item in seconds."
 		},
 		"spawn_item_pos_offset": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Distance to offset the item's spawn location in the direction the mob is facing."
 		},
 		"speed_multiplier": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Searching movement speed multiplier."
 		},
 		"target_blocks": {
@@ -310,8 +306,8 @@
 		},
 		"target_dig_position_offset": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Dig target position offset from the feet position of the mob in their facing direction."
 		}
 	},

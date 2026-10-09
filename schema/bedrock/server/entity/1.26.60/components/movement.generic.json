@@ -1,12 +1,12 @@
 {
-  "type": "object",
-  "properties": {
-    "max_turn": {
-      "type": "number",
-      "default": 30,
-      "description": ""
-    }
-  },
-  "additionalProperties": false,
-  "description": ""
+	"type": "object",
+	"properties": {
+		"max_turn": {
+			"type": "number",
+			"default": 30,
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"description": ""
 }

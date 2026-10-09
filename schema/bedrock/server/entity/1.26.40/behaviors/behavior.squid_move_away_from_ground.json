@@ -8,11 +8,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{

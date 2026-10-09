@@ -1,6 +1,6 @@
 {
-  "type": "object",
-  "properties": {},
-  "additionalProperties": false,
-  "description": "Allows this entity to remember suspicious locations."
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false,
+	"description": "Allows this entity to remember suspicious locations."
 }

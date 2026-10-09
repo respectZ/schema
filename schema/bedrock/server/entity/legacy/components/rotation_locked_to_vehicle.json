@@ -1,6 +1,6 @@
 {
-  "type": "object",
-  "properties": {},
-  "additionalProperties": false,
-  "description": "Causes the entity's rotation to match their vehicle's facing direction."
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false,
+	"description": "Causes the entity's rotation to match their vehicle's facing direction."
 }

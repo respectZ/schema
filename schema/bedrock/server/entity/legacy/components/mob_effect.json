@@ -1,63 +1,61 @@
 {
-  "type": "object",
-  "properties": {
-    "ambient": {
-      "type": "boolean",
-      "default": false,
-      "description": "If the effect is considered an ambient effect (like the ones applied by Beacons or Conduits)."
-    },
-    "cooldown_time": {
-      "type": "integer",
-      "minimum": -2147483648,
-      "maximum": 2147483647,
-      "default": 0,
-      "description": "Time in seconds to wait between each application of the effect."
-    },
-    "effect_range": {
-      "type": "number",
-      "minimum": -3.4028234663852886e+38,
-      "maximum": 3.4028234663852886e+38,
-      "default": 0.2,
-      "description": "How close a hostile entity must be to have the mob effect applied."
-    },
-    "effect_time": {
-      "oneOf": [
-        {
-          "type": "integer",
-          "minimum": -2147483648,
-          "maximum": 2147483647,
-          "description": "How long the applied mob effect lasts in seconds. Can also be set to \"infinite\""
-        },
-        {
-          "type": "string",
-          "pattern": "^[iI][nN][fF][iI][nN][iI][tT][eE]$",
-          "examples": [
-            "infinite"
-          ],
-          "description": "How long the applied mob effect lasts in seconds. Can also be set to \"infinite\""
-        }
-      ],
-      "default": 10,
-      "description": "How long the applied mob effect lasts in seconds. Can also be set to \"infinite\""
-    },
-    "entity_filter": {
-      "$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-      "description": "The set of entities that are valid to apply the mob effect to."
-    },
-    "mob_effect": {
-      "anyOf": [
-        {
-          "$ref": "../../../../../vanilla/server/effect_type.json",
-          "description": "The mob effect that is applied to entities that enter this entities effect range."
-        },
-        {
-          "type": "string",
-          "description": "The mob effect that is applied to entities that enter this entities effect range."
-        }
-      ],
-      "description": "The mob effect that is applied to entities that enter this entities effect range."
-    }
-  },
-  "additionalProperties": false,
-  "description": "A component that applies a mob effect to entities that get within range."
+	"type": "object",
+	"properties": {
+		"ambient": {
+			"type": "boolean",
+			"default": false,
+			"description": "If the effect is considered an ambient effect (like the ones applied by Beacons or Conduits)."
+		},
+		"cooldown_time": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": "Time in seconds to wait between each application of the effect."
+		},
+		"effect_range": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 0.2,
+			"description": "How close a hostile entity must be to have the mob effect applied."
+		},
+		"effect_time": {
+			"oneOf": [
+				{
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"description": "How long the applied mob effect lasts in seconds. Can also be set to \"infinite\""
+				},
+				{
+					"type": "string",
+					"pattern": "^[iI][nN][fF][iI][nN][iI][tT][eE]$",
+					"examples": ["infinite"],
+					"description": "How long the applied mob effect lasts in seconds. Can also be set to \"infinite\""
+				}
+			],
+			"default": 10,
+			"description": "How long the applied mob effect lasts in seconds. Can also be set to \"infinite\""
+		},
+		"entity_filter": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "The set of entities that are valid to apply the mob effect to."
+		},
+		"mob_effect": {
+			"anyOf": [
+				{
+					"$ref": "../../../../../vanilla/server/effect_type.json",
+					"description": "The mob effect that is applied to entities that enter this entities effect range."
+				},
+				{
+					"type": "string",
+					"description": "The mob effect that is applied to entities that enter this entities effect range."
+				}
+			],
+			"description": "The mob effect that is applied to entities that enter this entities effect range."
+		}
+	},
+	"additionalProperties": false,
+	"description": "A component that applies a mob effect to entities that get within range."
 }

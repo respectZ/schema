@@ -4,8 +4,8 @@
 	"properties": {
 		"attack_chance": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The percentage chance that the entity has to attack aggressors of its village, where 1.0 = 100%."
 		},
 		"attack_owner": {
@@ -18,11 +18,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -56,20 +52,20 @@
 					},
 					"max_dist": {
 						"type": "number",
-						"minimum": -3.4028234663852886e+38,
-						"maximum": 3.4028234663852886e+38,
+						"minimum": -3.4028234663852886e38,
+						"maximum": 3.4028234663852886e38,
 						"description": ""
 					},
 					"max_flee": {
 						"type": "number",
-						"minimum": -3.4028234663852886e+38,
-						"maximum": 3.4028234663852886e+38,
+						"minimum": -3.4028234663852886e38,
+						"maximum": 3.4028234663852886e38,
 						"description": ""
 					},
 					"max_height": {
 						"type": "number",
-						"minimum": -3.4028234663852886e+38,
-						"maximum": 3.4028234663852886e+38,
+						"minimum": -3.4028234663852886e38,
+						"maximum": 3.4028234663852886e38,
 						"description": ""
 					},
 					"must_see": {
@@ -94,14 +90,14 @@
 					},
 					"sprint_speed_multiplier": {
 						"type": "number",
-						"minimum": -3.4028234663852886e+38,
-						"maximum": 3.4028234663852886e+38,
+						"minimum": -3.4028234663852886e38,
+						"maximum": 3.4028234663852886e38,
 						"description": ""
 					},
 					"walk_speed_multiplier": {
 						"type": "number",
-						"minimum": -3.4028234663852886e+38,
-						"maximum": 3.4028234663852886e+38,
+						"minimum": -3.4028234663852886e38,
+						"maximum": 3.4028234663852886e38,
 						"description": ""
 					}
 				},
@@ -120,13 +116,13 @@
 		"must_see_forget_duration": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Time (in seconds) the target must not be seen by this entity to become invalid. Used only if \"must_see\" is true."
 		},
 		"persist_time": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Time (in seconds) this entity can continue attacking the target after the target is no longer valid."
 		},
 		"priority": {
@@ -137,7 +133,7 @@
 		"within_radius": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Maximum distance this entity can be from the target when following it, otherwise the target becomes invalid. This value is only used if the entity doesn't declare \"minecraft:follow_range\"."
 		}
 	},

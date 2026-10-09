@@ -1,49 +1,49 @@
 {
-  "type": "object",
-  "properties": {
-    "looping": {
-      "$ref": "../../legacy/components/timer.json#/$defs/definition/properties/looping",
-      "description": "If true, the timer will restart every time after it fires."
-    },
-    "randomInterval": {
-      "$ref": "../../legacy/components/timer.json#/$defs/definition/properties/randomInterval",
-      "description": "If true, the amount of time on the timer will be random between the min and max values specified in time."
-    },
-    "random_time_choices": {
-      "type": "array",
-      "items": {
-        "$ref": "../../legacy/components/timer.json#/$defs/choice",
-        "description": "This is a list of objects, representing one value in seconds that can be picked before firing the event and an optional weight. Incompatible with time."
-      },
-      "default": [],
-      "description": "This is a list of objects, representing one value in seconds that can be picked before firing the event and an optional weight. Incompatible with time."
-    },
-    "time": {
-      "$ref": "#/$defs/time_range",
-      "description": "Amount of time in seconds for the timer. Can be specified as a number or a pair of numbers (min and max). Incompatible with random_time_choices."
-    },
-    "time_down_event": {
-      "$ref": "../../1.26.40/components/on_death.json",
-      "description": "Event to fire when the time on the timer runs out."
-    }
-  },
-  "additionalProperties": false,
-  "$defs": {
-    "time_range": {
-      "type": "object",
-      "properties": {
-        "max": {
-          "$ref": "../../legacy/components/timer.json#/$defs/float_value",
-          "description": ""
-        },
-        "min": {
-          "$ref": "../../legacy/components/timer.json#/$defs/float_value",
-          "description": ""
-        }
-      },
-      "additionalProperties": false,
-      "description": "Amount of time in seconds for the timer. Can be specified as a number or a pair of numbers (min and max). Incompatible with random_time_choices."
-    }
-  },
-  "description": "Adds a timer after which an event will fire."
+	"type": "object",
+	"properties": {
+		"looping": {
+			"$ref": "../../legacy/components/timer.json#/$defs/definition/properties/looping",
+			"description": "If true, the timer will restart every time after it fires."
+		},
+		"randomInterval": {
+			"$ref": "../../legacy/components/timer.json#/$defs/definition/properties/randomInterval",
+			"description": "If true, the amount of time on the timer will be random between the min and max values specified in time."
+		},
+		"random_time_choices": {
+			"type": "array",
+			"items": {
+				"$ref": "../../legacy/components/timer.json#/$defs/choice",
+				"description": "This is a list of objects, representing one value in seconds that can be picked before firing the event and an optional weight. Incompatible with time."
+			},
+			"default": [],
+			"description": "This is a list of objects, representing one value in seconds that can be picked before firing the event and an optional weight. Incompatible with time."
+		},
+		"time": {
+			"$ref": "#/$defs/time_range",
+			"description": "Amount of time in seconds for the timer. Can be specified as a number or a pair of numbers (min and max). Incompatible with random_time_choices."
+		},
+		"time_down_event": {
+			"$ref": "../../1.26.40/components/on_death.json",
+			"description": "Event to fire when the time on the timer runs out."
+		}
+	},
+	"additionalProperties": false,
+	"$defs": {
+		"time_range": {
+			"type": "object",
+			"properties": {
+				"max": {
+					"$ref": "../../legacy/components/timer.json#/$defs/float_value",
+					"description": ""
+				},
+				"min": {
+					"$ref": "../../legacy/components/timer.json#/$defs/float_value",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": "Amount of time in seconds for the timer. Can be specified as a number or a pair of numbers (min and max). Incompatible with random_time_choices."
+		}
+	},
+	"description": "Adds a timer after which an event will fire."
 }

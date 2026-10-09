@@ -18,11 +18,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -56,20 +52,20 @@
 					},
 					"max_dist": {
 						"type": "number",
-						"minimum": -3.4028234663852886e+38,
-						"maximum": 3.4028234663852886e+38,
+						"minimum": -3.4028234663852886e38,
+						"maximum": 3.4028234663852886e38,
 						"description": "Maximum distance this mob can be away to be a valid choice"
 					},
 					"max_flee": {
 						"type": "number",
-						"minimum": -3.4028234663852886e+38,
-						"maximum": 3.4028234663852886e+38,
+						"minimum": -3.4028234663852886e38,
+						"maximum": 3.4028234663852886e38,
 						"description": ""
 					},
 					"max_height": {
 						"type": "number",
-						"minimum": -3.4028234663852886e+38,
-						"maximum": 3.4028234663852886e+38,
+						"minimum": -3.4028234663852886e38,
+						"maximum": 3.4028234663852886e38,
 						"description": ""
 					},
 					"must_see": {
@@ -94,14 +90,14 @@
 					},
 					"sprint_speed_multiplier": {
 						"type": "number",
-						"minimum": -3.4028234663852886e+38,
-						"maximum": 3.4028234663852886e+38,
+						"minimum": -3.4028234663852886e38,
+						"maximum": 3.4028234663852886e38,
 						"description": "Multiplier for the running speed. A value of 1.0 means the speed is unchanged"
 					},
 					"walk_speed_multiplier": {
 						"type": "number",
-						"minimum": -3.4028234663852886e+38,
-						"maximum": 3.4028234663852886e+38,
+						"minimum": -3.4028234663852886e38,
+						"maximum": 3.4028234663852886e38,
 						"description": "Multiplier for the walking speed. A value of 1.0 means the speed is unchanged"
 					}
 				},
@@ -123,14 +119,14 @@
 		},
 		"must_see_forget_duration": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Determines the amount of time in seconds that this mob will look for a target before forgetting about it and looking for a new one when the target isn't visible any more"
 		},
 		"persist_time": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Time in seconds for a valid target to stay targeted when it becomes and invalid target."
 		},
 		"priority": {
@@ -154,32 +150,32 @@
 		},
 		"target_acquisition_probability": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": ""
 		},
 		"target_invisible_multiplier": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": ""
 		},
 		"target_search_height": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Height in blocks to search for a target mob. -1.0f means the height does not matter."
 		},
 		"target_sneak_visibility_multiplier": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": ""
 		},
 		"within_radius": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Distance in blocks that the target can be within to launch an attack"
 		}
 	},

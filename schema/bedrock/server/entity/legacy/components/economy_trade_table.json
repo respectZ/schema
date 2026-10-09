@@ -1,196 +1,190 @@
 {
-  "$defs": {
-    "discount_range": {
-      "anyOf": [
-        {
-          "type": "number",
-          "exclusiveMinimum": -2147483648,
-          "exclusiveMaximum": 2147483648,
-          "description": ""
-        },
-        {
-          "type": "boolean",
-          "description": ""
-        },
-        {
-          "type": "object",
-          "properties": {
-            "range_max": {
-              "anyOf": [
-                {
-                  "type": "number",
-                  "exclusiveMinimum": -2147483648,
-                  "exclusiveMaximum": 2147483648,
-                  "description": ""
-                },
-                {
-                  "not": {
-                    "type": "number",
-                    "description": ""
-                  },
-                  "description": ""
-                }
-              ],
-              "default": 0,
-              "description": ""
-            },
-            "range_min": {
-              "anyOf": [
-                {
-                  "type": "number",
-                  "exclusiveMinimum": -2147483648,
-                  "exclusiveMaximum": 2147483648,
-                  "description": ""
-                },
-                {
-                  "not": {
-                    "type": "number",
-                    "description": ""
-                  },
-                  "description": ""
-                }
-              ],
-              "default": 0,
-              "description": ""
-            }
-          },
-          "additionalProperties": false,
-          "description": ""
-        },
-        {
-          "type": "array",
-          "prefixItems": [
-            {
-              "anyOf": [
-                {
-                  "type": "number",
-                  "exclusiveMinimum": -2147483648,
-                  "exclusiveMaximum": 2147483648,
-                  "description": ""
-                },
-                {
-                  "not": {
-                    "type": "number",
-                    "description": ""
-                  },
-                  "description": ""
-                }
-              ],
-              "default": 0,
-              "description": ""
-            },
-            {
-              "anyOf": [
-                {
-                  "type": "number",
-                  "exclusiveMinimum": -2147483648,
-                  "exclusiveMaximum": 2147483648,
-                  "description": ""
-                },
-                {
-                  "not": {
-                    "type": "number",
-                    "description": ""
-                  },
-                  "description": ""
-                }
-              ],
-              "default": 0,
-              "description": ""
-            }
-          ],
-          "minItems": 2,
-          "items": true,
-          "description": ""
-        }
-      ],
-      "description": ""
-    }
-  },
-  "anyOf": [
-    {
-      "type": "object",
-      "properties": {
-        "convert_trades_economy": {
-          "type": "boolean",
-          "default": false,
-          "description": "Whether legacy trade data is converted into economy trade data."
-        },
-        "cured_discount": {
-          "$ref": "#/$defs/discount_range",
-          "default": [
-            -25,
-            -20
-          ],
-          "description": "Range of cured villager discounts applied to trade prices."
-        },
-        "display_name": {
-          "type": "string",
-          "default": "",
-          "description": "The entity localization key used for the trading UI display name."
-        },
-        "hero_demand_discount": {
-          "type": "integer",
-          "minimum": -2147483648,
-          "maximum": 2147483647,
-          "default": -4,
-          "description": "Additional demand discount applied while the player has Hero of the Village."
-        },
-        "max_cured_discount": {
-          "$ref": "#/$defs/discount_range",
-          "default": [
-            -25,
-            -20
-          ],
-          "description": "Maximum allowed range for cured villager discounts."
-        },
-        "max_nearby_cured_discount": {
-          "type": "integer",
-          "minimum": -2147483648,
-          "maximum": 2147483647,
-          "default": -200,
-          "description": "Most negative nearby cured villager discount allowed by legacy pricing."
-        },
-        "nearby_cured_discount": {
-          "type": "integer",
-          "minimum": -2147483648,
-          "maximum": 2147483647,
-          "default": -20,
-          "description": "Nearby cured villager discount step applied by legacy pricing."
-        },
-        "new_screen": {
-          "type": "boolean",
-          "default": false,
-          "description": "Whether this trader uses the newer trade screen implementation."
-        },
-        "persist_trades": {
-          "type": "boolean",
-          "default": false,
-          "description": "Whether generated offers are persisted with the actor save data."
-        },
-        "show_trade_screen": {
-          "type": "boolean",
-          "default": true,
-          "description": "Whether interacting with this trader opens the trade screen."
-        },
-        "table": {
-          "type": "string",
-          "default": "",
-          "description": "Path to the trade table JSON that defines available offers."
-        },
-        "use_legacy_price_formula": {
-          "type": "boolean",
-          "default": true,
-          "description": "Whether legacy price calculations are used instead of the newer pricing formula."
-        }
-      },
-      "additionalProperties": false,
-      "description": "Defines this entity's ability to trade with players."
-    },
-    {
-      "type": "null",
-      "description": "Defines this entity's ability to trade with players."
-    }
-  ],
-  "description": "Defines this entity's ability to trade with players."
+	"$defs": {
+		"discount_range": {
+			"anyOf": [
+				{
+					"type": "number",
+					"exclusiveMinimum": -2147483648,
+					"exclusiveMaximum": 2147483648,
+					"description": ""
+				},
+				{
+					"type": "boolean",
+					"description": ""
+				},
+				{
+					"type": "object",
+					"properties": {
+						"range_max": {
+							"anyOf": [
+								{
+									"type": "number",
+									"exclusiveMinimum": -2147483648,
+									"exclusiveMaximum": 2147483648,
+									"description": ""
+								},
+								{
+									"not": {
+										"type": "number",
+										"description": ""
+									},
+									"description": ""
+								}
+							],
+							"default": 0,
+							"description": ""
+						},
+						"range_min": {
+							"anyOf": [
+								{
+									"type": "number",
+									"exclusiveMinimum": -2147483648,
+									"exclusiveMaximum": 2147483648,
+									"description": ""
+								},
+								{
+									"not": {
+										"type": "number",
+										"description": ""
+									},
+									"description": ""
+								}
+							],
+							"default": 0,
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": ""
+				},
+				{
+					"type": "array",
+					"prefixItems": [
+						{
+							"anyOf": [
+								{
+									"type": "number",
+									"exclusiveMinimum": -2147483648,
+									"exclusiveMaximum": 2147483648,
+									"description": ""
+								},
+								{
+									"not": {
+										"type": "number",
+										"description": ""
+									},
+									"description": ""
+								}
+							],
+							"default": 0,
+							"description": ""
+						},
+						{
+							"anyOf": [
+								{
+									"type": "number",
+									"exclusiveMinimum": -2147483648,
+									"exclusiveMaximum": 2147483648,
+									"description": ""
+								},
+								{
+									"not": {
+										"type": "number",
+										"description": ""
+									},
+									"description": ""
+								}
+							],
+							"default": 0,
+							"description": ""
+						}
+					],
+					"minItems": 2,
+					"items": true,
+					"description": ""
+				}
+			],
+			"description": ""
+		}
+	},
+	"anyOf": [
+		{
+			"type": "object",
+			"properties": {
+				"convert_trades_economy": {
+					"type": "boolean",
+					"default": false,
+					"description": "Whether legacy trade data is converted into economy trade data."
+				},
+				"cured_discount": {
+					"$ref": "#/$defs/discount_range",
+					"default": [-25, -20],
+					"description": "Range of cured villager discounts applied to trade prices."
+				},
+				"display_name": {
+					"type": "string",
+					"default": "",
+					"description": "The entity localization key used for the trading UI display name."
+				},
+				"hero_demand_discount": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"default": -4,
+					"description": "Additional demand discount applied while the player has Hero of the Village."
+				},
+				"max_cured_discount": {
+					"$ref": "#/$defs/discount_range",
+					"default": [-25, -20],
+					"description": "Maximum allowed range for cured villager discounts."
+				},
+				"max_nearby_cured_discount": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"default": -200,
+					"description": "Most negative nearby cured villager discount allowed by legacy pricing."
+				},
+				"nearby_cured_discount": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"default": -20,
+					"description": "Nearby cured villager discount step applied by legacy pricing."
+				},
+				"new_screen": {
+					"type": "boolean",
+					"default": false,
+					"description": "Whether this trader uses the newer trade screen implementation."
+				},
+				"persist_trades": {
+					"type": "boolean",
+					"default": false,
+					"description": "Whether generated offers are persisted with the actor save data."
+				},
+				"show_trade_screen": {
+					"type": "boolean",
+					"default": true,
+					"description": "Whether interacting with this trader opens the trade screen."
+				},
+				"table": {
+					"type": "string",
+					"default": "",
+					"description": "Path to the trade table JSON that defines available offers."
+				},
+				"use_legacy_price_formula": {
+					"type": "boolean",
+					"default": true,
+					"description": "Whether legacy price calculations are used instead of the newer pricing formula."
+				}
+			},
+			"additionalProperties": false,
+			"description": "Defines this entity's ability to trade with players."
+		},
+		{
+			"type": "null",
+			"description": "Defines this entity's ability to trade with players."
+		}
+	],
+	"description": "Defines this entity's ability to trade with players."
 }

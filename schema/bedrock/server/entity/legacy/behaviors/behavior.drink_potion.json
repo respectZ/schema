@@ -6,11 +6,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"move",
-					"look",
-					"jump"
-				],
+				"enum": ["move", "look", "jump"],
 				"description": ""
 			},
 			"description": ""
@@ -35,9 +31,7 @@
 					}
 				},
 				"additionalProperties": false,
-				"required": [
-					"id"
-				],
+				"required": ["id"],
 				"description": "A list of potions that this entity can drink. Each potion entry has the following parameters:"
 			},
 			"description": "A list of potions that this entity can drink. Each potion entry has the following parameters:"

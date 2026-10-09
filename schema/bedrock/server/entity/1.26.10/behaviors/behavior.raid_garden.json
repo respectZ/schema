@@ -16,11 +16,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -46,8 +42,8 @@
 		},
 		"goal_radius": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"exclusiveMinimum": 0,
 			"description": "Distance in blocks within the mob considers it has reached the goal. This is the \"wiggle room\" to stop the AI from bouncing back and forth trying to reach a specific spot"
 		},
@@ -92,7 +88,7 @@
 		"speed_multiplier": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Movement speed multiplier of the mob when using this AI Goal"
 		}
 	},

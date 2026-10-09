@@ -2,9 +2,7 @@
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"type": "object",
 	"title": "Minecraft Bedrock Entity File",
-	"required": [
-		"format_version"
-	],
+	"required": ["format_version"],
 	"properties": {
 		"format_version": {
 			"enum": [

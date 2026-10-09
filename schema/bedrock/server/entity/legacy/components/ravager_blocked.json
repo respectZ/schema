@@ -1,67 +1,67 @@
 {
-  "type": "object",
-  "properties": {
-    "knockback_strength": {
-      "type": "number",
-      "default": 3,
-      "description": "The strength with which blocking entities should be knocked back"
-    },
-    "reaction_choices": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/$defs/reaction_event",
-            "description": ""
-          },
-          "weight": {
-            "type": "integer",
-            "minimum": -2147483648,
-            "maximum": 2147483647,
-            "default": 0,
-            "description": ""
-          }
-        },
-        "additionalProperties": false,
-        "description": "A list of weighted responses to the melee attack being blocked"
-      },
-      "description": "A list of weighted responses to the melee attack being blocked"
-    }
-  },
-  "additionalProperties": false,
-  "$defs": {
-    "reaction_event": {
-      "type": "object",
-      "properties": {
-        "event": {
-          "type": "string",
-          "default": "",
-          "description": ""
-        },
-        "filters": {
-          "$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-          "description": ""
-        },
-        "target": {
-          "type": "string",
-          "anyOf": [
-            {
-              "$ref": "../../../../../vanilla/server/filter/general.json#/$defs/filter_subject",
-              "description": ""
-            },
-            {
-              "pattern": "^(?:[sS][eE][lL][fF]|[oO][tT][hH][eE][rR]|[pP][lL][aA][yY][eE][rR]|[tT][aA][rR][gG][eE][tT]|[pP][aA][rR][eE][nN][tT]|[bB][aA][bB][yY]|[bB][lL][oO][cC][kK]|[dD][aA][mM][aA][gG][eE][rR]|[hH][oO][lL][dD][eE][rR]|[iI][tT][eE][mM])$",
-              "description": ""
-            }
-          ],
-          "default": "self",
-          "description": ""
-        }
-      },
-      "additionalProperties": false,
-      "description": ""
-    }
-  },
-  "description": "Defines the ravager's response to their melee attack being blocked."
+	"type": "object",
+	"properties": {
+		"knockback_strength": {
+			"type": "number",
+			"default": 3,
+			"description": "The strength with which blocking entities should be knocked back"
+		},
+		"reaction_choices": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"value": {
+						"$ref": "#/$defs/reaction_event",
+						"description": ""
+					},
+					"weight": {
+						"type": "integer",
+						"minimum": -2147483648,
+						"maximum": 2147483647,
+						"default": 0,
+						"description": ""
+					}
+				},
+				"additionalProperties": false,
+				"description": "A list of weighted responses to the melee attack being blocked"
+			},
+			"description": "A list of weighted responses to the melee attack being blocked"
+		}
+	},
+	"additionalProperties": false,
+	"$defs": {
+		"reaction_event": {
+			"type": "object",
+			"properties": {
+				"event": {
+					"type": "string",
+					"default": "",
+					"description": ""
+				},
+				"filters": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": ""
+				},
+				"target": {
+					"type": "string",
+					"anyOf": [
+						{
+							"$ref": "../../../../../vanilla/server/filter/general.json#/$defs/filter_subject",
+							"description": ""
+						},
+						{
+							"pattern": "^(?:[sS][eE][lL][fF]|[oO][tT][hH][eE][rR]|[pP][lL][aA][yY][eE][rR]|[tT][aA][rR][gG][eE][tT]|[pP][aA][rR][eE][nN][tT]|[bB][aA][bB][yY]|[bB][lL][oO][cC][kK]|[dD][aA][mM][aA][gG][eE][rR]|[hH][oO][lL][dD][eE][rR]|[iI][tT][eE][mM])$",
+							"description": ""
+						}
+					],
+					"default": "self",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		}
+	},
+	"description": "Defines the ravager's response to their melee attack being blocked."
 }

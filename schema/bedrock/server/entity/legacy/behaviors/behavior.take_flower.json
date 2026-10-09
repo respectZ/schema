@@ -5,11 +5,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				],
+				"enum": ["jump", "look", "move"],
 				"description": ""
 			},
 			"default": [],
@@ -22,35 +18,35 @@
 		"max_head_rotation_y": {
 			"type": "number",
 			"exclusiveMinimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 30.0,
 			"description": "Maximum rotation (in degrees), on the Y-axis, this entity can rotate its head while trying to look at the target."
 		},
 		"max_rotation_x": {
 			"type": "number",
 			"exclusiveMinimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 30.0,
 			"description": "Maximum rotation (in degrees), on the X-axis, this entity can rotate while trying to look at the target."
 		},
 		"max_wait_time": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 20.0,
 			"description": "The maximum amount of time (in seconds) for the mob to randomly wait for before taking the flower."
 		},
 		"min_distance_to_target": {
 			"type": "number",
 			"exclusiveMinimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 2.0,
 			"description": "Minimum distance (in blocks) for the entity to be considered having reached its target."
 		},
 		"min_wait_time": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 4.0,
 			"description": "The minimum amount of time (in seconds) for the mob to randomly wait for before taking the flower."
 		},
@@ -101,7 +97,7 @@
 		"speed_multiplier": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.5,
 			"description": "Movement speed multiplier of the mob when using this AI Goal."
 		}

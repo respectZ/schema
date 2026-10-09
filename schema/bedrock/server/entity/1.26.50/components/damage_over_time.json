@@ -1,15 +1,15 @@
 {
-  "type": "object",
-  "properties": {
-    "damage_per_hurt": {
-      "$ref": "../../legacy/components/damage_over_time.json#/properties/damage_per_hurt",
-      "description": "Amount of damage caused each hurt."
-    },
-    "time_between_hurt": {
-      "$ref": "../../legacy/components/damage_over_time.json#/properties/time_between_hurt",
-      "description": "Time in seconds between damage."
-    }
-  },
-  "additionalProperties": false,
-  "description": "Applies defined amount of damage to the entity at specified intervals."
+	"type": "object",
+	"properties": {
+		"damage_per_hurt": {
+			"$ref": "../../legacy/components/damage_over_time.json#/properties/damage_per_hurt",
+			"description": "Amount of damage caused each hurt."
+		},
+		"time_between_hurt": {
+			"$ref": "../../legacy/components/damage_over_time.json#/properties/time_between_hurt",
+			"description": "Time in seconds between damage."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Applies defined amount of damage to the entity at specified intervals."
 }

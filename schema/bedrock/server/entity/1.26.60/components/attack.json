@@ -1,78 +1,76 @@
 {
-  "type": "object",
-  "properties": {
-    "damage": {
-      "anyOf": [
-        {
-          "type": "number",
-          "minimum": -3.4028234663852886e+38,
-          "maximum": 3.4028234663852886e+38,
-          "description": ""
-        },
-        {
-          "type": "object",
-          "properties": {
-            "max": {
-              "type": "number",
-              "minimum": -3.4028234663852886e+38,
-              "maximum": 3.4028234663852886e+38,
-              "default": 0,
-              "description": ""
-            },
-            "min": {
-              "type": "number",
-              "minimum": -3.4028234663852886e+38,
-              "maximum": 3.4028234663852886e+38,
-              "default": 0,
-              "description": ""
-            }
-          },
-          "additionalProperties": false,
-          "description": ""
-        }
-      ],
-      "default": 0,
-      "description": ""
-    },
-    "effect_amplifier": {
-      "$ref": "../../legacy/components/attack.json#/anyOf/0/properties/effect_amplifier",
-      "description": ""
-    },
-    "effect_duration": {
-      "anyOf": [
-        {
-          "type": "number",
-          "minimum": -3.4028234663852886e+38,
-          "maximum": 3.4028234663852886e+38,
-          "description": ""
-        },
-        {
-          "type": "string",
-          "anyOf": [
-            {
-              "enum": [
-                "infinite"
-              ],
-              "description": ""
-            },
-            {
-              "pattern": "^[iI][nN][fF][iI][nN][iI][tT][eE]$",
-              "description": ""
-            }
-          ],
-          "minLength": 8,
-          "maxLength": 8,
-          "description": ""
-        }
-      ],
-      "default": 0,
-      "description": ""
-    },
-    "effect_name": {
-      "$ref": "../../legacy/components/attack.json#/anyOf/0/properties/effect_name",
-      "description": ""
-    }
-  },
-  "additionalProperties": false,
-  "description": ""
+	"type": "object",
+	"properties": {
+		"damage": {
+			"anyOf": [
+				{
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"description": ""
+				},
+				{
+					"type": "object",
+					"properties": {
+						"max": {
+							"type": "number",
+							"minimum": -3.4028234663852886e38,
+							"maximum": 3.4028234663852886e38,
+							"default": 0,
+							"description": ""
+						},
+						"min": {
+							"type": "number",
+							"minimum": -3.4028234663852886e38,
+							"maximum": 3.4028234663852886e38,
+							"default": 0,
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": ""
+				}
+			],
+			"default": 0,
+			"description": ""
+		},
+		"effect_amplifier": {
+			"$ref": "../../legacy/components/attack.json#/anyOf/0/properties/effect_amplifier",
+			"description": ""
+		},
+		"effect_duration": {
+			"anyOf": [
+				{
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"description": ""
+				},
+				{
+					"type": "string",
+					"anyOf": [
+						{
+							"enum": ["infinite"],
+							"description": ""
+						},
+						{
+							"pattern": "^[iI][nN][fF][iI][nN][iI][tT][eE]$",
+							"description": ""
+						}
+					],
+					"minLength": 8,
+					"maxLength": 8,
+					"description": ""
+				}
+			],
+			"default": 0,
+			"description": ""
+		},
+		"effect_name": {
+			"$ref": "../../legacy/components/attack.json#/anyOf/0/properties/effect_name",
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"description": ""
 }

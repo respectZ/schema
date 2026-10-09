@@ -5,11 +5,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				],
+				"enum": ["jump", "look", "move"],
 				"description": ""
 			},
 			"default": [],
@@ -85,8 +81,8 @@
 		},
 		"max_velocity": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0,
 			"description": "The maximum velocity with which the mob can jump."
 		},
@@ -114,8 +110,8 @@
 		},
 		"preferred_blocks_chance": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0,
 			"description": "Chance (between 0.0 and 1.0) that the mob will jump to a preferred block, if in range. Only matters if preferred blocks are defined."
 		},
@@ -128,8 +124,8 @@
 		},
 		"scale_factor": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0,
 			"description": "The scalefactor of the bounding box of the mob while it is jumping."
 		},

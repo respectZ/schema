@@ -1,65 +1,65 @@
 {
-  "type": "object",
-  "properties": {
-    "additional_spawn_range": {
-      "type": "object",
-      "properties": {
-        "max": {
-          "type": "integer",
-          "minimum": -2147483648,
-          "maximum": 2147483647,
-          "default": 0,
-          "description": ""
-        },
-        "min": {
-          "type": "integer",
-          "minimum": -2147483648,
-          "maximum": 2147483647,
-          "default": 0,
-          "description": ""
-        }
-      },
-      "additionalProperties": false,
-      "description": ""
-    },
-    "entity_to_spawn": {
-      "type": "string",
-      "anyOf": [
-        {
-          "$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
-          "description": ""
-        },
-        {
-          "type": "string",
-          "description": ""
-        }
-      ],
-      "default": "self",
-      "description": ""
-    },
-    "filters": {
-      "$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-      "description": ""
-    },
-    "inherit_parent_name": {
-      "type": "boolean",
-      "default": true,
-      "description": ""
-    },
-    "spawn_amount": {
-      "type": "integer",
-      "minimum": -2147483648,
-      "maximum": 2147483647,
-      "exclusiveMinimum": 0,
-      "default": 1,
-      "description": ""
-    },
-    "spawn_method": {
-      "type": "string",
-      "default": "spawned",
-      "description": ""
-    }
-  },
-  "additionalProperties": false,
-  "description": ""
+	"type": "object",
+	"properties": {
+		"additional_spawn_range": {
+			"type": "object",
+			"properties": {
+				"max": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"default": 0,
+					"description": ""
+				},
+				"min": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"default": 0,
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		},
+		"entity_to_spawn": {
+			"type": "string",
+			"anyOf": [
+				{
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+					"description": ""
+				},
+				{
+					"type": "string",
+					"description": ""
+				}
+			],
+			"default": "self",
+			"description": ""
+		},
+		"filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": ""
+		},
+		"inherit_parent_name": {
+			"type": "boolean",
+			"default": true,
+			"description": ""
+		},
+		"spawn_amount": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"exclusiveMinimum": 0,
+			"default": 1,
+			"description": ""
+		},
+		"spawn_method": {
+			"type": "string",
+			"default": "spawned",
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"description": ""
 }

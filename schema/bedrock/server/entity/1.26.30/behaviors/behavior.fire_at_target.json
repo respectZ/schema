@@ -5,7 +5,7 @@
 		"attack_cooldown": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The cooldown time in seconds before this goal can be used again."
 		},
 		"attack_range": {
@@ -14,14 +14,14 @@
 			"properties": {
 				"max": {
 					"type": "number",
-					"minimum": -3.4028234663852886e+38,
-					"maximum": 3.4028234663852886e+38,
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				},
 				"min": {
 					"type": "number",
-					"minimum": -3.4028234663852886e+38,
-					"maximum": 3.4028234663852886e+38,
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				}
 			},
@@ -33,11 +33,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -55,14 +51,14 @@
 		},
 		"max_head_rotation_x": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Maximum head rotation (in degrees), on the X-axis, that this entity can apply while trying to look at the target."
 		},
 		"max_head_rotation_y": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Maximum head rotation (in degrees), on the Y-axis, that this entity can apply while trying to look at the target."
 		},
 		"owner_anchor": {
@@ -73,8 +69,8 @@
 			"type": "array",
 			"items": {
 				"type": "number",
-				"minimum": -3.4028234663852886e+38,
-				"maximum": 3.4028234663852886e+38,
+				"minimum": -3.4028234663852886e38,
+				"maximum": 3.4028234663852886e38,
 				"description": "Offset vector from the owner_anchor."
 			},
 			"minItems": 3,
@@ -84,13 +80,13 @@
 		"post_shoot_delay": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Time in seconds between firing the projectile and ending the goal."
 		},
 		"pre_shoot_delay": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Time in seconds before firing the projectile."
 		},
 		"priority": {
@@ -105,8 +101,8 @@
 		},
 		"ranged_fov": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Field of view (in degrees) when using sensing to detect a target for attack."
 		},
 		"target_anchor": {
@@ -117,8 +113,8 @@
 			"type": "array",
 			"items": {
 				"type": "number",
-				"minimum": -3.4028234663852886e+38,
-				"maximum": 3.4028234663852886e+38,
+				"minimum": -3.4028234663852886e38,
+				"maximum": 3.4028234663852886e38,
 				"description": "Offset vector from the target_anchor."
 			},
 			"minItems": 3,

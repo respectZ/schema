@@ -20,11 +20,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -39,31 +35,31 @@
 		"cooldown_time": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Cooldown time (in seconds) between attacks."
 		},
 		"inner_boundary_time_increase": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Time (in seconds) to add to attack path recalculation when the target is beyond the \"path_inner_boundary\"."
 		},
 		"max_path_time": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Maximum base time (in seconds) to recalculate new attack path to target (before increases applied)."
 		},
 		"melee_fov": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Field of view (in degrees) when using the sensing component to detect an attack target."
 		},
 		"min_path_time": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Minimum base time (in seconds) to recalculate new attack path to target (before increases applied)."
 		},
 		"on_kill": {
@@ -100,25 +96,25 @@
 		"outer_boundary_time_increase": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Time (in seconds) to add to attack path recalculation when the target is beyond the \"path_outer_boundary\"."
 		},
 		"path_fail_time_increase": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Time (in seconds) to add to attack path recalculation when this entity cannot move along the current path."
 		},
 		"path_inner_boundary": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Distance at which to increase attack path recalculation by \"inner_boundary_tick_increase\"."
 		},
 		"path_outer_boundary": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Distance at which to increase attack path recalculation by \"outer_boundary_tick_increase\"."
 		},
 		"priority": {
@@ -135,8 +131,8 @@
 		},
 		"reach_multiplier": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Used with the base size of the entity to determine minimum target-distance before trying to deal attack damage."
 		},
 		"require_complete_path": {
@@ -146,7 +142,7 @@
 		"speed_multiplier": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "This multiplier modifies the attacking entity's speed when moving toward the target."
 		},
 		"track_target": {
@@ -156,13 +152,13 @@
 		"x_max_rotation": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Maximum rotation (in degrees), on the X-axis, this entity can rotate while trying to look at the target."
 		},
 		"y_max_head_rotation": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Maximum rotation (in degrees), on the Y-axis, this entity can rotate its head while trying to look at the target."
 		}
 	},

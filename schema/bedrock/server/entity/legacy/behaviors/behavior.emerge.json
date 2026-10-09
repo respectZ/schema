@@ -5,11 +5,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				],
+				"enum": ["jump", "look", "move"],
 				"description": ""
 			},
 			"default": [],
@@ -18,14 +14,14 @@
 		"cooldown_time": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.5,
 			"description": "Time in seconds the mob has to wait before using the goal again"
 		},
 		"duration": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 5,
 			"description": "Goal duration in seconds"
 		},

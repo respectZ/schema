@@ -69,11 +69,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				],
+				"enum": ["jump", "look", "move"],
 				"description": ""
 			},
 			"default": [],
@@ -209,14 +205,14 @@
 		"must_see_forget_duration": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 3.0,
 			"description": "Time (in seconds) the target must not be seen by this entity to become invalid. Used only if \"must_see\" is true."
 		},
 		"persist_time": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.0,
 			"description": "Time (in seconds) this entity can continue attacking the target after the target is no longer valid."
 		},
@@ -244,35 +240,35 @@
 		},
 		"target_acquisition_probability": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Probability (0.0 to 1.0) that this entity will accept a found target. Checked each time a valid target is found during scanning. "
 		},
 		"target_invisible_multiplier": {
 			"type": "number",
 			"exclusiveMinimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.699999988079071,
 			"description": "Multiplied with the target's armor coverage percentage to modify \"max_dist\" when detecting an invisible target."
 		},
 		"target_search_height": {
 			"type": "number",
 			"minimum": -1.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": -1.0,
 			"description": "Maximum vertical target-search distance, if it's greater than the target type's \"max_dist\". A negative value defaults to \"entity_types\" greatest \"max_dist\"."
 		},
 		"target_sneak_visibility_multiplier": {
 			"type": "number",
 			"exclusiveMinimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.800000011920929,
 			"description": "Multiplied with the target type's \"max_dist\" when trying to detect a sneaking target."
 		},
 		"within_radius": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.0,
 			"description": "Maximum distance this entity can be from the target when following it, otherwise the target becomes invalid. This value is only used if the entity doesn't declare \"minecraft:follow_range\"."
 		}

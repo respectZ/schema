@@ -5,11 +5,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				],
+				"enum": ["jump", "look", "move"],
 				"description": ""
 			},
 			"default": [],
@@ -26,10 +22,7 @@
 					"description": "Random range in seconds after which the croaking stops. Can also be a constant."
 				}
 			],
-			"default": [
-				4.5,
-				4.5
-			],
+			"default": [4.5, 4.5],
 			"allOf": [
 				{
 					"if": {
@@ -94,10 +87,7 @@
 					"description": "Random range in seconds between runs of this behavior. Can also be a constant."
 				}
 			],
-			"default": [
-				10,
-				20
-			],
+			"default": [10, 20],
 			"allOf": [
 				{
 					"if": {

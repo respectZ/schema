@@ -5,13 +5,13 @@
 		"active_speed": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The speed this entity moves when this behavior has started or while it's active."
 		},
 		"continue_charge_threshold_time": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "If the dragon is outside the \"target_zone\" for longer than \"continue_charge_threshold_time\" seconds, the charge is canceled."
 		},
 		"control_flags": {
@@ -20,11 +20,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -39,7 +35,7 @@
 		"flight_speed": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The speed this entity moves while this behavior is not active."
 		},
 		"priority": {
@@ -54,14 +50,14 @@
 			"properties": {
 				"max": {
 					"type": "number",
-					"minimum": -3.4028234663852886e+38,
-					"maximum": 3.4028234663852886e+38,
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				},
 				"min": {
 					"type": "number",
-					"minimum": -3.4028234663852886e+38,
-					"maximum": 3.4028234663852886e+38,
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				}
 			},
@@ -70,7 +66,7 @@
 		"turn_speed": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The speed at which this entity turns while using this behavior."
 		}
 	},

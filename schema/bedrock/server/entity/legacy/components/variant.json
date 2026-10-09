@@ -1,14 +1,14 @@
 {
-  "type": "object",
-  "properties": {
-    "value": {
-      "type": "integer",
-      "minimum": -2147483648,
-      "maximum": 2147483647,
-      "default": 0,
-      "description": "The ID of the variant. By convention, 0 is the ID of the base entity."
-    }
-  },
-  "additionalProperties": false,
-  "description": "Used to differentiate the component group of a variant of an entity from others. (e.g. ocelot, villager)"
+	"type": "object",
+	"properties": {
+		"value": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": "The ID of the variant. By convention, 0 is the ID of the base entity."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Used to differentiate the component group of a variant of an entity from others. (e.g. ocelot, villager)"
 }

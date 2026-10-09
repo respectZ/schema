@@ -1,4 +1,4 @@
 {
-  "$ref": "./block_climber.json",
-  "description": ""
+	"$ref": "./block_climber.json",
+	"description": ""
 }

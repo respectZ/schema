@@ -5,7 +5,7 @@
 		"attack_reach": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": ""
 		},
 		"charge_cooldown_time": {
@@ -14,14 +14,14 @@
 			"properties": {
 				"max": {
 					"type": "number",
-					"minimum": -3.4028234663852886e+38,
-					"maximum": 3.4028234663852886e+38,
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				},
 				"min": {
 					"type": "number",
 					"minimum": 0,
-					"maximum": 3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				}
 			},
@@ -30,19 +30,19 @@
 		"charge_overshoot_distance": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": ""
 		},
 		"charge_speed": {
 			"type": "number",
 			"minimum": 0.05000000074505806,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": ""
 		},
 		"charge_speed_multiplier": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": ""
 		},
 		"control_flags": {
@@ -51,11 +51,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -70,13 +66,13 @@
 		"knockback_force": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": ""
 		},
 		"max_charge_distance": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": ""
 		},
 		"priority": {

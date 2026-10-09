@@ -8,11 +8,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -26,8 +22,8 @@
 		},
 		"damage_reach": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Added to the base size of the entity, to determine the target's maximum allowable distance, when trying to deal attack damage."
 		},
 		"delay_range": {
@@ -36,14 +32,14 @@
 			"properties": {
 				"max": {
 					"type": "number",
-					"minimum": -3.4028234663852886e+38,
-					"maximum": 3.4028234663852886e+38,
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				},
 				"min": {
 					"type": "number",
-					"minimum": -3.4028234663852886e+38,
-					"maximum": 3.4028234663852886e+38,
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				}
 			},
@@ -57,8 +53,8 @@
 		},
 		"speed_multiplier": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "During swoop attack behavior, this determines the multiplier the entity's speed is modified by when moving toward the target."
 		}
 	},

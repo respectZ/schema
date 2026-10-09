@@ -1,128 +1,126 @@
 {
-  "type": "object",
-  "properties": {
-    "filters": {
-      "$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-      "description": "The filter group that defines the conditions for using this item to heal the entity."
-    },
-    "force_use": {
-      "type": "boolean",
-      "default": false,
-      "description": "Determines if item can be used regardless of entity being at full health."
-    },
-    "items": {
-      "anyOf": [
-        {
-          "$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
-          "description": "The array of items that can be used to heal this entity."
-        },
-        {
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
-                "description": "The array of items that can be used to heal this entity."
-              },
-              {
-                "$ref": "#/$defs/feed_item",
-                "description": "The array of items that can be used to heal this entity."
-              }
-            ],
-            "description": "The array of items that can be used to heal this entity."
-          },
-          "description": "The array of items that can be used to heal this entity."
-        }
-      ],
-      "description": "The array of items that can be used to heal this entity."
-    }
-  },
-  "$defs": {
-    "effect": {
-      "type": "object",
-      "properties": {
-        "amplifier": {
-          "type": "integer",
-          "minimum": -2147483648,
-          "maximum": 2147483647,
-          "default": 1,
-          "description": "The amplifier of the effect."
-        },
-        "chance": {
-          "type": "number",
-          "minimum": -3.4028234663852886e+38,
-          "maximum": 3.4028234663852886e+38,
-          "default": 1,
-          "description": "The chance that the effect is applied."
-        },
-        "duration": {
-          "anyOf": [
-            {
-              "type": "number",
-              "minimum": -3.4028234663852886e+38,
-              "maximum": 3.4028234663852886e+38,
-              "description": "The duration of the effect in seconds, or \"infinite\"."
-            },
-            {
-              "type": "string",
-              "pattern": "^[iI][nN][fF][iI][nN][iI][tT][eE]$",
-              "examples": [
-                "infinite"
-              ],
-              "description": "The duration of the effect in seconds, or \"infinite\"."
-            }
-          ],
-          "default": 0,
-          "description": "The duration of the effect in seconds, or \"infinite\"."
-        },
-        "name": {
-          "$ref": "./mob_effect.json#/properties/mob_effect",
-          "description": "The name of the effect to apply."
-        }
-      },
-      "additionalProperties": false,
-      "description": "The effects to apply when this item is used to heal the entity."
-    },
-    "feed_item": {
-      "type": "object",
-      "properties": {
-        "effects": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/effect",
-              "description": "The effects to apply when this item is used to heal the entity."
-            },
-            {
-              "type": "array",
-              "items": {
-                "$ref": "#/$defs/effect",
-                "description": "The effects to apply when this item is used to heal the entity."
-              },
-              "description": "The effects to apply when this item is used to heal the entity."
-            }
-          ],
-          "description": "The effects to apply when this item is used to heal the entity."
-        },
-        "heal_amount": {
-          "type": "integer",
-          "minimum": -2147483648,
-          "maximum": 2147483647,
-          "default": 1,
-          "description": "The amount of health this entity gains when fed this item."
-        },
-        "item": {
-          "$ref": "./boostable.json#/$defs/boost_item/properties/item",
-          "description": "Item identifier that can be used to heal this entity."
-        },
-        "result_item": {
-          "$ref": "./boostable.json#/$defs/boost_item/properties/item",
-          "description": "The feed item used will transform to this item upon successful interaction."
-        }
-      },
-      "additionalProperties": false,
-      "description": "The array of items that can be used to heal this entity."
-    }
-  },
-  "additionalProperties": false,
-  "description": "Defines the interactions with this entity for healing it."
+	"type": "object",
+	"properties": {
+		"filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "The filter group that defines the conditions for using this item to heal the entity."
+		},
+		"force_use": {
+			"type": "boolean",
+			"default": false,
+			"description": "Determines if item can be used regardless of entity being at full health."
+		},
+		"items": {
+			"anyOf": [
+				{
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+					"description": "The array of items that can be used to heal this entity."
+				},
+				{
+					"type": "array",
+					"items": {
+						"anyOf": [
+							{
+								"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+								"description": "The array of items that can be used to heal this entity."
+							},
+							{
+								"$ref": "#/$defs/feed_item",
+								"description": "The array of items that can be used to heal this entity."
+							}
+						],
+						"description": "The array of items that can be used to heal this entity."
+					},
+					"description": "The array of items that can be used to heal this entity."
+				}
+			],
+			"description": "The array of items that can be used to heal this entity."
+		}
+	},
+	"$defs": {
+		"effect": {
+			"type": "object",
+			"properties": {
+				"amplifier": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"default": 1,
+					"description": "The amplifier of the effect."
+				},
+				"chance": {
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"default": 1,
+					"description": "The chance that the effect is applied."
+				},
+				"duration": {
+					"anyOf": [
+						{
+							"type": "number",
+							"minimum": -3.4028234663852886e38,
+							"maximum": 3.4028234663852886e38,
+							"description": "The duration of the effect in seconds, or \"infinite\"."
+						},
+						{
+							"type": "string",
+							"pattern": "^[iI][nN][fF][iI][nN][iI][tT][eE]$",
+							"examples": ["infinite"],
+							"description": "The duration of the effect in seconds, or \"infinite\"."
+						}
+					],
+					"default": 0,
+					"description": "The duration of the effect in seconds, or \"infinite\"."
+				},
+				"name": {
+					"$ref": "./mob_effect.json#/properties/mob_effect",
+					"description": "The name of the effect to apply."
+				}
+			},
+			"additionalProperties": false,
+			"description": "The effects to apply when this item is used to heal the entity."
+		},
+		"feed_item": {
+			"type": "object",
+			"properties": {
+				"effects": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/effect",
+							"description": "The effects to apply when this item is used to heal the entity."
+						},
+						{
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/effect",
+								"description": "The effects to apply when this item is used to heal the entity."
+							},
+							"description": "The effects to apply when this item is used to heal the entity."
+						}
+					],
+					"description": "The effects to apply when this item is used to heal the entity."
+				},
+				"heal_amount": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"default": 1,
+					"description": "The amount of health this entity gains when fed this item."
+				},
+				"item": {
+					"$ref": "./boostable.json#/$defs/boost_item/properties/item",
+					"description": "Item identifier that can be used to heal this entity."
+				},
+				"result_item": {
+					"$ref": "./boostable.json#/$defs/boost_item/properties/item",
+					"description": "The feed item used will transform to this item upon successful interaction."
+				}
+			},
+			"additionalProperties": false,
+			"description": "The array of items that can be used to heal this entity."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Defines the interactions with this entity for healing it."
 }

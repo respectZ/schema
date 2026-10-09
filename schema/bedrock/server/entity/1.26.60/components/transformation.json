@@ -1,168 +1,168 @@
 {
-  "type": "object",
-  "properties": {
-    "add": {
-      "$ref": "#/$defs/add",
-      "description": ""
-    },
-    "begin_transform_sound": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/sound_name",
-        "description": ""
-      },
-      "default": [],
-      "description": ""
-    },
-    "delay": {
-      "$ref": "#/$defs/delay",
-      "description": ""
-    },
-    "drop_equipment": {
-      "type": "boolean",
-      "default": false,
-      "description": ""
-    },
-    "drop_inventory": {
-      "type": "boolean",
-      "default": false,
-      "description": ""
-    },
-    "into": {
-      "anyOf": [
-        {
-          "$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
-          "description": ""
-        },
-        {
-          "type": "string",
-          "description": ""
-        }
-      ],
-      "default": "",
-      "description": ""
-    },
-    "keep_level": {
-      "type": "boolean",
-      "default": false,
-      "description": ""
-    },
-    "keep_owner": {
-      "type": "boolean",
-      "default": false,
-      "description": ""
-    },
-    "preserve_equipment": {
-      "type": "boolean",
-      "default": false,
-      "description": ""
-    },
-    "transformation_sound": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/sound_name",
-        "description": ""
-      },
-      "default": [],
-      "description": ""
-    }
-  },
-  "additionalProperties": false,
-  "$defs": {
-    "add": {
-      "type": "object",
-      "properties": {
-        "component_groups": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "description": ""
-          },
-          "default": [],
-          "description": ""
-        }
-      },
-      "additionalProperties": false,
-      "description": ""
-    },
-    "delay": {
-      "type": "object",
-      "properties": {
-        "block_assist_chance": {
-          "type": "number",
-          "minimum": 0,
-          "maximum": 1,
-          "default": 0,
-          "description": ""
-        },
-        "block_chance": {
-          "type": "number",
-          "minimum": 0,
-          "maximum": 1,
-          "default": 0,
-          "description": ""
-        },
-        "block_max": {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 2147483647,
-          "default": 0,
-          "description": ""
-        },
-        "block_radius": {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 2147483647,
-          "default": 0,
-          "description": ""
-        },
-        "block_types": {
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
-                "description": ""
-              },
-              {
-                "type": "string",
-                "description": ""
-              }
-            ],
-            "description": ""
-          },
-          "default": [],
-          "description": ""
-        },
-        "range_max": {
-          "type": "number",
-          "minimum": -3.4028234663852886e+38,
-          "maximum": 3.4028234663852886e+38,
-          "default": 0,
-          "description": ""
-        },
-        "range_min": {
-          "type": "number",
-          "minimum": -3.4028234663852886e+38,
-          "maximum": 3.4028234663852886e+38,
-          "default": 0,
-          "description": ""
-        },
-        "value": {
-          "type": "number",
-          "minimum": 0,
-          "maximum": 3.4028234663852886e+38,
-          "default": 0,
-          "description": ""
-        }
-      },
-      "additionalProperties": false,
-      "description": ""
-    },
-    "sound_name": {
-      "$ref": "../../legacy/components/shooter.json#/$defs/sound_name",
-      "description": ""
-    }
-  },
-  "description": ""
+	"type": "object",
+	"properties": {
+		"add": {
+			"$ref": "#/$defs/add",
+			"description": ""
+		},
+		"begin_transform_sound": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/sound_name",
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"delay": {
+			"$ref": "#/$defs/delay",
+			"description": ""
+		},
+		"drop_equipment": {
+			"type": "boolean",
+			"default": false,
+			"description": ""
+		},
+		"drop_inventory": {
+			"type": "boolean",
+			"default": false,
+			"description": ""
+		},
+		"into": {
+			"anyOf": [
+				{
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+					"description": ""
+				},
+				{
+					"type": "string",
+					"description": ""
+				}
+			],
+			"default": "",
+			"description": ""
+		},
+		"keep_level": {
+			"type": "boolean",
+			"default": false,
+			"description": ""
+		},
+		"keep_owner": {
+			"type": "boolean",
+			"default": false,
+			"description": ""
+		},
+		"preserve_equipment": {
+			"type": "boolean",
+			"default": false,
+			"description": ""
+		},
+		"transformation_sound": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/sound_name",
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"$defs": {
+		"add": {
+			"type": "object",
+			"properties": {
+				"component_groups": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"description": ""
+					},
+					"default": [],
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		},
+		"delay": {
+			"type": "object",
+			"properties": {
+				"block_assist_chance": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1,
+					"default": 0,
+					"description": ""
+				},
+				"block_chance": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1,
+					"default": 0,
+					"description": ""
+				},
+				"block_max": {
+					"type": "integer",
+					"minimum": 0,
+					"maximum": 2147483647,
+					"default": 0,
+					"description": ""
+				},
+				"block_radius": {
+					"type": "integer",
+					"minimum": 0,
+					"maximum": 2147483647,
+					"default": 0,
+					"description": ""
+				},
+				"block_types": {
+					"type": "array",
+					"items": {
+						"anyOf": [
+							{
+								"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+								"description": ""
+							},
+							{
+								"type": "string",
+								"description": ""
+							}
+						],
+						"description": ""
+					},
+					"default": [],
+					"description": ""
+				},
+				"range_max": {
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"default": 0,
+					"description": ""
+				},
+				"range_min": {
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"default": 0,
+					"description": ""
+				},
+				"value": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 3.4028234663852886e38,
+					"default": 0,
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		},
+		"sound_name": {
+			"$ref": "../../legacy/components/shooter.json#/$defs/sound_name",
+			"description": ""
+		}
+	},
+	"description": ""
 }

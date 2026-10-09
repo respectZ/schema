@@ -1,4 +1,4 @@
 {
-  "$ref": "../../legacy/components/home.json",
-  "description": "Saves a home position for when the the entity is spawned."
+	"$ref": "../../legacy/components/home.json",
+	"description": "Saves a home position for when the the entity is spawned."
 }

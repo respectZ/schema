@@ -1,94 +1,94 @@
 {
-  "anyOf": [
-    {
-      "type": "object",
-      "properties": {
-        "probability": {
-          "type": "number",
-          "minimum": -3.4028234663852886e+38,
-          "maximum": 3.4028234663852886e+38,
-          "default": 1,
-          "description": "The chance of taming the entity with each item use between 0.0 and 1.0, where 1.0 is 100%"
-        },
-        "tameItems": {
-          "$ref": "#/anyOf/0/properties/tame_items",
-          "doNotSuggest": true,
-          "description": ""
-        },
-        "tame_event": {
-          "$ref": "./equippable.json#/$defs/event",
-          "description": "Event to run when this entity becomes tamed"
-        },
-        "tame_items": {
-          "anyOf": [
-            {
-              "anyOf": [
-                {
-                  "$ref": "./equippable.json#/$defs/item_name",
-                  "description": "The list of items that can be used to tame this entity"
-                },
-                {
-                  "$ref": "#/$defs/item_pair",
-                  "description": "The list of items that can be used to tame this entity"
-                }
-              ],
-              "description": "The list of items that can be used to tame this entity"
-            },
-            {
-              "type": "array",
-              "items": {
-                "anyOf": [
-                  {
-                    "$ref": "./equippable.json#/$defs/item_name",
-                    "description": "The list of items that can be used to tame this entity"
-                  },
-                  {
-                    "$ref": "#/$defs/item_pair",
-                    "description": "The list of items that can be used to tame this entity"
-                  }
-                ],
-                "description": "The list of items that can be used to tame this entity"
-              },
-              "description": "The list of items that can be used to tame this entity"
-            }
-          ],
-          "default": [],
-          "description": "The list of items that can be used to tame this entity"
-        }
-      },
-      "additionalProperties": false,
-      "description": "Defines the rules for a mob to be tamed by the player."
-    },
-    {
-      "type": "null",
-      "description": "Defines the rules for a mob to be tamed by the player."
-    }
-  ],
-  "$defs": {
-    "item_pair": {
-      "anyOf": [
-        {
-          "type": "object",
-          "properties": {
-            "item": {
-              "$ref": "./equippable.json#/$defs/item_descriptor",
-              "description": ""
-            },
-            "result_item": {
-              "$ref": "./equippable.json#/$defs/item_descriptor",
-              "description": ""
-            }
-          },
-          "additionalProperties": false,
-          "description": "The list of items that can be used to tame this entity"
-        },
-        {
-          "type": "null",
-          "description": "The list of items that can be used to tame this entity"
-        }
-      ],
-      "description": "The list of items that can be used to tame this entity"
-    }
-  },
-  "description": "Defines the rules for a mob to be tamed by the player."
+	"anyOf": [
+		{
+			"type": "object",
+			"properties": {
+				"probability": {
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"default": 1,
+					"description": "The chance of taming the entity with each item use between 0.0 and 1.0, where 1.0 is 100%"
+				},
+				"tameItems": {
+					"$ref": "#/anyOf/0/properties/tame_items",
+					"doNotSuggest": true,
+					"description": ""
+				},
+				"tame_event": {
+					"$ref": "./equippable.json#/$defs/event",
+					"description": "Event to run when this entity becomes tamed"
+				},
+				"tame_items": {
+					"anyOf": [
+						{
+							"anyOf": [
+								{
+									"$ref": "./equippable.json#/$defs/item_name",
+									"description": "The list of items that can be used to tame this entity"
+								},
+								{
+									"$ref": "#/$defs/item_pair",
+									"description": "The list of items that can be used to tame this entity"
+								}
+							],
+							"description": "The list of items that can be used to tame this entity"
+						},
+						{
+							"type": "array",
+							"items": {
+								"anyOf": [
+									{
+										"$ref": "./equippable.json#/$defs/item_name",
+										"description": "The list of items that can be used to tame this entity"
+									},
+									{
+										"$ref": "#/$defs/item_pair",
+										"description": "The list of items that can be used to tame this entity"
+									}
+								],
+								"description": "The list of items that can be used to tame this entity"
+							},
+							"description": "The list of items that can be used to tame this entity"
+						}
+					],
+					"default": [],
+					"description": "The list of items that can be used to tame this entity"
+				}
+			},
+			"additionalProperties": false,
+			"description": "Defines the rules for a mob to be tamed by the player."
+		},
+		{
+			"type": "null",
+			"description": "Defines the rules for a mob to be tamed by the player."
+		}
+	],
+	"$defs": {
+		"item_pair": {
+			"anyOf": [
+				{
+					"type": "object",
+					"properties": {
+						"item": {
+							"$ref": "./equippable.json#/$defs/item_descriptor",
+							"description": ""
+						},
+						"result_item": {
+							"$ref": "./equippable.json#/$defs/item_descriptor",
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": "The list of items that can be used to tame this entity"
+				},
+				{
+					"type": "null",
+					"description": "The list of items that can be used to tame this entity"
+				}
+			],
+			"description": "The list of items that can be used to tame this entity"
+		}
+	},
+	"description": "Defines the rules for a mob to be tamed by the player."
 }

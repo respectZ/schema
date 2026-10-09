@@ -1,4 +1,4 @@
 {
-  "$ref": "./navigation.walk.json",
-  "description": "Allows this entity to generate paths by walking, swimming, flying and/or climbing around and jumping up and down a block."
+	"$ref": "./navigation.walk.json",
+	"description": "Allows this entity to generate paths by walking, swimming, flying and/or climbing around and jumping up and down a block."
 }

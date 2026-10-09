@@ -18,11 +18,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"move",
-					"look",
-					"jump"
-				],
+				"enum": ["move", "look", "jump"],
 				"description": ""
 			},
 			"description": ""
@@ -46,9 +42,7 @@
 									}
 								},
 								"additionalProperties": false,
-								"required": [
-									"item_tag"
-								],
+								"required": ["item_tag"],
 								"description": "List of items that can tempt the mob."
 							}
 						],
@@ -72,9 +66,7 @@
 											}
 										},
 										"additionalProperties": false,
-										"required": [
-											"item_tag"
-										],
+										"required": ["item_tag"],
 										"description": ""
 									}
 								],
@@ -82,9 +74,7 @@
 							}
 						},
 						"additionalProperties": false,
-						"required": [
-							"item"
-						],
+						"required": ["item"],
 						"description": "List of items that can tempt the mob."
 					}
 				],

@@ -6,11 +6,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"move",
-					"look",
-					"jump"
-				],
+				"enum": ["move", "look", "jump"],
 				"description": ""
 			},
 			"description": ""
@@ -23,11 +19,7 @@
 			"type": "string",
 			"anyOf": [
 				{
-					"enum": [
-						"bed",
-						"jobsite",
-						"meeting_area"
-					],
+					"enum": ["bed", "jobsite", "meeting_area"],
 					"description": "Defines what POI type to hide at."
 				},
 				{

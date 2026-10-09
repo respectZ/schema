@@ -8,11 +8,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -26,8 +22,8 @@
 		},
 		"goal_radius": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Distance in blocks within the mob considers it has reached the goal. This is the \"wiggle room\" to stop the AI from bouncing back and forth trying to reach a specific spot"
 		},
 		"on_reach": {
@@ -120,20 +116,20 @@
 		},
 		"speed_multiplier": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Movement speed multiplier of the mob when using this AI Goal"
 		},
 		"start_chance": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Chance to start the behavior (applied after each random tick_interval)."
 		},
 		"stay_duration": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Number of ticks needed to complete a stay at the block."
 		},
 		"target_block_filters": {
@@ -185,10 +181,7 @@
 									"description": ""
 								}
 							},
-							"required": [
-								"key",
-								"value"
-							],
+							"required": ["key", "value"],
 							"description": "Block types to move to."
 						},
 						"description": "Block types to move to."
@@ -202,8 +195,8 @@
 			"type": "array",
 			"items": {
 				"type": "number",
-				"minimum": -3.4028234663852886e+38,
-				"maximum": 3.4028234663852886e+38,
+				"minimum": -3.4028234663852886e38,
+				"maximum": 3.4028234663852886e38,
 				"description": "Offset to add to the selected target position."
 			},
 			"minItems": 3,
@@ -214,10 +207,7 @@
 			"type": "string",
 			"anyOf": [
 				{
-					"enum": [
-						"nearest",
-						"random"
-					],
+					"enum": ["nearest", "random"],
 					"description": "Kind of block to find fitting the specification. Valid values are \"random\" and \"nearest\"."
 				},
 				{

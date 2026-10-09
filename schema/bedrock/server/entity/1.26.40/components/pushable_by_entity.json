@@ -1,110 +1,104 @@
 {
-  "type": "object",
-  "properties": {
-    "presets": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "filters": {
-            "$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-            "description": ""
-          },
-          "kick_speed_scale": {
-            "type": "number",
-            "default": 2.0,
-            "description": ""
-          },
-          "max_distance": {
-            "type": "number",
-            "default": 3.4028234663852886e+38,
-            "minimum": 0,
-            "description": ""
-          },
-          "max_kick_speed": {
-            "type": "number",
-            "default": 0.5,
-            "description": ""
-          },
-          "min_distance": {
-            "type": "number",
-            "default": 0.01,
-            "minimum": 0,
-            "description": ""
-          },
-          "min_kick_speed": {
-            "type": "number",
-            "default": 0.0,
-            "description": ""
-          },
-          "play_sound": {
-            "type": "boolean",
-            "default": false,
-            "description": ""
-          },
-          "play_sound_cooldown_in_seconds": {
-            "type": "number",
-            "default": 0.2,
-            "minimum": 0,
-            "description": ""
-          },
-          "play_sound_impulse_threshold": {
-            "type": "number",
-            "default": 0.2,
-            "minimum": 0,
-            "description": ""
-          },
-          "push_mode": {
-            "type": "string",
-            "enum": [
-              "none",
-              "default",
-              "legacy_boat",
-              "legacy_minecart",
-              "ball"
-            ],
-            "default": "default",
-            "description": ""
-          },
-          "push_scale_other": {
-            "type": "number",
-            "default": 1.0,
-            "description": ""
-          },
-          "push_scale_self": {
-            "type": "number",
-            "default": 1.0,
-            "description": ""
-          },
-          "require_collision_overlap": {
-            "type": "boolean",
-            "default": true,
-            "description": ""
-          },
-          "strength_multiplier": {
-            "type": "number",
-            "default": 0.05,
-            "description": ""
-          },
-          "vertical_kick_multiplier": {
-            "type": "number",
-            "default": 0.3,
-            "description": ""
-          }
-        },
-        "additionalProperties": false,
-        "description": ""
-      },
-      "default": [],
-      "description": ""
-    },
-    "use_default_with_overlap_check": {
-      "type": "boolean",
-      "default": true,
-      "deprecated": true,
-      "description": ""
-    }
-  },
-  "additionalProperties": false,
-  "description": "Allows an entity to be pushed by other entities."
+	"type": "object",
+	"properties": {
+		"presets": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"filters": {
+						"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+						"description": ""
+					},
+					"kick_speed_scale": {
+						"type": "number",
+						"default": 2.0,
+						"description": ""
+					},
+					"max_distance": {
+						"type": "number",
+						"default": 3.4028234663852886e38,
+						"minimum": 0,
+						"description": ""
+					},
+					"max_kick_speed": {
+						"type": "number",
+						"default": 0.5,
+						"description": ""
+					},
+					"min_distance": {
+						"type": "number",
+						"default": 0.01,
+						"minimum": 0,
+						"description": ""
+					},
+					"min_kick_speed": {
+						"type": "number",
+						"default": 0.0,
+						"description": ""
+					},
+					"play_sound": {
+						"type": "boolean",
+						"default": false,
+						"description": ""
+					},
+					"play_sound_cooldown_in_seconds": {
+						"type": "number",
+						"default": 0.2,
+						"minimum": 0,
+						"description": ""
+					},
+					"play_sound_impulse_threshold": {
+						"type": "number",
+						"default": 0.2,
+						"minimum": 0,
+						"description": ""
+					},
+					"push_mode": {
+						"type": "string",
+						"enum": ["none", "default", "legacy_boat", "legacy_minecart", "ball"],
+						"default": "default",
+						"description": ""
+					},
+					"push_scale_other": {
+						"type": "number",
+						"default": 1.0,
+						"description": ""
+					},
+					"push_scale_self": {
+						"type": "number",
+						"default": 1.0,
+						"description": ""
+					},
+					"require_collision_overlap": {
+						"type": "boolean",
+						"default": true,
+						"description": ""
+					},
+					"strength_multiplier": {
+						"type": "number",
+						"default": 0.05,
+						"description": ""
+					},
+					"vertical_kick_multiplier": {
+						"type": "number",
+						"default": 0.3,
+						"description": ""
+					}
+				},
+				"additionalProperties": false,
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"use_default_with_overlap_check": {
+			"type": "boolean",
+			"default": true,
+			"deprecated": true,
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows an entity to be pushed by other entities."
 }

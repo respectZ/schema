@@ -1,6 +1,6 @@
 {
-  "type": "object",
-  "properties": {},
-  "additionalProperties": false,
-  "description": "Sets that this entity wants to become a jockey."
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false,
+	"description": "Sets that this entity wants to become a jockey."
 }

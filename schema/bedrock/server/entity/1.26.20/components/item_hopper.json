@@ -1,6 +1,6 @@
 {
-  "type": "object",
-  "properties": {},
-  "additionalProperties": false,
-  "description": "Determines that this entity is an item hopper."
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false,
+	"description": "Determines that this entity is an item hopper."
 }

@@ -18,11 +18,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -57,7 +53,7 @@
 				{
 					"type": "number",
 					"minimum": 0,
-					"maximum": 3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				},
 				{
@@ -66,13 +62,13 @@
 						"max": {
 							"type": "number",
 							"minimum": 0,
-							"maximum": 3.4028234663852886e+38,
+							"maximum": 3.4028234663852886e38,
 							"description": ""
 						},
 						"min": {
 							"type": "number",
 							"minimum": 0,
-							"maximum": 3.4028234663852886e+38,
+							"maximum": 3.4028234663852886e38,
 							"description": ""
 						}
 					},
@@ -100,13 +96,11 @@
 		},
 		"retry_attempt_cooldown": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": ""
 		}
 	},
-	"required": [
-		"hurt_by_cause_memory"
-	],
+	"required": ["hurt_by_cause_memory"],
 	"description": ""
 }

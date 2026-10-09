@@ -1,20 +1,20 @@
 {
-  "type": "object",
-  "properties": {
-    "can_wear_armor": {
-      "type": "boolean",
-      "default": true,
-      "description": ""
-    },
-    "excluded_items": {
-      "type": "array",
-      "items": {
-        "$ref": "./ageable.json#/$defs/item_descriptor",
-        "description": "List of items that the entity should not equip."
-      },
-      "description": "List of items that the entity should not equip."
-    }
-  },
-  "additionalProperties": false,
-  "description": "The entity puts on the desired equipment."
+	"type": "object",
+	"properties": {
+		"can_wear_armor": {
+			"type": "boolean",
+			"default": true,
+			"description": ""
+		},
+		"excluded_items": {
+			"type": "array",
+			"items": {
+				"$ref": "./ageable.json#/$defs/item_descriptor",
+				"description": "List of items that the entity should not equip."
+			},
+			"description": "List of items that the entity should not equip."
+		}
+	},
+	"additionalProperties": false,
+	"description": "The entity puts on the desired equipment."
 }

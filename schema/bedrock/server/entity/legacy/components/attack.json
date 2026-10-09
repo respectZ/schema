@@ -1,120 +1,118 @@
 {
-  "anyOf": [
-    {
-      "type": "object",
-      "properties": {
-        "damage": {
-          "anyOf": [
-            {
-              "type": "number",
-              "minimum": -3.4028234663852886e+38,
-              "maximum": 3.4028234663852886e+38,
-              "description": ""
-            },
-            {
-              "type": "boolean",
-              "description": ""
-            },
-            {
-              "type": "null",
-              "description": ""
-            },
-            {
-              "type": "object",
-              "properties": {
-                "range_max": {
-                  "type": "number",
-                  "minimum": -3.4028234663852886e+38,
-                  "maximum": 3.4028234663852886e+38,
-                  "default": 0,
-                  "description": ""
-                },
-                "range_min": {
-                  "type": "number",
-                  "minimum": -3.4028234663852886e+38,
-                  "maximum": 3.4028234663852886e+38,
-                  "default": 0,
-                  "description": ""
-                }
-              },
-              "additionalProperties": false,
-              "description": ""
-            },
-            {
-              "type": "array",
-              "minItems": 2,
-              "maxItems": 2,
-              "items": {
-                "type": "number",
-                "minimum": -3.4028234663852886e+38,
-                "maximum": 3.4028234663852886e+38,
-                "description": ""
-              },
-              "description": ""
-            }
-          ],
-          "default": 0,
-          "description": ""
-        },
-        "effect_amplifier": {
-          "type": "integer",
-          "minimum": -2147483648,
-          "maximum": 2147483647,
-          "default": 0,
-          "description": ""
-        },
-        "effect_duration": {
-          "anyOf": [
-            {
-              "type": "number",
-              "minimum": 0,
-              "maximum": 3.4028234663852886e+38,
-              "description": ""
-            },
-            {
-              "type": "string",
-              "anyOf": [
-                {
-                  "enum": [
-                    "infinite"
-                  ],
-                  "description": ""
-                },
-                {
-                  "pattern": "^[iI][nN][fF][iI][nN][iI][tT][eE]$",
-                  "description": ""
-                }
-              ],
-              "minLength": 8,
-              "maxLength": 8,
-              "description": ""
-            }
-          ],
-          "default": 0,
-          "description": ""
-        },
-        "effect_name": {
-          "anyOf": [
-            {
-              "$ref": "../../../../../vanilla/server/effect_type.json",
-              "description": ""
-            },
-            {
-              "type": "string",
-              "description": ""
-            }
-          ],
-          "default": "",
-          "description": ""
-        }
-      },
-      "additionalProperties": false,
-      "description": ""
-    },
-    {
-      "type": "null",
-      "description": ""
-    }
-  ],
-  "description": ""
+	"anyOf": [
+		{
+			"type": "object",
+			"properties": {
+				"damage": {
+					"anyOf": [
+						{
+							"type": "number",
+							"minimum": -3.4028234663852886e38,
+							"maximum": 3.4028234663852886e38,
+							"description": ""
+						},
+						{
+							"type": "boolean",
+							"description": ""
+						},
+						{
+							"type": "null",
+							"description": ""
+						},
+						{
+							"type": "object",
+							"properties": {
+								"range_max": {
+									"type": "number",
+									"minimum": -3.4028234663852886e38,
+									"maximum": 3.4028234663852886e38,
+									"default": 0,
+									"description": ""
+								},
+								"range_min": {
+									"type": "number",
+									"minimum": -3.4028234663852886e38,
+									"maximum": 3.4028234663852886e38,
+									"default": 0,
+									"description": ""
+								}
+							},
+							"additionalProperties": false,
+							"description": ""
+						},
+						{
+							"type": "array",
+							"minItems": 2,
+							"maxItems": 2,
+							"items": {
+								"type": "number",
+								"minimum": -3.4028234663852886e38,
+								"maximum": 3.4028234663852886e38,
+								"description": ""
+							},
+							"description": ""
+						}
+					],
+					"default": 0,
+					"description": ""
+				},
+				"effect_amplifier": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"default": 0,
+					"description": ""
+				},
+				"effect_duration": {
+					"anyOf": [
+						{
+							"type": "number",
+							"minimum": 0,
+							"maximum": 3.4028234663852886e38,
+							"description": ""
+						},
+						{
+							"type": "string",
+							"anyOf": [
+								{
+									"enum": ["infinite"],
+									"description": ""
+								},
+								{
+									"pattern": "^[iI][nN][fF][iI][nN][iI][tT][eE]$",
+									"description": ""
+								}
+							],
+							"minLength": 8,
+							"maxLength": 8,
+							"description": ""
+						}
+					],
+					"default": 0,
+					"description": ""
+				},
+				"effect_name": {
+					"anyOf": [
+						{
+							"$ref": "../../../../../vanilla/server/effect_type.json",
+							"description": ""
+						},
+						{
+							"type": "string",
+							"description": ""
+						}
+					],
+					"default": "",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		},
+		{
+			"type": "null",
+			"description": ""
+		}
+	],
+	"description": ""
 }

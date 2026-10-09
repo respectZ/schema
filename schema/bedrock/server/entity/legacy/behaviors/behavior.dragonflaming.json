@@ -5,11 +5,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				],
+				"enum": ["jump", "look", "move"],
 				"description": ""
 			},
 			"default": [],
@@ -18,14 +14,14 @@
 		"cooldown_time": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 10.0,
 			"description": "Time (in seconds) between each start of the cycle to roar, then breath flame."
 		},
 		"flame_time": {
 			"type": "number",
 			"exclusiveMinimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.5,
 			"description": "Time (in seconds), after roar, to breath flame."
 		},
@@ -46,7 +42,7 @@
 		"roar_time": {
 			"type": "number",
 			"exclusiveMinimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 2.0,
 			"description": "Time (in seconds) to roar, before breathing flame."
 		},
@@ -57,14 +53,14 @@
 		"smoke_radius": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 5.0,
 			"description": ""
 		},
 		"smoke_time": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 10.0,
 			"description": ""
 		}

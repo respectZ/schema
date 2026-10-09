@@ -1,4 +1,4 @@
 {
-  "$ref": "../../legacy/components/inventory.json#/$defs/definition",
-  "description": "Defines this entity's inventory properties."
+	"$ref": "../../legacy/components/inventory.json#/$defs/definition",
+	"description": "Defines this entity's inventory properties."
 }

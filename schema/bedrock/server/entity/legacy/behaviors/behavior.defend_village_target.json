@@ -4,7 +4,7 @@
 		"attack_chance": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.05000000074505806,
 			"description": "The percentage chance that the entity has to attack aggressors of its village, where 1.0 = 100%."
 		},
@@ -16,11 +16,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				],
+				"enum": ["jump", "look", "move"],
 				"description": ""
 			},
 			"default": [],
@@ -156,14 +152,14 @@
 		"must_see_forget_duration": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 3.0,
 			"description": "Time (in seconds) the target must not be seen by this entity to become invalid. Used only if \"must_see\" is true."
 		},
 		"persist_time": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.0,
 			"description": "Time (in seconds) this entity can continue attacking the target after the target is no longer valid."
 		},
@@ -177,7 +173,7 @@
 		"within_radius": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.0,
 			"description": "Maximum distance this entity can be from the target when following it, otherwise the target becomes invalid. This value is only used if the entity doesn't declare \"minecraft:follow_range\"."
 		}

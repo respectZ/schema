@@ -2,25 +2,17 @@
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"type": "object",
 	"title": "Minecraft Bedrock Entity 1.20.50",
-	"required": [
-		"format_version",
-		"minecraft:entity"
-	],
+	"required": ["format_version", "minecraft:entity"],
 	"additionalProperties": false,
 	"properties": {
 		"format_version": {
 			"type": "string",
-			"enum": [
-				"1.20.50"
-			]
+			"enum": ["1.20.50"]
 		},
 		"minecraft:entity": {
 			"type": "object",
 			"title": "Entity",
-			"required": [
-				"description",
-				"components"
-			],
+			"required": ["description", "components"],
 			"additionalProperties": false,
 			"properties": {
 				"component_groups": {

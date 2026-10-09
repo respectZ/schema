@@ -1,75 +1,75 @@
 {
-  "type": "object",
-  "properties": {
-    "event_name": {
-      "anyOf": [
-        {
-          "$ref": "../../../../../vanilla/server/level_sound.json",
-          "description": "Level sound event to be played as the ambient sound."
-        },
-        {
-          "type": "string",
-          "description": "Level sound event to be played as the ambient sound."
-        }
-      ],
-      "description": "Level sound event to be played as the ambient sound."
-    },
-    "event_names": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "condition": {
-            "anyOf": [
-              {
-                "$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
-                "description": "The condition that must be satisfied to select the given ambient sound"
-              },
-              {
-                "type": "number",
-                "description": "The condition that must be satisfied to select the given ambient sound"
-              },
-              {
-                "type": "boolean",
-                "description": "The condition that must be satisfied to select the given ambient sound"
-              }
-            ],
-            "description": "The condition that must be satisfied to select the given ambient sound"
-          },
-          "event_name": {
-            "anyOf": [
-              {
-                "$ref": "../../../../../vanilla/server/level_sound.json",
-                "description": "Level sound event to be played as the ambient sound"
-              },
-              {
-                "type": "string",
-                "description": "Level sound event to be played as the ambient sound"
-              }
-            ],
-            "description": "Level sound event to be played as the ambient sound"
-          }
-        },
-        "additionalProperties": false,
-        "description": "List of dynamic level sound events, with conditions for choosing between them. Evaluated in order, first one wins. If none evaluate to true, 'event_name' will take precedence."
-      },
-      "description": "List of dynamic level sound events, with conditions for choosing between them. Evaluated in order, first one wins. If none evaluate to true, 'event_name' will take precedence."
-    },
-    "range": {
-      "type": "number",
-      "minimum": -3.4028234663852886e+38,
-      "maximum": 3.4028234663852886e+38,
-      "default": 16,
-      "description": "Maximum time in seconds to randomly add to the ambient sound delay time."
-    },
-    "value": {
-      "type": "number",
-      "minimum": -3.4028234663852886e+38,
-      "maximum": 3.4028234663852886e+38,
-      "default": 8,
-      "description": "Minimum time in seconds before the entity plays its ambient sound again."
-    }
-  },
-  "additionalProperties": false,
-  "description": "Sets the entity's delay between playing its ambient sound."
+	"type": "object",
+	"properties": {
+		"event_name": {
+			"anyOf": [
+				{
+					"$ref": "../../../../../vanilla/server/level_sound.json",
+					"description": "Level sound event to be played as the ambient sound."
+				},
+				{
+					"type": "string",
+					"description": "Level sound event to be played as the ambient sound."
+				}
+			],
+			"description": "Level sound event to be played as the ambient sound."
+		},
+		"event_names": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"condition": {
+						"anyOf": [
+							{
+								"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
+								"description": "The condition that must be satisfied to select the given ambient sound"
+							},
+							{
+								"type": "number",
+								"description": "The condition that must be satisfied to select the given ambient sound"
+							},
+							{
+								"type": "boolean",
+								"description": "The condition that must be satisfied to select the given ambient sound"
+							}
+						],
+						"description": "The condition that must be satisfied to select the given ambient sound"
+					},
+					"event_name": {
+						"anyOf": [
+							{
+								"$ref": "../../../../../vanilla/server/level_sound.json",
+								"description": "Level sound event to be played as the ambient sound"
+							},
+							{
+								"type": "string",
+								"description": "Level sound event to be played as the ambient sound"
+							}
+						],
+						"description": "Level sound event to be played as the ambient sound"
+					}
+				},
+				"additionalProperties": false,
+				"description": "List of dynamic level sound events, with conditions for choosing between them. Evaluated in order, first one wins. If none evaluate to true, 'event_name' will take precedence."
+			},
+			"description": "List of dynamic level sound events, with conditions for choosing between them. Evaluated in order, first one wins. If none evaluate to true, 'event_name' will take precedence."
+		},
+		"range": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 16,
+			"description": "Maximum time in seconds to randomly add to the ambient sound delay time."
+		},
+		"value": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 8,
+			"description": "Minimum time in seconds before the entity plays its ambient sound again."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Sets the entity's delay between playing its ambient sound."
 }

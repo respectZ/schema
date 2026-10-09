@@ -5,11 +5,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				],
+				"enum": ["jump", "look", "move"],
 				"description": ""
 			},
 			"default": [],
@@ -143,8 +139,8 @@
 		},
 		"goal_radius": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"default": 1.5,
 			"description": "Distance in blocks within the entity to considers it has reached it's target position."
 		},
@@ -198,21 +194,21 @@
 		"spawn_item_after_seconds": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.0,
 			"description": "Digging duration before spawning item in seconds."
 		},
 		"spawn_item_pos_offset": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.0,
 			"description": "Distance to offset the item's spawn location in the direction the mob is facing."
 		},
 		"speed_multiplier": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 1.0,
 			"description": "Searching movement speed multiplier."
 		},
@@ -226,8 +222,8 @@
 		},
 		"target_dig_position_offset": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"default": 2.25,
 			"description": "Dig target position offset from the feet position of the mob in their facing direction."
 		}

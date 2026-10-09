@@ -1,12 +1,12 @@
 {
-  "type": "object",
-  "properties": {
-    "jump_power": {
-      "type": "number",
-      "default": 0.42,
-      "description": ""
-    }
-  },
-  "additionalProperties": false,
-  "description": ""
+	"type": "object",
+	"properties": {
+		"jump_power": {
+			"type": "number",
+			"default": 0.42,
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"description": ""
 }

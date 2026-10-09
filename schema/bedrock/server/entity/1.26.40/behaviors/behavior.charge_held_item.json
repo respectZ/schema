@@ -8,11 +8,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -69,10 +65,7 @@
 									"description": ""
 								}
 							},
-							"required": [
-								"key",
-								"value"
-							],
+							"required": ["key", "value"],
 							"description": ""
 						},
 						"description": ""
@@ -89,8 +82,6 @@
 			"description": ""
 		}
 	},
-	"required": [
-		"item"
-	],
+	"required": ["item"],
 	"description": "Allows an entity to charge and use their held item."
 }

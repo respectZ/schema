@@ -8,11 +8,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -31,13 +27,13 @@
 				"max": {
 					"type": "number",
 					"minimum": 0,
-					"maximum": 3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				},
 				"min": {
 					"type": "number",
 					"minimum": 0,
-					"maximum": 3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				}
 			},
@@ -88,10 +84,7 @@
 									"description": ""
 								}
 							},
-							"required": [
-								"key",
-								"value"
-							],
+							"required": ["key", "value"],
 							"description": "Blocks that the mob can't jump to."
 						},
 						"description": "Blocks that the mob can't jump to."
@@ -103,8 +96,8 @@
 		},
 		"max_velocity": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The maximum velocity with which the mob can jump."
 		},
 		"minimum_distance": {
@@ -164,10 +157,7 @@
 									"description": ""
 								}
 							},
-							"required": [
-								"key",
-								"value"
-							],
+							"required": ["key", "value"],
 							"description": "Blocks that the mob prefers jumping to."
 						},
 						"description": "Blocks that the mob prefers jumping to."
@@ -179,8 +169,8 @@
 		},
 		"preferred_blocks_chance": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Chance (between 0.0 and 1.0) that the mob will jump to a preferred block, if in range. Only matters if preferred blocks are defined."
 		},
 		"priority": {
@@ -191,8 +181,8 @@
 		},
 		"scale_factor": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The scalefactor of the bounding box of the mob while it is jumping."
 		},
 		"search_height": {

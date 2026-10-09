@@ -8,11 +8,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -46,20 +42,20 @@
 					},
 					"max_dist": {
 						"type": "number",
-						"minimum": -3.4028234663852886e+38,
-						"maximum": 3.4028234663852886e+38,
+						"minimum": -3.4028234663852886e38,
+						"maximum": 3.4028234663852886e38,
 						"description": ""
 					},
 					"max_flee": {
 						"type": "number",
-						"minimum": -3.4028234663852886e+38,
-						"maximum": 3.4028234663852886e+38,
+						"minimum": -3.4028234663852886e38,
+						"maximum": 3.4028234663852886e38,
 						"description": ""
 					},
 					"max_height": {
 						"type": "number",
-						"minimum": -3.4028234663852886e+38,
-						"maximum": 3.4028234663852886e+38,
+						"minimum": -3.4028234663852886e38,
+						"maximum": 3.4028234663852886e38,
 						"description": ""
 					},
 					"must_see": {
@@ -84,14 +80,14 @@
 					},
 					"sprint_speed_multiplier": {
 						"type": "number",
-						"minimum": -3.4028234663852886e+38,
-						"maximum": 3.4028234663852886e+38,
+						"minimum": -3.4028234663852886e38,
+						"maximum": 3.4028234663852886e38,
 						"description": ""
 					},
 					"walk_speed_multiplier": {
 						"type": "number",
-						"minimum": -3.4028234663852886e+38,
-						"maximum": 3.4028234663852886e+38,
+						"minimum": -3.4028234663852886e38,
+						"maximum": 3.4028234663852886e38,
 						"description": ""
 					}
 				},
@@ -101,8 +97,8 @@
 		},
 		"percent_chance": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": ""
 		},
 		"priority": {

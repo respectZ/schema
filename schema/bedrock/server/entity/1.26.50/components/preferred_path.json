@@ -1,53 +1,51 @@
 {
-  "type": "object",
-  "properties": {
-    "default_block_cost": {
-      "$ref": "../../legacy/components/preferred_path.json#/anyOf/0/properties/default_block_cost",
-      "description": ""
-    },
-    "jump_cost": {
-      "$ref": "../../legacy/components/preferred_path.json#/anyOf/0/properties/jump_cost",
-      "description": ""
-    },
-    "max_fall_blocks": {
-      "$ref": "../../legacy/components/preferred_path.json#/anyOf/0/properties/max_fall_blocks",
-      "description": ""
-    },
-    "preferred_path_blocks": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/block_set",
-        "description": ""
-      },
-      "default": [],
-      "description": ""
-    }
-  },
-  "additionalProperties": false,
-  "$defs": {
-    "block_set": {
-      "type": "object",
-      "properties": {
-        "blocks": {
-          "type": "array",
-          "items": {
-            "$ref": "../../1.26.60/components/buoyant.json#/$defs/block_descriptor",
-            "description": ""
-          },
-          "default": [],
-          "description": ""
-        },
-        "cost": {
-          "$ref": "../../legacy/components/preferred_path.json#/$defs/block_set/properties/cost",
-          "description": ""
-        }
-      },
-      "required": [
-        "cost"
-      ],
-      "additionalProperties": false,
-      "description": ""
-    }
-  },
-  "description": ""
+	"type": "object",
+	"properties": {
+		"default_block_cost": {
+			"$ref": "../../legacy/components/preferred_path.json#/anyOf/0/properties/default_block_cost",
+			"description": ""
+		},
+		"jump_cost": {
+			"$ref": "../../legacy/components/preferred_path.json#/anyOf/0/properties/jump_cost",
+			"description": ""
+		},
+		"max_fall_blocks": {
+			"$ref": "../../legacy/components/preferred_path.json#/anyOf/0/properties/max_fall_blocks",
+			"description": ""
+		},
+		"preferred_path_blocks": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/block_set",
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"$defs": {
+		"block_set": {
+			"type": "object",
+			"properties": {
+				"blocks": {
+					"type": "array",
+					"items": {
+						"$ref": "../../1.26.60/components/buoyant.json#/$defs/block_descriptor",
+						"description": ""
+					},
+					"default": [],
+					"description": ""
+				},
+				"cost": {
+					"$ref": "../../legacy/components/preferred_path.json#/$defs/block_set/properties/cost",
+					"description": ""
+				}
+			},
+			"required": ["cost"],
+			"additionalProperties": false,
+			"description": ""
+		}
+	},
+	"description": ""
 }

@@ -1,12 +1,12 @@
 {
-  "type": "object",
-  "properties": {
-    "value": {
-      "type": "number",
-      "description": ""
-    }
-  },
-  "additionalProperties": false,
-  "deprecated": true,
-  "description": ""
+	"type": "object",
+	"properties": {
+		"value": {
+			"type": "number",
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"deprecated": true,
+	"description": ""
 }

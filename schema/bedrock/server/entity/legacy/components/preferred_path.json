@@ -1,142 +1,142 @@
 {
-  "anyOf": [
-    {
-      "type": "object",
-      "properties": {
-        "default_block_cost": {
-          "type": "number",
-          "minimum": -3.4028234663852886e+38,
-          "maximum": 3.4028234663852886e+38,
-          "default": 0,
-          "description": ""
-        },
-        "jump_cost": {
-          "type": "number",
-          "minimum": -3.4028234663852886e+38,
-          "maximum": 3.4028234663852886e+38,
-          "default": 0,
-          "description": ""
-        },
-        "max_fall_blocks": {
-          "type": "integer",
-          "minimum": -2147483648,
-          "maximum": 2147483647,
-          "default": 3,
-          "description": ""
-        },
-        "preferred_path_blocks": {
-          "anyOf": [
-            {
-              "type": "array",
-              "items": {
-                "$ref": "#/$defs/block_set",
-                "description": ""
-              },
-              "description": ""
-            },
-            {
-              "type": "object",
-              "properties": {},
-              "patternProperties": {
-                ".*": {
-                  "$ref": "#/$defs/block_set",
-                  "description": ""
-                }
-              },
-              "additionalProperties": false,
-              "description": ""
-            },
-            {
-              "type": "null",
-              "description": ""
-            }
-          ],
-          "default": [],
-          "description": ""
-        }
-      },
-      "additionalProperties": false,
-      "description": ""
-    },
-    {
-      "type": "null",
-      "description": ""
-    }
-  ],
-  "$defs": {
-    "block_set": {
-      "type": "object",
-      "properties": {
-        "blocks": {
-          "anyOf": [
-            {
-              "type": "array",
-              "items": {
-                "$ref": "#/$defs/block_descriptor",
-                "description": ""
-              },
-              "description": ""
-            },
-            {
-              "type": "null",
-              "description": ""
-            }
-          ],
-          "default": [],
-          "description": ""
-        },
-        "cost": {
-          "type": "number",
-          "minimum": -3.4028234663852886e+38,
-          "maximum": 3.4028234663852886e+38,
-          "description": ""
-        }
-      },
-      "additionalProperties": false,
-      "description": ""
-    },
-    "block_descriptor": {
-      "$ref": "../../../../../vanilla/server/block_descriptor.json",
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": ""
-        },
-        "states": {
-          "type": "object",
-          "properties": {},
-          "patternProperties": {
-            "^[\\s\\S]*$": {
-              "anyOf": [
-                {
-                  "type": "integer",
-                  "minimum": -2147483648,
-                  "maximum": 2147483647,
-                  "description": ""
-                },
-                {
-                  "type": "boolean",
-                  "description": ""
-                },
-                {
-                  "type": "string",
-                  "description": ""
-                }
-              ],
-              "description": ""
-            }
-          },
-          "additionalProperties": false,
-          "description": ""
-        },
-        "tags": {
-          "$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
-          "description": ""
-        }
-      },
-      "additionalProperties": false,
-      "description": ""
-    }
-  },
-  "description": ""
+	"anyOf": [
+		{
+			"type": "object",
+			"properties": {
+				"default_block_cost": {
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"default": 0,
+					"description": ""
+				},
+				"jump_cost": {
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"default": 0,
+					"description": ""
+				},
+				"max_fall_blocks": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"default": 3,
+					"description": ""
+				},
+				"preferred_path_blocks": {
+					"anyOf": [
+						{
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/block_set",
+								"description": ""
+							},
+							"description": ""
+						},
+						{
+							"type": "object",
+							"properties": {},
+							"patternProperties": {
+								".*": {
+									"$ref": "#/$defs/block_set",
+									"description": ""
+								}
+							},
+							"additionalProperties": false,
+							"description": ""
+						},
+						{
+							"type": "null",
+							"description": ""
+						}
+					],
+					"default": [],
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		},
+		{
+			"type": "null",
+			"description": ""
+		}
+	],
+	"$defs": {
+		"block_set": {
+			"type": "object",
+			"properties": {
+				"blocks": {
+					"anyOf": [
+						{
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/block_descriptor",
+								"description": ""
+							},
+							"description": ""
+						},
+						{
+							"type": "null",
+							"description": ""
+						}
+					],
+					"default": [],
+					"description": ""
+				},
+				"cost": {
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		},
+		"block_descriptor": {
+			"$ref": "../../../../../vanilla/server/block_descriptor.json",
+			"properties": {
+				"name": {
+					"type": "string",
+					"description": ""
+				},
+				"states": {
+					"type": "object",
+					"properties": {},
+					"patternProperties": {
+						"^[\\s\\S]*$": {
+							"anyOf": [
+								{
+									"type": "integer",
+									"minimum": -2147483648,
+									"maximum": 2147483647,
+									"description": ""
+								},
+								{
+									"type": "boolean",
+									"description": ""
+								},
+								{
+									"type": "string",
+									"description": ""
+								}
+							],
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": ""
+				},
+				"tags": {
+					"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		}
+	},
+	"description": ""
 }

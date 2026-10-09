@@ -4,8 +4,8 @@
 	"properties": {
 		"carried_item_switch_time": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The max time in seconds that the trader will hold an item before attempting to switch for a different item that takes the same trade"
 		},
 		"control_flags": {
@@ -14,11 +14,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -32,14 +28,14 @@
 		},
 		"cooldown": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The time in seconds before the trader can use this goal again"
 		},
 		"interest_time": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The max time in seconds that the trader will be interested with showing its trade items"
 		},
 		"priority": {
@@ -50,14 +46,14 @@
 		},
 		"remove_item_time": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The max time in seconds that the trader will wait when you no longer have items to trade"
 		},
 		"within_radius": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Distance in blocks this mob can be interested by a player holding an item they like"
 		}
 	},

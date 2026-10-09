@@ -1,6 +1,6 @@
 {
-  "type": "object",
-  "properties": {},
-  "additionalProperties": false,
-  "description": "Pauses this entity's breathing under water."
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false,
+	"description": "Pauses this entity's breathing under water."
 }

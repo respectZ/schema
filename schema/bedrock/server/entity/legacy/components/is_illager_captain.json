@@ -1,6 +1,6 @@
 {
-  "type": "object",
-  "properties": {},
-  "additionalProperties": false,
-  "description": "Sets that this entity is an Illager Captain."
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false,
+	"description": "Sets that this entity is an Illager Captain."
 }

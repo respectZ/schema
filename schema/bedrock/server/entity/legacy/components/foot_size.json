@@ -1,7 +1,7 @@
 {
-  "type": "object",
-  "properties": {},
-  "additionalProperties": false,
-  "deprecated": true,
-  "description": ""
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false,
+	"deprecated": true,
+	"description": ""
 }

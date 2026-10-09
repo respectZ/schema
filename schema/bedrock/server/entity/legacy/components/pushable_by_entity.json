@@ -1,6 +1,6 @@
 {
-  "type": "object",
-  "properties": {},
-  "additionalProperties": false,
-  "description": "Allows an entity to be pushed by other entities."
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false,
+	"description": "Allows an entity to be pushed by other entities."
 }

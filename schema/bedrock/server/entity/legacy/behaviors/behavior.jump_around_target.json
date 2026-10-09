@@ -9,11 +9,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				],
+				"enum": ["jump", "look", "move"],
 				"description": ""
 			},
 			"default": [],
@@ -21,8 +17,8 @@
 		},
 		"entity_bounding_box_scale": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.699999988079071,
 			"description": "Scaling temporarily applied to the entity's AABB bounds when jumping. A smaller bounding box reduces the risk of collisions during the jump. When check_collision is true it also increases the chance of being able to jump when close to obstacles."
 		},
@@ -34,23 +30,23 @@
 			"type": "array",
 			"items": {
 				"type": "number",
-				"minimum": -3.4028234663852886e+38,
-				"maximum": 3.4028234663852886e+38,
+				"minimum": -3.4028234663852886e38,
+				"maximum": 3.4028234663852886e38,
 				"description": "The jump angles in float degrees that are allowed when performing the jump. The order in which the angles are chosen is randomized."
 			},
 			"description": "The jump angles in float degrees that are allowed when performing the jump. The order in which the angles are chosen is randomized."
 		},
 		"jump_cooldown_duration": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0,
 			"description": "The time in seconds to spend in cooldown before this goal can be used again."
 		},
 		"jump_cooldown_when_hurt_duration": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0,
 			"description": "The time in seconds to spend in cooldown after being hurt before this goal can be used again."
 		},
@@ -112,10 +108,7 @@
 					"description": "The range deciding how close to and how far away from the target the landing position can be when jumping."
 				}
 			],
-			"default": [
-				4,
-				8.0
-			],
+			"default": [4, 8.0],
 			"description": "The range deciding how close to and how far away from the target the landing position can be when jumping."
 		},
 		"landing_position_spread_degrees": {
@@ -127,8 +120,8 @@
 		},
 		"last_hurt_duration": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"default": 2.0,
 			"description": "If the entity was hurt within these last seconds, the jump_cooldown_when_hurt_duration will be used instead of jump_cooldown_duration."
 		},
@@ -141,15 +134,15 @@
 		},
 		"max_jump_velocity": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"default": 1.399999976158142,
 			"description": "Maximum velocity a jump can be performed at."
 		},
 		"prepare_jump_duration": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.5,
 			"description": "The time in seconds to spend preparing for the jump."
 		},
@@ -232,10 +225,7 @@
 					"description": "Target needs to be within this range for the jump to happen."
 				}
 			],
-			"default": [
-				4,
-				20.0
-			],
+			"default": [4, 20.0],
 			"description": "Target needs to be within this range for the jump to happen."
 		}
 	},

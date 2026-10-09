@@ -4,7 +4,7 @@
 		"active_speed": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.6000000238418579,
 			"description": "The speed this entity moves when this behavior has started or while it's active."
 		},
@@ -12,11 +12,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				],
+				"enum": ["jump", "look", "move"],
 				"description": ""
 			},
 			"default": [],
@@ -25,14 +21,14 @@
 		"fireball_range": {
 			"type": "number",
 			"exclusiveMinimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 64.0,
 			"description": "Maximum distance of this entity's fireball attack while strafing."
 		},
 		"flight_speed": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.6000000238418579,
 			"description": "The speed this entity moves while this behavior is not active."
 		},
@@ -46,14 +42,14 @@
 		"switch_direction_probability": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.125,
 			"description": "Percent chance to to switch this entity's strafe direction between clockwise and counterclockwise. Switch direction chance occurs each time a new target is chosen (1.0 = 100%)."
 		},
 		"target_in_range_and_in_view_time": {
 			"type": "number",
 			"exclusiveMinimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.25,
 			"description": "Time (in seconds) the target must be in fireball range, and in view [ie, no solid terrain in-between the target and this entity], before a fireball can be shot."
 		},
@@ -120,14 +116,14 @@
 		"turn_speed": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.699999988079071,
 			"description": "The speed at which this entity turns while using this behavior."
 		},
 		"view_angle": {
 			"type": "number",
 			"exclusiveMinimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 10.0,
 			"description": "The target must be within \"view_angle\" degrees of the dragon's current rotation before a fireball can be shot."
 		}

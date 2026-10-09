@@ -5,11 +5,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				],
+				"enum": ["jump", "look", "move"],
 				"description": ""
 			},
 			"default": [],
@@ -26,10 +22,7 @@
 					"description": "Cooldown range between sniffs in seconds"
 				}
 			],
-			"default": [
-				3.0,
-				10.0
-			],
+			"default": [3.0, 10.0],
 			"allOf": [
 				{
 					"if": {
@@ -82,7 +75,7 @@
 		"duration": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 1,
 			"description": "Sniffing duration in seconds"
 		},
@@ -96,21 +89,21 @@
 		"sniffing_radius": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 5,
 			"description": "Mob detection radius"
 		},
 		"suspicion_radius_horizontal": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 3,
 			"description": "Mob suspicion horizontal radius. When a player is within this radius horizontally, the anger level towards that player is increased"
 		},
 		"suspicion_radius_vertical": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 3,
 			"description": "Mob suspicion vertical radius. When a player is within this radius vertically, the anger level towards that player is increased"
 		}

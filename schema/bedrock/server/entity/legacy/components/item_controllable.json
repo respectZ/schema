@@ -1,42 +1,42 @@
 {
-  "type": "object",
-  "properties": {
-    "control_items": {
-      "anyOf": [
-        {
-          "anyOf": [
-            {
-              "$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
-              "description": "List of items that can be used to control this entity."
-            },
-            {
-              "type": "string",
-              "description": "List of items that can be used to control this entity."
-            }
-          ],
-          "description": "List of items that can be used to control this entity."
-        },
-        {
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
-                "description": "List of items that can be used to control this entity."
-              },
-              {
-                "type": "string",
-                "description": "List of items that can be used to control this entity."
-              }
-            ],
-            "description": "List of items that can be used to control this entity."
-          },
-          "description": "List of items that can be used to control this entity."
-        }
-      ],
-      "description": "List of items that can be used to control this entity."
-    }
-  },
-  "additionalProperties": false,
-  "description": "Defines what items can be used to control this entity while ridden."
+	"type": "object",
+	"properties": {
+		"control_items": {
+			"anyOf": [
+				{
+					"anyOf": [
+						{
+							"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+							"description": "List of items that can be used to control this entity."
+						},
+						{
+							"type": "string",
+							"description": "List of items that can be used to control this entity."
+						}
+					],
+					"description": "List of items that can be used to control this entity."
+				},
+				{
+					"type": "array",
+					"items": {
+						"anyOf": [
+							{
+								"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+								"description": "List of items that can be used to control this entity."
+							},
+							{
+								"type": "string",
+								"description": "List of items that can be used to control this entity."
+							}
+						],
+						"description": "List of items that can be used to control this entity."
+					},
+					"description": "List of items that can be used to control this entity."
+				}
+			],
+			"description": "List of items that can be used to control this entity."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Defines what items can be used to control this entity while ridden."
 }

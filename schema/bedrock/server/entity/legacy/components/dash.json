@@ -1,4 +1,4 @@
 {
-  "$ref": "./dash_action.json",
-  "description": ""
+	"$ref": "./dash_action.json",
+	"description": ""
 }

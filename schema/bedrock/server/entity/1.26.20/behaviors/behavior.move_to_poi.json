@@ -8,11 +8,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -28,11 +24,7 @@
 			"type": "string",
 			"anyOf": [
 				{
-					"enum": [
-						"bed",
-						"meeting_area",
-						"jobsite"
-					],
+					"enum": ["bed", "meeting_area", "jobsite"],
 					"description": "Tells the goal what POI type it should be looking for"
 				},
 				{
@@ -51,7 +43,7 @@
 		"speed_multiplier": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Movement speed multiplier of the mob when using this AI Goal"
 		}
 	},

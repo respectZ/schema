@@ -1,21 +1,21 @@
 {
-  "type": "object",
-  "properties": {
-    "height": {
-      "type": "number",
-      "default": 1.8,
-      "minimum": -100000000.0,
-      "maximum": 100000000.0,
-      "description": "Height of the collision box in blocks. A negative value will be assumed to be 0. Min value is -100000000.000000 Max value is 100000000.000000"
-    },
-    "width": {
-      "type": "number",
-      "default": 0.6,
-      "minimum": -100000000.0,
-      "maximum": 100000000.0,
-      "description": "Width of the collision box in blocks. A negative value will be assumed to be 0. Min value is -100000000.000000 Max value is 100000000.000000"
-    }
-  },
-  "additionalProperties": false,
-  "description": "Sets the width and height of the Entity's collision box."
+	"type": "object",
+	"properties": {
+		"height": {
+			"type": "number",
+			"default": 1.8,
+			"minimum": -100000000.0,
+			"maximum": 100000000.0,
+			"description": "Height of the collision box in blocks. A negative value will be assumed to be 0. Min value is -100000000.000000 Max value is 100000000.000000"
+		},
+		"width": {
+			"type": "number",
+			"default": 0.6,
+			"minimum": -100000000.0,
+			"maximum": 100000000.0,
+			"description": "Width of the collision box in blocks. A negative value will be assumed to be 0. Min value is -100000000.000000 Max value is 100000000.000000"
+		}
+	},
+	"additionalProperties": false,
+	"description": "Sets the width and height of the Entity's collision box."
 }

@@ -4,8 +4,8 @@
 	"properties": {
 		"chance_per_tick_to_float": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The chance per tick to cause an upward impulse."
 		},
 		"control_flags": {
@@ -14,11 +14,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -42,8 +38,8 @@
 		},
 		"time_under_water_to_dismount_passengers": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Time in seconds that a floating vehicles head can be underwater before it causes its passengers to dismount."
 		}
 	},

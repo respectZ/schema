@@ -1,6 +1,6 @@
 {
-  "type": "object",
-  "properties": {},
-  "additionalProperties": false,
-  "description": "Sets that this entity doesn't take damage from fire."
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false,
+	"description": "Sets that this entity doesn't take damage from fire."
 }

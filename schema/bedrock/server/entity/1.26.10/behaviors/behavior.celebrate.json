@@ -594,11 +594,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -613,7 +609,7 @@
 		"duration": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The duration in seconds that the celebration lasts for."
 		},
 		"jump_interval": {
@@ -623,13 +619,13 @@
 				"max": {
 					"type": "number",
 					"minimum": 0,
-					"maximum": 3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				},
 				"min": {
 					"type": "number",
 					"minimum": 0,
-					"maximum": 3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				}
 			},
@@ -679,13 +675,13 @@
 				"max": {
 					"type": "number",
 					"minimum": 0,
-					"maximum": 3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				},
 				"min": {
 					"type": "number",
 					"minimum": 0,
-					"maximum": 3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				}
 			},

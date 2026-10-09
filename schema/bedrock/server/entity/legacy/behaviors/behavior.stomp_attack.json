@@ -17,48 +17,44 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				],
+				"enum": ["jump", "look", "move"],
 				"description": ""
 			},
 			"description": ""
 		},
 		"cooldown_time": {
 			"type": "number",
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"minimum": 0.0,
 			"description": "Cooldown time (in seconds) between attacks."
 		},
 		"inner_boundary_time_increase": {
 			"type": "number",
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"exclusiveMinimum": 0.0,
 			"description": "Time (in seconds) to add to attack path recalculation when the target is beyond the \"path_inner_boundary\"."
 		},
 		"max_path_time": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Maximum base time (in seconds) to recalculate new attack path to target (before increases applied)."
 		},
 		"melee_fov": {
 			"type": "number",
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"minimum": 0.0,
 			"description": ""
 		},
 		"min_path_time": {
 			"type": "number",
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"exclusiveMinimum": 0.0,
 			"description": "Minimum base time (in seconds) to recalculate new attack path to target (before increases applied)."
 		},
 		"no_damage_range_multiplier": {
 			"type": "number",
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"exclusiveMinimum": 0.0,
 			"description": "Multiplied with the final AoE damage range to determine a no damage range. The stomp attack will go on cooldown if target is in this no damage range."
 		},
@@ -122,25 +118,25 @@
 		},
 		"outer_boundary_time_increase": {
 			"type": "number",
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"exclusiveMinimum": 0.0,
 			"description": "Time (in seconds) to add to attack path recalculation when the target is beyond the \"path_outer_boundary\"."
 		},
 		"path_fail_time_increase": {
 			"type": "number",
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"exclusiveMinimum": 0.0,
 			"description": "Time (in seconds) to add to attack path recalculation when this entity cannot move along the current path."
 		},
 		"path_inner_boundary": {
 			"type": "number",
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"exclusiveMinimum": 0.0,
 			"description": "Distance at which to increase attack path recalculation by \"inner_boundary_tick_increase\"."
 		},
 		"path_outer_boundary": {
 			"type": "number",
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"exclusiveMinimum": 0.0,
 			"description": "Distance at which to increase attack path recalculation by \"outer_boundary_tick_increase\"."
 		},
@@ -158,7 +154,7 @@
 		},
 		"reach_multiplier": {
 			"type": "number",
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"minimum": 0.0,
 			"description": "Used with the base size of the entity to determine minimum target-distance before trying to deal attack damage."
 		},
@@ -168,13 +164,13 @@
 		},
 		"speed_multiplier": {
 			"type": "number",
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"minimum": 0.0,
 			"description": "This multiplier modifies the attacking entity's speed when moving toward the target."
 		},
 		"stomp_range_multiplier": {
 			"type": "number",
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"exclusiveMinimum": 0.0,
 			"description": "Multiplied with the base size of the entity to determine stomp AoE damage range."
 		},
@@ -184,13 +180,13 @@
 		},
 		"x_max_rotation": {
 			"type": "number",
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"exclusiveMinimum": 0.0,
 			"description": "Maximum rotation (in degrees), on the X-axis, this entity can rotate while trying to look at the target."
 		},
 		"y_max_head_rotation": {
 			"type": "number",
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"exclusiveMinimum": 0.0,
 			"description": "Maximum rotation (in degrees), on the Y-axis, this entity can rotate its head while trying to look at the target."
 		}

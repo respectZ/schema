@@ -12,11 +12,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				],
+				"enum": ["jump", "look", "move"],
 				"description": ""
 			},
 			"default": [],
@@ -24,7 +20,7 @@
 		},
 		"min_change_direction_time": {
 			"type": "number",
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 2,
 			"exclusiveMinimum": 0.0,
 			"description": "Constant minimum time (in seconds) to wait before choosing a new direction."

@@ -1,6 +1,6 @@
 {
-  "type": "object",
-  "properties": {},
-  "additionalProperties": false,
-  "description": "Sets that this entity can hide from hostile mobs while invisible."
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false,
+	"description": "Sets that this entity can hide from hostile mobs while invisible."
 }

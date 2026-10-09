@@ -1,146 +1,146 @@
 {
-  "type": "object",
-  "properties": {
-    "allowSitting": {
-      "$ref": "#/properties/allow_sitting",
-      "doNotSuggest": true,
-      "description": ""
-    },
-    "allow_sitting": {
-      "$ref": "../../1.26.0/components/breedable.json#/properties/allow_sitting",
-      "description": "If true, entities can breed while sitting"
-    },
-    "blend_attributes": {
-      "$ref": "../../legacy/components/offspring.json#/properties/blend_attributes",
-      "description": ""
-    },
-    "breedCooldown": {
-      "$ref": "#/properties/breed_cooldown",
-      "doNotSuggest": true,
-      "description": ""
-    },
-    "breedItems": {
-      "$ref": "#/properties/breed_items",
-      "doNotSuggest": true,
-      "description": ""
-    },
-    "breed_cooldown": {
-      "$ref": "../../1.26.0/components/breedable.json#/properties/breed_cooldown",
-      "description": "Time in seconds before the Entity can breed again."
-    },
-    "breed_items": {
-      "$ref": "../../1.26.0/components/breedable.json#/properties/breed_items",
-      "description": "The list of items that can be used to get the entity into the 'love' state. Includes 'item' for the item name, and 'result_item' that defines what item the breed item will transform to upon successful interaction (Format: itemName:auxValue)."
-    },
-    "breeds_with": {
-      "anyOf": [
-        {
-          "$ref": "#/$defs/pair",
-          "description": "The map of entity definitions this entity can breed with to breeding events that fire on breeding."
-        },
-        {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/pair",
-            "description": "The map of entity definitions this entity can breed with to breeding events that fire on breeding."
-          },
-          "description": "The map of entity definitions this entity can breed with to breeding events that fire on breeding."
-        }
-      ],
-      "description": "The map of entity definitions this entity can breed with to breeding events that fire on breeding."
-    },
-    "causes_pregnancy": {
-      "$ref": "../../1.26.0/components/breedable.json#/properties/causes_pregnancy",
-      "description": "If true, the entity will become pregnant instead of spawning a baby."
-    },
-    "combine_parent_colors": {
-      "$ref": "../../legacy/components/offspring.json#/properties/combine_parent_colors",
-      "description": ""
-    },
-    "deny_parents_variant": {
-      "$ref": "../../legacy/components/offspring.json#/properties/deny_parents_variant",
-      "description": ""
-    },
-    "environment_requirements": {
-      "$ref": "../../1.26.0/components/breedable.json#/properties/environment_requirements",
-      "description": "The list of nearby block requirements to get the entity into the 'love' state."
-    },
-    "extraBabyChance": {
-      "$ref": "#/properties/extra_baby_chance",
-      "doNotSuggest": true,
-      "description": ""
-    },
-    "extra_baby_chance": {
-      "$ref": "../../1.26.0/components/breedable.json#/properties/extra_baby_chance",
-      "description": "Chance that up to 16 babies will spawn between 0.0 and 1.0, where 1.0 is 100%."
-    },
-    "inherit_tamed": {
-      "$ref": "../../legacy/components/offspring.json#/properties/inherit_tamed",
-      "description": ""
-    },
-    "love_filters": {
-      "$ref": "../../1.26.0/components/breedable.json#/properties/love_filters",
-      "description": "The filters to run when attempting to fall in love."
-    },
-    "mutation_factor": {
-      "$ref": "../../legacy/components/offspring.json#/properties/mutation_factor",
-      "description": ""
-    },
-    "mutation_strategy": {
-      "$ref": "../../legacy/components/offspring.json#/properties/mutation_strategy",
-      "description": ""
-    },
-    "parent_centric_attribute_blending": {
-      "$ref": "../../legacy/components/offspring.json#/properties/parent_centric_attribute_blending",
-      "description": ""
-    },
-    "property_inheritance": {
-      "$ref": "../../legacy/components/offspring.json#/properties/property_inheritance",
-      "description": ""
-    },
-    "random_extra_variant_mutation_interval": {
-      "$ref": "../../legacy/components/offspring.json#/properties/random_extra_variant_mutation_interval",
-      "description": ""
-    },
-    "random_variant_mutation_interval": {
-      "$ref": "../../legacy/components/offspring.json#/properties/random_variant_mutation_interval",
-      "description": ""
-    },
-    "requireTame": {
-      "$ref": "#/properties/require_tame",
-      "doNotSuggest": true,
-      "description": ""
-    },
-    "require_full_health": {
-      "$ref": "../../1.26.0/components/breedable.json#/properties/require_full_health",
-      "description": "If true, the entity needs to be at full health before it can breed."
-    },
-    "require_tame": {
-      "$ref": "../../1.26.0/components/breedable.json#/properties/require_tame",
-      "description": "If true, the entities need to be tamed first before they can breed."
-    }
-  },
-  "additionalProperties": false,
-  "$defs": {
-    "pair": {
-      "type": "object",
-      "properties": {
-        "baby_type": {
-          "$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
-          "description": ""
-        },
-        "breed_event": {
-          "$ref": "../../legacy/components/ageable.json#/$defs/growth_event",
-          "description": ""
-        },
-        "mate_type": {
-          "$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
-          "description": ""
-        }
-      },
-      "additionalProperties": false,
-      "description": "The map of entity definitions this entity can breed with to breeding events that fire on breeding."
-    }
-  },
-  "description": "Defines the way an entity can get into the 'love' state. The entity should also have the \"minecraft:offspring\" component to define how the offspring is created if not using \"causes_pregnancy\". Runs the \"minecraft:entity_born\" event on the created offspring."
+	"type": "object",
+	"properties": {
+		"allowSitting": {
+			"$ref": "#/properties/allow_sitting",
+			"doNotSuggest": true,
+			"description": ""
+		},
+		"allow_sitting": {
+			"$ref": "../../1.26.0/components/breedable.json#/properties/allow_sitting",
+			"description": "If true, entities can breed while sitting"
+		},
+		"blend_attributes": {
+			"$ref": "../../legacy/components/offspring.json#/properties/blend_attributes",
+			"description": ""
+		},
+		"breedCooldown": {
+			"$ref": "#/properties/breed_cooldown",
+			"doNotSuggest": true,
+			"description": ""
+		},
+		"breedItems": {
+			"$ref": "#/properties/breed_items",
+			"doNotSuggest": true,
+			"description": ""
+		},
+		"breed_cooldown": {
+			"$ref": "../../1.26.0/components/breedable.json#/properties/breed_cooldown",
+			"description": "Time in seconds before the Entity can breed again."
+		},
+		"breed_items": {
+			"$ref": "../../1.26.0/components/breedable.json#/properties/breed_items",
+			"description": "The list of items that can be used to get the entity into the 'love' state. Includes 'item' for the item name, and 'result_item' that defines what item the breed item will transform to upon successful interaction (Format: itemName:auxValue)."
+		},
+		"breeds_with": {
+			"anyOf": [
+				{
+					"$ref": "#/$defs/pair",
+					"description": "The map of entity definitions this entity can breed with to breeding events that fire on breeding."
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/pair",
+						"description": "The map of entity definitions this entity can breed with to breeding events that fire on breeding."
+					},
+					"description": "The map of entity definitions this entity can breed with to breeding events that fire on breeding."
+				}
+			],
+			"description": "The map of entity definitions this entity can breed with to breeding events that fire on breeding."
+		},
+		"causes_pregnancy": {
+			"$ref": "../../1.26.0/components/breedable.json#/properties/causes_pregnancy",
+			"description": "If true, the entity will become pregnant instead of spawning a baby."
+		},
+		"combine_parent_colors": {
+			"$ref": "../../legacy/components/offspring.json#/properties/combine_parent_colors",
+			"description": ""
+		},
+		"deny_parents_variant": {
+			"$ref": "../../legacy/components/offspring.json#/properties/deny_parents_variant",
+			"description": ""
+		},
+		"environment_requirements": {
+			"$ref": "../../1.26.0/components/breedable.json#/properties/environment_requirements",
+			"description": "The list of nearby block requirements to get the entity into the 'love' state."
+		},
+		"extraBabyChance": {
+			"$ref": "#/properties/extra_baby_chance",
+			"doNotSuggest": true,
+			"description": ""
+		},
+		"extra_baby_chance": {
+			"$ref": "../../1.26.0/components/breedable.json#/properties/extra_baby_chance",
+			"description": "Chance that up to 16 babies will spawn between 0.0 and 1.0, where 1.0 is 100%."
+		},
+		"inherit_tamed": {
+			"$ref": "../../legacy/components/offspring.json#/properties/inherit_tamed",
+			"description": ""
+		},
+		"love_filters": {
+			"$ref": "../../1.26.0/components/breedable.json#/properties/love_filters",
+			"description": "The filters to run when attempting to fall in love."
+		},
+		"mutation_factor": {
+			"$ref": "../../legacy/components/offspring.json#/properties/mutation_factor",
+			"description": ""
+		},
+		"mutation_strategy": {
+			"$ref": "../../legacy/components/offspring.json#/properties/mutation_strategy",
+			"description": ""
+		},
+		"parent_centric_attribute_blending": {
+			"$ref": "../../legacy/components/offspring.json#/properties/parent_centric_attribute_blending",
+			"description": ""
+		},
+		"property_inheritance": {
+			"$ref": "../../legacy/components/offspring.json#/properties/property_inheritance",
+			"description": ""
+		},
+		"random_extra_variant_mutation_interval": {
+			"$ref": "../../legacy/components/offspring.json#/properties/random_extra_variant_mutation_interval",
+			"description": ""
+		},
+		"random_variant_mutation_interval": {
+			"$ref": "../../legacy/components/offspring.json#/properties/random_variant_mutation_interval",
+			"description": ""
+		},
+		"requireTame": {
+			"$ref": "#/properties/require_tame",
+			"doNotSuggest": true,
+			"description": ""
+		},
+		"require_full_health": {
+			"$ref": "../../1.26.0/components/breedable.json#/properties/require_full_health",
+			"description": "If true, the entity needs to be at full health before it can breed."
+		},
+		"require_tame": {
+			"$ref": "../../1.26.0/components/breedable.json#/properties/require_tame",
+			"description": "If true, the entities need to be tamed first before they can breed."
+		}
+	},
+	"additionalProperties": false,
+	"$defs": {
+		"pair": {
+			"type": "object",
+			"properties": {
+				"baby_type": {
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+					"description": ""
+				},
+				"breed_event": {
+					"$ref": "../../legacy/components/ageable.json#/$defs/growth_event",
+					"description": ""
+				},
+				"mate_type": {
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": "The map of entity definitions this entity can breed with to breeding events that fire on breeding."
+		}
+	},
+	"description": "Defines the way an entity can get into the 'love' state. The entity should also have the \"minecraft:offspring\" component to define how the offspring is created if not using \"causes_pregnancy\". Runs the \"minecraft:entity_born\" event on the created offspring."
 }

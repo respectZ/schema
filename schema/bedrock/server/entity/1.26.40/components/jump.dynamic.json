@@ -1,91 +1,91 @@
 {
-  "type": "object",
-  "properties": {
-    "fast_skip_data": {
-      "$ref": "#/$defs/fast_skip_data",
-      "default": {
-        "animation_duration": 1,
-        "distance_scale": 1,
-        "height": 0.1,
-        "jump_delay": 30
-      },
-      "description": ""
-    },
-    "regular_skip_data": {
-      "$ref": "#/$defs/regular_skip_data",
-      "default": {
-        "animation_duration": 1,
-        "distance_scale": 1,
-        "height": 0.1,
-        "jump_delay": 30
-      },
-      "description": ""
-    }
-  },
-  "additionalProperties": false,
-  "$defs": {
-    "fast_skip_data": {
-      "type": "object",
-      "properties": {
-        "animation_duration": {
-          "type": "integer",
-          "default": 1,
-          "minimum": -2147483648,
-          "maximum": 2147483647,
-          "description": ""
-        },
-        "distance_scale": {
-          "type": "number",
-          "default": 1,
-          "description": ""
-        },
-        "height": {
-          "type": "number",
-          "default": 0.1,
-          "description": ""
-        },
-        "jump_delay": {
-          "type": "integer",
-          "default": 30,
-          "minimum": -2147483648,
-          "maximum": 2147483647,
-          "description": ""
-        }
-      },
-      "additionalProperties": false,
-      "description": ""
-    },
-    "regular_skip_data": {
-      "type": "object",
-      "properties": {
-        "animation_duration": {
-          "type": "integer",
-          "default": 1,
-          "minimum": -2147483648,
-          "maximum": 2147483647,
-          "description": ""
-        },
-        "distance_scale": {
-          "type": "number",
-          "default": 1,
-          "description": ""
-        },
-        "height": {
-          "type": "number",
-          "default": 0.1,
-          "description": ""
-        },
-        "jump_delay": {
-          "type": "integer",
-          "default": 30,
-          "minimum": -2147483648,
-          "maximum": 2147483647,
-          "description": ""
-        }
-      },
-      "additionalProperties": false,
-      "description": ""
-    }
-  },
-  "description": ""
+	"type": "object",
+	"properties": {
+		"fast_skip_data": {
+			"$ref": "#/$defs/fast_skip_data",
+			"default": {
+				"animation_duration": 1,
+				"distance_scale": 1,
+				"height": 0.1,
+				"jump_delay": 30
+			},
+			"description": ""
+		},
+		"regular_skip_data": {
+			"$ref": "#/$defs/regular_skip_data",
+			"default": {
+				"animation_duration": 1,
+				"distance_scale": 1,
+				"height": 0.1,
+				"jump_delay": 30
+			},
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"$defs": {
+		"fast_skip_data": {
+			"type": "object",
+			"properties": {
+				"animation_duration": {
+					"type": "integer",
+					"default": 1,
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"description": ""
+				},
+				"distance_scale": {
+					"type": "number",
+					"default": 1,
+					"description": ""
+				},
+				"height": {
+					"type": "number",
+					"default": 0.1,
+					"description": ""
+				},
+				"jump_delay": {
+					"type": "integer",
+					"default": 30,
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		},
+		"regular_skip_data": {
+			"type": "object",
+			"properties": {
+				"animation_duration": {
+					"type": "integer",
+					"default": 1,
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"description": ""
+				},
+				"distance_scale": {
+					"type": "number",
+					"default": 1,
+					"description": ""
+				},
+				"height": {
+					"type": "number",
+					"default": 0.1,
+					"description": ""
+				},
+				"jump_delay": {
+					"type": "integer",
+					"default": 30,
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		}
+	},
+	"description": ""
 }

@@ -8,11 +8,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -69,10 +65,7 @@
 									"description": ""
 								}
 							},
-							"required": [
-								"key",
-								"value"
-							],
+							"required": ["key", "value"],
 							"description": "List of items that this mob likes"
 						},
 						"description": "List of items that this mob likes"
@@ -84,8 +77,8 @@
 		},
 		"look_distance": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Distance in blocks the mob will beg from"
 		},
 		"look_time": {

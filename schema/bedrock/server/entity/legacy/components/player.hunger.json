@@ -1,19 +1,19 @@
 {
-  "type": "object",
-  "properties": {
-    "max": {
-      "type": "number",
-      "description": ""
-    },
-    "min": {
-      "type": "number",
-      "description": ""
-    },
-    "value": {
-      "$ref": "./health.json#/$defs/value_range",
-      "description": ""
-    }
-  },
-  "additionalProperties": false,
-  "description": ""
+	"type": "object",
+	"properties": {
+		"max": {
+			"type": "number",
+			"description": ""
+		},
+		"min": {
+			"type": "number",
+			"description": ""
+		},
+		"value": {
+			"$ref": "./health.json#/$defs/value_range",
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"description": ""
 }

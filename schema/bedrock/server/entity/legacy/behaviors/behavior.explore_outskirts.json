@@ -5,11 +5,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				],
+				"enum": ["jump", "look", "move"],
 				"description": ""
 			},
 			"default": [],
@@ -51,42 +47,42 @@
 		"explore_dist": {
 			"type": "number",
 			"exclusiveMinimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 5.0,
 			"description": "Total distance in blocks the entity will explore beyond the village bounds when choosing its travel point."
 		},
 		"max_travel_time": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 60.0,
 			"description": "This is the maximum amount of time an entity will attempt to reach its travel point on the outskirts of the village before the goal exits."
 		},
 		"max_wait_time": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.0,
 			"description": "The wait time in seconds between choosing new explore points will be chosen on a random interval between this value and the minimum wait time. This value is also the total amount of time the entity will explore random points before the goal stops."
 		},
 		"min_dist_from_target": {
 			"type": "number",
 			"exclusiveMinimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 2.25,
 			"description": "The entity must be within this distance for it to consider it has successfully reached its target."
 		},
 		"min_perimeter": {
 			"type": "number",
 			"exclusiveMinimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 1.0,
 			"description": "The minimum perimeter of the village required to run this goal."
 		},
 		"min_wait_time": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 3.0,
 			"description": "The wait time in seconds between choosing new explore points will be chosen on a random interval between this value and the maximum wait time."
 		},
@@ -114,21 +110,21 @@
 		"speed_multiplier": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 1.0,
 			"description": "The multiplier for speed while using this goal. 1.0 maintains the speed."
 		},
 		"timer_ratio": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 2.0,
 			"description": "Each new explore point will be chosen on a random interval between the minimum and the maximum wait time, divided by this value. This does not apply to the first explore point chosen when the goal runs."
 		},
 		"wait_time": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": ""
 		}
 	},

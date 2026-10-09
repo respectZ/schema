@@ -1,12 +1,12 @@
 {
-  "type": "object",
-  "properties": {
-    "vertical_velocity": {
-      "type": "number",
-      "default": 0.5,
-      "description": "Vertical velocity to apply when jump action is issued."
-    }
-  },
-  "additionalProperties": false,
-  "description": "When configured as a rideable entity, the entity will move upwards or downwards when the player uses the jump action."
+	"type": "object",
+	"properties": {
+		"vertical_velocity": {
+			"type": "number",
+			"default": 0.5,
+			"description": "Vertical velocity to apply when jump action is issued."
+		}
+	},
+	"additionalProperties": false,
+	"description": "When configured as a rideable entity, the entity will move upwards or downwards when the player uses the jump action."
 }

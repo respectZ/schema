@@ -1,44 +1,42 @@
 {
-  "type": "object",
-  "properties": {
-    "entity_type": {
-      "$ref": "../../legacy/components/addrider.json#/anyOf/0/properties/entity_type",
-      "description": "The entity type that will be riding this entity."
-    },
-    "riders": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/rider",
-        "description": ""
-      },
-      "default": [],
-      "description": ""
-    },
-    "spawn_event": {
-      "$ref": "../../legacy/components/addrider.json#/anyOf/0/properties/spawn_event",
-      "description": "The spawn event that will be used when the riding entity is created."
-    }
-  },
-  "additionalProperties": false,
-  "$defs": {
-    "rider": {
-      "type": "object",
-      "properties": {
-        "entity_type": {
-          "$ref": "../../legacy/components/addrider.json#/$defs/entity_reference",
-          "description": ""
-        },
-        "spawn_event": {
-          "$ref": "../../legacy/components/addrider.json#/anyOf/0/properties/spawn_event",
-          "description": ""
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "entity_type"
-      ],
-      "description": ""
-    }
-  },
-  "description": "Adds a rider to the entity. Requires minecraft:rideable."
+	"type": "object",
+	"properties": {
+		"entity_type": {
+			"$ref": "../../legacy/components/addrider.json#/anyOf/0/properties/entity_type",
+			"description": "The entity type that will be riding this entity."
+		},
+		"riders": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/rider",
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"spawn_event": {
+			"$ref": "../../legacy/components/addrider.json#/anyOf/0/properties/spawn_event",
+			"description": "The spawn event that will be used when the riding entity is created."
+		}
+	},
+	"additionalProperties": false,
+	"$defs": {
+		"rider": {
+			"type": "object",
+			"properties": {
+				"entity_type": {
+					"$ref": "../../legacy/components/addrider.json#/$defs/entity_reference",
+					"description": ""
+				},
+				"spawn_event": {
+					"$ref": "../../legacy/components/addrider.json#/anyOf/0/properties/spawn_event",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"required": ["entity_type"],
+			"description": ""
+		}
+	},
+	"description": "Adds a rider to the entity. Requires minecraft:rideable."
 }

@@ -4,8 +4,8 @@
 	"properties": {
 		"baby_knockback_modifier": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": ""
 		},
 		"chance_to_start": {
@@ -24,11 +24,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -45,7 +41,7 @@
 				{
 					"type": "number",
 					"minimum": 0,
-					"maximum": 3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				},
 				{
@@ -54,13 +50,13 @@
 						"max": {
 							"type": "number",
 							"minimum": 0,
-							"maximum": 3.4028234663852886e+38,
+							"maximum": 3.4028234663852886e38,
 							"description": ""
 						},
 						"min": {
 							"type": "number",
 							"minimum": 0,
-							"maximum": 3.4028234663852886e+38,
+							"maximum": 3.4028234663852886e38,
 							"description": ""
 						}
 					},
@@ -72,14 +68,14 @@
 		},
 		"knockback_force": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": ""
 		},
 		"knockback_height": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": ""
 		},
 		"on_collide": {
@@ -1302,13 +1298,11 @@
 		},
 		"retry_attempt_cooldown": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": ""
 		}
 	},
-	"required": [
-		"ram_position_memory"
-	],
+	"required": ["ram_position_memory"],
 	"description": ""
 }

@@ -1,12 +1,12 @@
 {
-  "type": "object",
-  "properties": {
-    "value": {
-      "type": "number",
-      "default": 0,
-      "description": "Angle in degrees."
-    }
-  },
-  "additionalProperties": false,
-  "description": "Sets this entity's default head rotation angle."
+	"type": "object",
+	"properties": {
+		"value": {
+			"type": "number",
+			"default": 0,
+			"description": "Angle in degrees."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Sets this entity's default head rotation angle."
 }

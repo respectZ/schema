@@ -1,46 +1,46 @@
 {
-  "anyOf": [
-    {
-      "type": "object",
-      "properties": {
-        "can_be_cut": {
-          "$ref": "../../legacy/components/leashable.json#/anyOf/0/properties/can_be_cut",
-          "description": "If true, players can cut both incoming and outgoing leashes by using shears on the entity."
-        },
-        "can_be_stolen": {
-          "$ref": "../../legacy/components/leashable.json#/anyOf/0/properties/can_be_stolen",
-          "description": "If true, players can leash this entity even if it is already leashed to another entity."
-        },
-        "on_leash": {
-          "$ref": "../../legacy/components/leashable.json#/anyOf/0/properties/on_leash",
-          "description": "Event to call when this entity is leashed."
-        },
-        "on_unleash": {
-          "$ref": "../../legacy/components/leashable.json#/anyOf/0/properties/on_unleash",
-          "description": "Event to call when this entity is unleashed."
-        },
-        "on_unleash_interact_only": {
-          "type": "boolean",
-          "default": false,
-          "description": "When set to true, \"on_unleash\" does not trigger when the entity gets unleashed for reasons other than the player directly interacting with it."
-        },
-        "presets": {
-          "$ref": "../../legacy/components/leashable.json#/$defs/preset_array",
-          "default": [],
-          "description": "Defines how this entity behaves when leashed to another entity. The first preset which \"filter\" conditions are met will be applied; if none match, a default configuration is used instead."
-        },
-        "unleash_on_removal": {
-          "$ref": "../../legacy/components/leashable.json#/anyOf/0/properties/unleash_on_removal",
-          "description": "If true, the entity is unleashed when the component is removed."
-        }
-      },
-      "additionalProperties": false,
-      "description": "Allows this entity to be leashed and defines the conditions and events for this entity when is leashed."
-    },
-    {
-      "type": "null",
-      "description": "Allows this entity to be leashed and defines the conditions and events for this entity when is leashed."
-    }
-  ],
-  "description": "Allows this entity to be leashed and defines the conditions and events for this entity when is leashed."
+	"anyOf": [
+		{
+			"type": "object",
+			"properties": {
+				"can_be_cut": {
+					"$ref": "../../legacy/components/leashable.json#/anyOf/0/properties/can_be_cut",
+					"description": "If true, players can cut both incoming and outgoing leashes by using shears on the entity."
+				},
+				"can_be_stolen": {
+					"$ref": "../../legacy/components/leashable.json#/anyOf/0/properties/can_be_stolen",
+					"description": "If true, players can leash this entity even if it is already leashed to another entity."
+				},
+				"on_leash": {
+					"$ref": "../../legacy/components/leashable.json#/anyOf/0/properties/on_leash",
+					"description": "Event to call when this entity is leashed."
+				},
+				"on_unleash": {
+					"$ref": "../../legacy/components/leashable.json#/anyOf/0/properties/on_unleash",
+					"description": "Event to call when this entity is unleashed."
+				},
+				"on_unleash_interact_only": {
+					"type": "boolean",
+					"default": false,
+					"description": "When set to true, \"on_unleash\" does not trigger when the entity gets unleashed for reasons other than the player directly interacting with it."
+				},
+				"presets": {
+					"$ref": "../../legacy/components/leashable.json#/$defs/preset_array",
+					"default": [],
+					"description": "Defines how this entity behaves when leashed to another entity. The first preset which \"filter\" conditions are met will be applied; if none match, a default configuration is used instead."
+				},
+				"unleash_on_removal": {
+					"$ref": "../../legacy/components/leashable.json#/anyOf/0/properties/unleash_on_removal",
+					"description": "If true, the entity is unleashed when the component is removed."
+				}
+			},
+			"additionalProperties": false,
+			"description": "Allows this entity to be leashed and defines the conditions and events for this entity when is leashed."
+		},
+		{
+			"type": "null",
+			"description": "Allows this entity to be leashed and defines the conditions and events for this entity when is leashed."
+		}
+	],
+	"description": "Allows this entity to be leashed and defines the conditions and events for this entity when is leashed."
 }

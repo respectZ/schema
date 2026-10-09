@@ -5,11 +5,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				],
+				"enum": ["jump", "look", "move"],
 				"description": ""
 			},
 			"default": [],
@@ -18,28 +14,28 @@
 		"cooldown_time": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 1,
 			"description": "Time (in seconds) between attacks."
 		},
 		"max_distance": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 15,
 			"description": "Max distance from the target, this entity will use this attack behavior."
 		},
 		"max_sneak_range": {
 			"type": "number",
 			"exclusiveMinimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 15,
 			"description": "Max distance from the target, this entity starts sneaking."
 		},
 		"max_sprint_range": {
 			"type": "number",
 			"exclusiveMinimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 4,
 			"description": "Max distance from the target, this entity starts sprinting (sprinting takes priority over sneaking)."
 		},
@@ -53,42 +49,42 @@
 		"reach_multiplier": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 2,
 			"description": "Used with the base size of the entity to determine minimum target-distance before trying to deal attack damage."
 		},
 		"sneak_speed_multiplier": {
 			"type": "number",
 			"exclusiveMinimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.6,
 			"description": "Modifies the attacking entity's movement speed while sneaking."
 		},
 		"sprint_speed_multiplier": {
 			"type": "number",
 			"exclusiveMinimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 1.33,
 			"description": "Modifies the attacking entity's movement speed while sprinting."
 		},
 		"walk_speed_multiplier": {
 			"type": "number",
 			"exclusiveMinimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.8,
 			"description": "Modifies the attacking entity's movement speed when not sneaking or sprinting, but still within attack range."
 		},
 		"x_max_rotation": {
 			"type": "number",
 			"exclusiveMinimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 30,
 			"description": "Maximum rotation (in degrees), on the X-axis, this entity can rotate while trying to look at the target."
 		},
 		"y_max_head_rotation": {
 			"type": "number",
 			"exclusiveMinimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 30,
 			"description": "Maximum rotation (in degrees), on the Y-axis, this entity can rotate its head while trying to look at the target."
 		}

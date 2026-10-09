@@ -5,11 +5,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				],
+				"enum": ["jump", "look", "move"],
 				"description": ""
 			},
 			"default": [],
@@ -17,7 +13,7 @@
 		},
 		"goal_radius": {
 			"type": "number",
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 1.5,
 			"exclusiveMinimum": 0.0,
 			"description": "Distance in blocks within the mob considers it has reached it's target position."
@@ -38,7 +34,7 @@
 		},
 		"search_cooldown_max_seconds": {
 			"type": "number",
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 8,
 			"exclusiveMinimum": 0.0,
 			"description": "The maximum amount of time in seconds that the goal can take before searching again. The time is chosen between 0 and this number."
@@ -66,7 +62,7 @@
 		},
 		"speed_multiplier": {
 			"type": "number",
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.5,
 			"minimum": 0.0,
 			"description": "Movement speed multiplier of the mob when using this goal."

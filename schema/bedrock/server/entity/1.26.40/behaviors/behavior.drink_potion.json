@@ -8,11 +8,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -32,8 +28,8 @@
 				"properties": {
 					"chance": {
 						"type": "number",
-						"minimum": -3.4028234663852886e+38,
-						"maximum": 3.4028234663852886e+38,
+						"minimum": -3.4028234663852886e38,
+						"maximum": 3.4028234663852886e38,
 						"description": "The percent chance (from 0.0 to 1.0) of this potion being selected when searching for a potion to use."
 					},
 					"filters": {
@@ -59,8 +55,8 @@
 		},
 		"speed_modifier": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The movement speed modifier to apply to the entity while it is drinking a potion. A value of 0 represents no change in speed."
 		}
 	},

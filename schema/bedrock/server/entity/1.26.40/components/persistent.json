@@ -1,4 +1,4 @@
 {
-  "$ref": "../../legacy/components/persistent.json",
-  "description": ""
+	"$ref": "../../legacy/components/persistent.json",
+	"description": ""
 }

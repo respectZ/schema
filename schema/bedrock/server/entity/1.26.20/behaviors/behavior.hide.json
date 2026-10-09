@@ -8,11 +8,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -26,19 +22,15 @@
 		},
 		"duration": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Amount of time in seconds that the mob reacts."
 		},
 		"poi_type": {
 			"type": "string",
 			"anyOf": [
 				{
-					"enum": [
-						"bed",
-						"meeting_area",
-						"jobsite"
-					],
+					"enum": ["bed", "meeting_area", "jobsite"],
 					"description": "Defines what POI type to hide at."
 				},
 				{
@@ -57,13 +49,13 @@
 		"speed_multiplier": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Movement speed multiplier of the mob when using this AI Goal"
 		},
 		"timeout_cooldown": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The cooldown time in seconds before the goal can be reused after a internal failure or timeout condition."
 		}
 	},

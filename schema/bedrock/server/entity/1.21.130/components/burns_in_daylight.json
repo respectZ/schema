@@ -1,12 +1,12 @@
 {
-  "type": "object",
-  "properties": {
-    "protection_slot": {
-      "$ref": "../../../../../vanilla/server/equipment_slot.json",
-      "default": "slot.armor.head",
-      "description": ""
-    }
-  },
-  "additionalProperties": false,
-  "description": "."
+	"type": "object",
+	"properties": {
+		"protection_slot": {
+			"$ref": "../../../../../vanilla/server/equipment_slot.json",
+			"default": "slot.armor.head",
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"description": "."
 }

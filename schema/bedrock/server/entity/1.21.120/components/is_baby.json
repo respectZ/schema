@@ -1,6 +1,6 @@
 {
-  "type": "object",
-  "properties": {},
-  "additionalProperties": false,
-  "description": "Sets that this entity is a baby."
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false,
+	"description": "Sets that this entity is a baby."
 }

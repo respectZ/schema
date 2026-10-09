@@ -6,11 +6,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"move",
-					"look",
-					"jump"
-				],
+				"enum": ["move", "look", "jump"],
 				"description": ""
 			},
 			"description": ""
@@ -154,9 +150,7 @@
 									}
 								},
 								"additionalProperties": false,
-								"required": [
-									"item_tag"
-								],
+								"required": ["item_tag"],
 								"description": "Block types to move to."
 							}
 						],
@@ -180,9 +174,7 @@
 											}
 										},
 										"additionalProperties": false,
-										"required": [
-											"item_tag"
-										],
+										"required": ["item_tag"],
 										"description": ""
 									}
 								],
@@ -190,9 +182,7 @@
 							}
 						},
 						"additionalProperties": false,
-						"required": [
-							"item"
-						],
+						"required": ["item"],
 						"description": "Block types to move to."
 					}
 				],
@@ -236,10 +226,7 @@
 		},
 		"target_selection_method": {
 			"type": "string",
-			"enum": [
-				"nearest",
-				"random"
-			],
+			"enum": ["nearest", "random"],
 			"description": "Kind of block to find fitting the specification. Valid values are \"random\" and \"nearest\"."
 		},
 		"tick_interval": {

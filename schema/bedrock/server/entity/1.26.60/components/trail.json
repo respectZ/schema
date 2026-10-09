@@ -1,64 +1,60 @@
 {
-  "type": "object",
-  "properties": {
-    "block_type": {
-      "type": "string",
-      "anyOf": [
-        {
-          "$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
-          "description": ""
-        },
-        {
-          "type": "string",
-          "description": ""
-        }
-      ],
-      "default": "air",
-      "description": ""
-    },
-    "force_replace_matched_blocks": {
-      "type": "boolean",
-      "default": false,
-      "description": ""
-    },
-    "radius": {
-      "type": "integer",
-      "minimum": -1,
-      "maximum": 16,
-      "default": -1,
-      "description": ""
-    },
-    "replaceable_blocks": {
-      "type": "array",
-      "items": {
-        "$ref": "./buoyant.json#/$defs/block_descriptor",
-        "description": ""
-      },
-      "default": [],
-      "description": ""
-    },
-    "spawn_filter": {
-      "$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-      "description": ""
-    },
-    "spawn_offset": {
-      "type": "array",
-      "minItems": 3,
-      "maxItems": 3,
-      "items": {
-        "type": "number",
-        "minimum": -3.4028234663852886e+38,
-        "maximum": 3.4028234663852886e+38,
-        "description": ""
-      },
-      "default": [
-        0,
-        0,
-        0
-      ],
-      "description": ""
-    }
-  },
-  "additionalProperties": false,
-  "description": ""
+	"type": "object",
+	"properties": {
+		"block_type": {
+			"type": "string",
+			"anyOf": [
+				{
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+					"description": ""
+				},
+				{
+					"type": "string",
+					"description": ""
+				}
+			],
+			"default": "air",
+			"description": ""
+		},
+		"force_replace_matched_blocks": {
+			"type": "boolean",
+			"default": false,
+			"description": ""
+		},
+		"radius": {
+			"type": "integer",
+			"minimum": -1,
+			"maximum": 16,
+			"default": -1,
+			"description": ""
+		},
+		"replaceable_blocks": {
+			"type": "array",
+			"items": {
+				"$ref": "./buoyant.json#/$defs/block_descriptor",
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"spawn_filter": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": ""
+		},
+		"spawn_offset": {
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"type": "number",
+				"minimum": -3.4028234663852886e38,
+				"maximum": 3.4028234663852886e38,
+				"description": ""
+			},
+			"default": [0, 0, 0],
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"description": ""
 }

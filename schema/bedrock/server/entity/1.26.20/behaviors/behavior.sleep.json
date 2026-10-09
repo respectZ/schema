@@ -12,11 +12,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -30,19 +26,15 @@
 		},
 		"cooldown_time": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Time in seconds the mob has to wait before using the goal again"
 		},
 		"poi_type": {
 			"type": "string",
 			"anyOf": [
 				{
-					"enum": [
-						"bed",
-						"meeting_area",
-						"jobsite"
-					],
+					"enum": ["bed", "meeting_area", "jobsite"],
 					"description": ""
 				},
 				{
@@ -60,32 +52,32 @@
 		},
 		"sleep_collider_height": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The height of the mob's collider while sleeping"
 		},
 		"sleep_collider_width": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The width of the mob's collider while sleeping"
 		},
 		"sleep_y_offset": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The y offset of the mob's collider while sleeping"
 		},
 		"speed_multiplier": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Movement speed multiplier of the mob when using this AI Goal"
 		},
 		"timeout_cooldown": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The cooldown time in seconds before the goal can be reused after a internal failure or timeout condition"
 		}
 	},

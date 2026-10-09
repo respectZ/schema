@@ -4,7 +4,7 @@
 		"attack_cooldown": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.5,
 			"description": "The cooldown time in seconds before this goal can be used again."
 		},
@@ -72,11 +72,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				],
+				"enum": ["jump", "look", "move"],
 				"description": ""
 			},
 			"default": [],
@@ -88,15 +84,15 @@
 		},
 		"max_head_rotation_x": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"default": 30.0,
 			"description": "Maximum head rotation (in degrees), on the X-axis, that this entity can apply while trying to look at the target."
 		},
 		"max_head_rotation_y": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"default": 30.0,
 			"description": "Maximum head rotation (in degrees), on the Y-axis, that this entity can apply while trying to look at the target."
 		},
@@ -142,14 +138,14 @@
 		"post_shoot_delay": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.20000000298023224,
 			"description": "Time in seconds between firing the projectile and ending the goal."
 		},
 		"pre_shoot_delay": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.75,
 			"description": "Time in seconds before firing the projectile."
 		},
@@ -166,8 +162,8 @@
 		},
 		"ranged_fov": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"default": 90.0,
 			"description": "Field of view (in degrees) when using sensing to detect a target for attack."
 		},

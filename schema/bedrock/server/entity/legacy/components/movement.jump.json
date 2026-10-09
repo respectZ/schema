@@ -1,48 +1,48 @@
 {
-  "type": "object",
-  "properties": {
-    "jump_delay": {
-      "anyOf": [
-        {
-          "type": "number",
-          "description": ""
-        },
-        {
-          "type": "object",
-          "properties": {
-            "range_max": {
-              "type": "number",
-              "default": 0,
-              "description": ""
-            },
-            "range_min": {
-              "type": "number",
-              "default": 0,
-              "description": ""
-            }
-          },
-          "additionalProperties": false,
-          "description": ""
-        },
-        {
-          "type": "array",
-          "items": {
-            "type": "number",
-            "description": ""
-          },
-          "minItems": 2,
-          "maxItems": 2,
-          "description": ""
-        }
-      ],
-      "description": ""
-    },
-    "max_turn": {
-      "type": "number",
-      "default": 30,
-      "description": ""
-    }
-  },
-  "additionalProperties": false,
-  "description": ""
+	"type": "object",
+	"properties": {
+		"jump_delay": {
+			"anyOf": [
+				{
+					"type": "number",
+					"description": ""
+				},
+				{
+					"type": "object",
+					"properties": {
+						"range_max": {
+							"type": "number",
+							"default": 0,
+							"description": ""
+						},
+						"range_min": {
+							"type": "number",
+							"default": 0,
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": ""
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "number",
+						"description": ""
+					},
+					"minItems": 2,
+					"maxItems": 2,
+					"description": ""
+				}
+			],
+			"description": ""
+		},
+		"max_turn": {
+			"type": "number",
+			"default": 30,
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"description": ""
 }

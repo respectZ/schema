@@ -1,344 +1,325 @@
 {
-  "type": "object",
-  "properties": {
-    "apply_gravity": {
-      "type": "boolean",
-      "default": true,
-      "description": "Applies gravity each tick. Causes \"movement_type\" to be more impactful, but also gravity to be applied more intensely outside liquids."
-    },
-    "base_buoyancy": {
-      "type": "number",
-      "minimum": -3.4028234663852886e+38,
-      "maximum": 3.4028234663852886e+38,
-      "default": 1,
-      "description": "Base buoyancy used to calculate how much will a entity float."
-    },
-    "big_wave_probability": {
-      "type": "number",
-      "minimum": -3.4028234663852886e+38,
-      "maximum": 3.4028234663852886e+38,
-      "default": 0.03,
-      "description": "Probability for a big wave hitting the entity. Only used if \"movement_type\" is \"waves\"."
-    },
-    "big_wave_speed": {
-      "type": "number",
-      "minimum": -3.4028234663852886e+38,
-      "maximum": 3.4028234663852886e+38,
-      "default": 10,
-      "description": "Multiplier for the speed to make a big wave. Triggered depending on \"big_wave_probability\"."
-    },
-    "can_auto_step_from_liquid": {
-      "type": "boolean",
-      "default": false,
-      "description": "Whether the entity can move out of a liquid block to a neighboring solid block if pushed against it."
-    },
-    "drag_down_on_buoyancy_removed": {
-      "type": "number",
-      "minimum": -3.4028234663852886e+38,
-      "maximum": 3.4028234663852886e+38,
-      "default": 0,
-      "description": "How much an entity will be dragged down when the component is removed."
-    },
-    "liquid_blocks": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/block_descriptor",
-        "description": "List of blocks this entity can float on. Must be a liquid block."
-      },
-      "default": [],
-      "description": "List of blocks this entity can float on. Must be a liquid block."
-    },
-    "movement_type": {
-      "type": "string",
-      "anyOf": [
-        {
-          "enum": [
-            "none",
-            "waves",
-            "bobbing"
-          ],
-          "description": "Type of vertical movement applied to the entity:\n\"waves\", simulates wave movement based on the entity speed.\n\"bobbing\", simulates waves going through.\n\"none\", simulates waves going through."
-        },
-        {
-          "pattern": "^(?:[nN][oO][nN][eE]|[wW][aA][vV][eE][sS]|[bB][oO][bB][bB][iI][nN][gG])$",
-          "description": "Type of vertical movement applied to the entity:\n\"waves\", simulates wave movement based on the entity speed.\n\"bobbing\", simulates waves going through.\n\"none\", simulates waves going through."
-        }
-      ],
-      "default": "waves",
-      "description": "Type of vertical movement applied to the entity:\n\"waves\", simulates wave movement based on the entity speed.\n\"bobbing\", simulates waves going through.\n\"none\", simulates waves going through."
-    }
-  },
-  "additionalProperties": false,
-  "$defs": {
-    "block_descriptor": {
-      "anyOf": [
-        {
-          "$ref": "../../../../../vanilla/server/block_descriptor.json",
-          "description": "List of blocks this entity can float on. Must be a liquid block."
-        },
-        {
-          "allOf": [
-            {
-              "$ref": "#/$defs/block_name",
-              "description": "List of blocks this entity can float on. Must be a liquid block."
-            },
-            {
-              "minLength": 1,
-              "description": "List of blocks this entity can float on. Must be a liquid block."
-            }
-          ],
-          "description": "List of blocks this entity can float on. Must be a liquid block."
-        },
-        {
-          "$ref": "#/$defs/block_proxy",
-          "description": "List of blocks this entity can float on. Must be a liquid block."
-        }
-      ],
-      "properties": {
-        "name": {
-          "$ref": "#/$defs/block_name",
-          "description": ""
-        },
-        "states": {
-          "$ref": "#/$defs/block_states",
-          "description": ""
-        },
-        "tags": {
-          "$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
-          "description": ""
-        }
-      },
-      "allOf": [
-        {
-          "anyOf": [
-            {
-              "required": [
-                "name"
-              ],
-              "properties": {
-                "name": {
-                  "minLength": 1,
-                  "description": ""
-                }
-              },
-              "description": "List of blocks this entity can float on. Must be a liquid block."
-            },
-            {
-              "required": [
-                "tags"
-              ],
-              "properties": {
-                "tags": {
-                  "minLength": 1,
-                  "description": ""
-                }
-              },
-              "description": "List of blocks this entity can float on. Must be a liquid block."
-            }
-          ],
-          "description": "List of blocks this entity can float on. Must be a liquid block."
-        },
-        {
-          "if": {
-            "required": [
-              "tags"
-            ],
-            "properties": {
-              "tags": {
-                "minLength": 1,
-                "description": ""
-              }
-            },
-            "description": "List of blocks this entity can float on. Must be a liquid block."
-          },
-          "then": {
-            "properties": {
-              "states": {
-                "anyOf": [
-                  {
-                    "type": "object",
-                    "maxProperties": 0,
-                    "additionalProperties": false,
-                    "description": ""
-                  },
-                  {
-                    "type": "array",
-                    "maxItems": 0,
-                    "description": ""
-                  }
-                ],
-                "description": ""
-              }
-            },
-            "description": "List of blocks this entity can float on. Must be a liquid block."
-          },
-          "description": "List of blocks this entity can float on. Must be a liquid block."
-        }
-      ],
-      "additionalProperties": false,
-      "description": "List of blocks this entity can float on. Must be a liquid block."
-    },
-    "block_name": {
-      "anyOf": [
-        {
-          "$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
-          "description": "List of blocks this entity can float on. Must be a liquid block."
-        },
-        {
-          "type": "string",
-          "description": "List of blocks this entity can float on. Must be a liquid block."
-        }
-      ],
-      "description": "List of blocks this entity can float on. Must be a liquid block."
-    },
-    "block_proxy": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "$ref": "#/$defs/block_name",
-          "description": ""
-        },
-        "states": {
-          "$ref": "#/$defs/block_states",
-          "description": ""
-        },
-        "tags": {
-          "$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
-          "description": ""
-        }
-      },
-      "additionalProperties": false,
-      "allOf": [
-        {
-          "anyOf": [
-            {
-              "required": [
-                "name"
-              ],
-              "properties": {
-                "name": {
-                  "minLength": 1,
-                  "description": ""
-                }
-              },
-              "description": "List of blocks this entity can float on. Must be a liquid block."
-            },
-            {
-              "required": [
-                "tags"
-              ],
-              "properties": {
-                "tags": {
-                  "minLength": 1,
-                  "description": ""
-                }
-              },
-              "description": "List of blocks this entity can float on. Must be a liquid block."
-            }
-          ],
-          "description": "List of blocks this entity can float on. Must be a liquid block."
-        },
-        {
-          "if": {
-            "required": [
-              "tags"
-            ],
-            "properties": {
-              "tags": {
-                "minLength": 1,
-                "description": ""
-              }
-            },
-            "description": "List of blocks this entity can float on. Must be a liquid block."
-          },
-          "then": {
-            "properties": {
-              "states": {
-                "anyOf": [
-                  {
-                    "type": "object",
-                    "maxProperties": 0,
-                    "additionalProperties": false,
-                    "description": ""
-                  },
-                  {
-                    "type": "array",
-                    "maxItems": 0,
-                    "description": ""
-                  }
-                ],
-                "description": ""
-              }
-            },
-            "description": "List of blocks this entity can float on. Must be a liquid block."
-          },
-          "description": "List of blocks this entity can float on. Must be a liquid block."
-        }
-      ],
-      "description": "List of blocks this entity can float on. Must be a liquid block."
-    },
-    "block_state_entry": {
-      "type": "object",
-      "required": [
-        "key",
-        "value"
-      ],
-      "properties": {
-        "key": {
-          "type": "string",
-          "description": ""
-        },
-        "value": {
-          "$ref": "#/$defs/block_state_value",
-          "description": ""
-        }
-      },
-      "additionalProperties": false,
-      "description": ""
-    },
-    "block_state_value": {
-      "anyOf": [
-        {
-          "type": "integer",
-          "minimum": -2147483648,
-          "maximum": 2147483647,
-          "description": ""
-        },
-        {
-          "type": "boolean",
-          "description": ""
-        },
-        {
-          "type": "string",
-          "description": ""
-        }
-      ],
-      "description": ""
-    },
-    "block_states": {
-      "anyOf": [
-        {
-          "type": "object",
-          "patternProperties": {
-            "^[\\s\\S]*$": {
-              "$ref": "#/$defs/block_state_value",
-              "description": ""
-            }
-          },
-          "additionalProperties": false,
-          "description": ""
-        },
-        {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/block_state_entry",
-            "description": ""
-          },
-          "description": ""
-        }
-      ],
-      "description": ""
-    }
-  },
-  "description": "Enables an entity to float on the specified liquid blocks."
+	"type": "object",
+	"properties": {
+		"apply_gravity": {
+			"type": "boolean",
+			"default": true,
+			"description": "Applies gravity each tick. Causes \"movement_type\" to be more impactful, but also gravity to be applied more intensely outside liquids."
+		},
+		"base_buoyancy": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 1,
+			"description": "Base buoyancy used to calculate how much will a entity float."
+		},
+		"big_wave_probability": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 0.03,
+			"description": "Probability for a big wave hitting the entity. Only used if \"movement_type\" is \"waves\"."
+		},
+		"big_wave_speed": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 10,
+			"description": "Multiplier for the speed to make a big wave. Triggered depending on \"big_wave_probability\"."
+		},
+		"can_auto_step_from_liquid": {
+			"type": "boolean",
+			"default": false,
+			"description": "Whether the entity can move out of a liquid block to a neighboring solid block if pushed against it."
+		},
+		"drag_down_on_buoyancy_removed": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 0,
+			"description": "How much an entity will be dragged down when the component is removed."
+		},
+		"liquid_blocks": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/block_descriptor",
+				"description": "List of blocks this entity can float on. Must be a liquid block."
+			},
+			"default": [],
+			"description": "List of blocks this entity can float on. Must be a liquid block."
+		},
+		"movement_type": {
+			"type": "string",
+			"anyOf": [
+				{
+					"enum": ["none", "waves", "bobbing"],
+					"description": "Type of vertical movement applied to the entity:\n\"waves\", simulates wave movement based on the entity speed.\n\"bobbing\", simulates waves going through.\n\"none\", simulates waves going through."
+				},
+				{
+					"pattern": "^(?:[nN][oO][nN][eE]|[wW][aA][vV][eE][sS]|[bB][oO][bB][bB][iI][nN][gG])$",
+					"description": "Type of vertical movement applied to the entity:\n\"waves\", simulates wave movement based on the entity speed.\n\"bobbing\", simulates waves going through.\n\"none\", simulates waves going through."
+				}
+			],
+			"default": "waves",
+			"description": "Type of vertical movement applied to the entity:\n\"waves\", simulates wave movement based on the entity speed.\n\"bobbing\", simulates waves going through.\n\"none\", simulates waves going through."
+		}
+	},
+	"additionalProperties": false,
+	"$defs": {
+		"block_descriptor": {
+			"anyOf": [
+				{
+					"$ref": "../../../../../vanilla/server/block_descriptor.json",
+					"description": "List of blocks this entity can float on. Must be a liquid block."
+				},
+				{
+					"allOf": [
+						{
+							"$ref": "#/$defs/block_name",
+							"description": "List of blocks this entity can float on. Must be a liquid block."
+						},
+						{
+							"minLength": 1,
+							"description": "List of blocks this entity can float on. Must be a liquid block."
+						}
+					],
+					"description": "List of blocks this entity can float on. Must be a liquid block."
+				},
+				{
+					"$ref": "#/$defs/block_proxy",
+					"description": "List of blocks this entity can float on. Must be a liquid block."
+				}
+			],
+			"properties": {
+				"name": {
+					"$ref": "#/$defs/block_name",
+					"description": ""
+				},
+				"states": {
+					"$ref": "#/$defs/block_states",
+					"description": ""
+				},
+				"tags": {
+					"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
+					"description": ""
+				}
+			},
+			"allOf": [
+				{
+					"anyOf": [
+						{
+							"required": ["name"],
+							"properties": {
+								"name": {
+									"minLength": 1,
+									"description": ""
+								}
+							},
+							"description": "List of blocks this entity can float on. Must be a liquid block."
+						},
+						{
+							"required": ["tags"],
+							"properties": {
+								"tags": {
+									"minLength": 1,
+									"description": ""
+								}
+							},
+							"description": "List of blocks this entity can float on. Must be a liquid block."
+						}
+					],
+					"description": "List of blocks this entity can float on. Must be a liquid block."
+				},
+				{
+					"if": {
+						"required": ["tags"],
+						"properties": {
+							"tags": {
+								"minLength": 1,
+								"description": ""
+							}
+						},
+						"description": "List of blocks this entity can float on. Must be a liquid block."
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"anyOf": [
+									{
+										"type": "object",
+										"maxProperties": 0,
+										"additionalProperties": false,
+										"description": ""
+									},
+									{
+										"type": "array",
+										"maxItems": 0,
+										"description": ""
+									}
+								],
+								"description": ""
+							}
+						},
+						"description": "List of blocks this entity can float on. Must be a liquid block."
+					},
+					"description": "List of blocks this entity can float on. Must be a liquid block."
+				}
+			],
+			"additionalProperties": false,
+			"description": "List of blocks this entity can float on. Must be a liquid block."
+		},
+		"block_name": {
+			"anyOf": [
+				{
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+					"description": "List of blocks this entity can float on. Must be a liquid block."
+				},
+				{
+					"type": "string",
+					"description": "List of blocks this entity can float on. Must be a liquid block."
+				}
+			],
+			"description": "List of blocks this entity can float on. Must be a liquid block."
+		},
+		"block_proxy": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"$ref": "#/$defs/block_name",
+					"description": ""
+				},
+				"states": {
+					"$ref": "#/$defs/block_states",
+					"description": ""
+				},
+				"tags": {
+					"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"allOf": [
+				{
+					"anyOf": [
+						{
+							"required": ["name"],
+							"properties": {
+								"name": {
+									"minLength": 1,
+									"description": ""
+								}
+							},
+							"description": "List of blocks this entity can float on. Must be a liquid block."
+						},
+						{
+							"required": ["tags"],
+							"properties": {
+								"tags": {
+									"minLength": 1,
+									"description": ""
+								}
+							},
+							"description": "List of blocks this entity can float on. Must be a liquid block."
+						}
+					],
+					"description": "List of blocks this entity can float on. Must be a liquid block."
+				},
+				{
+					"if": {
+						"required": ["tags"],
+						"properties": {
+							"tags": {
+								"minLength": 1,
+								"description": ""
+							}
+						},
+						"description": "List of blocks this entity can float on. Must be a liquid block."
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"anyOf": [
+									{
+										"type": "object",
+										"maxProperties": 0,
+										"additionalProperties": false,
+										"description": ""
+									},
+									{
+										"type": "array",
+										"maxItems": 0,
+										"description": ""
+									}
+								],
+								"description": ""
+							}
+						},
+						"description": "List of blocks this entity can float on. Must be a liquid block."
+					},
+					"description": "List of blocks this entity can float on. Must be a liquid block."
+				}
+			],
+			"description": "List of blocks this entity can float on. Must be a liquid block."
+		},
+		"block_state_entry": {
+			"type": "object",
+			"required": ["key", "value"],
+			"properties": {
+				"key": {
+					"type": "string",
+					"description": ""
+				},
+				"value": {
+					"$ref": "#/$defs/block_state_value",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		},
+		"block_state_value": {
+			"anyOf": [
+				{
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"description": ""
+				},
+				{
+					"type": "boolean",
+					"description": ""
+				},
+				{
+					"type": "string",
+					"description": ""
+				}
+			],
+			"description": ""
+		},
+		"block_states": {
+			"anyOf": [
+				{
+					"type": "object",
+					"patternProperties": {
+						"^[\\s\\S]*$": {
+							"$ref": "#/$defs/block_state_value",
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": ""
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/block_state_entry",
+						"description": ""
+					},
+					"description": ""
+				}
+			],
+			"description": ""
+		}
+	},
+	"description": "Enables an entity to float on the specified liquid blocks."
 }

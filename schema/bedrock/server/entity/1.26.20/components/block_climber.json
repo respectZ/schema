@@ -1,6 +1,6 @@
 {
-  "type": "object",
-  "properties": {},
-  "additionalProperties": false,
-  "description": "Allows the player to detect and maneuver on the scaffolding block."
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false,
+	"description": "Allows the player to detect and maneuver on the scaffolding block."
 }

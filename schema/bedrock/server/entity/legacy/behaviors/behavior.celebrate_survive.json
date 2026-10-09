@@ -5,11 +5,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				],
+				"enum": ["jump", "look", "move"],
 				"description": ""
 			},
 			"default": [],
@@ -17,8 +13,8 @@
 		},
 		"duration": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"default": 30,
 			"description": "The duration in seconds that the celebration lasts for."
 		},
@@ -33,10 +29,7 @@
 					"description": "Minimum and maximum time between firework (positive, in seconds)."
 				}
 			],
-			"default": [
-				10,
-				20
-			],
+			"default": [10, 20],
 			"description": "Minimum and maximum time between firework (positive, in seconds)."
 		},
 		"on_celebration_end_event": {

@@ -1,42 +1,42 @@
 {
-  "type": "object",
-  "properties": {
-    "slot_drop_chance": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "drop_chance": {
-            "type": "number",
-            "minimum": -3.4028234663852886e+38,
-            "maximum": 3.4028234663852886e+38,
-            "default": 0,
-            "description": ""
-          },
-          "slot": {
-            "$ref": "../../../../../vanilla/server/equipment_slot.json",
-            "description": ""
-          }
-        },
-        "additionalProperties": false,
-        "description": "A list of slots with the chance to drop an equipped item from that slot."
-      },
-      "description": "A list of slots with the chance to drop an equipped item from that slot."
-    },
-    "table": {
-      "anyOf": [
-        {
-          "$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
-          "description": "The file path to the equipment table, relative to the behavior pack's root."
-        },
-        {
-          "type": "string",
-          "description": "The file path to the equipment table, relative to the behavior pack's root."
-        }
-      ],
-      "description": "The file path to the equipment table, relative to the behavior pack's root."
-    }
-  },
-  "additionalProperties": false,
-  "description": "Sets the Equipment table to use for this Entity."
+	"type": "object",
+	"properties": {
+		"slot_drop_chance": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"drop_chance": {
+						"type": "number",
+						"minimum": -3.4028234663852886e38,
+						"maximum": 3.4028234663852886e38,
+						"default": 0,
+						"description": ""
+					},
+					"slot": {
+						"$ref": "../../../../../vanilla/server/equipment_slot.json",
+						"description": ""
+					}
+				},
+				"additionalProperties": false,
+				"description": "A list of slots with the chance to drop an equipped item from that slot."
+			},
+			"description": "A list of slots with the chance to drop an equipped item from that slot."
+		},
+		"table": {
+			"anyOf": [
+				{
+					"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
+					"description": "The file path to the equipment table, relative to the behavior pack's root."
+				},
+				{
+					"type": "string",
+					"description": "The file path to the equipment table, relative to the behavior pack's root."
+				}
+			],
+			"description": "The file path to the equipment table, relative to the behavior pack's root."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Sets the Equipment table to use for this Entity."
 }

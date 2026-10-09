@@ -9,13 +9,13 @@
 				"max": {
 					"type": "number",
 					"minimum": 0,
-					"maximum": 3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				},
 				"min": {
 					"type": "number",
 					"minimum": 0,
-					"maximum": 3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				}
 			},
@@ -27,15 +27,15 @@
 			"properties": {
 				"max": {
 					"type": "number",
-					"minimum": -3.4028234663852886e+38,
-					"maximum": 3.4028234663852886e+38,
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
 					"exclusiveMinimum": 0,
 					"description": ""
 				},
 				"min": {
 					"type": "number",
 					"minimum": 0,
-					"maximum": 3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				}
 			},
@@ -43,8 +43,8 @@
 		},
 		"burst_interval": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"exclusiveMinimum": 0,
 			"description": "Time (in seconds) between each individual shot when firing a burst of shots from a charged up attack."
 		},
@@ -56,15 +56,15 @@
 		},
 		"charge_charged_trigger": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"exclusiveMinimum": 0,
 			"description": "Time (in seconds, then add \"charge_shoot_trigger\"), before a charged up attack is done charging. Charge-time decays while target is not in sight."
 		},
 		"charge_shoot_trigger": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"exclusiveMinimum": 0,
 			"description": "Amount of time (in seconds, then doubled) a charged shot must be charging before reloading burst shots. Charge-time decays while target is not in sight."
 		},
@@ -74,11 +74,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -94,10 +90,7 @@
 			"type": "string",
 			"anyOf": [
 				{
-					"enum": [
-						"hold_position",
-						"follow_target"
-					],
+					"enum": ["hold_position", "follow_target"],
 					"description": ""
 				},
 				{
@@ -116,7 +109,7 @@
 		"ranged_fov": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Field of view (in degrees) when using sensing to detect a target for attack."
 		},
 		"set_persistent": {
@@ -125,8 +118,8 @@
 		},
 		"speed_multiplier": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"exclusiveMinimum": 0,
 			"description": "During attack behavior, this multiplier modifies the entity's speed when moving toward the target."
 		},
@@ -136,21 +129,21 @@
 		},
 		"target_in_sight_time": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"exclusiveMinimum": 0,
 			"description": "Minimum amount of time (in seconds) the attacking entity needs to see the target before moving toward it."
 		},
 		"x_max_rotation": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Maximum rotation (in degrees), on the X-axis, this entity can rotate while trying to look at the target."
 		},
 		"y_max_head_rotation": {
 			"type": "number",
 			"minimum": 0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Maximum rotation (in degrees), on the Y-axis, this entity can rotate its head while trying to look at the target."
 		}
 	},

@@ -1,4 +1,4 @@
 {
-  "$ref": "../../legacy/components/bucketable.json",
-  "description": ""
+	"$ref": "../../legacy/components/bucketable.json",
+	"description": ""
 }

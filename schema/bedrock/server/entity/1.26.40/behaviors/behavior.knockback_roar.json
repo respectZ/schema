@@ -4,8 +4,8 @@
 	"properties": {
 		"attack_time": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The delay after which the knockback occurs (in seconds)."
 		},
 		"control_flags": {
@@ -14,11 +14,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -32,8 +28,8 @@
 		},
 		"cooldown_time": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "Time (in seconds) the mob has to wait before using the goal again."
 		},
 		"damage_filters": {
@@ -42,8 +38,8 @@
 		},
 		"duration": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The max duration of the roar (in seconds)."
 		},
 		"knockback_damage": {
@@ -58,8 +54,8 @@
 		},
 		"knockback_height_cap": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The maximum height for vertical knockback."
 		},
 		"knockback_horizontal_strength": {

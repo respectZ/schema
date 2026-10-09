@@ -1,85 +1,81 @@
 {
-  "anyOf": [
-    {
-      "type": "object",
-      "properties": {
-        "block_type": {
-          "type": "string",
-          "anyOf": [
-            {
-              "$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
-              "description": ""
-            },
-            {
-              "type": "string",
-              "description": ""
-            }
-          ],
-          "default": "air",
-          "description": ""
-        },
-        "spawn_filter": {
-          "$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-          "description": ""
-        },
-        "spawn_offset": {
-          "anyOf": [
-            {
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "type": "number",
-                "minimum": -3.4028234663852886e+38,
-                "maximum": 3.4028234663852886e+38,
-                "description": ""
-              },
-              "default": [
-                0,
-                0,
-                0
-              ],
-              "description": ""
-            },
-            {
-              "type": "object",
-              "properties": {
-                "x": {
-                  "type": "number",
-                  "minimum": -3.4028234663852886e+38,
-                  "maximum": 3.4028234663852886e+38,
-                  "default": 0,
-                  "description": ""
-                },
-                "y": {
-                  "type": "number",
-                  "minimum": -3.4028234663852886e+38,
-                  "maximum": 3.4028234663852886e+38,
-                  "default": 0,
-                  "description": ""
-                },
-                "z": {
-                  "type": "number",
-                  "minimum": -3.4028234663852886e+38,
-                  "maximum": 3.4028234663852886e+38,
-                  "default": 0,
-                  "description": ""
-                }
-              },
-              "additionalProperties": false,
-              "description": ""
-            }
-          ],
-          "description": ""
-        }
-      },
-      "additionalProperties": false,
-      "description": ""
-    },
-    {
-      "type": "null",
-      "description": ""
-    }
-  ],
-  "description": ""
+	"anyOf": [
+		{
+			"type": "object",
+			"properties": {
+				"block_type": {
+					"type": "string",
+					"anyOf": [
+						{
+							"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+							"description": ""
+						},
+						{
+							"type": "string",
+							"description": ""
+						}
+					],
+					"default": "air",
+					"description": ""
+				},
+				"spawn_filter": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": ""
+				},
+				"spawn_offset": {
+					"anyOf": [
+						{
+							"type": "array",
+							"minItems": 3,
+							"maxItems": 3,
+							"items": {
+								"type": "number",
+								"minimum": -3.4028234663852886e38,
+								"maximum": 3.4028234663852886e38,
+								"description": ""
+							},
+							"default": [0, 0, 0],
+							"description": ""
+						},
+						{
+							"type": "object",
+							"properties": {
+								"x": {
+									"type": "number",
+									"minimum": -3.4028234663852886e38,
+									"maximum": 3.4028234663852886e38,
+									"default": 0,
+									"description": ""
+								},
+								"y": {
+									"type": "number",
+									"minimum": -3.4028234663852886e38,
+									"maximum": 3.4028234663852886e38,
+									"default": 0,
+									"description": ""
+								},
+								"z": {
+									"type": "number",
+									"minimum": -3.4028234663852886e38,
+									"maximum": 3.4028234663852886e38,
+									"default": 0,
+									"description": ""
+								}
+							},
+							"additionalProperties": false,
+							"description": ""
+						}
+					],
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		},
+		{
+			"type": "null",
+			"description": ""
+		}
+	],
+	"description": ""
 }

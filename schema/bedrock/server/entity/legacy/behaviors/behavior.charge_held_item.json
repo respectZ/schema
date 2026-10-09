@@ -5,11 +5,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				],
+				"enum": ["jump", "look", "move"],
 				"description": ""
 			},
 			"default": [],
@@ -40,9 +36,7 @@
 			"description": ""
 		}
 	},
-	"required": [
-		"items"
-	],
+	"required": ["items"],
 	"additionalProperties": false,
 	"description": "Allows an entity to charge and use their held item."
 }

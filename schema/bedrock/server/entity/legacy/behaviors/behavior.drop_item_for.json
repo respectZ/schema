@@ -5,11 +5,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"enum": [
-					"jump",
-					"look",
-					"move"
-				],
+				"enum": ["jump", "look", "move"],
 				"description": ""
 			},
 			"default": [],
@@ -18,7 +14,7 @@
 		"cooldown": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.25,
 			"description": "Total time that the goal is on cooldown before it can be used again."
 		},
@@ -151,7 +147,7 @@
 		"goal_radius": {
 			"type": "number",
 			"exclusiveMinimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.5,
 			"description": "Distance in blocks within the mob considers it has reached the goal. This is the \"wiggle room\" to stop the AI from bouncing back and forth trying to reach a specific spot."
 		},
@@ -161,28 +157,28 @@
 		},
 		"max_dist": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": ""
 		},
 		"max_head_look_at_height": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 10.0,
 			"description": "The maximum height the entities head will look at when dropping the item. The entity will always be looking at its target."
 		},
 		"minimum_teleport_distance": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 2.0,
 			"description": "If the target position is farther away than this distance on any tick, the entity will teleport to the target position."
 		},
 		"offering_distance": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 1.0,
 			"description": "The preferred distance the entity tries to be from the target it is dropping an item for."
 		},
@@ -220,14 +216,14 @@
 		"seconds_before_pickup": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0.0,
 			"description": "The numbers of seconds that will pass before the dropped entity can be picked up from the ground."
 		},
 		"speed_multiplier": {
 			"type": "number",
 			"minimum": 0.0,
-			"maximum": 3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e38,
 			"default": 1.0,
 			"description": "Movement speed multiplier of the mob when using this goal."
 		},

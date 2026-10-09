@@ -1,60 +1,58 @@
 {
-  "anyOf": [
-    {
-      "type": "object",
-      "properties": {
-        "max_delay_secs": {
-          "$ref": "#/$defs/delay_seconds",
-          "description": ""
-        },
-        "min_delay_secs": {
-          "$ref": "#/$defs/delay_seconds",
-          "description": ""
-        },
-        "scheduled_events": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/event_wrapper",
-            "description": "The list of triggers that fire when the conditions match the given filter criteria. If any filter criteria overlap the first defined event will be picked."
-          },
-          "default": [],
-          "description": "The list of triggers that fire when the conditions match the given filter criteria. If any filter criteria overlap the first defined event will be picked."
-        }
-      },
-      "additionalProperties": false,
-      "description": "Fires off scheduled mob events at time of day events."
-    },
-    {
-      "type": "null",
-      "description": "Fires off scheduled mob events at time of day events."
-    }
-  ],
-  "$defs": {
-    "delay_seconds": {
-      "type": "number",
-      "minimum": -3.4028234663852886e+38,
-      "maximum": 3.4028234663852886e+38,
-      "default": 0,
-      "description": ""
-    },
-    "event": {
-      "$ref": "./equippable.json#/$defs/event",
-      "description": ""
-    },
-    "event_wrapper": {
-      "type": "object",
-      "properties": {
-        "scheduled_event": {
-          "$ref": "#/$defs/event",
-          "description": ""
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "scheduled_event"
-      ],
-      "description": "The list of triggers that fire when the conditions match the given filter criteria. If any filter criteria overlap the first defined event will be picked."
-    }
-  },
-  "description": "Fires off scheduled mob events at time of day events."
+	"anyOf": [
+		{
+			"type": "object",
+			"properties": {
+				"max_delay_secs": {
+					"$ref": "#/$defs/delay_seconds",
+					"description": ""
+				},
+				"min_delay_secs": {
+					"$ref": "#/$defs/delay_seconds",
+					"description": ""
+				},
+				"scheduled_events": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/event_wrapper",
+						"description": "The list of triggers that fire when the conditions match the given filter criteria. If any filter criteria overlap the first defined event will be picked."
+					},
+					"default": [],
+					"description": "The list of triggers that fire when the conditions match the given filter criteria. If any filter criteria overlap the first defined event will be picked."
+				}
+			},
+			"additionalProperties": false,
+			"description": "Fires off scheduled mob events at time of day events."
+		},
+		{
+			"type": "null",
+			"description": "Fires off scheduled mob events at time of day events."
+		}
+	],
+	"$defs": {
+		"delay_seconds": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 0,
+			"description": ""
+		},
+		"event": {
+			"$ref": "./equippable.json#/$defs/event",
+			"description": ""
+		},
+		"event_wrapper": {
+			"type": "object",
+			"properties": {
+				"scheduled_event": {
+					"$ref": "#/$defs/event",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"required": ["scheduled_event"],
+			"description": "The list of triggers that fire when the conditions match the given filter criteria. If any filter criteria overlap the first defined event will be picked."
+		}
+	},
+	"description": "Fires off scheduled mob events at time of day events."
 }

@@ -1,4 +1,4 @@
 {
-  "$ref": "./on_death.json",
-  "description": "Adds a trigger that will run when a nearby entity of the same type as this entity becomes Angry."
+	"$ref": "./on_death.json",
+	"description": "Adds a trigger that will run when a nearby entity of the same type as this entity becomes Angry."
 }

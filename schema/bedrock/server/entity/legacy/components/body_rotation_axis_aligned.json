@@ -1,4 +1,4 @@
 {
-  "$ref": "./rotation_axis_aligned.json",
-  "description": ""
+	"$ref": "./rotation_axis_aligned.json",
+	"description": ""
 }

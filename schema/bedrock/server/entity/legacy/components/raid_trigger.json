@@ -1,11 +1,11 @@
 {
-  "type": "object",
-  "properties": {
-    "triggered_event": {
-      "$ref": "./ageable.json#/$defs/growth_event",
-      "description": "Event to run when a raid is triggered on the village."
-    }
-  },
-  "additionalProperties": false,
-  "description": "Attempts to trigger a raid at the entity's location."
+	"type": "object",
+	"properties": {
+		"triggered_event": {
+			"$ref": "./ageable.json#/$defs/growth_event",
+			"description": "Event to run when a raid is triggered on the village."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Attempts to trigger a raid at the entity's location."
 }

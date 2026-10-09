@@ -16,11 +16,7 @@
 				"type": "string",
 				"anyOf": [
 					{
-						"enum": [
-							"move",
-							"look",
-							"jump"
-						],
+						"enum": ["move", "look", "jump"],
 						"description": ""
 					},
 					{
@@ -53,8 +49,8 @@
 		},
 		"max_angle_of_view_horizontal": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The rightmost angle a mob can look at on the horizontal plane with respect to its initial facing direction."
 		},
 		"max_look_count": {
@@ -71,8 +67,8 @@
 		},
 		"min_angle_of_view_horizontal": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The leftmost angle a mob can look at on the horizontal plane with respect to its initial facing direction."
 		},
 		"min_look_count": {
@@ -95,8 +91,8 @@
 		},
 		"probability": {
 			"type": "number",
-			"minimum": -3.4028234663852886e+38,
-			"maximum": 3.4028234663852886e+38,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"description": "The probability of randomly looking around/sitting."
 		},
 		"random_look_around_cooldown": {
