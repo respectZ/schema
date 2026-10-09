@@ -1,0 +1,86 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": [
+							"move",
+							"look",
+							"jump"
+						],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"goal_radius": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"exclusiveMinimum": 0,
+			"description": "Distance in blocks within the mob considers it has reached the goal. This is the \"wiggle room\" to stop the AI from bouncing back and forth trying to reach a specific spot"
+		},
+		"material_type": {
+			"type": "string",
+			"anyOf": [
+				{
+					"enum": [
+						"Any",
+						"Water",
+						"Lava"
+					],
+					"description": ""
+				},
+				{
+					"pattern": "^(?:[Aa][Nn][Yy]|[Ww][Aa][Tt][Ee][Rr]|[Ll][Aa][Vv][Aa])$(?![\\s\\S])",
+					"description": ""
+				}
+			],
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"search_count": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": "The number of blocks each tick that the mob will check within its search range and height for a valid block to move to. A value of 0 will have the mob check every block within range in one tick"
+		},
+		"search_height": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"exclusiveMinimum": 0,
+			"description": "Height in blocks the mob will look for water to move towards"
+		},
+		"search_range": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"exclusiveMinimum": 0,
+			"description": "The distance in blocks it will look for water to move towards"
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		}
+	},
+	"description": "Allows the mob to move back into water when on land."
+}

@@ -1,0 +1,145 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"attack_chance": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "The percentage chance that the entity has to attack aggressors of its village, where 1.0 = 100%."
+		},
+		"attack_owner": {
+			"type": "boolean",
+			"description": "If true, this entity can attack its owner."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": [
+							"move",
+							"look",
+							"jump"
+						],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"entity_types": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"check_if_outnumbered": {
+						"type": "boolean",
+						"description": ""
+					},
+					"cooldown": {
+						"type": "integer",
+						"minimum": -2147483648,
+						"maximum": 2147483647,
+						"description": ""
+					},
+					"filters": {
+						"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+						"description": ""
+					},
+					"max_dist": {
+						"type": "number",
+						"minimum": -3.4028234663852886e+38,
+						"maximum": 3.4028234663852886e+38,
+						"description": ""
+					},
+					"max_flee": {
+						"type": "number",
+						"minimum": -3.4028234663852886e+38,
+						"maximum": 3.4028234663852886e+38,
+						"description": ""
+					},
+					"max_height": {
+						"type": "number",
+						"minimum": -3.4028234663852886e+38,
+						"maximum": 3.4028234663852886e+38,
+						"description": ""
+					},
+					"must_see": {
+						"type": "boolean",
+						"description": ""
+					},
+					"must_see_forget_duration": {
+						"type": "integer",
+						"minimum": -2147483648,
+						"maximum": 2147483647,
+						"description": ""
+					},
+					"priority": {
+						"type": "integer",
+						"minimum": -2147483648,
+						"maximum": 2147483647,
+						"description": ""
+					},
+					"reevaluate_description": {
+						"type": "boolean",
+						"description": ""
+					},
+					"sprint_speed_multiplier": {
+						"type": "number",
+						"minimum": -3.4028234663852886e+38,
+						"maximum": 3.4028234663852886e+38,
+						"description": ""
+					},
+					"walk_speed_multiplier": {
+						"type": "number",
+						"minimum": -3.4028234663852886e+38,
+						"maximum": 3.4028234663852886e+38,
+						"description": ""
+					}
+				},
+				"description": "Filters which types of targets are valid for this entity."
+			},
+			"description": "Filters which types of targets are valid for this entity."
+		},
+		"must_reach": {
+			"type": "boolean",
+			"description": "If true, this entity requires a path to the target."
+		},
+		"must_see": {
+			"type": "boolean",
+			"description": "Determines if target-validity requires this entity to be in range only, or both in range and in sight."
+		},
+		"must_see_forget_duration": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Time (in seconds) the target must not be seen by this entity to become invalid. Used only if \"must_see\" is true."
+		},
+		"persist_time": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Time (in seconds) this entity can continue attacking the target after the target is no longer valid."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"description": ""
+		},
+		"within_radius": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Maximum distance this entity can be from the target when following it, otherwise the target becomes invalid. This value is only used if the entity doesn't declare \"minecraft:follow_range\"."
+		}
+	},
+	"description": "Allows the entity to stay in a village and defend the village from aggressors. If a player is in bad standing with the village this goal will cause the entity to attack the player regardless of filter conditions."
+}

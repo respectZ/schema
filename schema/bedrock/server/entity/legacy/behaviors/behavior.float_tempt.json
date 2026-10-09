@@ -1,0 +1,231 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"can_get_scared": {
+			"type": "boolean",
+			"description": "If true, the mob can stop being tempted if the player moves too fast while close to this mob."
+		},
+		"can_tempt_vertically": {
+			"type": "boolean",
+			"description": "If true, vertical distance to the player will be considered when tempting."
+		},
+		"can_tempt_while_ridden": {
+			"type": "boolean",
+			"description": "If true, the mob can be tempted even if it has a passenger (i.e. if being ridden)."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"items": {
+			"type": "array",
+			"items": {
+				"anyOf": [
+					{
+						"anyOf": [
+							{
+								"$ref": "../../../../../vanilla/server/item_descriptor.json",
+								"description": "List of items that can tempt the mob."
+							},
+							{
+								"type": "object",
+								"properties": {
+									"item_tag": {
+										"type": "string",
+										"description": ""
+									}
+								},
+								"additionalProperties": false,
+								"required": [
+									"item_tag"
+								],
+								"description": "List of items that can tempt the mob."
+							}
+						],
+						"description": "List of items that can tempt the mob."
+					},
+					{
+						"type": "object",
+						"properties": {
+							"item": {
+								"anyOf": [
+									{
+										"$ref": "../../../../../vanilla/server/item_descriptor.json",
+										"description": ""
+									},
+									{
+										"type": "object",
+										"properties": {
+											"item_tag": {
+												"type": "string",
+												"description": ""
+											}
+										},
+										"additionalProperties": false,
+										"required": [
+											"item_tag"
+										],
+										"description": ""
+									}
+								],
+								"description": ""
+							}
+						},
+						"additionalProperties": false,
+						"required": [
+							"item"
+						],
+						"description": "List of items that can tempt the mob."
+					}
+				],
+				"description": "List of items that can tempt the mob."
+			},
+			"description": "List of items that can tempt the mob."
+		},
+		"on_tempt_end": {
+			"type": "object",
+			"properties": {
+				"event": {
+					"type": "string",
+					"description": ""
+				},
+				"target": {
+					"type": "string",
+					"anyOf": [
+						{
+							"enum": [
+								"self",
+								"other",
+								"player",
+								"target",
+								"parent",
+								"baby",
+								"block",
+								"damager",
+								"holder",
+								"item"
+							],
+							"description": ""
+						},
+						{
+							"pattern": "^(?:[Ss][Ee][Ll][Ff]|[Oo][Tt][Hh][Ee][Rr]|[Pp][Ll][Aa][Yy][Ee][Rr]|[Tt][Aa][Rr][Gg][Ee][Tt]|[Pp][Aa][Rr][Ee][Nn][Tt]|[Bb][Aa][Bb][Yy]|[Bb][Ll][Oo][Cc][Kk]|[Dd][Aa][Mm][Aa][Gg][Ee][Rr]|[Hh][Oo][Ll][Dd][Ee][Rr]|[Ii][Tt][Ee][Mm])$(?![\\s\\S])",
+							"description": ""
+						}
+					],
+					"description": ""
+				},
+				"filters": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		},
+		"on_tempt_start": {
+			"type": "object",
+			"properties": {
+				"event": {
+					"type": "string",
+					"description": ""
+				},
+				"target": {
+					"type": "string",
+					"anyOf": [
+						{
+							"enum": [
+								"self",
+								"other",
+								"player",
+								"target",
+								"parent",
+								"baby",
+								"block",
+								"damager",
+								"holder",
+								"item"
+							],
+							"description": ""
+						},
+						{
+							"pattern": "^(?:[Ss][Ee][Ll][Ff]|[Oo][Tt][Hh][Ee][Rr]|[Pp][Ll][Aa][Yy][Ee][Rr]|[Tt][Aa][Rr][Gg][Ee][Tt]|[Pp][Aa][Rr][Ee][Nn][Tt]|[Bb][Aa][Bb][Yy]|[Bb][Ll][Oo][Cc][Kk]|[Dd][Aa][Mm][Aa][Gg][Ee][Rr]|[Hh][Oo][Ll][Dd][Ee][Rr]|[Ii][Tt][Ee][Mm])$(?![\\s\\S])",
+							"description": ""
+						}
+					],
+					"description": ""
+				},
+				"filters": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"sound_interval": {
+			"anyOf": [
+				{
+					"type": "number",
+					"description": "Range of random ticks to wait between tempt sounds."
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "number",
+						"description": "Range of random ticks to wait between tempt sounds."
+					},
+					"minItems": 2,
+					"maxItems": 2,
+					"description": "Range of random ticks to wait between tempt sounds."
+				},
+				{
+					"type": "object",
+					"properties": {
+						"range_min": {
+							"type": "number",
+							"description": ""
+						},
+						"range_max": {
+							"type": "number",
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": "Range of random ticks to wait between tempt sounds."
+				}
+			],
+			"description": "Range of random ticks to wait between tempt sounds."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"stop_distance": {
+			"type": "number",
+			"description": "The distance at which the mob will stop following the player."
+		},
+		"tempt_sound": {
+			"type": "string",
+			"description": "Sound to play while the mob is being tempted."
+		},
+		"within_radius": {
+			"type": "number",
+			"description": "Distance in blocks this mob can get tempted by a player holding an item they like."
+		}
+	},
+	"description": "Allows a mob to be tempted by a player holding a specific item. Uses point-to-point movement. Designed for mobs that are floating (e.g. use the \"minecraft:navigation.float\" component)."
+}

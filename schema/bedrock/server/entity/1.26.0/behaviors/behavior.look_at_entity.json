@@ -1,0 +1,82 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"angle_of_view_horizontal": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 360.0,
+			"description": ""
+		},
+		"angle_of_view_vertical": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 360.0,
+			"description": ""
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": [
+							"move",
+							"look",
+							"jump"
+						],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": ""
+		},
+		"look_distance": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 3.4028234663852886e+38,
+			"description": ""
+		},
+		"look_time": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"max": {
+					"type": "number",
+					"minimum": -3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e+38,
+					"description": ""
+				},
+				"min": {
+					"type": "number",
+					"minimum": -3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e+38,
+					"description": ""
+				}
+			},
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"probability": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 1.0,
+			"description": ""
+		}
+	},
+	"description": ""
+}

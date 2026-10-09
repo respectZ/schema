@@ -1,0 +1,118 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": [
+							"move",
+							"look",
+							"jump"
+						],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "Conditions that need to be met for the behavior to start."
+		},
+		"max_head_rotation_y": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Maximum rotation (in degrees), on the Y-axis, this entity can rotate its head while trying to look at the target."
+		},
+		"max_rotation_x": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Maximum rotation (in degrees), on the X-axis, this entity can rotate while trying to look at the target."
+		},
+		"max_wait_time": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "The maximum amount of time (in seconds) for the mob to randomly wait for before taking the flower."
+		},
+		"min_distance_to_target": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Minimum distance (in blocks) for the entity to be considered having reached its target."
+		},
+		"min_wait_time": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "The minimum amount of time (in seconds) for the mob to randomly wait for before taking the flower."
+		},
+		"on_take_flower": {
+			"type": "object",
+			"properties": {
+				"event": {
+					"type": "string",
+					"default": "",
+					"description": ""
+				},
+				"filters": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": ""
+				},
+				"target": {
+					"type": "string",
+					"anyOf": [
+						{
+							"$ref": "../../../../../vanilla/server/filter/general.json#/$defs/filter_subject",
+							"description": ""
+						},
+						{
+							"pattern": "^(?:[sS][eE][lL][fF]|[oO][tT][hH][eE][rR]|[pP][lL][aA][yY][eE][rR]|[tT][aA][rR][gG][eE][tT]|[pP][aA][rR][eE][nN][tT]|[bB][aA][bB][yY]|[bB][lL][oO][cC][kK]|[dD][aA][mM][aA][gG][eE][rR]|[hH][oO][lL][dD][eE][rR]|[iI][tT][eE][mM])$(?![\\s\\S])",
+							"description": ""
+						}
+					],
+					"default": "self",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": "Event triggered when the entity takes a flower from another entity."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"search_area": {
+			"type": "array",
+			"items": {
+				"type": "number",
+				"minimum": -3.4028234663852886e+38,
+				"maximum": 3.4028234663852886e+38,
+				"description": "The dimensions of the AABB used to search for a potential mob to take a flower from."
+			},
+			"minItems": 3,
+			"maxItems": 3,
+			"description": "The dimensions of the AABB used to search for a potential mob to take a flower from."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Movement speed multiplier of the mob when using this AI Goal."
+		}
+	},
+	"description": "Allows the mob to accept flowers from another mob with the minecraft:offer_flower behavior."
+}

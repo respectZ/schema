@@ -1,0 +1,46 @@
+{
+	"type": "object",
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"jump",
+					"look",
+					"move"
+				],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"cooldown_time": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e+38,
+			"default": 0.5,
+			"description": "Time in seconds the mob has to wait before using the goal again"
+		},
+		"duration": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e+38,
+			"default": 5,
+			"description": "Goal duration in seconds"
+		},
+		"on_done": {
+			"$ref": "../components/equippable.json#/$defs/event",
+			"description": "Trigger to be executed when the goal execution is about to end"
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows this entity to emerge from the ground"
+}

@@ -1,0 +1,99 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"active_speed": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 3.4028234663852886e+38,
+			"description": "The speed this entity moves when this behavior has started or while it's active."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": [
+							"move",
+							"look",
+							"jump"
+						],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"fireball_range": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"exclusiveMinimum": 0,
+			"description": "Maximum distance of this entity's fireball attack while strafing."
+		},
+		"flight_speed": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 3.4028234663852886e+38,
+			"description": "The speed this entity moves while this behavior is not active."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"switch_direction_probability": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Percent chance to to switch this entity's strafe direction between clockwise and counterclockwise. Switch direction chance occurs each time a new target is chosen (1.0 = 100%)."
+		},
+		"target_in_range_and_in_view_time": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"exclusiveMinimum": 0,
+			"description": "Time (in seconds) the target must be in fireball range, and in view [ie, no solid terrain in-between the target and this entity], before a fireball can be shot."
+		},
+		"target_zone": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"max": {
+					"type": "number",
+					"minimum": -3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e+38,
+					"description": ""
+				},
+				"min": {
+					"type": "number",
+					"minimum": -3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e+38,
+					"description": ""
+				}
+			},
+			"description": "Minimum and maximum distance, from the target, this entity can use this behavior."
+		},
+		"turn_speed": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 3.4028234663852886e+38,
+			"description": "The speed at which this entity turns while using this behavior."
+		},
+		"view_angle": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"exclusiveMinimum": 0,
+			"description": "The target must be within \"view_angle\" degrees of the dragon's current rotation before a fireball can be shot."
+		}
+	},
+	"description": "Allows this entity to fly around looking for a player to shoot fireballs at. Can only be used by the Ender Dragon."
+}

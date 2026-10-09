@@ -1,0 +1,128 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"angle_change": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Number of degrees to change this entity's facing by, when the entity selects its next anchor point."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": [
+							"move",
+							"look",
+							"jump"
+						],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"goal_radius": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Maximum distance from the anchor-point in which this entity considers itself to have reached the anchor point. This is to prevent the entity from bouncing back and forth trying to reach a specific spot."
+		},
+		"height_above_target_range": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"max": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 3.4028234663852886e+38,
+					"description": ""
+				},
+				"min": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 3.4028234663852886e+38,
+					"description": ""
+				}
+			},
+			"description": "The number of blocks above the target that the next anchor point can be set. This value is used only when the entity is tracking a target."
+		},
+		"height_adjustment_chance": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Percent chance to determine how often to increase or decrease the current height around the anchor point. 1 = 100%. \"height_change_chance\" is deprecated and has been replaced with \"height_adjustment_chance\"."
+		},
+		"height_offset_range": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"max": {
+					"type": "number",
+					"minimum": -3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e+38,
+					"description": ""
+				},
+				"min": {
+					"type": "number",
+					"minimum": -3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e+38,
+					"description": ""
+				}
+			},
+			"description": "Vertical distance from the anchor point this entity must stay within, upon a successful height adjustment."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"radius_adjustment_chance": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Percent chance to determine how often to increase the size of the current movement radius around the anchor point. 1 = 100%. \"radius_change_chance\" is deprecated and has been replaced with \"radius_adjustment_chance\"."
+		},
+		"radius_change": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "The number of blocks to increase the current movement radius by, upon successful \"radius_adjustment_chance\". If the current radius increases over the range maximum, the current radius will be set back to the range minimum and the entity will change between clockwise and counter-clockwise movement."
+		},
+		"radius_range": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"max": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 3.4028234663852886e+38,
+					"description": ""
+				},
+				"min": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 3.4028234663852886e+38,
+					"description": ""
+				}
+			},
+			"description": "Horizontal distance from the anchor point this entity must stay within upon a successful radius adjustment."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Multiplies the speed at which this entity travels to its next desired position."
+		}
+	},
+	"description": "Causes an entity to circle around an anchor point placed near a point or target."
+}

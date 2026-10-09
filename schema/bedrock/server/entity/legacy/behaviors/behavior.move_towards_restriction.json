@@ -1,0 +1,21 @@
+{
+	"type": "object",
+	"properties": {
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"default": 1,
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"description": ""
+}

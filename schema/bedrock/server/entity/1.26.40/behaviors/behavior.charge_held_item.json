@@ -1,0 +1,96 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": [
+							"move",
+							"look",
+							"jump"
+						],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"item": {
+			"type": "array",
+			"items": {
+				"anyOf": [
+					{
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"name": {
+								"anyOf": [
+									{
+										"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+										"description": ""
+									},
+									{
+										"type": "string",
+										"description": ""
+									}
+								],
+								"description": ""
+							}
+						},
+						"patternProperties": {
+							"^[\\s\\S]*$": {
+								"type": "string",
+								"description": ""
+							}
+						},
+						"description": ""
+					},
+					{
+						"type": "array",
+						"items": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"key": {
+									"type": "string",
+									"description": ""
+								},
+								"value": {
+									"type": "string",
+									"description": ""
+								}
+							},
+							"required": [
+								"key",
+								"value"
+							],
+							"description": ""
+						},
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		}
+	},
+	"required": [
+		"item"
+	],
+	"description": "Allows an entity to charge and use their held item."
+}

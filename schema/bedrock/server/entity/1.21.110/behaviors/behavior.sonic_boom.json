@@ -1,0 +1,103 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"attack_cooldown": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Cooldown in seconds required after using this attack until the entity can use sonic boom again."
+		},
+		"attack_damage": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Attack damage of the sonic boom."
+		},
+		"attack_range_horizontal": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Horizontal range (in blocks) at which the sonic boom can damage the target."
+		},
+		"attack_range_vertical": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Vertical range (in blocks) at which the sonic boom can damage the target."
+		},
+		"attack_sound": {
+			"type": "string",
+			"description": "Sound event for the attack."
+		},
+		"charge_sound": {
+			"type": "string",
+			"description": "Sound event for the charge up."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": [
+							"move",
+							"look",
+							"jump"
+						],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"duration": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Goal duration in seconds"
+		},
+		"duration_until_attack_sound": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Duration in seconds until the attack sound is played."
+		},
+		"knockback_height_cap": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Height cap of the attack knockback's vertical delta."
+		},
+		"knockback_horizontal_strength": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Horizontal strength of the attack's knockback applied to the attack target."
+		},
+		"knockback_vertical_strength": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Vertical strength of the attack's knockback applied to the attack target."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "This multiplier modifies the attacking entity's speed when moving toward the target."
+		}
+	},
+	"description": "Allows this entity to perform a 'sonic boom' ranged attack"
+}

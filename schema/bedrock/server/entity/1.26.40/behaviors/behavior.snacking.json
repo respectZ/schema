@@ -1,0 +1,111 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": [
+							"move",
+							"look",
+							"jump"
+						],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"items": {
+			"type": "array",
+			"items": {
+				"anyOf": [
+					{
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"name": {
+								"anyOf": [
+									{
+										"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+										"description": ""
+									},
+									{
+										"type": "string",
+										"description": ""
+									}
+								],
+								"description": ""
+							}
+						},
+						"patternProperties": {
+							"^[\\s\\S]*$": {
+								"type": "string",
+								"description": ""
+							}
+						},
+						"description": "Items that we are interested in snacking on"
+					},
+					{
+						"type": "array",
+						"items": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"key": {
+									"type": "string",
+									"description": ""
+								},
+								"value": {
+									"type": "string",
+									"description": ""
+								}
+							},
+							"required": [
+								"key",
+								"value"
+							],
+							"description": "Items that we are interested in snacking on"
+						},
+						"description": "Items that we are interested in snacking on"
+					}
+				],
+				"description": "Items that we are interested in snacking on"
+			},
+			"description": "Items that we are interested in snacking on"
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"snacking_cooldown": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "The cooldown time in seconds before the mob is able to snack again"
+		},
+		"snacking_cooldown_min": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "The minimum time in seconds before the mob is able to snack again"
+		},
+		"snacking_stop_chance": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "This is the chance that the mob will stop snacking, from 0 to 1"
+		}
+	},
+	"description": "Allows the mob to take a load off and snack on food that it found nearby."
+}

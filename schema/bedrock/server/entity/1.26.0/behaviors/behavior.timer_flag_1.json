@@ -1,0 +1,135 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": [
+							"move",
+							"look",
+							"jump"
+						],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"cooldown_range": {
+			"type": "object",
+			"properties": {
+				"max": {
+					"type": "number",
+					"minimum": -3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e+38,
+					"description": ""
+				},
+				"min": {
+					"type": "number",
+					"minimum": -3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e+38,
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": "Goal cooldown range in seconds. If specified, the cooldown will have to elapse even before the goal can be selected for the first time."
+		},
+		"duration_range": {
+			"type": "object",
+			"properties": {
+				"max": {
+					"type": "number",
+					"minimum": -3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e+38,
+					"description": ""
+				},
+				"min": {
+					"type": "number",
+					"minimum": -3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e+38,
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": "Goal duration range in seconds."
+		},
+		"on_end": {
+			"type": "object",
+			"properties": {
+				"event": {
+					"type": "string",
+					"default": "",
+					"description": ""
+				},
+				"filters": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": ""
+				},
+				"target": {
+					"type": "string",
+					"anyOf": [
+						{
+							"$ref": "../../../../../vanilla/server/filter/general.json#/$defs/filter_subject",
+							"description": ""
+						},
+						{
+							"pattern": "^(?:[sS][eE][lL][fF]|[oO][tT][hH][eE][rR]|[pP][lL][aA][yY][eE][rR]|[tT][aA][rR][gG][eE][tT]|[pP][aA][rR][eE][nN][tT]|[bB][aA][bB][yY]|[bB][lL][oO][cC][kK]|[dD][aA][mM][aA][gG][eE][rR]|[hH][oO][lL][dD][eE][rR]|[iI][tT][eE][mM])$(?![\\s\\S])",
+							"description": ""
+						}
+					],
+					"default": "self",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": "Event(s) to run when the goal ends."
+		},
+		"on_start": {
+			"type": "object",
+			"properties": {
+				"event": {
+					"type": "string",
+					"default": "",
+					"description": ""
+				},
+				"filters": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": ""
+				},
+				"target": {
+					"type": "string",
+					"anyOf": [
+						{
+							"$ref": "../../../../../vanilla/server/filter/general.json#/$defs/filter_subject",
+							"description": ""
+						},
+						{
+							"pattern": "^(?:[sS][eE][lL][fF]|[oO][tT][hH][eE][rR]|[pP][lL][aA][yY][eE][rR]|[tT][aA][rR][gG][eE][tT]|[pP][aA][rR][eE][nN][tT]|[bB][aA][bB][yY]|[bB][lL][oO][cC][kK]|[dD][aA][mM][aA][gG][eE][rR]|[hH][oO][lL][dD][eE][rR]|[iI][tT][eE][mM])$(?![\\s\\S])",
+							"description": ""
+						}
+					],
+					"default": "self",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": "Event(s) to run when the goal starts."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		}
+	},
+	"description": "Fires an event when this behavior starts, then waits for a duration before stopping. When stopping due to that timeout or due to being interrupted by another behavior, fires another event. query.timer_flag_1 will return 1.0 on both the client and server when this behavior is running, and 0.0 otherwise."
+}

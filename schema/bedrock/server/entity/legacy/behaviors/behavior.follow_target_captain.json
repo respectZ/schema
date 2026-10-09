@@ -1,0 +1,48 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"always_look_for_leader": {
+			"type": "boolean",
+			"description": ""
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"follow_distance": {
+			"type": "number",
+			"description": ""
+		},
+		"leader_filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"search_cooldown": {
+			"type": "integer",
+			"description": ""
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"description": ""
+		},
+		"within_radius": {
+			"type": "number",
+			"description": ""
+		}
+	},
+	"description": ""
+}

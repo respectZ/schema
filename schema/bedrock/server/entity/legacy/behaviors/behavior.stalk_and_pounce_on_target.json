@@ -1,0 +1,64 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"interest_time": {
+			"type": "number",
+			"description": "The amount of time the mob will be interested before pouncing. This happens when the mob is within range of pouncing"
+		},
+		"leap_dist": {
+			"type": "number",
+			"description": ""
+		},
+		"leap_height": {
+			"type": "number",
+			"description": "The height in blocks the mob jumps when leaping at its target"
+		},
+		"max_stalk_dist": {
+			"type": "number",
+			"description": "The maximum distance away a target can be before the mob gives up on stalking"
+		},
+		"pounce_max_dist": {
+			"type": "number",
+			"description": "The maximum distance away from the target in blocks to begin pouncing at the target"
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"set_persistent": {
+			"type": "boolean",
+			"description": "Allows the actor to be set to persist upon targeting a player"
+		},
+		"stalk_speed": {
+			"type": "number",
+			"description": "The movement speed in which you stalk your target"
+		},
+		"strike_dist": {
+			"type": "number",
+			"description": "The max distance away from the target when landing from the pounce that will still result in damaging the target"
+		},
+		"stuck_blocks": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": ""
+		},
+		"stuck_time": {
+			"type": "number",
+			"description": "The amount of time the mob will be stuck if they fail and land on a block they can be stuck on"
+		}
+	},
+	"description": "Allows a mob to stalk a target, then once within range pounce onto a target, on success the target will be attacked dealing damage defined by the attack component. On failure, the mob will risk getting stuck"
+}

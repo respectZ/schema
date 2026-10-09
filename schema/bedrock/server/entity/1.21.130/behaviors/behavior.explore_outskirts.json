@@ -1,0 +1,107 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": [
+							"move",
+							"look",
+							"jump"
+						],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"dist_from_boundary": {
+			"type": "array",
+			"items": {
+				"type": "number",
+				"minimum": -3.4028234663852886e+38,
+				"maximum": 3.4028234663852886e+38,
+				"description": "The distance from the boundary the villager must be within in to explore the outskirts."
+			},
+			"minItems": 3,
+			"maxItems": 3,
+			"description": "The distance from the boundary the villager must be within in to explore the outskirts."
+		},
+		"explore_dist": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Total distance in blocks the entity will explore beyond the village bounds when choosing its travel point."
+		},
+		"max_travel_time": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "This is the maximum amount of time an entity will attempt to reach its travel point on the outskirts of the village before the goal exits."
+		},
+		"max_wait_time": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "The wait time in seconds between choosing new explore points will be chosen on a random interval between this value and the minimum wait time. This value is also the total amount of time the entity will explore random points before the goal stops."
+		},
+		"min_dist_from_target": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "The entity must be within this distance for it to consider it has successfully reached its target."
+		},
+		"min_perimeter": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "The minimum perimeter of the village required to run this goal."
+		},
+		"min_wait_time": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "The wait time in seconds between choosing new explore points will be chosen on a random interval between this value and the maximum wait time."
+		},
+		"next_xz": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"description": "A new explore point will randomly be chosen within this XZ distance of the current target position when navigation has finished and the wait timer has elapsed."
+		},
+		"next_y": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"description": "A new explore point will randomly be chosen within this Y distance of the current target position when navigation has finished and the wait timer has elapsed."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "The multiplier for speed while using this goal. 1.0 maintains the speed."
+		},
+		"timer_ratio": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Each new explore point will be chosen on a random interval between the minimum and the maximum wait time, divided by this value. This does not apply to the first explore point chosen when the goal runs."
+		}
+	},
+	"description": "Allows the entity to first travel to a random point on the outskirts of the village, and then explore random points within a small distance. This goal requires \"minecraft:dweller\" and \"minecraft:navigation\" to execute."
+}

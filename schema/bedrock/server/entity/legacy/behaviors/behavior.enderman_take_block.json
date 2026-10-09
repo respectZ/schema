@@ -1,0 +1,40 @@
+{
+	"type": "object",
+	"properties": {
+		"affected_by_griefing_rule": {
+			"type": "boolean",
+			"description": ""
+		},
+		"can_take": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": ""
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"jump",
+					"look",
+					"move"
+				],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"on_take": {
+			"$ref": "../components/equippable.json#/$defs/event",
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows the enderman to take a block and carry it around. Can only be used by Endermen."
+}

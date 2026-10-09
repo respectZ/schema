@@ -1,0 +1,46 @@
+{
+	"type": "object",
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"jump",
+					"look",
+					"move"
+				],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		},
+		"speed": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Sets the entity's speed when moving toward the block."
+		},
+		"start_distance": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Sets the distance the entity needs to be away from the block to attempt to start the goal."
+		},
+		"stop_distance": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Sets the distance from the block the entity will attempt to reach."
+		}
+	},
+	"additionalProperties": false,
+	"description": "The entity will attempt to toss the items from its inventory to a nearby recently played noteblock."
+}

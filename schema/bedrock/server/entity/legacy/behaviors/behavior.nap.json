@@ -1,0 +1,48 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"can_nap_filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": ""
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"cooldown_max": {
+			"type": "number",
+			"description": "Maximum time in seconds the mob has to wait before using the goal again"
+		},
+		"cooldown_min": {
+			"type": "number",
+			"description": "Minimum time in seconds the mob has to wait before using the goal again"
+		},
+		"mob_detect_dist": {
+			"type": "number",
+			"description": "The block distance in x and z that will be checked for mobs that this mob detects"
+		},
+		"mob_detect_height": {
+			"type": "number",
+			"description": "The block distance in y that will be checked for mobs that this mob detects"
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"wake_mob_exceptions": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": ""
+		}
+	},
+	"description": "Allows mobs to occassionally stop and take a nap under certain conditions."
+}

@@ -1,0 +1,50 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"poi_type": {
+			"type": "string",
+			"anyOf": [
+				{
+					"enum": [
+						"bed",
+						"jobsite",
+						"meeting_area"
+					],
+					"description": "Tells the goal what POI type it should be looking for"
+				},
+				{
+					"pattern": "^(?:[Bb][Ee][Dd]|[Jj][Oo][Bb][Ss][Ii][Tt][Ee]|[Mm][Ee][Ee][Tt][Ii][Nn][Gg]_[Aa][Rr][Ee][Aa])$(?![\\s\\S])",
+					"description": "Tells the goal what POI type it should be looking for"
+				}
+			],
+			"description": "Tells the goal what POI type it should be looking for"
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"timeout_cooldown": {
+			"type": "number",
+			"description": ""
+		}
+	},
+	"description": "Allows the mob to move to a POI if able to"
+}

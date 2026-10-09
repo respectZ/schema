@@ -1,0 +1,32 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"description": ""
+		},
+		"within_radius": {
+			"type": "number",
+			"description": "Defines the radius in blocks that the mob tries to be from the target. A value of 0 means it tries to occupy the same block as the target"
+		}
+	},
+	"description": "Allows mob to move towards its current target."
+}

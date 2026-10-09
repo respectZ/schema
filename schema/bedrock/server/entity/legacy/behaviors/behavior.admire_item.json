@@ -1,0 +1,142 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"admire_item_sound": {
+			"type": "string",
+			"description": "The sound event to play when admiring the item"
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"on_admire_item_start": {
+			"type": "object",
+			"properties": {
+				"event": {
+					"type": "string",
+					"description": ""
+				},
+				"target": {
+					"type": "string",
+					"anyOf": [
+						{
+							"enum": [
+								"self",
+								"other",
+								"player",
+								"target",
+								"parent",
+								"baby",
+								"block",
+								"damager",
+								"holder",
+								"item"
+							],
+							"description": ""
+						},
+						{
+							"pattern": "^(?:[Ss][Ee][Ll][Ff]|[Oo][Tt][Hh][Ee][Rr]|[Pp][Ll][Aa][Yy][Ee][Rr]|[Tt][Aa][Rr][Gg][Ee][Tt]|[Pp][Aa][Rr][Ee][Nn][Tt]|[Bb][Aa][Bb][Yy]|[Bb][Ll][Oo][Cc][Kk]|[Dd][Aa][Mm][Aa][Gg][Ee][Rr]|[Hh][Oo][Ll][Dd][Ee][Rr]|[Ii][Tt][Ee][Mm])$(?![\\s\\S])",
+							"description": ""
+						}
+					],
+					"description": ""
+				},
+				"filters": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		},
+		"on_admire_item_stop": {
+			"type": "object",
+			"properties": {
+				"event": {
+					"type": "string",
+					"description": ""
+				},
+				"target": {
+					"type": "string",
+					"anyOf": [
+						{
+							"enum": [
+								"self",
+								"other",
+								"player",
+								"target",
+								"parent",
+								"baby",
+								"block",
+								"damager",
+								"holder",
+								"item"
+							],
+							"description": ""
+						},
+						{
+							"pattern": "^(?:[Ss][Ee][Ll][Ff]|[Oo][Tt][Hh][Ee][Rr]|[Pp][Ll][Aa][Yy][Ee][Rr]|[Tt][Aa][Rr][Gg][Ee][Tt]|[Pp][Aa][Rr][Ee][Nn][Tt]|[Bb][Aa][Bb][Yy]|[Bb][Ll][Oo][Cc][Kk]|[Dd][Aa][Mm][Aa][Gg][Ee][Rr]|[Hh][Oo][Ll][Dd][Ee][Rr]|[Ii][Tt][Ee][Mm])$(?![\\s\\S])",
+							"description": ""
+						}
+					],
+					"description": ""
+				},
+				"filters": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"sound_interval": {
+			"anyOf": [
+				{
+					"type": "number",
+					"description": "The range of time in seconds to randomly wait before playing the sound again."
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "number",
+						"description": "The range of time in seconds to randomly wait before playing the sound again."
+					},
+					"minItems": 2,
+					"maxItems": 2,
+					"description": "The range of time in seconds to randomly wait before playing the sound again."
+				},
+				{
+					"type": "object",
+					"properties": {
+						"range_min": {
+							"type": "number",
+							"description": ""
+						},
+						"range_max": {
+							"type": "number",
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": "The range of time in seconds to randomly wait before playing the sound again."
+				}
+			],
+			"description": "The range of time in seconds to randomly wait before playing the sound again."
+		}
+	},
+	"description": "Enables the mob to admire items that have been configured as admirable. Must be used in combination with the admire_item component"
+}

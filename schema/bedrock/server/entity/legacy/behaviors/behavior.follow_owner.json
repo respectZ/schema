@@ -1,0 +1,52 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"can_teleport": {
+			"type": "boolean",
+			"description": "Defines if the mob will teleport to its owner when too far away."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"ignore_vibration": {
+			"type": "boolean",
+			"description": "Defines if the mob should disregard following its owner after detecting a recent vibration."
+		},
+		"max_distance": {
+			"type": "number",
+			"description": "The maximum distance the mob can be from its owner to start following it. Applicable only when \"can_teleport\" is set to false."
+		},
+		"post_teleport_distance": {
+			"type": "integer",
+			"description": "Defines how far (in blocks) the entity will be from its owner after teleporting. If not specified, it defaults to \"stop_distance\" + 1, allowing the entity to seamlessly resume navigation."
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"start_distance": {
+			"type": "number",
+			"description": "The minimum distance the mob must be from its owner to start following it."
+		},
+		"stop_distance": {
+			"type": "number",
+			"description": "The distance at which the mob will stop following its owner."
+		}
+	},
+	"description": "Allows a mob to follow the player that owns it."
+}

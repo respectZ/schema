@@ -1,0 +1,40 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"interval": {
+			"type": "integer",
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"description": ""
+		},
+		"xz_dist": {
+			"type": "integer",
+			"description": ""
+		},
+		"y_dist": {
+			"type": "integer",
+			"description": ""
+		}
+	},
+	"description": "Allows the wither to launch random attacks. Can only be used by the Wither Boss."
+}

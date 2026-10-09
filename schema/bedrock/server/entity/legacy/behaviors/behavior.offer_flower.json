@@ -1,0 +1,93 @@
+{
+	"type": "object",
+	"properties": {
+		"chance_to_start": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e+38,
+			"default": 0.0001250000059371814,
+			"description": "Percent chance that the mob will start this goal from 0.0 to 1.0 (where 1.0 = 100%)."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"jump",
+					"look",
+					"move"
+				],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "Conditions that need to be met for the behavior to start."
+		},
+		"max_head_rotation_y": {
+			"type": "number",
+			"exclusiveMinimum": 0.0,
+			"maximum": 3.4028234663852886e+38,
+			"default": 30.0,
+			"description": "Maximum rotation (in degrees), on the Y-axis, this entity can rotate its head while trying to look at the target."
+		},
+		"max_offer_flower_duration": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e+38,
+			"default": 20.0,
+			"description": "The max amount of time (in seconds) that the mob will offer the flower for before exiting the Goal."
+		},
+		"max_rotation_x": {
+			"type": "number",
+			"exclusiveMinimum": 0.0,
+			"maximum": 3.4028234663852886e+38,
+			"default": 30.0,
+			"description": "Maximum rotation (in degrees), on the X-axis, this entity can rotate while trying to look at the target."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		},
+		"search_area": {
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"type": "number",
+						"description": "The dimensions of the AABB used to search for a potential mob to offer flower to."
+					},
+					"maxItems": 3,
+					"description": "The dimensions of the AABB used to search for a potential mob to offer flower to."
+				},
+				{
+					"type": "object",
+					"properties": {
+						"x": {
+							"type": "number",
+							"description": ""
+						},
+						"y": {
+							"type": "number",
+							"description": ""
+						},
+						"z": {
+							"type": "number",
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": "The dimensions of the AABB used to search for a potential mob to offer flower to."
+				}
+			],
+			"description": "The dimensions of the AABB used to search for a potential mob to offer flower to."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows the mob to offer a flower to another mob with the minecraft:take_flower behavior."
+}

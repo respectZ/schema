@@ -1,0 +1,153 @@
+{
+	"type": "object",
+	"properties": {
+		"baby_knockback_modifier": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"default": 0,
+			"description": "The modifier to knockback that babies have."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"jump",
+					"look",
+					"move"
+				],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"cooldown_range": {
+			"anyOf": [
+				{
+					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
+					"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
+				},
+				{
+					"type": "null",
+					"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
+				}
+			],
+			"allOf": [
+				{
+					"if": {
+						"type": "number",
+						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
+					},
+					"then": {
+						"minimum": 0,
+						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
+					},
+					"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
+				},
+				{
+					"if": {
+						"type": "array",
+						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
+					},
+					"then": {
+						"items": {
+							"minimum": 0,
+							"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
+						},
+						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
+					},
+					"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
+				},
+				{
+					"if": {
+						"type": "object",
+						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
+					},
+					"then": {
+						"properties": {
+							"range_min": {
+								"minimum": 0,
+								"description": ""
+							},
+							"range_max": {
+								"minimum": 0,
+								"description": ""
+							}
+						},
+						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
+					},
+					"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
+				}
+			],
+			"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
+		},
+		"knockback_force": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"default": 0,
+			"description": "The force of the knockback of the ram attack."
+		},
+		"knockback_height": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"default": 0,
+			"description": "The height of the knockback of the ram attack."
+		},
+		"min_ram_distance": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": "The minimum distance at which the mob can start a ram attack."
+		},
+		"on_start": {
+			"type": "array",
+			"items": {
+				"$ref": "../components/equippable.json#/$defs/event",
+				"description": "The event to trigger when attacking"
+			},
+			"description": "The event to trigger when attacking"
+		},
+		"pre_ram_sound": {
+			"type": "string",
+			"description": "The sound to play when an entity is about to perform a ram attack."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		},
+		"ram_distance": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": "The distance at which the mob start to run with ram speed."
+		},
+		"ram_impact_sound": {
+			"type": "string",
+			"description": "The sound to play when an entity is impacting on a ram attack."
+		},
+		"ram_speed": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"default": 0,
+			"description": "Sets the entity's speed when charging toward the target."
+		},
+		"run_speed": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"default": 0,
+			"description": "Sets the entity's speed when running toward the target."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows this entity to damage a target by using a running attack."
+}

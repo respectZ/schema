@@ -1,91 +1,91 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "type": "object",
-  "title": "Minecraft Bedrock Entity 1.20.70",
-  "required": [
-    "format_version",
-    "minecraft:entity"
-  ],
-  "additionalProperties": false,
-  "properties": {
-    "format_version": {
-      "type": "string",
-      "enum": [
-        "1.20.70"
-      ]
-    },
-    "minecraft:entity": {
-      "type": "object",
-      "title": "Entity",
-      "required": [
-        "description",
-        "components"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "component_groups": {
-          "type": "object",
-          "title": "Component Groups",
-          "additionalProperties": {
-            "unevaluatedProperties": false,
-            "allOf": [
-              {
-                "$ref": "./components/_index.json"
-              },
-              {
-                "$ref": "../1.20.60/behavior/_index.json"
-              },
-              {
-                "$ref": "../1.8.0/triggers/_index.json"
-              }
-            ],
-            "type": "object"
-          }
-        },
-        "components": {
-          "unevaluatedProperties": false,
-          "allOf": [
-            {
-              "$ref": "./components/_index.json"
-            },
-            {
-              "$ref": "../1.20.60/behavior/_index.json"
-            },
-            {
-              "$ref": "../1.8.0/triggers/_index.json"
-            }
-          ],
-          "type": "object"
-        },
-        "description": {
-          "$ref": "../1.16.0/description.json"
-        },
-        "events": {
-          "type": "object",
-          "title": "Events",
-          "additionalProperties": {
-            "$ref": "../1.16.0/event.json",
-            "title": "Event Definition"
-          },
-          "properties": {
-            "minecraft:entity_born": {
-              "$ref": "../1.16.0/event.json"
-            },
-            "minecraft:entity_spawned": {
-              "$ref": "../1.16.0/event.json"
-            },
-            "minecraft:entity_transformed": {
-              "$ref": "../1.16.0/event.json"
-            },
-            "minecraft:on_prime": {
-              "$ref": "../1.16.0/event.json"
-            }
-          }
-        }
-      }
-    },
-    "use_beta_features": {
-      "type": "boolean"
-    }
-  }
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"title": "Minecraft Bedrock Entity 1.20.70",
+	"required": [
+		"format_version",
+		"minecraft:entity"
+	],
+	"additionalProperties": false,
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"enum": [
+				"1.20.70"
+			]
+		},
+		"minecraft:entity": {
+			"type": "object",
+			"title": "Entity",
+			"required": [
+				"description",
+				"components"
+			],
+			"additionalProperties": false,
+			"properties": {
+				"component_groups": {
+					"type": "object",
+					"title": "Component Groups",
+					"additionalProperties": {
+						"unevaluatedProperties": false,
+						"allOf": [
+							{
+								"$ref": "./components/_index.json"
+							},
+							{
+								"$ref": "./behaviors/_index.json"
+							},
+							{
+								"$ref": "../1.8.0/triggers/_index.json"
+							}
+						],
+						"type": "object"
+					}
+				},
+				"components": {
+					"unevaluatedProperties": false,
+					"allOf": [
+						{
+							"$ref": "./components/_index.json"
+						},
+						{
+							"$ref": "./behaviors/_index.json"
+						},
+						{
+							"$ref": "../1.8.0/triggers/_index.json"
+						}
+					],
+					"type": "object"
+				},
+				"description": {
+					"$ref": "../1.16.0/description.json"
+				},
+				"events": {
+					"type": "object",
+					"title": "Events",
+					"additionalProperties": {
+						"$ref": "../1.16.0/event.json",
+						"title": "Event Definition"
+					},
+					"properties": {
+						"minecraft:entity_born": {
+							"$ref": "../1.16.0/event.json"
+						},
+						"minecraft:entity_spawned": {
+							"$ref": "../1.16.0/event.json"
+						},
+						"minecraft:entity_transformed": {
+							"$ref": "../1.16.0/event.json"
+						},
+						"minecraft:on_prime": {
+							"$ref": "../1.16.0/event.json"
+						}
+					}
+				}
+			}
+		},
+		"use_beta_features": {
+			"type": "boolean"
+		}
+	}
 }

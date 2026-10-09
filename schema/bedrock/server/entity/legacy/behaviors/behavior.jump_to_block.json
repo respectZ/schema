@@ -1,0 +1,153 @@
+{
+	"type": "object",
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"jump",
+					"look",
+					"move"
+				],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"cooldown_range": {
+			"anyOf": [
+				{
+					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
+					"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
+				},
+				{
+					"type": "null",
+					"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
+				}
+			],
+			"allOf": [
+				{
+					"if": {
+						"type": "number",
+						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
+					},
+					"then": {
+						"minimum": 0,
+						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
+					},
+					"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
+				},
+				{
+					"if": {
+						"type": "array",
+						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
+					},
+					"then": {
+						"items": {
+							"minimum": 0,
+							"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
+						},
+						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
+					},
+					"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
+				},
+				{
+					"if": {
+						"type": "object",
+						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
+					},
+					"then": {
+						"properties": {
+							"range_min": {
+								"minimum": 0,
+								"description": ""
+							},
+							"range_max": {
+								"minimum": 0,
+								"description": ""
+							}
+						},
+						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
+					},
+					"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
+				}
+			],
+			"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
+		},
+		"forbidden_blocks": {
+			"type": "array",
+			"items": {
+				"$ref": "../components/equippable.json#/$defs/item_descriptor",
+				"description": "Blocks that the mob can't jump to."
+			},
+			"description": "Blocks that the mob can't jump to."
+		},
+		"max_velocity": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"default": 0,
+			"description": "The maximum velocity with which the mob can jump."
+		},
+		"minimum_distance": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": "The minimum distance (in blocks) from the mob to a block, in order to consider jumping to it."
+		},
+		"minimum_path_length": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": "The minimum length (in blocks) of the mobs path to a block, in order to consider jumping to it."
+		},
+		"preferred_blocks": {
+			"type": "array",
+			"items": {
+				"$ref": "../components/equippable.json#/$defs/item_descriptor",
+				"description": "Blocks that the mob prefers jumping to."
+			},
+			"description": "Blocks that the mob prefers jumping to."
+		},
+		"preferred_blocks_chance": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"default": 0,
+			"description": "Chance (between 0.0 and 1.0) that the mob will jump to a preferred block, if in range. Only matters if preferred blocks are defined."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		},
+		"scale_factor": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"default": 0,
+			"description": "The scalefactor of the bounding box of the mob while it is jumping."
+		},
+		"search_height": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": "The height (in blocks, in range [1, 15]) of the search box, centered around the mob."
+		},
+		"search_width": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": "The width (in blocks, in range [1, 15]) of the search box, centered around the mob."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows an entity to jump to another random block."
+}

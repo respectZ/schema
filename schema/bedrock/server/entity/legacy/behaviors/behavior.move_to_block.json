@@ -1,0 +1,251 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"goal_radius": {
+			"type": "number",
+			"description": "Distance in blocks within the mob considers it has reached the goal. This is the \"wiggle room\" to stop the AI from bouncing back and forth trying to reach a specific spot"
+		},
+		"on_reach": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"event": {
+						"type": "string",
+						"description": ""
+					},
+					"target": {
+						"type": "string",
+						"anyOf": [
+							{
+								"enum": [
+									"self",
+									"other",
+									"player",
+									"target",
+									"parent",
+									"baby",
+									"block",
+									"damager",
+									"holder",
+									"item"
+								],
+								"description": ""
+							},
+							{
+								"pattern": "^(?:[Ss][Ee][Ll][Ff]|[Oo][Tt][Hh][Ee][Rr]|[Pp][Ll][Aa][Yy][Ee][Rr]|[Tt][Aa][Rr][Gg][Ee][Tt]|[Pp][Aa][Rr][Ee][Nn][Tt]|[Bb][Aa][Bb][Yy]|[Bb][Ll][Oo][Cc][Kk]|[Dd][Aa][Mm][Aa][Gg][Ee][Rr]|[Hh][Oo][Ll][Dd][Ee][Rr]|[Ii][Tt][Ee][Mm])$(?![\\s\\S])",
+								"description": ""
+							}
+						],
+						"description": ""
+					},
+					"filters": {
+						"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+						"description": ""
+					}
+				},
+				"additionalProperties": false,
+				"description": "Event to run on block reached."
+			},
+			"description": "Event to run on block reached."
+		},
+		"on_stay_completed": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"event": {
+						"type": "string",
+						"description": ""
+					},
+					"target": {
+						"type": "string",
+						"anyOf": [
+							{
+								"enum": [
+									"self",
+									"other",
+									"player",
+									"target",
+									"parent",
+									"baby",
+									"block",
+									"damager",
+									"holder",
+									"item"
+								],
+								"description": ""
+							},
+							{
+								"pattern": "^(?:[Ss][Ee][Ll][Ff]|[Oo][Tt][Hh][Ee][Rr]|[Pp][Ll][Aa][Yy][Ee][Rr]|[Tt][Aa][Rr][Gg][Ee][Tt]|[Pp][Aa][Rr][Ee][Nn][Tt]|[Bb][Aa][Bb][Yy]|[Bb][Ll][Oo][Cc][Kk]|[Dd][Aa][Mm][Aa][Gg][Ee][Rr]|[Hh][Oo][Ll][Dd][Ee][Rr]|[Ii][Tt][Ee][Mm])$(?![\\s\\S])",
+								"description": ""
+							}
+						],
+						"description": ""
+					},
+					"filters": {
+						"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+						"description": ""
+					}
+				},
+				"additionalProperties": false,
+				"description": "Event to run on completing a stay of stay_duration at the block."
+			},
+			"description": "Event to run on completing a stay of stay_duration at the block."
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"search_height": {
+			"type": "integer",
+			"description": "The height in blocks that the mob will look for the block."
+		},
+		"search_range": {
+			"type": "integer",
+			"description": "The distance in blocks that the mob will look for the block."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"start_chance": {
+			"type": "number",
+			"description": "Chance to start the behavior (applied after each random tick_interval)."
+		},
+		"stay_duration": {
+			"type": "number",
+			"description": "Number of ticks needed to complete a stay at the block."
+		},
+		"target_block_filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": ""
+		},
+		"target_blocks": {
+			"type": "array",
+			"items": {
+				"anyOf": [
+					{
+						"anyOf": [
+							{
+								"$ref": "../../../../../vanilla/server/item_descriptor.json",
+								"description": "Block types to move to."
+							},
+							{
+								"type": "object",
+								"properties": {
+									"item_tag": {
+										"type": "string",
+										"description": ""
+									}
+								},
+								"additionalProperties": false,
+								"required": [
+									"item_tag"
+								],
+								"description": "Block types to move to."
+							}
+						],
+						"description": "Block types to move to."
+					},
+					{
+						"type": "object",
+						"properties": {
+							"item": {
+								"anyOf": [
+									{
+										"$ref": "../../../../../vanilla/server/item_descriptor.json",
+										"description": ""
+									},
+									{
+										"type": "object",
+										"properties": {
+											"item_tag": {
+												"type": "string",
+												"description": ""
+											}
+										},
+										"additionalProperties": false,
+										"required": [
+											"item_tag"
+										],
+										"description": ""
+									}
+								],
+								"description": ""
+							}
+						},
+						"additionalProperties": false,
+						"required": [
+							"item"
+						],
+						"description": "Block types to move to."
+					}
+				],
+				"description": "Block types to move to."
+			},
+			"description": "Block types to move to."
+		},
+		"target_offset": {
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"type": "number",
+						"description": "Offset to add to the selected target position."
+					},
+					"minItems": 3,
+					"maxItems": 3,
+					"description": "Offset to add to the selected target position."
+				},
+				{
+					"type": "object",
+					"properties": {
+						"x": {
+							"type": "number",
+							"description": ""
+						},
+						"y": {
+							"type": "number",
+							"description": ""
+						},
+						"z": {
+							"type": "number",
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": "Offset to add to the selected target position."
+				}
+			],
+			"description": "Offset to add to the selected target position."
+		},
+		"target_selection_method": {
+			"type": "string",
+			"enum": [
+				"nearest",
+				"random"
+			],
+			"description": "Kind of block to find fitting the specification. Valid values are \"random\" and \"nearest\"."
+		},
+		"tick_interval": {
+			"type": "integer",
+			"description": "Average interval in ticks to try to run this behavior."
+		}
+	},
+	"description": "Allows mob to move towards a block."
+}

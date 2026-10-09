@@ -1,0 +1,66 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"cooldown_time": {
+			"type": "number",
+			"description": "Time in seconds the mob has to wait before using the goal again"
+		},
+		"duration": {
+			"type": "number",
+			"description": "Amount of time in seconds that the entity will chat with another entity"
+		},
+		"mingle_distance": {
+			"type": "number",
+			"description": "The distance from its partner that this entity will mingle. If the entity type is not the same as the entity, this value needs to be identical on both entities."
+		},
+		"mingle_partner_type": {
+			"type": "string",
+			"description": "The entity type that this entity is allowed to mingle with"
+		},
+		"poi_type": {
+			"type": "string",
+			"anyOf": [
+				{
+					"enum": [
+						"bed",
+						"jobsite",
+						"meeting_area"
+					],
+					"description": ""
+				},
+				{
+					"pattern": "^(?:[Bb][Ee][Dd]|[Jj][Oo][Bb][Ss][Ii][Tt][Ee]|[Mm][Ee][Ee][Tt][Ii][Nn][Gg]_[Aa][Rr][Ee][Aa])$(?![\\s\\S])",
+					"description": ""
+				}
+			],
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"timeout_cooldown": {
+			"type": "number",
+			"description": ""
+		}
+	},
+	"description": "Allows an entity to go to the village bell and mingle with other entities"
+}

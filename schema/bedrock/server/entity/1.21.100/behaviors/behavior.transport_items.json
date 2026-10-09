@@ -1,0 +1,248 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"allow_simultaneous_interaction": {
+			"type": "boolean",
+			"description": ""
+		},
+		"allowed_items": {
+			"type": "array",
+			"items": {
+				"anyOf": [
+					{
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"name": {
+								"anyOf": [
+									{
+										"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+										"description": ""
+									},
+									{
+										"type": "string",
+										"description": ""
+									}
+								],
+								"description": ""
+							}
+						},
+						"patternProperties": {
+							"^[\\s\\S]*$": {
+								"type": "string",
+								"description": ""
+							}
+						},
+						"description": ""
+					},
+					{
+						"type": "array",
+						"items": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"key": {
+									"type": "string",
+									"description": ""
+								},
+								"value": {
+									"type": "string",
+									"description": ""
+								}
+							},
+							"required": [
+								"key",
+								"value"
+							],
+							"description": ""
+						},
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": [
+							"move",
+							"look",
+							"jump"
+						],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"destination_container_types": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"description": ""
+			},
+			"description": ""
+		},
+		"disallowed_items": {
+			"type": "array",
+			"items": {
+				"anyOf": [
+					{
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"name": {
+								"anyOf": [
+									{
+										"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+										"description": ""
+									},
+									{
+										"type": "string",
+										"description": ""
+									}
+								],
+								"description": ""
+							}
+						},
+						"patternProperties": {
+							"^[\\s\\S]*$": {
+								"type": "string",
+								"description": ""
+							}
+						},
+						"description": ""
+					},
+					{
+						"type": "array",
+						"items": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"key": {
+									"type": "string",
+									"description": ""
+								},
+								"value": {
+									"type": "string",
+									"description": ""
+								}
+							},
+							"required": [
+								"key",
+								"value"
+							],
+							"description": ""
+						},
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"idle_cooldown": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 4294967295,
+			"description": ""
+		},
+		"initial_cooldown": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 4294967295,
+			"description": ""
+		},
+		"interaction_time": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 3.4028234663852886e+38,
+			"description": ""
+		},
+		"max_stack_size": {
+			"type": "integer",
+			"minimum": 1.0,
+			"maximum": 64.0,
+			"description": ""
+		},
+		"max_visited_containers": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 4294967295,
+			"description": ""
+		},
+		"place_strategy": {
+			"type": "string",
+			"anyOf": [
+				{
+					"enum": [
+						"any",
+						"with_matching",
+						"with_matching_or_empty"
+					],
+					"description": ""
+				},
+				{
+					"pattern": "^(?:[Aa][Nn][Yy]|[Ww][Ii][Tt][Hh]_[Mm][Aa][Tt][Cc][Hh][Ii][Nn][Gg]|[Ww][Ii][Tt][Hh]_[Mm][Aa][Tt][Cc][Hh][Ii][Nn][Gg]_[Oo][Rr]_[Ee][Mm][Pp][Tt][Yy])$(?![\\s\\S])",
+					"description": ""
+				}
+			],
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"search_distance": {
+			"type": "array",
+			"items": {
+				"type": "number",
+				"minimum": -3.4028234663852886e+38,
+				"maximum": 3.4028234663852886e+38,
+				"description": ""
+			},
+			"minItems": 2,
+			"maxItems": 2,
+			"description": ""
+		},
+		"search_strategy": {
+			"type": "string",
+			"anyOf": [
+				{
+					"enum": [
+						"nearest",
+						"random"
+					],
+					"description": ""
+				},
+				{
+					"pattern": "^(?:[Nn][Ee][Aa][Rr][Ee][Ss][Tt]|[Rr][Aa][Nn][Dd][Oo][Mm])$(?![\\s\\S])",
+					"description": ""
+				}
+			],
+			"description": ""
+		},
+		"source_container_types": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"description": ""
+			},
+			"description": ""
+		}
+	},
+	"description": ""
+}

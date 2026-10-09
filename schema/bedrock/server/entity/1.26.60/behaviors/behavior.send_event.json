@@ -1,0 +1,139 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": [
+							"move",
+							"look",
+							"jump"
+						],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"event_choices": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"cast_duration": {
+						"type": "number",
+						"minimum": -3.4028234663852886e+38,
+						"maximum": 3.4028234663852886e+38,
+						"description": "Time in seconds for the entire event sending process"
+					},
+					"cooldown_time": {
+						"type": "number",
+						"minimum": -3.4028234663852886e+38,
+						"maximum": 3.4028234663852886e+38,
+						"description": ""
+					},
+					"do_casting": {
+						"type": "boolean",
+						"description": ""
+					},
+					"filters": {
+						"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+						"description": ""
+					},
+					"look_at_target": {
+						"type": "boolean",
+						"description": "If true, the mob will face the entity it sends an event to"
+					},
+					"max_activation_range": {
+						"type": "number",
+						"minimum": -3.4028234663852886e+38,
+						"maximum": 3.4028234663852886e+38,
+						"description": ""
+					},
+					"min_activation_range": {
+						"type": "number",
+						"minimum": -3.4028234663852886e+38,
+						"maximum": 3.4028234663852886e+38,
+						"description": ""
+					},
+					"particle_color": {
+						"anyOf": [
+							{
+								"type": "string",
+								"pattern": "^#[a-fA-F0-9]{8}$(?![\\s\\S])",
+								"description": ""
+							},
+							{
+								"type": "array",
+								"items": {
+									"type": "integer",
+									"minimum": -2147483648,
+									"maximum": 2147483647,
+									"description": ""
+								},
+								"minItems": 4,
+								"maxItems": 4,
+								"description": ""
+							}
+						],
+						"description": ""
+					},
+					"sequence": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"base_delay": {
+									"type": "number",
+									"minimum": -3.4028234663852886e+38,
+									"maximum": 3.4028234663852886e+38,
+									"description": "Amount of time in seconds before starting this step"
+								},
+								"event": {
+									"type": "string",
+									"description": "The event to send to the entity"
+								},
+								"sound_event": {
+									"type": "string",
+									"description": "The sound event to play when this step happens"
+								}
+							},
+							"description": "List of events to send"
+						},
+						"description": "List of events to send"
+					},
+					"start_sound_event": {
+						"type": "string",
+						"description": ""
+					},
+					"weight": {
+						"type": "number",
+						"minimum": -3.4028234663852886e+38,
+						"maximum": 3.4028234663852886e+38,
+						"description": ""
+					}
+				},
+				"description": ""
+			},
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		}
+	},
+	"description": "Allows the mob to send an event to another mob."
+}

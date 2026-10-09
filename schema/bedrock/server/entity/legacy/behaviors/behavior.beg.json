@@ -1,0 +1,138 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"items": {
+			"type": "array",
+			"items": {
+				"anyOf": [
+					{
+						"anyOf": [
+							{
+								"$ref": "../../../../../vanilla/server/item_descriptor.json",
+								"description": "List of items that this mob likes"
+							},
+							{
+								"type": "object",
+								"properties": {
+									"item_tag": {
+										"type": "string",
+										"description": ""
+									}
+								},
+								"additionalProperties": false,
+								"required": [
+									"item_tag"
+								],
+								"description": "List of items that this mob likes"
+							}
+						],
+						"description": "List of items that this mob likes"
+					},
+					{
+						"type": "object",
+						"properties": {
+							"item": {
+								"anyOf": [
+									{
+										"$ref": "../../../../../vanilla/server/item_descriptor.json",
+										"description": ""
+									},
+									{
+										"type": "object",
+										"properties": {
+											"item_tag": {
+												"type": "string",
+												"description": ""
+											}
+										},
+										"additionalProperties": false,
+										"required": [
+											"item_tag"
+										],
+										"description": ""
+									}
+								],
+								"description": ""
+							}
+						},
+						"additionalProperties": false,
+						"required": [
+							"item"
+						],
+						"description": "List of items that this mob likes"
+					}
+				],
+				"description": "List of items that this mob likes"
+			},
+			"description": "List of items that this mob likes"
+		},
+		"look_distance": {
+			"type": "number",
+			"description": "Distance in blocks the mob will beg from"
+		},
+		"look_time": {
+			"anyOf": [
+				{
+					"type": "integer",
+					"description": "The range of time in seconds this mob will stare at the player holding a food they like, begging for it"
+				},
+				{
+					"type": "string",
+					"description": "The range of time in seconds this mob will stare at the player holding a food they like, begging for it"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"description": "The range of time in seconds this mob will stare at the player holding a food they like, begging for it"
+					},
+					"minItems": 1,
+					"description": "The range of time in seconds this mob will stare at the player holding a food they like, begging for it"
+				},
+				{
+					"type": "object",
+					"properties": {
+						"min": {
+							"type": "integer",
+							"description": ""
+						},
+						"max": {
+							"type": "integer",
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": "The range of time in seconds this mob will stare at the player holding a food they like, begging for it"
+				}
+			],
+			"description": "The range of time in seconds this mob will stare at the player holding a food they like, begging for it"
+		},
+		"max_look_time": {
+			"type": "integer",
+			"description": ""
+		},
+		"min_look_time": {
+			"type": "integer",
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		}
+	},
+	"description": "Allows this mob to look at and follow the player that holds food they like."
+}

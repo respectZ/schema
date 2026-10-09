@@ -1,0 +1,40 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"goal_radius": {
+			"type": "number",
+			"description": "Distance in blocks within the mob considers it has reached the goal. This is the \"wiggle room\" to stop the AI from bouncing back and forth trying to reach a specific spot"
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"search_height": {
+			"type": "integer",
+			"description": "Height in blocks from the owner the pet can be to sleep with owner."
+		},
+		"search_range": {
+			"type": "integer",
+			"description": "The distance in blocks from the owner the pet can be to sleep with owner."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		}
+	},
+	"description": "Allows the pet mob to move onto a bed with its owner while sleeping."
+}

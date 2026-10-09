@@ -1,0 +1,151 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"affected_by_griefing_rule": {
+			"type": "boolean",
+			"description": "If true, whether the goal is affected by the mob griefing game rule."
+		},
+		"can_place": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "Filters for if the entity should try to place its block. Self and Target are set."
+		},
+		"chance": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Chance each tick for the entity to try and place a block."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": [
+							"move",
+							"look",
+							"jump"
+						],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"on_place": {
+			"type": "object",
+			"properties": {
+				"event": {
+					"type": "string",
+					"default": "",
+					"description": ""
+				},
+				"filters": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": ""
+				},
+				"target": {
+					"type": "string",
+					"anyOf": [
+						{
+							"$ref": "../../../../../vanilla/server/filter/general.json#/$defs/filter_subject",
+							"description": ""
+						},
+						{
+							"pattern": "^(?:[sS][eE][lL][fF]|[oO][tT][hH][eE][rR]|[pP][lL][aA][yY][eE][rR]|[tT][aA][rR][gG][eE][tT]|[pP][aA][rR][eE][nN][tT]|[bB][aA][bB][yY]|[bB][lL][oO][cC][kK]|[dD][aA][mM][aA][gG][eE][rR]|[hH][oO][lL][dD][eE][rR]|[iI][tT][eE][mM])$(?![\\s\\S])",
+							"description": ""
+						}
+					],
+					"default": "self",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": "Trigger ran if the entity does place its block. Self, Target, and Block are set."
+		},
+		"placeable_carried_blocks": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"description": "Block descriptors for which blocks are valid to be placed from the entity's carried item, if empty all blocks are valid."
+			},
+			"description": "Block descriptors for which blocks are valid to be placed from the entity's carried item, if empty all blocks are valid."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"randomly_placeable_blocks": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"block": {
+						"type": "string",
+						"description": ""
+					},
+					"filter": {
+						"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+						"description": ""
+					},
+					"weight": {
+						"type": "integer",
+						"minimum": -2147483648,
+						"maximum": 2147483647,
+						"description": ""
+					}
+				},
+				"description": "Weighted block descriptors for which blocks should be randomly placed, if empty the entity will try to place its carried block from placeable_carried_blocks."
+			},
+			"description": "Weighted block descriptors for which blocks should be randomly placed, if empty the entity will try to place its carried block from placeable_carried_blocks."
+		},
+		"xz_range": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"max": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"description": ""
+				},
+				"min": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"description": ""
+				}
+			},
+			"description": "XZ range from which the entity will try and place blocks in."
+		},
+		"y_range": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"max": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"description": ""
+				},
+				"min": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"description": ""
+				}
+			},
+			"description": "Y range from which the entity will try and place blocks in."
+		}
+	},
+	"description": "Allows the entity to place a block."
+}

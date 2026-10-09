@@ -1,0 +1,539 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"title": "Entity Behavior Goals",
+	"properties": {
+		"minecraft:behavior.admire_item": {
+			"$ref": "../../legacy/behaviors/behavior.admire_item.json"
+		},
+		"minecraft:behavior.avoid_block": {
+			"$ref": "../../legacy/behaviors/behavior.avoid_block.json"
+		},
+		"minecraft:behavior.avoid_mob_type": {
+			"$ref": "../../legacy/behaviors/behavior.avoid_mob_type.json"
+		},
+		"minecraft:behavior.barter": {
+			"$ref": "../../legacy/behaviors/behavior.barter.json"
+		},
+		"minecraft:behavior.beg": {
+			"$ref": "../../legacy/behaviors/behavior.beg.json"
+		},
+		"minecraft:behavior.break_door": {
+			"$ref": "../../legacy/behaviors/behavior.break_door.json"
+		},
+		"minecraft:behavior.breed": {
+			"$ref": "../../1.21.90/behaviors/behavior.breed.json"
+		},
+		"minecraft:behavior.celebrate": {
+			"$ref": "../../legacy/behaviors/behavior.celebrate.json"
+		},
+		"minecraft:behavior.celebrate_survive": {
+			"$ref": "../../legacy/behaviors/behavior.celebrate_survive.json"
+		},
+		"minecraft:behavior.charge_attack": {
+			"$ref": "./behavior.charge_attack.json"
+		},
+		"minecraft:behavior.charge_held_item": {
+			"$ref": "../../legacy/behaviors/behavior.charge_held_item.json"
+		},
+		"minecraft:behavior.circle_around_anchor": {
+			"$ref": "./behavior.circle_around_anchor.json"
+		},
+		"minecraft:behavior.controlled_by_player": {
+			"$ref": "./behavior.controlled_by_player.json"
+		},
+		"minecraft:behavior.croak": {
+			"$ref": "../../legacy/behaviors/behavior.croak.json"
+		},
+		"minecraft:behavior.defend_trusted_target": {
+			"$ref": "../../legacy/behaviors/behavior.defend_trusted_target.json"
+		},
+		"minecraft:behavior.defend_village_target": {
+			"$ref": "../../legacy/behaviors/behavior.defend_village_target.json"
+		},
+		"minecraft:behavior.delayed_attack": {
+			"$ref": "../../legacy/behaviors/behavior.delayed_attack.json"
+		},
+		"minecraft:behavior.dig": {
+			"$ref": "../../legacy/behaviors/behavior.dig.json"
+		},
+		"minecraft:behavior.door_interact": {
+			"$ref": "../../legacy/behaviors/behavior.door_interact.json"
+		},
+		"minecraft:behavior.dragonchargeplayer": {
+			"$ref": "../../legacy/behaviors/behavior.dragonchargeplayer.json"
+		},
+		"minecraft:behavior.dragondeath": {
+			"$ref": "../../legacy/behaviors/behavior.dragondeath.json"
+		},
+		"minecraft:behavior.dragonflaming": {
+			"$ref": "./behavior.dragonflaming.json"
+		},
+		"minecraft:behavior.dragonholdingpattern": {
+			"$ref": "../../legacy/behaviors/behavior.dragonholdingpattern.json"
+		},
+		"minecraft:behavior.dragonlanding": {
+			"$ref": "../../legacy/behaviors/behavior.dragonlanding.json"
+		},
+		"minecraft:behavior.dragonscanning": {
+			"$ref": "../../legacy/behaviors/behavior.dragonscanning.json"
+		},
+		"minecraft:behavior.dragonstrafeplayer": {
+			"$ref": "../../legacy/behaviors/behavior.dragonstrafeplayer.json"
+		},
+		"minecraft:behavior.dragontakeoff": {
+			"$ref": "../../legacy/behaviors/behavior.dragontakeoff.json"
+		},
+		"minecraft:behavior.drink_milk": {
+			"$ref": "../../legacy/behaviors/behavior.drink_milk.json"
+		},
+		"minecraft:behavior.drink_potion": {
+			"$ref": "../../legacy/behaviors/behavior.drink_potion.json"
+		},
+		"minecraft:behavior.drop_item_for": {
+			"$ref": "../../1.16.100/behaviors/behavior.drop_item_for.json"
+		},
+		"minecraft:behavior.eat_block": {
+			"$ref": "../../legacy/behaviors/behavior.eat_block.json"
+		},
+		"minecraft:behavior.eat_carried_item": {
+			"$ref": "../../legacy/behaviors/behavior.eat_carried_item.json"
+		},
+		"minecraft:behavior.eat_mob": {
+			"$ref": "./behavior.eat_mob.json"
+		},
+		"minecraft:behavior.emerge": {
+			"$ref": "../../legacy/behaviors/behavior.emerge.json"
+		},
+		"minecraft:behavior.equip_item": {
+			"$ref": "../../legacy/behaviors/behavior.equip_item.json"
+		},
+		"minecraft:behavior.explore_outskirts": {
+			"$ref": "../../1.16.100/behaviors/behavior.explore_outskirts.json"
+		},
+		"minecraft:behavior.fertilize_farm_block": {
+			"$ref": "../../legacy/behaviors/behavior.fertilize_farm_block.json"
+		},
+		"minecraft:behavior.find_cover": {
+			"$ref": "../../legacy/behaviors/behavior.find_cover.json"
+		},
+		"minecraft:behavior.find_mount": {
+			"$ref": "../../legacy/behaviors/behavior.find_mount.json"
+		},
+		"minecraft:behavior.find_underwater_treasure": {
+			"$ref": "../../legacy/behaviors/behavior.find_underwater_treasure.json"
+		},
+		"minecraft:behavior.fire_at_target": {
+			"$ref": "../../legacy/behaviors/behavior.fire_at_target.json"
+		},
+		"minecraft:behavior.flee_sun": {
+			"$ref": "../../legacy/behaviors/behavior.flee_sun.json"
+		},
+		"minecraft:behavior.float": {
+			"$ref": "../../legacy/behaviors/behavior.float.json"
+		},
+		"minecraft:behavior.float_tempt": {
+			"$ref": "../../legacy/behaviors/behavior.float_tempt.json"
+		},
+		"minecraft:behavior.float_wander": {
+			"$ref": "../../1.21.70/behaviors/behavior.float_wander.json"
+		},
+		"minecraft:behavior.follow_caravan": {
+			"$ref": "../../legacy/behaviors/behavior.follow_caravan.json"
+		},
+		"minecraft:behavior.follow_mob": {
+			"$ref": "../../legacy/behaviors/behavior.follow_mob.json"
+		},
+		"minecraft:behavior.follow_owner": {
+			"$ref": "../../1.21.20/behaviors/behavior.follow_owner.json"
+		},
+		"minecraft:behavior.follow_parent": {
+			"$ref": "../../legacy/behaviors/behavior.follow_parent.json"
+		},
+		"minecraft:behavior.follow_target_captain": {
+			"$ref": "../../legacy/behaviors/behavior.follow_target_captain.json",
+			"deprecated": true
+		},
+		"minecraft:behavior.go_and_give_items_to_noteblock": {
+			"$ref": "../../legacy/behaviors/behavior.go_and_give_items_to_noteblock.json"
+		},
+		"minecraft:behavior.go_and_give_items_to_owner": {
+			"$ref": "../../legacy/behaviors/behavior.go_and_give_items_to_owner.json"
+		},
+		"minecraft:behavior.go_home": {
+			"$ref": "../../1.18.20/behaviors/behavior.go_home.json"
+		},
+		"minecraft:behavior.guardian_attack": {
+			"$ref": "../../legacy/behaviors/behavior.guardian_attack.json"
+		},
+		"minecraft:behavior.harvest_farm_block": {
+			"$ref": "../../legacy/behaviors/behavior.harvest_farm_block.json"
+		},
+		"minecraft:behavior.hide": {
+			"$ref": "../../legacy/behaviors/behavior.hide.json"
+		},
+		"minecraft:behavior.hold_ground": {
+			"$ref": "../../legacy/behaviors/behavior.hold_ground.json"
+		},
+		"minecraft:behavior.hover": {
+			"$ref": "../../legacy/behaviors/behavior.hover.json"
+		},
+		"minecraft:behavior.hurt_by_target": {
+			"$ref": "../../legacy/behaviors/behavior.hurt_by_target.json"
+		},
+		"minecraft:behavior.inspect_bookshelf": {
+			"$ref": "../../legacy/behaviors/behavior.inspect_bookshelf.json"
+		},
+		"minecraft:behavior.investigate_suspicious_location": {
+			"$ref": "../../legacy/behaviors/behavior.investigate_suspicious_location.json"
+		},
+		"minecraft:behavior.jump_around_target": {
+			"$ref": "../../legacy/behaviors/behavior.jump_around_target.json"
+		},
+		"minecraft:behavior.jump_to_block": {
+			"$ref": "../../legacy/behaviors/behavior.jump_to_block.json"
+		},
+		"minecraft:behavior.knockback_roar": {
+			"$ref": "../../1.18.20/behaviors/behavior.knockback_roar.json"
+		},
+		"minecraft:behavior.lay_down": {
+			"$ref": "../../legacy/behaviors/behavior.lay_down.json"
+		},
+		"minecraft:behavior.lay_egg": {
+			"$ref": "../../legacy/behaviors/behavior.lay_egg.json"
+		},
+		"minecraft:behavior.leap_at_target": {
+			"$ref": "../../1.16.0/behaviors/behavior.leap_at_target.json"
+		},
+		"minecraft:behavior.look_at_entity": {
+			"$ref": "../../legacy/behaviors/behavior.look_at_entity.json"
+		},
+		"minecraft:behavior.look_at_player": {
+			"$ref": "../../legacy/behaviors/behavior.look_at_player.json"
+		},
+		"minecraft:behavior.look_at_target": {
+			"$ref": "../../legacy/behaviors/behavior.look_at_target.json"
+		},
+		"minecraft:behavior.look_at_trading_player": {
+			"$ref": "../../legacy/behaviors/behavior.look_at_trading_player.json"
+		},
+		"minecraft:behavior.make_love": {
+			"$ref": "../../legacy/behaviors/behavior.make_love.json"
+		},
+		"minecraft:behavior.melee_attack": {
+			"$ref": "../../1.16.0/behaviors/behavior.melee_attack.json"
+		},
+		"minecraft:behavior.melee_box_attack": {
+			"$ref": "../../legacy/behaviors/behavior.melee_box_attack.json"
+		},
+		"minecraft:behavior.mingle": {
+			"$ref": "../../legacy/behaviors/behavior.mingle.json"
+		},
+		"minecraft:behavior.mount_pathing": {
+			"$ref": "../../legacy/behaviors/behavior.mount_pathing.json"
+		},
+		"minecraft:behavior.move_around_target": {
+			"$ref": "../../legacy/behaviors/behavior.move_around_target.json"
+		},
+		"minecraft:behavior.move_indoors": {
+			"$ref": "../../legacy/behaviors/behavior.move_indoors.json"
+		},
+		"minecraft:behavior.move_outdoors": {
+			"$ref": "../../legacy/behaviors/behavior.move_outdoors.json"
+		},
+		"minecraft:behavior.move_through_village": {
+			"$ref": "../../legacy/behaviors/behavior.move_through_village.json"
+		},
+		"minecraft:behavior.move_to_block": {
+			"$ref": "../../legacy/behaviors/behavior.move_to_block.json"
+		},
+		"minecraft:behavior.move_to_land": {
+			"$ref": "../../legacy/behaviors/behavior.move_to_land.json"
+		},
+		"minecraft:behavior.move_to_lava": {
+			"$ref": "../../legacy/behaviors/behavior.move_to_lava.json"
+		},
+		"minecraft:behavior.move_to_liquid": {
+			"$ref": "../../legacy/behaviors/behavior.move_to_liquid.json"
+		},
+		"minecraft:behavior.move_to_poi": {
+			"$ref": "../../legacy/behaviors/behavior.move_to_poi.json"
+		},
+		"minecraft:behavior.move_to_random_block": {
+			"$ref": "../../legacy/behaviors/behavior.move_to_random_block.json"
+		},
+		"minecraft:behavior.move_to_village": {
+			"$ref": "../../legacy/behaviors/behavior.move_to_village.json"
+		},
+		"minecraft:behavior.move_to_water": {
+			"$ref": "../../legacy/behaviors/behavior.move_to_water.json"
+		},
+		"minecraft:behavior.move_towards_dwelling_restriction": {
+			"$ref": "../../legacy/behaviors/behavior.move_towards_dwelling_restriction.json"
+		},
+		"minecraft:behavior.move_towards_home_restriction": {
+			"$ref": "../../legacy/behaviors/behavior.move_towards_home_restriction.json"
+		},
+		"minecraft:behavior.move_towards_target": {
+			"$ref": "../../legacy/behaviors/behavior.move_towards_target.json"
+		},
+		"minecraft:behavior.nap": {
+			"$ref": "../../legacy/behaviors/behavior.nap.json"
+		},
+		"minecraft:behavior.nearest_attackable_target": {
+			"$ref": "../../1.16.0/behaviors/behavior.nearest_attackable_target.json"
+		},
+		"minecraft:behavior.nearest_prioritized_attackable_target": {
+			"$ref": "../../1.16.0/behaviors/behavior.nearest_prioritized_attackable_target.json"
+		},
+		"minecraft:behavior.ocelot_sit_on_block": {
+			"$ref": "../../legacy/behaviors/behavior.ocelot_sit_on_block.json"
+		},
+		"minecraft:behavior.ocelotattack": {
+			"$ref": "../../legacy/behaviors/behavior.ocelotattack.json"
+		},
+		"minecraft:behavior.offer_flower": {
+			"$ref": "../../1.19.50/behaviors/behavior.offer_flower.json"
+		},
+		"minecraft:behavior.open_door": {
+			"$ref": "../../legacy/behaviors/behavior.open_door.json"
+		},
+		"minecraft:behavior.owner_hurt_by_target": {
+			"$ref": "../../legacy/behaviors/behavior.owner_hurt_by_target.json"
+		},
+		"minecraft:behavior.owner_hurt_target": {
+			"$ref": "../../legacy/behaviors/behavior.owner_hurt_target.json"
+		},
+		"minecraft:behavior.panic": {
+			"$ref": "../../1.21.0/behaviors/behavior.panic.json"
+		},
+		"minecraft:behavior.pet_sleep_with_owner": {
+			"$ref": "../../legacy/behaviors/behavior.pet_sleep_with_owner.json"
+		},
+		"minecraft:behavior.pickup_items": {
+			"$ref": "../../legacy/behaviors/behavior.pickup_items.json"
+		},
+		"minecraft:behavior.place_block": {
+			"$ref": "./behavior.place_block.json"
+		},
+		"minecraft:behavior.play": {
+			"$ref": "../../1.19.40/behaviors/behavior.play.json"
+		},
+		"minecraft:behavior.play_dead": {
+			"$ref": "../../legacy/behaviors/behavior.play_dead.json"
+		},
+		"minecraft:behavior.player_ride_tamed": {
+			"$ref": "../../legacy/behaviors/behavior.player_ride_tamed.json"
+		},
+		"minecraft:behavior.raid_garden": {
+			"$ref": "../../legacy/behaviors/behavior.raid_garden.json"
+		},
+		"minecraft:behavior.ram_attack": {
+			"$ref": "../../legacy/behaviors/behavior.ram_attack.json"
+		},
+		"minecraft:behavior.random_breach": {
+			"$ref": "../../legacy/behaviors/behavior.random_breach.json"
+		},
+		"minecraft:behavior.random_fly": {
+			"$ref": "../../legacy/behaviors/behavior.random_fly.json"
+		},
+		"minecraft:behavior.random_hover": {
+			"$ref": "../../legacy/behaviors/behavior.random_hover.json"
+		},
+		"minecraft:behavior.random_look_around": {
+			"$ref": "../../legacy/behaviors/behavior.random_look_around.json"
+		},
+		"minecraft:behavior.random_look_around_and_sit": {
+			"$ref": "../../legacy/behaviors/behavior.random_look_around_and_sit.json"
+		},
+		"minecraft:behavior.random_search_and_dig": {
+			"$ref": "../../legacy/behaviors/behavior.random_search_and_dig.json"
+		},
+		"minecraft:behavior.random_sitting": {
+			"$ref": "../../legacy/behaviors/behavior.random_sitting.json"
+		},
+		"minecraft:behavior.random_stroll": {
+			"$ref": "../../legacy/behaviors/behavior.random_stroll.json"
+		},
+		"minecraft:behavior.random_swim": {
+			"$ref": "../../legacy/behaviors/behavior.random_swim.json"
+		},
+		"minecraft:behavior.ranged_attack": {
+			"$ref": "../../1.16.0/behaviors/behavior.ranged_attack.json"
+		},
+		"minecraft:behavior.receive_love": {
+			"$ref": "../../legacy/behaviors/behavior.receive_love.json"
+		},
+		"minecraft:behavior.restrict_open_door": {
+			"$ref": "../../legacy/behaviors/behavior.restrict_open_door.json"
+		},
+		"minecraft:behavior.restrict_sun": {
+			"$ref": "../../legacy/behaviors/behavior.restrict_sun.json"
+		},
+		"minecraft:behavior.rise_to_liquid_level": {
+			"$ref": "../../legacy/behaviors/behavior.rise_to_liquid_level.json"
+		},
+		"minecraft:behavior.roar": {
+			"$ref": "../../legacy/behaviors/behavior.roar.json"
+		},
+		"minecraft:behavior.roll": {
+			"$ref": "../../legacy/behaviors/behavior.roll.json"
+		},
+		"minecraft:behavior.run_around_like_crazy": {
+			"$ref": "../../legacy/behaviors/behavior.run_around_like_crazy.json"
+		},
+		"minecraft:behavior.scared": {
+			"$ref": "../../legacy/behaviors/behavior.scared.json"
+		},
+		"minecraft:behavior.send_event": {
+			"$ref": "../../legacy/behaviors/behavior.send_event.json"
+		},
+		"minecraft:behavior.share_items": {
+			"$ref": "../../legacy/behaviors/behavior.share_items.json"
+		},
+		"minecraft:behavior.silverfish_merge_with_stone": {
+			"$ref": "../../legacy/behaviors/behavior.silverfish_merge_with_stone.json"
+		},
+		"minecraft:behavior.silverfish_wake_up_friends": {
+			"$ref": "../../legacy/behaviors/behavior.silverfish_wake_up_friends.json"
+		},
+		"minecraft:behavior.skeleton_horse_trap": {
+			"$ref": "../../legacy/behaviors/behavior.skeleton_horse_trap.json"
+		},
+		"minecraft:behavior.sleep": {
+			"$ref": "../../1.19.0/behaviors/behavior.sleep.json"
+		},
+		"minecraft:behavior.slime_attack": {
+			"$ref": "../../1.16.0/behaviors/behavior.slime_attack.json"
+		},
+		"minecraft:behavior.slime_float": {
+			"$ref": "../../legacy/behaviors/behavior.slime_float.json"
+		},
+		"minecraft:behavior.slime_keep_on_jumping": {
+			"$ref": "../../legacy/behaviors/behavior.slime_keep_on_jumping.json"
+		},
+		"minecraft:behavior.slime_random_direction": {
+			"$ref": "../../legacy/behaviors/behavior.slime_random_direction.json"
+		},
+		"minecraft:behavior.snacking": {
+			"$ref": "../../legacy/behaviors/behavior.snacking.json"
+		},
+		"minecraft:behavior.sneeze": {
+			"$ref": "../../legacy/behaviors/behavior.sneeze.json"
+		},
+		"minecraft:behavior.sniff": {
+			"$ref": "../../legacy/behaviors/behavior.sniff.json"
+		},
+		"minecraft:behavior.sonic_boom": {
+			"$ref": "../../legacy/behaviors/behavior.sonic_boom.json"
+		},
+		"minecraft:behavior.squid_dive": {
+			"$ref": "../../legacy/behaviors/behavior.squid_dive.json"
+		},
+		"minecraft:behavior.squid_flee": {
+			"$ref": "../../legacy/behaviors/behavior.squid_flee.json"
+		},
+		"minecraft:behavior.squid_idle": {
+			"$ref": "../../legacy/behaviors/behavior.squid_idle.json"
+		},
+		"minecraft:behavior.squid_move_away_from_ground": {
+			"$ref": "../../legacy/behaviors/behavior.squid_move_away_from_ground.json"
+		},
+		"minecraft:behavior.squid_out_of_water": {
+			"$ref": "../../legacy/behaviors/behavior.squid_out_of_water.json"
+		},
+		"minecraft:behavior.stalk_and_pounce_on_target": {
+			"$ref": "../../1.16.0/behaviors/behavior.stalk_and_pounce_on_target.json"
+		},
+		"minecraft:behavior.stay_near_noteblock": {
+			"$ref": "../../legacy/behaviors/behavior.stay_near_noteblock.json"
+		},
+		"minecraft:behavior.stay_while_sitting": {
+			"$ref": "../../legacy/behaviors/behavior.stay_while_sitting.json"
+		},
+		"minecraft:behavior.stomp_attack": {
+			"$ref": "../../legacy/behaviors/behavior.stomp_attack.json"
+		},
+		"minecraft:behavior.stomp_turtle_egg": {
+			"$ref": "../../legacy/behaviors/behavior.stomp_turtle_egg.json"
+		},
+		"minecraft:behavior.stroll_towards_village": {
+			"$ref": "../../legacy/behaviors/behavior.stroll_towards_village.json"
+		},
+		"minecraft:behavior.summon_entity": {
+			"$ref": "../../legacy/behaviors/behavior.summon_entity.json"
+		},
+		"minecraft:behavior.swell": {
+			"$ref": "../../legacy/behaviors/behavior.swell.json"
+		},
+		"minecraft:behavior.swim_idle": {
+			"$ref": "../../legacy/behaviors/behavior.swim_idle.json"
+		},
+		"minecraft:behavior.swim_up_for_breath": {
+			"$ref": "../../legacy/behaviors/behavior.swim_up_for_breath.json"
+		},
+		"minecraft:behavior.swim_wander": {
+			"$ref": "../../legacy/behaviors/behavior.swim_wander.json"
+		},
+		"minecraft:behavior.swim_with_entity": {
+			"$ref": "../../legacy/behaviors/behavior.swim_with_entity.json"
+		},
+		"minecraft:behavior.swoop_attack": {
+			"$ref": "../../legacy/behaviors/behavior.swoop_attack.json"
+		},
+		"minecraft:behavior.take_block": {
+			"$ref": "./behavior.take_block.json"
+		},
+		"minecraft:behavior.take_flower": {
+			"$ref": "../../1.19.50/behaviors/behavior.take_flower.json"
+		},
+		"minecraft:behavior.target_when_pushed": {
+			"$ref": "../../legacy/behaviors/behavior.target_when_pushed.json"
+		},
+		"minecraft:behavior.teleport_to_owner": {
+			"$ref": "../../legacy/behaviors/behavior.teleport_to_owner.json"
+		},
+		"minecraft:behavior.tempt": {
+			"$ref": "../../legacy/behaviors/behavior.tempt.json"
+		},
+		"minecraft:behavior.timer_flag_1": {
+			"$ref": "../../legacy/behaviors/behavior.timer_flag_1.json"
+		},
+		"minecraft:behavior.timer_flag_2": {
+			"$ref": "../../legacy/behaviors/behavior.timer_flag_2.json"
+		},
+		"minecraft:behavior.timer_flag_3": {
+			"$ref": "../../legacy/behaviors/behavior.timer_flag_3.json"
+		},
+		"minecraft:behavior.trade_interest": {
+			"$ref": "../../legacy/behaviors/behavior.trade_interest.json"
+		},
+		"minecraft:behavior.trade_with_player": {
+			"$ref": "../../1.19.60/behaviors/behavior.trade_with_player.json"
+		},
+		"minecraft:behavior.transport_items": {
+			"$ref": "./behavior.transport_items.json"
+		},
+		"minecraft:behavior.vex_copy_owner_target": {
+			"$ref": "../../legacy/behaviors/behavior.vex_copy_owner_target.json"
+		},
+		"minecraft:behavior.vex_random_move": {
+			"$ref": "../../legacy/behaviors/behavior.vex_random_move.json"
+		},
+		"minecraft:behavior.wither_random_attack_pos_goal": {
+			"$ref": "../../legacy/behaviors/behavior.wither_random_attack_pos_goal.json"
+		},
+		"minecraft:behavior.wither_target_highest_damage": {
+			"$ref": "../../legacy/behaviors/behavior.wither_target_highest_damage.json"
+		},
+		"minecraft:behavior.work": {
+			"$ref": "../../legacy/behaviors/behavior.work.json"
+		},
+		"minecraft:behavior.work_composter": {
+			"$ref": "../../legacy/behaviors/behavior.work_composter.json"
+		},
+		"minecraft:wither_target_highest_damage": {
+			"$ref": "../../legacy/behaviors/wither_target_highest_damage.json"
+		}
+	}
+}

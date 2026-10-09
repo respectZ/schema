@@ -1,0 +1,35 @@
+{
+	"type": "object",
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"jump",
+					"look",
+					"move"
+				],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"default": 1,
+			"description": "This multiplier modifies the entity's speed when moving towards its restriction."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows entities with the \"minecraft:dweller\" component to move toward their Village area that the entity should be restricted to."
+}

@@ -1,0 +1,32 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"start_distance": {
+			"type": "number",
+			"description": "This mob starts swelling when a target is at least this many blocks away"
+		},
+		"stop_distance": {
+			"type": "number",
+			"description": "This mob stops swelling when a target has moved away at least this many blocks"
+		}
+	},
+	"description": "Allows the creeper to swell up when a player is nearby. It can only be used by Creepers."
+}

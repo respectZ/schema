@@ -1,0 +1,57 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": [
+							"move",
+							"look",
+							"jump"
+						],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"material_type": {
+			"type": "string",
+			"description": "The material the mob is traveling in. An air block will only be considered valid to move to with a block of this material below it. Options are: \"water\", \"lava\", or \"any\"."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"search_height": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"description": "The height (in blocks) above the mob's current position that it will search for a valid air block to move to. If a valid block cannot be found, the mob will move to the position this many blocks above it."
+		},
+		"search_radius": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"description": "The radius (in blocks) around the mob's current position that it will search for a valid air block to move to."
+		},
+		"speed_mod": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Movement speed multiplier of the mob when using this Goal."
+		}
+	},
+	"description": "Allows the mob to try to move to air once it is close to running out of its total breathable supply. Requires \"minecraft:breathable\"."
+}

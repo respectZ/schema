@@ -1,0 +1,81 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"blocks": {
+			"anyOf": [
+				{
+					"$ref": "../../../../../vanilla/server/block_descriptor.json",
+					"description": "Blocks that the mob is looking for to eat/raid"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../../../../vanilla/server/block_descriptor.json",
+						"description": "Blocks that the mob is looking for to eat/raid"
+					},
+					"description": "Blocks that the mob is looking for to eat/raid"
+				}
+			],
+			"description": "Blocks that the mob is looking for to eat/raid"
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"eat_delay": {
+			"type": "integer",
+			"description": "Time in seconds between each time it eats/raids"
+		},
+		"full_delay": {
+			"type": "integer",
+			"description": "Amount of time in seconds before this mob wants to eat/raid again after eating its maximum"
+		},
+		"goal_radius": {
+			"type": "number",
+			"description": "Distance in blocks within the mob considers it has reached the goal. This is the \"wiggle room\" to stop the AI from bouncing back and forth trying to reach a specific spot"
+		},
+		"initial_eat_delay": {
+			"type": "integer",
+			"description": "Time in seconds before starting to eat/raid once it arrives at it"
+		},
+		"max_to_eat": {
+			"type": "integer",
+			"description": "Maximum number of crops this entity wants to eat/raid. If set to zero or less then it doesn't have a maximum"
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"search_count": {
+			"type": "integer",
+			"description": ""
+		},
+		"search_height": {
+			"type": "integer",
+			"description": ""
+		},
+		"search_range": {
+			"type": "integer",
+			"description": "Distance in blocks the mob will look for crops to eat"
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"timeout_cooldown": {
+			"type": "number",
+			"description": ""
+		}
+	},
+	"description": "Allows the mob to eat/raid crops out of farms until they are full."
+}

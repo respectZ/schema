@@ -1,0 +1,76 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"broadcast": {
+			"type": "boolean",
+			"description": "Whether to broadcast out the mob's target to other mobs of the same type."
+		},
+		"broadcast_range": {
+			"type": "number",
+			"description": "Range in blocks for how far to broadcast."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"min_radius": {
+			"type": "number",
+			"description": "Minimum distance the target must be for the mob to run this goal."
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"within_radius_event": {
+			"type": "object",
+			"properties": {
+				"event": {
+					"type": "string",
+					"description": ""
+				},
+				"target": {
+					"type": "string",
+					"anyOf": [
+						{
+							"enum": [
+								"self",
+								"other",
+								"player",
+								"target",
+								"parent",
+								"baby",
+								"block",
+								"damager",
+								"holder",
+								"item"
+							],
+							"description": ""
+						},
+						{
+							"pattern": "^(?:[Ss][Ee][Ll][Ff]|[Oo][Tt][Hh][Ee][Rr]|[Pp][Ll][Aa][Yy][Ee][Rr]|[Tt][Aa][Rr][Gg][Ee][Tt]|[Pp][Aa][Rr][Ee][Nn][Tt]|[Bb][Aa][Bb][Yy]|[Bb][Ll][Oo][Cc][Kk]|[Dd][Aa][Mm][Aa][Gg][Ee][Rr]|[Hh][Oo][Ll][Dd][Ee][Rr]|[Ii][Tt][Ee][Mm])$(?![\\s\\S])",
+							"description": ""
+						}
+					],
+					"description": ""
+				},
+				"filters": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": "Event to run when target is within the radius. This event is broadcasted if broadcast is true."
+		}
+	},
+	"description": "The mob freezes and looks at the mob they are targeting."
+}

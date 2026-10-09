@@ -1,0 +1,205 @@
+{
+	"type": "object",
+	"properties": {
+		"affected_by_griefing_rule": {
+			"type": "boolean",
+			"description": "If true, whether the goal is affected by the mob griefing game rule."
+		},
+		"blocks": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/block_descriptor.json",
+				"description": "Block descriptors for which blocks are valid to be taken by the entity, if empty all blocks are valid."
+			},
+			"default": [],
+			"description": "Block descriptors for which blocks are valid to be taken by the entity, if empty all blocks are valid."
+		},
+		"can_take": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "Filters for if the entity should try to take a block. Self and Target are set."
+		},
+		"chance": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Chance each tick for the entity to try and take a block."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"jump",
+					"look",
+					"move"
+				],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"on_take": {
+			"$ref": "../../legacy/components/equippable.json#/$defs/event",
+			"description": "Trigger ran if the entity does take a block. Self, Target, and Block are set."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		},
+		"requires_line_of_sight": {
+			"type": "boolean",
+			"description": "If true, whether the entity needs line of sight to the block they are trying to take."
+		},
+		"xz_range": {
+			"anyOf": [
+				{
+					"type": "number",
+					"exclusiveMinimum": -2147483648,
+					"exclusiveMaximum": 2147483648,
+					"description": "XZ range from which the entity will try and take blocks from."
+				},
+				{
+					"type": "boolean",
+					"description": "XZ range from which the entity will try and take blocks from."
+				},
+				{
+					"type": "array",
+					"items": {
+						"anyOf": [
+							{
+								"type": "number",
+								"exclusiveMinimum": -2147483648,
+								"exclusiveMaximum": 2147483648,
+								"description": "XZ range from which the entity will try and take blocks from."
+							},
+							{
+								"type": "boolean",
+								"description": "XZ range from which the entity will try and take blocks from."
+							}
+						],
+						"description": "XZ range from which the entity will try and take blocks from."
+					},
+					"minItems": 2,
+					"maxItems": 2,
+					"description": "XZ range from which the entity will try and take blocks from."
+				},
+				{
+					"type": "object",
+					"properties": {
+						"range_min": {
+							"anyOf": [
+								{
+									"type": "number",
+									"exclusiveMinimum": -2147483648,
+									"exclusiveMaximum": 2147483648,
+									"description": ""
+								},
+								{
+									"type": "boolean",
+									"description": ""
+								}
+							],
+							"description": ""
+						},
+						"range_max": {
+							"anyOf": [
+								{
+									"type": "number",
+									"exclusiveMinimum": -2147483648,
+									"exclusiveMaximum": 2147483648,
+									"description": ""
+								},
+								{
+									"type": "boolean",
+									"description": ""
+								}
+							],
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": "XZ range from which the entity will try and take blocks from."
+				}
+			],
+			"description": "XZ range from which the entity will try and take blocks from."
+		},
+		"y_range": {
+			"anyOf": [
+				{
+					"type": "number",
+					"exclusiveMinimum": -2147483648,
+					"exclusiveMaximum": 2147483648,
+					"description": "Y range from which the entity will try and take blocks from."
+				},
+				{
+					"type": "boolean",
+					"description": "Y range from which the entity will try and take blocks from."
+				},
+				{
+					"type": "array",
+					"items": {
+						"anyOf": [
+							{
+								"type": "number",
+								"exclusiveMinimum": -2147483648,
+								"exclusiveMaximum": 2147483648,
+								"description": "Y range from which the entity will try and take blocks from."
+							},
+							{
+								"type": "boolean",
+								"description": "Y range from which the entity will try and take blocks from."
+							}
+						],
+						"description": "Y range from which the entity will try and take blocks from."
+					},
+					"minItems": 2,
+					"maxItems": 2,
+					"description": "Y range from which the entity will try and take blocks from."
+				},
+				{
+					"type": "object",
+					"properties": {
+						"range_min": {
+							"anyOf": [
+								{
+									"type": "number",
+									"exclusiveMinimum": -2147483648,
+									"exclusiveMaximum": 2147483648,
+									"description": ""
+								},
+								{
+									"type": "boolean",
+									"description": ""
+								}
+							],
+							"description": ""
+						},
+						"range_max": {
+							"anyOf": [
+								{
+									"type": "number",
+									"exclusiveMinimum": -2147483648,
+									"exclusiveMaximum": 2147483648,
+									"description": ""
+								},
+								{
+									"type": "boolean",
+									"description": ""
+								}
+							],
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": "Y range from which the entity will try and take blocks from."
+				}
+			],
+			"description": "Y range from which the entity will try and take blocks from."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows the entity to take a block from the world and carry it around."
+}

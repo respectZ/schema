@@ -1,0 +1,209 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"can_pickup_any_item": {
+			"type": "boolean",
+			"description": "If true, the mob can pickup any item"
+		},
+		"can_pickup_to_hand_or_equipment": {
+			"type": "boolean",
+			"description": "If true, the mob can pickup items to its hand or armor slots"
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"cooldown_after_being_attacked": {
+			"type": "integer",
+			"description": ""
+		},
+		"excluded_items": {
+			"type": "array",
+			"items": {
+				"anyOf": [
+					{
+						"anyOf": [
+							{
+								"$ref": "../../../../../vanilla/server/item_descriptor.json",
+								"description": "List of items this mob will not pick up"
+							},
+							{
+								"type": "object",
+								"properties": {
+									"item_tag": {
+										"type": "string",
+										"description": ""
+									}
+								},
+								"additionalProperties": false,
+								"required": [
+									"item_tag"
+								],
+								"description": "List of items this mob will not pick up"
+							}
+						],
+						"description": "List of items this mob will not pick up"
+					},
+					{
+						"type": "object",
+						"properties": {
+							"item": {
+								"anyOf": [
+									{
+										"$ref": "../../../../../vanilla/server/item_descriptor.json",
+										"description": ""
+									},
+									{
+										"type": "object",
+										"properties": {
+											"item_tag": {
+												"type": "string",
+												"description": ""
+											}
+										},
+										"additionalProperties": false,
+										"required": [
+											"item_tag"
+										],
+										"description": ""
+									}
+								],
+								"description": ""
+							}
+						},
+						"additionalProperties": false,
+						"required": [
+							"item"
+						],
+						"description": "List of items this mob will not pick up"
+					}
+				],
+				"description": "List of items this mob will not pick up"
+			},
+			"description": "List of items this mob will not pick up"
+		},
+		"goal_radius": {
+			"type": "number",
+			"description": "Distance in blocks within the mob considers it has reached the goal. This is the \"wiggle room\" to stop the AI from bouncing back and forth trying to reach a specific spot"
+		},
+		"max_dist": {
+			"type": "number",
+			"description": "Maximum distance this mob will look for items to pick up"
+		},
+		"on_pickup_item_end": {
+			"type": "object",
+			"properties": {
+				"event": {
+					"type": "string",
+					"description": ""
+				},
+				"target": {
+					"type": "string",
+					"anyOf": [
+						{
+							"enum": [
+								"self",
+								"other",
+								"player",
+								"target",
+								"parent",
+								"baby",
+								"block",
+								"damager",
+								"holder",
+								"item"
+							],
+							"description": ""
+						},
+						{
+							"pattern": "^(?:[Ss][Ee][Ll][Ff]|[Oo][Tt][Hh][Ee][Rr]|[Pp][Ll][Aa][Yy][Ee][Rr]|[Tt][Aa][Rr][Gg][Ee][Tt]|[Pp][Aa][Rr][Ee][Nn][Tt]|[Bb][Aa][Bb][Yy]|[Bb][Ll][Oo][Cc][Kk]|[Dd][Aa][Mm][Aa][Gg][Ee][Rr]|[Hh][Oo][Ll][Dd][Ee][Rr]|[Ii][Tt][Ee][Mm])$(?![\\s\\S])",
+							"description": ""
+						}
+					],
+					"description": ""
+				},
+				"filters": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": "Event to run when this mob either finishes or loses interest in picking up an item"
+		},
+		"on_pickup_item_start": {
+			"type": "object",
+			"properties": {
+				"event": {
+					"type": "string",
+					"description": ""
+				},
+				"target": {
+					"type": "string",
+					"anyOf": [
+						{
+							"enum": [
+								"self",
+								"other",
+								"player",
+								"target",
+								"parent",
+								"baby",
+								"block",
+								"damager",
+								"holder",
+								"item"
+							],
+							"description": ""
+						},
+						{
+							"pattern": "^(?:[Ss][Ee][Ll][Ff]|[Oo][Tt][Hh][Ee][Rr]|[Pp][Ll][Aa][Yy][Ee][Rr]|[Tt][Aa][Rr][Gg][Ee][Tt]|[Pp][Aa][Rr][Ee][Nn][Tt]|[Bb][Aa][Bb][Yy]|[Bb][Ll][Oo][Cc][Kk]|[Dd][Aa][Mm][Aa][Gg][Ee][Rr]|[Hh][Oo][Ll][Dd][Ee][Rr]|[Ii][Tt][Ee][Mm])$(?![\\s\\S])",
+							"description": ""
+						}
+					],
+					"description": ""
+				},
+				"filters": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": "Event to run when this mob moves to pick up an item"
+		},
+		"pickup_based_on_chance": {
+			"type": "boolean",
+			"description": "If true, depending on the difficulty, there is a random chance that the mob may not be able to pickup items"
+		},
+		"pickup_same_items_as_in_hand": {
+			"type": "boolean",
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"search_height": {
+			"type": "integer",
+			"description": ""
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"track_target": {
+			"type": "boolean",
+			"description": "If true, this mob will chase after the target as long as it's a valid target"
+		}
+	},
+	"description": "Allows the mob to pick up items on the ground."
+}

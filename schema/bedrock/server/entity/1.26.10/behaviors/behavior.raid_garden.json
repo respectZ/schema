@@ -1,0 +1,100 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"blocks": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"description": "Blocks that the mob is looking for to eat/raid"
+			},
+			"description": "Blocks that the mob is looking for to eat/raid"
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": [
+							"move",
+							"look",
+							"jump"
+						],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"eat_delay": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": "Time in seconds between each time it eats/raids"
+		},
+		"full_delay": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": "Amount of time in seconds before this mob wants to eat/raid again after eating its maximum"
+		},
+		"goal_radius": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"exclusiveMinimum": 0,
+			"description": "Distance in blocks within the mob considers it has reached the goal. This is the \"wiggle room\" to stop the AI from bouncing back and forth trying to reach a specific spot"
+		},
+		"initial_eat_delay": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": "Time in seconds before starting to eat/raid once it arrives at it"
+		},
+		"max_to_eat": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"description": "Maximum number of crops this entity wants to eat/raid. If set to zero or less then it doesn't have a maximum"
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"search_count": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"search_height": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"exclusiveMinimum": 0,
+			"description": ""
+		},
+		"search_range": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"exclusiveMinimum": 0,
+			"description": "Distance in blocks the mob will look for crops to eat"
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		}
+	},
+	"description": "Allows the mob to eat/raid crops out of farms until they are full."
+}

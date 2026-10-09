@@ -1,0 +1,112 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"event_choices": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"min_activation_range": {
+						"type": "number",
+						"description": ""
+					},
+					"max_activation_range": {
+						"type": "number",
+						"description": ""
+					},
+					"cooldown_time": {
+						"type": "number",
+						"description": ""
+					},
+					"weight": {
+						"type": "number",
+						"description": ""
+					},
+					"cast_duration": {
+						"type": "number",
+						"description": "Time in seconds for the entire event sending process"
+					},
+					"look_at_target": {
+						"type": "boolean",
+						"description": "If true, the mob will face the entity it sends an event to"
+					},
+					"do_casting": {
+						"type": "boolean",
+						"description": ""
+					},
+					"particle_color": {
+						"anyOf": [
+							{
+								"type": "string",
+								"description": ""
+							},
+							{
+								"type": "array",
+								"items": {
+									"type": "integer",
+									"description": ""
+								},
+								"minItems": 3,
+								"description": ""
+							}
+						],
+						"description": ""
+					},
+					"start_sound_event": {
+						"type": "string",
+						"description": ""
+					},
+					"filters": {
+						"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+						"description": ""
+					},
+					"sequence": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"base_delay": {
+									"type": "number",
+									"description": "Amount of time in seconds before starting this step"
+								},
+								"event": {
+									"type": "string",
+									"description": "The event to send to the entity"
+								},
+								"sound_event": {
+									"type": "string",
+									"description": "The sound event to play when this step happens"
+								}
+							},
+							"additionalProperties": false,
+							"description": "List of events to send"
+						},
+						"description": "List of events to send"
+					}
+				},
+				"additionalProperties": false,
+				"description": ""
+			},
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		}
+	},
+	"description": "Allows the mob to send an event to another mob."
+}

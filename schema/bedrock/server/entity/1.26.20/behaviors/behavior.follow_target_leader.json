@@ -1,0 +1,48 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"always_look_for_leader": {
+			"type": "boolean",
+			"description": "If true, the mob will always search for a valid leader to follow if none is found or current leader is not valid anymore"
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"follow_distance": {
+			"type": "number",
+			"description": "Defines the distance in blocks the mob will stay from its target while following."
+		},
+		"leader_filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "The filters to use when determining if a mob is a suitable leader or not."
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"search_cooldown": {
+			"type": "integer",
+			"description": "Number of ticks that must pass before a new search is initiated after a target is not found, lost, or becomes invalid."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"description": ""
+		},
+		"within_radius": {
+			"type": "number",
+			"description": "Defines the maximum distance in blocks a mob can get from its target leader before giving up trying to follow it."
+		}
+	},
+	"description": "Allows mob to move towards its target leader."
+}

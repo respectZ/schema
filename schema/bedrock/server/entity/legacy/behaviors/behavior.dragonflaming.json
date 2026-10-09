@@ -1,0 +1,74 @@
+{
+	"type": "object",
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"jump",
+					"look",
+					"move"
+				],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"cooldown_time": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e+38,
+			"default": 10.0,
+			"description": "Time (in seconds) between each start of the cycle to roar, then breath flame."
+		},
+		"flame_time": {
+			"type": "number",
+			"exclusiveMinimum": 0.0,
+			"maximum": 3.4028234663852886e+38,
+			"default": 0.5,
+			"description": "Time (in seconds), after roar, to breath flame."
+		},
+		"ground_flame_count": {
+			"type": "integer",
+			"exclusiveMinimum": 0,
+			"maximum": 2147483647,
+			"default": 4,
+			"description": "Number of ground flame-breath attacks to use before flight-takeoff."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		},
+		"roar_time": {
+			"type": "number",
+			"exclusiveMinimum": 0.0,
+			"maximum": 3.4028234663852886e+38,
+			"default": 2.0,
+			"description": "Time (in seconds) to roar, before breathing flame."
+		},
+		"smoke_color": {
+			"type": "string",
+			"description": ""
+		},
+		"smoke_radius": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e+38,
+			"default": 5.0,
+			"description": ""
+		},
+		"smoke_time": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e+38,
+			"default": 10.0,
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows this entity to use a flame-breath attack. Can only be used by the Ender Dragon."
+}

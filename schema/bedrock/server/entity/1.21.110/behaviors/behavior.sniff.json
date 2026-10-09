@@ -1,0 +1,78 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": [
+							"move",
+							"look",
+							"jump"
+						],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"cooldown_range": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"max": {
+					"type": "number",
+					"minimum": -3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e+38,
+					"description": ""
+				},
+				"min": {
+					"type": "number",
+					"minimum": -3.4028234663852886e+38,
+					"maximum": 3.4028234663852886e+38,
+					"description": ""
+				}
+			},
+			"description": "Cooldown range between sniffs in seconds"
+		},
+		"duration": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Sniffing duration in seconds"
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"sniffing_radius": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Mob detection radius"
+		},
+		"suspicion_radius_horizontal": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Mob suspicion horizontal radius. When a player is within this radius horizontally, the anger level towards that player is increased"
+		},
+		"suspicion_radius_vertical": {
+			"type": "number",
+			"minimum": 1.0,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Mob suspicion vertical radius. When a player is within this radius vertically, the anger level towards that player is increased"
+		}
+	},
+	"description": "Allows this entity to detect the nearest player within \"sniffing_radius\" and update its \"minecraft:suspect_tracking\" component state"
+}

@@ -1,0 +1,53 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"add_random_time_range": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"description": "Additional time (in whole seconds), chosen randomly in the range of [0, \"add_random_time_range\"], to add to \"min_change_direction_time\"."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": [
+							"move",
+							"look",
+							"jump"
+						],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"min_change_direction_time": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "Constant minimum time (in seconds) to wait before choosing a new direction."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"turn_range": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"description": "Maximum rotation angle range (in degrees) when randomly choosing a new direction."
+		}
+	},
+	"description": "Allows the entity to move in random directions like a slime."
+}

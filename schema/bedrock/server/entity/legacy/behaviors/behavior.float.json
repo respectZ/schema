@@ -1,0 +1,36 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"chance_per_tick_to_float": {
+			"type": "number",
+			"description": "The chance per tick to cause an upward impulse."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"sink_with_passengers": {
+			"type": "boolean",
+			"description": "If true, the mob will keep sinking as long as it has passengers."
+		},
+		"time_under_water_to_dismount_passengers": {
+			"type": "number",
+			"description": "Time in seconds that a floating vehicles head can be underwater before it causes its passengers to dismount."
+		}
+	},
+	"description": "Allows the mob to stay afloat while swimming. Passengers will be kicked out the moment the mob's head goes underwater, which may not happen for tall mobs."
+}

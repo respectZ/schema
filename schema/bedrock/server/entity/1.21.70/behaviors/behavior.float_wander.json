@@ -1,0 +1,106 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"additional_collision_buffer": {
+			"type": "boolean",
+			"description": "If true, the mob will have an additional buffer zone around it to avoid collisions with blocks when picking a position to wander to."
+		},
+		"allow_navigating_through_liquids": {
+			"type": "boolean",
+			"description": "If true allows the mob to navigate through liquids on its way to the target position."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"float_duration": {
+			"anyOf": [
+				{
+					"type": "number",
+					"description": "Range of time in seconds the mob will float around before landing and choosing to do something else"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "number",
+						"description": "Range of time in seconds the mob will float around before landing and choosing to do something else"
+					},
+					"minItems": 2,
+					"maxItems": 2,
+					"description": "Range of time in seconds the mob will float around before landing and choosing to do something else"
+				},
+				{
+					"type": "object",
+					"properties": {
+						"range_min": {
+							"type": "number",
+							"description": ""
+						},
+						"range_max": {
+							"type": "number",
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": "Range of time in seconds the mob will float around before landing and choosing to do something else"
+				}
+			],
+			"description": "Range of time in seconds the mob will float around before landing and choosing to do something else"
+		},
+		"float_wander_has_move_control": {
+			"type": "boolean",
+			"description": "If true, the MoveControl flag will be added to the behavior which means that it can no longer be active at the same time as other behaviors with MoveControl."
+		},
+		"must_reach": {
+			"type": "boolean",
+			"description": "If true, the point has to be reachable to be a valid target"
+		},
+		"navigate_around_surface": {
+			"type": "boolean",
+			"description": "If true, will prioritize finding random positions in the vicinity of surfaces, i.e. blocks that are not Air or Liquid."
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"random_reselect": {
+			"type": "boolean",
+			"description": "If true, the mob will randomly pick a new point while moving to the previously selected one"
+		},
+		"surface_xz_dist": {
+			"type": "integer",
+			"description": "The horizontal distance in blocks that the goal will check for a surface from a candidate position. Only valid when `navigate_around_surface` is true."
+		},
+		"surface_y_dist": {
+			"type": "integer",
+			"description": "The vertical distance in blocks that the goal will check for a surface from a candidate position. Only valid when `navigate_around_surface` is true."
+		},
+		"use_home_position_restriction": {
+			"type": "boolean",
+			"description": "If true, the mob will respect home position restrictions when choosing new target positions. If false, it will choose target position without considering home restrictions"
+		},
+		"xz_dist": {
+			"type": "integer",
+			"description": "Distance in blocks on ground that the mob will look for a new spot to move to. Must be at least 1"
+		},
+		"y_dist": {
+			"type": "integer",
+			"description": "Distance in blocks that the mob will look up or down for a new spot to move to. Must be at least 1"
+		},
+		"y_offset": {
+			"type": "number",
+			"description": "Height in blocks to add to the selected target position"
+		}
+	},
+	"description": "Allows the mob to float around like the Ghast."
+}

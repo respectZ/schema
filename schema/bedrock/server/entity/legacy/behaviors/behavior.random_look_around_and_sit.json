@@ -1,0 +1,101 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"continue_if_leashed": {
+			"type": "boolean",
+			"description": "If the goal should continue to be used as long as the mob is leashed."
+		},
+		"continue_sitting_on_reload": {
+			"type": "boolean",
+			"description": "The mob will stay sitting on reload."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"look_time": {
+			"anyOf": [
+				{
+					"type": "integer",
+					"description": ""
+				},
+				{
+					"type": "string",
+					"description": ""
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"description": ""
+					},
+					"minItems": 1,
+					"description": ""
+				},
+				{
+					"type": "object",
+					"properties": {
+						"min": {
+							"type": "integer",
+							"description": ""
+						},
+						"max": {
+							"type": "integer",
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": ""
+				}
+			],
+			"description": ""
+		},
+		"max_angle_of_view_horizontal": {
+			"type": "integer",
+			"description": "The rightmost angle a mob can look at on the horizontal plane with respect to its initial facing direction."
+		},
+		"max_look_count": {
+			"type": "integer",
+			"description": "The max amount of unique looks a mob will have while looking around."
+		},
+		"max_look_time": {
+			"type": "integer",
+			"description": "The max amount of time (in ticks) a mob will stay looking at a direction while looking around."
+		},
+		"min_angle_of_view_horizontal": {
+			"type": "integer",
+			"description": "The leftmost angle a mob can look at on the horizontal plane with respect to its initial facing direction."
+		},
+		"min_look_count": {
+			"type": "integer",
+			"description": "The min amount of unique looks a mob will have while looking around."
+		},
+		"min_look_time": {
+			"type": "integer",
+			"description": "The min amount of time (in ticks) a mob will stay looking at a direction while looking around."
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"probability": {
+			"type": "number",
+			"description": "The probability of randomly looking around/sitting."
+		},
+		"random_look_around_cooldown": {
+			"type": "integer",
+			"description": "The cooldown in seconds before the goal can be used again."
+		}
+	},
+	"description": "Allows the mob to randomly sit and look around for a duration. Note: Must have a sitting animation set up to use this."
+}

@@ -1,0 +1,126 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": [
+							"move",
+							"look",
+							"jump"
+						],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"eat_and_replace_block_pairs": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"eat_block": {
+						"type": "string",
+						"description": ""
+					},
+					"replace_block": {
+						"type": "string",
+						"description": ""
+					}
+				},
+				"description": "A collection of pairs of blocks; the first (\"eat_block\") is the block the entity should eat, the second (\"replace_block\") is the block that should replace the eaten block."
+			},
+			"description": "A collection of pairs of blocks; the first (\"eat_block\") is the block the entity should eat, the second (\"replace_block\") is the block that should replace the eaten block."
+		},
+		"on_eat": {
+			"type": "object",
+			"properties": {
+				"event": {
+					"type": "string",
+					"default": "",
+					"description": ""
+				},
+				"filters": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": ""
+				},
+				"target": {
+					"type": "string",
+					"anyOf": [
+						{
+							"$ref": "../../../../../vanilla/server/filter/general.json#/$defs/filter_subject",
+							"description": ""
+						},
+						{
+							"pattern": "^(?:[sS][eE][lL][fF]|[oO][tT][hH][eE][rR]|[pP][lL][aA][yY][eE][rR]|[tT][aA][rR][gG][eE][tT]|[pP][aA][rR][eE][nN][tT]|[bB][aA][bB][yY]|[bB][lL][oO][cC][kK]|[dD][aA][mM][aA][gG][eE][rR]|[hH][oO][lL][dD][eE][rR]|[iI][tT][eE][mM])$(?![\\s\\S])",
+							"description": ""
+						}
+					],
+					"default": "self",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": "The event to trigger when the block eating animation has completed."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"success_chance": {
+			"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression",
+			"anyOf": [
+				{
+					"type": [
+						"number",
+						"string"
+					],
+					"description": "A molang expression defining the success chance the entity has to consume a block."
+				},
+				{
+					"$ref": "../../../../../vanilla/definition/molang.json#/$defs/versioned",
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"expression": {
+							"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
+							"description": ""
+						},
+						"version": {
+							"type": "integer",
+							"minimum": -32768,
+							"maximum": 32767,
+							"description": ""
+						}
+					},
+					"required": [
+						"expression",
+						"version"
+					],
+					"description": "A molang expression defining the success chance the entity has to consume a block."
+				}
+			],
+			"description": "A molang expression defining the success chance the entity has to consume a block."
+		},
+		"time_until_eat": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "The amount of time (in seconds) it takes for the block to be eaten upon a successful eat attempt."
+		}
+	},
+	"description": "Allows the entity to consume a block, replace the eaten block with another block, and trigger an event as a result."
+}

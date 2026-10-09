@@ -1,0 +1,68 @@
+{
+	"type": "object",
+	"properties": {
+		"celebration_sound": {
+			"type": "string",
+			"description": "The sound event to trigger during the celebration."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"jump",
+					"look",
+					"move"
+				],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"duration": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"description": "The duration in seconds that the celebration lasts for."
+		},
+		"jump_interval": {
+			"anyOf": [
+				{
+					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
+					"description": "Minimum and maximum time between jumping (positive, in seconds)."
+				},
+				{
+					"type": "null",
+					"description": "Minimum and maximum time between jumping (positive, in seconds)."
+				}
+			],
+			"description": "Minimum and maximum time between jumping (positive, in seconds)."
+		},
+		"on_celebration_end_event": {
+			"$ref": "../components/equippable.json#/$defs/event",
+			"description": "The event to trigger when the goal's duration expires."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		},
+		"sound_interval": {
+			"anyOf": [
+				{
+					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
+					"description": "Minimum and maximum time between sound events (positive, in seconds)."
+				},
+				{
+					"type": "null",
+					"description": "Minimum and maximum time between sound events (positive, in seconds)."
+				}
+			],
+			"description": "Minimum and maximum time between sound events (positive, in seconds)."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows this entity to celebrate surviving a raid by making celebration sounds and jumping."
+}

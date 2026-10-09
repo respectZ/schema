@@ -1,0 +1,81 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"look_time": {
+			"anyOf": [
+				{
+					"type": "integer",
+					"description": "The range of time in seconds the mob will stay looking in a random direction before looking elsewhere"
+				},
+				{
+					"type": "string",
+					"description": "The range of time in seconds the mob will stay looking in a random direction before looking elsewhere"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"description": "The range of time in seconds the mob will stay looking in a random direction before looking elsewhere"
+					},
+					"minItems": 1,
+					"description": "The range of time in seconds the mob will stay looking in a random direction before looking elsewhere"
+				},
+				{
+					"type": "object",
+					"properties": {
+						"min": {
+							"type": "integer",
+							"description": ""
+						},
+						"max": {
+							"type": "integer",
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": "The range of time in seconds the mob will stay looking in a random direction before looking elsewhere"
+				}
+			],
+			"description": "The range of time in seconds the mob will stay looking in a random direction before looking elsewhere"
+		},
+		"max_angle_of_view_horizontal": {
+			"type": "integer",
+			"description": "The rightmost angle a mob can look at on the horizontal plane with respect to its initial facing direction."
+		},
+		"max_look_time": {
+			"type": "integer",
+			"description": ""
+		},
+		"min_angle_of_view_horizontal": {
+			"type": "integer",
+			"description": "The leftmost angle a mob can look at on the horizontal plane with respect to its initial facing direction."
+		},
+		"min_look_time": {
+			"type": "integer",
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"probability": {
+			"type": "number",
+			"description": ""
+		}
+	},
+	"description": "Allows the mob to randomly look around."
+}

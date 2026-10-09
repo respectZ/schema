@@ -1,0 +1,61 @@
+{
+	"type": "object",
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"jump",
+					"look",
+					"move"
+				],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"max_distance": {
+			"type": "number",
+			"exclusiveMinimum": 0.0,
+			"maximum": 3.4028234663852886e+38,
+			"default": 3,
+			"description": "A charge attack cannot start if the entity is farther than this distance to the target."
+		},
+		"min_distance": {
+			"type": "number",
+			"exclusiveMinimum": 0.0,
+			"maximum": 3.4028234663852886e+38,
+			"default": 2,
+			"description": "A charge attack cannot start if the entity is closer than this distance to the target."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		},
+		"sound_event": {
+			"$ref": "../components/shooter.json#/$defs/sound_name",
+			"default": "undefined",
+			"description": ""
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e+38,
+			"default": 1,
+			"description": "Modifies the entity's speed when charging toward the target."
+		},
+		"success_rate": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e+38,
+			"default": 0.1428,
+			"description": "Percent chance this entity will start a charge attack, if not already attacking (1.0 = 100%)"
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows this entity to damage a target by using a running attack."
+}

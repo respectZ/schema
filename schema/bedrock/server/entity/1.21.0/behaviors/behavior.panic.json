@@ -1,0 +1,173 @@
+{
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"move",
+					"look",
+					"jump"
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"damage_sources": {
+			"anyOf": [
+				{
+					"type": "string",
+					"enum": [
+						"none",
+						"override",
+						"contact",
+						"entity_attack",
+						"projectile",
+						"suffocation",
+						"fall",
+						"fire",
+						"fire_tick",
+						"lava",
+						"drowning",
+						"block_explosion",
+						"entity_explosion",
+						"void",
+						"self_destruct",
+						"magic",
+						"wither",
+						"starve",
+						"anvil",
+						"stalactite",
+						"stalagmite",
+						"thorns",
+						"falling_block",
+						"piston",
+						"fly_into_wall",
+						"magma",
+						"fireworks",
+						"lightning",
+						"charging",
+						"temperature",
+						"freezing",
+						"ram_attack",
+						"sonic_boom",
+						"campfire",
+						"soul_campfire",
+						"mace_smash",
+						"all"
+					],
+					"description": "The list of Entity Damage Sources that will cause this mob to panic"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "string",
+						"enum": [
+							"none",
+							"override",
+							"contact",
+							"entity_attack",
+							"projectile",
+							"suffocation",
+							"fall",
+							"fire",
+							"fire_tick",
+							"lava",
+							"drowning",
+							"block_explosion",
+							"entity_explosion",
+							"void",
+							"self_destruct",
+							"magic",
+							"wither",
+							"starve",
+							"anvil",
+							"stalactite",
+							"stalagmite",
+							"thorns",
+							"falling_block",
+							"piston",
+							"fly_into_wall",
+							"magma",
+							"fireworks",
+							"lightning",
+							"charging",
+							"temperature",
+							"freezing",
+							"ram_attack",
+							"sonic_boom",
+							"campfire",
+							"soul_campfire",
+							"mace_smash",
+							"all"
+						],
+						"description": "The list of Entity Damage Sources that will cause this mob to panic"
+					},
+					"description": "The list of Entity Damage Sources that will cause this mob to panic"
+				}
+			],
+			"description": "The list of Entity Damage Sources that will cause this mob to panic"
+		},
+		"force": {
+			"type": "boolean",
+			"description": "If true, this mob will not stop panicking until it can't move anymore or the goal is removed from it"
+		},
+		"ignore_mob_damage": {
+			"type": "boolean",
+			"description": "If true, the mob will not panic in response to damage from other mobs. This overrides the damage types in \"damage_sources\""
+		},
+		"panic_sound": {
+			"type": "string",
+			"description": ""
+		},
+		"prefer_water": {
+			"type": "boolean",
+			"description": "If true, the mob will prefer water over land"
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"sound_interval": {
+			"anyOf": [
+				{
+					"type": "number",
+					"description": ""
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "number",
+						"description": ""
+					},
+					"minItems": 2,
+					"maxItems": 2,
+					"description": ""
+				},
+				{
+					"type": "object",
+					"properties": {
+						"range_min": {
+							"type": "number",
+							"description": ""
+						},
+						"range_max": {
+							"type": "number",
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": ""
+				}
+			],
+			"description": ""
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		}
+	},
+	"description": "Allows the mob to enter the panic state, which makes it run around and away from the damage source that made it enter this state."
+}

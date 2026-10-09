@@ -1,0 +1,141 @@
+{
+	"type": "object",
+	"properties": {
+		"apply_regeneration": {
+			"type": "boolean",
+			"description": "Whether the mob will receive the regeneration effect while playing dead."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"jump",
+					"look",
+					"move"
+				],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"damage_sources": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"$ref": "../../../../../vanilla/server/damage_type.json",
+						"description": "The list of Entity Damage Sources that will cause this mob to play dead."
+					},
+					{
+						"pattern": "^(?:[Aa][Ll][Ll]|[Aa][Nn][Vv][Ii][Ll]|[Bb][Ll][Oo][Cc][Kk]_[Ee][Xx][Pp][Ll][Oo][Ss][Ii][Oo][Nn]|[Cc][Aa][Mm][Pp][Ff][Ii][Rr][Ee]|[Cc][Hh][Aa][Rr][Gg][Ii][Nn][Gg]|[Cc][Oo][Nn][Tt][Aa][Cc][Tt]|[Dd][Rr][Oo][Ww][Nn][Ii][Nn][Gg]|[Ee][Nn][Tt][Ii][Tt][Yy]_[Aa][Tt][Tt][Aa][Cc][Kk]|[Ee][Nn][Tt][Ii][Tt][Yy]_[Ee][Xx][Pp][Ll][Oo][Ss][Ii][Oo][Nn]|[Ff][Aa][Ll][Ll]|[Ff][Aa][Ll][Ll][Ii][Nn][Gg]_[Bb][Ll][Oo][Cc][Kk]|[Ff][Ii][Rr][Ee]|[Ff][Ii][Rr][Ee]_[Tt][Ii][Cc][Kk]|[Ff][Ii][Rr][Ee][Ww][Oo][Rr][Kk][Ss]|[Ff][Ll][Yy]_[Ii][Nn][Tt][Oo]_[Ww][Aa][Ll][Ll]|[Ff][Rr][Ee][Ee][Zz][Ii][Nn][Gg]|[Ll][Aa][Vv][Aa]|[Ll][Ii][Gg][Hh][Tt][Nn][Ii][Nn][Gg]|[Mm][Aa][Cc][Ee]_[Ss][Mm][Aa][Ss][Hh]|[Mm][Aa][Gg][Ii][Cc]|[Mm][Aa][Gg][Mm][Aa]|[Nn][Oo][Nn][Ee]|[Oo][Vv][Ee][Rr][Rr][Ii][Dd][Ee]|[Pp][Ii][Ss][Tt][Oo][Nn]|[Pp][Rr][Oo][Jj][Ee][Cc][Tt][Ii][Ll][Ee]|[Rr][Aa][Mm]_[Aa][Tt][Tt][Aa][Cc][Kk]|[Ss][Ee][Ll][Ff]_[Dd][Ee][Ss][Tt][Rr][Uu][Cc][Tt]|[Ss][Oo][Nn][Ii][Cc]_[Bb][Oo][Oo][Mm]|[Ss][Oo][Uu][Ll]_[Cc][Aa][Mm][Pp][Ff][Ii][Rr][Ee]|[Ss][Tt][Aa][Ll][Aa][Cc][Tt][Ii][Tt][Ee]|[Ss][Tt][Aa][Ll][Aa][Gg][Mm][Ii][Tt][Ee]|[Ss][Tt][Aa][Rr][Vv][Ee]|[Ss][Uu][Ff][Ff][Oo][Cc][Aa][Tt][Ii][Oo][Nn]|[Tt][Ee][Mm][Pp][Ee][Rr][Aa][Tt][Uu][Rr][Ee]|[Tt][Hh][Oo][Rr][Nn][Ss]|[Vv][Oo][Ii][Dd]|[Ww][Ii][Tt][Hh][Ee][Rr])$(?![\\s\\S])",
+						"description": "The list of Entity Damage Sources that will cause this mob to play dead."
+					}
+				],
+				"description": "The list of Entity Damage Sources that will cause this mob to play dead."
+			},
+			"description": "The list of Entity Damage Sources that will cause this mob to play dead."
+		},
+		"duration": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"default": 0,
+			"description": "The amount of time the mob will remain playing dead (in seconds)."
+		},
+		"filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "The list of other triggers that are required for the mob to activate play dead"
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		},
+		"random_damage_range": {
+			"anyOf": [
+				{
+					"type": "number",
+					"exclusiveMinimum": -2147483648,
+					"exclusiveMaximum": 2147483648,
+					"description": "The range of damage that may cause the goal to start depending on randomness. Damage taken below the min will never cause the goal to start. Damage taken above the max will always cause the goal to start."
+				},
+				{
+					"type": "boolean",
+					"description": "The range of damage that may cause the goal to start depending on randomness. Damage taken below the min will never cause the goal to start. Damage taken above the max will always cause the goal to start."
+				},
+				{
+					"type": "array",
+					"items": {
+						"anyOf": [
+							{
+								"type": "number",
+								"exclusiveMinimum": -2147483648,
+								"exclusiveMaximum": 2147483648,
+								"description": "The range of damage that may cause the goal to start depending on randomness. Damage taken below the min will never cause the goal to start. Damage taken above the max will always cause the goal to start."
+							},
+							{
+								"type": "boolean",
+								"description": "The range of damage that may cause the goal to start depending on randomness. Damage taken below the min will never cause the goal to start. Damage taken above the max will always cause the goal to start."
+							}
+						],
+						"description": "The range of damage that may cause the goal to start depending on randomness. Damage taken below the min will never cause the goal to start. Damage taken above the max will always cause the goal to start."
+					},
+					"minItems": 2,
+					"maxItems": 2,
+					"description": "The range of damage that may cause the goal to start depending on randomness. Damage taken below the min will never cause the goal to start. Damage taken above the max will always cause the goal to start."
+				},
+				{
+					"type": "object",
+					"properties": {
+						"range_min": {
+							"anyOf": [
+								{
+									"type": "number",
+									"exclusiveMinimum": -2147483648,
+									"exclusiveMaximum": 2147483648,
+									"description": ""
+								},
+								{
+									"type": "boolean",
+									"description": ""
+								}
+							],
+							"description": ""
+						},
+						"range_max": {
+							"anyOf": [
+								{
+									"type": "number",
+									"exclusiveMinimum": -2147483648,
+									"exclusiveMaximum": 2147483648,
+									"description": ""
+								},
+								{
+									"type": "boolean",
+									"description": ""
+								}
+							],
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": "The range of damage that may cause the goal to start depending on randomness. Damage taken below the min will never cause the goal to start. Damage taken above the max will always cause the goal to start."
+				}
+			],
+			"description": "The range of damage that may cause the goal to start depending on randomness. Damage taken below the min will never cause the goal to start. Damage taken above the max will always cause the goal to start."
+		},
+		"random_start_chance": {
+			"type": "number",
+			"minimum": -3.4028234663852886e+38,
+			"maximum": 3.4028234663852886e+38,
+			"default": 0,
+			"description": "The likelihood of this goal starting upon taking damage."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows this entity to pretend to be dead to avoid being targeted by attackers."
+}
