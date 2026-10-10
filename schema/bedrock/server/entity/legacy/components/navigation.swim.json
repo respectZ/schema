@@ -1,4 +1,5 @@
 {
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"$ref": "./navigation.walk.json",
 	"description": "Allows this entity to generate paths that include water."
 }

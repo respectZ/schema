@@ -1,4 +1,5 @@
 {
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"$ref": "./on_death.json",
 	"description": "Adds a trigger to call when this entity loses the target it currently has."
 }
