@@ -29,6 +29,9 @@
 			"type": "integer",
 			"minimum": -2147483648,
 			"maximum": 2147483647,
+			"deprecated": true,
+			"doNotSuggest": true,
+			"deprecationMessage": "Deprecated since format version 1.26.30.",
 			"description": ""
 		},
 		"priority": {
