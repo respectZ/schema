@@ -1665,6 +1665,34 @@
 				{
 					"const": "target",
 					"description": "The caller's current target."
+				},
+				{
+					"const": 6,
+					"description": "The block involved with the interaction."
+				},
+				{
+					"const": 7,
+					"description": "The damaging actor involved with the interaction."
+				},
+				{
+					"const": 1,
+					"description": "The other member of an interaction, not the caller."
+				},
+				{
+					"const": 4,
+					"description": "The caller's current parent."
+				},
+				{
+					"const": 2,
+					"description": "The player involved with the interaction."
+				},
+				{
+					"const": 0,
+					"description": "The entity or object calling the test"
+				},
+				{
+					"const": 3,
+					"description": "The caller's current target."
 				}
 			]
 		},
@@ -1711,6 +1739,30 @@
 				{
 					"const": "not",
 					"description": "Test for inequality."
+				},
+				{
+					"const": 0,
+					"description": "Test for equality."
+				},
+				{
+					"const": 1,
+					"description": "Test for inequality."
+				},
+				{
+					"const": 2,
+					"description": "Test for greater-than the value."
+				},
+				{
+					"const": 3,
+					"description": "Test for less-than the value."
+				},
+				{
+					"const": 4,
+					"description": "Test for greater-than or equal to the value."
+				},
+				{
+					"const": 5,
+					"description": "Test for less-than or equal to the value."
 				}
 			]
 		}
