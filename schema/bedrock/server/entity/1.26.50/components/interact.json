@@ -98,7 +98,7 @@
 					"description": "Loot table with items to drop on the ground upon successful interaction."
 				},
 				"swing": {
-					"$ref": "../../1.26.0/components/interact.json#/$defs/interaction/properties/spawn_items"
+					"$ref": "../../1.26.0/components/interact.json#/$defs/interaction/properties/swing"
 				},
 				"take_item": {
 					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/take_item"
