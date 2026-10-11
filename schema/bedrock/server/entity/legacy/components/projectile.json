@@ -14,11 +14,13 @@
 				},
 				"angleoffset": {
 					"$ref": "#/$defs/root/properties/angleoffset",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"catchFire": {
 					"$ref": "#/$defs/root/properties/catchFire",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"catch_fire": {
 					"$ref": "#/$defs/root/properties/catch_fire",
@@ -26,7 +28,8 @@
 				},
 				"critParticleOnHurt": {
 					"$ref": "#/$defs/root/properties/critParticleOnHurt",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"crit_particle_on_hurt": {
 					"$ref": "#/$defs/root/properties/crit_particle_on_hurt",
@@ -34,7 +37,8 @@
 				},
 				"destroyOnHurt": {
 					"$ref": "#/$defs/root/properties/destroyOnHurt",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"destroy_on_hurt": {
 					"$ref": "#/$defs/root/properties/destroy_on_hurt",
@@ -46,15 +50,18 @@
 				},
 				"hitGroundSound": {
 					"$ref": "#/$defs/root/properties/hitGroundSound",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"hitSound": {
 					"$ref": "#/$defs/root/properties/hitSound",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"hitWater": {
 					"$ref": "#/$defs/root/properties/hitWater",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"hit_ground_sound": {
 					"$ref": "#/$defs/root/properties/hit_ground_sound",
@@ -90,7 +97,8 @@
 				},
 				"isdangerous": {
 					"$ref": "#/$defs/root/properties/isdangerous",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"isolated_physics": {
 					"type": "boolean",
@@ -107,7 +115,8 @@
 				},
 				"mHitNearestPassenger": {
 					"$ref": "#/$defs/root/properties/mHitNearestPassenger",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"multiple_targets": {
 					"type": "boolean",
@@ -116,7 +125,8 @@
 				},
 				"multipletargets": {
 					"$ref": "#/$defs/root/properties/multipletargets",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"offset": {
 					"$ref": "#/$defs/root/properties/offset",
@@ -124,11 +134,13 @@
 				},
 				"onFireTime": {
 					"$ref": "#/$defs/root/properties/onFireTime",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"onHit": {
 					"$ref": "#/$defs/root/properties/onHit",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"on_fire_time": {
 					"$ref": "#/$defs/root/properties/on_fire_time",
@@ -153,7 +165,8 @@
 				},
 				"potionEffect": {
 					"$ref": "#/$defs/root/properties/potionEffect",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"potion_effect": {
 					"$ref": "#/$defs/root/properties/potion_effect",
@@ -165,7 +178,8 @@
 				},
 				"reflectOnHurt": {
 					"$ref": "#/$defs/root/properties/reflectOnHurt",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"reflect_immunity": {
 					"$ref": "#/$defs/root/properties/reflect_immunity",
@@ -177,7 +191,8 @@
 				},
 				"shootSound": {
 					"$ref": "#/$defs/root/properties/shootSound",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"shoot_sound": {
 					"$ref": "#/$defs/root/properties/shoot_sound",
@@ -189,7 +204,8 @@
 				},
 				"shoottarget": {
 					"$ref": "#/$defs/root/properties/shoottarget",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"should_bounce": {
 					"$ref": "#/$defs/should_bounce",
@@ -197,11 +213,13 @@
 				},
 				"shouldbounce": {
 					"$ref": "#/$defs/should_bounce",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"splashRange": {
 					"$ref": "#/$defs/root/properties/splashRange",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"splash_range": {
 					"$ref": "#/$defs/root/properties/splash_range",
@@ -213,7 +231,8 @@
 				},
 				"stopOnHurt": {
 					"$ref": "#/$defs/root/properties/stopOnHurt",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"stop_on_hurt": {
 					"$ref": "#/$defs/root/properties/stop_on_hurt",
@@ -221,11 +240,13 @@
 				},
 				"uncertaintyBase": {
 					"$ref": "#/$defs/root/properties/uncertaintyBase",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"uncertaintyMultiplier": {
 					"$ref": "#/$defs/root/properties/uncertaintyMultiplier",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"uncertainty_base": {
 					"$ref": "#/$defs/root/properties/uncertainty_base",
@@ -263,7 +284,8 @@
 				"fireAffectedByGriefing": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"fire_affected_by_griefing": {
 					"type": "boolean",
@@ -275,7 +297,8 @@
 					"minimum": -3.4028234663852886e38,
 					"maximum": 3.4028234663852886e38,
 					"default": 0,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"on_fire_time": {
 					"type": "number",
@@ -294,22 +317,26 @@
 				"affectProjectile": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"affectShooter": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"affectSplashArea": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"affectTarget": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"affect_projectile": {
 					"type": "boolean",
@@ -333,7 +360,8 @@
 				},
 				"eventTrigger": {
 					"$ref": "../general.json#/$defs/trigger",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"event_trigger": {
 					"$ref": "../general.json#/$defs/trigger",
@@ -344,7 +372,8 @@
 					"minimum": -3.4028234663852886e38,
 					"maximum": 3.4028234663852886e38,
 					"default": 0,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"splash_area": {
 					"type": "number",
@@ -542,7 +571,8 @@
 					"minimum": -3.4028234663852886e38,
 					"maximum": 3.4028234663852886e38,
 					"default": 0,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"owner_damage": {
 					"type": "number",
@@ -608,7 +638,8 @@
 				"catchFire": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"catch_fire": {
 					"type": "boolean",
@@ -698,7 +729,8 @@
 				"destroyonhit": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"difficulty_randomization": {
 					"type": "string",
@@ -728,7 +760,8 @@
 					"minimum": -2147483648,
 					"maximum": 2147483647,
 					"default": 2147483647,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"min_critical_damage": {
 					"type": "integer",
@@ -742,7 +775,8 @@
 					"minimum": -2147483648,
 					"maximum": 2147483647,
 					"default": 0,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"power_multiplier": {
 					"type": "number",
@@ -756,13 +790,15 @@
 					"minimum": -3.4028234663852886e38,
 					"maximum": 3.4028234663852886e38,
 					"default": 0,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"semi_random_diff_damage": {
 					"description": ""
 				},
 				"semirandomdiffdamage": {
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"set_last_hurt_requires_damage": {
 					"type": "boolean",
@@ -841,7 +877,8 @@
 				"catchFire": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"catch_fire": {
 					"type": "boolean",
@@ -931,7 +968,8 @@
 				"destroyonhit": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"difficulty_randomization": {
 					"type": "string",
@@ -961,7 +999,8 @@
 					"minimum": -2147483648,
 					"maximum": 2147483647,
 					"default": 2147483647,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"min_critical_damage": {
 					"type": "integer",
@@ -975,7 +1014,8 @@
 					"minimum": -2147483648,
 					"maximum": 2147483647,
 					"default": 0,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"power_multiplier": {
 					"type": "number",
@@ -989,7 +1029,8 @@
 					"minimum": -3.4028234663852886e38,
 					"maximum": 3.4028234663852886e38,
 					"default": 0,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"set_last_hurt_requires_damage": {
 					"type": "boolean",
@@ -1490,12 +1531,14 @@
 					"minimum": -3.4028234663852886e38,
 					"maximum": 3.4028234663852886e38,
 					"default": 0,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"catchFire": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"catch_fire": {
 					"type": "boolean",
@@ -1505,7 +1548,8 @@
 				"critParticleOnHurt": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"crit_particle_on_hurt": {
 					"type": "boolean",
@@ -1515,7 +1559,8 @@
 				"destroyOnHurt": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"destroy_on_hurt": {
 					"type": "boolean",
@@ -1541,7 +1586,8 @@
 						}
 					],
 					"default": "",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"hitSound": {
 					"anyOf": [
@@ -1555,12 +1601,14 @@
 						}
 					],
 					"default": "",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"hitWater": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"hit_ground_sound": {
 					"anyOf": [
@@ -1624,7 +1672,8 @@
 				"isdangerous": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"isolated_physics": {
 					"type": "boolean",
@@ -1646,7 +1695,8 @@
 				"mHitNearestPassenger": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"multiple_targets": {
 					"type": "boolean",
@@ -1656,7 +1706,8 @@
 				"multipletargets": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"offset": {
 					"$ref": "#/$defs/offset_value",
@@ -1667,7 +1718,8 @@
 					"minimum": -3.4028234663852886e38,
 					"maximum": 3.4028234663852886e38,
 					"default": 5,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"onHit": {
 					"anyOf": [
@@ -1680,7 +1732,8 @@
 							"description": ""
 						}
 					],
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"on_fire_time": {
 					"type": "number",
@@ -1797,7 +1850,8 @@
 					"minimum": -2147483648,
 					"maximum": 2147483647,
 					"default": -1,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"potion_effect": {
 					"type": "integer",
@@ -1816,7 +1870,8 @@
 				"reflectOnHurt": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"reflect_immunity": {
 					"type": "number",
@@ -1842,7 +1897,8 @@
 						}
 					],
 					"default": "",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"shoot_sound": {
 					"anyOf": [
@@ -1866,14 +1922,16 @@
 				"shoottarget": {
 					"type": "boolean",
 					"default": true,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"splashRange": {
 					"type": "number",
 					"minimum": -3.4028234663852886e38,
 					"maximum": 3.4028234663852886e38,
 					"default": 4,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"splash_range": {
 					"type": "number",
@@ -1890,7 +1948,8 @@
 				"stopOnHurt": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"stop_on_hurt": {
 					"type": "boolean",
@@ -1902,14 +1961,16 @@
 					"minimum": -3.4028234663852886e38,
 					"maximum": 3.4028234663852886e38,
 					"default": 0,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"uncertaintyMultiplier": {
 					"type": "number",
 					"minimum": -3.4028234663852886e38,
 					"maximum": 3.4028234663852886e38,
 					"default": 0,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"uncertainty_base": {
 					"type": "number",
@@ -2103,21 +2164,24 @@
 					"minimum": -2147483648,
 					"maximum": 2147483647,
 					"default": 100,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"firstSpawnCount": {
 					"type": "integer",
 					"minimum": -2147483648,
 					"maximum": 2147483647,
 					"default": 0,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"firstSpawnPercentChance": {
 					"type": "number",
 					"minimum": -3.4028234663852886e38,
 					"maximum": 3.4028234663852886e38,
 					"default": -1,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"first_spawn_chance": {
 					"type": "integer",
@@ -2162,20 +2226,23 @@
 					"minimum": -2147483648,
 					"maximum": 2147483647,
 					"default": 100,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"secondSpawnCount": {
 					"type": "integer",
 					"minimum": -2147483648,
 					"maximum": 2147483647,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"secondSpawnPercentChance": {
 					"type": "number",
 					"minimum": -3.4028234663852886e38,
 					"maximum": 3.4028234663852886e38,
 					"default": -1,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"second_spawn_chance": {
 					"type": "integer",
@@ -2200,7 +2267,8 @@
 				"spawnBaby": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"spawnDefinition": {
 					"anyOf": [
@@ -2214,7 +2282,8 @@
 						}
 					],
 					"default": "",
-					"description": ""
+					"description": "",
+					"doNotSuggest": true
 				},
 				"spawn_baby": {
 					"type": "boolean",
