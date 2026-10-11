@@ -15,8 +15,7 @@
 		"subsensors": {
 			"type": "array",
 			"items": {
-				"$ref": "#/$defs/subsensor",
-				"description": "The list of subsensors which sense for entities and emit events when all their conditions are met."
+				"$ref": "#/$defs/subsensor"
 			},
 			"description": "The list of subsensors which sense for entities and emit events when all their conditions are met."
 		}
@@ -81,8 +80,7 @@
 					"description": "Vertical offset applied to the entity's position when computing the distance from other entities."
 				}
 			},
-			"additionalProperties": false,
-			"description": "The list of subsensors which sense for entities and emit events when all their conditions are met."
+			"additionalProperties": false
 		}
 	},
 	"description": "A component that owns multiple subsensors, each one firing an event when a set of conditions are met by other entities within the defined range."

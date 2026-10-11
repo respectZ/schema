@@ -3,7 +3,7 @@
 	"type": "object",
 	"properties": {
 		"avoid_block_sound": {
-			"type": "string",
+			"$ref": "../../../../../vanilla/server/level_sound.json",
 			"description": "The sound event to play when the mob is avoiding a block."
 		},
 		"control_flags": {
@@ -19,8 +19,7 @@
 		"on_escape": {
 			"type": "array",
 			"items": {
-				"$ref": "../components/equippable.json#/$defs/event",
-				"description": "Escape trigger."
+				"$ref": "../general.json#/$defs/trigger"
 			},
 			"description": "Escape trigger."
 		},
@@ -48,59 +47,10 @@
 		"sound_interval": {
 			"anyOf": [
 				{
-					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "The range of time in seconds to randomly wait before playing the sound again."
+					"$ref": "../general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "The range of time in seconds to randomly wait before playing the sound again."
-				}
-			],
-			"allOf": [
-				{
-					"if": {
-						"type": "number",
-						"description": "The range of time in seconds to randomly wait before playing the sound again."
-					},
-					"then": {
-						"minimum": 0,
-						"description": "The range of time in seconds to randomly wait before playing the sound again."
-					},
-					"description": "The range of time in seconds to randomly wait before playing the sound again."
-				},
-				{
-					"if": {
-						"type": "array",
-						"description": "The range of time in seconds to randomly wait before playing the sound again."
-					},
-					"then": {
-						"items": {
-							"minimum": 0,
-							"description": "The range of time in seconds to randomly wait before playing the sound again."
-						},
-						"description": "The range of time in seconds to randomly wait before playing the sound again."
-					},
-					"description": "The range of time in seconds to randomly wait before playing the sound again."
-				},
-				{
-					"if": {
-						"type": "object",
-						"description": "The range of time in seconds to randomly wait before playing the sound again."
-					},
-					"then": {
-						"properties": {
-							"range_min": {
-								"minimum": 0,
-								"description": ""
-							},
-							"range_max": {
-								"minimum": 0,
-								"description": ""
-							}
-						},
-						"description": "The range of time in seconds to randomly wait before playing the sound again."
-					},
-					"description": "The range of time in seconds to randomly wait before playing the sound again."
+					"type": "null"
 				}
 			],
 			"description": "The range of time in seconds to randomly wait before playing the sound again."
@@ -115,8 +65,7 @@
 		"target_blocks": {
 			"type": "array",
 			"items": {
-				"$ref": "../components/equippable.json#/$defs/item_descriptor",
-				"description": "List of block types this mob avoids."
+				"$ref": "../../../../../vanilla/server/block_descriptor.json"
 			},
 			"description": "List of block types this mob avoids."
 		},

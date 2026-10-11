@@ -26,20 +26,23 @@
 			"default": 0,
 			"description": "Distance in blocks within the mob considers it has reached the goal. This is the \"wiggle room\" to stop the AI from bouncing back and forth trying to reach a specific spot."
 		},
+		"interval": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"description": "A random value to determine when to randomly move somewhere. This has a 1/interval chance to choose this goal."
+		},
 		"on_failed": {
 			"anyOf": [
 				{
-					"$ref": "../components/equippable.json#/$defs/event",
-					"description": "Event(s) to run when this goal fails."
+					"$ref": "../general.json#/$defs/trigger"
 				},
 				{
 					"type": "array",
 					"items": {
-						"$ref": "../components/equippable.json#/$defs/event",
-						"description": "Event(s) to run when this goal fails."
+						"$ref": "../general.json#/$defs/trigger"
 					},
-					"default": [],
-					"description": "Event(s) to run when this goal fails."
+					"default": []
 				}
 			],
 			"default": [],
@@ -48,17 +51,14 @@
 		"on_home": {
 			"anyOf": [
 				{
-					"$ref": "../components/equippable.json#/$defs/event",
-					"description": "Event(s) to run when this mob gets home."
+					"$ref": "../general.json#/$defs/trigger"
 				},
 				{
 					"type": "array",
 					"items": {
-						"$ref": "../components/equippable.json#/$defs/event",
-						"description": "Event(s) to run when this mob gets home."
+						"$ref": "../general.json#/$defs/trigger"
 					},
-					"default": [],
-					"description": "Event(s) to run when this mob gets home."
+					"default": []
 				}
 			],
 			"default": [],

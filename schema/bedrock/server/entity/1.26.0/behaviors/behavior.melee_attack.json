@@ -8,7 +8,43 @@
 			"description": "Allows the entity to use this attack behavior, only once EVER."
 		},
 		"attack_types": {
-			"type": "string",
+			"anyOf": [
+				{
+					"type": "string",
+					"enum": [
+						"none",
+						"player",
+						"mob",
+						"monster",
+						"humanoid",
+						"animal",
+						"water",
+						"pathable",
+						"tamable",
+						"ridable",
+						"item",
+						"ambient",
+						"villager",
+						"arthropod",
+						"undead",
+						"zombie",
+						"minecart",
+						"boat",
+						"boatrideable",
+						"minecartridable",
+						"humanoidmonster",
+						"wateranimal",
+						"tamableanimal",
+						"undeadmob",
+						"undeadmonster",
+						"zombiemonster"
+					]
+				},
+				{
+					"type": "string"
+				}
+			],
+			"examples": ["monster arthropod", "animal"],
 			"description": "Defines the entity types this entity will attack."
 		},
 		"can_spread_on_fire": {
@@ -62,6 +98,14 @@
 			"minimum": 0,
 			"maximum": 3.4028234663852886e38,
 			"description": "Minimum base time (in seconds) to recalculate new attack path to target (before increases applied)."
+		},
+		"on_attack": {
+			"$ref": "../../legacy/general.json#/$defs/trigger",
+			"description": "Defines the event to trigger when this entity successfully attacks."
+		},
+		"on_kill": {
+			"$ref": "../../legacy/general.json#/$defs/trigger",
+			"description": "Defines the event to trigger when this entity kills the target."
 		},
 		"outer_boundary_time_increase": {
 			"type": "number",

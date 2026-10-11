@@ -37,7 +37,7 @@
 			"description": "The minimum idle time in seconds between the last detected disturbance to the start of digging."
 		},
 		"on_start": {
-			"$ref": "../components/equippable.json#/$defs/event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event(s) to run when the goal starts."
 		},
 		"priority": {

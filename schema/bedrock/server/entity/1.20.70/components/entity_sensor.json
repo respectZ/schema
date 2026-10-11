@@ -15,8 +15,7 @@
 		"subsensors": {
 			"type": "array",
 			"items": {
-				"$ref": "#/$defs/subsensor",
-				"description": "The list of subsensors which sense for entities and emit events when all their conditions are met."
+				"$ref": "#/$defs/subsensor"
 			},
 			"description": "The list of subsensors which sense for entities and emit events when all their conditions are met."
 		}
@@ -36,10 +35,8 @@
 					"minItems": 2,
 					"maxItems": 2,
 					"items": {
-						"$ref": "#/$defs/axis",
-						"description": "The maximum horizontal and vertical distance another entity can be from this and have the filters checked against it."
-					},
-					"description": "The maximum horizontal and vertical distance another entity can be from this and have the filters checked against it."
+						"$ref": "#/$defs/axis"
+					}
 				},
 				{
 					"type": "object",
@@ -54,8 +51,7 @@
 						}
 					},
 					"required": ["x", "y"],
-					"additionalProperties": false,
-					"description": "The maximum horizontal and vertical distance another entity can be from this and have the filters checked against it."
+					"additionalProperties": false
 				}
 			],
 			"default": [10, 10],
@@ -106,8 +102,7 @@
 					"description": "Vertical offset applied to the entity's position when computing the distance from other entities."
 				}
 			},
-			"additionalProperties": false,
-			"description": "The list of subsensors which sense for entities and emit events when all their conditions are met."
+			"additionalProperties": false
 		}
 	},
 	"description": "A component that owns multiple subsensors, each one firing an event when a set of conditions are met by other entities within the defined range."

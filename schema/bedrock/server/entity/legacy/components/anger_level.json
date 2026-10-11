@@ -56,35 +56,19 @@
 					"condition": {
 						"anyOf": [
 							{
-								"const": "default",
-								"description": "A Molang expression describing under which conditions to play this sound, given that the entity was provoked."
+								"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string"
 							},
 							{
-								"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
-								"description": "A Molang expression describing under which conditions to play this sound, given that the entity was provoked."
+								"type": "number"
 							},
 							{
-								"type": "number",
-								"description": "A Molang expression describing under which conditions to play this sound, given that the entity was provoked."
-							},
-							{
-								"type": "boolean",
-								"description": "A Molang expression describing under which conditions to play this sound, given that the entity was provoked."
+								"type": "boolean"
 							}
 						],
 						"description": "A Molang expression describing under which conditions to play this sound, given that the entity was provoked."
 					},
 					"sound": {
-						"anyOf": [
-							{
-								"$ref": "../../../../../vanilla/server/level_sound.json",
-								"description": "The sound to play."
-							},
-							{
-								"type": "string",
-								"description": "The sound to play."
-							}
-						],
+						"$ref": "../../../../../vanilla/server/level_sound.json",
 						"description": "The sound to play."
 					}
 				},

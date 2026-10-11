@@ -29,43 +29,7 @@
 			"description": ""
 		},
 		"within_radius_event": {
-			"type": "object",
-			"properties": {
-				"event": {
-					"type": "string",
-					"description": ""
-				},
-				"target": {
-					"type": "string",
-					"anyOf": [
-						{
-							"enum": [
-								"self",
-								"other",
-								"player",
-								"target",
-								"parent",
-								"baby",
-								"block",
-								"damager",
-								"holder",
-								"item"
-							],
-							"description": ""
-						},
-						{
-							"pattern": "^(?:[Ss][Ee][Ll][Ff]|[Oo][Tt][Hh][Ee][Rr]|[Pp][Ll][Aa][Yy][Ee][Rr]|[Tt][Aa][Rr][Gg][Ee][Tt]|[Pp][Aa][Rr][Ee][Nn][Tt]|[Bb][Aa][Bb][Yy]|[Bb][Ll][Oo][Cc][Kk]|[Dd][Aa][Mm][Aa][Gg][Ee][Rr]|[Hh][Oo][Ll][Dd][Ee][Rr]|[Ii][Tt][Ee][Mm])$(?![\\s\\S])",
-							"description": ""
-						}
-					],
-					"description": ""
-				},
-				"filters": {
-					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-					"description": ""
-				}
-			},
-			"additionalProperties": false,
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event to run when target is within the radius. This event is broadcasted if broadcast is true."
 		}
 	},

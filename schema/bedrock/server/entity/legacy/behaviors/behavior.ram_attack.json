@@ -22,59 +22,10 @@
 		"cooldown_range": {
 			"anyOf": [
 				{
-					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
+					"$ref": "../general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
-				}
-			],
-			"allOf": [
-				{
-					"if": {
-						"type": "number",
-						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
-					},
-					"then": {
-						"minimum": 0,
-						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
-					},
-					"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
-				},
-				{
-					"if": {
-						"type": "array",
-						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
-					},
-					"then": {
-						"items": {
-							"minimum": 0,
-							"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
-						},
-						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
-					},
-					"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
-				},
-				{
-					"if": {
-						"type": "object",
-						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
-					},
-					"then": {
-						"properties": {
-							"range_min": {
-								"minimum": 0,
-								"description": ""
-							},
-							"range_max": {
-								"minimum": 0,
-								"description": ""
-							}
-						},
-						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
-					},
-					"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
+					"type": "null"
 				}
 			],
 			"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
@@ -103,13 +54,12 @@
 		"on_start": {
 			"type": "array",
 			"items": {
-				"$ref": "../components/equippable.json#/$defs/event",
-				"description": "The event to trigger when attacking"
+				"$ref": "../general.json#/$defs/trigger"
 			},
 			"description": "The event to trigger when attacking"
 		},
 		"pre_ram_sound": {
-			"type": "string",
+			"$ref": "../../../../../vanilla/server/level_sound.json",
 			"description": "The sound to play when an entity is about to perform a ram attack."
 		},
 		"priority": {
@@ -127,7 +77,7 @@
 			"description": "The distance at which the mob start to run with ram speed."
 		},
 		"ram_impact_sound": {
-			"type": "string",
+			"$ref": "../../../../../vanilla/server/level_sound.json",
 			"description": "The sound to play when an entity is impacting on a ram attack."
 		},
 		"ram_speed": {

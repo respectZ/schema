@@ -49,22 +49,20 @@
 						"anyOf": [
 							{
 								"type": "string",
-								"description": ""
+								"pattern": "#[0-9a-fA-F]{8}"
 							},
 							{
 								"type": "array",
 								"items": {
-									"type": "integer",
-									"description": ""
+									"type": "integer"
 								},
-								"minItems": 3,
-								"description": ""
+								"minItems": 3
 							}
 						],
 						"description": ""
 					},
 					"start_sound_event": {
-						"type": "string",
+						"$ref": "../../../../../vanilla/server/level_sound.json",
 						"description": ""
 					},
 					"filters": {
@@ -85,12 +83,11 @@
 									"description": "The event to send to the entity"
 								},
 								"sound_event": {
-									"type": "string",
+									"$ref": "../../../../../vanilla/server/level_sound.json",
 									"description": "The sound event to play when this step happens"
 								}
 							},
-							"additionalProperties": false,
-							"description": "List of events to send"
+							"additionalProperties": false
 						},
 						"description": "List of events to send"
 					}

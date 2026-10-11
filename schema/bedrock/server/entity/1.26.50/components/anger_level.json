@@ -3,34 +3,27 @@
 	"type": "object",
 	"properties": {
 		"anger_decrement_interval": {
-			"$ref": "../../legacy/components/anger_level.json#/properties/anger_decrement_interval",
-			"description": "Anger level will decay over time. Defines how often anger towards all nuisances will be decreased by one."
+			"$ref": "../../legacy/components/anger_level.json#/properties/anger_decrement_interval"
 		},
 		"angry_boost": {
-			"$ref": "../../legacy/components/anger_level.json#/properties/angry_boost",
-			"description": "Anger boost applied to angry threshold when mob gets angry."
+			"$ref": "../../legacy/components/anger_level.json#/properties/angry_boost"
 		},
 		"angry_threshold": {
-			"$ref": "../../legacy/components/anger_level.json#/properties/angry_threshold",
-			"description": "Threshold that define when the mob is considered angry at a nuisance."
+			"$ref": "../../legacy/components/anger_level.json#/properties/angry_threshold"
 		},
 		"default_annoyingness": {
 			"$ref": "../../legacy/components/anger_level.json#/properties/default_annoyingness",
-			"minimum": 0,
-			"description": "The default amount of annoyingness for any given nuisance. Specifies how much to raise anger level on each provocation."
+			"minimum": 0
 		},
 		"default_projectile_annoyingness": {
 			"$ref": "../../legacy/components/anger_level.json#/properties/default_projectile_annoyingness",
-			"minimum": 0,
-			"description": ""
+			"minimum": 0
 		},
 		"max_anger": {
-			"$ref": "../../legacy/components/anger_level.json#/properties/max_anger",
-			"description": "The maximum anger level that can be reached. Applies to any nuisance."
+			"$ref": "../../legacy/components/anger_level.json#/properties/max_anger"
 		},
 		"nuisance_filter": {
-			"$ref": "../../legacy/components/anger_level.json#/properties/nuisance_filter",
-			"description": "Filter that is applied to determine if a mob can be a nuisance."
+			"$ref": "../../legacy/components/anger_level.json#/properties/nuisance_filter"
 		},
 		"on_increase_sounds": {
 			"type": "array",
@@ -38,23 +31,30 @@
 				"type": "object",
 				"properties": {
 					"condition": {
-						"$ref": "../../1.21.110/components/experience_reward.json#/$defs/expression",
+						"anyOf": [
+							{
+								"type": "number"
+							},
+							{
+								"$ref": "../../../../../vanilla/definition/molang.json#/$defs/versioned"
+							},
+							{
+								"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"
+							}
+						],
 						"description": "A Molang expression describing under which conditions to play this sound, given that the entity was provoked."
 					},
 					"sound": {
-						"$ref": "../../legacy/components/anger_level.json#/properties/on_increase_sounds/items/properties/sound",
-						"description": "The sound to play."
+						"$ref": "../../legacy/components/anger_level.json#/properties/on_increase_sounds/items/properties/sound"
 					}
 				},
 				"required": ["condition", "sound"],
-				"additionalProperties": false,
-				"description": "Sounds to play when the entity is getting provoked. Evaluated in order. First matching condition wins."
+				"additionalProperties": false
 			},
 			"description": "Sounds to play when the entity is getting provoked. Evaluated in order. First matching condition wins."
 		},
 		"remove_targets_below_angry_threshold": {
-			"$ref": "../../legacy/components/anger_level.json#/properties/remove_targets_below_angry_threshold",
-			"description": "Defines if the mob should remove target if it falls below 'angry' threshold."
+			"$ref": "../../legacy/components/anger_level.json#/properties/remove_targets_below_angry_threshold"
 		}
 	},
 	"additionalProperties": false,

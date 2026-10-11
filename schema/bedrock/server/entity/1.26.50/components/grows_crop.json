@@ -3,12 +3,10 @@
 	"type": "object",
 	"properties": {
 		"chance": {
-			"$ref": "../../legacy/components/grows_crop.json#/properties/chance",
-			"description": "Value between 0-1. Chance of success per tick"
+			"$ref": "../../legacy/components/grows_crop.json#/properties/chance"
 		},
 		"charges": {
-			"$ref": "../../legacy/components/grows_crop.json#/properties/charges",
-			"description": "Number of charges"
+			"$ref": "../../legacy/components/grows_crop.json#/properties/charges"
 		}
 	},
 	"additionalProperties": false,

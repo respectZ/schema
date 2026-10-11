@@ -18,11 +18,11 @@
 			"description": "If true, this entity will eject all of its riders when it passes over a deactivated rail"
 		},
 		"on_activate": {
-			"$ref": "./ageable.json#/$defs/growth_event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event to call when the rail is activated"
 		},
 		"on_deactivate": {
-			"$ref": "./ageable.json#/$defs/growth_event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event to call when the rail is deactivated"
 		},
 		"tick_command_block_on_activate": {

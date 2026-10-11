@@ -3,76 +3,58 @@
 	"type": "object",
 	"properties": {
 		"block_distance": {
-			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/block_distance",
-			"description": "The amount of blocks away the entity will look at to push away from."
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/block_distance"
 		},
 		"block_weight": {
-			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/block_weight",
-			"description": "The weight of the push back away from blocks."
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/block_weight"
 		},
 		"breach_influence": {
-			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/breach_influence",
-			"description": "The amount of push back given to a flocker that breaches out of the water."
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/breach_influence"
 		},
 		"cohesion_threshold": {
-			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/cohesion_threshold",
-			"description": "The threshold in which to start applying cohesion."
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/cohesion_threshold"
 		},
 		"cohesion_weight": {
-			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/cohesion_weight",
-			"description": "The weight applied for the cohesion steering of the flock."
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/cohesion_weight"
 		},
 		"goal_weight": {
-			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/goal_weight",
-			"description": "The weight on which to apply on the goal output."
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/goal_weight"
 		},
 		"high_flock_limit": {
-			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/high_flock_limit",
-			"description": "Determines the high bound amount of entities that can be allowed in the flock."
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/high_flock_limit"
 		},
 		"in_water": {
-			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/in_water",
-			"description": "Tells the Flocking Component if the entity exists in water."
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/in_water"
 		},
 		"influence_radius": {
-			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/influence_radius",
-			"description": "The area around the entity that allows others to be added to the flock."
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/influence_radius"
 		},
 		"innner_cohesion_threshold": {
-			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/innner_cohesion_threshold",
-			"description": "The distance in which the flocker will stop applying cohesion."
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/innner_cohesion_threshold"
 		},
 		"loner_chance": {
-			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/loner_chance",
-			"description": "The percentage chance between 0-1 that a fish will spawn and not want to join flocks. Invalid values will be capped at the end points."
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/loner_chance"
 		},
 		"low_flock_limit": {
-			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/low_flock_limit",
-			"description": "Determines the low bound amount of entities that can be allowed in the flock."
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/low_flock_limit"
 		},
 		"match_variants": {
-			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/match_variants",
-			"description": "Tells the flockers that they can only match similar entities that also match the variant, mark variants, and color data of the other potential flockers."
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/match_variants"
 		},
 		"max_height": {
-			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/max_height",
-			"description": "The max height allowable in the air or water."
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/max_height"
 		},
 		"min_height": {
-			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/min_height",
-			"description": "The min height allowable in the air or water."
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/min_height"
 		},
 		"separation_threshold": {
-			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/separation_threshold",
-			"description": "The distance that is determined to be to close to another flocking and to start applying separation."
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/separation_threshold"
 		},
 		"separation_weight": {
-			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/separation_weight",
-			"description": "The weight applied to the separation of the flock."
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/separation_weight"
 		},
 		"use_center_of_mass": {
-			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/use_center_of_mass",
-			"description": "Tells the flockers that they will follow flocks based on the center of mass."
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/use_center_of_mass"
 		}
 	},
 	"additionalProperties": false,

@@ -1,5 +1,4 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$ref": "../../legacy/components/inventory.json#/$defs/definition",
-	"description": "Defines this entity's inventory properties."
+	"$ref": "../../legacy/components/inventory.json#/$defs/definition"
 }

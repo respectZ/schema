@@ -20,12 +20,10 @@
 			"type": "string",
 			"anyOf": [
 				{
-					"enum": ["bed", "jobsite", "meeting_area"],
-					"description": "Defines what POI type to hide at."
+					"enum": ["bed", "jobsite", "meeting_area"]
 				},
 				{
-					"pattern": "^(?:[Bb][Ee][Dd]|[Jj][Oo][Bb][Ss][Ii][Tt][Ee]|[Mm][Ee][Ee][Tt][Ii][Nn][Gg]_[Aa][Rr][Ee][Aa])$(?![\\s\\S])",
-					"description": "Defines what POI type to hide at."
+					"pattern": "^(?:[Bb][Ee][Dd]|[Jj][Oo][Bb][Ss][Ii][Tt][Ee]|[Mm][Ee][Ee][Tt][Ii][Nn][Gg]_[Aa][Rr][Ee][Aa])$(?![\\s\\S])"
 				}
 			],
 			"description": "Defines what POI type to hide at."

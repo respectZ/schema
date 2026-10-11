@@ -28,11 +28,11 @@
 			"description": "Vertical range (in blocks) at which the sonic boom can damage the target."
 		},
 		"attack_sound": {
-			"type": "string",
+			"$ref": "../../../../../vanilla/server/level_sound.json",
 			"description": "Sound event for the attack."
 		},
 		"charge_sound": {
-			"type": "string",
+			"$ref": "../../../../../vanilla/server/level_sound.json",
 			"description": "Sound event for the charge up."
 		},
 		"control_flags": {

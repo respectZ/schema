@@ -8,7 +8,7 @@
 			"description": "If true, celebration will be broadcasted to other entities in the radius."
 		},
 		"celebrate_sound": {
-			"type": "string",
+			"$ref": "../../../../../vanilla/server/level_sound.json",
 			"default": "",
 			"description": "The sound event to play when the mob is celebrating"
 		},
@@ -31,7 +31,7 @@
 			"description": "If broadcast is enabled, specifies the radius in which it will notify other entities for celebration."
 		},
 		"sound_interval": {
-			"$ref": "./looked_at.json#/properties/looked_at_cooldown",
+			"$ref": "../general.json#/$defs/number_or_range",
 			"default": 0,
 			"description": "The range of time in seconds to randomly wait before playing the sound again"
 		}

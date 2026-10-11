@@ -22,59 +22,10 @@
 		"destination_position_range": {
 			"anyOf": [
 				{
-					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "The range of distances from the target entity within which the goal should look for a position to move the owner entity to."
+					"$ref": "../general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "The range of distances from the target entity within which the goal should look for a position to move the owner entity to."
-				}
-			],
-			"allOf": [
-				{
-					"if": {
-						"type": "number",
-						"description": "The range of distances from the target entity within which the goal should look for a position to move the owner entity to."
-					},
-					"then": {
-						"minimum": 0,
-						"description": "The range of distances from the target entity within which the goal should look for a position to move the owner entity to."
-					},
-					"description": "The range of distances from the target entity within which the goal should look for a position to move the owner entity to."
-				},
-				{
-					"if": {
-						"type": "array",
-						"description": "The range of distances from the target entity within which the goal should look for a position to move the owner entity to."
-					},
-					"then": {
-						"items": {
-							"minimum": 0,
-							"description": "The range of distances from the target entity within which the goal should look for a position to move the owner entity to."
-						},
-						"description": "The range of distances from the target entity within which the goal should look for a position to move the owner entity to."
-					},
-					"description": "The range of distances from the target entity within which the goal should look for a position to move the owner entity to."
-				},
-				{
-					"if": {
-						"type": "object",
-						"description": "The range of distances from the target entity within which the goal should look for a position to move the owner entity to."
-					},
-					"then": {
-						"properties": {
-							"range_min": {
-								"minimum": 0,
-								"description": ""
-							},
-							"range_max": {
-								"minimum": 0,
-								"description": ""
-							}
-						},
-						"description": "The range of distances from the target entity within which the goal should look for a position to move the owner entity to."
-					},
-					"description": "The range of distances from the target entity within which the goal should look for a position to move the owner entity to."
+					"type": "null"
 				}
 			],
 			"description": "The range of distances from the target entity within which the goal should look for a position to move the owner entity to."

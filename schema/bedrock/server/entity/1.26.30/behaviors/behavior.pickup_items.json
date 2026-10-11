@@ -38,55 +38,7 @@
 		"excluded_items": {
 			"type": "array",
 			"items": {
-				"anyOf": [
-					{
-						"type": "object",
-						"additionalProperties": false,
-						"properties": {
-							"name": {
-								"anyOf": [
-									{
-										"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
-										"description": ""
-									},
-									{
-										"type": "string",
-										"description": ""
-									}
-								],
-								"description": ""
-							}
-						},
-						"patternProperties": {
-							"^[\\s\\S]*$": {
-								"type": "string",
-								"description": ""
-							}
-						},
-						"description": "List of items this mob will not pick up"
-					},
-					{
-						"type": "array",
-						"items": {
-							"type": "object",
-							"additionalProperties": false,
-							"properties": {
-								"key": {
-									"type": "string",
-									"description": ""
-								},
-								"value": {
-									"type": "string",
-									"description": ""
-								}
-							},
-							"required": ["key", "value"],
-							"description": "List of items this mob will not pick up"
-						},
-						"description": "List of items this mob will not pick up"
-					}
-				],
-				"description": "List of items this mob will not pick up"
+				"$ref": "../../../../../vanilla/server/item_descriptor.json#/$defs/latest"
 			},
 			"description": "List of items this mob will not pick up"
 		},
@@ -103,65 +55,11 @@
 			"description": "Maximum distance this mob will look for items to pick up"
 		},
 		"on_pickup_item_end": {
-			"type": "object",
-			"properties": {
-				"event": {
-					"type": "string",
-					"default": "",
-					"description": ""
-				},
-				"filters": {
-					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-					"description": ""
-				},
-				"target": {
-					"type": "string",
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/filter/general.json#/$defs/filter_subject",
-							"description": ""
-						},
-						{
-							"pattern": "^(?:[sS][eE][lL][fF]|[oO][tT][hH][eE][rR]|[pP][lL][aA][yY][eE][rR]|[tT][aA][rR][gG][eE][tT]|[pP][aA][rR][eE][nN][tT]|[bB][aA][bB][yY]|[bB][lL][oO][cC][kK]|[dD][aA][mM][aA][gG][eE][rR]|[hH][oO][lL][dD][eE][rR]|[iI][tT][eE][mM])$(?![\\s\\S])",
-							"description": ""
-						}
-					],
-					"default": "self",
-					"description": ""
-				}
-			},
-			"additionalProperties": false,
+			"$ref": "../../legacy/general.json#/$defs/trigger",
 			"description": "Event to run when this mob either finishes or loses interest in picking up an item"
 		},
 		"on_pickup_item_start": {
-			"type": "object",
-			"properties": {
-				"event": {
-					"type": "string",
-					"default": "",
-					"description": ""
-				},
-				"filters": {
-					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-					"description": ""
-				},
-				"target": {
-					"type": "string",
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/filter/general.json#/$defs/filter_subject",
-							"description": ""
-						},
-						{
-							"pattern": "^(?:[sS][eE][lL][fF]|[oO][tT][hH][eE][rR]|[pP][lL][aA][yY][eE][rR]|[tT][aA][rR][gG][eE][tT]|[pP][aA][rR][eE][nN][tT]|[bB][aA][bB][yY]|[bB][lL][oO][cC][kK]|[dD][aA][mM][aA][gG][eE][rR]|[hH][oO][lL][dD][eE][rR]|[iI][tT][eE][mM])$(?![\\s\\S])",
-							"description": ""
-						}
-					],
-					"default": "self",
-					"description": ""
-				}
-			},
-			"additionalProperties": false,
+			"$ref": "../../legacy/general.json#/$defs/trigger",
 			"description": "Event to run when this mob moves to pick up an item"
 		},
 		"pickup_based_on_chance": {

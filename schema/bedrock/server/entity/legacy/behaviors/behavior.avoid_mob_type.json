@@ -3,7 +3,7 @@
 	"type": "object",
 	"properties": {
 		"avoid_mob_sound": {
-			"$ref": "../components/shooter.json#/$defs/sound_name",
+			"$ref": "../../../../../vanilla/server/level_sound.json",
 			"description": "The sound event to play when the mob is avoiding another mob."
 		},
 		"avoid_target_xz": {
@@ -31,118 +31,13 @@
 		"entity_types": {
 			"anyOf": [
 				{
-					"type": "object",
-					"properties": {
-						"max_dist": {
-							"type": "number",
-							"description": ""
-						},
-						"max_height": {
-							"type": "number",
-							"description": ""
-						},
-						"max_flee": {
-							"type": "number",
-							"description": ""
-						},
-						"walk_speed_multiplier": {
-							"type": "number",
-							"description": ""
-						},
-						"sprint_speed_multiplier": {
-							"type": "number",
-							"description": ""
-						},
-						"priority": {
-							"type": "integer",
-							"description": ""
-						},
-						"cooldown": {
-							"type": "integer",
-							"description": ""
-						},
-						"must_see_forget_duration": {
-							"type": "integer",
-							"description": ""
-						},
-						"check_if_outnumbered": {
-							"type": "boolean",
-							"description": ""
-						},
-						"reevaluate_description": {
-							"type": "boolean",
-							"description": ""
-						},
-						"must_see": {
-							"type": "boolean",
-							"description": ""
-						},
-						"filters": {
-							"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-							"description": ""
-						}
-					},
-					"additionalProperties": false,
-					"description": "The list of conditions another entity must meet to be a valid target to avoid."
+					"$ref": "../general.json#/$defs/entity_types"
 				},
 				{
 					"type": "array",
 					"items": {
-						"type": "object",
-						"properties": {
-							"max_dist": {
-								"type": "number",
-								"description": ""
-							},
-							"max_height": {
-								"type": "number",
-								"description": ""
-							},
-							"max_flee": {
-								"type": "number",
-								"description": ""
-							},
-							"walk_speed_multiplier": {
-								"type": "number",
-								"description": ""
-							},
-							"sprint_speed_multiplier": {
-								"type": "number",
-								"description": ""
-							},
-							"priority": {
-								"type": "integer",
-								"description": ""
-							},
-							"cooldown": {
-								"type": "integer",
-								"description": ""
-							},
-							"must_see_forget_duration": {
-								"type": "integer",
-								"description": ""
-							},
-							"check_if_outnumbered": {
-								"type": "boolean",
-								"description": ""
-							},
-							"reevaluate_description": {
-								"type": "boolean",
-								"description": ""
-							},
-							"must_see": {
-								"type": "boolean",
-								"description": ""
-							},
-							"filters": {
-								"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-								"description": ""
-							}
-						},
-						"additionalProperties": false,
-						"description": "The list of conditions another entity must meet to be a valid target to avoid."
-					},
-					"description": "The list of conditions another entity must meet to be a valid target to avoid."
+						"$ref": "../general.json#/$defs/entity_types"
+					}
 				}
 			],
 			"description": "The list of conditions another entity must meet to be a valid target to avoid."
@@ -164,7 +59,7 @@
 			"description": "How many blocks away from its avoid target the entity must be for it to stop fleeing from the avoid target."
 		},
 		"on_escape_event": {
-			"$ref": "../components/equippable.json#/$defs/event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event that is triggered when escaping from a mob."
 		},
 		"priority": {
@@ -191,63 +86,7 @@
 			"description": ""
 		},
 		"sound_interval": {
-			"anyOf": [
-				{
-					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "The range of time in seconds to randomly wait before playing the sound again."
-				},
-				{
-					"type": "null",
-					"description": "The range of time in seconds to randomly wait before playing the sound again."
-				}
-			],
-			"allOf": [
-				{
-					"if": {
-						"type": "number",
-						"description": "The range of time in seconds to randomly wait before playing the sound again."
-					},
-					"then": {
-						"minimum": 0,
-						"description": "The range of time in seconds to randomly wait before playing the sound again."
-					},
-					"description": "The range of time in seconds to randomly wait before playing the sound again."
-				},
-				{
-					"if": {
-						"type": "array",
-						"description": "The range of time in seconds to randomly wait before playing the sound again."
-					},
-					"then": {
-						"items": {
-							"minimum": 0,
-							"description": "The range of time in seconds to randomly wait before playing the sound again."
-						},
-						"description": "The range of time in seconds to randomly wait before playing the sound again."
-					},
-					"description": "The range of time in seconds to randomly wait before playing the sound again."
-				},
-				{
-					"if": {
-						"type": "object",
-						"description": "The range of time in seconds to randomly wait before playing the sound again."
-					},
-					"then": {
-						"properties": {
-							"range_min": {
-								"minimum": 0,
-								"description": ""
-							},
-							"range_max": {
-								"minimum": 0,
-								"description": ""
-							}
-						},
-						"description": "The range of time in seconds to randomly wait before playing the sound again."
-					},
-					"description": "The range of time in seconds to randomly wait before playing the sound again."
-				}
-			],
+			"$ref": "../general.json#/$defs/number_or_range",
 			"description": "The range of time in seconds to randomly wait before playing the sound again."
 		},
 		"sprint_distance": {

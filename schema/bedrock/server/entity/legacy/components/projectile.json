@@ -332,11 +332,11 @@
 					"description": ""
 				},
 				"eventTrigger": {
-					"$ref": "./ageable.json#/$defs/growth_event",
+					"$ref": "../general.json#/$defs/trigger",
 					"description": ""
 				},
 				"event_trigger": {
-					"$ref": "./ageable.json#/$defs/growth_event",
+					"$ref": "../general.json#/$defs/trigger",
 					"description": ""
 				},
 				"splashArea": {
@@ -2729,13 +2729,13 @@
 				"on_spawn": {
 					"anyOf": [
 						{
-							"$ref": "./ageable.json#/$defs/growth_event",
+							"$ref": "../general.json#/$defs/trigger",
 							"description": ""
 						},
 						{
 							"type": "array",
 							"items": {
-								"$ref": "./ageable.json#/$defs/growth_event",
+								"$ref": "../general.json#/$defs/trigger",
 								"description": ""
 							},
 							"description": ""

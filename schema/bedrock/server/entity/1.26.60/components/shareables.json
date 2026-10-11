@@ -31,8 +31,7 @@
 		"items": {
 			"type": "array",
 			"items": {
-				"$ref": "#/$defs/item_record",
-				"description": "List of items or item tags that the entity wants to share. Items in-game will match to this list from top to bottom, meaning that the first occurance of a match, be it name or tag, will shadow those coming after."
+				"$ref": "#/$defs/item_record"
 			},
 			"default": [],
 			"description": "List of items or item tags that the entity wants to share. Items in-game will match to this list from top to bottom, meaning that the first occurance of a match, be it name or tag, will shadow those coming after."
@@ -64,21 +63,12 @@
 					"description": "Determines whether the mob will consume the item or not."
 				},
 				"craft_into": {
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
-							"description": "Defines the item this entity wants to craft with the item defined by \"item\". Should be an item name."
-						},
-						{
-							"type": "string",
-							"description": "Defines the item this entity wants to craft with the item defined by \"item\". Should be an item name."
-						}
-					],
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
 					"default": "",
 					"description": "Defines the item this entity wants to craft with the item defined by \"item\". Should be an item name."
 				},
 				"item": {
-					"$ref": "./healable.json#/$defs/item_descriptor",
+					"$ref": "../../../../../vanilla/server/item_descriptor.json#/$defs/latest",
 					"description": "The name of the item. Aux value can be specified, for instance 'minecraft:skull:1'. Alternatively, a tag can be specified to match all items with that tag."
 				},
 				"max_amount": {

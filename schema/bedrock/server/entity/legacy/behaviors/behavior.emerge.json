@@ -27,7 +27,7 @@
 			"description": "Goal duration in seconds"
 		},
 		"on_done": {
-			"$ref": "../components/equippable.json#/$defs/event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Trigger to be executed when the goal execution is about to end"
 		},
 		"priority": {

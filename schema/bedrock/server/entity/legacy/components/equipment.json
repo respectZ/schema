@@ -19,22 +19,12 @@
 						"description": ""
 					}
 				},
-				"additionalProperties": false,
-				"description": "A list of slots with the chance to drop an equipped item from that slot."
+				"additionalProperties": false
 			},
 			"description": "A list of slots with the chance to drop an equipped item from that slot."
 		},
 		"table": {
-			"anyOf": [
-				{
-					"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
-					"description": "The file path to the equipment table, relative to the behavior pack's root."
-				},
-				{
-					"type": "string",
-					"description": "The file path to the equipment table, relative to the behavior pack's root."
-				}
-			],
+			"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
 			"description": "The file path to the equipment table, relative to the behavior pack's root."
 		}
 	},

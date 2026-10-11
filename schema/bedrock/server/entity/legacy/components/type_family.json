@@ -5,34 +5,13 @@
 		"family": {
 			"anyOf": [
 				{
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/type_family.json",
-							"description": "List of family names."
-						},
-						{
-							"type": "string",
-							"description": "List of family names."
-						}
-					],
-					"description": "List of family names."
+					"$ref": "../../../../../vanilla/server/type_family.json"
 				},
 				{
 					"type": "array",
 					"items": {
-						"anyOf": [
-							{
-								"$ref": "../../../../../vanilla/server/type_family.json",
-								"description": "List of family names."
-							},
-							{
-								"type": "string",
-								"description": "List of family names."
-							}
-						],
-						"description": "List of family names."
-					},
-					"description": "List of family names."
+						"$ref": "../../../../../vanilla/server/type_family.json"
+					}
 				}
 			],
 			"description": "List of family names."

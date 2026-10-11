@@ -13,15 +13,15 @@
 			"description": "Whether the other entity needs to be visible to trigger 'inside' events"
 		},
 		"on_inside_range": {
-			"$ref": "./ageable.json#/$defs/growth_event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event to call when an entity gets in the inside range. Can specify 'event' for the name of the event and 'target' for the target of the event"
 		},
 		"on_outside_range": {
-			"$ref": "./ageable.json#/$defs/growth_event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event to call when an entity gets in the outside range. Can specify 'event' for the name of the event and 'target' for the target of the event"
 		},
 		"on_vision_lost_inside_range": {
-			"$ref": "./ageable.json#/$defs/growth_event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event to call when an entity exits visual range. Can specify 'event' for the name of the event and 'target' for the target of the event"
 		},
 		"outside_range": {

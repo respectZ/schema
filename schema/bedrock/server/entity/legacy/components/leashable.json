@@ -25,12 +25,12 @@
 					"description": "Distance in blocks at which the leash breaks."
 				},
 				"on_leash": {
-					"$ref": "./equippable.json#/$defs/event",
+					"$ref": "../general.json#/$defs/trigger",
 					"default": {},
 					"description": "Event to call when this entity is leashed."
 				},
 				"on_unleash": {
-					"$ref": "./equippable.json#/$defs/event",
+					"$ref": "../general.json#/$defs/trigger",
 					"default": {},
 					"description": "Event to call when this entity is unleashed."
 				},
@@ -44,15 +44,11 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/$defs/preset",
-								"description": "Defines how this entity behaves when leashed to another entity. The first preset which \"filter\" conditions are met will be applied; if none match, a default configuration is used instead."
-							},
-							"default": [],
-							"description": "Defines how this entity behaves when leashed to another entity. The first preset which \"filter\" conditions are met will be applied; if none match, a default configuration is used instead."
+								"$ref": "#/$defs/preset"
+							}
 						},
 						{
-							"type": "null",
-							"description": "Defines how this entity behaves when leashed to another entity. The first preset which \"filter\" conditions are met will be applied; if none match, a default configuration is used instead."
+							"type": "null"
 						}
 					],
 					"default": [],
@@ -69,12 +65,10 @@
 					"description": "If true, the entity is unleashed when the component is removed."
 				}
 			},
-			"additionalProperties": false,
-			"description": "Allows this entity to be leashed and defines the conditions and events for this entity when is leashed."
+			"additionalProperties": false
 		},
 		{
-			"type": "null",
-			"description": "Allows this entity to be leashed and defines the conditions and events for this entity when is leashed."
+			"type": "null"
 		}
 	],
 	"$defs": {
@@ -119,15 +113,12 @@
 							"description": "Defines the type of spring-like force that pulls the entity towards its leash holder:\n- \"bouncy\": Simulates a highly elastic spring that never reaches an equilibrium if the leashed entity is suspended mid-air.\n- \"dampened\": Simulates a dampened spring attached to the front of the leashed entity's collision. It reaches an equilibrium if the entity is suspended mid-air and aligns with the movement direction.\n- \"quad_dampened\": Simulates four dampened springs connected to the center of each side of the entities' collisions. It reaches an equilibrium if the entity is suspended mid-air and gradually aligns with the leash holder over time."
 						}
 					},
-					"additionalProperties": false,
-					"description": "Defines how this entity behaves when leashed to another entity. The first preset which \"filter\" conditions are met will be applied; if none match, a default configuration is used instead."
+					"additionalProperties": false
 				},
 				{
-					"type": "null",
-					"description": "Defines how this entity behaves when leashed to another entity. The first preset which \"filter\" conditions are met will be applied; if none match, a default configuration is used instead."
+					"type": "null"
 				}
-			],
-			"description": "Defines how this entity behaves when leashed to another entity. The first preset which \"filter\" conditions are met will be applied; if none match, a default configuration is used instead."
+			]
 		},
 		"preset_array": {
 			"type": "array",

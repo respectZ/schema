@@ -13,11 +13,11 @@
 			"description": ""
 		},
 		"on_balloon": {
-			"$ref": "./ageable.json#/$defs/growth_event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": ""
 		},
 		"on_unballoon": {
-			"$ref": "./ageable.json#/$defs/growth_event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": ""
 		},
 		"soft_distance": {

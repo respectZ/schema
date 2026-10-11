@@ -2,20 +2,16 @@
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"anyOf": [
 		{
-			"$ref": "#/$defs/entry",
-			"description": "Adds a timer after which this entity will spawn another entity or item (similar to vanilla's chicken's egg-laying behavior)."
+			"$ref": "#/$defs/entry"
 		},
 		{
 			"type": "array",
 			"items": {
-				"$ref": "#/$defs/entry",
-				"description": "Adds a timer after which this entity will spawn another entity or item (similar to vanilla's chicken's egg-laying behavior)."
-			},
-			"description": "Adds a timer after which this entity will spawn another entity or item (similar to vanilla's chicken's egg-laying behavior)."
+				"$ref": "#/$defs/entry"
+			}
 		},
 		{
-			"$ref": "#/$defs/wrapped",
-			"description": "Adds a timer after which this entity will spawn another entity or item (similar to vanilla's chicken's egg-laying behavior)."
+			"$ref": "#/$defs/wrapped"
 		}
 	],
 	"$defs": {
@@ -60,16 +56,7 @@
 							"description": "If true, this component will only ever spawn the specified entity once."
 						},
 						"spawn_entity": {
-							"anyOf": [
-								{
-									"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
-									"description": "Identifier of the entity to spawn, leave empty to spawn the item defined by \"spawn_item\" instead."
-								},
-								{
-									"type": "string",
-									"description": "Identifier of the entity to spawn, leave empty to spawn the item defined by \"spawn_item\" instead."
-								}
-							],
+							"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
 							"default": "",
 							"description": "Identifier of the entity to spawn, leave empty to spawn the item defined by \"spawn_item\" instead."
 						},
@@ -79,12 +66,12 @@
 							"description": "Event to call on the spawned entity when it spawns."
 						},
 						"spawn_item": {
-							"$ref": "./equippable.json#/$defs/item_descriptor",
+							"$ref": "../../../../../vanilla/server/item_descriptor.json",
 							"default": "minecraft:egg",
 							"description": "Item identifier of the item to spawn."
 						},
 						"spawn_item_event": {
-							"$ref": "./equippable.json#/$defs/event",
+							"$ref": "../general.json#/$defs/trigger",
 							"default": {},
 							"description": "Event to call on this entity when the item is spawned."
 						},
@@ -94,29 +81,17 @@
 							"description": "Method to use to spawn the entity."
 						},
 						"spawn_sound": {
-							"anyOf": [
-								{
-									"$ref": "../../../../../vanilla/server/level_sound.json",
-									"description": "Identifier of the sound effect to play when the entity is spawned."
-								},
-								{
-									"type": "string",
-									"description": "Identifier of the sound effect to play when the entity is spawned."
-								}
-							],
+							"$ref": "../../../../../vanilla/server/level_sound.json",
 							"default": "plop",
 							"description": "Identifier of the sound effect to play when the entity is spawned."
 						}
 					},
-					"additionalProperties": false,
-					"description": "Adds a timer after which this entity will spawn another entity or item (similar to vanilla's chicken's egg-laying behavior)."
+					"additionalProperties": false
 				},
 				{
-					"type": "null",
-					"description": "Adds a timer after which this entity will spawn another entity or item (similar to vanilla's chicken's egg-laying behavior)."
+					"type": "null"
 				}
-			],
-			"description": "Adds a timer after which this entity will spawn another entity or item (similar to vanilla's chicken's egg-laying behavior)."
+			]
 		},
 		"wrapped": {
 			"anyOf": [
@@ -142,15 +117,12 @@
 							"description": ""
 						}
 					},
-					"additionalProperties": false,
-					"description": "Adds a timer after which this entity will spawn another entity or item (similar to vanilla's chicken's egg-laying behavior)."
+					"additionalProperties": false
 				},
 				{
-					"type": "null",
-					"description": "Adds a timer after which this entity will spawn another entity or item (similar to vanilla's chicken's egg-laying behavior)."
+					"type": "null"
 				}
-			],
-			"description": "Adds a timer after which this entity will spawn another entity or item (similar to vanilla's chicken's egg-laying behavior)."
+			]
 		}
 	},
 	"description": "Adds a timer after which this entity will spawn another entity or item (similar to vanilla's chicken's egg-laying behavior)."

@@ -10,40 +10,19 @@
 			"description": "The chance of the entity trusting with each item use between 0.0 and 1.0, where 1.0 is 100%."
 		},
 		"trust_event": {
-			"$ref": "./ageable.json#/$defs/growth_event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event to run when this entity becomes trusting."
 		},
 		"trust_items": {
 			"anyOf": [
 				{
-					"anyOf": [
-						{
-							"type": "string",
-							"description": "The list of items that can be used to get the entity to trust players."
-						},
-						{
-							"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
-							"description": "The list of items that can be used to get the entity to trust players."
-						}
-					],
-					"description": "The list of items that can be used to get the entity to trust players."
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
 				},
 				{
 					"type": "array",
 					"items": {
-						"anyOf": [
-							{
-								"type": "string",
-								"description": "The list of items that can be used to get the entity to trust players."
-							},
-							{
-								"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
-								"description": "The list of items that can be used to get the entity to trust players."
-							}
-						],
-						"description": "The list of items that can be used to get the entity to trust players."
-					},
-					"description": "The list of items that can be used to get the entity to trust players."
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+					}
 				}
 			],
 			"description": "The list of items that can be used to get the entity to trust players."

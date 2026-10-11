@@ -52,7 +52,7 @@
 			"description": "The minimum amount of time (in seconds) for the mob to randomly wait for before taking the flower."
 		},
 		"on_take_flower": {
-			"$ref": "../components/equippable.json#/$defs/event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event triggered when the entity takes a flower from another entity."
 		},
 		"priority": {
@@ -67,11 +67,9 @@
 				{
 					"type": "array",
 					"items": {
-						"type": "number",
-						"description": "The dimensions of the AABB used to search for a potential mob to take a flower from."
+						"type": "number"
 					},
-					"maxItems": 3,
-					"description": "The dimensions of the AABB used to search for a potential mob to take a flower from."
+					"maxItems": 3
 				},
 				{
 					"type": "object",
@@ -89,8 +87,7 @@
 							"description": ""
 						}
 					},
-					"additionalProperties": false,
-					"description": "The dimensions of the AABB used to search for a potential mob to take a flower from."
+					"additionalProperties": false
 				}
 			],
 			"description": "The dimensions of the AABB used to search for a potential mob to take a flower from."

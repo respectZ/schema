@@ -5,16 +5,13 @@
 		"triggers": {
 			"anyOf": [
 				{
-					"$ref": "#/$defs/trigger",
-					"description": "List of triggers with the events to call when taking specific kinds of damage.\""
+					"$ref": "#/$defs/trigger"
 				},
 				{
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/trigger",
-						"description": "List of triggers with the events to call when taking specific kinds of damage.\""
-					},
-					"description": "List of triggers with the events to call when taking specific kinds of damage.\""
+						"$ref": "#/$defs/trigger"
+					}
 				}
 			],
 			"description": "List of triggers with the events to call when taking specific kinds of damage.\""
@@ -45,16 +42,15 @@
 					"description": "Defines how received damage affects the entity:\n                                          \\n- \"yes\", received damage is applied to the entity and all consequences of the attack occur.\n                                          \\n- \"no\", entity is unaffected and no side effects from attacking occur.\n                                          \\n- \"no_but_side_effects_apply\", entity is unaffected, but the side effects of the attack apply. This means that the attacker's weapon loses durability.\n                                          \\n- \"no_but_entity_effects_apply\", damage is not applied to the entity, but knockback and enchantments are applied and the attacker's weapon is used as normal. The entity does not flash red."
 				},
 				"on_damage": {
-					"$ref": "../../legacy/components/ageable.json#/$defs/growth_event",
+					"$ref": "../../legacy/general.json#/$defs/trigger",
 					"description": "Defines which entities the trigger applies to, and which, if any, event to emit when damaged."
 				},
 				"on_damage_sound_event": {
-					"type": "string",
+					"$ref": "../../../../../vanilla/server/level_sound.json",
 					"description": "Defines what sound to play, if any, when the \"on_damage\" filters are met."
 				}
 			},
-			"additionalProperties": false,
-			"description": "List of triggers with the events to call when taking specific kinds of damage.\""
+			"additionalProperties": false
 		}
 	},
 	"description": "\"Defines what events to call when this entity is damaged by specific entities or items."

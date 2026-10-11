@@ -48,75 +48,7 @@
 		"friend_types": {
 			"type": "array",
 			"items": {
-				"type": "object",
-				"additionalProperties": false,
-				"properties": {
-					"check_if_outnumbered": {
-						"type": "boolean",
-						"description": ""
-					},
-					"cooldown": {
-						"type": "integer",
-						"minimum": -2147483648,
-						"maximum": 2147483647,
-						"description": ""
-					},
-					"filters": {
-						"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-						"description": ""
-					},
-					"max_dist": {
-						"type": "number",
-						"minimum": -3.4028234663852886e38,
-						"maximum": 3.4028234663852886e38,
-						"description": ""
-					},
-					"max_flee": {
-						"type": "number",
-						"minimum": -3.4028234663852886e38,
-						"maximum": 3.4028234663852886e38,
-						"description": ""
-					},
-					"max_height": {
-						"type": "number",
-						"minimum": -3.4028234663852886e38,
-						"maximum": 3.4028234663852886e38,
-						"description": ""
-					},
-					"must_see": {
-						"type": "boolean",
-						"description": ""
-					},
-					"must_see_forget_duration": {
-						"type": "integer",
-						"minimum": -2147483648,
-						"maximum": 2147483647,
-						"description": ""
-					},
-					"priority": {
-						"type": "integer",
-						"minimum": -2147483648,
-						"maximum": 2147483647,
-						"description": ""
-					},
-					"reevaluate_description": {
-						"type": "boolean",
-						"description": ""
-					},
-					"sprint_speed_multiplier": {
-						"type": "number",
-						"minimum": -3.4028234663852886e38,
-						"maximum": 3.4028234663852886e38,
-						"description": ""
-					},
-					"walk_speed_multiplier": {
-						"type": "number",
-						"minimum": -3.4028234663852886e38,
-						"maximum": 3.4028234663852886e38,
-						"description": ""
-					}
-				},
-				"description": "The entity type(s) to consider when searching for a potential friend to play with."
+				"$ref": "../../legacy/general.json#/$defs/entity_types"
 			},
 			"description": "The entity type(s) to consider when searching for a potential friend to play with."
 		},

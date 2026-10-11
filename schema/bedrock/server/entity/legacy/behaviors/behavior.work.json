@@ -31,7 +31,7 @@
 			"description": "The amount of ticks the goal will be on cooldown before it can be used again"
 		},
 		"on_arrival": {
-			"$ref": "../components/equippable.json#/$defs/event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event to run when the mob reaches their jobsite."
 		},
 		"priority": {

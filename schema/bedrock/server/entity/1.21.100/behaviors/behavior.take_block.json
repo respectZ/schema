@@ -9,8 +9,7 @@
 		"blocks": {
 			"type": "array",
 			"items": {
-				"$ref": "../../../../../vanilla/server/block_descriptor.json",
-				"description": "Block descriptors for which blocks are valid to be taken by the entity, if empty all blocks are valid."
+				"$ref": "../../../../../vanilla/server/block_descriptor.json"
 			},
 			"default": [],
 			"description": "Block descriptors for which blocks are valid to be taken by the entity, if empty all blocks are valid."
@@ -36,7 +35,7 @@
 			"description": ""
 		},
 		"on_take": {
-			"$ref": "../../legacy/components/equippable.json#/$defs/event",
+			"$ref": "../../legacy/general.json#/$defs/trigger",
 			"description": "Trigger ran if the entity does take a block. Self, Target, and Block are set."
 		},
 		"priority": {
@@ -51,89 +50,24 @@
 			"description": "If true, whether the entity needs line of sight to the block they are trying to take."
 		},
 		"xz_range": {
-			"anyOf": [
-				{
-					"type": "number",
-					"exclusiveMinimum": -2147483648,
-					"exclusiveMaximum": 2147483648,
-					"description": "XZ range from which the entity will try and take blocks from."
-				},
-				{
-					"type": "boolean",
-					"description": "XZ range from which the entity will try and take blocks from."
-				},
-				{
-					"type": "array",
-					"items": {
-						"anyOf": [
-							{
-								"type": "number",
-								"exclusiveMinimum": -2147483648,
-								"exclusiveMaximum": 2147483648,
-								"description": "XZ range from which the entity will try and take blocks from."
-							},
-							{
-								"type": "boolean",
-								"description": "XZ range from which the entity will try and take blocks from."
-							}
-						],
-						"description": "XZ range from which the entity will try and take blocks from."
-					},
-					"minItems": 2,
-					"maxItems": 2,
-					"description": "XZ range from which the entity will try and take blocks from."
-				},
-				{
-					"type": "object",
-					"properties": {
-						"range_min": {
-							"anyOf": [
-								{
-									"type": "number",
-									"exclusiveMinimum": -2147483648,
-									"exclusiveMaximum": 2147483648,
-									"description": ""
-								},
-								{
-									"type": "boolean",
-									"description": ""
-								}
-							],
-							"description": ""
-						},
-						"range_max": {
-							"anyOf": [
-								{
-									"type": "number",
-									"exclusiveMinimum": -2147483648,
-									"exclusiveMaximum": 2147483648,
-									"description": ""
-								},
-								{
-									"type": "boolean",
-									"description": ""
-								}
-							],
-							"description": ""
-						}
-					},
-					"additionalProperties": false,
-					"description": "XZ range from which the entity will try and take blocks from."
-				}
-			],
+			"$ref": "#/$defs/range",
 			"description": "XZ range from which the entity will try and take blocks from."
 		},
 		"y_range": {
+			"$ref": "#/$defs/range",
+			"description": "Y range from which the entity will try and take blocks from."
+		}
+	},
+	"$defs": {
+		"range": {
 			"anyOf": [
 				{
 					"type": "number",
 					"exclusiveMinimum": -2147483648,
-					"exclusiveMaximum": 2147483648,
-					"description": "Y range from which the entity will try and take blocks from."
+					"exclusiveMaximum": 2147483648
 				},
 				{
-					"type": "boolean",
-					"description": "Y range from which the entity will try and take blocks from."
+					"type": "boolean"
 				},
 				{
 					"type": "array",
@@ -142,19 +76,15 @@
 							{
 								"type": "number",
 								"exclusiveMinimum": -2147483648,
-								"exclusiveMaximum": 2147483648,
-								"description": "Y range from which the entity will try and take blocks from."
+								"exclusiveMaximum": 2147483648
 							},
 							{
-								"type": "boolean",
-								"description": "Y range from which the entity will try and take blocks from."
+								"type": "boolean"
 							}
-						],
-						"description": "Y range from which the entity will try and take blocks from."
+						]
 					},
 					"minItems": 2,
-					"maxItems": 2,
-					"description": "Y range from which the entity will try and take blocks from."
+					"maxItems": 2
 				},
 				{
 					"type": "object",
@@ -164,37 +94,29 @@
 								{
 									"type": "number",
 									"exclusiveMinimum": -2147483648,
-									"exclusiveMaximum": 2147483648,
-									"description": ""
+									"exclusiveMaximum": 2147483648
 								},
 								{
-									"type": "boolean",
-									"description": ""
+									"type": "boolean"
 								}
-							],
-							"description": ""
+							]
 						},
 						"range_max": {
 							"anyOf": [
 								{
 									"type": "number",
 									"exclusiveMinimum": -2147483648,
-									"exclusiveMaximum": 2147483648,
-									"description": ""
+									"exclusiveMaximum": 2147483648
 								},
 								{
-									"type": "boolean",
-									"description": ""
+									"type": "boolean"
 								}
-							],
-							"description": ""
+							]
 						}
 					},
-					"additionalProperties": false,
-					"description": "Y range from which the entity will try and take blocks from."
+					"additionalProperties": false
 				}
-			],
-			"description": "Y range from which the entity will try and take blocks from."
+			]
 		}
 	},
 	"additionalProperties": false,

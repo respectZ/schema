@@ -50,8 +50,7 @@
 				{
 					"type": "number",
 					"minimum": -3.4028234663852886e38,
-					"maximum": 3.4028234663852886e38,
-					"description": "Determines how likely the babies are to NOT inherit one of their parent's variances. Values are between 0.0 and 1.0, with a higher number meaning more likely to mutate."
+					"maximum": 3.4028234663852886e38
 				},
 				{
 					"type": "object",
@@ -78,8 +77,7 @@
 							"description": "The percentage chance of a mutation on the entity's variant type."
 						}
 					},
-					"additionalProperties": false,
-					"description": "Determines how likely the babies are to NOT inherit one of their parent's variances. Values are between 0.0 and 1.0, with a higher number meaning more likely to mutate."
+					"additionalProperties": false
 				}
 			],
 			"description": "Determines how likely the babies are to NOT inherit one of their parent's variances. Values are between 0.0 and 1.0, with a higher number meaning more likely to mutate."
@@ -93,16 +91,7 @@
 			"type": "object",
 			"patternProperties": {
 				"^[a-zA-Z0-9_.:-]+$": {
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
-							"description": ""
-						},
-						{
-							"type": "string",
-							"description": ""
-						}
-					],
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
 					"description": ""
 				}
 			},
@@ -112,8 +101,8 @@
 		"parent_centric_attribute_blending": {
 			"type": "array",
 			"items": {
-				"type": "string",
-				"description": "List of attributes that should benefit from parent centric attribute blending. For example, horses blend their health, movement, and jump_strength in their offspring."
+				"$comment": "// TODO: generate entity components",
+				"type": "string"
 			},
 			"description": "List of attributes that should benefit from parent centric attribute blending. For example, horses blend their health, movement, and jump_strength in their offspring."
 		},
@@ -167,8 +156,7 @@
 				{
 					"type": "integer",
 					"minimum": -2147483648,
-					"maximum": 2147483647,
-					"description": "Range used to determine random extra variant."
+					"maximum": 2147483647
 				},
 				{
 					"type": "array",
@@ -177,18 +165,15 @@
 						{
 							"type": "integer",
 							"minimum": -2147483648,
-							"maximum": 2147483647,
-							"description": "Range used to determine random extra variant."
+							"maximum": 2147483647
 						},
 						{
 							"type": "integer",
 							"minimum": -2147483648,
-							"maximum": 2147483647,
-							"description": "Range used to determine random extra variant."
+							"maximum": 2147483647
 						}
 					],
-					"items": true,
-					"description": "Range used to determine random extra variant."
+					"items": true
 				},
 				{
 					"type": "object",
@@ -208,8 +193,7 @@
 							"description": ""
 						}
 					},
-					"additionalProperties": false,
-					"description": "Range used to determine random extra variant."
+					"additionalProperties": false
 				}
 			],
 			"description": "Range used to determine random extra variant."
@@ -219,8 +203,7 @@
 				{
 					"type": "integer",
 					"minimum": -2147483648,
-					"maximum": 2147483647,
-					"description": "Range used to determine random variant."
+					"maximum": 2147483647
 				},
 				{
 					"type": "array",
@@ -229,18 +212,15 @@
 						{
 							"type": "integer",
 							"minimum": -2147483648,
-							"maximum": 2147483647,
-							"description": "Range used to determine random variant."
+							"maximum": 2147483647
 						},
 						{
 							"type": "integer",
 							"minimum": -2147483648,
-							"maximum": 2147483647,
-							"description": "Range used to determine random variant."
+							"maximum": 2147483647
 						}
 					],
-					"items": true,
-					"description": "Range used to determine random variant."
+					"items": true
 				},
 				{
 					"type": "object",
@@ -260,8 +240,7 @@
 							"description": ""
 						}
 					},
-					"additionalProperties": false,
-					"description": "Range used to determine random variant."
+					"additionalProperties": false
 				}
 			],
 			"description": "Range used to determine random variant."

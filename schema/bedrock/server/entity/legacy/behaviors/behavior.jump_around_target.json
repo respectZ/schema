@@ -32,8 +32,7 @@
 			"items": {
 				"type": "number",
 				"minimum": -3.4028234663852886e38,
-				"maximum": 3.4028234663852886e38,
-				"description": "The jump angles in float degrees that are allowed when performing the jump. The order in which the angles are chosen is randomized."
+				"maximum": 3.4028234663852886e38
 			},
 			"description": "The jump angles in float degrees that are allowed when performing the jump. The order in which the angles are chosen is randomized."
 		},
@@ -54,59 +53,10 @@
 		"landing_distance_from_target": {
 			"anyOf": [
 				{
-					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "The range deciding how close to and how far away from the target the landing position can be when jumping."
+					"$ref": "../general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "The range deciding how close to and how far away from the target the landing position can be when jumping."
-				}
-			],
-			"allOf": [
-				{
-					"if": {
-						"type": "number",
-						"description": "The range deciding how close to and how far away from the target the landing position can be when jumping."
-					},
-					"then": {
-						"minimum": 0,
-						"description": "The range deciding how close to and how far away from the target the landing position can be when jumping."
-					},
-					"description": "The range deciding how close to and how far away from the target the landing position can be when jumping."
-				},
-				{
-					"if": {
-						"type": "array",
-						"description": "The range deciding how close to and how far away from the target the landing position can be when jumping."
-					},
-					"then": {
-						"items": {
-							"minimum": 0,
-							"description": "The range deciding how close to and how far away from the target the landing position can be when jumping."
-						},
-						"description": "The range deciding how close to and how far away from the target the landing position can be when jumping."
-					},
-					"description": "The range deciding how close to and how far away from the target the landing position can be when jumping."
-				},
-				{
-					"if": {
-						"type": "object",
-						"description": "The range deciding how close to and how far away from the target the landing position can be when jumping."
-					},
-					"then": {
-						"properties": {
-							"range_min": {
-								"minimum": 0,
-								"description": ""
-							},
-							"range_max": {
-								"minimum": 0,
-								"description": ""
-							}
-						},
-						"description": "The range deciding how close to and how far away from the target the landing position can be when jumping."
-					},
-					"description": "The range deciding how close to and how far away from the target the landing position can be when jumping."
+					"type": "null"
 				}
 			],
 			"default": [4, 8.0],
@@ -171,59 +121,10 @@
 		"valid_distance_to_target": {
 			"anyOf": [
 				{
-					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "Target needs to be within this range for the jump to happen."
+					"$ref": "../general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "Target needs to be within this range for the jump to happen."
-				}
-			],
-			"allOf": [
-				{
-					"if": {
-						"type": "number",
-						"description": "Target needs to be within this range for the jump to happen."
-					},
-					"then": {
-						"minimum": 0,
-						"description": "Target needs to be within this range for the jump to happen."
-					},
-					"description": "Target needs to be within this range for the jump to happen."
-				},
-				{
-					"if": {
-						"type": "array",
-						"description": "Target needs to be within this range for the jump to happen."
-					},
-					"then": {
-						"items": {
-							"minimum": 0,
-							"description": "Target needs to be within this range for the jump to happen."
-						},
-						"description": "Target needs to be within this range for the jump to happen."
-					},
-					"description": "Target needs to be within this range for the jump to happen."
-				},
-				{
-					"if": {
-						"type": "object",
-						"description": "Target needs to be within this range for the jump to happen."
-					},
-					"then": {
-						"properties": {
-							"range_min": {
-								"minimum": 0,
-								"description": ""
-							},
-							"range_max": {
-								"minimum": 0,
-								"description": ""
-							}
-						},
-						"description": "Target needs to be within this range for the jump to happen."
-					},
-					"description": "Target needs to be within this range for the jump to happen."
+					"type": "null"
 				}
 			],
 			"default": [4, 20.0],

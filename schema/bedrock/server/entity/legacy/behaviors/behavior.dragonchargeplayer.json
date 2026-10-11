@@ -43,59 +43,10 @@
 		"target_zone": {
 			"anyOf": [
 				{
-					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "Minimum and maximum distance, from the target, this entity can use this behavior."
+					"$ref": "../general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "Minimum and maximum distance, from the target, this entity can use this behavior."
-				}
-			],
-			"allOf": [
-				{
-					"if": {
-						"type": "number",
-						"description": "Minimum and maximum distance, from the target, this entity can use this behavior."
-					},
-					"then": {
-						"minimum": 0,
-						"description": "Minimum and maximum distance, from the target, this entity can use this behavior."
-					},
-					"description": "Minimum and maximum distance, from the target, this entity can use this behavior."
-				},
-				{
-					"if": {
-						"type": "array",
-						"description": "Minimum and maximum distance, from the target, this entity can use this behavior."
-					},
-					"then": {
-						"items": {
-							"minimum": 0,
-							"description": "Minimum and maximum distance, from the target, this entity can use this behavior."
-						},
-						"description": "Minimum and maximum distance, from the target, this entity can use this behavior."
-					},
-					"description": "Minimum and maximum distance, from the target, this entity can use this behavior."
-				},
-				{
-					"if": {
-						"type": "object",
-						"description": "Minimum and maximum distance, from the target, this entity can use this behavior."
-					},
-					"then": {
-						"properties": {
-							"range_min": {
-								"minimum": 0,
-								"description": ""
-							},
-							"range_max": {
-								"minimum": 0,
-								"description": ""
-							}
-						},
-						"description": "Minimum and maximum distance, from the target, this entity can use this behavior."
-					},
-					"description": "Minimum and maximum distance, from the target, this entity can use this behavior."
+					"type": "null"
 				}
 			],
 			"description": "Minimum and maximum distance, from the target, this entity can use this behavior."

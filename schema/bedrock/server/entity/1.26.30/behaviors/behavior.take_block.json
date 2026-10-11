@@ -10,8 +10,7 @@
 		"blocks": {
 			"type": "array",
 			"items": {
-				"type": "string",
-				"description": "Block descriptors for which blocks are valid to be taken by the entity, if empty all blocks are valid."
+				"$ref": "../../../../../vanilla/server/block_descriptor.json"
 			},
 			"description": "Block descriptors for which blocks are valid to be taken by the entity, if empty all blocks are valid."
 		},
@@ -44,34 +43,7 @@
 			"description": ""
 		},
 		"on_take": {
-			"type": "object",
-			"properties": {
-				"event": {
-					"type": "string",
-					"default": "",
-					"description": ""
-				},
-				"filters": {
-					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-					"description": ""
-				},
-				"target": {
-					"type": "string",
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/filter/general.json#/$defs/filter_subject",
-							"description": ""
-						},
-						{
-							"pattern": "^(?:[sS][eE][lL][fF]|[oO][tT][hH][eE][rR]|[pP][lL][aA][yY][eE][rR]|[tT][aA][rR][gG][eE][tT]|[pP][aA][rR][eE][nN][tT]|[bB][aA][bB][yY]|[bB][lL][oO][cC][kK]|[dD][aA][mM][aA][gG][eE][rR]|[hH][oO][lL][dD][eE][rR]|[iI][tT][eE][mM])$(?![\\s\\S])",
-							"description": ""
-						}
-					],
-					"default": "self",
-					"description": ""
-				}
-			},
-			"additionalProperties": false,
+			"$ref": "../../legacy/general.json#/$defs/trigger",
 			"description": "Trigger ran if the entity does take a block. Self, Target, and Block are set."
 		},
 		"priority": {

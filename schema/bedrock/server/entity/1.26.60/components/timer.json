@@ -3,29 +3,24 @@
 	"type": "object",
 	"properties": {
 		"looping": {
-			"$ref": "../../legacy/components/timer.json#/$defs/definition/properties/looping",
-			"description": "If true, the timer will restart every time after it fires."
+			"$ref": "../../legacy/components/timer.json#/$defs/definition/properties/looping"
 		},
 		"randomInterval": {
-			"$ref": "../../legacy/components/timer.json#/$defs/definition/properties/randomInterval",
-			"description": "If true, the amount of time on the timer will be random between the min and max values specified in time."
+			"$ref": "../../legacy/components/timer.json#/$defs/definition/properties/randomInterval"
 		},
 		"random_time_choices": {
 			"type": "array",
 			"items": {
-				"$ref": "../../legacy/components/timer.json#/$defs/choice",
-				"description": "This is a list of objects, representing one value in seconds that can be picked before firing the event and an optional weight. Incompatible with time."
+				"$ref": "../../legacy/components/timer.json#/$defs/choice"
 			},
 			"default": [],
 			"description": "This is a list of objects, representing one value in seconds that can be picked before firing the event and an optional weight. Incompatible with time."
 		},
 		"time": {
-			"$ref": "#/$defs/time_range",
-			"description": "Amount of time in seconds for the timer. Can be specified as a number or a pair of numbers (min and max). Incompatible with random_time_choices."
+			"$ref": "#/$defs/time_range"
 		},
 		"time_down_event": {
-			"$ref": "../../1.26.40/components/on_death.json",
-			"description": "Event to fire when the time on the timer runs out."
+			"$ref": "../../legacy/general.json#/$defs/trigger"
 		}
 	},
 	"additionalProperties": false,
@@ -34,11 +29,17 @@
 			"type": "object",
 			"properties": {
 				"max": {
-					"$ref": "../../legacy/components/timer.json#/$defs/float_value",
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"default": 0,
 					"description": ""
 				},
 				"min": {
-					"$ref": "../../legacy/components/timer.json#/$defs/float_value",
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"default": 0,
 					"description": ""
 				}
 			},

@@ -32,12 +32,10 @@
 			"type": "string",
 			"anyOf": [
 				{
-					"enum": ["Any", "Water", "Lava"],
-					"description": "The material type of the liquid block to find. Valid values are \"Any\", \"Water\", and \"Lava\"."
+					"enum": ["Any", "Water", "Lava"]
 				},
 				{
-					"pattern": "^(?:[Aa][Nn][Yy]|[Ww][Aa][Tt][Ee][Rr]|[Ll][Aa][Vv][Aa])$(?![\\s\\S])",
-					"description": "The material type of the liquid block to find. Valid values are \"Any\", \"Water\", and \"Lava\"."
+					"pattern": "^(?:[Aa][Nn][Yy]|[Ww][Aa][Tt][Ee][Rr]|[Ll][Aa][Vv][Aa])$(?![\\s\\S])"
 				}
 			],
 			"description": "The material type of the liquid block to find. Valid values are \"Any\", \"Water\", and \"Lava\"."

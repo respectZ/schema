@@ -5,34 +5,13 @@
 		"control_items": {
 			"anyOf": [
 				{
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
-							"description": "List of items that can be used to control this entity."
-						},
-						{
-							"type": "string",
-							"description": "List of items that can be used to control this entity."
-						}
-					],
-					"description": "List of items that can be used to control this entity."
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
 				},
 				{
 					"type": "array",
 					"items": {
-						"anyOf": [
-							{
-								"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
-								"description": "List of items that can be used to control this entity."
-							},
-							{
-								"type": "string",
-								"description": "List of items that can be used to control this entity."
-							}
-						],
-						"description": "List of items that can be used to control this entity."
-					},
-					"description": "List of items that can be used to control this entity."
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+					}
 				}
 			],
 			"description": "List of items that can be used to control this entity."

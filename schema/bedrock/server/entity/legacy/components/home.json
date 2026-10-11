@@ -6,17 +6,7 @@
 			"type": "array",
 			"items": {
 				"type": "string",
-				"anyOf": [
-					{
-						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
-						"description": "Optional list of blocks that can be considered a valid home. If no such block longer exists at that position, the home restriction is removed. Example syntax: minecraft:sand. Not supported: minecraft:sand:1."
-					},
-					{
-						"type": "string",
-						"description": "Optional list of blocks that can be considered a valid home. If no such block longer exists at that position, the home restriction is removed. Example syntax: minecraft:sand. Not supported: minecraft:sand:1."
-					}
-				],
-				"description": "Optional list of blocks that can be considered a valid home. If no such block longer exists at that position, the home restriction is removed. Example syntax: minecraft:sand. Not supported: minecraft:sand:1."
+				"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
 			},
 			"description": "Optional list of blocks that can be considered a valid home. If no such block longer exists at that position, the home restriction is removed. Example syntax: minecraft:sand. Not supported: minecraft:sand:1."
 		},

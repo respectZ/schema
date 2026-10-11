@@ -77,7 +77,7 @@
 			"description": "The strength of the vertical knockback."
 		},
 		"on_roar_end": {
-			"$ref": "../components/equippable.json#/$defs/event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event that is triggered when the roar ends."
 		},
 		"priority": {

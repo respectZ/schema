@@ -3,24 +3,21 @@
 	"type": "object",
 	"properties": {
 		"attack_cooldown_complete_event": {
-			"$ref": "#/$defs/trigger",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event to be run when the cooldown is complete."
 		},
 		"attack_cooldown_time": {
 			"anyOf": [
 				{
-					"type": "number",
-					"description": "Amount of time in seconds for the cooldown. Can be specified as a number or a pair of numbers (min and max)."
+					"type": "number"
 				},
 				{
 					"type": "array",
 					"items": {
-						"type": "number",
-						"description": "Amount of time in seconds for the cooldown. Can be specified as a number or a pair of numbers (min and max)."
+						"type": "number"
 					},
 					"minItems": 2,
-					"maxItems": 2,
-					"description": "Amount of time in seconds for the cooldown. Can be specified as a number or a pair of numbers (min and max)."
+					"maxItems": 2
 				},
 				{
 					"type": "object",
@@ -35,47 +32,11 @@
 						}
 					},
 					"required": ["range_max", "range_min"],
-					"additionalProperties": false,
-					"description": "Amount of time in seconds for the cooldown. Can be specified as a number or a pair of numbers (min and max)."
+					"additionalProperties": false
 				}
 			],
 			"default": [0, 1],
 			"description": "Amount of time in seconds for the cooldown. Can be specified as a number or a pair of numbers (min and max)."
-		}
-	},
-	"$defs": {
-		"trigger": {
-			"type": "object",
-			"properties": {
-				"event": {
-					"type": "string",
-					"default": "",
-					"description": ""
-				},
-				"filters": {
-					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-					"description": ""
-				},
-				"target": {
-					"type": "string",
-					"enum": [
-						"baby",
-						"block",
-						"damager",
-						"holder",
-						"item",
-						"other",
-						"parent",
-						"player",
-						"self",
-						"target"
-					],
-					"default": "self",
-					"description": ""
-				}
-			},
-			"additionalProperties": false,
-			"description": "Event to be run when the cooldown is complete."
 		}
 	},
 	"additionalProperties": false,

@@ -12,16 +12,13 @@
 		"bribe_items": {
 			"anyOf": [
 				{
-					"$ref": "./boostable.json#/$defs/boost_item/properties/item",
-					"description": "The list of items that can be used to bribe the entity."
+					"$ref": "../general.json#/$defs/item_obj"
 				},
 				{
 					"type": "array",
 					"items": {
-						"$ref": "./boostable.json#/$defs/boost_item/properties/item",
-						"description": "The list of items that can be used to bribe the entity."
-					},
-					"description": "The list of items that can be used to bribe the entity."
+						"$ref": "../general.json#/$defs/item_obj"
+					}
 				}
 			],
 			"description": "The list of items that can be used to bribe the entity."

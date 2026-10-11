@@ -15,62 +15,13 @@
 		"duration": {
 			"anyOf": [
 				{
-					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "Random range in seconds after which the croaking stops. Can also be a constant."
+					"$ref": "../general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "Random range in seconds after which the croaking stops. Can also be a constant."
+					"type": "null"
 				}
 			],
 			"default": [4.5, 4.5],
-			"allOf": [
-				{
-					"if": {
-						"type": "number",
-						"description": "Random range in seconds after which the croaking stops. Can also be a constant."
-					},
-					"then": {
-						"minimum": 0,
-						"description": "Random range in seconds after which the croaking stops. Can also be a constant."
-					},
-					"description": "Random range in seconds after which the croaking stops. Can also be a constant."
-				},
-				{
-					"if": {
-						"type": "array",
-						"description": "Random range in seconds after which the croaking stops. Can also be a constant."
-					},
-					"then": {
-						"items": {
-							"minimum": 0,
-							"description": "Random range in seconds after which the croaking stops. Can also be a constant."
-						},
-						"description": "Random range in seconds after which the croaking stops. Can also be a constant."
-					},
-					"description": "Random range in seconds after which the croaking stops. Can also be a constant."
-				},
-				{
-					"if": {
-						"type": "object",
-						"description": "Random range in seconds after which the croaking stops. Can also be a constant."
-					},
-					"then": {
-						"properties": {
-							"range_min": {
-								"minimum": 0,
-								"description": ""
-							},
-							"range_max": {
-								"minimum": 0,
-								"description": ""
-							}
-						},
-						"description": "Random range in seconds after which the croaking stops. Can also be a constant."
-					},
-					"description": "Random range in seconds after which the croaking stops. Can also be a constant."
-				}
-			],
 			"description": "Random range in seconds after which the croaking stops. Can also be a constant."
 		},
 		"filters": {
@@ -80,62 +31,13 @@
 		"interval": {
 			"anyOf": [
 				{
-					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "Random range in seconds between runs of this behavior. Can also be a constant."
+					"$ref": "../general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "Random range in seconds between runs of this behavior. Can also be a constant."
+					"type": "null"
 				}
 			],
 			"default": [10, 20],
-			"allOf": [
-				{
-					"if": {
-						"type": "number",
-						"description": "Random range in seconds between runs of this behavior. Can also be a constant."
-					},
-					"then": {
-						"minimum": 0,
-						"description": "Random range in seconds between runs of this behavior. Can also be a constant."
-					},
-					"description": "Random range in seconds between runs of this behavior. Can also be a constant."
-				},
-				{
-					"if": {
-						"type": "array",
-						"description": "Random range in seconds between runs of this behavior. Can also be a constant."
-					},
-					"then": {
-						"items": {
-							"minimum": 0,
-							"description": "Random range in seconds between runs of this behavior. Can also be a constant."
-						},
-						"description": "Random range in seconds between runs of this behavior. Can also be a constant."
-					},
-					"description": "Random range in seconds between runs of this behavior. Can also be a constant."
-				},
-				{
-					"if": {
-						"type": "object",
-						"description": "Random range in seconds between runs of this behavior. Can also be a constant."
-					},
-					"then": {
-						"properties": {
-							"range_min": {
-								"minimum": 0,
-								"description": ""
-							},
-							"range_max": {
-								"minimum": 0,
-								"description": ""
-							}
-						},
-						"description": "Random range in seconds between runs of this behavior. Can also be a constant."
-					},
-					"description": "Random range in seconds between runs of this behavior. Can also be a constant."
-				}
-			],
 			"description": "Random range in seconds between runs of this behavior. Can also be a constant."
 		},
 		"priority": {

@@ -14,34 +14,13 @@
 		"remove_effects": {
 			"anyOf": [
 				{
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/effect_type.json",
-							"description": ""
-						},
-						{
-							"type": "string",
-							"description": ""
-						}
-					],
-					"description": ""
+					"$ref": "../../../../../vanilla/server/effect_type.json"
 				},
 				{
 					"type": "array",
 					"items": {
-						"anyOf": [
-							{
-								"$ref": "../../../../../vanilla/server/effect_type.json",
-								"description": ""
-							},
-							{
-								"type": "string",
-								"description": ""
-							}
-						],
-						"description": ""
-					},
-					"description": ""
+						"$ref": "../../../../../vanilla/server/effect_type.json"
+					}
 				}
 			],
 			"description": ""
@@ -85,16 +64,7 @@
 					"description": ""
 				},
 				"effect": {
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/effect_type.json",
-							"description": ""
-						},
-						{
-							"type": "string",
-							"description": ""
-						}
-					],
+					"$ref": "../../../../../vanilla/server/effect_type.json",
 					"default": "",
 					"description": ""
 				},

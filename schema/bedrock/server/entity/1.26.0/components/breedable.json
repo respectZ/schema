@@ -32,38 +32,32 @@
 		"breed_items": {
 			"anyOf": [
 				{
-					"$ref": "#/$defs/breed_item",
-					"description": "The list of items that can be used to get the entity into the 'love' state. Includes 'item' for the item name, and 'result_item' that defines what item the breed item will transform to upon successful interaction (Format: itemName:auxValue)."
+					"$ref": "#/$defs/breed_item"
 				},
 				{
 					"type": "array",
 					"items": {
 						"anyOf": [
 							{
-								"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
-								"description": "The list of items that can be used to get the entity into the 'love' state. Includes 'item' for the item name, and 'result_item' that defines what item the breed item will transform to upon successful interaction (Format: itemName:auxValue)."
+								"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
 							},
 							{
-								"$ref": "#/$defs/breed_item",
-								"description": "The list of items that can be used to get the entity into the 'love' state. Includes 'item' for the item name, and 'result_item' that defines what item the breed item will transform to upon successful interaction (Format: itemName:auxValue)."
+								"$ref": "#/$defs/breed_item"
 							}
-						],
-						"description": "The list of items that can be used to get the entity into the 'love' state. Includes 'item' for the item name, and 'result_item' that defines what item the breed item will transform to upon successful interaction (Format: itemName:auxValue)."
-					},
-					"description": "The list of items that can be used to get the entity into the 'love' state. Includes 'item' for the item name, and 'result_item' that defines what item the breed item will transform to upon successful interaction (Format: itemName:auxValue)."
+						]
+					}
 				}
 			],
 			"description": "The list of items that can be used to get the entity into the 'love' state. Includes 'item' for the item name, and 'result_item' that defines what item the breed item will transform to upon successful interaction (Format: itemName:auxValue)."
 		},
 		"breeds_with": {
 			"type": "object",
-			"patternProperties": {
-				"^[a-zA-Z0-9_.:-]+$": {
-					"$ref": "../../legacy/components/ageable.json#/$defs/growth_event",
-					"description": ""
-				}
+			"propertyNames": {
+				"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier"
 			},
-			"additionalProperties": false,
+			"additionalProperties": {
+				"$ref": "../../legacy/general.json#/$defs/trigger"
+			},
 			"description": "The map of entity definitions this entity can breed with to breeding events that fire on breeding."
 		},
 		"causes_pregnancy": {
@@ -74,16 +68,13 @@
 		"environment_requirements": {
 			"anyOf": [
 				{
-					"$ref": "#/$defs/environment",
-					"description": "The list of nearby block requirements to get the entity into the 'love' state."
+					"$ref": "#/$defs/environment"
 				},
 				{
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/environment",
-						"description": "The list of nearby block requirements to get the entity into the 'love' state."
-					},
-					"description": "The list of nearby block requirements to get the entity into the 'love' state."
+						"$ref": "#/$defs/environment"
+					}
 				}
 			],
 			"description": "The list of nearby block requirements to get the entity into the 'love' state."
@@ -126,11 +117,11 @@
 			"type": "object",
 			"properties": {
 				"item": {
-					"$ref": "../../legacy/components/boostable.json#/$defs/boost_item/properties/item",
+					"$ref": "../../legacy/general.json#/$defs/item_obj",
 					"description": ""
 				},
 				"result_item": {
-					"$ref": "../../legacy/components/boostable.json#/$defs/boost_item/properties/item",
+					"$ref": "../../legacy/general.json#/$defs/item_obj",
 					"description": ""
 				}
 			},
@@ -143,16 +134,13 @@
 				"blocks": {
 					"anyOf": [
 						{
-							"$ref": "../../../../../vanilla/server/block_descriptor.json",
-							"description": "The block types required nearby for the entity to breed."
+							"$ref": "../../../../../vanilla/server/block_descriptor.json"
 						},
 						{
 							"type": "array",
 							"items": {
-								"$ref": "../../../../../vanilla/server/block_descriptor.json",
-								"description": "The block types required nearby for the entity to breed."
-							},
-							"description": "The block types required nearby for the entity to breed."
+								"$ref": "../../../../../vanilla/server/block_descriptor.json"
+							}
 						}
 					],
 					"description": "The block types required nearby for the entity to breed."
@@ -172,8 +160,7 @@
 					"description": "How many blocks radius from the mob's center to search in for the required blocks. Bounded between 0 and 16."
 				}
 			},
-			"additionalProperties": false,
-			"description": "The list of nearby block requirements to get the entity into the 'love' state."
+			"additionalProperties": false
 		}
 	},
 	"description": "Defines the way an entity can get into the 'love' state. The entity should also have the \"minecraft:offspring\" component to define how the offspring is created if not using \"causes_pregnancy\". Runs the \"minecraft:entity_born\" event on the created offspring."

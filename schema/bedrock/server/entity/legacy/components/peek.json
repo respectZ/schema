@@ -3,15 +3,15 @@
 	"type": "object",
 	"properties": {
 		"on_close": {
-			"$ref": "./ageable.json#/$defs/growth_event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event to call when the entity is done peeking."
 		},
 		"on_open": {
-			"$ref": "./ageable.json#/$defs/growth_event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event to call when the entity starts peeking."
 		},
 		"on_target_open": {
-			"$ref": "./ageable.json#/$defs/growth_event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event to call when the entity's target entity starts peeking."
 		}
 	},

@@ -3,16 +3,13 @@
 	"type": "object",
 	"properties": {
 		"default_block_cost": {
-			"$ref": "../../legacy/components/preferred_path.json#/anyOf/0/properties/default_block_cost",
-			"description": ""
+			"$ref": "../../legacy/components/preferred_path.json#/anyOf/0/properties/default_block_cost"
 		},
 		"jump_cost": {
-			"$ref": "../../legacy/components/preferred_path.json#/anyOf/0/properties/jump_cost",
-			"description": ""
+			"$ref": "../../legacy/components/preferred_path.json#/anyOf/0/properties/jump_cost"
 		},
 		"max_fall_blocks": {
-			"$ref": "../../legacy/components/preferred_path.json#/anyOf/0/properties/max_fall_blocks",
-			"description": ""
+			"$ref": "../../legacy/components/preferred_path.json#/anyOf/0/properties/max_fall_blocks"
 		},
 		"preferred_path_blocks": {
 			"type": "array",
@@ -32,14 +29,16 @@
 				"blocks": {
 					"type": "array",
 					"items": {
-						"$ref": "../../1.26.60/components/buoyant.json#/$defs/block_descriptor",
+						"$ref": "../../../../../vanilla/server/block_descriptor.json",
 						"description": ""
 					},
 					"default": [],
 					"description": ""
 				},
 				"cost": {
-					"$ref": "../../legacy/components/preferred_path.json#/$defs/block_set/properties/cost",
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
 					"description": ""
 				}
 			},

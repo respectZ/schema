@@ -1,11 +1,24 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$ref": "../../legacy/components/tick_world.json",
+	"type": "object",
 	"properties": {
 		"distance_to_players": {
 			"maximum": 1.7976931348623157e308,
 			"description": ""
+		},
+		"never_despawn": {
+			"type": "boolean",
+			"default": true,
+			"description": ""
+		},
+		"radius": {
+			"type": "integer",
+			"minimum": 2,
+			"maximum": 6,
+			"default": 2,
+			"description": ""
 		}
 	},
+	"additionalProperties": false,
 	"description": ""
 }

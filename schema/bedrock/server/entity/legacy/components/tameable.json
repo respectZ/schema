@@ -17,7 +17,7 @@
 					"description": ""
 				},
 				"tame_event": {
-					"$ref": "./equippable.json#/$defs/event",
+					"$ref": "../general.json#/$defs/trigger",
 					"description": "Event to run when this entity becomes tamed"
 				},
 				"tame_items": {
@@ -25,44 +25,35 @@
 						{
 							"anyOf": [
 								{
-									"$ref": "./equippable.json#/$defs/item_name",
-									"description": "The list of items that can be used to tame this entity"
+									"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
 								},
 								{
-									"$ref": "#/$defs/item_pair",
-									"description": "The list of items that can be used to tame this entity"
+									"$ref": "#/$defs/item_pair"
 								}
-							],
-							"description": "The list of items that can be used to tame this entity"
+							]
 						},
 						{
 							"type": "array",
 							"items": {
 								"anyOf": [
 									{
-										"$ref": "./equippable.json#/$defs/item_name",
-										"description": "The list of items that can be used to tame this entity"
+										"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
 									},
 									{
-										"$ref": "#/$defs/item_pair",
-										"description": "The list of items that can be used to tame this entity"
+										"$ref": "#/$defs/item_pair"
 									}
-								],
-								"description": "The list of items that can be used to tame this entity"
-							},
-							"description": "The list of items that can be used to tame this entity"
+								]
+							}
 						}
 					],
 					"default": [],
 					"description": "The list of items that can be used to tame this entity"
 				}
 			},
-			"additionalProperties": false,
-			"description": "Defines the rules for a mob to be tamed by the player."
+			"additionalProperties": false
 		},
 		{
-			"type": "null",
-			"description": "Defines the rules for a mob to be tamed by the player."
+			"type": "null"
 		}
 	],
 	"$defs": {
@@ -72,24 +63,21 @@
 					"type": "object",
 					"properties": {
 						"item": {
-							"$ref": "./equippable.json#/$defs/item_descriptor",
+							"$ref": "../../../../../vanilla/server/item_descriptor.json",
 							"description": ""
 						},
 						"result_item": {
-							"$ref": "./equippable.json#/$defs/item_descriptor",
+							"$ref": "../../../../../vanilla/server/item_descriptor.json",
 							"description": ""
 						}
 					},
-					"additionalProperties": false,
-					"description": "The list of items that can be used to tame this entity"
+					"additionalProperties": false
 				},
 				{
-					"type": "null",
-					"description": "The list of items that can be used to tame this entity"
+					"type": "null"
 				}
 			],
 			"description": "The list of items that can be used to tame this entity"
 		}
-	},
-	"description": "Defines the rules for a mob to be tamed by the player."
+	}
 }

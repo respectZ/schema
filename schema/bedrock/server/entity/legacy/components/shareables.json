@@ -33,39 +33,23 @@
 				"items": {
 					"anyOf": [
 						{
-							"$ref": "./equippable.json#/$defs/item_descriptor",
-							"description": "List of items or item tags that the entity wants to share. Items in-game will match to this list from top to bottom, meaning that the first occurance of a match, be it name or tag, will shadow those coming after.",
-							"properties": {
-								"item": {
-									"description": "The name of the item. Aux value can be specified, for instance 'minecraft:skull:1'. Alternatively, a tag can be specified to match all items with that tag."
-								}
-							}
+							"$ref": "../../../../../vanilla/server/item_descriptor.json"
 						},
 						{
-							"$ref": "#/$defs/item_record",
-							"description": "List of items or item tags that the entity wants to share. Items in-game will match to this list from top to bottom, meaning that the first occurance of a match, be it name or tag, will shadow those coming after."
+							"$ref": "#/$defs/item_record"
 						},
 						{
 							"type": "array",
 							"items": {
 								"anyOf": [
 									{
-										"$ref": "./equippable.json#/$defs/item_descriptor",
-										"description": "List of items or item tags that the entity wants to share. Items in-game will match to this list from top to bottom, meaning that the first occurance of a match, be it name or tag, will shadow those coming after.",
-										"properties": {
-											"item": {
-												"description": "The name of the item. Aux value can be specified, for instance 'minecraft:skull:1'. Alternatively, a tag can be specified to match all items with that tag."
-											}
-										}
+										"$ref": "../../../../../vanilla/server/item_descriptor.json"
 									},
 									{
-										"$ref": "#/$defs/item_record",
-										"description": "List of items or item tags that the entity wants to share. Items in-game will match to this list from top to bottom, meaning that the first occurance of a match, be it name or tag, will shadow those coming after."
+										"$ref": "#/$defs/item_record"
 									}
-								],
-								"description": "List of items or item tags that the entity wants to share. Items in-game will match to this list from top to bottom, meaning that the first occurance of a match, be it name or tag, will shadow those coming after."
-							},
-							"description": "List of items or item tags that the entity wants to share. Items in-game will match to this list from top to bottom, meaning that the first occurance of a match, be it name or tag, will shadow those coming after."
+								]
+							}
 						}
 					],
 					"default": [],
@@ -77,12 +61,10 @@
 					"description": "Boolean value that controls if the mob is able to pick up more of the same item if it is already holding that item"
 				}
 			},
-			"additionalProperties": false,
-			"description": "Defines a list of items the mob wants to share. Each item must have the following parameters:"
+			"additionalProperties": false
 		},
 		{
-			"type": "null",
-			"description": "Defines a list of items the mob wants to share. Each item must have the following parameters:"
+			"type": "null"
 		}
 	],
 	"$defs": {
@@ -105,21 +87,12 @@
 					"description": "Determines whether the mob will consume the item or not."
 				},
 				"craft_into": {
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
-							"description": "Defines the item this entity wants to craft with the item defined by \"item\". Should be an item name."
-						},
-						{
-							"type": "string",
-							"description": "Defines the item this entity wants to craft with the item defined by \"item\". Should be an item name."
-						}
-					],
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
 					"default": "",
 					"description": "Defines the item this entity wants to craft with the item defined by \"item\". Should be an item name."
 				},
 				"item": {
-					"$ref": "./equippable.json#/$defs/item_descriptor",
+					"$ref": "../../../../../vanilla/server/item_descriptor.json",
 					"description": "The name of the item. Aux value can be specified, for instance 'minecraft:skull:1'. Alternatively, a tag can be specified to match all items with that tag."
 				},
 				"max_amount": {

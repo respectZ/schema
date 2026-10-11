@@ -18,12 +18,10 @@
 			"type": "string",
 			"anyOf": [
 				{
-					"enum": ["entity", "passenger"],
-					"description": "Should the momentum be applied in the direction of the 'entity' or 'passenger'. When 'entity' is used the momentum is applied horizontally according to the direction the entity is looking, using only the entity's yaw. When 'passenger' is used the momentum will be applied in the direction the controlling passenger is looking, using the passenger's pitch and yaw."
+					"enum": ["entity", "passenger"]
 				},
 				{
-					"pattern": "^(?:[eE][nN][tT][iI][tT][yY]|[pP][aA][sS][sS][eE][nN][gG][eE][rR])$",
-					"description": "Should the momentum be applied in the direction of the 'entity' or 'passenger'. When 'entity' is used the momentum is applied horizontally according to the direction the entity is looking, using only the entity's yaw. When 'passenger' is used the momentum will be applied in the direction the controlling passenger is looking, using the passenger's pitch and yaw."
+					"pattern": "^(?:[eE][nN][tT][iI][tT][yY]|[pP][aA][sS][sS][eE][nN][gG][eE][rR])$"
 				}
 			],
 			"default": "entity",

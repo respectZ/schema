@@ -15,8 +15,7 @@
 		"on_item_throw": {
 			"type": "array",
 			"items": {
-				"$ref": "../components/equippable.json#/$defs/event",
-				"description": "Event(s) to run when this mob throws items."
+				"$ref": "../general.json#/$defs/trigger"
 			},
 			"default": [],
 			"description": "Event(s) to run when this mob throws items."

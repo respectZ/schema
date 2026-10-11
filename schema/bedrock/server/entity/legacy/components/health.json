@@ -11,48 +11,10 @@
 			"description": ""
 		},
 		"value": {
-			"$ref": "#/$defs/value_range",
+			"$ref": "../general.json#/$defs/attribute_range",
 			"description": ""
 		}
 	},
 	"additionalProperties": false,
-	"$defs": {
-		"value_range": {
-			"anyOf": [
-				{
-					"type": "number",
-					"description": ""
-				},
-				{
-					"type": "array",
-					"items": {
-						"type": "number",
-						"description": ""
-					},
-					"minItems": 2,
-					"maxItems": 2,
-					"description": ""
-				},
-				{
-					"type": "object",
-					"properties": {
-						"range_max": {
-							"type": "number",
-							"default": 0,
-							"description": ""
-						},
-						"range_min": {
-							"type": "number",
-							"default": 0,
-							"description": ""
-						}
-					},
-					"additionalProperties": false,
-					"description": ""
-				}
-			],
-			"description": ""
-		}
-	},
 	"description": ""
 }

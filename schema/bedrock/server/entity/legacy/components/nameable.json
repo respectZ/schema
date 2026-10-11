@@ -23,22 +23,19 @@
 			"description": "If true, the name will always be shown"
 		},
 		"default_trigger": {
-			"$ref": "./ageable.json#/$defs/growth_event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Trigger to run when the entity gets named"
 		},
 		"name_actions": {
 			"anyOf": [
 				{
-					"$ref": "#/$defs/name_action",
-					"description": "Describes the special names for this entity and the events to call when the entity acquires those names"
+					"$ref": "#/$defs/name_action"
 				},
 				{
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/name_action",
-						"description": "Describes the special names for this entity and the events to call when the entity acquires those names"
-					},
-					"description": "Describes the special names for this entity and the events to call when the entity acquires those names"
+						"$ref": "#/$defs/name_action"
+					}
 				}
 			],
 			"description": "Describes the special names for this entity and the events to call when the entity acquires those names"
@@ -52,16 +49,14 @@
 				"name_filter": {
 					"anyOf": [
 						{
-							"type": "string",
-							"description": "List of special names that will cause the events defined in 'on_named' to fire"
+							"type": "string"
 						},
 						{
 							"type": "array",
 							"items": {
 								"anyOf": [
 									{
-										"type": "string",
-										"description": "List of special names that will cause the events defined in 'on_named' to fire"
+										"type": "string"
 									},
 									{
 										"type": "object",
@@ -71,19 +66,16 @@
 												"description": ""
 											}
 										},
-										"additionalProperties": false,
-										"description": "List of special names that will cause the events defined in 'on_named' to fire"
+										"additionalProperties": false
 									}
-								],
-								"description": "List of special names that will cause the events defined in 'on_named' to fire"
-							},
-							"description": "List of special names that will cause the events defined in 'on_named' to fire"
+								]
+							}
 						}
 					],
 					"description": "List of special names that will cause the events defined in 'on_named' to fire"
 				},
 				"on_named": {
-					"$ref": "./ageable.json#/$defs/growth_event",
+					"$ref": "../general.json#/$defs/trigger",
 					"description": "Event to be called when this entity acquires the name specified in 'name_filter'"
 				}
 			},

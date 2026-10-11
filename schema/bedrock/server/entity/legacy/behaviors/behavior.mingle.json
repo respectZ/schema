@@ -25,19 +25,17 @@
 			"description": "The distance from its partner that this entity will mingle. If the entity type is not the same as the entity, this value needs to be identical on both entities."
 		},
 		"mingle_partner_type": {
-			"type": "string",
+			"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
 			"description": "The entity type that this entity is allowed to mingle with"
 		},
 		"poi_type": {
 			"type": "string",
 			"anyOf": [
 				{
-					"enum": ["bed", "jobsite", "meeting_area"],
-					"description": ""
+					"enum": ["bed", "jobsite", "meeting_area"]
 				},
 				{
-					"pattern": "^(?:[Bb][Ee][Dd]|[Jj][Oo][Bb][Ss][Ii][Tt][Ee]|[Mm][Ee][Ee][Tt][Ii][Nn][Gg]_[Aa][Rr][Ee][Aa])$(?![\\s\\S])",
-					"description": ""
+					"pattern": "^(?:[Bb][Ee][Dd]|[Jj][Oo][Bb][Ss][Ii][Tt][Ee]|[Mm][Ee][Ee][Tt][Ii][Nn][Gg]_[Aa][Rr][Ee][Aa])$(?![\\s\\S])"
 				}
 			],
 			"description": ""

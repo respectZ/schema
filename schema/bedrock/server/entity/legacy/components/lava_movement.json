@@ -11,7 +11,7 @@
 			"description": ""
 		},
 		"value": {
-			"$ref": "./health.json#/$defs/value_range",
+			"$ref": "../general.json#/$defs/attribute_range",
 			"description": ""
 		}
 	},

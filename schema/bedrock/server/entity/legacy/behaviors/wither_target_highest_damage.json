@@ -15,118 +15,13 @@
 		"entity_types": {
 			"anyOf": [
 				{
-					"type": "object",
-					"properties": {
-						"max_dist": {
-							"type": "number",
-							"description": ""
-						},
-						"max_height": {
-							"type": "number",
-							"description": ""
-						},
-						"max_flee": {
-							"type": "number",
-							"description": ""
-						},
-						"walk_speed_multiplier": {
-							"type": "number",
-							"description": ""
-						},
-						"sprint_speed_multiplier": {
-							"type": "number",
-							"description": ""
-						},
-						"priority": {
-							"type": "integer",
-							"description": ""
-						},
-						"cooldown": {
-							"type": "integer",
-							"description": ""
-						},
-						"must_see_forget_duration": {
-							"type": "integer",
-							"description": ""
-						},
-						"must_see": {
-							"type": "boolean",
-							"description": ""
-						},
-						"check_if_outnumbered": {
-							"type": "boolean",
-							"description": ""
-						},
-						"reevaluate_description": {
-							"type": "boolean",
-							"description": ""
-						},
-						"filters": {
-							"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-							"description": ""
-						}
-					},
-					"additionalProperties": false,
-					"description": ""
+					"$ref": "../general.json#/$defs/entity_types"
 				},
 				{
 					"type": "array",
 					"items": {
-						"type": "object",
-						"properties": {
-							"max_dist": {
-								"type": "number",
-								"description": ""
-							},
-							"max_height": {
-								"type": "number",
-								"description": ""
-							},
-							"max_flee": {
-								"type": "number",
-								"description": ""
-							},
-							"walk_speed_multiplier": {
-								"type": "number",
-								"description": ""
-							},
-							"sprint_speed_multiplier": {
-								"type": "number",
-								"description": ""
-							},
-							"priority": {
-								"type": "integer",
-								"description": ""
-							},
-							"cooldown": {
-								"type": "integer",
-								"description": ""
-							},
-							"must_see_forget_duration": {
-								"type": "integer",
-								"description": ""
-							},
-							"must_see": {
-								"type": "boolean",
-								"description": ""
-							},
-							"check_if_outnumbered": {
-								"type": "boolean",
-								"description": ""
-							},
-							"reevaluate_description": {
-								"type": "boolean",
-								"description": ""
-							},
-							"filters": {
-								"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-								"description": ""
-							}
-						},
-						"additionalProperties": false,
-						"description": ""
-					},
-					"description": ""
+						"$ref": "../general.json#/$defs/entity_types"
+					}
 				}
 			],
 			"description": ""

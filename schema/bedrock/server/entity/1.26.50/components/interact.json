@@ -14,398 +14,107 @@
 	},
 	"additionalProperties": false,
 	"$defs": {
-		"add_items": {
-			"type": "object",
-			"properties": {
-				"table": {
-					"$ref": "#/$defs/loot_table_reference",
-					"description": ""
-				}
-			},
-			"additionalProperties": false,
-			"required": ["table"],
-			"description": ""
-		},
-		"copper_event": {
-			"type": "string",
-			"anyOf": [
-				{
-					"enum": ["none", "wax_on", "wax_off", "scrape"],
-					"description": ""
-				},
-				{
-					"pattern": "^(?:[nN][oO][nN][eE]|[wW][aA][xX]_[oO][nN]|[wW][aA][xX]_[oO][fF][fF]|[sS][cC][rR][aA][pP][eE])(?![\\s\\S])",
-					"description": ""
-				}
-			],
-			"description": ""
-		},
-		"entity_reference": {
-			"anyOf": [
-				{
-					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
-					"description": ""
-				},
-				{
-					"type": "string",
-					"description": ""
-				}
-			],
-			"description": ""
-		},
-		"float_value": {
-			"type": "number",
-			"minimum": -3.4028234663852886e38,
-			"maximum": 3.4028234663852886e38,
-			"description": ""
-		},
-		"int32_value": {
-			"type": "integer",
-			"minimum": -2147483648,
-			"maximum": 2147483647,
-			"description": ""
-		},
 		"interaction": {
 			"type": "object",
 			"properties": {
 				"add_items": {
-					"$ref": "#/$defs/add_items",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/add_items"
 				},
 				"admire": {
-					"type": "boolean",
-					"default": false,
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/admire"
 				},
 				"barter": {
-					"type": "boolean",
-					"default": false,
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/barter"
 				},
 				"cooldown": {
-					"$ref": "#/$defs/float_value",
-					"default": 0,
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/cooldown"
 				},
 				"cooldown_after_being_attacked": {
-					"$ref": "#/$defs/float_value",
-					"default": 0,
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/cooldown_after_being_attacked"
 				},
 				"drop_item_slot": {
-					"type": "string",
-					"description": ""
+					"$ref": "../../1.20.80/components/interact.json#/$defs/interaction/properties/drop_item_slot"
 				},
 				"drop_item_y_offset": {
-					"$ref": "#/$defs/float_value",
-					"default": 0,
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/drop_item_y_offset"
 				},
 				"equip_item_slot": {
-					"type": "string",
-					"description": ""
+					"$ref": "../../1.20.80/components/interact.json#/$defs/interaction/properties/equip_item_slot"
 				},
 				"give_item": {
-					"type": "boolean",
-					"default": false,
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/give_item"
 				},
 				"health_amount": {
-					"$ref": "#/$defs/int32_value",
-					"default": 0,
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/health_amount"
 				},
 				"hurt_item": {
-					"$ref": "#/$defs/int32_value",
-					"default": 0,
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/hurt_item"
 				},
 				"interact_text": {
-					"type": "string",
-					"default": "",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/interact_text"
 				},
 				"on_interact": {
-					"$ref": "../../1.26.40/components/on_death.json",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/on_interact"
 				},
 				"particle_on_start": {
-					"$ref": "#/$defs/particle_on_start",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/particle_on_start"
 				},
 				"play_sounds": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/sound_reference",
-						"description": ""
+						"$ref": "../../../../../vanilla/server/level_sound.json"
 					},
 					"default": [],
-					"description": ""
+					"description": "List of sounds to play when the interaction occurs."
 				},
 				"repair_entity_item": {
-					"$ref": "#/$defs/repair_entity_item",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/repair_entity_item"
 				},
 				"spawn_entities": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/entity_reference",
-						"description": ""
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier"
 					},
 					"default": [],
-					"description": ""
+					"description": "List of entities to spawn when the interaction occurs."
 				},
 				"spawn_items": {
-					"$ref": "#/$defs/spawn_items",
-					"description": ""
+					"type": "object",
+					"properties": {
+						"table": {
+							"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
+							"default": "",
+							"description": "File path, relative to the Behavior Pack's path, to the loot table file."
+						},
+						"y_offset": {
+							"type": "number",
+							"minimum": -3.4028234663852886e38,
+							"maximum": 3.4028234663852886e38,
+							"default": 1,
+							"description": "Will offset the items spawn position this amount in the y direction."
+						}
+					},
+					"additionalProperties": false,
+					"description": "Loot table with items to drop on the ground upon successful interaction."
 				},
 				"swing": {
-					"type": "boolean",
-					"default": true,
-					"description": ""
+					"$ref": "../../1.26.0/components/interact.json#/$defs/interaction/properties/spawn_items"
 				},
 				"take_item": {
-					"type": "boolean",
-					"default": false,
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/take_item"
 				},
 				"transform_to_item": {
-					"$ref": "#/$defs/item_reference",
-					"default": "",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/transform_to_item"
 				},
 				"use_item": {
-					"type": "boolean",
-					"default": false,
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/use_item"
 				},
 				"vibration": {
-					"$ref": "#/$defs/vibration",
-					"default": "entity_interact",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/vibration"
 				}
 			},
 			"additionalProperties": false,
-			"description": ""
-		},
-		"item_reference": {
-			"anyOf": [
-				{
-					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
-					"description": ""
-				},
-				{
-					"type": "string",
-					"description": ""
-				}
-			],
-			"description": ""
-		},
-		"loot_table_reference": {
-			"type": "string",
-			"maxLength": 256,
-			"description": ""
-		},
-		"particle_on_start": {
-			"type": "object",
-			"properties": {
-				"copper_event": {
-					"$ref": "#/$defs/copper_event",
-					"default": "none",
-					"description": ""
-				},
-				"particle_offset_towards_interactor": {
-					"type": "boolean",
-					"default": false,
-					"description": ""
-				},
-				"particle_type": {
-					"$ref": "#/$defs/particle_type",
-					"default": "none",
-					"description": ""
-				},
-				"particle_y_offset": {
-					"$ref": "#/$defs/float_value",
-					"default": 0,
-					"description": ""
-				}
-			},
-			"additionalProperties": false,
-			"description": ""
-		},
-		"particle_type": {
-			"type": "string",
-			"anyOf": [
-				{
-					"$ref": "../../../../../vanilla/server/particle_type.json",
-					"enum": [
-						"none",
-						"bubble",
-						"bubblemanual",
-						"crit",
-						"blockforcefield",
-						"smoke",
-						"explode",
-						"evaporation",
-						"flame",
-						"candleflame",
-						"lava",
-						"largesmoke",
-						"reddust",
-						"risingborderdust",
-						"iconcrack",
-						"snowballpoof",
-						"largeexplode",
-						"hugeexplosion",
-						"breezewindexplosion",
-						"mobflame",
-						"heart",
-						"terrain",
-						"townaura",
-						"portal",
-						"watersplash",
-						"watersplashmanual",
-						"waterwake",
-						"dripwater",
-						"driplava",
-						"driphoney",
-						"stalactitedripwater",
-						"stalactitedriplava",
-						"fallingdust",
-						"mobspell",
-						"mobspellambient",
-						"mobspellinstantaneous",
-						"ink",
-						"slime",
-						"rainsplash",
-						"villagerangry",
-						"villagerhappy",
-						"enchantingtable",
-						"trackingemitter",
-						"note",
-						"witchspell",
-						"carrotboost",
-						"mobappearance",
-						"endrod",
-						"dragonbreath",
-						"spit",
-						"totem",
-						"food",
-						"fireworksstarter",
-						"fireworks",
-						"fireworksoverlay",
-						"balloongas",
-						"coloredflame",
-						"sparkler",
-						"conduit",
-						"bubblecolumnup",
-						"bubblecolumndown",
-						"sneeze",
-						"shulkerbullet",
-						"bleach",
-						"dragondestroyblock",
-						"myceliumdust",
-						"fallingborderdust",
-						"campfiresmoke",
-						"campfiresmoketall",
-						"dragonbreathfire",
-						"dragonbreathtrail",
-						"soul",
-						"obsidiantear",
-						"portalreverse",
-						"snowflake",
-						"wax",
-						"electricspark",
-						"shriek",
-						"sculksoul",
-						"sonicexplosion",
-						"dustplume",
-						"whitesmoke",
-						"wolfarmorcrack",
-						"creakingcrumble",
-						"paleoakleaves",
-						"eyeblossomopen",
-						"eyeblossomclose",
-						"blueflame",
-						"greenflame",
-						"pausemobgrowth",
-						"resetmobgrowth",
-						"sulfurcube"
-					],
-					"description": ""
-				},
-				{
-					"enum": ["iceballbreak", "orangepoplarleaves", "redpoplarleaves", "yellowpoplarleaves"],
-					"description": ""
-				},
-				{
-					"pattern": "^(?:[nN][oO][nN][eE]|[bB][uU][bB][bB][lL][eE]|[bB][uU][bB][bB][lL][eE][mM][aA][nN][uU][aA][lL]|[cC][rR][iI][tT]|[bB][lL][oO][cC][kK][fF][oO][rR][cC][eE][fF][iI][eE][lL][dD]|[sS][mM][oO][kK][eE]|[eE][xX][pP][lL][oO][dD][eE]|[eE][vV][aA][pP][oO][rR][aA][tT][iI][oO][nN]|[fF][lL][aA][mM][eE]|[cC][aA][nN][dD][lL][eE][fF][lL][aA][mM][eE]|[lL][aA][vV][aA]|[lL][aA][rR][gG][eE][sS][mM][oO][kK][eE]|[rR][eE][dD][dD][uU][sS][tT]|[rR][iI][sS][iI][nN][gG][bB][oO][rR][dD][eE][rR][dD][uU][sS][tT]|[iI][cC][oO][nN][cC][rR][aA][cC][kK]|[sS][nN][oO][wW][bB][aA][lL][lL][pP][oO][oO][fF]|[lL][aA][rR][gG][eE][eE][xX][pP][lL][oO][dD][eE]|[hH][uU][gG][eE][eE][xX][pP][lL][oO][sS][iI][oO][nN]|[bB][rR][eE][eE][zZ][eE][wW][iI][nN][dD][eE][xX][pP][lL][oO][sS][iI][oO][nN]|[mM][oO][bB][fF][lL][aA][mM][eE]|[hH][eE][aA][rR][tT]|[tT][eE][rR][rR][aA][iI][nN]|[tT][oO][wW][nN][aA][uU][rR][aA]|[pP][oO][rR][tT][aA][lL]|[wW][aA][tT][eE][rR][sS][pP][lL][aA][sS][hH]|[wW][aA][tT][eE][rR][sS][pP][lL][aA][sS][hH][mM][aA][nN][uU][aA][lL]|[wW][aA][tT][eE][rR][wW][aA][kK][eE]|[dD][rR][iI][pP][wW][aA][tT][eE][rR]|[dD][rR][iI][pP][lL][aA][vV][aA]|[dD][rR][iI][pP][hH][oO][nN][eE][yY]|[sS][tT][aA][lL][aA][cC][tT][iI][tT][eE][dD][rR][iI][pP][wW][aA][tT][eE][rR]|[sS][tT][aA][lL][aA][cC][tT][iI][tT][eE][dD][rR][iI][pP][lL][aA][vV][aA]|[fF][aA][lL][lL][iI][nN][gG][dD][uU][sS][tT]|[mM][oO][bB][sS][pP][eE][lL][lL]|[mM][oO][bB][sS][pP][eE][lL][lL][aA][mM][bB][iI][eE][nN][tT]|[mM][oO][bB][sS][pP][eE][lL][lL][iI][nN][sS][tT][aA][nN][tT][aA][nN][eE][oO][uU][sS]|[iI][nN][kK]|[sS][lL][iI][mM][eE]|[rR][aA][iI][nN][sS][pP][lL][aA][sS][hH]|[vV][iI][lL][lL][aA][gG][eE][rR][aA][nN][gG][rR][yY]|[vV][iI][lL][lL][aA][gG][eE][rR][hH][aA][pP][pP][yY]|[eE][nN][cC][hH][aA][nN][tT][iI][nN][gG][tT][aA][bB][lL][eE]|[tT][rR][aA][cC][kK][iI][nN][gG][eE][mM][iI][tT][tT][eE][rR]|[nN][oO][tT][eE]|[wW][iI][tT][cC][hH][sS][pP][eE][lL][lL]|[cC][aA][rR][rR][oO][tT][bB][oO][oO][sS][tT]|[mM][oO][bB][aA][pP][pP][eE][aA][rR][aA][nN][cC][eE]|[eE][nN][dD][rR][oO][dD]|[dD][rR][aA][gG][oO][nN][bB][rR][eE][aA][tT][hH]|[sS][pP][iI][tT]|[tT][oO][tT][eE][mM]|[fF][oO][oO][dD]|[fF][iI][rR][eE][wW][oO][rR][kK][sS][sS][tT][aA][rR][tT][eE][rR]|[fF][iI][rR][eE][wW][oO][rR][kK][sS]|[fF][iI][rR][eE][wW][oO][rR][kK][sS][oO][vV][eE][rR][lL][aA][yY]|[bB][aA][lL][lL][oO][oO][nN][gG][aA][sS]|[cC][oO][lL][oO][rR][eE][dD][fF][lL][aA][mM][eE]|[sS][pP][aA][rR][kK][lL][eE][rR]|[cC][oO][nN][dD][uU][iI][tT]|[bB][uU][bB][bB][lL][eE][cC][oO][lL][uU][mM][nN][uU][pP]|[bB][uU][bB][bB][lL][eE][cC][oO][lL][uU][mM][nN][dD][oO][wW][nN]|[sS][nN][eE][eE][zZ][eE]|[sS][hH][uU][lL][kK][eE][rR][bB][uU][lL][lL][eE][tT]|[bB][lL][eE][aA][cC][hH]|[dD][rR][aA][gG][oO][nN][dD][eE][sS][tT][rR][oO][yY][bB][lL][oO][cC][kK]|[mM][yY][cC][eE][lL][iI][uU][mM][dD][uU][sS][tT]|[fF][aA][lL][lL][iI][nN][gG][bB][oO][rR][dD][eE][rR][dD][uU][sS][tT]|[cC][aA][mM][pP][fF][iI][rR][eE][sS][mM][oO][kK][eE]|[cC][aA][mM][pP][fF][iI][rR][eE][sS][mM][oO][kK][eE][tT][aA][lL][lL]|[dD][rR][aA][gG][oO][nN][bB][rR][eE][aA][tT][hH][fF][iI][rR][eE]|[dD][rR][aA][gG][oO][nN][bB][rR][eE][aA][tT][hH][tT][rR][aA][iI][lL]|[sS][oO][uU][lL]|[oO][bB][sS][iI][dD][iI][aA][nN][tT][eE][aA][rR]|[pP][oO][rR][tT][aA][lL][rR][eE][vV][eE][rR][sS][eE]|[sS][nN][oO][wW][fF][lL][aA][kK][eE]|[wW][aA][xX]|[eE][lL][eE][cC][tT][rR][iI][cC][sS][pP][aA][rR][kK]|[sS][hH][rR][iI][eE][kK]|[sS][cC][uU][lL][kK][sS][oO][uU][lL]|[sS][oO][nN][iI][cC][eE][xX][pP][lL][oO][sS][iI][oO][nN]|[dD][uU][sS][tT][pP][lL][uU][mM][eE]|[wW][hH][iI][tT][eE][sS][mM][oO][kK][eE]|[wW][oO][lL][fF][aA][rR][mM][oO][rR][cC][rR][aA][cC][kK]|[cC][rR][eE][aA][kK][iI][nN][gG][cC][rR][uU][mM][bB][lL][eE]|[pP][aA][lL][eE][oO][aA][kK][lL][eE][aA][vV][eE][sS]|[eE][yY][eE][bB][lL][oO][sS][sS][oO][mM][oO][pP][eE][nN]|[eE][yY][eE][bB][lL][oO][sS][sS][oO][mM][cC][lL][oO][sS][eE]|[bB][lL][uU][eE][fF][lL][aA][mM][eE]|[gG][rR][eE][eE][nN][fF][lL][aA][mM][eE]|[pP][aA][uU][sS][eE][mM][oO][bB][gG][rR][oO][wW][tT][hH]|[rR][eE][sS][eE][tT][mM][oO][bB][gG][rR][oO][wW][tT][hH]|[sS][uU][lL][fF][uU][rR][cC][uU][bB][eE]|[oO][rR][aA][nN][gG][eE][pP][oO][pP][lL][aA][rR][lL][eE][aA][vV][eE][sS]|[rR][eE][dD][pP][oO][pP][lL][aA][rR][lL][eE][aA][vV][eE][sS]|[yY][eE][lL][lL][oO][wW][pP][oO][pP][lL][aA][rR][lL][eE][aA][vV][eE][sS]|[iI][cC][eE][bB][aA][lL][lL][bB][rR][eE][aA][kK])(?![\\s\\S])",
-					"description": ""
-				}
-			],
-			"description": ""
-		},
-		"repair_entity_item": {
-			"type": "object",
-			"properties": {
-				"amount": {
-					"$ref": "#/$defs/int32_value",
-					"default": 1,
-					"minimum": 0,
-					"description": ""
-				},
-				"slot": {
-					"type": "string",
-					"description": ""
-				}
-			},
-			"additionalProperties": false,
-			"description": ""
-		},
-		"sound_reference": {
-			"type": "string",
-			"anyOf": [
-				{
-					"$ref": "../../../../../vanilla/server/level_sound.json",
-					"description": ""
-				},
-				{
-					"type": "string",
-					"description": ""
-				}
-			],
-			"description": ""
-		},
-		"spawn_items": {
-			"type": "object",
-			"properties": {
-				"table": {
-					"$ref": "#/$defs/loot_table_reference",
-					"default": "",
-					"description": ""
-				},
-				"y_offset": {
-					"$ref": "#/$defs/float_value",
-					"default": 1,
-					"description": ""
-				}
-			},
-			"additionalProperties": false,
-			"description": ""
-		},
-		"vibration": {
-			"type": "string",
-			"anyOf": [
-				{
-					"enum": ["none", "entity_act", "entity_die", "entity_interact", "shear"],
-					"description": ""
-				},
-				{
-					"pattern": "^(?:[nN][oO][nN][eE]|[eE][nN][tT][iI][tT][yY]_[aA][cC][tT]|[eE][nN][tT][iI][tT][yY]_[dD][iI][eE]|[eE][nN][tT][iI][tT][yY]_[iI][nN][tT][eE][rR][aA][cC][tT]|[sS][hH][eE][aA][rR])(?![\\s\\S])",
-					"description": ""
-				}
-			],
-			"description": ""
+			"description": "Defines interactions with this entity."
 		}
 	},
 	"description": "Defines interactions with this entity."

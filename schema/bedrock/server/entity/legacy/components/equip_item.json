@@ -10,8 +10,7 @@
 		"excluded_items": {
 			"type": "array",
 			"items": {
-				"$ref": "./ageable.json#/$defs/item_descriptor",
-				"description": "List of items that the entity should not equip."
+				"$ref": "../general.json#/$defs/item_obj"
 			},
 			"description": "List of items that the entity should not equip."
 		}

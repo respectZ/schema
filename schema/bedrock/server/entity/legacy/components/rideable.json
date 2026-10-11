@@ -25,34 +25,13 @@
 				"family_types": {
 					"anyOf": [
 						{
-							"anyOf": [
-								{
-									"$ref": "../../../../../vanilla/server/type_family.json",
-									"description": "List of entities that can ride this entity."
-								},
-								{
-									"type": "string",
-									"description": "List of entities that can ride this entity."
-								}
-							],
-							"description": "List of entities that can ride this entity."
+							"$ref": "../../../../../vanilla/server/type_family.json"
 						},
 						{
 							"type": "array",
 							"items": {
-								"anyOf": [
-									{
-										"$ref": "../../../../../vanilla/server/type_family.json",
-										"description": "List of entities that can ride this entity."
-									},
-									{
-										"type": "string",
-										"description": "List of entities that can ride this entity."
-									}
-								],
-								"description": "List of entities that can ride this entity."
-							},
-							"description": "List of entities that can ride this entity."
+								"$ref": "../../../../../vanilla/server/type_family.json"
+							}
 						}
 					],
 					"default": [],
@@ -98,14 +77,12 @@
 				"seats": {
 					"anyOf": [
 						{
-							"$ref": "#/$defs/seat",
-							"description": "The list of positions and number of riders for each position for entities riding this entity."
+							"$ref": "#/$defs/seat"
 						},
 						{
 							"type": "array",
 							"items": {
-								"$ref": "#/$defs/seat",
-								"description": "The list of positions and number of riders for each position for entities riding this entity."
+								"$ref": "#/$defs/seat"
 							},
 							"description": "The list of positions and number of riders for each position for entities riding this entity."
 						}
@@ -114,12 +91,10 @@
 					"description": "The list of positions and number of riders for each position for entities riding this entity."
 				}
 			},
-			"additionalProperties": false,
-			"description": "Determines whether this entity can be ridden. Allows specifying the different seat positions and amount."
+			"additionalProperties": false
 		},
 		{
-			"type": "null",
-			"description": "Determines whether this entity can be ridden. Allows specifying the different seat positions and amount."
+			"type": "null"
 		}
 	],
 	"$defs": {
@@ -135,16 +110,13 @@
 					"type": "array",
 					"prefixItems": [
 						{
-							"$ref": "#/$defs/float",
-							"description": "Position of this seat relative to this entity's position."
+							"$ref": "#/$defs/float"
 						},
 						{
-							"$ref": "#/$defs/float",
-							"description": "Position of this seat relative to this entity's position."
+							"$ref": "#/$defs/float"
 						},
 						{
-							"$ref": "#/$defs/float",
-							"description": "Position of this seat relative to this entity's position."
+							"$ref": "#/$defs/float"
 						}
 					],
 					"items": true,
@@ -169,8 +141,7 @@
 							"description": ""
 						}
 					},
-					"additionalProperties": false,
-					"description": "Position of this seat relative to this entity's position."
+					"additionalProperties": false
 				}
 			],
 			"description": "Position of this seat relative to this entity's position."
@@ -209,16 +180,13 @@
 						"rotate_rider_by": {
 							"anyOf": [
 								{
-									"type": "number",
-									"description": "Offset to rotate riders by."
+									"type": "number"
 								},
 								{
-									"type": "boolean",
-									"description": "Offset to rotate riders by."
+									"type": "boolean"
 								},
 								{
-									"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
-									"description": "Offset to rotate riders by."
+									"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string"
 								}
 							],
 							"description": "Offset to rotate riders by."
@@ -228,12 +196,10 @@
 							"description": ""
 						}
 					},
-					"additionalProperties": false,
-					"description": "The list of positions and number of riders for each position for entities riding this entity."
+					"additionalProperties": false
 				},
 				{
-					"type": "null",
-					"description": "The list of positions and number of riders for each position for entities riding this entity."
+					"type": "null"
 				}
 			],
 			"description": "The list of positions and number of riders for each position for entities riding this entity."

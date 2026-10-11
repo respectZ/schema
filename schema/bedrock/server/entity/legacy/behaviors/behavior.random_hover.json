@@ -15,17 +15,14 @@
 		"hover_height": {
 			"anyOf": [
 				{
-					"type": "integer",
-					"description": "The height above the surface which the mob will try to maintain"
+					"type": "integer"
 				},
 				{
 					"type": "array",
 					"items": {
-						"type": "integer",
-						"description": "The height above the surface which the mob will try to maintain"
+						"type": "integer"
 					},
-					"minItems": 2,
-					"description": "The height above the surface which the mob will try to maintain"
+					"minItems": 2
 				},
 				{
 					"type": "object",
@@ -39,8 +36,7 @@
 							"description": ""
 						}
 					},
-					"additionalProperties": false,
-					"description": "The height above the surface which the mob will try to maintain"
+					"additionalProperties": false
 				}
 			],
 			"description": "The height above the surface which the mob will try to maintain"

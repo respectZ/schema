@@ -32,30 +32,15 @@
 	"additionalProperties": false,
 	"$defs": {
 		"expression": {
-			"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression",
 			"anyOf": [
 				{
-					"type": ["number", "string"],
-					"description": ""
+					"type": "number"
 				},
 				{
-					"$ref": "../../../../../vanilla/definition/molang.json#/$defs/versioned",
-					"type": "object",
-					"properties": {
-						"expression": {
-							"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
-							"description": ""
-						},
-						"version": {
-							"type": "integer",
-							"minimum": -32768,
-							"maximum": 32767,
-							"description": ""
-						}
-					},
-					"required": ["expression", "version"],
-					"additionalProperties": false,
-					"description": ""
+					"$ref": "../../../../../vanilla/definition/molang.json#/$defs/versioned"
+				},
+				{
+					"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"
 				}
 			],
 			"description": ""

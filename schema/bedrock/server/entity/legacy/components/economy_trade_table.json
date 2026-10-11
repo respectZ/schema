@@ -17,40 +17,16 @@
 					"type": "object",
 					"properties": {
 						"range_max": {
-							"anyOf": [
-								{
-									"type": "number",
-									"exclusiveMinimum": -2147483648,
-									"exclusiveMaximum": 2147483648,
-									"description": ""
-								},
-								{
-									"not": {
-										"type": "number",
-										"description": ""
-									},
-									"description": ""
-								}
-							],
+							"type": "number",
+							"exclusiveMinimum": -2147483648,
+							"exclusiveMaximum": 2147483648,
 							"default": 0,
 							"description": ""
 						},
 						"range_min": {
-							"anyOf": [
-								{
-									"type": "number",
-									"exclusiveMinimum": -2147483648,
-									"exclusiveMaximum": 2147483648,
-									"description": ""
-								},
-								{
-									"not": {
-										"type": "number",
-										"description": ""
-									},
-									"description": ""
-								}
-							],
+							"type": "number",
+							"exclusiveMinimum": -2147483648,
+							"exclusiveMaximum": 2147483648,
 							"default": 0,
 							"description": ""
 						}
@@ -62,40 +38,16 @@
 					"type": "array",
 					"prefixItems": [
 						{
-							"anyOf": [
-								{
-									"type": "number",
-									"exclusiveMinimum": -2147483648,
-									"exclusiveMaximum": 2147483648,
-									"description": ""
-								},
-								{
-									"not": {
-										"type": "number",
-										"description": ""
-									},
-									"description": ""
-								}
-							],
+							"type": "number",
+							"exclusiveMinimum": -2147483648,
+							"exclusiveMaximum": 2147483648,
 							"default": 0,
 							"description": ""
 						},
 						{
-							"anyOf": [
-								{
-									"type": "number",
-									"exclusiveMinimum": -2147483648,
-									"exclusiveMaximum": 2147483648,
-									"description": ""
-								},
-								{
-									"not": {
-										"type": "number",
-										"description": ""
-									},
-									"description": ""
-								}
-							],
+							"type": "number",
+							"exclusiveMinimum": -2147483648,
+							"exclusiveMaximum": 2147483648,
 							"default": 0,
 							"description": ""
 						}
@@ -169,7 +121,7 @@
 					"description": "Whether interacting with this trader opens the trade screen."
 				},
 				"table": {
-					"type": "string",
+					"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
 					"default": "",
 					"description": "Path to the trade table JSON that defines available offers."
 				},
@@ -179,12 +131,10 @@
 					"description": "Whether legacy price calculations are used instead of the newer pricing formula."
 				}
 			},
-			"additionalProperties": false,
-			"description": "Defines this entity's ability to trade with players."
+			"additionalProperties": false
 		},
 		{
-			"type": "null",
-			"description": "Defines this entity's ability to trade with players."
+			"type": "null"
 		}
 	],
 	"description": "Defines this entity's ability to trade with players."

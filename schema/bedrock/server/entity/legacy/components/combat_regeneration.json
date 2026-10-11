@@ -17,13 +17,11 @@
 				{
 					"type": "integer",
 					"minimum": -2147483648,
-					"maximum": 2147483647,
-					"description": "The duration in seconds of Regeneration I added to the mob. Can also be set to \"infinite\""
+					"maximum": 2147483647
 				},
 				{
 					"type": "string",
-					"enum": ["infinite"],
-					"description": "The duration in seconds of Regeneration I added to the mob. Can also be set to \"infinite\""
+					"enum": ["infinite"]
 				}
 			],
 			"default": 5,

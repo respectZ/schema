@@ -3,16 +3,7 @@
 	"type": "object",
 	"properties": {
 		"event_name": {
-			"anyOf": [
-				{
-					"$ref": "../../../../../vanilla/server/level_sound.json",
-					"description": "Level sound event to be played as the ambient sound."
-				},
-				{
-					"type": "string",
-					"description": "Level sound event to be played as the ambient sound."
-				}
-			],
+			"$ref": "../../../../../vanilla/server/level_sound.json",
 			"description": "Level sound event to be played as the ambient sound."
 		},
 		"event_names": {
@@ -23,31 +14,19 @@
 					"condition": {
 						"anyOf": [
 							{
-								"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
-								"description": "The condition that must be satisfied to select the given ambient sound"
+								"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string"
 							},
 							{
-								"type": "number",
-								"description": "The condition that must be satisfied to select the given ambient sound"
+								"type": "number"
 							},
 							{
-								"type": "boolean",
-								"description": "The condition that must be satisfied to select the given ambient sound"
+								"type": "boolean"
 							}
 						],
 						"description": "The condition that must be satisfied to select the given ambient sound"
 					},
 					"event_name": {
-						"anyOf": [
-							{
-								"$ref": "../../../../../vanilla/server/level_sound.json",
-								"description": "Level sound event to be played as the ambient sound"
-							},
-							{
-								"type": "string",
-								"description": "Level sound event to be played as the ambient sound"
-							}
-						],
+						"$ref": "../../../../../vanilla/server/level_sound.json",
 						"description": "Level sound event to be played as the ambient sound"
 					}
 				},

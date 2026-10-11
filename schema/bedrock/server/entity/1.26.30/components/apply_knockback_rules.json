@@ -6,82 +6,65 @@
 			"type": "object",
 			"properties": {
 				"check_if_target_is_immersed_in_water": {
-					"$ref": "../../legacy/components/apply_knockback_rules.json#/$defs/preset/properties/check_if_target_is_immersed_in_water",
-					"description": ""
+					"$ref": "../../legacy/components/apply_knockback_rules.json#/$defs/preset/properties/check_if_target_is_immersed_in_water"
 				},
 				"extra_knockback_approach": {
 					"type": "string",
 					"anyOf": [
 						{
-							"enum": ["reapply_default", "multiply_reduced"],
-							"description": ""
+							"enum": ["reapply_default", "multiply_reduced"]
 						},
 						{
-							"pattern": "^(?:[rR][eE][aA][pP][pP][lL][yY]_[dD][eE][fF][aA][uU][lL][tT]|[mM][uU][lL][tT][iI][pP][lL][yY]_[rR][eE][dD][uU][cC][eE][dD])$",
-							"description": ""
+							"pattern": "^(?:[rR][eE][aA][pP][pP][lL][yY]_[dD][eE][fF][aA][uU][lL][tT]|[mM][uU][lL][tT][iI][pP][lL][yY]_[rR][eE][dD][uU][cC][eE][dD])$"
 						}
 					],
-					"default": "reapply_default",
-					"description": ""
+					"default": "reapply_default"
 				},
 				"filter": {
-					"$ref": "../../legacy/components/apply_knockback_rules.json#/$defs/preset/properties/filter",
-					"description": ""
+					"$ref": "../../legacy/components/apply_knockback_rules.json#/$defs/preset/properties/filter"
 				},
 				"horizontal_power": {
-					"$ref": "../../legacy/components/apply_knockback_rules.json#/$defs/preset/properties/horizontal_power",
-					"description": ""
+					"$ref": "../../legacy/components/apply_knockback_rules.json#/$defs/preset/properties/horizontal_power"
 				},
 				"knockback_mode": {
 					"type": "string",
 					"anyOf": [
 						{
-							"enum": ["relative_horizontal", "hit_direction"],
-							"description": ""
+							"enum": ["relative_horizontal", "hit_direction"]
 						},
 						{
-							"pattern": "^(?:[rR][eE][lL][aA][tT][iI][vV][eE]_[hH][oO][rR][iI][zZ][oO][nN][tT][aA][lL]|[hH][iI][tT]_[dD][iI][rR][eE][cC][tT][iI][oO][nN])$",
-							"description": ""
+							"pattern": "^(?:[rR][eE][lL][aA][tT][iI][vV][eE]_[hH][oO][rR][iI][zZ][oO][nN][tT][aA][lL]|[hH][iI][tT]_[dD][iI][rR][eE][cC][tT][iI][oO][nN])$"
 						}
 					],
-					"default": "relative_horizontal",
-					"description": ""
+					"default": "relative_horizontal"
 				},
 				"scale_with_damage": {
 					"type": "boolean",
-					"default": false,
-					"description": ""
+					"default": false
 				},
 				"slowdown_scale": {
 					"type": "number",
 					"minimum": 0,
 					"maximum": 1,
-					"default": 0.5,
-					"description": ""
+					"default": 0.5
 				},
 				"vertical_power": {
-					"$ref": "../../legacy/components/apply_knockback_rules.json#/$defs/preset/properties/vertical_power",
-					"description": ""
+					"$ref": "../../legacy/components/apply_knockback_rules.json#/$defs/preset/properties/vertical_power"
 				},
 				"vertical_velocity_cap": {
-					"$ref": "../../legacy/components/apply_knockback_rules.json#/$defs/preset/properties/vertical_velocity_cap",
-					"description": ""
+					"$ref": "../../legacy/components/apply_knockback_rules.json#/$defs/preset/properties/vertical_velocity_cap"
 				}
 			},
-			"additionalProperties": false,
-			"description": ""
+			"additionalProperties": false
 		}
 	},
 	"properties": {
 		"presets": {
 			"type": "array",
 			"items": {
-				"$ref": "#/$defs/preset",
-				"description": ""
-			},
-			"description": ""
+				"$ref": "#/$defs/preset"
+			}
 		}
 	},
-	"additionalProperties": false,
-	"description": ""
+	"additionalProperties": false
 }

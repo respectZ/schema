@@ -15,12 +15,10 @@
 		"cooldown_range": {
 			"anyOf": [
 				{
-					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "Goal cooldown range in seconds. If specified, the cooldown will have to elapse even before the goal can be selected for the first time."
+					"$ref": "../general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "Goal cooldown range in seconds. If specified, the cooldown will have to elapse even before the goal can be selected for the first time."
+					"type": "null"
 				}
 			],
 			"description": "Goal cooldown range in seconds. If specified, the cooldown will have to elapse even before the goal can be selected for the first time."
@@ -28,22 +26,20 @@
 		"duration_range": {
 			"anyOf": [
 				{
-					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "Goal duration range in seconds."
+					"$ref": "../general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "Goal duration range in seconds."
+					"type": "null"
 				}
 			],
 			"description": "Goal duration range in seconds."
 		},
 		"on_end": {
-			"$ref": "../components/equippable.json#/$defs/event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event(s) to run when the goal ends."
 		},
 		"on_start": {
-			"$ref": "../components/equippable.json#/$defs/event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event(s) to run when the goal starts."
 		},
 		"priority": {

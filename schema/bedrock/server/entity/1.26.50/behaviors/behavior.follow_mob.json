@@ -30,7 +30,7 @@
 			"description": "If non-empty, provides criteria for filtering which nearby Mobs can be followed. If empty default criteria will be used, which will exclude Players, Squid variants, Fish variants, Tadpoles, Dolphins, and mobs of the same type as the owner of the Goal."
 		},
 		"preferred_actor_type": {
-			"type": "string",
+			"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
 			"description": "The type of actor to prefer following. If left unspecified, a random actor among those in range will be chosen."
 		},
 		"priority": {

@@ -5,7 +5,7 @@
 			"type": "object",
 			"properties": {
 				"entity_type": {
-					"$ref": "#/$defs/entity_reference",
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
 					"default": "",
 					"description": "The entity type that will be riding this entity."
 				},
@@ -15,29 +15,11 @@
 					"description": "The spawn event that will be used when the riding entity is created."
 				}
 			},
-			"additionalProperties": false,
-			"description": "Adds a rider to the entity. Requires minecraft:rideable."
+			"additionalProperties": false
 		},
 		{
-			"type": "null",
-			"description": "Adds a rider to the entity. Requires minecraft:rideable."
+			"type": "null"
 		}
 	],
-	"$defs": {
-		"entity_reference": {
-			"type": "string",
-			"anyOf": [
-				{
-					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
-					"description": "The entity type that will be riding this entity."
-				},
-				{
-					"type": "string",
-					"description": "The entity type that will be riding this entity."
-				}
-			],
-			"description": "The entity type that will be riding this entity."
-		}
-	},
 	"description": "Adds a rider to the entity. Requires minecraft:rideable."
 }

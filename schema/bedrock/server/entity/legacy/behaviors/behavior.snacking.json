@@ -15,58 +15,7 @@
 		"items": {
 			"type": "array",
 			"items": {
-				"anyOf": [
-					{
-						"anyOf": [
-							{
-								"$ref": "../../../../../vanilla/server/item_descriptor.json",
-								"description": "Items that we are interested in snacking on"
-							},
-							{
-								"type": "object",
-								"properties": {
-									"item_tag": {
-										"type": "string",
-										"description": ""
-									}
-								},
-								"additionalProperties": false,
-								"required": ["item_tag"],
-								"description": "Items that we are interested in snacking on"
-							}
-						],
-						"description": "Items that we are interested in snacking on"
-					},
-					{
-						"type": "object",
-						"properties": {
-							"item": {
-								"anyOf": [
-									{
-										"$ref": "../../../../../vanilla/server/item_descriptor.json",
-										"description": ""
-									},
-									{
-										"type": "object",
-										"properties": {
-											"item_tag": {
-												"type": "string",
-												"description": ""
-											}
-										},
-										"additionalProperties": false,
-										"required": ["item_tag"],
-										"description": ""
-									}
-								],
-								"description": ""
-							}
-						},
-						"additionalProperties": false,
-						"required": ["item"],
-						"description": "Items that we are interested in snacking on"
-					}
-				],
+				"$ref": "../general.json#/$defs/item_obj",
 				"description": "Items that we are interested in snacking on"
 			},
 			"description": "Items that we are interested in snacking on"

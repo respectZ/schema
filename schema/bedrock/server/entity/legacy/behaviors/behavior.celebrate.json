@@ -3,7 +3,7 @@
 	"type": "object",
 	"properties": {
 		"celebration_sound": {
-			"type": "string",
+			"$ref": "../../../../../vanilla/server/level_sound.json",
 			"description": "The sound event to trigger during the celebration."
 		},
 		"control_flags": {
@@ -25,18 +25,16 @@
 		"jump_interval": {
 			"anyOf": [
 				{
-					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "Minimum and maximum time between jumping (positive, in seconds)."
+					"$ref": "../general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "Minimum and maximum time between jumping (positive, in seconds)."
+					"type": "null"
 				}
 			],
 			"description": "Minimum and maximum time between jumping (positive, in seconds)."
 		},
 		"on_celebration_end_event": {
-			"$ref": "../components/equippable.json#/$defs/event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "The event to trigger when the goal's duration expires."
 		},
 		"priority": {
@@ -49,12 +47,10 @@
 		"sound_interval": {
 			"anyOf": [
 				{
-					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "Minimum and maximum time between sound events (positive, in seconds)."
+					"$ref": "../general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "Minimum and maximum time between sound events (positive, in seconds)."
+					"type": "null"
 				}
 			],
 			"description": "Minimum and maximum time between sound events (positive, in seconds)."

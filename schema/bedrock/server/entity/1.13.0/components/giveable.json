@@ -3,8 +3,7 @@
 	"type": "object",
 	"properties": {
 		"triggers": {
-			"$ref": "../../legacy/components/giveable.json#/$defs/triggers",
-			"description": ""
+			"$ref": "../../legacy/components/giveable.json#/$defs/triggers"
 		}
 	},
 	"additionalProperties": false,

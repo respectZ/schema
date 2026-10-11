@@ -15,59 +15,10 @@
 		"cooldown_range": {
 			"anyOf": [
 				{
-					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
+					"$ref": "../general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
-				}
-			],
-			"allOf": [
-				{
-					"if": {
-						"type": "number",
-						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
-					},
-					"then": {
-						"minimum": 0,
-						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
-					},
-					"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
-				},
-				{
-					"if": {
-						"type": "array",
-						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
-					},
-					"then": {
-						"items": {
-							"minimum": 0,
-							"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
-						},
-						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
-					},
-					"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
-				},
-				{
-					"if": {
-						"type": "object",
-						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
-					},
-					"then": {
-						"properties": {
-							"range_min": {
-								"minimum": 0,
-								"description": ""
-							},
-							"range_max": {
-								"minimum": 0,
-								"description": ""
-							}
-						},
-						"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
-					},
-					"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
+					"type": "null"
 				}
 			],
 			"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted jump."
@@ -75,8 +26,7 @@
 		"forbidden_blocks": {
 			"type": "array",
 			"items": {
-				"$ref": "../components/equippable.json#/$defs/item_descriptor",
-				"description": "Blocks that the mob can't jump to."
+				"$ref": "../../../../../vanilla/server/block_descriptor.json"
 			},
 			"description": "Blocks that the mob can't jump to."
 		},
@@ -104,8 +54,7 @@
 		"preferred_blocks": {
 			"type": "array",
 			"items": {
-				"$ref": "../components/equippable.json#/$defs/item_descriptor",
-				"description": "Blocks that the mob prefers jumping to."
+				"$ref": "../../../../../vanilla/server/block_descriptor.json"
 			},
 			"description": "Blocks that the mob prefers jumping to."
 		},

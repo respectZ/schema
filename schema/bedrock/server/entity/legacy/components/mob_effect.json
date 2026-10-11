@@ -26,14 +26,12 @@
 				{
 					"type": "integer",
 					"minimum": -2147483648,
-					"maximum": 2147483647,
-					"description": "How long the applied mob effect lasts in seconds. Can also be set to \"infinite\""
+					"maximum": 2147483647
 				},
 				{
 					"type": "string",
 					"pattern": "^[iI][nN][fF][iI][nN][iI][tT][eE]$",
-					"examples": ["infinite"],
-					"description": "How long the applied mob effect lasts in seconds. Can also be set to \"infinite\""
+					"examples": ["infinite"]
 				}
 			],
 			"default": 10,
@@ -44,16 +42,7 @@
 			"description": "The set of entities that are valid to apply the mob effect to."
 		},
 		"mob_effect": {
-			"anyOf": [
-				{
-					"$ref": "../../../../../vanilla/server/effect_type.json",
-					"description": "The mob effect that is applied to entities that enter this entities effect range."
-				},
-				{
-					"type": "string",
-					"description": "The mob effect that is applied to entities that enter this entities effect range."
-				}
-			],
+			"$ref": "../../../../../vanilla/server/effect_type.json",
 			"description": "The mob effect that is applied to entities that enter this entities effect range."
 		}
 	},

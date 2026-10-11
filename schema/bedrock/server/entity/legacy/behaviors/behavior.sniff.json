@@ -15,62 +15,13 @@
 		"cooldown_range": {
 			"anyOf": [
 				{
-					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "Cooldown range between sniffs in seconds"
+					"$ref": "../general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "Cooldown range between sniffs in seconds"
+					"type": "null"
 				}
 			],
 			"default": [3.0, 10.0],
-			"allOf": [
-				{
-					"if": {
-						"type": "number",
-						"description": "Cooldown range between sniffs in seconds"
-					},
-					"then": {
-						"minimum": 0,
-						"description": "Cooldown range between sniffs in seconds"
-					},
-					"description": "Cooldown range between sniffs in seconds"
-				},
-				{
-					"if": {
-						"type": "array",
-						"description": "Cooldown range between sniffs in seconds"
-					},
-					"then": {
-						"items": {
-							"minimum": 0,
-							"description": "Cooldown range between sniffs in seconds"
-						},
-						"description": "Cooldown range between sniffs in seconds"
-					},
-					"description": "Cooldown range between sniffs in seconds"
-				},
-				{
-					"if": {
-						"type": "object",
-						"description": "Cooldown range between sniffs in seconds"
-					},
-					"then": {
-						"properties": {
-							"range_min": {
-								"minimum": 0,
-								"description": ""
-							},
-							"range_max": {
-								"minimum": 0,
-								"description": ""
-							}
-						},
-						"description": "Cooldown range between sniffs in seconds"
-					},
-					"description": "Cooldown range between sniffs in seconds"
-				}
-			],
 			"description": "Cooldown range between sniffs in seconds"
 		},
 		"duration": {

@@ -1,5 +1,5 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$ref": "./on_death.json",
+	"$ref": "../../legacy/general.json#/$defs/trigger",
 	"description": "Adds a trigger to call when this entity takes damage."
 }

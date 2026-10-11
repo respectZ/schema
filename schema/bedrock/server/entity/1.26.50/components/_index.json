@@ -213,6 +213,9 @@
 		"minecraft:free_camera_controlled": {
 			"$ref": "../../legacy/components/free_camera_controlled.json"
 		},
+		"minecraft:freezing_immune": {
+			"$ref": "../../1.26.50/components/freezing_immune.json"
+		},
 		"minecraft:freezing_vulnerable": {
 			"$ref": "../../1.26.50/components/freezing_vulnerable.json"
 		},

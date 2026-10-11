@@ -5,8 +5,7 @@
 		"boost_items": {
 			"type": "array",
 			"items": {
-				"$ref": "#/$defs/boost_item",
-				"description": "List of items that can be used to boost while riding this entity. Each item has the following properties:"
+				"$ref": "#/$defs/boost_item"
 			},
 			"description": "List of items that can be used to boost while riding this entity. Each item has the following properties:"
 		},
@@ -38,24 +37,7 @@
 					"description": "This is the damage that the item will take each time it is used."
 				},
 				"item": {
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/item_descriptor.json",
-							"description": "Name of the item that can be used to boost."
-						},
-						{
-							"type": "object",
-							"properties": {
-								"item": {
-									"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
-									"description": ""
-								}
-							},
-							"required": ["item"],
-							"additionalProperties": false,
-							"description": "Name of the item that can be used to boost."
-						}
-					],
+					"$ref": "../general.json#/$defs/item_obj",
 					"description": "Name of the item that can be used to boost."
 				},
 				"item_damage": {
@@ -74,8 +56,7 @@
 				"replace_item": {
 					"anyOf": [
 						{
-							"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
-							"description": "The item used to boost will become this item once it is used up."
+							"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
 						},
 						{
 							"type": "object",
@@ -86,8 +67,7 @@
 								}
 							},
 							"required": ["item"],
-							"additionalProperties": false,
-							"description": "The item used to boost will become this item once it is used up."
+							"additionalProperties": false
 						}
 					],
 					"description": "The item used to boost will become this item once it is used up."

@@ -34,7 +34,7 @@
 			"description": ""
 		},
 		"sound_event": {
-			"$ref": "../components/shooter.json#/$defs/sound_name",
+			"$ref": "../../../../../vanilla/server/level_sound.json",
 			"default": "undefined",
 			"description": ""
 		},

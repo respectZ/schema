@@ -17,11 +17,9 @@
 				{
 					"type": "array",
 					"items": {
-						"type": "number",
-						"description": "The distance from the boundary the villager must be within in to explore the outskirts."
+						"type": "number"
 					},
-					"maxItems": 3,
-					"description": "The distance from the boundary the villager must be within in to explore the outskirts."
+					"maxItems": 3
 				},
 				{
 					"type": "object",
@@ -39,11 +37,9 @@
 							"description": ""
 						}
 					},
-					"additionalProperties": false,
-					"description": "The distance from the boundary the villager must be within in to explore the outskirts."
+					"additionalProperties": false
 				}
-			],
-			"description": "The distance from the boundary the villager must be within in to explore the outskirts."
+			]
 		},
 		"explore_dist": {
 			"type": "number",

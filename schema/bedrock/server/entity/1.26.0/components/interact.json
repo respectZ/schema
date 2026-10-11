@@ -2,12 +2,10 @@
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"anyOf": [
 		{
-			"$ref": "#/$defs/definition",
-			"description": "Defines interactions with this entity."
+			"$ref": "#/$defs/definition"
 		},
 		{
-			"type": "null",
-			"description": "Defines interactions with this entity."
+			"type": "null"
 		}
 	],
 	"$defs": {
@@ -19,36 +17,28 @@
 						{
 							"anyOf": [
 								{
-									"$ref": "#/$defs/interaction",
-									"description": ""
+									"$ref": "#/$defs/interaction"
 								},
 								{
-									"type": "null",
-									"description": ""
+									"type": "null"
 								}
-							],
-							"description": ""
+							]
 						},
 						{
 							"type": "array",
 							"items": {
 								"anyOf": [
 									{
-										"$ref": "#/$defs/interaction",
-										"description": ""
+										"$ref": "#/$defs/interaction"
 									},
 									{
-										"type": "null",
-										"description": ""
+										"type": "null"
 									}
-								],
-								"description": ""
-							},
-							"description": ""
+								]
+							}
 						}
 					],
-					"default": [],
-					"description": ""
+					"default": []
 				}
 			},
 			"additionalProperties": false,
@@ -58,101 +48,77 @@
 			"type": "object",
 			"properties": {
 				"add_items": {
-					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/add_items",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/add_items"
 				},
 				"admire": {
-					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/admire",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/admire"
 				},
 				"barter": {
-					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/barter",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/barter"
 				},
 				"cooldown": {
-					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/cooldown",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/cooldown"
 				},
 				"cooldown_after_being_attacked": {
-					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/cooldown_after_being_attacked",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/cooldown_after_being_attacked"
 				},
 				"drop_item_slot": {
-					"type": "string",
-					"description": ""
+					"$ref": "../../1.20.80/components/interact.json#/$defs/interaction/properties/drop_item_slot"
 				},
 				"drop_item_y_offset": {
-					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/drop_item_y_offset",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/drop_item_y_offset"
 				},
 				"equip_item_slot": {
-					"type": "string",
-					"description": ""
+					"$ref": "../../1.20.80/components/interact.json#/$defs/interaction/properties/equip_item_slot"
 				},
 				"give_item": {
-					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/give_item",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/give_item"
 				},
 				"health_amount": {
-					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/health_amount",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/health_amount"
 				},
 				"hurt_item": {
-					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/hurt_item",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/hurt_item"
 				},
 				"interact_text": {
-					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/interact_text",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/interact_text"
 				},
 				"on_interact": {
-					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/on_interact",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/on_interact"
 				},
 				"particle_on_start": {
-					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/particle_on_start",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/particle_on_start"
 				},
 				"play_sounds": {
-					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/play_sounds",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/play_sounds"
 				},
 				"repair_entity_item": {
-					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/repair_entity_item",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/repair_entity_item"
 				},
 				"spawn_entities": {
-					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/spawn_entities",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/spawn_entities"
 				},
 				"spawn_items": {
-					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/spawn_items",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/spawn_items"
 				},
 				"swing": {
 					"type": "boolean",
-					"default": true,
-					"description": ""
+					"default": true
 				},
 				"take_item": {
-					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/take_item",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/take_item"
 				},
 				"transform_to_item": {
-					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/transform_to_item",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/transform_to_item"
 				},
 				"use_item": {
-					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/use_item",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/use_item"
 				},
 				"vibration": {
-					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/vibration",
-					"description": ""
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/vibration"
 				}
 			},
-			"additionalProperties": false,
-			"description": ""
+			"additionalProperties": false
 		}
 	},
 	"description": "Defines interactions with this entity."

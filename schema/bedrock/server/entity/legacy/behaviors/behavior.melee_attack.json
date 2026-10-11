@@ -7,7 +7,43 @@
 			"description": "Allows the entity to use this attack behavior, only once EVER."
 		},
 		"attack_types": {
-			"type": "string",
+			"anyOf": [
+				{
+					"type": "string",
+					"enum": [
+						"none",
+						"player",
+						"mob",
+						"monster",
+						"humanoid",
+						"animal",
+						"water",
+						"pathable",
+						"tamable",
+						"ridable",
+						"item",
+						"ambient",
+						"villager",
+						"arthropod",
+						"undead",
+						"zombie",
+						"minecart",
+						"boat",
+						"boatrideable",
+						"minecartridable",
+						"humanoidmonster",
+						"wateranimal",
+						"tamableanimal",
+						"undeadmob",
+						"undeadmonster",
+						"zombiemonster"
+					]
+				},
+				{
+					"type": "string"
+				}
+			],
+			"examples": ["monster arthropod", "animal"],
 			"description": "Defines the entity types this entity will attack."
 		},
 		"can_spread_on_fire": {
@@ -54,61 +90,11 @@
 			"description": "Minimum base time (in seconds) to recalculate new attack path to target (before increases applied)."
 		},
 		"on_attack": {
-			"type": "object",
-			"properties": {
-				"event": {
-					"type": "string",
-					"description": ""
-				},
-				"filters": {
-					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-					"description": ""
-				},
-				"target": {
-					"type": "string",
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/filter/general.json#/$defs/filter_subject",
-							"description": ""
-						},
-						{
-							"pattern": "^(?:[sS][eE][lL][fF]|[oO][tT][hH][eE][rR]|[pP][lL][aA][yY][eE][rR]|[tT][aA][rR][gG][eE][tT]|[pP][aA][rR][eE][nN][tT]|[bB][aA][bB][yY]|[bB][lL][oO][cC][kK]|[dD][aA][mM][aA][gG][eE][rR]|[hH][oO][lL][dD][eE][rR]|[iI][tT][eE][mM])$(?![\\s\\S])",
-							"description": ""
-						}
-					],
-					"description": ""
-				}
-			},
-			"additionalProperties": false,
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Defines the event to trigger when this entity successfully attacks."
 		},
 		"on_kill": {
-			"type": "object",
-			"properties": {
-				"event": {
-					"type": "string",
-					"description": ""
-				},
-				"filters": {
-					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-					"description": ""
-				},
-				"target": {
-					"type": "string",
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/filter/general.json#/$defs/filter_subject",
-							"description": ""
-						},
-						{
-							"pattern": "^(?:[sS][eE][lL][fF]|[oO][tT][hH][eE][rR]|[pP][lL][aA][yY][eE][rR]|[tT][aA][rR][gG][eE][tT]|[pP][aA][rR][eE][nN][tT]|[bB][aA][bB][yY]|[bB][lL][oO][cC][kK]|[dD][aA][mM][aA][gG][eE][rR]|[hH][oO][lL][dD][eE][rR]|[iI][tT][eE][mM])$(?![\\s\\S])",
-							"description": ""
-						}
-					],
-					"description": ""
-				}
-			},
-			"additionalProperties": false,
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Defines the event to trigger when this entity kills the target."
 		},
 		"outer_boundary_time_increase": {

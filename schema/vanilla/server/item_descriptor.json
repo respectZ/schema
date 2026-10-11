@@ -1,4 +1,5 @@
 {
+	"$comment": "TODO: Move current to legacy",
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"oneOf": [
 		{
@@ -10,5 +11,95 @@
 			"additionalProperties": false,
 			"properties": { "tags": { "$ref": "../definition/molang.json#/$defs/string" } }
 		}
-	]
+	],
+	"$defs": {
+		"latest": {
+			"oneOf": [
+				{
+					"$ref": "./identifiers.json#/$defs/item_identifier"
+				},
+				{
+					"type": "object",
+					"required": ["name"],
+					"additionalProperties": false,
+					"properties": { "name": { "$ref": "./identifiers.json#/$defs/item_identifier" } }
+				},
+				{
+					"type": "object",
+					"required": ["tags"],
+					"additionalProperties": false,
+					"properties": { "tags": { "$ref": "../definition/molang.json#/$defs/string" } }
+				},
+				{
+					"type": "array",
+					"items": {
+						"allOf": [
+							{
+								"type": "object",
+								"additionalProperties": false,
+								"required": ["key", "value"],
+								"properties": {
+									"key": {
+										"type": "string",
+										"enum": ["tags", "item_tag", "name"]
+									},
+									"value": {
+										"type": "string"
+									}
+								}
+							},
+							{
+								"if": {
+									"properties": {
+										"key": {
+											"const": ["tags"]
+										}
+									}
+								},
+								"then": {
+									"properties": {
+										"value": {
+											"$ref": "../definition/molang.json#/$defs/string"
+										}
+									}
+								}
+							},
+							{
+								"if": {
+									"properties": {
+										"key": {
+											"const": ["item_tag"]
+										}
+									}
+								},
+								"then": {
+									"properties": {
+										"value": {
+											"$ref": "./tags.json#/$defs/item_tag"
+										}
+									}
+								}
+							},
+							{
+								"if": {
+									"properties": {
+										"key": {
+											"const": ["name"]
+										}
+									}
+								},
+								"then": {
+									"properties": {
+										"value": {
+											"$ref": "./identifiers.json#/$defs/item_identifier"
+										}
+									}
+								}
+							}
+						]
+					}
+				}
+			]
+		}
+	}
 }

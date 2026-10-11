@@ -29,62 +29,13 @@
 		"height_above_target_range": {
 			"anyOf": [
 				{
-					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "The number of blocks above the target that the next anchor point can be set. This value is used only when the entity is tracking a target."
+					"$ref": "../general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "The number of blocks above the target that the next anchor point can be set. This value is used only when the entity is tracking a target."
+					"type": "null"
 				}
 			],
 			"default": [0, 0],
-			"allOf": [
-				{
-					"if": {
-						"type": "number",
-						"description": "The number of blocks above the target that the next anchor point can be set. This value is used only when the entity is tracking a target."
-					},
-					"then": {
-						"minimum": 0,
-						"description": "The number of blocks above the target that the next anchor point can be set. This value is used only when the entity is tracking a target."
-					},
-					"description": "The number of blocks above the target that the next anchor point can be set. This value is used only when the entity is tracking a target."
-				},
-				{
-					"if": {
-						"type": "array",
-						"description": "The number of blocks above the target that the next anchor point can be set. This value is used only when the entity is tracking a target."
-					},
-					"then": {
-						"items": {
-							"minimum": 0,
-							"description": "The number of blocks above the target that the next anchor point can be set. This value is used only when the entity is tracking a target."
-						},
-						"description": "The number of blocks above the target that the next anchor point can be set. This value is used only when the entity is tracking a target."
-					},
-					"description": "The number of blocks above the target that the next anchor point can be set. This value is used only when the entity is tracking a target."
-				},
-				{
-					"if": {
-						"type": "object",
-						"description": "The number of blocks above the target that the next anchor point can be set. This value is used only when the entity is tracking a target."
-					},
-					"then": {
-						"properties": {
-							"range_min": {
-								"minimum": 0,
-								"description": ""
-							},
-							"range_max": {
-								"minimum": 0,
-								"description": ""
-							}
-						},
-						"description": "The number of blocks above the target that the next anchor point can be set. This value is used only when the entity is tracking a target."
-					},
-					"description": "The number of blocks above the target that the next anchor point can be set. This value is used only when the entity is tracking a target."
-				}
-			],
 			"description": "The number of blocks above the target that the next anchor point can be set. This value is used only when the entity is tracking a target."
 		},
 		"height_adjustment_chance": {
@@ -97,12 +48,10 @@
 		"height_offset_range": {
 			"anyOf": [
 				{
-					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "Vertical distance from the anchor point this entity must stay within, upon a successful height adjustment."
+					"$ref": "../general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "Vertical distance from the anchor point this entity must stay within, upon a successful height adjustment."
+					"type": "null"
 				}
 			],
 			"default": [0, 0],
@@ -132,62 +81,13 @@
 		"radius_range": {
 			"anyOf": [
 				{
-					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "Horizontal distance from the anchor point this entity must stay within upon a successful radius adjustment."
+					"$ref": "../general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "Horizontal distance from the anchor point this entity must stay within upon a successful radius adjustment."
+					"type": "null"
 				}
 			],
 			"default": [5, 15],
-			"allOf": [
-				{
-					"if": {
-						"type": "number",
-						"description": "Horizontal distance from the anchor point this entity must stay within upon a successful radius adjustment."
-					},
-					"then": {
-						"minimum": 0,
-						"description": "Horizontal distance from the anchor point this entity must stay within upon a successful radius adjustment."
-					},
-					"description": "Horizontal distance from the anchor point this entity must stay within upon a successful radius adjustment."
-				},
-				{
-					"if": {
-						"type": "array",
-						"description": "Horizontal distance from the anchor point this entity must stay within upon a successful radius adjustment."
-					},
-					"then": {
-						"items": {
-							"minimum": 0,
-							"description": "Horizontal distance from the anchor point this entity must stay within upon a successful radius adjustment."
-						},
-						"description": "Horizontal distance from the anchor point this entity must stay within upon a successful radius adjustment."
-					},
-					"description": "Horizontal distance from the anchor point this entity must stay within upon a successful radius adjustment."
-				},
-				{
-					"if": {
-						"type": "object",
-						"description": "Horizontal distance from the anchor point this entity must stay within upon a successful radius adjustment."
-					},
-					"then": {
-						"properties": {
-							"range_min": {
-								"minimum": 0,
-								"description": ""
-							},
-							"range_max": {
-								"minimum": 0,
-								"description": ""
-							}
-						},
-						"description": "Horizontal distance from the anchor point this entity must stay within upon a successful radius adjustment."
-					},
-					"description": "Horizontal distance from the anchor point this entity must stay within upon a successful radius adjustment."
-				}
-			],
 			"description": "Horizontal distance from the anchor point this entity must stay within upon a successful radius adjustment."
 		},
 		"speed_multiplier": {

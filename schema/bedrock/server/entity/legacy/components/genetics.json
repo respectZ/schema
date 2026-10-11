@@ -9,32 +9,25 @@
 						{
 							"anyOf": [
 								{
-									"$ref": "#/$defs/gene",
-									"description": "The list of genes that this entity has and will cross with a partner during breeding."
+									"$ref": "#/$defs/gene"
 								},
 								{
-									"type": "null",
-									"description": "The list of genes that this entity has and will cross with a partner during breeding."
+									"type": "null"
 								}
-							],
-							"description": "The list of genes that this entity has and will cross with a partner during breeding."
+							]
 						},
 						{
 							"type": "array",
 							"items": {
 								"anyOf": [
 									{
-										"$ref": "#/$defs/gene",
-										"description": "The list of genes that this entity has and will cross with a partner during breeding."
+										"$ref": "#/$defs/gene"
 									},
 									{
-										"type": "null",
-										"description": "The list of genes that this entity has and will cross with a partner during breeding."
+										"type": "null"
 									}
-								],
-								"description": "The list of genes that this entity has and will cross with a partner during breeding."
-							},
-							"description": "The list of genes that this entity has and will cross with a partner during breeding."
+								]
+							}
 						}
 					],
 					"default": [],
@@ -56,7 +49,7 @@
 	],
 	"$defs": {
 		"event": {
-			"$ref": "./equippable.json#/$defs/event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event to run when this mob is created and matches the allele conditions."
 		},
 		"float": {
@@ -78,32 +71,25 @@
 						{
 							"anyOf": [
 								{
-									"$ref": "#/$defs/variant",
-									"description": "The list of genetic variants for this gene. These check for particular allele combinations and fire events when all of them are satisfied."
+									"$ref": "#/$defs/variant"
 								},
 								{
-									"type": "null",
-									"description": "The list of genetic variants for this gene. These check for particular allele combinations and fire events when all of them are satisfied."
+									"type": "null"
 								}
-							],
-							"description": "The list of genetic variants for this gene. These check for particular allele combinations and fire events when all of them are satisfied."
+							]
 						},
 						{
 							"type": "array",
 							"items": {
 								"anyOf": [
 									{
-										"$ref": "#/$defs/variant",
-										"description": "The list of genetic variants for this gene. These check for particular allele combinations and fire events when all of them are satisfied."
+										"$ref": "#/$defs/variant"
 									},
 									{
-										"type": "null",
-										"description": "The list of genetic variants for this gene. These check for particular allele combinations and fire events when all of them are satisfied."
+										"type": "null"
 									}
-								],
-								"description": "The list of genetic variants for this gene. These check for particular allele combinations and fire events when all of them are satisfied."
-							},
-							"description": "The list of genetic variants for this gene. These check for particular allele combinations and fire events when all of them are satisfied."
+								]
+							}
 						}
 					],
 					"default": [],
@@ -160,11 +146,11 @@
 					"prefixItems": [
 						{
 							"$ref": "#/$defs/int32",
-							"description": ""
+							"description": "Upper bound of the allele values for this gene."
 						},
 						{
 							"$ref": "#/$defs/int32",
-							"description": ""
+							"description": "Lower bound of the allele values for this gene."
 						}
 					],
 					"minItems": 2,

@@ -5,16 +5,13 @@
 		"hitboxes": {
 			"anyOf": [
 				{
-					"$ref": "#/$defs/hitbox",
-					"description": "Comma seperated list of hitboxes."
+					"$ref": "#/$defs/hitbox"
 				},
 				{
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/hitbox",
-						"description": "Comma seperated list of hitboxes."
-					},
-					"description": "Comma seperated list of hitboxes."
+						"$ref": "#/$defs/hitbox"
+					}
 				}
 			],
 			"description": "Comma seperated list of hitboxes."

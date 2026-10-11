@@ -72,193 +72,31 @@
 			"description": "Distance in blocks within the entity to considers it has reached it's target position."
 		},
 		"item_table": {
-			"type": "string",
+			"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
 			"description": "File path relative to the resource pack root for items to spawn list (loot table format)."
 		},
 		"on_digging_start": {
-			"type": "object",
-			"properties": {
-				"event": {
-					"type": "string",
-					"default": "",
-					"description": ""
-				},
-				"filters": {
-					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-					"description": ""
-				},
-				"target": {
-					"type": "string",
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/filter/general.json#/$defs/filter_subject",
-							"description": ""
-						},
-						{
-							"pattern": "^(?:[sS][eE][lL][fF]|[oO][tT][hH][eE][rR]|[pP][lL][aA][yY][eE][rR]|[tT][aA][rR][gG][eE][tT]|[pP][aA][rR][eE][nN][tT]|[bB][aA][bB][yY]|[bB][lL][oO][cC][kK]|[dD][aA][mM][aA][gG][eE][rR]|[hH][oO][lL][dD][eE][rR]|[iI][tT][eE][mM])$(?![\\s\\S])",
-							"description": ""
-						}
-					],
-					"default": "self",
-					"description": ""
-				}
-			},
-			"additionalProperties": false,
+			"$ref": "../../legacy/general.json#/$defs/trigger",
 			"description": "Event to run when the goal ends searching has begins digging."
 		},
 		"on_fail_during_digging": {
-			"type": "object",
-			"properties": {
-				"event": {
-					"type": "string",
-					"default": "",
-					"description": ""
-				},
-				"filters": {
-					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-					"description": ""
-				},
-				"target": {
-					"type": "string",
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/filter/general.json#/$defs/filter_subject",
-							"description": ""
-						},
-						{
-							"pattern": "^(?:[sS][eE][lL][fF]|[oO][tT][hH][eE][rR]|[pP][lL][aA][yY][eE][rR]|[tT][aA][rR][gG][eE][tT]|[pP][aA][rR][eE][nN][tT]|[bB][aA][bB][yY]|[bB][lL][oO][cC][kK]|[dD][aA][mM][aA][gG][eE][rR]|[hH][oO][lL][dD][eE][rR]|[iI][tT][eE][mM])$(?![\\s\\S])",
-							"description": ""
-						}
-					],
-					"default": "self",
-					"description": ""
-				}
-			},
-			"additionalProperties": false,
+			"$ref": "../../legacy/general.json#/$defs/trigger",
 			"description": "Event to run when the goal failed while in digging state."
 		},
 		"on_fail_during_searching": {
-			"type": "object",
-			"properties": {
-				"event": {
-					"type": "string",
-					"default": "",
-					"description": ""
-				},
-				"filters": {
-					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-					"description": ""
-				},
-				"target": {
-					"type": "string",
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/filter/general.json#/$defs/filter_subject",
-							"description": ""
-						},
-						{
-							"pattern": "^(?:[sS][eE][lL][fF]|[oO][tT][hH][eE][rR]|[pP][lL][aA][yY][eE][rR]|[tT][aA][rR][gG][eE][tT]|[pP][aA][rR][eE][nN][tT]|[bB][aA][bB][yY]|[bB][lL][oO][cC][kK]|[dD][aA][mM][aA][gG][eE][rR]|[hH][oO][lL][dD][eE][rR]|[iI][tT][eE][mM])$(?![\\s\\S])",
-							"description": ""
-						}
-					],
-					"default": "self",
-					"description": ""
-				}
-			},
-			"additionalProperties": false,
+			"$ref": "../../legacy/general.json#/$defs/trigger",
 			"description": "Event to run when the goal failed while in searching state."
 		},
 		"on_item_found": {
-			"type": "object",
-			"properties": {
-				"event": {
-					"type": "string",
-					"default": "",
-					"description": ""
-				},
-				"filters": {
-					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-					"description": ""
-				},
-				"target": {
-					"type": "string",
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/filter/general.json#/$defs/filter_subject",
-							"description": ""
-						},
-						{
-							"pattern": "^(?:[sS][eE][lL][fF]|[oO][tT][hH][eE][rR]|[pP][lL][aA][yY][eE][rR]|[tT][aA][rR][gG][eE][tT]|[pP][aA][rR][eE][nN][tT]|[bB][aA][bB][yY]|[bB][lL][oO][cC][kK]|[dD][aA][mM][aA][gG][eE][rR]|[hH][oO][lL][dD][eE][rR]|[iI][tT][eE][mM])$(?![\\s\\S])",
-							"description": ""
-						}
-					],
-					"default": "self",
-					"description": ""
-				}
-			},
-			"additionalProperties": false,
+			"$ref": "../../legacy/general.json#/$defs/trigger",
 			"description": "Event to run when the goal find a item."
 		},
 		"on_searching_start": {
-			"type": "object",
-			"properties": {
-				"event": {
-					"type": "string",
-					"default": "",
-					"description": ""
-				},
-				"filters": {
-					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-					"description": ""
-				},
-				"target": {
-					"type": "string",
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/filter/general.json#/$defs/filter_subject",
-							"description": ""
-						},
-						{
-							"pattern": "^(?:[sS][eE][lL][fF]|[oO][tT][hH][eE][rR]|[pP][lL][aA][yY][eE][rR]|[tT][aA][rR][gG][eE][tT]|[pP][aA][rR][eE][nN][tT]|[bB][aA][bB][yY]|[bB][lL][oO][cC][kK]|[dD][aA][mM][aA][gG][eE][rR]|[hH][oO][lL][dD][eE][rR]|[iI][tT][eE][mM])$(?![\\s\\S])",
-							"description": ""
-						}
-					],
-					"default": "self",
-					"description": ""
-				}
-			},
-			"additionalProperties": false,
+			"$ref": "../../legacy/general.json#/$defs/trigger",
 			"description": "Event to run when the goal starts searching."
 		},
 		"on_success": {
-			"type": "object",
-			"properties": {
-				"event": {
-					"type": "string",
-					"default": "",
-					"description": ""
-				},
-				"filters": {
-					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-					"description": ""
-				},
-				"target": {
-					"type": "string",
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/filter/general.json#/$defs/filter_subject",
-							"description": ""
-						},
-						{
-							"pattern": "^(?:[sS][eE][lL][fF]|[oO][tT][hH][eE][rR]|[pP][lL][aA][yY][eE][rR]|[tT][aA][rR][gG][eE][tT]|[pP][aA][rR][eE][nN][tT]|[bB][aA][bB][yY]|[bB][lL][oO][cC][kK]|[dD][aA][mM][aA][gG][eE][rR]|[hH][oO][lL][dD][eE][rR]|[iI][tT][eE][mM])$(?![\\s\\S])",
-							"description": ""
-						}
-					],
-					"default": "self",
-					"description": ""
-				}
-			},
-			"additionalProperties": false,
+			"$ref": "../../legacy/general.json#/$defs/trigger",
 			"description": "Event to run when searching and digging has ended."
 		},
 		"priority": {
@@ -300,8 +138,7 @@
 		"target_blocks": {
 			"type": "array",
 			"items": {
-				"type": "string",
-				"description": "List of target block types the goal will look to dig on. Overrides the default list."
+				"$ref": "../../../../../vanilla/server/block_descriptor.json"
 			},
 			"description": "List of target block types the goal will look to dig on. Overrides the default list."
 		},

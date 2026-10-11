@@ -3,24 +3,19 @@
 	"type": "object",
 	"properties": {
 		"dark_teleport_chance": {
-			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/dark_teleport_chance",
-			"description": "Modifies the chance that the entity will teleport if the entity is in darkness"
+			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/dark_teleport_chance"
 		},
 		"light_teleport_chance": {
-			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/light_teleport_chance",
-			"description": "Modifies the chance that the entity will teleport if the entity is in daylight"
+			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/light_teleport_chance"
 		},
 		"max_random_teleport_time": {
-			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/max_random_teleport_time",
-			"description": "Maximum amount of time in seconds between random teleports"
+			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/max_random_teleport_time"
 		},
 		"min_random_teleport_time": {
-			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/min_random_teleport_time",
-			"description": "Minimum amount of time in seconds between random teleports"
+			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/min_random_teleport_time"
 		},
 		"projectile_filter": {
-			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/projectile_filter",
-			"description": "Conditions that determine which projectiles cause the entity to attempt to teleport. If omitted, all projectiles cause a teleport attempt"
+			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/projectile_filter"
 		},
 		"random_teleport_cube": {
 			"type": "array",
@@ -29,27 +24,22 @@
 			"items": {
 				"type": "number",
 				"minimum": -3.4028234663852886e38,
-				"maximum": 3.4028234663852886e38,
-				"description": "Entity will teleport to a random position within the area defined by this cube"
+				"maximum": 3.4028234663852886e38
 			},
 			"default": [32, 16, 32],
 			"description": "Entity will teleport to a random position within the area defined by this cube"
 		},
 		"random_teleports": {
-			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/random_teleports",
-			"description": "If true, the entity will teleport randomly"
+			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/random_teleports"
 		},
 		"target_distance": {
-			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/target_distance",
-			"description": "Maximum distance the entity will teleport when chasing a target"
+			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/target_distance"
 		},
 		"target_teleport_chance": {
-			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/target_teleport_chance",
-			"description": "The chance that the entity will teleport between 0.0 and 1.0. 1.0 means 100%"
+			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/target_teleport_chance"
 		},
 		"teleports_on_projectile_hit": {
-			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/teleports_on_projectile_hit",
-			"description": "If true, the entity will attempt to teleport away from projectiles about to hit it"
+			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/teleports_on_projectile_hit"
 		}
 	},
 	"additionalProperties": false,

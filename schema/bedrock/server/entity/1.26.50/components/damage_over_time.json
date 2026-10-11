@@ -3,12 +3,10 @@
 	"type": "object",
 	"properties": {
 		"damage_per_hurt": {
-			"$ref": "../../legacy/components/damage_over_time.json#/properties/damage_per_hurt",
-			"description": "Amount of damage caused each hurt."
+			"$ref": "../../legacy/components/damage_over_time.json#/properties/damage_per_hurt"
 		},
 		"time_between_hurt": {
-			"$ref": "../../legacy/components/damage_over_time.json#/properties/time_between_hurt",
-			"description": "Time in seconds between damage."
+			"$ref": "../../legacy/components/damage_over_time.json#/properties/time_between_hurt"
 		}
 	},
 	"additionalProperties": false,

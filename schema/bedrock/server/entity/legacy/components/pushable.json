@@ -10,9 +10,9 @@
 		"is_pushable_by_piston": {
 			"type": "boolean",
 			"default": true,
-			"description": ""
+			"description": "Allows the entity to be pushed by certain blocks, like Shulker Boxes and Pistons."
 		}
 	},
 	"additionalProperties": false,
-	"description": ""
+	"description": "Allows an entity to be pushed by other entities."
 }

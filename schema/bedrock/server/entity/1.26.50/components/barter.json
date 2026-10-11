@@ -3,7 +3,7 @@
 	"type": "object",
 	"properties": {
 		"barter_table": {
-			"type": "string",
+			"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
 			"description": "Loot table that's used to drop a random item."
 		},
 		"cooldown_after_being_attacked": {

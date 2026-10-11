@@ -14,7 +14,7 @@
 		},
 		"dweller_role": {
 			"type": "string",
-			"default": "",
+			"enum": ["inhabitant", "defender", "hostile", "passive"],
 			"description": ""
 		},
 		"dwelling_bounds_tolerance": {
@@ -24,7 +24,7 @@
 		},
 		"dwelling_type": {
 			"type": "string",
-			"default": "",
+			"enum": ["village"],
 			"description": ""
 		},
 		"first_founding_reward": {
@@ -36,6 +36,22 @@
 		},
 		"preferred_profession": {
 			"type": "string",
+			"enum": [
+				"armorer",
+				"butcher",
+				"cartographer",
+				"cleric",
+				"farmer",
+				"fisherman",
+				"fletcher",
+				"leatherworker",
+				"librarian",
+				"mason",
+				"shepard",
+				"shepherd",
+				"toolsmith",
+				"weaponsmith"
+			],
 			"default": "",
 			"description": ""
 		},

@@ -15,59 +15,7 @@
 		"items": {
 			"type": "array",
 			"items": {
-				"anyOf": [
-					{
-						"anyOf": [
-							{
-								"$ref": "../../../../../vanilla/server/item_descriptor.json",
-								"description": "List of items that this mob likes"
-							},
-							{
-								"type": "object",
-								"properties": {
-									"item_tag": {
-										"type": "string",
-										"description": ""
-									}
-								},
-								"additionalProperties": false,
-								"required": ["item_tag"],
-								"description": "List of items that this mob likes"
-							}
-						],
-						"description": "List of items that this mob likes"
-					},
-					{
-						"type": "object",
-						"properties": {
-							"item": {
-								"anyOf": [
-									{
-										"$ref": "../../../../../vanilla/server/item_descriptor.json",
-										"description": ""
-									},
-									{
-										"type": "object",
-										"properties": {
-											"item_tag": {
-												"type": "string",
-												"description": ""
-											}
-										},
-										"additionalProperties": false,
-										"required": ["item_tag"],
-										"description": ""
-									}
-								],
-								"description": ""
-							}
-						},
-						"additionalProperties": false,
-						"required": ["item"],
-						"description": "List of items that this mob likes"
-					}
-				],
-				"description": "List of items that this mob likes"
+				"$ref": "../general.json#/$defs/item_obj"
 			},
 			"description": "List of items that this mob likes"
 		},
@@ -78,21 +26,17 @@
 		"look_time": {
 			"anyOf": [
 				{
-					"type": "integer",
-					"description": "The range of time in seconds this mob will stare at the player holding a food they like, begging for it"
+					"type": "integer"
 				},
 				{
-					"type": "string",
-					"description": "The range of time in seconds this mob will stare at the player holding a food they like, begging for it"
+					"type": "string"
 				},
 				{
 					"type": "array",
 					"items": {
-						"type": "integer",
-						"description": "The range of time in seconds this mob will stare at the player holding a food they like, begging for it"
+						"type": "integer"
 					},
-					"minItems": 1,
-					"description": "The range of time in seconds this mob will stare at the player holding a food they like, begging for it"
+					"minItems": 1
 				},
 				{
 					"type": "object",
@@ -106,8 +50,7 @@
 							"description": ""
 						}
 					},
-					"additionalProperties": false,
-					"description": "The range of time in seconds this mob will stare at the player holding a food they like, begging for it"
+					"additionalProperties": false
 				}
 			],
 			"description": "The range of time in seconds this mob will stare at the player holding a food they like, begging for it"

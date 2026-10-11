@@ -21,7 +21,7 @@
 			"description": ""
 		},
 		"on_take": {
-			"$ref": "../components/equippable.json#/$defs/event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": ""
 		},
 		"priority": {

@@ -125,12 +125,10 @@
 					"description": "Tells the flockers that they will follow flocks based on the center of mass."
 				}
 			},
-			"additionalProperties": false,
-			"description": "Allows entities to flock in groups in water or not."
+			"additionalProperties": false
 		},
 		{
-			"type": "null",
-			"description": "Allows entities to flock in groups in water or not."
+			"type": "null"
 		}
 	],
 	"description": "Allows entities to flock in groups in water or not."

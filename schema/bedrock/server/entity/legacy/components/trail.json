@@ -5,17 +5,7 @@
 			"type": "object",
 			"properties": {
 				"block_type": {
-					"type": "string",
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
-							"description": ""
-						},
-						{
-							"type": "string",
-							"description": ""
-						}
-					],
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
 					"default": "air",
 					"description": ""
 				},

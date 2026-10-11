@@ -2,12 +2,10 @@
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"anyOf": [
 		{
-			"$ref": "#/$defs/definition",
-			"description": "Defines an entity's teleporting behavior."
+			"$ref": "#/$defs/definition"
 		},
 		{
-			"type": "null",
-			"description": "Defines an entity's teleporting behavior."
+			"type": "null"
 		}
 	],
 	"$defs": {
@@ -43,23 +41,55 @@
 					"description": "Minimum amount of time in seconds between random teleports"
 				},
 				"projectile_filter": {
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-							"description": "Conditions that determine which projectiles cause the entity to attempt to teleport. If omitted, all projectiles cause a teleport attempt"
-						},
-						{
-							"type": "null",
-							"description": "Conditions that determine which projectiles cause the entity to attempt to teleport. If omitted, all projectiles cause a teleport attempt"
-						}
-					],
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
 					"default": null,
 					"description": "Conditions that determine which projectiles cause the entity to attempt to teleport. If omitted, all projectiles cause a teleport attempt"
 				},
 				"random_teleport_cube": {
-					"$ref": "./custom_hit_test.json#/$defs/hitbox/properties/pivot",
-					"default": [32, 16, 32],
-					"description": "Entity will teleport to a random position within the area defined by this cube"
+					"anyOf": [
+						{
+							"type": "array",
+							"minItems": 3,
+							"maxItems": 3,
+							"items": {
+								"type": "number",
+								"minimum": -3.4028234663852886e38,
+								"maximum": 3.4028234663852886e38,
+								"description": ""
+							},
+							"description": ""
+						},
+						{
+							"type": "object",
+							"properties": {
+								"x": {
+									"type": "number",
+									"minimum": -3.4028234663852886e38,
+									"maximum": 3.4028234663852886e38,
+									"default": 0,
+									"description": ""
+								},
+								"y": {
+									"type": "number",
+									"minimum": -3.4028234663852886e38,
+									"maximum": 3.4028234663852886e38,
+									"default": 0,
+									"description": ""
+								},
+								"z": {
+									"type": "number",
+									"minimum": -3.4028234663852886e38,
+									"maximum": 3.4028234663852886e38,
+									"default": 0,
+									"description": ""
+								}
+							},
+							"additionalProperties": false,
+							"description": ""
+						}
+					],
+					"default": [0, 0, 0],
+					"description": ""
 				},
 				"random_teleports": {
 					"type": "boolean",
@@ -86,8 +116,7 @@
 					"description": "If true, the entity will attempt to teleport away from projectiles about to hit it"
 				}
 			},
-			"additionalProperties": false,
-			"description": "Defines an entity's teleporting behavior."
+			"additionalProperties": false
 		}
 	},
 	"description": "Defines an entity's teleporting behavior."

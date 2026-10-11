@@ -56,11 +56,9 @@
 				{
 					"type": "array",
 					"items": {
-						"type": "number",
-						"description": "The dimensions of the AABB used to search for a potential mob to offer flower to."
+						"type": "number"
 					},
-					"maxItems": 3,
-					"description": "The dimensions of the AABB used to search for a potential mob to offer flower to."
+					"maxItems": 3
 				},
 				{
 					"type": "object",
@@ -78,8 +76,7 @@
 							"description": ""
 						}
 					},
-					"additionalProperties": false,
-					"description": "The dimensions of the AABB used to search for a potential mob to offer flower to."
+					"additionalProperties": false
 				}
 			],
 			"description": "The dimensions of the AABB used to search for a potential mob to offer flower to."

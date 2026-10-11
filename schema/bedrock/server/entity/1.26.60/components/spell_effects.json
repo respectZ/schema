@@ -14,16 +14,7 @@
 		"remove_effects": {
 			"type": "array",
 			"items": {
-				"anyOf": [
-					{
-						"$ref": "../../../../../vanilla/server/effect_type.json",
-						"description": ""
-					},
-					{
-						"type": "string",
-						"description": ""
-					}
-				],
+				"$ref": "../../../../../vanilla/server/effect_type.json",
 				"description": ""
 			},
 			"description": ""
@@ -54,29 +45,18 @@
 				"duration": {
 					"anyOf": [
 						{
-							"type": "number",
-							"description": ""
+							"type": "number"
 						},
 						{
 							"type": "string",
-							"enum": ["infinite"],
-							"description": ""
+							"enum": ["infinite"]
 						}
 					],
 					"default": 0,
 					"description": ""
 				},
 				"effect": {
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/effect_type.json",
-							"description": ""
-						},
-						{
-							"type": "string",
-							"description": ""
-						}
-					],
+					"$ref": "../../../../../vanilla/server/effect_type.json",
 					"default": "",
 					"description": ""
 				},

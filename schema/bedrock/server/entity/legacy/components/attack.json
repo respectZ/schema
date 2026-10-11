@@ -93,16 +93,7 @@
 					"description": ""
 				},
 				"effect_name": {
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/effect_type.json",
-							"description": ""
-						},
-						{
-							"type": "string",
-							"description": ""
-						}
-					],
+					"$ref": "../../../../../vanilla/server/effect_type.json",
 					"default": "",
 					"description": ""
 				}

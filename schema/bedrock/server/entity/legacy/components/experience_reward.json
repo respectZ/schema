@@ -5,37 +5,29 @@
 		"on_bred": {
 			"anyOf": [
 				{
-					"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
-					"description": "A Molang expression defining the amount of experience rewarded when this entity is successfully bred. An array of expressions adds each expression's result together for a final total."
+					"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string"
 				},
 				{
-					"type": "number",
-					"description": "A Molang expression defining the amount of experience rewarded when this entity is successfully bred. An array of expressions adds each expression's result together for a final total."
+					"type": "number"
 				},
 				{
-					"type": "boolean",
-					"description": "A Molang expression defining the amount of experience rewarded when this entity is successfully bred. An array of expressions adds each expression's result together for a final total."
+					"type": "boolean"
 				},
 				{
 					"type": "array",
 					"items": {
 						"anyOf": [
 							{
-								"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
-								"description": "A Molang expression defining the amount of experience rewarded when this entity is successfully bred. An array of expressions adds each expression's result together for a final total."
+								"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string"
 							},
 							{
-								"type": "number",
-								"description": "A Molang expression defining the amount of experience rewarded when this entity is successfully bred. An array of expressions adds each expression's result together for a final total."
+								"type": "number"
 							},
 							{
-								"type": "boolean",
-								"description": "A Molang expression defining the amount of experience rewarded when this entity is successfully bred. An array of expressions adds each expression's result together for a final total."
+								"type": "boolean"
 							}
-						],
-						"description": "A Molang expression defining the amount of experience rewarded when this entity is successfully bred. An array of expressions adds each expression's result together for a final total."
-					},
-					"description": "A Molang expression defining the amount of experience rewarded when this entity is successfully bred. An array of expressions adds each expression's result together for a final total."
+						]
+					}
 				}
 			],
 			"description": "A Molang expression defining the amount of experience rewarded when this entity is successfully bred. An array of expressions adds each expression's result together for a final total."
@@ -43,37 +35,29 @@
 		"on_death": {
 			"anyOf": [
 				{
-					"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
-					"description": "A Molang expression defining the amount of experience rewarded when this entity dies. An array of expressions adds each expression's result together for a final total."
+					"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string"
 				},
 				{
-					"type": "number",
-					"description": "A Molang expression defining the amount of experience rewarded when this entity dies. An array of expressions adds each expression's result together for a final total."
+					"type": "number"
 				},
 				{
-					"type": "boolean",
-					"description": "A Molang expression defining the amount of experience rewarded when this entity dies. An array of expressions adds each expression's result together for a final total."
+					"type": "boolean"
 				},
 				{
 					"type": "array",
 					"items": {
 						"anyOf": [
 							{
-								"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
-								"description": "A Molang expression defining the amount of experience rewarded when this entity dies. An array of expressions adds each expression's result together for a final total."
+								"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string"
 							},
 							{
-								"type": "number",
-								"description": "A Molang expression defining the amount of experience rewarded when this entity dies. An array of expressions adds each expression's result together for a final total."
+								"type": "number"
 							},
 							{
-								"type": "boolean",
-								"description": "A Molang expression defining the amount of experience rewarded when this entity dies. An array of expressions adds each expression's result together for a final total."
+								"type": "boolean"
 							}
-						],
-						"description": "A Molang expression defining the amount of experience rewarded when this entity dies. An array of expressions adds each expression's result together for a final total."
-					},
-					"description": "A Molang expression defining the amount of experience rewarded when this entity dies. An array of expressions adds each expression's result together for a final total."
+						]
+					}
 				}
 			],
 			"description": "A Molang expression defining the amount of experience rewarded when this entity dies. An array of expressions adds each expression's result together for a final total."

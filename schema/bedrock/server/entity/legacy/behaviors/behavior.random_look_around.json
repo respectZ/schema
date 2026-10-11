@@ -15,21 +15,17 @@
 		"look_time": {
 			"anyOf": [
 				{
-					"type": "integer",
-					"description": "The range of time in seconds the mob will stay looking in a random direction before looking elsewhere"
+					"type": "integer"
 				},
 				{
-					"type": "string",
-					"description": "The range of time in seconds the mob will stay looking in a random direction before looking elsewhere"
+					"type": "string"
 				},
 				{
 					"type": "array",
 					"items": {
-						"type": "integer",
-						"description": "The range of time in seconds the mob will stay looking in a random direction before looking elsewhere"
+						"type": "integer"
 					},
-					"minItems": 1,
-					"description": "The range of time in seconds the mob will stay looking in a random direction before looking elsewhere"
+					"minItems": 1
 				},
 				{
 					"type": "object",
@@ -43,8 +39,7 @@
 							"description": ""
 						}
 					},
-					"additionalProperties": false,
-					"description": "The range of time in seconds the mob will stay looking in a random direction before looking elsewhere"
+					"additionalProperties": false
 				}
 			],
 			"description": "The range of time in seconds the mob will stay looking in a random direction before looking elsewhere"

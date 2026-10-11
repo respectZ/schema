@@ -52,56 +52,16 @@
 						"description": ""
 					}
 				},
-				"additionalProperties": false,
-				"description": "A list of locations on the owner entity towards which line of sight checks are performed. At least one location must be unobstructed for the entity to be considered as looked at."
+				"additionalProperties": false
 			},
 			"description": "A list of locations on the owner entity towards which line of sight checks are performed. At least one location must be unobstructed for the entity to be considered as looked at."
 		},
 		"looked_at_cooldown": {
-			"anyOf": [
-				{
-					"type": "number",
-					"minimum": -3.4028234663852886e38,
-					"maximum": 3.4028234663852886e38,
-					"description": "Specifies the range for the random number of seconds that must pass before the owner entity can check again for entities looking at it, after detecting an entity looking at it."
-				},
-				{
-					"type": "array",
-					"items": {
-						"type": "number",
-						"minimum": -3.4028234663852886e38,
-						"maximum": 3.4028234663852886e38,
-						"description": "Specifies the range for the random number of seconds that must pass before the owner entity can check again for entities looking at it, after detecting an entity looking at it."
-					},
-					"minItems": 2,
-					"maxItems": 2,
-					"description": "Specifies the range for the random number of seconds that must pass before the owner entity can check again for entities looking at it, after detecting an entity looking at it."
-				},
-				{
-					"type": "object",
-					"properties": {
-						"range_max": {
-							"type": "number",
-							"minimum": -3.4028234663852886e38,
-							"maximum": 3.4028234663852886e38,
-							"description": ""
-						},
-						"range_min": {
-							"type": "number",
-							"minimum": -3.4028234663852886e38,
-							"maximum": 3.4028234663852886e38,
-							"description": ""
-						}
-					},
-					"required": ["range_min", "range_max"],
-					"additionalProperties": false,
-					"description": "Specifies the range for the random number of seconds that must pass before the owner entity can check again for entities looking at it, after detecting an entity looking at it."
-				}
-			],
+			"$ref": "../general.json#/$defs/number_or_range",
 			"description": "Specifies the range for the random number of seconds that must pass before the owner entity can check again for entities looking at it, after detecting an entity looking at it."
 		},
 		"looked_at_event": {
-			"$ref": "./ageable.json#/$defs/growth_event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Defines the event to trigger when an entity is detected looking at the owner entity."
 		},
 		"min_looked_at_duration": {
@@ -112,7 +72,7 @@
 			"description": "Defines the minimum, continuous time the owner entity has to be looked at before being considered as such. Defaults to 0 if not explicitly specified."
 		},
 		"not_looked_at_event": {
-			"$ref": "./ageable.json#/$defs/growth_event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Defines the event to trigger when no entity is found looking at the owner entity."
 		},
 		"scale_fov_by_distance": {

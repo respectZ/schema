@@ -67,7 +67,7 @@
 						"anyOf": [
 							{
 								"type": "string",
-								"pattern": "^#[a-fA-F0-9]{8}$(?![\\s\\S])",
+								"pattern": "#[a-fA-F0-9]{8}",
 								"description": ""
 							},
 							{
@@ -102,16 +102,15 @@
 									"description": "The event to send to the entity"
 								},
 								"sound_event": {
-									"type": "string",
+									"$ref": "../../../../../vanilla/server/level_sound.json",
 									"description": "The sound event to play when this step happens"
 								}
-							},
-							"description": "List of events to send"
+							}
 						},
 						"description": "List of events to send"
 					},
 					"start_sound_event": {
-						"type": "string",
+						"$ref": "../../../../../vanilla/server/level_sound.json",
 						"description": ""
 					},
 					"weight": {

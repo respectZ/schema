@@ -15,59 +15,10 @@
 		"cooldown_range": {
 			"anyOf": [
 				{
-					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "Goal cooldown range in seconds."
+					"$ref": "../general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "Goal cooldown range in seconds."
-				}
-			],
-			"allOf": [
-				{
-					"if": {
-						"type": "number",
-						"description": "Goal cooldown range in seconds."
-					},
-					"then": {
-						"minimum": 0,
-						"description": "Goal cooldown range in seconds."
-					},
-					"description": "Goal cooldown range in seconds."
-				},
-				{
-					"if": {
-						"type": "array",
-						"description": "Goal cooldown range in seconds."
-					},
-					"then": {
-						"items": {
-							"minimum": 0,
-							"description": "Goal cooldown range in seconds."
-						},
-						"description": "Goal cooldown range in seconds."
-					},
-					"description": "Goal cooldown range in seconds."
-				},
-				{
-					"if": {
-						"type": "object",
-						"description": "Goal cooldown range in seconds."
-					},
-					"then": {
-						"properties": {
-							"range_min": {
-								"minimum": 0,
-								"description": ""
-							},
-							"range_max": {
-								"minimum": 0,
-								"description": ""
-							}
-						},
-						"description": "Goal cooldown range in seconds."
-					},
-					"description": "Goal cooldown range in seconds."
+					"type": "null"
 				}
 			],
 			"description": "Goal cooldown range in seconds."
@@ -75,59 +26,10 @@
 		"digging_duration_range": {
 			"anyOf": [
 				{
-					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "Digging duration in seconds."
+					"$ref": "../general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "Digging duration in seconds."
-				}
-			],
-			"allOf": [
-				{
-					"if": {
-						"type": "number",
-						"description": "Digging duration in seconds."
-					},
-					"then": {
-						"minimum": 0,
-						"description": "Digging duration in seconds."
-					},
-					"description": "Digging duration in seconds."
-				},
-				{
-					"if": {
-						"type": "array",
-						"description": "Digging duration in seconds."
-					},
-					"then": {
-						"items": {
-							"minimum": 0,
-							"description": "Digging duration in seconds."
-						},
-						"description": "Digging duration in seconds."
-					},
-					"description": "Digging duration in seconds."
-				},
-				{
-					"if": {
-						"type": "object",
-						"description": "Digging duration in seconds."
-					},
-					"then": {
-						"properties": {
-							"range_min": {
-								"minimum": 0,
-								"description": ""
-							},
-							"range_max": {
-								"minimum": 0,
-								"description": ""
-							}
-						},
-						"description": "Digging duration in seconds."
-					},
-					"description": "Digging duration in seconds."
+					"type": "null"
 				}
 			],
 			"description": "Digging duration in seconds."
@@ -146,31 +48,31 @@
 			"description": "Distance in blocks within the entity to considers it has reached it's target position."
 		},
 		"item_table": {
-			"type": "string",
+			"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
 			"description": "File path relative to the resource pack root for items to spawn list (loot table format)."
 		},
 		"on_digging_start": {
-			"$ref": "../components/equippable.json#/$defs/event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event to run when the goal ends searching has begins digging."
 		},
 		"on_fail_during_digging": {
-			"$ref": "../components/equippable.json#/$defs/event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event to run when the goal failed while in digging state."
 		},
 		"on_fail_during_searching": {
-			"$ref": "../components/equippable.json#/$defs/event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event to run when the goal failed while in searching state."
 		},
 		"on_item_found": {
-			"$ref": "../components/equippable.json#/$defs/event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event to run when the goal find a item."
 		},
 		"on_searching_start": {
-			"$ref": "../components/equippable.json#/$defs/event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event to run when the goal starts searching."
 		},
 		"on_success": {
-			"$ref": "../components/equippable.json#/$defs/event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event to run when searching and digging has ended."
 		},
 		"priority": {
@@ -216,8 +118,7 @@
 		"target_blocks": {
 			"type": "array",
 			"items": {
-				"$ref": "../../../../../vanilla/server/block_descriptor.json",
-				"description": "List of target block types the goal will look to dig on. Overrides the default list."
+				"$ref": "../../../../../vanilla/server/block_descriptor.json"
 			},
 			"description": "List of target block types the goal will look to dig on. Overrides the default list."
 		},

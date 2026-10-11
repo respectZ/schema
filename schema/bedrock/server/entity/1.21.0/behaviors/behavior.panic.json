@@ -15,94 +15,13 @@
 		"damage_sources": {
 			"anyOf": [
 				{
-					"type": "string",
-					"enum": [
-						"none",
-						"override",
-						"contact",
-						"entity_attack",
-						"projectile",
-						"suffocation",
-						"fall",
-						"fire",
-						"fire_tick",
-						"lava",
-						"drowning",
-						"block_explosion",
-						"entity_explosion",
-						"void",
-						"self_destruct",
-						"magic",
-						"wither",
-						"starve",
-						"anvil",
-						"stalactite",
-						"stalagmite",
-						"thorns",
-						"falling_block",
-						"piston",
-						"fly_into_wall",
-						"magma",
-						"fireworks",
-						"lightning",
-						"charging",
-						"temperature",
-						"freezing",
-						"ram_attack",
-						"sonic_boom",
-						"campfire",
-						"soul_campfire",
-						"mace_smash",
-						"all"
-					],
-					"description": "The list of Entity Damage Sources that will cause this mob to panic"
+					"$ref": "../../../../../vanilla/server/damage_type.json"
 				},
 				{
 					"type": "array",
 					"items": {
-						"type": "string",
-						"enum": [
-							"none",
-							"override",
-							"contact",
-							"entity_attack",
-							"projectile",
-							"suffocation",
-							"fall",
-							"fire",
-							"fire_tick",
-							"lava",
-							"drowning",
-							"block_explosion",
-							"entity_explosion",
-							"void",
-							"self_destruct",
-							"magic",
-							"wither",
-							"starve",
-							"anvil",
-							"stalactite",
-							"stalagmite",
-							"thorns",
-							"falling_block",
-							"piston",
-							"fly_into_wall",
-							"magma",
-							"fireworks",
-							"lightning",
-							"charging",
-							"temperature",
-							"freezing",
-							"ram_attack",
-							"sonic_boom",
-							"campfire",
-							"soul_campfire",
-							"mace_smash",
-							"all"
-						],
-						"description": "The list of Entity Damage Sources that will cause this mob to panic"
-					},
-					"description": "The list of Entity Damage Sources that will cause this mob to panic"
+						"$ref": "../../../../../vanilla/server/damage_type.json"
+					}
 				}
 			],
 			"description": "The list of Entity Damage Sources that will cause this mob to panic"
@@ -116,7 +35,7 @@
 			"description": "If true, the mob will not panic in response to damage from other mobs. This overrides the damage types in \"damage_sources\""
 		},
 		"panic_sound": {
-			"type": "string",
+			"$ref": "../../../../../vanilla/server/level_sound.json",
 			"description": ""
 		},
 		"prefer_water": {
@@ -128,37 +47,7 @@
 			"description": ""
 		},
 		"sound_interval": {
-			"anyOf": [
-				{
-					"type": "number",
-					"description": ""
-				},
-				{
-					"type": "array",
-					"items": {
-						"type": "number",
-						"description": ""
-					},
-					"minItems": 2,
-					"maxItems": 2,
-					"description": ""
-				},
-				{
-					"type": "object",
-					"properties": {
-						"range_min": {
-							"type": "number",
-							"description": ""
-						},
-						"range_max": {
-							"type": "number",
-							"description": ""
-						}
-					},
-					"additionalProperties": false,
-					"description": ""
-				}
-			],
+			"$ref": "../../legacy/general.json#/$defs/number_or_range",
 			"description": ""
 		},
 		"speed_multiplier": {

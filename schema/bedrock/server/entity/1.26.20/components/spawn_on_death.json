@@ -24,19 +24,16 @@
 			"description": ""
 		},
 		"entity_to_spawn": {
-			"type": "string",
 			"anyOf": [
 				{
-					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
-					"description": ""
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier"
 				},
 				{
 					"type": "string",
-					"description": ""
+					"enum": ["self"]
 				}
 			],
-			"default": "self",
-			"description": ""
+			"default": "self"
 		},
 		"filters": {
 			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
@@ -57,6 +54,7 @@
 		},
 		"spawn_method": {
 			"type": "string",
+			"enum": ["spawned", "born", "summoned"],
 			"default": "spawned",
 			"description": ""
 		}

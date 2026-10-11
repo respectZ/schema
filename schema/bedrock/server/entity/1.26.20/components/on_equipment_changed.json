@@ -19,17 +19,7 @@
 						"description": ""
 					},
 					"slot": {
-						"type": "string",
-						"anyOf": [
-							{
-								"$ref": "../../../../../vanilla/server/equipment_slot.json",
-								"description": ""
-							},
-							{
-								"pattern": "^(?:[sS][lL][oO][tT]\\.[wW][eE][aA][pP][oO][nN]\\.[mM][aA][iI][nN][hH][aA][nN][dD]|[sS][lL][oO][tT]\\.[wW][eE][aA][pP][oO][nN]\\.[oO][fF][fF][hH][aA][nN][dD]|[sS][lL][oO][tT]\\.[aA][rR][mM][oO][rR]\\.[hH][eE][aA][dD]|[sS][lL][oO][tT]\\.[aA][rR][mM][oO][rR]\\.[cC][hH][eE][sS][tT]|[sS][lL][oO][tT]\\.[aA][rR][mM][oO][rR]\\.[lL][eE][gG][sS]|[sS][lL][oO][tT]\\.[aA][rR][mM][oO][rR]\\.[fF][eE][eE][tT]|[sS][lL][oO][tT]\\.[aA][rR][mM][oO][rR]\\.[bB][oO][dD][yY])(?![\\s\\S])",
-								"description": ""
-							}
-						],
+						"$ref": "../../../../../vanilla/server/equipment_slot.json",
 						"default": "slot.weapon.mainhand",
 						"description": ""
 					}

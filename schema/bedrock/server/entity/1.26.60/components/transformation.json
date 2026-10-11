@@ -9,8 +9,7 @@
 		"begin_transform_sound": {
 			"type": "array",
 			"items": {
-				"$ref": "#/$defs/sound_name",
-				"description": ""
+				"$ref": "../../../../../vanilla/server/level_sound.json"
 			},
 			"default": [],
 			"description": ""
@@ -30,16 +29,7 @@
 			"description": ""
 		},
 		"into": {
-			"anyOf": [
-				{
-					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
-					"description": ""
-				},
-				{
-					"type": "string",
-					"description": ""
-				}
-			],
+			"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
 			"default": "",
 			"description": ""
 		},
@@ -61,8 +51,7 @@
 		"transformation_sound": {
 			"type": "array",
 			"items": {
-				"$ref": "#/$defs/sound_name",
-				"description": ""
+				"$ref": "../../../../../vanilla/server/level_sound.json"
 			},
 			"default": [],
 			"description": ""
@@ -76,8 +65,7 @@
 				"component_groups": {
 					"type": "array",
 					"items": {
-						"type": "string",
-						"description": ""
+						"type": "string"
 					},
 					"default": [],
 					"description": ""
@@ -120,17 +108,7 @@
 				"block_types": {
 					"type": "array",
 					"items": {
-						"anyOf": [
-							{
-								"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
-								"description": ""
-							},
-							{
-								"type": "string",
-								"description": ""
-							}
-						],
-						"description": ""
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
 					},
 					"default": [],
 					"description": ""
@@ -158,10 +136,6 @@
 				}
 			},
 			"additionalProperties": false,
-			"description": ""
-		},
-		"sound_name": {
-			"$ref": "../../legacy/components/shooter.json#/$defs/sound_name",
 			"description": ""
 		}
 	},

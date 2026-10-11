@@ -8,16 +8,7 @@
 			"description": ""
 		},
 		"angry_sound": {
-			"anyOf": [
-				{
-					"type": "string",
-					"description": "The sound event to play when the mob is angry"
-				},
-				{
-					"$ref": "../../../../../vanilla/server/level_sound.json",
-					"description": "The sound event to play when the mob is angry"
-				}
-			],
+			"$ref": "../../../../../vanilla/server/level_sound.json",
 			"default": "",
 			"description": "The sound event to play when the mob is angry"
 		},
@@ -100,7 +91,7 @@
 			"description": ""
 		},
 		"calm_event": {
-			"$ref": "./ageable.json#/$defs/growth_event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event to run after the number of seconds specified in duration expires (when the entity stops being 'angry')"
 		},
 		"duration": {
@@ -132,7 +123,7 @@
 			"description": ""
 		},
 		"sound_interval": {
-			"$ref": "./looked_at.json#/properties/looked_at_cooldown",
+			"$ref": "../general.json#/$defs/number_or_range",
 			"default": 0,
 			"description": "The range of time in seconds to randomly wait before playing the sound again"
 		}

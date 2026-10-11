@@ -22,62 +22,13 @@
 		"delay_range": {
 			"anyOf": [
 				{
-					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "Minimum and maximum cooldown time-range (in seconds) between each attempted swoop attack."
+					"$ref": "../general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "Minimum and maximum cooldown time-range (in seconds) between each attempted swoop attack."
+					"type": "null"
 				}
 			],
 			"default": [10.0, 20.0],
-			"allOf": [
-				{
-					"if": {
-						"type": "number",
-						"description": "Minimum and maximum cooldown time-range (in seconds) between each attempted swoop attack."
-					},
-					"then": {
-						"minimum": 0,
-						"description": "Minimum and maximum cooldown time-range (in seconds) between each attempted swoop attack."
-					},
-					"description": "Minimum and maximum cooldown time-range (in seconds) between each attempted swoop attack."
-				},
-				{
-					"if": {
-						"type": "array",
-						"description": "Minimum and maximum cooldown time-range (in seconds) between each attempted swoop attack."
-					},
-					"then": {
-						"items": {
-							"minimum": 0,
-							"description": "Minimum and maximum cooldown time-range (in seconds) between each attempted swoop attack."
-						},
-						"description": "Minimum and maximum cooldown time-range (in seconds) between each attempted swoop attack."
-					},
-					"description": "Minimum and maximum cooldown time-range (in seconds) between each attempted swoop attack."
-				},
-				{
-					"if": {
-						"type": "object",
-						"description": "Minimum and maximum cooldown time-range (in seconds) between each attempted swoop attack."
-					},
-					"then": {
-						"properties": {
-							"range_min": {
-								"minimum": 0,
-								"description": ""
-							},
-							"range_max": {
-								"minimum": 0,
-								"description": ""
-							}
-						},
-						"description": "Minimum and maximum cooldown time-range (in seconds) between each attempted swoop attack."
-					},
-					"description": "Minimum and maximum cooldown time-range (in seconds) between each attempted swoop attack."
-				}
-			],
 			"description": "Minimum and maximum cooldown time-range (in seconds) between each attempted swoop attack."
 		},
 		"priority": {

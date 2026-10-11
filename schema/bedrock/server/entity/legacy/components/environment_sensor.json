@@ -2,29 +2,23 @@
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"anyOf": [
 		{
-			"$ref": "#/$defs/trigger",
-			"description": "Creates a trigger based on environment conditions."
+			"$ref": "#/$defs/trigger"
 		},
 		{
 			"type": "array",
 			"items": {
 				"anyOf": [
 					{
-						"$ref": "#/$defs/trigger",
-						"description": "Creates a trigger based on environment conditions."
+						"$ref": "#/$defs/trigger"
 					},
 					{
-						"$ref": "#/$defs/entry_wrapper",
-						"description": "Creates a trigger based on environment conditions."
+						"$ref": "#/$defs/entry_wrapper"
 					}
-				],
-				"description": "Creates a trigger based on environment conditions."
-			},
-			"description": "Creates a trigger based on environment conditions."
+				]
+			}
 		},
 		{
-			"$ref": "#/$defs/root_wrapper",
-			"description": "Creates a trigger based on environment conditions."
+			"$ref": "#/$defs/root_wrapper"
 		}
 	],
 	"$defs": {
@@ -37,8 +31,7 @@
 				}
 			},
 			"additionalProperties": false,
-			"required": ["on_environment"],
-			"description": "Creates a trigger based on environment conditions."
+			"required": ["on_environment"]
 		},
 		"root_wrapper": {
 			"type": "object",
@@ -48,31 +41,26 @@
 					"description": ""
 				},
 				"triggers": {
-					"$ref": "#/$defs/triggers",
-					"description": "The list of triggers that fire when the environment conditions match the given filter criteria."
+					"$ref": "#/$defs/triggers"
 				}
 			},
 			"additionalProperties": false,
-			"required": ["on_environment"],
-			"description": "Creates a trigger based on environment conditions."
+			"required": ["on_environment"]
 		},
 		"trigger": {
-			"$ref": "./ageable.json#/$defs/growth_event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": ""
 		},
 		"triggers": {
 			"anyOf": [
 				{
-					"$ref": "#/$defs/trigger",
-					"description": "The list of triggers that fire when the environment conditions match the given filter criteria."
+					"$ref": "#/$defs/trigger"
 				},
 				{
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/trigger",
-						"description": "The list of triggers that fire when the environment conditions match the given filter criteria."
-					},
-					"description": "The list of triggers that fire when the environment conditions match the given filter criteria."
+						"$ref": "#/$defs/trigger"
+					}
 				}
 			],
 			"description": "The list of triggers that fire when the environment conditions match the given filter criteria."

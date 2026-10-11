@@ -18,21 +18,20 @@
 				"type": "object",
 				"properties": {
 					"eat_block": {
-						"type": "string",
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
 						"description": ""
 					},
 					"replace_block": {
-						"type": "string",
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
 						"description": ""
 					}
 				},
-				"additionalProperties": false,
-				"description": "A collection of pairs of blocks; the first (\"eat_block\") is the block the entity should eat, the second (\"replace_block\") is the block that should replace the eaten block."
+				"additionalProperties": false
 			},
 			"description": "A collection of pairs of blocks; the first (\"eat_block\") is the block the entity should eat, the second (\"replace_block\") is the block that should replace the eaten block."
 		},
 		"on_eat": {
-			"$ref": "../components/equippable.json#/$defs/event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "The event to trigger when the block eating animation has completed."
 		},
 		"priority": {
@@ -43,7 +42,17 @@
 			"description": ""
 		},
 		"success_chance": {
-			"type": ["number", "string", "boolean"],
+			"anyOf": [
+				{
+					"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				{
+					"type": "number"
+				},
+				{
+					"type": "boolean"
+				}
+			],
 			"description": "A molang expression defining the success chance the entity has to consume a block."
 		},
 		"time_until_eat": {

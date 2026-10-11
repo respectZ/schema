@@ -5,16 +5,13 @@
 		"conditional_values": {
 			"anyOf": [
 				{
-					"$ref": "#/$defs/values",
-					"description": "The object containing the conditional bandwidth optimization values."
+					"$ref": "#/$defs/values"
 				},
 				{
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/values",
-						"description": "The object containing the conditional bandwidth optimization values."
-					},
-					"description": "The object containing the conditional bandwidth optimization values."
+						"$ref": "#/$defs/values"
+					}
 				}
 			],
 			"description": "The object containing the conditional bandwidth optimization values."
@@ -49,8 +46,7 @@
 					"description": "When set to true, smaller motion packets will be sent during drop packet intervals, resulting in the same amount of packets being sent as without optimizations but with much less data being sent. This should be used when actors are travelling very quickly or teleporting to prevent visual oddities."
 				}
 			},
-			"additionalProperties": false,
-			"description": ""
+			"additionalProperties": false
 		}
 	},
 	"description": "Defines the Conditional Spatial Update Bandwidth Optimizations of this entity."

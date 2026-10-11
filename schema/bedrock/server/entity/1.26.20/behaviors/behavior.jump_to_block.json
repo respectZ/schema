@@ -118,34 +118,12 @@
 			"items": {
 				"anyOf": [
 					{
-						"type": "object",
-						"additionalProperties": false,
-						"properties": {
-							"name": {
-								"anyOf": [
-									{
-										"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
-										"description": ""
-									},
-									{
-										"type": "string",
-										"description": ""
-									}
-								],
-								"description": ""
-							}
-						},
-						"patternProperties": {
-							"^[\\s\\S]*$": {
-								"type": "string",
-								"description": ""
-							}
-						},
-						"description": "Blocks that the mob prefers jumping to."
+						"$ref": "../../../../../vanilla/server/block_descriptor.json"
 					},
 					{
 						"type": "array",
 						"items": {
+							"$comment": "TODO: add this into block descriptor?",
 							"type": "object",
 							"additionalProperties": false,
 							"properties": {
@@ -158,13 +136,10 @@
 									"description": ""
 								}
 							},
-							"required": ["key", "value"],
-							"description": "Blocks that the mob prefers jumping to."
-						},
-						"description": "Blocks that the mob prefers jumping to."
+							"required": ["key", "value"]
+						}
 					}
-				],
-				"description": "Blocks that the mob prefers jumping to."
+				]
 			},
 			"description": "Blocks that the mob prefers jumping to."
 		},

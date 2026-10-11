@@ -25,12 +25,10 @@
 			"type": "string",
 			"anyOf": [
 				{
-					"enum": ["bed", "meeting_area", "jobsite"],
-					"description": "Tells the goal what POI type it should be looking for"
+					"enum": ["bed", "meeting_area", "jobsite"]
 				},
 				{
-					"pattern": "^(?:[Bb][Ee][Dd]|[Mm][Ee][Ee][Tt][Ii][Nn][Gg]_[Aa][Rr][Ee][Aa]|[Jj][Oo][Bb][Ss][Ii][Tt][Ee])$(?![\\s\\S])",
-					"description": "Tells the goal what POI type it should be looking for"
+					"pattern": "^(?:[Bb][Ee][Dd]|[Mm][Ee][Ee][Tt][Ii][Nn][Gg]_[Aa][Rr][Ee][Aa]|[Jj][Oo][Bb][Ss][Ii][Tt][Ee])$(?![\\s\\S])"
 				}
 			],
 			"description": "Tells the goal what POI type it should be looking for"

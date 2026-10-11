@@ -5,19 +5,15 @@
 		"damage_conditions": {
 			"anyOf": [
 				{
-					"$ref": "#/$defs/condition",
-					"description": "List of damage conditions that when met can cause damage to the entity."
+					"$ref": "#/$defs/condition"
 				},
 				{
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/condition",
-						"description": "List of damage conditions that when met can cause damage to the entity."
-					},
-					"description": "List of damage conditions that when met can cause damage to the entity."
+						"$ref": "#/$defs/condition"
+					}
 				}
-			],
-			"description": "List of damage conditions that when met can cause damage to the entity."
+			]
 		}
 	},
 	"additionalProperties": false,

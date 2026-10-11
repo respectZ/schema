@@ -16,12 +16,10 @@
 			"type": "string",
 			"anyOf": [
 				{
-					"enum": ["bed", "jobsite", "meeting_area"],
-					"description": "Tells the goal what POI type it should be looking for"
+					"enum": ["bed", "jobsite", "meeting_area"]
 				},
 				{
-					"pattern": "^(?:[Bb][Ee][Dd]|[Jj][Oo][Bb][Ss][Ii][Tt][Ee]|[Mm][Ee][Ee][Tt][Ii][Nn][Gg]_[Aa][Rr][Ee][Aa])$(?![\\s\\S])",
-					"description": "Tells the goal what POI type it should be looking for"
+					"pattern": "^(?:[Bb][Ee][Dd]|[Jj][Oo][Bb][Ss][Ii][Tt][Ee]|[Mm][Ee][Ee][Tt][Ii][Nn][Gg]_[Aa][Rr][Ee][Aa])$(?![\\s\\S])"
 				}
 			],
 			"description": "Tells the goal what POI type it should be looking for"

@@ -43,8 +43,7 @@
 		"liquid_blocks": {
 			"type": "array",
 			"items": {
-				"$ref": "../../../../../vanilla/server/block_descriptor.json",
-				"description": "List of blocks this entity can float on. Must be a liquid block."
+				"$ref": "../../../../../vanilla/server/block_descriptor.json"
 			},
 			"default": [],
 			"description": "List of blocks this entity can float on. Must be a liquid block."

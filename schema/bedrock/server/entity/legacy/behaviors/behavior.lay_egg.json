@@ -39,59 +39,7 @@
 		"target_blocks": {
 			"type": "array",
 			"items": {
-				"anyOf": [
-					{
-						"anyOf": [
-							{
-								"$ref": "../../../../../vanilla/server/item_descriptor.json",
-								"description": "Blocks that the mob can lay its eggs on top of."
-							},
-							{
-								"type": "object",
-								"properties": {
-									"item_tag": {
-										"type": "string",
-										"description": ""
-									}
-								},
-								"additionalProperties": false,
-								"required": ["item_tag"],
-								"description": "Blocks that the mob can lay its eggs on top of."
-							}
-						],
-						"description": "Blocks that the mob can lay its eggs on top of."
-					},
-					{
-						"type": "object",
-						"properties": {
-							"item": {
-								"anyOf": [
-									{
-										"$ref": "../../../../../vanilla/server/item_descriptor.json",
-										"description": ""
-									},
-									{
-										"type": "object",
-										"properties": {
-											"item_tag": {
-												"type": "string",
-												"description": ""
-											}
-										},
-										"additionalProperties": false,
-										"required": ["item_tag"],
-										"description": ""
-									}
-								],
-								"description": ""
-							}
-						},
-						"additionalProperties": false,
-						"required": ["item"],
-						"description": "Blocks that the mob can lay its eggs on top of."
-					}
-				],
-				"description": "Blocks that the mob can lay its eggs on top of."
+				"$ref": "../../../../../vanilla/server/block_descriptor.json"
 			},
 			"description": "Blocks that the mob can lay its eggs on top of."
 		},

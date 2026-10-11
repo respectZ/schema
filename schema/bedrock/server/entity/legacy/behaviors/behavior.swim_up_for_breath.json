@@ -14,6 +14,7 @@
 		},
 		"material_type": {
 			"type": "string",
+			"enum": ["water", "lava", "any"],
 			"description": "The material the mob is traveling in. An air block will only be considered valid to move to with a block of this material below it. Options are: \"water\", \"lava\", or \"any\"."
 		},
 		"priority": {

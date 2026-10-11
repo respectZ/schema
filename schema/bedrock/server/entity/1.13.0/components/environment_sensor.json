@@ -3,7 +3,17 @@
 	"type": "object",
 	"properties": {
 		"triggers": {
-			"$ref": "../../legacy/components/environment_sensor.json#/$defs/triggers",
+			"anyOf": [
+				{
+					"$ref": "../../legacy/general.json#/$defs/trigger"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../legacy/general.json#/$defs/trigger"
+					}
+				}
+			],
 			"description": "The list of triggers that fire when the environment conditions match the given filter criteria."
 		}
 	},

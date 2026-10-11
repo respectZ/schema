@@ -53,7 +53,7 @@
 			"description": "The maximum number of items which can be added to the composter per block interaction."
 		},
 		"on_arrival": {
-			"$ref": "../components/equippable.json#/$defs/event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "Event to run when the mob reaches their jobsite."
 		},
 		"priority": {

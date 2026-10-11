@@ -6,8 +6,7 @@
 			"properties": {
 				"attemptTemperMod": {
 					"$ref": "#/anyOf/0/properties/attempt_temper_mod",
-					"doNotSuggest": true,
-					"description": ""
+					"doNotSuggest": true
 				},
 				"attempt_temper_mod": {
 					"type": "integer",
@@ -18,8 +17,7 @@
 				},
 				"autoRejectItems": {
 					"$ref": "#/anyOf/0/properties/auto_reject_items",
-					"doNotSuggest": true,
-					"description": "The list of items that, if carried while interacting with the entity, will anger it."
+					"doNotSuggest": true
 				},
 				"auto_reject_items": {
 					"type": "array",
@@ -37,8 +35,7 @@
 				"feed_items": {
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/feed_item",
-						"description": "The list of items that can be used to increase the entity's temper and speed up the taming process."
+						"$ref": "#/$defs/feed_item"
 					},
 					"description": "The list of items that can be used to increase the entity's temper and speed up the taming process."
 				},
@@ -61,8 +58,7 @@
 				},
 				"minTemper": {
 					"$ref": "#/anyOf/0/properties/min_temper",
-					"doNotSuggest": true,
-					"description": ""
+					"doNotSuggest": true
 				},
 				"min_temper": {
 					"type": "integer",
@@ -77,16 +73,14 @@
 					"description": "The text that shows in the riding interact button."
 				},
 				"tame_event": {
-					"$ref": "./equippable.json#/$defs/event",
+					"$ref": "../general.json#/$defs/trigger",
 					"description": "Event that triggers when the entity becomes tamed."
 				}
 			},
-			"additionalProperties": false,
-			"description": "Allows the Entity to be tamed by mounting it."
+			"additionalProperties": false
 		},
 		{
-			"type": "null",
-			"description": "Allows the Entity to be tamed by mounting it."
+			"type": "null"
 		}
 	],
 	"$defs": {
@@ -96,7 +90,7 @@
 					"type": "object",
 					"properties": {
 						"item": {
-							"$ref": "./equippable.json#/$defs/item_descriptor",
+							"$ref": "../../../../../vanilla/server/item_descriptor.json",
 							"description": "Name of the item this entity likes and can be used to increase this entity's temper."
 						},
 						"temperMod": {
@@ -112,12 +106,10 @@
 							"description": "The amount of temper this entity gains when fed this item."
 						}
 					},
-					"additionalProperties": false,
-					"description": "The list of items that can be used to increase the entity's temper and speed up the taming process."
+					"additionalProperties": false
 				},
 				{
-					"type": "null",
-					"description": "The list of items that can be used to increase the entity's temper and speed up the taming process."
+					"type": "null"
 				}
 			],
 			"description": "The list of items that can be used to increase the entity's temper and speed up the taming process."
@@ -128,16 +120,13 @@
 					"type": "object",
 					"properties": {
 						"item": {
-							"$ref": "./equippable.json#/$defs/item_descriptor",
-							"description": "The list of items that, if carried while interacting with the entity, will anger it."
+							"$ref": "../../../../../vanilla/server/item_descriptor.json"
 						}
 					},
-					"additionalProperties": false,
-					"description": "The list of items that, if carried while interacting with the entity, will anger it."
+					"additionalProperties": false
 				},
 				{
-					"type": "null",
-					"description": "The list of items that, if carried while interacting with the entity, will anger it."
+					"type": "null"
 				}
 			],
 			"description": "The list of items that, if carried while interacting with the entity, will anger it."

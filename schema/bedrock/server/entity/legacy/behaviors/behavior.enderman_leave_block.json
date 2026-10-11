@@ -21,7 +21,7 @@
 			"description": ""
 		},
 		"on_place": {
-			"$ref": "../components/equippable.json#/$defs/event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": ""
 		},
 		"placeable_carried_blocks": {

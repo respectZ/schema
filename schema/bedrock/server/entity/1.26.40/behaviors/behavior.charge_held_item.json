@@ -24,55 +24,7 @@
 		"item": {
 			"type": "array",
 			"items": {
-				"anyOf": [
-					{
-						"type": "object",
-						"additionalProperties": false,
-						"properties": {
-							"name": {
-								"anyOf": [
-									{
-										"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
-										"description": ""
-									},
-									{
-										"type": "string",
-										"description": ""
-									}
-								],
-								"description": ""
-							}
-						},
-						"patternProperties": {
-							"^[\\s\\S]*$": {
-								"type": "string",
-								"description": ""
-							}
-						},
-						"description": ""
-					},
-					{
-						"type": "array",
-						"items": {
-							"type": "object",
-							"additionalProperties": false,
-							"properties": {
-								"key": {
-									"type": "string",
-									"description": ""
-								},
-								"value": {
-									"type": "string",
-									"description": ""
-								}
-							},
-							"required": ["key", "value"],
-							"description": ""
-						},
-						"description": ""
-					}
-				],
-				"description": ""
+				"$ref": "../../../../../vanilla/server/item_descriptor.json#/$defs/latest"
 			},
 			"description": ""
 		},

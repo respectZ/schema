@@ -16,25 +16,14 @@
 		},
 		"dismount_mode": {
 			"type": "string",
-			"pattern": "^(?:[dD][eE][fF][aA][uU][lL][tT]|[oO][nN]_[tT][oO][pP]_[cC][eE][nN][tT][eE][rR]|[lL][oO][oO][kK]_[dD][iI][rR][eE][cC][tT][iI][oO][nN])$",
+			"enum": ["default", "on_top_center", "look_direction"],
 			"default": "default",
 			"description": "Defines where riders are placed when dismounting this entity:\n- \"default\", riders are placed on a valid ground position around the entity, or at the center of the entity's collision box if none is found.\n- \"on_top_center\", riders are placed at the center of the top of the entity's collision box.\n- \"look_direction\", riders are placed at the center of the top neighboring block in the riders look direction on a block that is not lava."
 		},
 		"family_types": {
 			"type": "array",
 			"items": {
-				"type": "string",
-				"anyOf": [
-					{
-						"$ref": "../../../../../vanilla/server/type_family.json",
-						"description": "List of entities that can ride this entity."
-					},
-					{
-						"type": "string",
-						"description": "List of entities that can ride this entity."
-					}
-				],
-				"description": "List of entities that can ride this entity."
+				"$ref": "../../../../../vanilla/server/type_family.json"
 			},
 			"default": [],
 			"description": "List of entities that can ride this entity."
@@ -125,37 +114,21 @@
 					"items": {
 						"type": "number",
 						"minimum": -3.4028234663852886e38,
-						"maximum": 3.4028234663852886e38,
-						"description": "Position of this seat relative to this entity's position."
+						"maximum": 3.4028234663852886e38
 					},
 					"default": [0, 0, 0],
 					"description": "Position of this seat relative to this entity's position."
 				},
 				"rotate_rider_by": {
-					"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression",
 					"anyOf": [
 						{
-							"type": ["number", "string"],
-							"description": "Offset to rotate riders by."
+							"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string"
 						},
 						{
-							"$ref": "../../../../../vanilla/definition/molang.json#/$defs/versioned",
-							"type": "object",
-							"properties": {
-								"expression": {
-									"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string",
-									"description": ""
-								},
-								"version": {
-									"type": "integer",
-									"minimum": -32768,
-									"maximum": 32767,
-									"description": ""
-								}
-							},
-							"required": ["expression", "version"],
-							"additionalProperties": false,
-							"description": "Offset to rotate riders by."
+							"$ref": "../../../../../vanilla/definition/molang.json#/$defs/versioned"
+						},
+						{
+							"type": "number"
 						}
 					],
 					"description": "Offset to rotate riders by."

@@ -40,8 +40,7 @@
 			"items": {
 				"type": "number",
 				"minimum": -3.4028234663852886e38,
-				"maximum": 3.4028234663852886e38,
-				"description": "The jump angles in float degrees that are allowed when performing the jump. The order in which the angles are chosen is randomized."
+				"maximum": 3.4028234663852886e38
 			},
 			"description": "The jump angles in float degrees that are allowed when performing the jump. The order in which the angles are chosen is randomized."
 		},

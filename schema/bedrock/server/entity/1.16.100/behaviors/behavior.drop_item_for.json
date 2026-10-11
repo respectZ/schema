@@ -29,118 +29,13 @@
 		"entity_types": {
 			"anyOf": [
 				{
-					"type": "object",
-					"properties": {
-						"max_dist": {
-							"type": "number",
-							"description": ""
-						},
-						"max_height": {
-							"type": "number",
-							"description": ""
-						},
-						"max_flee": {
-							"type": "number",
-							"description": ""
-						},
-						"walk_speed_multiplier": {
-							"type": "number",
-							"description": ""
-						},
-						"sprint_speed_multiplier": {
-							"type": "number",
-							"description": ""
-						},
-						"priority": {
-							"type": "integer",
-							"description": ""
-						},
-						"cooldown": {
-							"type": "integer",
-							"description": ""
-						},
-						"must_see_forget_duration": {
-							"type": "integer",
-							"description": ""
-						},
-						"check_if_outnumbered": {
-							"type": "boolean",
-							"description": ""
-						},
-						"reevaluate_description": {
-							"type": "boolean",
-							"description": ""
-						},
-						"must_see": {
-							"type": "boolean",
-							"description": ""
-						},
-						"filters": {
-							"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-							"description": ""
-						}
-					},
-					"additionalProperties": false,
-					"description": "The list of conditions another entity must meet to be a valid target to drop an item for."
+					"$ref": "../../legacy/general.json#/$defs/entity_types"
 				},
 				{
 					"type": "array",
 					"items": {
-						"type": "object",
-						"properties": {
-							"max_dist": {
-								"type": "number",
-								"description": ""
-							},
-							"max_height": {
-								"type": "number",
-								"description": ""
-							},
-							"max_flee": {
-								"type": "number",
-								"description": ""
-							},
-							"walk_speed_multiplier": {
-								"type": "number",
-								"description": ""
-							},
-							"sprint_speed_multiplier": {
-								"type": "number",
-								"description": ""
-							},
-							"priority": {
-								"type": "integer",
-								"description": ""
-							},
-							"cooldown": {
-								"type": "integer",
-								"description": ""
-							},
-							"must_see_forget_duration": {
-								"type": "integer",
-								"description": ""
-							},
-							"check_if_outnumbered": {
-								"type": "boolean",
-								"description": ""
-							},
-							"reevaluate_description": {
-								"type": "boolean",
-								"description": ""
-							},
-							"must_see": {
-								"type": "boolean",
-								"description": ""
-							},
-							"filters": {
-								"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-								"description": ""
-							}
-						},
-						"additionalProperties": false,
-						"description": "The list of conditions another entity must meet to be a valid target to drop an item for."
-					},
-					"description": "The list of conditions another entity must meet to be a valid target to drop an item for."
+						"$ref": "../../legacy/general.json#/$defs/entity_types"
+					}
 				}
 			],
 			"description": "The list of conditions another entity must meet to be a valid target to drop an item for."
@@ -153,7 +48,7 @@
 			"description": "Distance in blocks within the mob considers it has reached the goal. This is the \"wiggle room\" to stop the AI from bouncing back and forth trying to reach a specific spot."
 		},
 		"loot_table": {
-			"type": "string",
+			"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
 			"description": "The loot table that contains the possible loot the entity can drop with this goal."
 		},
 		"max_head_look_at_height": {
@@ -178,7 +73,7 @@
 			"description": "The preferred distance the entity tries to be from the target it is dropping an item for."
 		},
 		"on_drop_attempt": {
-			"$ref": "../../legacy/components/equippable.json#/$defs/event",
+			"$ref": "../../legacy/general.json#/$defs/trigger",
 			"description": "The event to trigger when the entity attempts to drop an item."
 		},
 		"priority": {
@@ -227,11 +122,9 @@
 				{
 					"type": "array",
 					"items": {
-						"type": "number",
-						"description": "The range in blocks within which the entity searches to find a target to drop an item for."
+						"type": "number"
 					},
-					"maxItems": 3,
-					"description": "The range in blocks within which the entity searches to find a target to drop an item for."
+					"maxItems": 3
 				},
 				{
 					"type": "object",
@@ -249,8 +142,7 @@
 							"description": ""
 						}
 					},
-					"additionalProperties": false,
-					"description": "The range in blocks within which the entity searches to find a target to drop an item for."
+					"additionalProperties": false
 				}
 			],
 			"description": "The range in blocks within which the entity searches to find a target to drop an item for."
@@ -260,11 +152,9 @@
 				{
 					"type": "array",
 					"items": {
-						"type": "number",
-						"description": "When the entity teleports, offset the teleport position by this many blocks in the X, Y, and Z coordinate."
+						"type": "number"
 					},
-					"maxItems": 3,
-					"description": "When the entity teleports, offset the teleport position by this many blocks in the X, Y, and Z coordinate."
+					"maxItems": 3
 				},
 				{
 					"type": "object",
@@ -282,8 +172,7 @@
 							"description": ""
 						}
 					},
-					"additionalProperties": false,
-					"description": "When the entity teleports, offset the teleport position by this many blocks in the X, Y, and Z coordinate."
+					"additionalProperties": false
 				}
 			],
 			"description": "When the entity teleports, offset the teleport position by this many blocks in the X, Y, and Z coordinate."
@@ -291,59 +180,10 @@
 		"time_of_day_range": {
 			"anyOf": [
 				{
-					"$ref": "../../legacy/components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "The valid times of day that this goal can be used. For reference: noon is 0.0, sunset is 0.25, midnight is 0.5, and sunrise is 0.75, and back to noon for 1.0."
+					"$ref": "../../legacy/general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "The valid times of day that this goal can be used. For reference: noon is 0.0, sunset is 0.25, midnight is 0.5, and sunrise is 0.75, and back to noon for 1.0."
-				}
-			],
-			"allOf": [
-				{
-					"if": {
-						"type": "number",
-						"description": "The valid times of day that this goal can be used. For reference: noon is 0.0, sunset is 0.25, midnight is 0.5, and sunrise is 0.75, and back to noon for 1.0."
-					},
-					"then": {
-						"minimum": 0,
-						"description": "The valid times of day that this goal can be used. For reference: noon is 0.0, sunset is 0.25, midnight is 0.5, and sunrise is 0.75, and back to noon for 1.0."
-					},
-					"description": "The valid times of day that this goal can be used. For reference: noon is 0.0, sunset is 0.25, midnight is 0.5, and sunrise is 0.75, and back to noon for 1.0."
-				},
-				{
-					"if": {
-						"type": "array",
-						"description": "The valid times of day that this goal can be used. For reference: noon is 0.0, sunset is 0.25, midnight is 0.5, and sunrise is 0.75, and back to noon for 1.0."
-					},
-					"then": {
-						"items": {
-							"minimum": 0,
-							"description": "The valid times of day that this goal can be used. For reference: noon is 0.0, sunset is 0.25, midnight is 0.5, and sunrise is 0.75, and back to noon for 1.0."
-						},
-						"description": "The valid times of day that this goal can be used. For reference: noon is 0.0, sunset is 0.25, midnight is 0.5, and sunrise is 0.75, and back to noon for 1.0."
-					},
-					"description": "The valid times of day that this goal can be used. For reference: noon is 0.0, sunset is 0.25, midnight is 0.5, and sunrise is 0.75, and back to noon for 1.0."
-				},
-				{
-					"if": {
-						"type": "object",
-						"description": "The valid times of day that this goal can be used. For reference: noon is 0.0, sunset is 0.25, midnight is 0.5, and sunrise is 0.75, and back to noon for 1.0."
-					},
-					"then": {
-						"properties": {
-							"range_min": {
-								"minimum": 0,
-								"description": ""
-							},
-							"range_max": {
-								"minimum": 0,
-								"description": ""
-							}
-						},
-						"description": "The valid times of day that this goal can be used. For reference: noon is 0.0, sunset is 0.25, midnight is 0.5, and sunrise is 0.75, and back to noon for 1.0."
-					},
-					"description": "The valid times of day that this goal can be used. For reference: noon is 0.0, sunset is 0.25, midnight is 0.5, and sunrise is 0.75, and back to noon for 1.0."
+					"type": "null"
 				}
 			],
 			"description": "The valid times of day that this goal can be used. For reference: noon is 0.0, sunset is 0.25, midnight is 0.5, and sunrise is 0.75, and back to noon for 1.0."

@@ -6,16 +6,13 @@
 		"blocks": {
 			"anyOf": [
 				{
-					"$ref": "../../../../../vanilla/server/block_descriptor.json",
-					"description": "Blocks that the mob is looking for to eat/raid"
+					"$ref": "../../../../../vanilla/server/block_descriptor.json"
 				},
 				{
 					"type": "array",
 					"items": {
-						"$ref": "../../../../../vanilla/server/block_descriptor.json",
-						"description": "Blocks that the mob is looking for to eat/raid"
-					},
-					"description": "Blocks that the mob is looking for to eat/raid"
+						"$ref": "../../../../../vanilla/server/block_descriptor.json"
+					}
 				}
 			],
 			"description": "Blocks that the mob is looking for to eat/raid"

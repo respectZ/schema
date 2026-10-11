@@ -5,59 +5,10 @@
 		"attack_interval": {
 			"anyOf": [
 				{
-					"$ref": "../../legacy/components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "Time range (in seconds) between searching for an attack target, range is in (0, \"attack_interval\"]. Only used if \"attack_interval\" is greater than 0, otherwise \"scan_interval\" is used."
+					"$ref": "../../legacy/general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "Time range (in seconds) between searching for an attack target, range is in (0, \"attack_interval\"]. Only used if \"attack_interval\" is greater than 0, otherwise \"scan_interval\" is used."
-				}
-			],
-			"allOf": [
-				{
-					"if": {
-						"type": "number",
-						"description": "Time range (in seconds) between searching for an attack target, range is in (0, \"attack_interval\"]. Only used if \"attack_interval\" is greater than 0, otherwise \"scan_interval\" is used."
-					},
-					"then": {
-						"minimum": 0,
-						"description": "Time range (in seconds) between searching for an attack target, range is in (0, \"attack_interval\"]. Only used if \"attack_interval\" is greater than 0, otherwise \"scan_interval\" is used."
-					},
-					"description": "Time range (in seconds) between searching for an attack target, range is in (0, \"attack_interval\"]. Only used if \"attack_interval\" is greater than 0, otherwise \"scan_interval\" is used."
-				},
-				{
-					"if": {
-						"type": "array",
-						"description": "Time range (in seconds) between searching for an attack target, range is in (0, \"attack_interval\"]. Only used if \"attack_interval\" is greater than 0, otherwise \"scan_interval\" is used."
-					},
-					"then": {
-						"items": {
-							"minimum": 0,
-							"description": "Time range (in seconds) between searching for an attack target, range is in (0, \"attack_interval\"]. Only used if \"attack_interval\" is greater than 0, otherwise \"scan_interval\" is used."
-						},
-						"description": "Time range (in seconds) between searching for an attack target, range is in (0, \"attack_interval\"]. Only used if \"attack_interval\" is greater than 0, otherwise \"scan_interval\" is used."
-					},
-					"description": "Time range (in seconds) between searching for an attack target, range is in (0, \"attack_interval\"]. Only used if \"attack_interval\" is greater than 0, otherwise \"scan_interval\" is used."
-				},
-				{
-					"if": {
-						"type": "object",
-						"description": "Time range (in seconds) between searching for an attack target, range is in (0, \"attack_interval\"]. Only used if \"attack_interval\" is greater than 0, otherwise \"scan_interval\" is used."
-					},
-					"then": {
-						"properties": {
-							"range_min": {
-								"minimum": 0,
-								"description": ""
-							},
-							"range_max": {
-								"minimum": 0,
-								"description": ""
-							}
-						},
-						"description": "Time range (in seconds) between searching for an attack target, range is in (0, \"attack_interval\"]. Only used if \"attack_interval\" is greater than 0, otherwise \"scan_interval\" is used."
-					},
-					"description": "Time range (in seconds) between searching for an attack target, range is in (0, \"attack_interval\"]. Only used if \"attack_interval\" is greater than 0, otherwise \"scan_interval\" is used."
+					"type": "null"
 				}
 			],
 			"description": "Time range (in seconds) between searching for an attack target, range is in (0, \"attack_interval\"]. Only used if \"attack_interval\" is greater than 0, otherwise \"scan_interval\" is used."
@@ -79,118 +30,13 @@
 		"entity_types": {
 			"anyOf": [
 				{
-					"type": "object",
-					"properties": {
-						"max_dist": {
-							"type": "number",
-							"description": ""
-						},
-						"max_height": {
-							"type": "number",
-							"description": ""
-						},
-						"max_flee": {
-							"type": "number",
-							"description": ""
-						},
-						"walk_speed_multiplier": {
-							"type": "number",
-							"description": ""
-						},
-						"sprint_speed_multiplier": {
-							"type": "number",
-							"description": ""
-						},
-						"priority": {
-							"type": "integer",
-							"description": ""
-						},
-						"cooldown": {
-							"type": "integer",
-							"description": ""
-						},
-						"must_see_forget_duration": {
-							"type": "integer",
-							"description": ""
-						},
-						"check_if_outnumbered": {
-							"type": "boolean",
-							"description": ""
-						},
-						"reevaluate_description": {
-							"type": "boolean",
-							"description": ""
-						},
-						"must_see": {
-							"type": "boolean",
-							"description": ""
-						},
-						"filters": {
-							"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-							"description": ""
-						}
-					},
-					"additionalProperties": false,
-					"description": "Filters which types of targets are valid for this entity."
+					"$ref": "../../legacy/general.json#/$defs/entity_types"
 				},
 				{
 					"type": "array",
 					"items": {
-						"type": "object",
-						"properties": {
-							"max_dist": {
-								"type": "number",
-								"description": ""
-							},
-							"max_height": {
-								"type": "number",
-								"description": ""
-							},
-							"max_flee": {
-								"type": "number",
-								"description": ""
-							},
-							"walk_speed_multiplier": {
-								"type": "number",
-								"description": ""
-							},
-							"sprint_speed_multiplier": {
-								"type": "number",
-								"description": ""
-							},
-							"priority": {
-								"type": "integer",
-								"description": ""
-							},
-							"cooldown": {
-								"type": "integer",
-								"description": ""
-							},
-							"must_see_forget_duration": {
-								"type": "integer",
-								"description": ""
-							},
-							"check_if_outnumbered": {
-								"type": "boolean",
-								"description": ""
-							},
-							"reevaluate_description": {
-								"type": "boolean",
-								"description": ""
-							},
-							"must_see": {
-								"type": "boolean",
-								"description": ""
-							},
-							"filters": {
-								"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-								"description": ""
-							}
-						},
-						"additionalProperties": false,
-						"description": "Filters which types of targets are valid for this entity."
-					},
-					"description": "Filters which types of targets are valid for this entity."
+						"$ref": "../../legacy/general.json#/$defs/entity_types"
+					}
 				}
 			],
 			"description": "Filters which types of targets are valid for this entity."

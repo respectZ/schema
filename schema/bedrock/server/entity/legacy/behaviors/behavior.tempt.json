@@ -27,140 +27,16 @@
 		"items": {
 			"type": "array",
 			"items": {
-				"anyOf": [
-					{
-						"anyOf": [
-							{
-								"$ref": "../../../../../vanilla/server/item_descriptor.json",
-								"description": "List of items that can tempt the mob."
-							},
-							{
-								"type": "object",
-								"properties": {
-									"item_tag": {
-										"type": "string",
-										"description": ""
-									}
-								},
-								"additionalProperties": false,
-								"required": ["item_tag"],
-								"description": "List of items that can tempt the mob."
-							}
-						],
-						"description": "List of items that can tempt the mob."
-					},
-					{
-						"type": "object",
-						"properties": {
-							"item": {
-								"anyOf": [
-									{
-										"$ref": "../../../../../vanilla/server/item_descriptor.json",
-										"description": ""
-									},
-									{
-										"type": "object",
-										"properties": {
-											"item_tag": {
-												"type": "string",
-												"description": ""
-											}
-										},
-										"additionalProperties": false,
-										"required": ["item_tag"],
-										"description": ""
-									}
-								],
-								"description": ""
-							}
-						},
-						"additionalProperties": false,
-						"required": ["item"],
-						"description": "List of items that can tempt the mob."
-					}
-				],
-				"description": "List of items that can tempt the mob."
+				"$ref": "../general.json#/$defs/item_obj"
 			},
 			"description": "List of items that can tempt the mob."
 		},
 		"on_tempt_end": {
-			"type": "object",
-			"properties": {
-				"event": {
-					"type": "string",
-					"description": ""
-				},
-				"target": {
-					"type": "string",
-					"anyOf": [
-						{
-							"enum": [
-								"self",
-								"other",
-								"player",
-								"target",
-								"parent",
-								"baby",
-								"block",
-								"damager",
-								"holder",
-								"item"
-							],
-							"description": ""
-						},
-						{
-							"pattern": "^(?:[Ss][Ee][Ll][Ff]|[Oo][Tt][Hh][Ee][Rr]|[Pp][Ll][Aa][Yy][Ee][Rr]|[Tt][Aa][Rr][Gg][Ee][Tt]|[Pp][Aa][Rr][Ee][Nn][Tt]|[Bb][Aa][Bb][Yy]|[Bb][Ll][Oo][Cc][Kk]|[Dd][Aa][Mm][Aa][Gg][Ee][Rr]|[Hh][Oo][Ll][Dd][Ee][Rr]|[Ii][Tt][Ee][Mm])$(?![\\s\\S])",
-							"description": ""
-						}
-					],
-					"description": ""
-				},
-				"filters": {
-					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-					"description": ""
-				}
-			},
-			"additionalProperties": false,
+			"$ref": "../general.json#/$defs/trigger",
 			"description": ""
 		},
 		"on_tempt_start": {
-			"type": "object",
-			"properties": {
-				"event": {
-					"type": "string",
-					"description": ""
-				},
-				"target": {
-					"type": "string",
-					"anyOf": [
-						{
-							"enum": [
-								"self",
-								"other",
-								"player",
-								"target",
-								"parent",
-								"baby",
-								"block",
-								"damager",
-								"holder",
-								"item"
-							],
-							"description": ""
-						},
-						{
-							"pattern": "^(?:[Ss][Ee][Ll][Ff]|[Oo][Tt][Hh][Ee][Rr]|[Pp][Ll][Aa][Yy][Ee][Rr]|[Tt][Aa][Rr][Gg][Ee][Tt]|[Pp][Aa][Rr][Ee][Nn][Tt]|[Bb][Aa][Bb][Yy]|[Bb][Ll][Oo][Cc][Kk]|[Dd][Aa][Mm][Aa][Gg][Ee][Rr]|[Hh][Oo][Ll][Dd][Ee][Rr]|[Ii][Tt][Ee][Mm])$(?![\\s\\S])",
-							"description": ""
-						}
-					],
-					"description": ""
-				},
-				"filters": {
-					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-					"description": ""
-				}
-			},
-			"additionalProperties": false,
+			"$ref": "../general.json#/$defs/trigger",
 			"description": ""
 		},
 		"priority": {
@@ -168,37 +44,7 @@
 			"description": ""
 		},
 		"sound_interval": {
-			"anyOf": [
-				{
-					"type": "number",
-					"description": "Range of random ticks to wait between tempt sounds."
-				},
-				{
-					"type": "array",
-					"items": {
-						"type": "number",
-						"description": "Range of random ticks to wait between tempt sounds."
-					},
-					"minItems": 2,
-					"maxItems": 2,
-					"description": "Range of random ticks to wait between tempt sounds."
-				},
-				{
-					"type": "object",
-					"properties": {
-						"range_min": {
-							"type": "number",
-							"description": ""
-						},
-						"range_max": {
-							"type": "number",
-							"description": ""
-						}
-					},
-					"additionalProperties": false,
-					"description": "Range of random ticks to wait between tempt sounds."
-				}
-			],
+			"$ref": "../general.json#/$defs/number_or_range",
 			"description": "Range of random ticks to wait between tempt sounds."
 		},
 		"speed_multiplier": {
@@ -210,7 +56,7 @@
 			"description": "The distance at which the mob will stop following the player."
 		},
 		"tempt_sound": {
-			"type": "string",
+			"$ref": "../../../../../vanilla/server/level_sound.json",
 			"description": "Sound to play while the mob is being tempted."
 		},
 		"within_radius": {

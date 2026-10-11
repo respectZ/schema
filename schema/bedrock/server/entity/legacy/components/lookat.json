@@ -3,64 +3,51 @@
 	"type": "object",
 	"properties": {
 		"allow_invulnerable": {
+			"type": "boolean",
 			"description": ""
 		},
 		"field_of_view": {
-			"$ref": "./looked_at.json#/properties/field_of_view",
-			"description": ""
+			"$ref": "./looked_at.json#/properties/field_of_view"
 		},
 		"filters": {
-			"$ref": "./looked_at.json#/properties/filters",
-			"description": ""
+			"$ref": "./looked_at.json#/properties/filters"
 		},
 		"find_players_only": {
-			"$ref": "./looked_at.json#/properties/find_players_only",
-			"description": ""
+			"$ref": "./looked_at.json#/properties/find_players_only"
 		},
 		"line_of_sight_obstruction_type": {
-			"$ref": "./looked_at.json#/properties/line_of_sight_obstruction_type",
-			"description": ""
+			"$ref": "./looked_at.json#/properties/line_of_sight_obstruction_type"
 		},
 		"look_at_locations": {
-			"$ref": "./looked_at.json#/properties/look_at_locations",
-			"description": ""
+			"$ref": "./looked_at.json#/properties/look_at_locations"
 		},
 		"look_cooldown": {
-			"$ref": "./looked_at.json#/properties/looked_at_cooldown",
-			"description": ""
+			"$ref": "../general.json#/$defs/number_or_range"
 		},
 		"look_event": {
-			"$ref": "./looked_at.json#/properties/looked_at_event",
-			"description": ""
+			"$ref": "./looked_at.json#/properties/looked_at_event"
 		},
 		"looked_at_cooldown": {
-			"$ref": "./looked_at.json#/properties/looked_at_cooldown",
-			"description": ""
+			"$ref": "../general.json#/$defs/number_or_range"
 		},
 		"looked_at_event": {
-			"$ref": "./looked_at.json#/properties/looked_at_event",
-			"description": ""
+			"$ref": "./looked_at.json#/properties/looked_at_event"
 		},
 		"min_looked_at_duration": {
-			"$ref": "./looked_at.json#/properties/min_looked_at_duration",
-			"description": ""
+			"$ref": "./looked_at.json#/properties/min_looked_at_duration"
 		},
 		"not_looked_at_event": {
-			"$ref": "./looked_at.json#/properties/not_looked_at_event",
-			"description": ""
+			"$ref": "./looked_at.json#/properties/not_looked_at_event"
 		},
 		"scale_fov_by_distance": {
-			"$ref": "./looked_at.json#/properties/scale_fov_by_distance",
-			"description": ""
+			"$ref": "./looked_at.json#/properties/scale_fov_by_distance"
 		},
 		"search_radius": {
-			"$ref": "./looked_at.json#/properties/search_radius",
-			"description": ""
+			"$ref": "./looked_at.json#/properties/search_radius"
 		},
 		"set_target": {
 			"type": "boolean",
-			"default": true,
-			"description": ""
+			"default": true
 		}
 	},
 	"additionalProperties": false,

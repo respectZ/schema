@@ -14,8 +14,44 @@
 			"description": ""
 		},
 		"attack_types": {
-			"type": "string",
-			"description": ""
+			"anyOf": [
+				{
+					"type": "string",
+					"enum": [
+						"none",
+						"player",
+						"mob",
+						"monster",
+						"humanoid",
+						"animal",
+						"water",
+						"pathable",
+						"tamable",
+						"ridable",
+						"item",
+						"ambient",
+						"villager",
+						"arthropod",
+						"undead",
+						"zombie",
+						"minecart",
+						"boat",
+						"boatrideable",
+						"minecartridable",
+						"humanoidmonster",
+						"wateranimal",
+						"tamableanimal",
+						"undeadmob",
+						"undeadmonster",
+						"zombiemonster"
+					]
+				},
+				{
+					"type": "string"
+				}
+			],
+			"examples": ["monster arthropod", "animal"],
+			"description": "Defines the entity types this entity will attack."
 		},
 		"can_spread_on_fire": {
 			"type": "boolean",
@@ -103,6 +139,14 @@
 			"minimum": 0,
 			"maximum": 3.4028234663852886e38,
 			"description": ""
+		},
+		"on_attack": {
+			"$ref": "../../legacy/general.json#/$defs/trigger",
+			"description": "Defines the event to trigger when this entity successfully attacks."
+		},
+		"on_kill": {
+			"$ref": "../../legacy/general.json#/$defs/trigger",
+			"description": "Defines the event to trigger when this entity kills the target."
 		},
 		"path_fail_time_increase": {
 			"type": "number",

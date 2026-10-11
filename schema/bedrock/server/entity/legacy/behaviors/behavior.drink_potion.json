@@ -32,8 +32,7 @@
 					}
 				},
 				"additionalProperties": false,
-				"required": ["id"],
-				"description": "A list of potions that this entity can drink. Each potion entry has the following parameters:"
+				"required": ["id"]
 			},
 			"description": "A list of potions that this entity can drink. Each potion entry has the following parameters:"
 		},

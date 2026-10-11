@@ -25,17 +25,15 @@
 					"description": "Determines if the trades should persist when the mob transforms. This makes it so that the next time the mob is transformed to something with a trade_table or economy_trade_table, then it keeps their trades."
 				},
 				"table": {
-					"type": "string",
+					"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
 					"default": "",
 					"description": "File path relative to the behavior pack root for this entity's trades."
 				}
 			},
-			"additionalProperties": false,
-			"description": "Defines this entity's ability to trade with players."
+			"additionalProperties": false
 		},
 		{
-			"type": "null",
-			"description": "Defines this entity's ability to trade with players."
+			"type": "null"
 		}
 	],
 	"description": "Defines this entity's ability to trade with players."

@@ -49,16 +49,14 @@
 						"anyOf": [
 							{
 								"type": "string",
-								"description": "The color of the particles for this spell"
+								"pattern": "#[0-9a-fA-F]{8}"
 							},
 							{
 								"type": "array",
 								"items": {
-									"type": "integer",
-									"description": "The color of the particles for this spell"
+									"type": "integer"
 								},
-								"minItems": 3,
-								"description": "The color of the particles for this spell"
+								"minItems": 3
 							}
 						],
 						"description": "The color of the particles for this spell"
@@ -68,7 +66,7 @@
 						"description": ""
 					},
 					"start_sound_event": {
-						"type": "string",
+						"$ref": "../../../../../vanilla/server/level_sound.json",
 						"description": "The sound event to play when using this spell"
 					},
 					"sequence": {
@@ -105,11 +103,11 @@
 									"description": "Maximum number of summoned entities at any given time"
 								},
 								"entity_type": {
-									"type": "string",
+									"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
 									"description": "The entity type of the entities we will spawn in this step"
 								},
 								"sound_event": {
-									"type": "string",
+									"$ref": "../../../../../vanilla/server/level_sound.json",
 									"description": "The sound event to play for this step"
 								},
 								"summon_event": {
@@ -127,14 +125,12 @@
 									"description": "The target of the spell. This is where the spell will start (line will start here, circle will be centered here)"
 								}
 							},
-							"additionalProperties": false,
-							"description": "List of steps for the spell. Each step has the following parameters:"
+							"additionalProperties": false
 						},
 						"description": "List of steps for the spell. Each step has the following parameters:"
 					}
 				},
-				"additionalProperties": false,
-				"description": "List of spells for the mob to use to summon entities. Each spell has the following parameters:"
+				"additionalProperties": false
 			},
 			"description": "List of spells for the mob to use to summon entities. Each spell has the following parameters:"
 		}

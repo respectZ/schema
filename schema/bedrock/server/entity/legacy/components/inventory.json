@@ -2,12 +2,10 @@
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"anyOf": [
 		{
-			"$ref": "#/$defs/definition",
-			"description": "Defines this entity's inventory properties."
+			"$ref": "#/$defs/definition"
 		},
 		{
-			"type": "null",
-			"description": "Defines this entity's inventory properties."
+			"type": "null"
 		}
 	],
 	"$defs": {
@@ -28,6 +26,16 @@
 				},
 				"container_type": {
 					"type": "string",
+					"enum": [
+						"horse",
+						"minecart_chest",
+						"chest_boat",
+						"minecart_hopper",
+						"inventory",
+						"container",
+						"hopper",
+						"none"
+					],
 					"default": "none",
 					"description": "Type of container this entity has. Can be horse, minecart_chest, chest_boat, minecart_hopper, inventory, container or hopper."
 				},
@@ -49,8 +57,7 @@
 					"description": "If true, the entity's inventory can only be accessed by its owner or itself."
 				}
 			},
-			"additionalProperties": false,
-			"description": "Defines this entity's inventory properties."
+			"additionalProperties": false
 		}
 	},
 	"description": "Defines this entity's inventory properties."

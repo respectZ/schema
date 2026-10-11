@@ -12,59 +12,10 @@
 		"attack_range": {
 			"anyOf": [
 				{
-					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "Target needs to be within this range for the attack to happen."
+					"$ref": "../general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "Target needs to be within this range for the attack to happen."
-				}
-			],
-			"allOf": [
-				{
-					"if": {
-						"type": "number",
-						"description": "Target needs to be within this range for the attack to happen."
-					},
-					"then": {
-						"minimum": 0,
-						"description": "Target needs to be within this range for the attack to happen."
-					},
-					"description": "Target needs to be within this range for the attack to happen."
-				},
-				{
-					"if": {
-						"type": "array",
-						"description": "Target needs to be within this range for the attack to happen."
-					},
-					"then": {
-						"items": {
-							"minimum": 0,
-							"description": "Target needs to be within this range for the attack to happen."
-						},
-						"description": "Target needs to be within this range for the attack to happen."
-					},
-					"description": "Target needs to be within this range for the attack to happen."
-				},
-				{
-					"if": {
-						"type": "object",
-						"description": "Target needs to be within this range for the attack to happen."
-					},
-					"then": {
-						"properties": {
-							"range_min": {
-								"minimum": 0,
-								"description": ""
-							},
-							"range_max": {
-								"minimum": 0,
-								"description": ""
-							}
-						},
-						"description": "Target needs to be within this range for the attack to happen."
-					},
-					"description": "Target needs to be within this range for the attack to happen."
+					"type": "null"
 				}
 			],
 			"description": "Target needs to be within this range for the attack to happen."
@@ -108,11 +59,9 @@
 				{
 					"type": "array",
 					"items": {
-						"type": "number",
-						"description": "Offset vector from the owner_anchor."
+						"type": "number"
 					},
-					"maxItems": 3,
-					"description": "Offset vector from the owner_anchor."
+					"maxItems": 3
 				},
 				{
 					"type": "object",
@@ -130,8 +79,7 @@
 							"description": ""
 						}
 					},
-					"additionalProperties": false,
-					"description": "Offset vector from the owner_anchor."
+					"additionalProperties": false
 				}
 			],
 			"description": "Offset vector from the owner_anchor."
@@ -158,7 +106,7 @@
 			"description": ""
 		},
 		"projectile_def": {
-			"type": "string",
+			"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
 			"description": "Actor definition to use as projectile for the ranged attack. The actor must be a projectile. This field is required for the goal to be usable."
 		},
 		"ranged_fov": {
@@ -179,11 +127,9 @@
 				{
 					"type": "array",
 					"items": {
-						"type": "number",
-						"description": "Offset vector from the target_anchor."
+						"type": "number"
 					},
-					"maxItems": 3,
-					"description": "Offset vector from the target_anchor."
+					"maxItems": 3
 				},
 				{
 					"type": "object",
@@ -201,8 +147,7 @@
 							"description": ""
 						}
 					},
-					"additionalProperties": false,
-					"description": "Offset vector from the target_anchor."
+					"additionalProperties": false
 				}
 			],
 			"description": "Offset vector from the target_anchor."

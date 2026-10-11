@@ -10,16 +10,13 @@
 		"breathe_blocks": {
 			"anyOf": [
 				{
-					"$ref": "../../../../../vanilla/server/block_descriptor.json",
-					"description": "List of blocks this entity can breathe in, in addition to the other \"breathes\" parameters."
+					"$ref": "../../../../../vanilla/server/block_descriptor.json"
 				},
 				{
 					"type": "array",
 					"items": {
-						"$ref": "../../../../../vanilla/server/block_descriptor.json",
-						"description": "List of blocks this entity can breathe in, in addition to the other \"breathes\" parameters."
-					},
-					"description": "List of blocks this entity can breathe in, in addition to the other \"breathes\" parameters."
+						"$ref": "../../../../../vanilla/server/block_descriptor.json"
+					}
 				}
 			],
 			"description": "List of blocks this entity can breathe in, in addition to the other \"breathes\" parameters."
@@ -94,16 +91,13 @@
 		"non_breathe_blocks": {
 			"anyOf": [
 				{
-					"$ref": "../../../../../vanilla/server/block_descriptor.json",
-					"description": "List of blocks this entity can't breathe in, in addition to the other \"breathes\" parameters."
+					"$ref": "../../../../../vanilla/server/block_descriptor.json"
 				},
 				{
 					"type": "array",
 					"items": {
-						"$ref": "../../../../../vanilla/server/block_descriptor.json",
-						"description": "List of blocks this entity can't breathe in, in addition to the other \"breathes\" parameters."
-					},
-					"description": "List of blocks this entity can't breathe in, in addition to the other \"breathes\" parameters."
+						"$ref": "../../../../../vanilla/server/block_descriptor.json"
+					}
 				}
 			],
 			"description": "List of blocks this entity can't breathe in, in addition to the other \"breathes\" parameters."

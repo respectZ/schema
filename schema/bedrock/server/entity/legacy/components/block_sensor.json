@@ -5,8 +5,7 @@
 		"on_break": {
 			"type": "array",
 			"items": {
-				"$ref": "#/$defs/break_entry",
-				"description": "List of blocks to watch for being broken to fire off a specified event. If a block is in multiple lists, multiple events will fire."
+				"$ref": "#/$defs/break_entry"
 			},
 			"description": "List of blocks to watch for being broken to fire off a specified event. If a block is in multiple lists, multiple events will fire."
 		},
@@ -20,8 +19,7 @@
 		"sources": {
 			"type": "array",
 			"items": {
-				"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-				"description": "List of sources that break the block to listen for. If none are specified, all block breaks will be detected."
+				"$ref": "../../../../../vanilla/server/filter/entity/_index.json"
 			},
 			"description": "List of sources that break the block to listen for. If none are specified, all block breaks will be detected."
 		}
@@ -45,8 +43,7 @@
 					"description": ""
 				}
 			},
-			"additionalProperties": false,
-			"description": "List of blocks to watch for being broken to fire off a specified event. If a block is in multiple lists, multiple events will fire."
+			"additionalProperties": false
 		}
 	},
 	"description": "Fires off a specified event when a block in the block list is broken within the sensor range."

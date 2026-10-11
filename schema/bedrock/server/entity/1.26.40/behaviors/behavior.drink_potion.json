@@ -43,8 +43,7 @@
 						"maximum": 2147483647,
 						"description": "The registry ID of the potion to use"
 					}
-				},
-				"description": "A list of potions that this entity can drink. Each potion entry has the following parameters:"
+				}
 			},
 			"description": "A list of potions that this entity can drink. Each potion entry has the following parameters:"
 		},

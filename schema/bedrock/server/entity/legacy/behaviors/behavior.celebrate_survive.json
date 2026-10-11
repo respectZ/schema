@@ -22,19 +22,17 @@
 		"fireworks_interval": {
 			"anyOf": [
 				{
-					"$ref": "../components/looked_at.json#/properties/looked_at_cooldown",
-					"description": "Minimum and maximum time between firework (positive, in seconds)."
+					"$ref": "../general.json#/$defs/number_or_range"
 				},
 				{
-					"type": "null",
-					"description": "Minimum and maximum time between firework (positive, in seconds)."
+					"type": "null"
 				}
 			],
 			"default": [10, 20],
 			"description": "Minimum and maximum time between firework (positive, in seconds)."
 		},
 		"on_celebration_end_event": {
-			"$ref": "../components/equippable.json#/$defs/event",
+			"$ref": "../general.json#/$defs/trigger",
 			"description": "The event to trigger when the goal's duration expires."
 		},
 		"priority": {

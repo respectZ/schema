@@ -11,16 +11,13 @@
 				"begin_transform_sound": {
 					"anyOf": [
 						{
-							"$ref": "./shooter.json#/$defs/sound_name",
-							"description": ""
+							"$ref": "../../../../../vanilla/server/level_sound.json"
 						},
 						{
 							"type": "array",
 							"items": {
-								"$ref": "./shooter.json#/$defs/sound_name",
-								"description": ""
-							},
-							"description": ""
+								"$ref": "../../../../../vanilla/server/level_sound.json"
+							}
 						}
 					],
 					"description": ""
@@ -51,16 +48,7 @@
 					"description": ""
 				},
 				"into": {
-					"anyOf": [
-						{
-							"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
-							"description": ""
-						},
-						{
-							"type": "string",
-							"description": ""
-						}
-					],
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
 					"default": "",
 					"description": ""
 				},
@@ -82,16 +70,13 @@
 				"transformation_sound": {
 					"anyOf": [
 						{
-							"$ref": "./shooter.json#/$defs/sound_name",
-							"description": ""
+							"$ref": "../../../../../vanilla/server/level_sound.json"
 						},
 						{
 							"type": "array",
 							"items": {
-								"$ref": "./shooter.json#/$defs/sound_name",
-								"description": ""
-							},
-							"description": ""
+								"$ref": "../../../../../vanilla/server/level_sound.json"
+							}
 						}
 					],
 					"description": ""
@@ -164,34 +149,13 @@
 				"block_types": {
 					"anyOf": [
 						{
-							"anyOf": [
-								{
-									"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
-									"description": ""
-								},
-								{
-									"type": "string",
-									"description": ""
-								}
-							],
-							"description": ""
+							"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
 						},
 						{
 							"type": "array",
 							"items": {
-								"anyOf": [
-									{
-										"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
-										"description": ""
-									},
-									{
-										"type": "string",
-										"description": ""
-									}
-								],
-								"description": ""
-							},
-							"description": ""
+								"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
+							}
 						}
 					],
 					"description": ""
