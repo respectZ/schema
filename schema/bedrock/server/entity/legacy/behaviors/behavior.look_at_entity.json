@@ -20,6 +20,10 @@
 			},
 			"description": ""
 		},
+		"filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": ""
+		},
 		"look_distance": {
 			"type": "number",
 			"description": ""
