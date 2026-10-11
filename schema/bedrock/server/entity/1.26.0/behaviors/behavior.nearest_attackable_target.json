@@ -45,10 +45,17 @@
 			"description": ""
 		},
 		"entity_types": {
-			"type": "array",
-			"items": {
-				"$ref": "../../legacy/general.json#/$defs/entity_types"
-			},
+			"anyOf": [
+				{
+					"$ref": "../../legacy/general.json#/$defs/entity_types"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../legacy/general.json#/$defs/entity_types"
+					}
+				}
+			],
 			"description": "Filters which types of targets are valid for this entity."
 		},
 		"must_reach": {

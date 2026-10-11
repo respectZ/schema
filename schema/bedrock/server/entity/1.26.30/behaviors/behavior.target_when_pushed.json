@@ -22,10 +22,17 @@
 			"description": ""
 		},
 		"entity_types": {
-			"type": "array",
-			"items": {
-				"$ref": "../../legacy/general.json#/$defs/entity_types"
-			},
+			"anyOf": [
+				{
+					"$ref": "../../legacy/general.json#/$defs/entity_types"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../legacy/general.json#/$defs/entity_types"
+					}
+				}
+			],
 			"description": ""
 		},
 		"percent_chance": {

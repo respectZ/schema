@@ -34,10 +34,17 @@
 			"description": "The probability that the mob will drop an item when it sneezes."
 		},
 		"entity_types": {
-			"type": "array",
-			"items": {
-				"$ref": "../../legacy/general.json#/$defs/entity_types"
-			},
+			"anyOf": [
+				{
+					"$ref": "../../legacy/general.json#/$defs/entity_types"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../legacy/general.json#/$defs/entity_types"
+					}
+				}
+			],
 			"description": "List of entity types this mob will startle (cause to jump) when it sneezes."
 		},
 		"loot_table": {

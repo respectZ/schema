@@ -26,10 +26,17 @@
 			"description": ""
 		},
 		"entity_types": {
-			"type": "array",
-			"items": {
-				"$ref": "../../legacy/general.json#/$defs/entity_types"
-			},
+			"anyOf": [
+				{
+					"$ref": "../../legacy/general.json#/$defs/entity_types"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../legacy/general.json#/$defs/entity_types"
+					}
+				}
+			],
 			"description": "List of entity types that this entity can target if the potential target is hurt by this mob's owner"
 		},
 		"must_reach": {

@@ -36,10 +36,17 @@
 			"description": ""
 		},
 		"entity_types": {
-			"type": "array",
-			"items": {
-				"$ref": "../../legacy/general.json#/$defs/entity_types"
-			},
+			"anyOf": [
+				{
+					"$ref": "../../legacy/general.json#/$defs/entity_types"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../legacy/general.json#/$defs/entity_types"
+					}
+				}
+			],
 			"description": "List of entity types that this mob considers valid targets"
 		},
 		"must_reach": {
