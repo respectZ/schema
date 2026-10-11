@@ -30,12 +30,12 @@
 		"entity_types": {
 			"anyOf": [
 				{
-					"$ref": "../general.json#/$defs/entity_types"
+					"$ref": "../../legacy/general.json#/$defs/entity_types"
 				},
 				{
 					"type": "array",
 					"items": {
-						"$ref": "../general.json#/$defs/entity_types"
+						"$ref": "../../legacy/general.json#/$defs/entity_types"
 					}
 				}
 			],
