@@ -14,7 +14,8 @@
 					{
 						"type": "null"
 					}
-				]
+				],
+				"description": "Defines interactions with this entity."
 			}
 		},
 		{
@@ -59,12 +60,12 @@
 				"admire": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "If true, the mob that's interacted with will try to do an admire action after interaction. For this to be successful the mob has to have an Admire component and an Admire goal in place."
 				},
 				"barter": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "If true, the mob that's interacted with will try to do a barter action after interaction. For this to be successful the mob has to have a Barter component and a Barter goal in place."
 				},
 				"cooldown": {
 					"$ref": "#/$defs/float_value",
@@ -100,7 +101,7 @@
 				"give_item": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "If true, the mob that's interacted with will try to replace its current main-hand item with the interactable item after interaction."
 				},
 				"health_amount": {
 					"$ref": "#/$defs/int32_value",
@@ -251,7 +252,7 @@
 				"take_item": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "If true, the mob that's interacted with will try to replace its current main-hand item with an empty item, and its current main-hand item will occupy the empty selected slot of the player."
 				},
 				"target": {
 					"$ref": "../general.json#/$defs/trigger/properties/target",

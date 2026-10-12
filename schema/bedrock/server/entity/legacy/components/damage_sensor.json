@@ -69,7 +69,8 @@
 					"description": "Defines what sound to play, if any, when the \"on_damage\" filters are met."
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": false,
+			"description": ""
 		}
 	},
 	"description": "\"Defines what events to call when this entity is damaged by specific entities or items."

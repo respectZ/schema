@@ -29,9 +29,10 @@
 						}
 					}
 				]
-			}
+			},
+			"description": "List of block descriptors whose existing movement slowdown contribution should be ignored. If omitted or empty, no contributions are ignored."
 		}
 	},
 	"additionalProperties": false,
-	"description": ""
+	"description": "Prevents specified blocks from contributing to this entity's block movement slowdown. It does not cause other blocks to apply slowdown."
 }

@@ -17,10 +17,12 @@
 			"description": ""
 		},
 		"on_admire_item_start": {
-			"$ref": "../general.json#/$defs/trigger"
+			"$ref": "../general.json#/$defs/trigger",
+			"description": "Event to run when the mob starts admiring an item."
 		},
 		"on_admire_item_stop": {
-			"$ref": "../general.json#/$defs/trigger"
+			"$ref": "../general.json#/$defs/trigger",
+			"description": "Event to run when the mob stops admiring an item."
 		},
 		"priority": {
 			"type": "integer",

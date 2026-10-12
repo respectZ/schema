@@ -9,7 +9,7 @@
 				"description": ""
 			},
 			"default": [],
-			"description": ""
+			"description": "The effects to add to the entity after adding this component."
 		},
 		"remove_effects": {
 			"anyOf": [
@@ -23,7 +23,7 @@
 					}
 				}
 			],
-			"description": ""
+			"description": "The identifiers of effects to remove from the entity after adding this component."
 		}
 	},
 	"additionalProperties": false,
@@ -34,19 +34,19 @@
 				"ambient": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "Whether the effect is ambient."
 				},
 				"amplifier": {
 					"type": "integer",
 					"minimum": -2147483648,
 					"maximum": 2147483647,
 					"default": 0,
-					"description": ""
+					"description": "The amplifier of the effect."
 				},
 				"display_on_screen_animation": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "Whether the effect displays an on-screen animation."
 				},
 				"duration": {
 					"anyOf": [
@@ -61,22 +61,22 @@
 						}
 					],
 					"default": 0,
-					"description": ""
+					"description": "The duration of the effect in seconds, or \"infinite\"."
 				},
 				"effect": {
 					"$ref": "../../../../../vanilla/server/effect_type.json",
 					"default": "",
-					"description": ""
+					"description": "The name of the effect to apply."
 				},
 				"visible": {
 					"type": "boolean",
 					"default": true,
-					"description": ""
+					"description": "Whether the effect is visible."
 				}
 			},
 			"additionalProperties": false,
 			"description": ""
 		}
 	},
-	"description": ""
+	"description": "Defines the mob effects to add to and remove from the entity."
 }

@@ -1,5 +1,4 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$ref": "../../1.21.110/components/experience_reward.json",
-	"description": "."
+	"$ref": "../../1.21.110/components/experience_reward.json"
 }

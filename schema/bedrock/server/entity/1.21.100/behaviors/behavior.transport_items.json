@@ -5,14 +5,14 @@
 	"properties": {
 		"allow_simultaneous_interaction": {
 			"type": "boolean",
-			"description": ""
+			"description": "When true the mob will wait until a container is not used by other entities before starting to interact with it."
 		},
 		"allowed_items": {
 			"type": "array",
 			"items": {
 				"$ref": "../../../../../vanilla/server/item_descriptor.json#/$defs/latest"
 			},
-			"description": ""
+			"description": "A list of item descriptors that are the only items the mob is allowed to transport. If this and \"disallowed_items\" are both empty, then all items are allowed. If non-empty \"disallowed_items\" must be empty."
 		},
 		"control_flags": {
 			"type": "array",
@@ -37,7 +37,7 @@
 			"items": {
 				"$ref": "../../../../../vanilla/server/block_descriptor.json"
 			},
-			"description": ""
+			"description": "A list of block descriptors that should be a container type to put items in."
 		},
 		"disallowed_items": {
 			"type": "array",
@@ -45,37 +45,37 @@
 				"$ref": "../../../../../vanilla/server/item_descriptor.json#/$defs/latest",
 				"description": ""
 			},
-			"description": ""
+			"description": "A list of item descriptors that are the mob is not allowed to transport. If non-empty \"allowed_items\" must be empty."
 		},
 		"idle_cooldown": {
 			"type": "integer",
 			"minimum": 0,
 			"maximum": 4294967295,
-			"description": ""
+			"description": "When the mob cannot find a container in which to get or put items, the goal will stop being active for this amount of time in seconds."
 		},
 		"initial_cooldown": {
 			"type": "integer",
 			"minimum": 0,
 			"maximum": 4294967295,
-			"description": ""
+			"description": "How long the mob will wait after spawning or getting the goal added before the goal can start."
 		},
 		"interaction_time": {
 			"type": "number",
 			"minimum": 0,
 			"maximum": 3.4028234663852886e38,
-			"description": ""
+			"description": "The amount of time in seconds spent interacting with the containers."
 		},
 		"max_stack_size": {
 			"type": "integer",
 			"minimum": 1.0,
 			"maximum": 64.0,
-			"description": ""
+			"description": "The maximum stack size that the mob will try to take from a container."
 		},
 		"max_visited_containers": {
 			"type": "integer",
 			"minimum": 0,
 			"maximum": 4294967295,
-			"description": ""
+			"description": "The maximum number of containers that the mob will try to take/place items from before going on cooldown and starting over."
 		},
 		"place_strategy": {
 			"type": "string",
@@ -89,7 +89,7 @@
 					"description": ""
 				}
 			],
-			"description": ""
+			"description": "The strategy to use for placing the transported item. Any - always place if there is room, With matching - place if there is a matching item in the container, With matching or empty - like With matching but will also place in empty containers"
 		},
 		"priority": {
 			"type": "integer",
@@ -107,7 +107,7 @@
 			},
 			"minItems": 2,
 			"maxItems": 2,
-			"description": ""
+			"description": "The maximum search distance horizontally and vertically at which to find containers for taking or placing items."
 		},
 		"search_strategy": {
 			"type": "string",
@@ -121,15 +121,15 @@
 					"description": ""
 				}
 			],
-			"description": ""
+			"description": "The strategy to use for finding source or destination containers. The nearest valid container or a random valid container in range."
 		},
 		"source_container_types": {
 			"type": "array",
 			"items": {
 				"$ref": "../../../../../vanilla/server/block_descriptor.json"
 			},
-			"description": ""
+			"description": "A list of block descriptors that should be a container type to get items from."
 		}
 	},
-	"description": ""
+	"description": "A behavior that enables a mob to transport items from and to containers."
 }

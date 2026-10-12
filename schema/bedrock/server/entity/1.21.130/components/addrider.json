@@ -8,11 +8,10 @@
 		"riders": {
 			"type": "array",
 			"items": {
-				"$ref": "../../legacy/components/addrider.json#/anyOf/0",
-				"description": ""
+				"$ref": "../../legacy/components/addrider.json#/anyOf/0"
 			},
 			"default": [],
-			"description": ""
+			"description": "List of riders to be added to the entity. Can only spawn as many riders as \"minecraft:rideable\" has \"seat_count\"."
 		},
 		"spawn_event": {
 			"$ref": "../../legacy/components/addrider.json#/anyOf/0/properties/spawn_event"

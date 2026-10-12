@@ -5,9 +5,9 @@
 		"jump_power": {
 			"type": "number",
 			"default": 0.42,
-			"description": ""
+			"description": "The initial vertical velocity for the jump."
 		}
 	},
 	"additionalProperties": false,
-	"description": ""
+	"description": "Gives the entity the ability to jump."
 }

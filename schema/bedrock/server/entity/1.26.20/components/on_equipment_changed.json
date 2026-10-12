@@ -11,25 +11,25 @@
 					"on_equip": {
 						"type": "string",
 						"default": "",
-						"description": ""
+						"description": "Event to execute when the slot is changed to a non-empty item."
 					},
 					"on_unequip": {
 						"type": "string",
 						"default": "",
-						"description": ""
+						"description": "Event to execute when the slot is changed to an empty item."
 					},
 					"slot": {
 						"$ref": "../../../../../vanilla/server/equipment_slot.json",
 						"default": "slot.weapon.mainhand",
-						"description": ""
+						"description": "The equipment slot to monitor for changes."
 					}
 				},
 				"additionalProperties": false,
 				"description": ""
 			},
-			"description": ""
+			"description": "A list of slot-specific events to execute when the entity's equipment changes in those slots."
 		}
 	},
 	"additionalProperties": false,
-	"description": ""
+	"description": "Allows to specify events to execute when equipment is set in the entity's default equipment slots. Doesn't apply to \"minecraft:inventory\", use \"minecraft:equippable\" instead."
 }

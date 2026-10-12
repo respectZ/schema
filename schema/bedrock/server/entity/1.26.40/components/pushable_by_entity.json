@@ -9,89 +9,89 @@
 				"properties": {
 					"filters": {
 						"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-						"description": ""
+						"description": "Conditions that must be met for this preset to be applied."
 					},
 					"kick_speed_scale": {
 						"type": "number",
 						"default": 2.0,
-						"description": ""
+						"description": "Multiplier applied to the pushing entity's movement speed to determine kick force. Only used when push_mode is \"ball\"."
 					},
 					"max_distance": {
 						"type": "number",
 						"default": 3.4028234663852886e38,
 						"minimum": 0,
-						"description": ""
+						"description": "Maximum horizontal distance between the center of the pushed entity and the collision of the pushing entity for push forces to be applied. Entities further apart than this will not push each other."
 					},
 					"max_kick_speed": {
 						"type": "number",
 						"default": 0.5,
-						"description": ""
+						"description": "Maximum speed the entity can be pushed back at, regardless of how fast the pushing entity is moving. Only used when push_mode is \"ball\"."
 					},
 					"min_distance": {
 						"type": "number",
 						"default": 0.01,
 						"minimum": 0,
-						"description": ""
+						"description": "Minimum horizontal distance between the centers of the two entities for push forces to be applied. Entities closer than this will not push each other."
 					},
 					"min_kick_speed": {
 						"type": "number",
 						"default": 0.0,
-						"description": ""
+						"description": "Minimum speed the the entity will be pushed back at, regardless of how slowly the pushing entity is moving. Only used when push_mode is \"ball\"."
 					},
 					"play_sound": {
 						"type": "boolean",
 						"default": false,
-						"description": ""
+						"description": "If the \"pushed_by_player\" sound should be played when the entity is pushed by any other entity (despite the sound name)."
 					},
 					"play_sound_cooldown_in_seconds": {
 						"type": "number",
 						"default": 0.2,
 						"minimum": 0,
-						"description": ""
+						"description": "Cooldown in seconds between sounds. A lower number results in more sounds."
 					},
 					"play_sound_impulse_threshold": {
 						"type": "number",
 						"default": 0.2,
 						"minimum": 0,
-						"description": ""
+						"description": "Minimum change of velocity needed to trigger the push sound. A lower value means higher sensitivity."
 					},
 					"push_mode": {
 						"type": "string",
 						"enum": ["none", "default", "legacy_boat", "legacy_minecart", "ball"],
 						"default": "default",
-						"description": ""
+						"description": "Defines the type of push vector calculation applied to the entity:\n- \"none\": The entity cannot be pushed.\n- \"default\": Standard push calculations used by most entities.\n- \"legacy_boat\": Legacy push calculations historically used by boats. Includes dampened forces and sneak-based cancellation.\n- \"legacy_minecart\": Legacy push calculations historically used by minecarts. Includes alignment-based collision handling and velocity averaging.- \"ball\": Push calculation resulting in a behavior similar to kicking a ball. The entity is propelled in the direction of the pusher’s movement, with force scaled by their speed."
 					},
 					"push_scale_other": {
 						"type": "number",
 						"default": 1.0,
-						"description": ""
+						"description": "Scales how much push force this entity applies to the other entity when colliding. A value of 1.0 applies full force, 0.5 applies half."
 					},
 					"push_scale_self": {
 						"type": "number",
 						"default": 1.0,
-						"description": ""
+						"description": "Scales how much this entity pushes itself away when colliding with another entity. A value of 1.0 applies full force, 0.5 applies half."
 					},
 					"require_collision_overlap": {
 						"type": "boolean",
 						"default": true,
-						"description": ""
+						"description": "When true, entities will not push each other unless their collision boxes overlap."
 					},
 					"strength_multiplier": {
 						"type": "number",
 						"default": 0.05,
-						"description": ""
+						"description": "Multiplier applied to the push strength. Higher values result in stronger pushes."
 					},
 					"vertical_kick_multiplier": {
 						"type": "number",
 						"default": 0.3,
-						"description": ""
+						"description": "Multiplier for the upward force applied when the entity is pushed while on the ground. A value of 0 keeps the entity flat. Only used when push_mode is \"ball\"."
 					}
 				},
 				"additionalProperties": false,
 				"description": ""
 			},
 			"default": [],
-			"description": ""
+			"description": "Defines how this entity behaves when pushed by another entity. The first preset whose \"filter\" conditions are met will be applied; if none match, a default configuration is used instead."
 		},
 		"use_default_with_overlap_check": {
 			"type": "boolean",

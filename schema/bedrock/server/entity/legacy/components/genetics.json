@@ -164,8 +164,7 @@
 			"properties": {
 				"birth_event": {
 					"$ref": "#/$defs/event",
-					"default": {},
-					"description": "Event to run when this mob is created and matches the allele conditions."
+					"default": {}
 				},
 				"both_allele": {
 					"$ref": "#/$defs/int_range",

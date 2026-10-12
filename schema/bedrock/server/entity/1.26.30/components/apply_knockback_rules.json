@@ -18,7 +18,8 @@
 							"pattern": "^(?:[rR][eE][aA][pP][pP][lL][yY]_[dD][eE][fF][aA][uU][lL][tT]|[mM][uU][lL][tT][iI][pP][lL][yY]_[rR][eE][dD][uU][cC][eE][dD])$"
 						}
 					],
-					"default": "reapply_default"
+					"default": "reapply_default",
+					"description": "Defines the approach for combining extra knockback from enchantments or sprinting:\n- \"reapply_default\": Reapplies knockback again with default knockback parameters, i.e. values not defined by this component.\n- \"multiply_reduced\": Multiplies the extra knockback with the base knockback and a reduction factor, and adds it to the base knockback."
 				},
 				"filter": {
 					"$ref": "../../legacy/components/apply_knockback_rules.json#/$defs/preset/properties/filter"
@@ -36,17 +37,20 @@
 							"pattern": "^(?:[rR][eE][lL][aA][tT][iI][vV][eE]_[hH][oO][rR][iI][zZ][oO][nN][tT][aA][lL]|[hH][iI][tT]_[dD][iI][rR][eE][cC][tT][iI][oO][nN])$"
 						}
 					],
-					"default": "relative_horizontal"
+					"default": "relative_horizontal",
+					"description": "Defines how knockback is applied to the target:\n- \"relative_horizontal\": Applies knockback along the horizontal direction from the attacker to the target.\n- \"hit_direction\": Applies knockback based on the hit direction and the point of impact (e.g. hits to the bottom of the entity or from below push it upward, hits on the left side of the entity push it to the right)."
 				},
 				"scale_with_damage": {
 					"type": "boolean",
-					"default": false
+					"default": false,
+					"description": "Scaling factor to the magnitude of knockback based on the inverse square of the damage."
 				},
 				"slowdown_scale": {
 					"type": "number",
 					"minimum": 0,
 					"maximum": 1,
-					"default": 0.5
+					"default": 0.5,
+					"description": "Scaling factor to apply to the target's velocity before applying knockback."
 				},
 				"vertical_power": {
 					"$ref": "../../legacy/components/apply_knockback_rules.json#/$defs/preset/properties/vertical_power"
@@ -55,7 +59,8 @@
 					"$ref": "../../legacy/components/apply_knockback_rules.json#/$defs/preset/properties/vertical_velocity_cap"
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": false,
+			"description": "Intance of rules definition."
 		}
 	},
 	"properties": {
@@ -63,8 +68,10 @@
 			"type": "array",
 			"items": {
 				"$ref": "#/$defs/preset"
-			}
+			},
+			"description": "Array of rules instances defining how knockback should be applied to the entity."
 		}
 	},
-	"additionalProperties": false
+	"additionalProperties": false,
+	"description": "Defines how an entity applies knockback."
 }

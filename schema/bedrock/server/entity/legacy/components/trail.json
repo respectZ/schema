@@ -7,11 +7,11 @@
 				"block_type": {
 					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
 					"default": "air",
-					"description": ""
+					"description": "The type of block that is spawned as a trail behind the entity. Solid blocks cannot be spawned at an offset of (0, 0, 0)."
 				},
 				"spawn_filter": {
 					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-					"description": ""
+					"description": "One or more conditions that must be met in order to cause the chosen block type to spawn."
 				},
 				"spawn_offset": {
 					"anyOf": [
@@ -57,7 +57,7 @@
 							"description": ""
 						}
 					],
-					"description": ""
+					"description": "The offset from the entity's current position at which to spawn the block, capped at 16 blocks away."
 				}
 			},
 			"additionalProperties": false,
@@ -68,5 +68,5 @@
 			"description": ""
 		}
 	],
-	"description": ""
+	"description": "Causes an entity to leave a trail of blocks as it moves about the world. Obeys Mob Griefing rules."
 }

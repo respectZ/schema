@@ -65,7 +65,7 @@
 		},
 		"on_defend_start": {
 			"$ref": "../../legacy/general.json#/$defs/trigger",
-			"description": ""
+			"description": "Trigger to be executed when defending begins."
 		},
 		"persist_time": {
 			"type": "number",

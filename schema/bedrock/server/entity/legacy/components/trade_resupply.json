@@ -3,5 +3,5 @@
 	"type": "object",
 	"properties": {},
 	"additionalProperties": false,
-	"description": ""
+	"description": "Resupplies an entity's trades."
 }

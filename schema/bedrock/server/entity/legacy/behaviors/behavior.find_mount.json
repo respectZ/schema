@@ -18,7 +18,7 @@
 		},
 		"max_failed_attempts": {
 			"type": "integer",
-			"description": ""
+			"description": "Number of attempts to find mount"
 		},
 		"mount_distance": {
 			"type": "number",

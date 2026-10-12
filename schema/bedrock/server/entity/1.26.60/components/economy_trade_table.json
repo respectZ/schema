@@ -77,7 +77,8 @@
 			"$ref": "../../1.16.100/components/economy_trade_table.json#/anyOf/0/properties/show_trade_screen"
 		},
 		"table": {
-			"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path"
+			"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
+			"description": "Path to the trade table JSON that defines available offers."
 		},
 		"use_legacy_price_formula": {
 			"$ref": "../../1.16.100/components/economy_trade_table.json#/anyOf/0/properties/use_legacy_price_formula"

@@ -3,8 +3,7 @@
 	"type": "object",
 	"properties": {
 		"damagePerHurt": {
-			"$ref": "#/properties/damage_per_hurt",
-			"description": ""
+			"$ref": "#/properties/damage_per_hurt"
 		},
 		"damage_per_hurt": {
 			"type": "integer",
@@ -14,8 +13,7 @@
 			"description": "Amount of damage caused each hurt."
 		},
 		"timeBetweenHurt": {
-			"$ref": "#/properties/time_between_hurt",
-			"description": ""
+			"$ref": "#/properties/time_between_hurt"
 		},
 		"time_between_hurt": {
 			"type": "number",

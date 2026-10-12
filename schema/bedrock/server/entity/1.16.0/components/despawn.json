@@ -2,8 +2,7 @@
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"anyOf": [
 		{
-			"$ref": "#/$defs/definition",
-			"description": "Despawns the Actor when the despawn rules or optional filters evaluate to true."
+			"$ref": "#/$defs/definition"
 		},
 		{
 			"type": "null",
@@ -22,8 +21,7 @@
 				"despawn_from_distance": {
 					"anyOf": [
 						{
-							"$ref": "#/$defs/distance",
-							"description": "Specifies if the \"min_distance\" and \"max_distance\" are used in the standard despawn rules."
+							"$ref": "#/$defs/distance"
 						},
 						{
 							"type": "null",

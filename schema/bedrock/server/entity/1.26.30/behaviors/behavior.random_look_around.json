@@ -62,7 +62,7 @@
 			"type": "number",
 			"minimum": -3.4028234663852886e38,
 			"maximum": 3.4028234663852886e38,
-			"description": ""
+			"description": "The probability of randomly looking around."
 		}
 	},
 	"description": "Allows the mob to randomly look around."

@@ -3,5 +3,5 @@
 	"type": "object",
 	"properties": {},
 	"additionalProperties": false,
-	"description": ""
+	"description": "Defines interactions with this entity."
 }

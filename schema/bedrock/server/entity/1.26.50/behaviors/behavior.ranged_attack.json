@@ -40,7 +40,7 @@
 					"description": ""
 				}
 			},
-			"description": ""
+			"description": "Range of distances from the target within which the entity can perform a ranged attack."
 		},
 		"burst_interval": {
 			"type": "number",
@@ -99,7 +99,7 @@
 					"description": ""
 				}
 			],
-			"description": ""
+			"description": "Controls how the entity moves while its target is within the configured attack range. \"hold_position\" makes the entity stop and hold its position while facing and attacking the target. \"follow_target\" makes the entity continue moving toward the target while attacking, stopping just outside the minimum attack range."
 		},
 		"priority": {
 			"type": "integer",

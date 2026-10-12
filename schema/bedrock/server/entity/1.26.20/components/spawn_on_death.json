@@ -21,7 +21,7 @@
 				}
 			},
 			"additionalProperties": false,
-			"description": ""
+			"description": "Additional random range of entities to spawn, defaults to 0, 0 when not set"
 		},
 		"entity_to_spawn": {
 			"anyOf": [
@@ -33,16 +33,17 @@
 					"enum": ["self"]
 				}
 			],
-			"default": "self"
+			"default": "self",
+			"description": "What entity to spawn, defaults to owning entity when not set"
 		},
 		"filters": {
 			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-			"description": ""
+			"description": "Conditions that need to be met for the behavior to start."
 		},
 		"inherit_parent_name": {
 			"type": "boolean",
 			"default": true,
-			"description": ""
+			"description": "If true, the entity will inherit the name of the parent entity, defaults to true when not set"
 		},
 		"spawn_amount": {
 			"type": "integer",
@@ -50,15 +51,15 @@
 			"maximum": 2147483647,
 			"exclusiveMinimum": 0,
 			"default": 1,
-			"description": ""
+			"description": "How many entities to spawn, defaults to 1 when not set"
 		},
 		"spawn_method": {
 			"type": "string",
 			"enum": ["spawned", "born", "summoned"],
 			"default": "spawned",
-			"description": ""
+			"description": "Spawn method. born, spawned, or summoned, defaults to spawned when not set"
 		}
 	},
 	"additionalProperties": false,
-	"description": ""
+	"description": "Component for spawning entities when an entity perishes."
 }

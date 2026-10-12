@@ -3,5 +3,5 @@
 	"type": "object",
 	"properties": {},
 	"additionalProperties": false,
-	"description": ""
+	"description": "Allows this entity to trust multiple players."
 }

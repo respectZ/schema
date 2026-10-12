@@ -19,11 +19,11 @@
 				"properties": {
 					"eat_block": {
 						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
-						"description": ""
+						"description": "The block the entity should eat."
 					},
 					"replace_block": {
 						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
-						"description": ""
+						"description": "The block that should replace the eaten block."
 					}
 				},
 				"additionalProperties": false

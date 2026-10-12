@@ -3,5 +3,5 @@
 	"type": "object",
 	"properties": {},
 	"additionalProperties": false,
-	"description": ""
+	"description": "[INTERNAL] Allows this entity to listen to vibration events."
 }

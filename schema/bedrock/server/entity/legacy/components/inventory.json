@@ -57,7 +57,8 @@
 					"description": "If true, the entity's inventory can only be accessed by its owner or itself."
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": false,
+			"description": "Defines this entity's inventory properties."
 		}
 	},
 	"description": "Defines this entity's inventory properties."

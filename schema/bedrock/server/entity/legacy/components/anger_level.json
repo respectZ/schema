@@ -35,7 +35,7 @@
 			"minimum": -2147483648,
 			"maximum": 2147483647,
 			"default": 0,
-			"description": ""
+			"description": "The default amount of annoyingness for any given nuisance that is a projectile. Specifies how much to raise anger level on each provocation."
 		},
 		"max_anger": {
 			"type": "integer",

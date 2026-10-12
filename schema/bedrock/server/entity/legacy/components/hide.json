@@ -3,5 +3,5 @@
 	"type": "object",
 	"properties": {},
 	"additionalProperties": false,
-	"description": ""
+	"description": "Moves to and hides at their owned POI or the closest nearby."
 }

@@ -91,7 +91,8 @@
 				{
 					"type": "null"
 				}
-			]
+			],
+			"description": ""
 		},
 		"wrapped": {
 			"anyOf": [
@@ -122,7 +123,8 @@
 				{
 					"type": "null"
 				}
-			]
+			],
+			"description": ""
 		}
 	},
 	"description": "Adds a timer after which this entity will spawn another entity or item (similar to vanilla's chicken's egg-laying behavior)."

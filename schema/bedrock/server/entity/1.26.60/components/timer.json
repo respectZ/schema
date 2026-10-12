@@ -17,10 +17,12 @@
 			"description": "This is a list of objects, representing one value in seconds that can be picked before firing the event and an optional weight. Incompatible with time."
 		},
 		"time": {
-			"$ref": "#/$defs/time_range"
+			"$ref": "#/$defs/time_range",
+			"description": "Amount of time in seconds for the timer. Specified as a pair of numbers (min and max). Incompatible with random_time_choices."
 		},
 		"time_down_event": {
-			"$ref": "../../legacy/general.json#/$defs/trigger"
+			"$ref": "../../legacy/general.json#/$defs/trigger",
+			"description": "Event to fire when the time on the timer runs out."
 		}
 	},
 	"additionalProperties": false,

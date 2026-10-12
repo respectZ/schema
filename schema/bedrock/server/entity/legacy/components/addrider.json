@@ -15,7 +15,8 @@
 					"description": "The spawn event that will be used when the riding entity is created."
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": false,
+			"description": "List of riders to be added to the entity. Must have no more riders than \"minecraft:rideable\" has \"seat_count\"."
 		},
 		{
 			"type": "null"

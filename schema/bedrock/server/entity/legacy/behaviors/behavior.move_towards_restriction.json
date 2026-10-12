@@ -14,7 +14,7 @@
 			"minimum": -3.4028234663852886e38,
 			"maximum": 3.4028234663852886e38,
 			"default": 1,
-			"description": ""
+			"description": "This multiplier modifies the entity's speed when moving towards its restriction."
 		}
 	},
 	"additionalProperties": false,

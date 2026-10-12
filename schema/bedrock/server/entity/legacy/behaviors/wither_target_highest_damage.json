@@ -24,12 +24,12 @@
 					}
 				}
 			],
-			"description": ""
+			"description": "List of entity types the wither takes into account to find who dealt the most damage to it"
 		},
 		"priority": {
 			"type": "integer",
 			"description": ""
 		}
 	},
-	"description": ""
+	"description": "Allows the wither to focus its attacks on whichever mob has dealt the most damage to it."
 }

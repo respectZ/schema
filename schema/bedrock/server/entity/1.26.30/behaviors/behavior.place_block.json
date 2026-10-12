@@ -59,17 +59,18 @@
 				"additionalProperties": false,
 				"properties": {
 					"block": {
-						"$ref": "../../../../../vanilla/server/block_descriptor.json"
+						"$ref": "../../../../../vanilla/server/block_descriptor.json",
+						"description": "Block descriptor for this entry."
 					},
 					"filter": {
 						"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-						"description": ""
+						"description": "Filter for if this entry should be randomly selected from. Self, Target, and Block are set."
 					},
 					"weight": {
 						"type": "integer",
 						"minimum": -2147483648,
 						"maximum": 2147483647,
-						"description": ""
+						"description": "Weight for this entry."
 					}
 				},
 				"description": "Weighted block descriptors for which blocks should be randomly placed, if empty the entity will try to place its carried block from placeable_carried_blocks."

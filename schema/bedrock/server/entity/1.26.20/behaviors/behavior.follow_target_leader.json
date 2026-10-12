@@ -34,7 +34,7 @@
 		},
 		"speed_multiplier": {
 			"type": "number",
-			"description": ""
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
 		},
 		"within_radius": {
 			"type": "number",

@@ -5,11 +5,11 @@
 	"properties": {
 		"angle_of_view_horizontal": {
 			"type": "integer",
-			"description": ""
+			"description": "The angle in degrees that the mob can see rotated on the Y-axis (left-right)."
 		},
 		"angle_of_view_vertical": {
 			"type": "integer",
-			"description": ""
+			"description": "The angle in degrees that the mob can see rotated on the X-axis (up-down)."
 		},
 		"control_flags": {
 			"type": "array",
@@ -22,11 +22,11 @@
 		},
 		"filters": {
 			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-			"description": ""
+			"description": "Filter to determine the conditions for this mob to look at the entity"
 		},
 		"look_distance": {
 			"type": "number",
-			"description": ""
+			"description": "The distance in blocks from which the entity will look at the nearest entity."
 		},
 		"max_look_time": {
 			"type": "integer",
@@ -42,8 +42,8 @@
 		},
 		"probability": {
 			"type": "number",
-			"description": ""
+			"description": "The probability of looking at the target. A value of 1.00 is 100%."
 		}
 	},
-	"description": ""
+	"description": "Allows the mob to look at nearby entities."
 }

@@ -29,8 +29,7 @@
 				},
 				"feedItems": {
 					"$ref": "#/anyOf/0/properties/feed_items",
-					"doNotSuggest": true,
-					"description": ""
+					"doNotSuggest": true
 				},
 				"feed_items": {
 					"type": "array",
@@ -46,8 +45,7 @@
 				},
 				"maxTemper": {
 					"$ref": "#/anyOf/0/properties/max_temper",
-					"doNotSuggest": true,
-					"description": ""
+					"doNotSuggest": true
 				},
 				"max_temper": {
 					"type": "integer",
@@ -95,8 +93,7 @@
 						},
 						"temperMod": {
 							"$ref": "#/$defs/feed_item/anyOf/0/properties/temper_mod",
-							"doNotSuggest": true,
-							"description": ""
+							"doNotSuggest": true
 						},
 						"temper_mod": {
 							"type": "integer",
@@ -120,7 +117,8 @@
 					"type": "object",
 					"properties": {
 						"item": {
-							"$ref": "../../../../../vanilla/server/item_descriptor.json"
+							"$ref": "../../../../../vanilla/server/item_descriptor.json",
+							"description": "Name of the item this entity dislikes and will cause it to get angry if used while untamed."
 						}
 					},
 					"additionalProperties": false

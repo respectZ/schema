@@ -33,7 +33,7 @@
 			"type": "integer",
 			"minimum": -2147483648,
 			"maximum": 2147483647,
-			"description": ""
+			"description": "Time in seconds the mob cannot pickup items after being attacked"
 		},
 		"excluded_items": {
 			"type": "array",
@@ -68,7 +68,7 @@
 		},
 		"pickup_same_items_as_in_hand": {
 			"type": "boolean",
-			"description": ""
+			"description": "If true, the mob will only pick up items that match what's in their hand"
 		},
 		"priority": {
 			"type": "integer",
@@ -80,7 +80,7 @@
 			"type": "integer",
 			"minimum": -2147483648,
 			"maximum": 2147483647,
-			"description": ""
+			"description": "Height in blocks the mob will search for items"
 		},
 		"speed_multiplier": {
 			"type": "number",

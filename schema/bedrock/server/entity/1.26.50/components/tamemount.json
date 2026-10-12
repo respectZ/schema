@@ -15,7 +15,7 @@
 				"$ref": "#/$defs/reject_item",
 				"description": ""
 			},
-			"description": ""
+			"description": "The list of items that, if carried while interacting with the entity, will anger it."
 		},
 		"feed_items": {
 			"type": "array",
@@ -78,7 +78,7 @@
 			"properties": {
 				"item": {
 					"$ref": "../../../../../vanilla/server/item_descriptor.json#/$defs/latest",
-					"description": ""
+					"description": "Name of the item this entity dislikes and will cause it to get angry if used while untamed."
 				}
 			},
 			"additionalProperties": false,

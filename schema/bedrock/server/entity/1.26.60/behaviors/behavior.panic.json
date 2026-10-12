@@ -38,7 +38,7 @@
 		},
 		"panic_sound": {
 			"$ref": "../../../../../vanilla/server/level_sound.json",
-			"description": ""
+			"description": "Sound to play while the mob is panicking."
 		},
 		"prefer_water": {
 			"type": "boolean",
@@ -67,7 +67,7 @@
 					"description": ""
 				}
 			},
-			"description": ""
+			"description": "Range of random ticks to wait between playing the panic sound."
 		},
 		"speed_multiplier": {
 			"type": "number",

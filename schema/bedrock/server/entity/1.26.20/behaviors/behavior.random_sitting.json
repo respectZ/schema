@@ -25,7 +25,7 @@
 			"type": "number",
 			"minimum": -3.4028234663852886e38,
 			"maximum": 3.4028234663852886e38,
-			"description": ""
+			"description": "Time in seconds the mob has to wait before using the goal again"
 		},
 		"min_sit_time": {
 			"type": "number",

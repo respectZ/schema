@@ -42,11 +42,11 @@
 		},
 		"on_tempt_end": {
 			"$ref": "../../legacy/general.json#/$defs/trigger",
-			"description": ""
+			"description": "Event to trigger when this mob stops being tempted."
 		},
 		"on_tempt_start": {
 			"$ref": "../../legacy/general.json#/$defs/trigger",
-			"description": ""
+			"description": "Event to trigger when this mob starts being tempted."
 		},
 		"priority": {
 			"type": "integer",

@@ -56,7 +56,7 @@
 		},
 		"search_height": {
 			"type": "integer",
-			"description": ""
+			"description": "Height in blocks the mob will look for crops to eat"
 		},
 		"search_range": {
 			"type": "integer",

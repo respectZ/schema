@@ -89,7 +89,7 @@
 						}
 					],
 					"default": [0, 0, 0],
-					"description": ""
+					"description": "Entity will teleport to a random position within the area defined by this cube"
 				},
 				"random_teleports": {
 					"type": "boolean",
@@ -116,7 +116,8 @@
 					"description": "If true, the entity will attempt to teleport away from projectiles about to hit it"
 				}
 			},
-			"additionalProperties": false
+			"additionalProperties": false,
+			"description": "Defines an entity's teleporting behavior."
 		}
 	},
 	"description": "Defines an entity's teleporting behavior."

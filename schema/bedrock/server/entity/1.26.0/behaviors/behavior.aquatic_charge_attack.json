@@ -7,7 +7,7 @@
 			"type": "number",
 			"minimum": 0,
 			"maximum": 3.4028234663852886e38,
-			"description": ""
+			"description": "Horizontal reach grown around the mob's AABB to register a hit."
 		},
 		"charge_cooldown_time": {
 			"type": "object",
@@ -26,25 +26,25 @@
 					"description": ""
 				}
 			},
-			"description": ""
+			"description": "Range of time in seconds to wait before starting another charge."
 		},
 		"charge_overshoot_distance": {
 			"type": "number",
 			"minimum": 0,
 			"maximum": 3.4028234663852886e38,
-			"description": ""
+			"description": "Distance beyond the target the mob aims during a charge."
 		},
 		"charge_speed": {
 			"type": "number",
 			"minimum": 0.05000000074505806,
 			"maximum": 3.4028234663852886e38,
-			"description": ""
+			"description": "Absolute speed used during the charge attack."
 		},
 		"charge_speed_multiplier": {
 			"type": "number",
 			"minimum": -3.4028234663852886e38,
 			"maximum": 3.4028234663852886e38,
-			"description": ""
+			"description": "Speed multiplier applied during the charge."
 		},
 		"control_flags": {
 			"type": "array",
@@ -68,13 +68,13 @@
 			"type": "number",
 			"minimum": 0,
 			"maximum": 3.4028234663852886e38,
-			"description": ""
+			"description": "Knockback force applied to the target on hit."
 		},
 		"max_charge_distance": {
 			"type": "number",
 			"minimum": 0,
 			"maximum": 3.4028234663852886e38,
-			"description": ""
+			"description": "Maximum distance at which the mob attempts a charge."
 		},
 		"priority": {
 			"type": "integer",
@@ -83,5 +83,5 @@
 			"description": ""
 		}
 	},
-	"description": ""
+	"description": "Enables an aquatic mob to dash at its target with knockback; includes overshoot and cooldown settings."
 }

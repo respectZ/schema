@@ -18,7 +18,7 @@
 				"description": ""
 			},
 			"default": [],
-			"description": ""
+			"description": "A list of blocks with their associated cost"
 		}
 	},
 	"additionalProperties": false,
@@ -33,13 +33,13 @@
 						"description": ""
 					},
 					"default": [],
-					"description": ""
+					"description": "List of preferred blocks"
 				},
 				"cost": {
 					"type": "number",
 					"minimum": -3.4028234663852886e38,
 					"maximum": 3.4028234663852886e38,
-					"description": ""
+					"description": "Cost for preferred blocks"
 				}
 			},
 			"required": ["cost"],
@@ -47,5 +47,5 @@
 			"description": ""
 		}
 	},
-	"description": ""
+	"description": "Specifies costing information for mobs that prefer to walk on preferred paths."
 }

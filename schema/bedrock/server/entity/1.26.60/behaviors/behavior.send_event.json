@@ -37,15 +37,15 @@
 						"type": "number",
 						"minimum": -3.4028234663852886e38,
 						"maximum": 3.4028234663852886e38,
-						"description": ""
+						"description": "Time in seconds the mob has to wait before using this spell again"
 					},
 					"do_casting": {
 						"type": "boolean",
-						"description": ""
+						"description": "If true, the mob will show a casting animation while sending the event"
 					},
 					"filters": {
 						"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-						"description": ""
+						"description": "Conditions that the target must meet to be eligible for receiving the event"
 					},
 					"look_at_target": {
 						"type": "boolean",
@@ -55,13 +55,13 @@
 						"type": "number",
 						"minimum": -3.4028234663852886e38,
 						"maximum": 3.4028234663852886e38,
-						"description": ""
+						"description": "Maximum distance in blocks the target can be for this spell to activate"
 					},
 					"min_activation_range": {
 						"type": "number",
 						"minimum": -3.4028234663852886e38,
 						"maximum": 3.4028234663852886e38,
-						"description": ""
+						"description": "Minimum distance in blocks the target must be for this spell to activate"
 					},
 					"particle_color": {
 						"anyOf": [
@@ -83,7 +83,7 @@
 								"description": ""
 							}
 						],
-						"description": ""
+						"description": "The color of the particles spawned while casting this spell"
 					},
 					"sequence": {
 						"type": "array",
@@ -111,18 +111,18 @@
 					},
 					"start_sound_event": {
 						"$ref": "../../../../../vanilla/server/level_sound.json",
-						"description": ""
+						"description": "The sound event to play when this spell starts"
 					},
 					"weight": {
 						"type": "number",
 						"minimum": -3.4028234663852886e38,
 						"maximum": 3.4028234663852886e38,
-						"description": ""
+						"description": "Relative weight of this spell choice when randomly selected from valid choices"
 					}
 				},
 				"description": ""
 			},
-			"description": ""
+			"description": "List of spell options to select from. One is randomly chosen each time the goal activates."
 		},
 		"priority": {
 			"type": "integer",

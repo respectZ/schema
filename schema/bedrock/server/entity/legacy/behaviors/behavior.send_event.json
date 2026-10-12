@@ -19,19 +19,19 @@
 				"properties": {
 					"min_activation_range": {
 						"type": "number",
-						"description": ""
+						"description": "Minimum distance in blocks the target must be for this spell to activate"
 					},
 					"max_activation_range": {
 						"type": "number",
-						"description": ""
+						"description": "Maximum distance in blocks the target can be for this spell to activate"
 					},
 					"cooldown_time": {
 						"type": "number",
-						"description": ""
+						"description": "Time in seconds the mob has to wait before using this spell again"
 					},
 					"weight": {
 						"type": "number",
-						"description": ""
+						"description": "Relative weight of this spell choice when randomly selected from valid choices"
 					},
 					"cast_duration": {
 						"type": "number",
@@ -43,7 +43,7 @@
 					},
 					"do_casting": {
 						"type": "boolean",
-						"description": ""
+						"description": "If true, the mob will show a casting animation while sending the event"
 					},
 					"particle_color": {
 						"anyOf": [
@@ -59,15 +59,15 @@
 								"minItems": 3
 							}
 						],
-						"description": ""
+						"description": "The color of the particles spawned while casting this spell"
 					},
 					"start_sound_event": {
 						"$ref": "../../../../../vanilla/server/level_sound.json",
-						"description": ""
+						"description": "The sound event to play when this spell starts"
 					},
 					"filters": {
 						"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-						"description": ""
+						"description": "Conditions that the target must meet to be eligible for receiving the event"
 					},
 					"sequence": {
 						"type": "array",
@@ -95,7 +95,7 @@
 				"additionalProperties": false,
 				"description": ""
 			},
-			"description": ""
+			"description": "List of spell options to select from. One is randomly chosen each time the goal activates."
 		},
 		"priority": {
 			"type": "integer",

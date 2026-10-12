@@ -66,8 +66,7 @@
 					"description": "The minimum number of entities that must pass the filter conditions for the event to send."
 				},
 				"range": {
-					"$ref": "#/$defs/range",
-					"description": "The maximum horizontal and vertical distance another entity can be from this and have the filters checked against it."
+					"$ref": "#/$defs/range"
 				},
 				"require_all": {
 					"type": "boolean",

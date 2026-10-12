@@ -33,13 +33,13 @@
 					}
 				}
 			],
-			"description": ""
+			"description": "List of entity types that can trigger this mob to begin targeting"
 		},
 		"percent_chance": {
 			"type": "number",
 			"minimum": -3.4028234663852886e38,
 			"maximum": 3.4028234663852886e38,
-			"description": ""
+			"description": "The probability that the mob will target another mob when pushed. A value of 100 is 100%"
 		},
 		"priority": {
 			"type": "integer",
@@ -48,5 +48,5 @@
 			"description": ""
 		}
 	},
-	"description": ""
+	"description": "Allows the mob to target another mob when it is pushed by that mob."
 }

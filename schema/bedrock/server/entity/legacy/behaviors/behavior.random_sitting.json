@@ -14,7 +14,7 @@
 		},
 		"cooldown": {
 			"type": "number",
-			"description": ""
+			"description": "Time in seconds the mob has to wait before using the goal again"
 		},
 		"min_sit_time": {
 			"type": "number",

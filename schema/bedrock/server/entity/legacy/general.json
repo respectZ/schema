@@ -184,13 +184,13 @@
 					"type": "number",
 					"minimum": -3.4028234663852886e38,
 					"maximum": 3.4028234663852886e38,
-					"description": ""
+					"description": "Maximum height this mob can be away to be a valid choice"
 				},
 				"max_flee": {
 					"type": "number",
 					"minimum": -3.4028234663852886e38,
 					"maximum": 3.4028234663852886e38,
-					"description": ""
+					"description": "Maximum distance this mob can be from the target to stop fleeing"
 				},
 				"walk_speed_multiplier": {
 					"type": "number",
@@ -224,7 +224,7 @@
 				},
 				"check_if_outnumbered": {
 					"type": "boolean",
-					"description": ""
+					"description": "If true, the mob will check if its outnumbered"
 				},
 				"reevaluate_description": {
 					"type": "boolean",

@@ -114,7 +114,8 @@
 					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/use_item"
 				},
 				"vibration": {
-					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/vibration"
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/vibration",
+					"description": "Vibration to emit when the interaction occurs."
 				}
 			},
 			"additionalProperties": false

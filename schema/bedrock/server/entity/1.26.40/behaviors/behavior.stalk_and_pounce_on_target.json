@@ -31,7 +31,7 @@
 			"type": "number",
 			"minimum": -3.4028234663852886e38,
 			"maximum": 3.4028234663852886e38,
-			"description": ""
+			"description": "The distance in blocks the mob jumps in the direction of its target"
 		},
 		"leap_height": {
 			"type": "number",
@@ -75,7 +75,7 @@
 		},
 		"stuck_blocks": {
 			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-			"description": ""
+			"description": "Blocks that the mob can get stuck in after a pounce."
 		},
 		"stuck_time": {
 			"type": "number",

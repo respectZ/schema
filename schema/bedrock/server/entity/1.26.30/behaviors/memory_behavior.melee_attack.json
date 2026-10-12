@@ -158,5 +158,5 @@
 		}
 	},
 	"required": ["target_memory"],
-	"description": ""
+	"description": "Allows the mob to melee attack a target entity once in close enough range."
 }

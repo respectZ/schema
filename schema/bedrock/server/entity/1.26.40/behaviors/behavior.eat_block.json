@@ -28,10 +28,12 @@
 				"additionalProperties": false,
 				"properties": {
 					"eat_block": {
-						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+						"description": "The block the entity should eat."
 					},
 					"replace_block": {
-						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+						"description": "The block that should replace the eaten block."
 					}
 				}
 			},

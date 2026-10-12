@@ -77,7 +77,7 @@
 			"minimum": -2147483648,
 			"maximum": 2147483647,
 			"exclusiveMinimum": 0,
-			"description": ""
+			"description": "Height in blocks the mob will look for crops to eat"
 		},
 		"search_range": {
 			"type": "integer",

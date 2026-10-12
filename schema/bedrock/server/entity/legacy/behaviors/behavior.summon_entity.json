@@ -63,7 +63,7 @@
 					},
 					"filters": {
 						"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-						"description": ""
+						"description": "Filters allow data objects to specify test criteria which allows their use. Filters can be defined by a single object of type (Filter Test), an array of tests, collection groups, or a combination of these objects."
 					},
 					"start_sound_event": {
 						"$ref": "../../../../../vanilla/server/level_sound.json",

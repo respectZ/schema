@@ -109,8 +109,7 @@
 						},
 						"spring_type": {
 							"$ref": "#/$defs/spring_type",
-							"default": "bouncy",
-							"description": "Defines the type of spring-like force that pulls the entity towards its leash holder:\n- \"bouncy\": Simulates a highly elastic spring that never reaches an equilibrium if the leashed entity is suspended mid-air.\n- \"dampened\": Simulates a dampened spring attached to the front of the leashed entity's collision. It reaches an equilibrium if the entity is suspended mid-air and aligns with the movement direction.\n- \"quad_dampened\": Simulates four dampened springs connected to the center of each side of the entities' collisions. It reaches an equilibrium if the entity is suspended mid-air and gradually aligns with the leash holder over time."
+							"default": "bouncy"
 						}
 					},
 					"additionalProperties": false

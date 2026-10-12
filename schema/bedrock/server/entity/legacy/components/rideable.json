@@ -153,7 +153,7 @@
 					"properties": {
 						"camera_relax_distance_smoothing": {
 							"$ref": "#/$defs/float",
-							"description": ""
+							"description": "When the camera relaxes to the full distance after being pushed by an obstacle, this value can override the default movement. This value describes the stiffness of the spring that pushes the camera back out. Negative values are ignored."
 						},
 						"lock_rider_rotation": {
 							"$ref": "#/$defs/float",
@@ -174,8 +174,7 @@
 						},
 						"position": {
 							"$ref": "#/$defs/position",
-							"default": [0, 0, 0],
-							"description": "Position of this seat relative to this entity's position."
+							"default": [0, 0, 0]
 						},
 						"rotate_rider_by": {
 							"anyOf": [
@@ -193,7 +192,7 @@
 						},
 						"third_person_camera_radius": {
 							"$ref": "#/$defs/float",
-							"description": ""
+							"description": "A different radius that the third_person and third_person_front cameras should use for the player is in this seat. Negative values are ignored."
 						}
 					},
 					"additionalProperties": false

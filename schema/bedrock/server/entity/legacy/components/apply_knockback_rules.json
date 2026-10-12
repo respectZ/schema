@@ -8,42 +8,41 @@
 				"check_if_target_is_immersed_in_water": {
 					"type": "boolean",
 					"default": false,
-					"description": ""
+					"description": "Whether or not the target should be fully immersed in water for the knockback rules to apply."
 				},
 				"filter": {
 					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-					"description": ""
+					"description": "Filter for the entity type that will be affected by these knockback rules."
 				},
 				"horizontal_power": {
 					"type": "number",
 					"default": 1,
-					"description": ""
+					"description": "Power with which a target should be knocked backwards."
 				},
 				"vertical_power": {
 					"type": "number",
 					"default": 0.4,
-					"description": ""
+					"description": "Power with which a target should be knocked upwards."
 				},
 				"vertical_velocity_cap": {
 					"type": "number",
 					"default": 0.4,
-					"description": ""
+					"description": "Maximum allowed Y velocity after target's knockback rules have been evaluated."
 				}
 			},
 			"additionalProperties": false,
-			"description": ""
+			"description": "Intance of rules definition."
 		}
 	},
 	"properties": {
 		"presets": {
 			"type": "array",
 			"items": {
-				"$ref": "#/$defs/preset",
-				"description": ""
+				"$ref": "#/$defs/preset"
 			},
-			"description": ""
+			"description": "Array of rules instances defining how knockback should be applied to the entity."
 		}
 	},
 	"additionalProperties": false,
-	"description": ""
+	"description": "Defines how an entity applies knockback."
 }

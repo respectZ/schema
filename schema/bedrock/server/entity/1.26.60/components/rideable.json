@@ -70,8 +70,7 @@
 		"seats": {
 			"type": "array",
 			"items": {
-				"$ref": "#/$defs/seat",
-				"description": "The list of positions and number of riders for each position for entities riding this entity."
+				"$ref": "#/$defs/seat"
 			},
 			"default": [],
 			"description": "The list of positions and number of riders for each position for entities riding this entity."
@@ -86,7 +85,7 @@
 					"type": "number",
 					"minimum": 1,
 					"maximum": 32,
-					"description": ""
+					"description": "When the camera relaxes to the full distance after being pushed by an obstacle, this value can override the default movement. This value describes the stiffness of the spring that pushes the camera back out. Negative values are ignored."
 				},
 				"lock_rider_rotation": {
 					"type": "number",
@@ -137,7 +136,7 @@
 					"type": "number",
 					"minimum": 1,
 					"maximum": 64,
-					"description": ""
+					"description": "A different radius that the third_person and third_person_front cameras should use for the player is in this seat. Negative values are ignored."
 				}
 			},
 			"additionalProperties": false,

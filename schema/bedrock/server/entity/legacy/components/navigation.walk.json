@@ -119,7 +119,8 @@
 					"default": false,
 					"description": ""
 				}
-			}
+			},
+			"description": ""
 		}
 	},
 	"$ref": "#/$defs/definition",

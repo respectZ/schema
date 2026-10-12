@@ -7,13 +7,13 @@
 			"type": "integer",
 			"minimum": 0,
 			"maximum": 360.0,
-			"description": ""
+			"description": "The angle in degrees that the mob can see rotated on the Y-axis (left-right)."
 		},
 		"angle_of_view_vertical": {
 			"type": "integer",
 			"minimum": 0,
 			"maximum": 360.0,
-			"description": ""
+			"description": "The angle in degrees that the mob can see rotated on the X-axis (up-down)."
 		},
 		"control_flags": {
 			"type": "array",
@@ -37,7 +37,7 @@
 			"type": "number",
 			"minimum": 0,
 			"maximum": 3.4028234663852886e38,
-			"description": ""
+			"description": "The distance in blocks from which the entity will look at the nearest entity."
 		},
 		"look_time": {
 			"type": "object",
@@ -56,7 +56,7 @@
 					"description": ""
 				}
 			},
-			"description": ""
+			"description": "Time range to look at the nearest entity."
 		},
 		"priority": {
 			"type": "integer",
@@ -68,8 +68,8 @@
 			"type": "number",
 			"minimum": 0,
 			"maximum": 1.0,
-			"description": ""
+			"description": "The probability of looking at the target. A value of 1.00 is 100%."
 		}
 	},
-	"description": ""
+	"description": "Allows the mob to look at the player they are trading with."
 }

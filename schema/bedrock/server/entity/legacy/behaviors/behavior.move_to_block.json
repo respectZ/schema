@@ -56,7 +56,7 @@
 		},
 		"target_block_filters": {
 			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-			"description": ""
+			"description": "Conditions that need to be met for a block to be a valid target."
 		},
 		"target_blocks": {
 			"type": "array",

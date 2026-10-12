@@ -51,7 +51,7 @@
 			"type": "number",
 			"minimum": -3.4028234663852886e38,
 			"maximum": 3.4028234663852886e38,
-			"description": ""
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
 		},
 		"within_radius": {
 			"type": "number",

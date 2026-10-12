@@ -52,17 +52,17 @@
 				"properties": {
 					"block": {
 						"$ref": "../../../../../vanilla/server/block_descriptor.json",
-						"description": ""
+						"description": "Block descriptor for this entry."
 					},
 					"filter": {
 						"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
-						"description": ""
+						"description": "Filter for if this entry should be randomly selected from. Self, Target, and Block are set."
 					},
 					"weight": {
 						"type": "integer",
 						"minimum": -2147483648,
 						"maximum": 2147483647,
-						"description": ""
+						"description": "Weight for this entry."
 					}
 				},
 				"additionalProperties": false
