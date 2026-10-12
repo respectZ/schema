@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"days_until_insomnia": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 3,
+			"description": "Number of days the mob has to stay up until the insomnia effect begins."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Adds a timer since last rested to see if phantoms should spawn."
+}

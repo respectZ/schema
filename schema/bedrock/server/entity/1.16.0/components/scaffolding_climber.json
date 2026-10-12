@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"type": "object",
-	"title": "Scaffolding Climber",
-	"description": "Allows the player to detect and manuever on the scaffolding block.",
-	"additionalProperties": false,
-	"properties": {}
-}

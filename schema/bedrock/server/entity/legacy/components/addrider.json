@@ -1,0 +1,26 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"anyOf": [
+		{
+			"type": "object",
+			"properties": {
+				"entity_type": {
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+					"default": "",
+					"description": "The entity type that will be riding this entity."
+				},
+				"spawn_event": {
+					"type": "string",
+					"default": "",
+					"description": "The spawn event that will be used when the riding entity is created."
+				}
+			},
+			"additionalProperties": false,
+			"description": "List of riders to be added to the entity. Must have no more riders than \"minecraft:rideable\" has \"seat_count\"."
+		},
+		{
+			"type": "null"
+		}
+	],
+	"description": "Adds a rider to the entity. Requires minecraft:rideable."
+}

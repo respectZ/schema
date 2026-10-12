@@ -2,517 +2,660 @@
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"type": "object",
 	"title": "Entity Components",
-	"description": "Entity component map. Each property is a known component name and its value is the component's configuration.",
 	"properties": {
 		"minecraft:absorption": {
-			"$ref": "../../1.16.0/components/absorption.json"
+			"$ref": "../../legacy/components/absorption.json"
 		},
 		"minecraft:addrider": {
-			"$ref": "../../1.16.0/components/addrider.json"
+			"$ref": "../../legacy/components/addrider.json"
 		},
 		"minecraft:admire_item": {
-			"$ref": "../../1.16.0/components/admire_item.json"
+			"$ref": "../../legacy/components/admire_item.json"
 		},
 		"minecraft:ageable": {
-			"$ref": "../../1.16.0/components/ageable.json"
+			"$ref": "../../legacy/components/ageable.json"
+		},
+		"minecraft:air_drag_modifier": {
+			"$ref": "../../legacy/components/air_drag_modifier.json"
 		},
 		"minecraft:ambient_sound_interval": {
-			"$ref": "../../1.16.0/components/ambient_sound_interval.json"
+			"$ref": "../../legacy/components/ambient_sound_interval.json"
 		},
 		"minecraft:anger_level": {
-			"$ref": "../../1.16.0/components/anger_level.json"
+			"$ref": "../../legacy/components/anger_level.json"
 		},
 		"minecraft:angry": {
-			"$ref": "../../1.16.0/components/angry.json"
+			"$ref": "../../legacy/components/angry.json"
 		},
 		"minecraft:annotation.break_door": {
-			"$ref": "../../1.16.0/components/annotation.break_door.json"
+			"$ref": "../../legacy/components/annotation.break_door.json"
 		},
 		"minecraft:annotation.open_door": {
-			"$ref": "../../1.16.0/components/annotation.open_door.json"
+			"$ref": "../../legacy/components/annotation.open_door.json"
+		},
+		"minecraft:apply_knockback_rules": {
+			"$ref": "../../legacy/components/apply_knockback_rules.json"
 		},
 		"minecraft:area_attack": {
-			"$ref": "../../1.16.0/components/area_attack.json"
+			"$ref": "../../legacy/components/area_attack.json"
 		},
 		"minecraft:attack": {
-			"$ref": "../../1.16.0/components/attack.json"
+			"$ref": "../../legacy/components/attack.json"
 		},
 		"minecraft:attack_cooldown": {
-			"$ref": "../../1.16.0/components/attack_cooldown.json"
+			"$ref": "../../legacy/components/attack_cooldown.json"
 		},
 		"minecraft:attack_damage": {
-			"$ref": "../../1.16.0/components/attack_damage.json"
+			"$ref": "../../legacy/components/attack_damage.json"
 		},
 		"minecraft:balloon": {
-			"$ref": "../../1.16.0/components/balloon.json"
+			"$ref": "../../legacy/components/balloon.json"
 		},
 		"minecraft:balloonable": {
-			"$ref": "../../1.16.0/components/balloonable.json"
+			"$ref": "../../legacy/components/balloonable.json"
 		},
 		"minecraft:barter": {
-			"$ref": "../../1.16.0/components/barter.json"
+			"$ref": "../../legacy/components/barter.json"
 		},
 		"minecraft:block_climber": {
-			"$ref": "../../1.16.0/components/block_climber.json"
+			"$ref": "../../legacy/components/block_climber.json"
 		},
 		"minecraft:block_sensor": {
-			"$ref": "../../1.16.0/components/block_sensor.json"
+			"$ref": "../../legacy/components/block_sensor.json"
+		},
+		"minecraft:body_rotation_always_follows_head": {
+			"$ref": "../../legacy/components/body_rotation_always_follows_head.json"
+		},
+		"minecraft:body_rotation_axis_aligned": {
+			"$ref": "../../legacy/components/body_rotation_axis_aligned.json"
+		},
+		"minecraft:body_rotation_blocked": {
+			"$ref": "../../legacy/components/body_rotation_blocked.json"
 		},
 		"minecraft:boostable": {
-			"$ref": "../../1.16.0/components/boostable.json"
+			"$ref": "../../legacy/components/boostable.json"
 		},
 		"minecraft:boss": {
-			"$ref": "../../1.16.0/components/boss.json"
+			"$ref": "../../legacy/components/boss.json"
+		},
+		"minecraft:bounciness": {
+			"$ref": "../../legacy/components/bounciness.json"
 		},
 		"minecraft:break_blocks": {
-			"$ref": "../../1.16.0/components/break_blocks.json"
+			"$ref": "../../legacy/components/break_blocks.json"
 		},
 		"minecraft:breathable": {
-			"$ref": "../../1.16.0/components/breathable.json"
+			"$ref": "../../legacy/components/breathable.json"
 		},
 		"minecraft:breedable": {
-			"$ref": "../../1.16.0/components/breedable.json"
+			"$ref": "../../legacy/components/breedable.json"
 		},
 		"minecraft:bribeable": {
-			"$ref": "../../1.16.0/components/bribeable.json"
+			"$ref": "../../legacy/components/bribeable.json"
 		},
 		"minecraft:bucketable": {
-			"$ref": "../../1.16.0/components/bucketable.json"
+			"$ref": "../../legacy/components/bucketable.json"
+		},
+		"minecraft:buoyant": {
+			"$ref": "../../legacy/components/buoyant.json"
 		},
 		"minecraft:burns_in_daylight": {
-			"$ref": "../../1.16.0/components/burns_in_daylight.json"
+			"$ref": "../../legacy/components/burns_in_daylight.json"
 		},
 		"minecraft:can_climb": {
-			"$ref": "../../1.16.0/components/can_climb.json"
+			"$ref": "../../legacy/components/can_climb.json"
 		},
 		"minecraft:can_fly": {
-			"$ref": "../../1.16.0/components/can_fly.json"
+			"$ref": "../../legacy/components/can_fly.json"
+		},
+		"minecraft:can_join_raid": {
+			"$ref": "../../legacy/components/can_join_raid.json"
 		},
 		"minecraft:can_power_jump": {
-			"$ref": "./can_power_jump.json"
+			"$ref": "../../legacy/components/can_power_jump.json"
+		},
+		"minecraft:cannot_be_attacked": {
+			"$ref": "../../legacy/components/cannot_be_attacked.json"
 		},
 		"minecraft:celebrate_hunt": {
-			"$ref": "../../1.16.0/components/celebrate_hunt.json"
+			"$ref": "../../legacy/components/celebrate_hunt.json"
 		},
 		"minecraft:collision_box": {
-			"$ref": "../../1.16.0/components/collision_box.json"
+			"$ref": "../../legacy/components/collision_box.json"
 		},
 		"minecraft:color": {
-			"$ref": "../../1.16.0/components/color.json"
+			"$ref": "../../legacy/components/color.json"
 		},
 		"minecraft:color2": {
-			"$ref": "../../1.16.0/components/color2.json"
+			"$ref": "../../legacy/components/color2.json"
 		},
 		"minecraft:combat_regeneration": {
-			"$ref": "../../1.16.0/components/combat_regeneration.json"
+			"$ref": "../../legacy/components/combat_regeneration.json"
 		},
 		"minecraft:conditional_bandwidth_optimization": {
-			"$ref": "../../1.16.100/components/conditional_bandwidth_optimization.json"
+			"$ref": "../../legacy/components/conditional_bandwidth_optimization.json"
 		},
 		"minecraft:custom_hit_test": {
-			"$ref": "../../1.16.0/components/custom_hit_test.json"
+			"$ref": "../../legacy/components/custom_hit_test.json"
 		},
 		"minecraft:damage_over_time": {
-			"$ref": "../../1.16.0/components/damage_over_time.json"
+			"$ref": "../../legacy/components/damage_over_time.json"
 		},
 		"minecraft:damage_sensor": {
-			"$ref": "../../1.16.0/components/damage_sensor.json"
+			"$ref": "../../1.13.0/components/damage_sensor.json"
+		},
+		"minecraft:dash": {
+			"$ref": "../../legacy/components/dash.json"
+		},
+		"minecraft:dash_action": {
+			"$ref": "../../legacy/components/dash_action.json"
 		},
 		"minecraft:default_look_angle": {
-			"$ref": "../../1.16.0/components/default_look_angle.json"
+			"$ref": "../../legacy/components/default_look_angle.json"
 		},
 		"minecraft:despawn": {
-			"$ref": "../../1.17.0/components/despawn.json"
+			"$ref": "../../1.16.0/components/despawn.json"
+		},
+		"minecraft:dimension_bound": {
+			"$ref": "../../legacy/components/dimension_bound.json"
 		},
 		"minecraft:drying_out_timer": {
-			"$ref": "../../1.16.0/components/drying_out_timer.json"
+			"$ref": "../../legacy/components/drying_out_timer.json"
 		},
 		"minecraft:dweller": {
-			"$ref": "../../1.16.0/components/dweller.json"
+			"$ref": "../../legacy/components/dweller.json"
 		},
 		"minecraft:economy_trade_table": {
-			"$ref": "../../1.16.0/components/economy_trade_table.json"
+			"$ref": "../../1.16.100/components/economy_trade_table.json"
 		},
 		"minecraft:entity_armor_equipment_slot_mapping": {
-			"$ref": "../../1.16.0/components/entity_armor_equipment_slot_mapping.json"
+			"$ref": "../../legacy/components/entity_armor_equipment_slot_mapping.json"
 		},
 		"minecraft:entity_sensor": {
-			"$ref": "../../1.16.0/components/entity_sensor.json"
+			"$ref": "../../legacy/components/entity_sensor.json"
 		},
 		"minecraft:environment_sensor": {
-			"$ref": "../../1.16.0/components/environment_sensor.json"
+			"$ref": "../../1.13.0/components/environment_sensor.json"
+		},
+		"minecraft:equip_item": {
+			"$ref": "../../legacy/components/equip_item.json"
 		},
 		"minecraft:equipment": {
-			"$ref": "../../1.16.0/components/equipment.json"
+			"$ref": "../../legacy/components/equipment.json"
 		},
 		"minecraft:equippable": {
-			"$ref": "../../1.16.0/components/equippable.json"
+			"$ref": "../../legacy/components/equippable.json"
+		},
+		"minecraft:exhaustion_values": {
+			"$ref": "../../legacy/components/exhaustion_values.json"
 		},
 		"minecraft:experience_reward": {
-			"$ref": "../../1.16.0/components/experience_reward.json"
+			"$ref": "../../legacy/components/experience_reward.json"
 		},
 		"minecraft:explode": {
-			"$ref": "../../1.16.0/components/explode.json"
+			"$ref": "../../legacy/components/explode.json"
 		},
 		"minecraft:fire_immune": {
-			"$ref": "../../1.16.0/components/fire_immune.json"
+			"$ref": "../../legacy/components/fire_immune.json"
 		},
 		"minecraft:floats_in_liquid": {
-			"$ref": "../../1.16.0/components/floats_in_liquid.json"
+			"$ref": "../../legacy/components/floats_in_liquid.json"
 		},
 		"minecraft:flocking": {
-			"$ref": "../../1.16.0/components/flocking.json"
+			"$ref": "../../legacy/components/flocking.json"
 		},
 		"minecraft:flying_speed": {
-			"$ref": "../../1.16.0/components/flying_speed.json"
+			"$ref": "../../legacy/components/flying_speed.json"
 		},
 		"minecraft:follow_range": {
-			"$ref": "./follow_range.json"
+			"$ref": "../../legacy/components/follow_range.json"
+		},
+		"minecraft:free_camera_controlled": {
+			"$ref": "../../legacy/components/free_camera_controlled.json"
 		},
 		"minecraft:friction_modifier": {
-			"$ref": "../../1.16.0/components/friction_modifier.json"
+			"$ref": "../../legacy/components/friction_modifier.json"
+		},
+		"minecraft:game_event_movement_tracking": {
+			"$ref": "../../legacy/components/game_event_movement_tracking.json"
 		},
 		"minecraft:genetics": {
-			"$ref": "../../1.16.0/components/genetics.json"
+			"$ref": "../../legacy/components/genetics.json"
 		},
 		"minecraft:giveable": {
-			"$ref": "../../1.16.0/components/giveable.json"
+			"$ref": "../../1.13.0/components/giveable.json"
 		},
 		"minecraft:ground_offset": {
-			"$ref": "../../1.16.0/components/ground_offset.json"
+			"$ref": "../../legacy/components/ground_offset.json"
 		},
 		"minecraft:group_size": {
-			"$ref": "../../1.16.0/components/group_size.json"
+			"$ref": "../../legacy/components/group_size.json"
 		},
 		"minecraft:grows_crop": {
-			"$ref": "../../1.16.0/components/grows_crop.json"
+			"$ref": "../../legacy/components/grows_crop.json"
 		},
 		"minecraft:healable": {
-			"$ref": "../../1.16.0/components/healable.json"
+			"$ref": "../../legacy/components/healable.json"
 		},
 		"minecraft:health": {
-			"$ref": "../../1.16.0/components/health.json"
+			"$ref": "../../legacy/components/health.json"
 		},
 		"minecraft:heartbeat": {
-			"$ref": "../../1.16.0/components/heartbeat.json"
+			"$ref": "../../legacy/components/heartbeat.json"
 		},
 		"minecraft:hide": {
-			"$ref": "../../1.16.0/components/hide.json"
+			"$ref": "../../legacy/components/hide.json"
+		},
+		"minecraft:home": {
+			"$ref": "../../legacy/components/home.json"
 		},
 		"minecraft:horse.jump_strength": {
-			"$ref": "../../1.16.0/components/horse.jump_strength.json"
+			"$ref": "../../legacy/components/horse.jump_strength.json"
 		},
 		"minecraft:hurt_on_condition": {
-			"$ref": "../../1.16.0/components/hurt_on_condition.json"
+			"$ref": "../../legacy/components/hurt_on_condition.json"
+		},
+		"minecraft:ignore_cannot_be_attacked": {
+			"$ref": "../../legacy/components/ignore_cannot_be_attacked.json"
+		},
+		"minecraft:input_air_controlled": {
+			"$ref": "../../legacy/components/input_air_controlled.json"
 		},
 		"minecraft:input_ground_controlled": {
-			"$ref": "../../1.16.0/components/input_ground_controlled.json"
+			"$ref": "../../legacy/components/input_ground_controlled.json"
 		},
 		"minecraft:inside_block_notifier": {
-			"$ref": "../../1.16.100/components/inside_block_notifier.json"
+			"$ref": "../../legacy/components/inside_block_notifier.json"
 		},
 		"minecraft:insomnia": {
-			"$ref": "../../1.16.0/components/insomnia.json"
+			"$ref": "../../legacy/components/insomnia.json"
 		},
 		"minecraft:instant_despawn": {
-			"$ref": "../../1.16.0/components/instant_despawn.json"
+			"$ref": "../../legacy/components/instant_despawn.json"
 		},
 		"minecraft:interact": {
-			"$ref": "../../1.16.0/components/interact.json"
+			"$ref": "../../1.13.0/components/interact.json"
 		},
 		"minecraft:inventory": {
-			"$ref": "../../1.16.0/components/inventory.json"
+			"$ref": "../../legacy/components/inventory.json"
 		},
 		"minecraft:is_baby": {
-			"$ref": "../../1.16.0/components/is_baby.json"
+			"$ref": "../../legacy/components/is_baby.json"
 		},
 		"minecraft:is_charged": {
-			"$ref": "../../1.16.0/components/is_charged.json"
+			"$ref": "../../legacy/components/is_charged.json"
 		},
 		"minecraft:is_chested": {
-			"$ref": "../../1.16.0/components/is_chested.json"
+			"$ref": "../../legacy/components/is_chested.json"
+		},
+		"minecraft:is_collidable": {
+			"$ref": "../../legacy/components/is_collidable.json"
 		},
 		"minecraft:is_dyeable": {
-			"$ref": "../../1.16.0/components/is_dyeable.json"
+			"$ref": "../../legacy/components/is_dyeable.json"
 		},
 		"minecraft:is_hidden_when_invisible": {
-			"$ref": "../../1.16.0/components/is_hidden_when_invisible.json"
+			"$ref": "../../legacy/components/is_hidden_when_invisible.json"
 		},
 		"minecraft:is_ignited": {
-			"$ref": "../../1.16.0/components/is_ignited.json"
+			"$ref": "../../legacy/components/is_ignited.json"
 		},
 		"minecraft:is_illager_captain": {
-			"$ref": "../../1.16.0/components/is_illager_captain.json"
+			"$ref": "../../legacy/components/is_illager_captain.json"
 		},
 		"minecraft:is_pregnant": {
-			"$ref": "../../1.16.0/components/is_pregnant.json"
+			"$ref": "../../legacy/components/is_pregnant.json"
 		},
 		"minecraft:is_saddled": {
-			"$ref": "../../1.16.0/components/is_saddled.json"
+			"$ref": "../../legacy/components/is_saddled.json"
 		},
 		"minecraft:is_shaking": {
-			"$ref": "../../1.16.0/components/is_shaking.json"
+			"$ref": "../../legacy/components/is_shaking.json"
 		},
 		"minecraft:is_sheared": {
-			"$ref": "../../1.16.0/components/is_sheared.json"
+			"$ref": "../../legacy/components/is_sheared.json"
 		},
 		"minecraft:is_stackable": {
-			"$ref": "../../1.16.0/components/is_stackable.json"
+			"$ref": "../../legacy/components/is_stackable.json"
 		},
 		"minecraft:is_stunned": {
-			"$ref": "../../1.16.0/components/is_stunned.json"
+			"$ref": "../../legacy/components/is_stunned.json"
 		},
 		"minecraft:is_tamed": {
-			"$ref": "../../1.16.0/components/is_tamed.json"
+			"$ref": "../../legacy/components/is_tamed.json"
 		},
 		"minecraft:item_controllable": {
-			"$ref": "../../1.16.0/components/item_controllable.json"
+			"$ref": "../../legacy/components/item_controllable.json"
 		},
 		"minecraft:item_hopper": {
-			"$ref": "../../1.16.0/components/item_hopper.json"
+			"$ref": "../../legacy/components/item_hopper.json"
+		},
+		"minecraft:jump.dynamic": {
+			"$ref": "../../legacy/components/jump.dynamic.json"
 		},
 		"minecraft:jump.static": {
-			"$ref": "../../1.16.0/components/jump.static.json"
+			"$ref": "../../legacy/components/jump.static.json"
 		},
 		"minecraft:knockback_resistance": {
-			"$ref": "../../1.16.0/components/knockback_resistance.json"
+			"$ref": "../../legacy/components/knockback_resistance.json"
 		},
 		"minecraft:lava_movement": {
-			"$ref": "../../1.16.0/components/lava_movement.json"
+			"$ref": "../../legacy/components/lava_movement.json"
 		},
 		"minecraft:leashable": {
-			"$ref": "../../1.16.0/components/leashable.json"
+			"$ref": "../../legacy/components/leashable.json"
+		},
+		"minecraft:leashable_to": {
+			"$ref": "../../legacy/components/leashable_to.json"
+		},
+		"minecraft:lookat": {
+			"$ref": "../../legacy/components/lookat.json"
+		},
+		"minecraft:looked_at": {
+			"$ref": "../../legacy/components/looked_at.json"
 		},
 		"minecraft:loot": {
-			"$ref": "../../1.16.0/components/loot.json"
+			"$ref": "../../legacy/components/loot.json"
 		},
 		"minecraft:luck": {
-			"$ref": "../../1.16.0/components/luck.json"
+			"$ref": "../../legacy/components/luck.json"
 		},
 		"minecraft:managed_wandering_trader": {
-			"$ref": "../../1.16.0/components/managed_wandering_trader.json"
+			"$ref": "../../legacy/components/managed_wandering_trader.json"
 		},
 		"minecraft:mark_variant": {
-			"$ref": "../../1.16.0/components/mark_variant.json"
+			"$ref": "../../legacy/components/mark_variant.json"
+		},
+		"minecraft:memory_sensor.in_range_of_entity": {
+			"$ref": "../../legacy/components/memory_sensor.in_range_of_entity.json",
+			"deprecated": true,
+			"doNotSuggest": true,
+			"deprecationMessage": "Internal only"
+		},
+		"minecraft:mob_effect": {
+			"$ref": "../../legacy/components/mob_effect.json"
 		},
 		"minecraft:mob_effect_immunity": {
-			"$ref": "../../1.16.0/components/mob_effect_immunity.json"
+			"$ref": "../../legacy/components/mob_effect_immunity.json"
 		},
 		"minecraft:movement": {
-			"$ref": "../../1.16.0/components/movement.json"
+			"$ref": "../../legacy/components/movement.json"
 		},
 		"minecraft:movement.amphibious": {
-			"$ref": "../../1.16.0/components/movement.amphibious.json"
+			"$ref": "../../legacy/components/movement.amphibious.json"
 		},
 		"minecraft:movement.basic": {
-			"$ref": "../../1.16.0/components/movement.basic.json"
+			"$ref": "../../legacy/components/movement.basic.json"
 		},
 		"minecraft:movement.dolphin": {
-			"$ref": "../../1.16.0/components/movement.dolphin.json"
+			"$ref": "../../legacy/components/movement.dolphin.json",
+			"deprecated": true,
+			"doNotSuggest": true,
+			"deprecationMessage": "Internal only"
 		},
 		"minecraft:movement.fly": {
-			"$ref": "../../1.16.0/components/movement.fly.json"
+			"$ref": "../../legacy/components/movement.fly.json"
 		},
 		"minecraft:movement.generic": {
-			"$ref": "../../1.16.0/components/movement.generic.json"
+			"$ref": "../../legacy/components/movement.generic.json"
 		},
 		"minecraft:movement.glide": {
-			"$ref": "../../1.16.0/components/movement.glide.json"
+			"$ref": "../../legacy/components/movement.glide.json"
 		},
 		"minecraft:movement.hover": {
-			"$ref": "../../1.16.0/components/movement.hover.json"
+			"$ref": "../../legacy/components/movement.hover.json"
 		},
 		"minecraft:movement.jump": {
-			"$ref": "../../1.16.0/components/movement.jump.json"
+			"$ref": "../../legacy/components/movement.jump.json"
 		},
 		"minecraft:movement.skip": {
-			"$ref": "../../1.16.0/components/movement.skip.json"
+			"$ref": "../../legacy/components/movement.skip.json"
 		},
 		"minecraft:movement.sway": {
-			"$ref": "../../1.16.0/components/movement.sway.json"
+			"$ref": "../../legacy/components/movement.sway.json"
+		},
+		"minecraft:movement_sound_distance_offset": {
+			"$ref": "../../legacy/components/movement_sound_distance_offset.json"
 		},
 		"minecraft:nameable": {
-			"$ref": "../../1.16.0/components/nameable.json"
+			"$ref": "../../legacy/components/nameable.json"
 		},
 		"minecraft:navigation.climb": {
-			"$ref": "../../1.16.0/components/navigation.climb.json"
+			"$ref": "../../legacy/components/navigation.climb.json"
 		},
 		"minecraft:navigation.float": {
-			"$ref": "../../1.16.0/components/navigation.float.json"
+			"$ref": "../../legacy/components/navigation.float.json"
 		},
 		"minecraft:navigation.fly": {
-			"$ref": "../../1.16.0/components/navigation.fly.json"
+			"$ref": "../../legacy/components/navigation.fly.json"
 		},
 		"minecraft:navigation.generic": {
-			"$ref": "../../1.16.0/components/navigation.generic.json"
+			"$ref": "../../legacy/components/navigation.generic.json"
 		},
 		"minecraft:navigation.hover": {
-			"$ref": "../../1.16.0/components/navigation.hover.json"
+			"$ref": "../../legacy/components/navigation.hover.json"
 		},
 		"minecraft:navigation.swim": {
-			"$ref": "../../1.16.0/components/navigation.swim.json"
+			"$ref": "../../legacy/components/navigation.swim.json"
 		},
 		"minecraft:navigation.walk": {
-			"$ref": "../../1.16.0/components/navigation.walk.json"
+			"$ref": "../../legacy/components/navigation.walk.json"
 		},
 		"minecraft:npc": {
-			"$ref": "../../1.16.0/components/npc.json"
+			"$ref": "../../legacy/components/npc.json"
 		},
 		"minecraft:offspring": {
-			"$ref": "../../1.16.0/components/offspring.json"
+			"$ref": "../../legacy/components/offspring.json"
+		},
+		"minecraft:on_death": {
+			"$ref": "../../legacy/components/on_death.json"
+		},
+		"minecraft:on_friendly_anger": {
+			"$ref": "../../legacy/components/on_friendly_anger.json"
+		},
+		"minecraft:on_hurt": {
+			"$ref": "../../legacy/components/on_hurt.json"
+		},
+		"minecraft:on_hurt_by_player": {
+			"$ref": "../../legacy/components/on_hurt_by_player.json"
+		},
+		"minecraft:on_ignite": {
+			"$ref": "../../legacy/components/on_ignite.json"
+		},
+		"minecraft:on_start_landing": {
+			"$ref": "../../legacy/components/on_start_landing.json"
+		},
+		"minecraft:on_start_takeoff": {
+			"$ref": "../../legacy/components/on_start_takeoff.json"
+		},
+		"minecraft:on_target_acquired": {
+			"$ref": "../../legacy/components/on_target_acquired.json"
+		},
+		"minecraft:on_target_escape": {
+			"$ref": "../../legacy/components/on_target_escape.json"
+		},
+		"minecraft:on_wake_with_owner": {
+			"$ref": "../../legacy/components/on_wake_with_owner.json"
 		},
 		"minecraft:out_of_control": {
-			"$ref": "../../1.16.100/components/out_of_control.json"
+			"$ref": "../../legacy/components/out_of_control.json"
 		},
 		"minecraft:peek": {
-			"$ref": "../../1.16.0/components/peek.json"
+			"$ref": "../../legacy/components/peek.json"
 		},
 		"minecraft:persistent": {
-			"$ref": "../../1.16.0/components/persistent.json"
+			"$ref": "../../legacy/components/persistent.json"
 		},
 		"minecraft:physics": {
-			"$ref": "../../1.16.0/components/physics.json"
+			"$ref": "../../legacy/components/physics.json"
 		},
 		"minecraft:player.exhaustion": {
-			"$ref": "../../1.16.0/components/player.exhaustion.json"
+			"$ref": "../../legacy/components/player.exhaustion.json"
 		},
 		"minecraft:player.experience": {
-			"$ref": "../../1.16.0/components/player.experience.json"
+			"$ref": "../../legacy/components/player.experience.json"
 		},
 		"minecraft:player.hunger": {
-			"$ref": "../../1.16.0/components/player.hunger.json"
+			"$ref": "../../legacy/components/player.hunger.json"
 		},
 		"minecraft:player.level": {
-			"$ref": "../../1.16.0/components/player.level.json"
+			"$ref": "../../legacy/components/player.level.json"
 		},
 		"minecraft:player.saturation": {
-			"$ref": "../../1.16.0/components/player.saturation.json"
+			"$ref": "../../legacy/components/player.saturation.json"
 		},
 		"minecraft:preferred_path": {
-			"$ref": "../../1.16.0/components/preferred_path.json"
+			"$ref": "../../legacy/components/preferred_path.json"
 		},
 		"minecraft:projectile": {
-			"$ref": "../../1.16.0/components/projectile.json"
+			"$ref": "../../legacy/components/projectile.json"
 		},
 		"minecraft:push_through": {
-			"$ref": "../../1.16.0/components/push_through.json"
+			"$ref": "../../legacy/components/push_through.json"
 		},
 		"minecraft:pushable": {
-			"$ref": "../../1.16.0/components/pushable.json"
+			"$ref": "../../legacy/components/pushable.json"
 		},
 		"minecraft:raid_trigger": {
-			"$ref": "../../1.16.0/components/raid_trigger.json"
+			"$ref": "../../legacy/components/raid_trigger.json"
 		},
 		"minecraft:rail_movement": {
-			"$ref": "../../1.16.0/components/rail_movement.json"
+			"$ref": "../../legacy/components/rail_movement.json"
 		},
 		"minecraft:rail_sensor": {
-			"$ref": "../../1.16.0/components/rail_sensor.json"
+			"$ref": "../../legacy/components/rail_sensor.json"
 		},
 		"minecraft:ravager_blocked": {
-			"$ref": "../../1.16.0/components/ravager_blocked.json"
+			"$ref": "../../legacy/components/ravager_blocked.json"
 		},
 		"minecraft:reflect_projectiles": {
-			"$ref": "../../1.16.0/components/reflect_projectiles.json"
+			"$ref": "../../legacy/components/reflect_projectiles.json"
+		},
+		"minecraft:renders_when_invisible": {
+			"$ref": "../../legacy/components/renders_when_invisible.json"
 		},
 		"minecraft:rideable": {
-			"$ref": "../../1.16.0/components/rideable.json"
+			"$ref": "../../legacy/components/rideable.json"
 		},
-		"minecraft:scaffolding_climber": {
-			"$ref": "../../1.16.0/components/scaffolding_climber.json"
+		"minecraft:rotation_axis_aligned": {
+			"$ref": "../../legacy/components/rotation_axis_aligned.json"
+		},
+		"minecraft:rotation_locked_to_vehicle": {
+			"$ref": "../../legacy/components/rotation_locked_to_vehicle.json"
 		},
 		"minecraft:scale": {
-			"$ref": "../../1.16.0/components/scale.json"
+			"$ref": "../../legacy/components/scale.json"
 		},
 		"minecraft:scale_by_age": {
-			"$ref": "../../1.16.0/components/scale_by_age.json"
+			"$ref": "../../legacy/components/scale_by_age.json"
 		},
 		"minecraft:scheduler": {
-			"$ref": "../../1.16.0/components/scheduler.json"
+			"$ref": "../../1.13.0/components/scheduler.json"
 		},
 		"minecraft:shareables": {
-			"$ref": "../../1.16.0/components/shareables.json"
+			"$ref": "../../legacy/components/shareables.json"
 		},
 		"minecraft:shooter": {
-			"$ref": "../../1.16.0/components/shooter.json"
+			"$ref": "../../legacy/components/shooter.json"
 		},
 		"minecraft:sittable": {
-			"$ref": "../../1.16.0/components/sittable.json"
+			"$ref": "../../legacy/components/sittable.json"
 		},
 		"minecraft:skin_id": {
-			"$ref": "../../1.16.0/components/skin_id.json"
+			"$ref": "../../legacy/components/skin_id.json"
 		},
 		"minecraft:sound_volume": {
-			"$ref": "../../1.16.0/components/sound_volume.json"
+			"$ref": "../../legacy/components/sound_volume.json"
 		},
 		"minecraft:spawn_egg_interaction": {
-			"$ref": "../../1.16.0/components/spawn_egg_interaction.json"
+			"$ref": "../../legacy/components/spawn_egg_interaction.json"
 		},
 		"minecraft:spawn_entity": {
-			"$ref": "../../1.16.0/components/spawn_entity.json"
+			"$ref": "../../1.15.0/components/spawn_entity.json"
 		},
 		"minecraft:spell_effects": {
-			"$ref": "../../1.16.0/components/spell_effects.json"
+			"$ref": "../../legacy/components/spell_effects.json"
 		},
 		"minecraft:strength": {
-			"$ref": "../../1.16.0/components/strength.json"
+			"$ref": "../../legacy/components/strength.json"
 		},
 		"minecraft:suspect_tracking": {
-			"$ref": "../../1.16.0/components/suspect_tracking.json"
+			"$ref": "../../legacy/components/suspect_tracking.json"
 		},
 		"minecraft:tameable": {
-			"$ref": "../../1.16.0/components/tameable.json"
+			"$ref": "../../legacy/components/tameable.json"
 		},
 		"minecraft:tamemount": {
-			"$ref": "../../1.16.0/components/tamemount.json"
+			"$ref": "../../legacy/components/tamemount.json"
 		},
 		"minecraft:target_nearby_sensor": {
-			"$ref": "../../1.16.0/components/target_nearby_sensor.json"
+			"$ref": "../../legacy/components/target_nearby_sensor.json"
 		},
 		"minecraft:teleport": {
-			"$ref": "../../1.16.0/components/teleport.json"
+			"$ref": "../../legacy/components/teleport.json"
 		},
 		"minecraft:tick_world": {
-			"$ref": "../../1.16.0/components/tick_world.json"
+			"$ref": "../../legacy/components/tick_world.json"
 		},
 		"minecraft:timer": {
-			"$ref": "../../1.16.0/components/timer.json"
+			"$ref": "../../legacy/components/timer.json"
+		},
+		"minecraft:trade_resupply": {
+			"$ref": "../../legacy/components/trade_resupply.json"
 		},
 		"minecraft:trade_table": {
-			"$ref": "../../1.16.0/components/trade_table.json"
+			"$ref": "../../legacy/components/trade_table.json"
 		},
 		"minecraft:trail": {
-			"$ref": "../../1.16.0/components/trail.json"
+			"$ref": "../../legacy/components/trail.json"
 		},
 		"minecraft:transformation": {
-			"$ref": "../../1.16.0/components/transformation.json"
+			"$ref": "../../legacy/components/transformation.json"
+		},
+		"minecraft:transient": {
+			"$ref": "../../legacy/components/transient.json"
 		},
 		"minecraft:trust": {
-			"$ref": "../../1.16.0/components/trust.json"
+			"$ref": "../../legacy/components/trust.json"
 		},
 		"minecraft:trusting": {
-			"$ref": "../../1.16.0/components/trusting.json"
+			"$ref": "../../legacy/components/trusting.json"
 		},
 		"minecraft:type_family": {
-			"$ref": "../../1.16.0/components/type_family.json"
+			"$ref": "../../legacy/components/type_family.json"
 		},
 		"minecraft:underwater_mount_breathing": {
-			"$ref": "../../1.16.0/components/underwater_mount_breathing.json"
+			"$ref": "../../legacy/components/underwater_mount_breathing.json"
 		},
 		"minecraft:underwater_movement": {
-			"$ref": "../../1.16.0/components/underwater_movement.json"
+			"$ref": "../../legacy/components/underwater_movement.json"
+		},
+		"minecraft:uses_legacy_friction": {
+			"$ref": "../../legacy/components/uses_legacy_friction.json"
+		},
+		"minecraft:variable_max_auto_step": {
+			"$ref": "../../legacy/components/variable_max_auto_step.json"
 		},
 		"minecraft:variant": {
-			"$ref": "../../1.16.0/components/variant.json"
+			"$ref": "../../legacy/components/variant.json"
+		},
+		"minecraft:vertical_movement_action": {
+			"$ref": "../../legacy/components/vertical_movement_action.json"
+		},
+		"minecraft:vibration_damper": {
+			"$ref": "../../legacy/components/vibration_damper.json"
+		},
+		"minecraft:vibration_listener": {
+			"$ref": "../../legacy/components/vibration_listener.json"
 		},
 		"minecraft:walk_animation_speed": {
-			"$ref": "../../1.16.0/components/walk_animation_speed.json"
+			"$ref": "../../legacy/components/walk_animation_speed.json"
 		},
 		"minecraft:wants_jockey": {
-			"$ref": "../../1.16.0/components/wants_jockey.json"
+			"$ref": "../../legacy/components/wants_jockey.json"
 		},
 		"minecraft:water_movement": {
-			"$ref": "../../1.16.0/components/water_movement.json"
+			"$ref": "../../legacy/components/water_movement.json"
 		}
 	}
 }

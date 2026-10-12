@@ -1,0 +1,74 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"goal_radius": {
+			"type": "number",
+			"maximum": 3.4028234663852886e38,
+			"default": 1.5,
+			"exclusiveMinimum": 0.0,
+			"description": "Distance in blocks within the mob considers it has reached it's target position."
+		},
+		"max_fertilizer_usage": {
+			"type": "integer",
+			"maximum": 2147483647,
+			"default": 1,
+			"minimum": 1,
+			"description": "The maximum number of times the mob will use fertilzer on the target block."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		},
+		"search_cooldown_max_seconds": {
+			"type": "number",
+			"maximum": 3.4028234663852886e38,
+			"default": 8,
+			"exclusiveMinimum": 0.0,
+			"description": "The maximum amount of time in seconds that the goal can take before searching again. The time is chosen between 0 and this number."
+		},
+		"search_count": {
+			"type": "integer",
+			"maximum": 2147483647,
+			"default": 9,
+			"minimum": 0,
+			"description": "The number of randomly selected blocks each tick that the mob will check within its search range and height for a valid block to move to. A value of 0 will have the mob check every block within range in one tick."
+		},
+		"search_height": {
+			"type": "integer",
+			"maximum": 2147483647,
+			"default": 1,
+			"minimum": 1,
+			"description": "The height in blocks the mob will search within to find a valid target position."
+		},
+		"search_range": {
+			"type": "integer",
+			"maximum": 2147483647,
+			"default": 1,
+			"minimum": 1,
+			"description": "The distance in blocks the mob will search within to find a valid target position."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"maximum": 3.4028234663852886e38,
+			"default": 0.5,
+			"minimum": 0.0,
+			"description": "Movement speed multiplier of the mob when using this goal."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows the mob to search within an area for a growable crop block. If found, the mob will use any available fertilizer in their inventory on the crop. This goal will not execute if the mob does not have a fertilizer item in its inventory."
+}

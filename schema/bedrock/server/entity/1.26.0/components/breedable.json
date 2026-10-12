@@ -1,51 +1,54 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"title": "Breedable",
-	"description": "Allows an entity to establish a way to get into the love state used for breeding.",
 	"type": "object",
 	"properties": {
+		"allowSitting": {
+			"$ref": "#/properties/allow_sitting",
+			"doNotSuggest": true,
+			"description": ""
+		},
 		"allow_sitting": {
 			"type": "boolean",
 			"default": false,
 			"description": "If true, entities can breed while sitting"
 		},
-		"allowSitting": {
+		"breedCooldown": {
+			"$ref": "#/properties/breed_cooldown",
 			"doNotSuggest": true,
-			"$ref": "#/properties/allow_sitting"
+			"description": ""
+		},
+		"breedItems": {
+			"$ref": "#/properties/breed_items",
+			"doNotSuggest": true,
+			"description": ""
 		},
 		"breed_cooldown": {
 			"type": "number",
-			"minimum": 0,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"default": 60,
 			"description": "Time in seconds before the Entity can breed again."
 		},
 		"breed_items": {
-			"description": "The list of items that can be used to get the entity into the 'love' state. Can be a single item or an array.",
-			"oneOf": [
+			"anyOf": [
+				{
+					"$ref": "#/$defs/breed_item"
+				},
 				{
 					"type": "array",
 					"items": {
 						"anyOf": [
 							{
-								"$ref": "#/$defs/breed_items"
+								"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
 							},
 							{
-								"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+								"$ref": "#/$defs/breed_item"
 							}
 						]
 					}
-				},
-				{
-					"$ref": "#/$defs/breed_items"
-				},
-				{
-					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
 				}
-			]
-		},
-		"breedItems": {
-			"doNotSuggest": true,
-			"$ref": "#/properties/breed_items"
+			],
+			"description": "The list of items that can be used to get the entity into the 'love' state. Includes 'item' for the item name, and 'result_item' that defines what item the breed item will transform to upon successful interaction (Format: itemName:auxValue)."
 		},
 		"breeds_with": {
 			"type": "object",
@@ -53,9 +56,9 @@
 				"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier"
 			},
 			"additionalProperties": {
-				"$ref": "../../1.16.0/triggers.json"
+				"$ref": "../../legacy/general.json#/$defs/trigger"
 			},
-			"description": "The entity definitions that this entity can breed with."
+			"description": "The map of entity definitions this entity can breed with to breeding events that fire on breeding."
 		},
 		"causes_pregnancy": {
 			"type": "boolean",
@@ -63,33 +66,39 @@
 			"description": "If true, the entity will become pregnant instead of spawning a baby."
 		},
 		"environment_requirements": {
-			"oneOf": [
+			"anyOf": [
+				{
+					"$ref": "#/$defs/environment"
+				},
 				{
 					"type": "array",
 					"items": {
-						"$ref": "#/$defs/environment_requirements"
+						"$ref": "#/$defs/environment"
 					}
-				},
-				{
-					"$ref": "#/$defs/environment_requirements"
 				}
 			],
 			"description": "The list of nearby block requirements to get the entity into the 'love' state."
 		},
+		"extraBabyChance": {
+			"$ref": "#/properties/extra_baby_chance",
+			"doNotSuggest": true,
+			"description": ""
+		},
 		"extra_baby_chance": {
 			"type": "number",
-			"minimum": 0,
-			"maximum": 1,
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
 			"default": 0,
-			"description": "Chance that up to 16 babies will spawn."
-		},
-		"extraBabyChance": {
-			"doNotSuggest": true,
-			"$ref": "#/properties/extra_baby_chance"
+			"description": "Chance that up to 16 babies will spawn between 0.0 and 1.0, where 1.0 is 100%."
 		},
 		"love_filters": {
 			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
 			"description": "The filters to run when attempting to fall in love."
+		},
+		"requireTame": {
+			"$ref": "#/properties/require_tame",
+			"doNotSuggest": true,
+			"description": ""
 		},
 		"require_full_health": {
 			"type": "boolean",
@@ -100,50 +109,53 @@
 			"type": "boolean",
 			"default": true,
 			"description": "If true, the entities need to be tamed first before they can breed."
-		},
-		"requireTame": {
-			"doNotSuggest": true,
-			"$ref": "#/properties/require_tame"
 		}
 	},
+	"additionalProperties": false,
 	"$defs": {
-		"breed_items": {
+		"breed_item": {
 			"type": "object",
-			"additionalProperties": false,
 			"properties": {
 				"item": {
-					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+					"$ref": "../../legacy/general.json#/$defs/item_obj",
+					"description": ""
 				},
 				"result_item": {
-					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+					"$ref": "../../legacy/general.json#/$defs/item_obj",
+					"description": ""
 				}
-			}
+			},
+			"additionalProperties": false,
+			"description": "The list of items that can be used to get the entity into the 'love' state. Includes 'item' for the item name, and 'result_item' that defines what item the breed item will transform to upon successful interaction (Format: itemName:auxValue)."
 		},
-		"environment_requirements": {
+		"environment": {
 			"type": "object",
 			"properties": {
 				"blocks": {
-					"oneOf": [
+					"anyOf": [
+						{
+							"$ref": "../../../../../vanilla/server/block_descriptor.json"
+						},
 						{
 							"type": "array",
 							"items": {
 								"$ref": "../../../../../vanilla/server/block_descriptor.json"
 							}
-						},
-						{
-							"$ref": "../../../../../vanilla/server/block_descriptor.json"
 						}
-					]
+					],
+					"description": "The block types required nearby for the entity to breed."
 				},
 				"count": {
 					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
 					"default": 1,
 					"description": "The number of the required block types nearby for the entity to breed."
 				},
 				"radius": {
 					"type": "integer",
-					"minimum": 0,
-					"maximum": 16,
+					"minimum": -2147483648,
+					"maximum": 2147483647,
 					"default": 5,
 					"description": "How many blocks radius from the mob's center to search in for the required blocks. Bounded between 0 and 16."
 				}
@@ -151,5 +163,5 @@
 			"additionalProperties": false
 		}
 	},
-	"additionalProperties": false
+	"description": "Defines the way an entity can get into the 'love' state. The entity should also have the \"minecraft:offspring\" component to define how the offspring is created if not using \"causes_pregnancy\". Runs the \"minecraft:entity_born\" event on the created offspring."
 }

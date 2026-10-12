@@ -1,0 +1,29 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["move", "look", "jump"],
+				"description": ""
+			},
+			"description": ""
+		},
+		"interval": {
+			"type": "integer",
+			"description": "A random value to determine at what intervals something can occur. This has a 1/interval chance to choose this goal"
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"random_stop_interval": {
+			"type": "integer",
+			"description": "a random value in which the goal can use to pull out of the behavior. This is a 1/interval chance to play the sound"
+		}
+	},
+	"description": "Allows mobs to lay down at times"
+}

@@ -1,0 +1,127 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"aggro_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "Sound to occasionally play while defending."
+		},
+		"attack_interval": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"description": "Time in seconds between attacks"
+		},
+		"attack_owner": {
+			"type": "boolean",
+			"description": ""
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": ["move", "look", "jump"],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"entity_types": {
+			"anyOf": [
+				{
+					"$ref": "../../legacy/general.json#/$defs/entity_types"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../legacy/general.json#/$defs/entity_types"
+					}
+				}
+			],
+			"description": "List of entity types that this mob considers valid targets"
+		},
+		"must_reach": {
+			"type": "boolean",
+			"description": ""
+		},
+		"must_see": {
+			"type": "boolean",
+			"description": "If true, only entities in this mob's viewing range can be selected as targets"
+		},
+		"must_see_forget_duration": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Determines the amount of time in seconds that this mob will look for a target before forgetting about it and looking for a new one when the target isn't visible any more"
+		},
+		"on_defend_start": {
+			"$ref": "../../legacy/general.json#/$defs/trigger",
+			"description": "Trigger to be executed when defending begins."
+		},
+		"persist_time": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 3.4028234663852886e38,
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"description": ""
+		},
+		"reselect_targets": {
+			"type": "boolean",
+			"description": ""
+		},
+		"scan_interval": {
+			"type": "integer",
+			"minimum": 1.0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"set_persistent": {
+			"type": "boolean",
+			"description": ""
+		},
+		"target_acquisition_probability": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": ""
+		},
+		"target_invisible_multiplier": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": ""
+		},
+		"target_search_height": {
+			"type": "number",
+			"minimum": -1.0,
+			"maximum": 3.4028234663852886e38,
+			"description": ""
+		},
+		"target_sneak_visibility_multiplier": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": ""
+		},
+		"within_radius": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Distance in blocks that the target can be within to launch an attack"
+		}
+	},
+	"description": "Allows the mob to target another mob that hurts an entity it trusts."
+}

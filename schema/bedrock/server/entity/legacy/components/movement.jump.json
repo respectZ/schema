@@ -1,0 +1,49 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"jump_delay": {
+			"anyOf": [
+				{
+					"type": "number",
+					"description": ""
+				},
+				{
+					"type": "object",
+					"properties": {
+						"range_max": {
+							"type": "number",
+							"default": 0,
+							"description": ""
+						},
+						"range_min": {
+							"type": "number",
+							"default": 0,
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": ""
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "number",
+						"description": ""
+					},
+					"minItems": 2,
+					"maxItems": 2,
+					"description": ""
+				}
+			],
+			"description": "Delay after landing when using the slime move control."
+		},
+		"max_turn": {
+			"type": "number",
+			"default": 30,
+			"description": "The maximum number in degrees the mob can turn per tick."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Move control that causes the mob to jump as it moves with a specified delay between jumps."
+}

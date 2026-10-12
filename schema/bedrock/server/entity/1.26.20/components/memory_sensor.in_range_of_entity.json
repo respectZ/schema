@@ -1,0 +1,230 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"sensor_entries": {
+			"anyOf": [
+				{
+					"type": "object",
+					"patternProperties": {
+						".*": {
+							"$ref": "#/$defs/entry",
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": ""
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/pair",
+						"description": ""
+					},
+					"description": ""
+				}
+			],
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"required": ["sensor_entries"],
+	"$defs": {
+		"range": {
+			"type": "object",
+			"properties": {
+				"max": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 3.4028234663852886e38,
+					"description": ""
+				},
+				"min": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 3.4028234663852886e38,
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		},
+		"memory_setter": {
+			"type": "object",
+			"properties": {
+				"memory": {
+					"type": "string",
+					"minLength": 1,
+					"description": ""
+				},
+				"value": {
+					"anyOf": [
+						{
+							"type": "boolean",
+							"description": ""
+						},
+						{
+							"type": "number",
+							"minimum": -3.4028234663852886e38,
+							"maximum": 3.4028234663852886e38,
+							"description": ""
+						},
+						{
+							"type": "string",
+							"description": ""
+						}
+					],
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"required": ["memory", "value"],
+			"description": ""
+		},
+		"response": {
+			"type": "object",
+			"properties": {
+				"event": {
+					"anyOf": [
+						{
+							"type": "string",
+							"description": ""
+						},
+						{
+							"const": false,
+							"description": ""
+						}
+					],
+					"description": ""
+				},
+				"setters": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/memory_setter",
+						"description": ""
+					},
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"anyOf": [
+				{
+					"required": ["event"],
+					"properties": {
+						"event": {
+							"type": "string",
+							"minLength": 1,
+							"description": ""
+						}
+					},
+					"description": ""
+				},
+				{
+					"required": ["setters"],
+					"properties": {
+						"setters": {
+							"minItems": 1,
+							"description": ""
+						}
+					},
+					"description": ""
+				}
+			],
+			"description": ""
+		},
+		"optional_response": {
+			"anyOf": [
+				{
+					"$ref": "#/$defs/response",
+					"description": ""
+				},
+				{
+					"const": false,
+					"description": ""
+				}
+			],
+			"description": ""
+		},
+		"entry": {
+			"type": "object",
+			"properties": {
+				"conditional_filters": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": ""
+				},
+				"cooldown": {
+					"anyOf": [
+						{
+							"type": "number",
+							"minimum": 0,
+							"maximum": 3.4028234663852886e38,
+							"description": ""
+						},
+						{
+							"$ref": "#/$defs/range",
+							"description": ""
+						}
+					],
+					"description": ""
+				},
+				"entered_range_response": {
+					"$ref": "#/$defs/optional_response",
+					"description": ""
+				},
+				"exited_range_response": {
+					"$ref": "#/$defs/optional_response",
+					"description": ""
+				},
+				"out_of_range_response": {
+					"$ref": "#/$defs/optional_response",
+					"description": ""
+				},
+				"search_range": {
+					"type": "array",
+					"items": {
+						"type": "number",
+						"minimum": 1,
+						"maximum": 3.4028234663852886e38,
+						"description": ""
+					},
+					"minItems": 3,
+					"maxItems": 3,
+					"default": [5, 5, 5],
+					"description": ""
+				},
+				"target_entity_memory": {
+					"type": "string",
+					"minLength": 1,
+					"description": ""
+				},
+				"within_range_response": {
+					"$ref": "#/$defs/optional_response",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"required": ["cooldown", "target_entity_memory"],
+			"description": ""
+		},
+		"pair": {
+			"type": "object",
+			"properties": {
+				"key": {
+					"type": "string",
+					"description": ""
+				},
+				"value": {
+					"$ref": "#/$defs/entry",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"required": ["key", "value"],
+			"description": ""
+		}
+	},
+	"description": "",
+	"deprecated": true,
+	"doNotSuggest": true,
+	"deprecationMessage": "Internal only"
+}

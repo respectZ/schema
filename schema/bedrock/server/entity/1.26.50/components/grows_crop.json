@@ -1,0 +1,14 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"chance": {
+			"$ref": "../../legacy/components/grows_crop.json#/properties/chance"
+		},
+		"charges": {
+			"$ref": "../../legacy/components/grows_crop.json#/properties/charges"
+		}
+	},
+	"additionalProperties": false,
+	"description": "Could increase crop growth when entity walks over crop"
+}

@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 1,
+			"description": "This multiplier modifies the entity's speed when moving towards its restriction."
+		}
+	},
+	"additionalProperties": false,
+	"description": ""
+}

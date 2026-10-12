@@ -1,0 +1,12 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"on_spawn": {
+			"$ref": "../general.json#/$defs/trigger",
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"description": "Enables interacting with this entity using its own spawn egg to spawn a born child. Runs the \"minecraft:entity_born\" event on the created entity as well as the defined \"on_spawn\" event."
+}

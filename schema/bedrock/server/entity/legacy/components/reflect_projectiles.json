@@ -1,0 +1,66 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"azimuth_angle": {
+			"anyOf": [
+				{
+					"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				{
+					"type": "number"
+				},
+				{
+					"type": "boolean"
+				}
+			],
+			"default": 0,
+			"description": "[EXPERIMENTAL] A Molang expression defining the angle in degrees to add to the projectile's y axis rotation."
+		},
+		"elevation_angle": {
+			"anyOf": [
+				{
+					"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				{
+					"type": "number"
+				},
+				{
+					"type": "boolean"
+				}
+			],
+			"default": 0,
+			"description": "[EXPERIMENTAL] A Molang expression defining the angle in degrees to add to the projectile's x axis rotation."
+		},
+		"reflected_projectiles": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier"
+			},
+			"default": [],
+			"description": "[EXPERIMENTAL] An array of strings defining the types of projectiles that are reflected when they hit the entity."
+		},
+		"reflection_scale": {
+			"anyOf": [
+				{
+					"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				{
+					"type": "number"
+				},
+				{
+					"type": "boolean"
+				}
+			],
+			"default": 1,
+			"description": "[EXPERIMENTAL] A Molang expression defining the velocity scaling of the reflected projectile. Values below 1 decrease the projectile's velocity, and values above 1 increase it."
+		},
+		"reflection_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"default": "reflect",
+			"description": "[EXPERIMENTAL] A string defining the name of the sound event to be played when a projectile is reflected. \"reflect\" unless specified."
+		}
+	},
+	"additionalProperties": false,
+	"description": "[EXPERIMENTAL] Allows an entity to reflect projectiles."
+}

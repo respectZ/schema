@@ -1,0 +1,44 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": ["move", "look", "jump"],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"jump_chance_percentage": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Percent chance a slime or magma cube has to jump while in water / lava."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Determines the multiplier the entity's speed is modified by when moving through water / lava."
+		}
+	},
+	"description": "Allow slimes to float in water / lava. Can only be used by Slime and Magma Cubes."
+}

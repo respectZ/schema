@@ -1,0 +1,42 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"lift_force": {
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"type": "number",
+						"description": ""
+					},
+					"maxItems": 3,
+					"description": ""
+				},
+				{
+					"type": "object",
+					"properties": {
+						"x": {
+							"type": "number",
+							"description": ""
+						},
+						"y": {
+							"type": "number",
+							"description": ""
+						},
+						"z": {
+							"type": "number",
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": ""
+				}
+			],
+			"default": [0, 1.6, 0],
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"description": ""
+}

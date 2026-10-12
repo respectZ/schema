@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"anyOf": [
+		{
+			"type": "object",
+			"properties": {
+				"armor_slot": {
+					"type": "string",
+					"$ref": "../../../../../vanilla/server/equipment_slot.json",
+					"enum": ["slot.armor.chest", "slot.armor.body"],
+					"default": "slot.armor.body",
+					"description": "The armor slot an item equipped to 'minecraft:equippable''s second slot should be equipped to. It defaults to 'slot.armor.torso' for entities with a format version prior to 1.21.10, and to 'slot.armor.body' otherwise."
+				}
+			},
+			"additionalProperties": false
+		},
+		{
+			"type": "null"
+		}
+	],
+	"description": "It defines to which armor slot an item equipped to 'minecraft:equippable''s second slot should be equipped to. It is automatically applied to all entities for worlds with a version greater than or equal to 1.21.10. For older worlds, 'slot.armor.torso' will be used. It is strongly advised not to explicitly use this component, as no backwards compatibility for it will be provided."
+}

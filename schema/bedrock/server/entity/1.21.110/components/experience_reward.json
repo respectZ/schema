@@ -1,0 +1,50 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"on_bred": {
+			"$ref": "#/$defs/expression",
+			"description": "A Molang expression defining the amount of experience rewarded when this entity is successfully bred. An array of expressions adds each expression's result together for a final total."
+		},
+		"on_bred_array": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/expression",
+				"description": ""
+			},
+			"deprecated": true,
+			"description": ""
+		},
+		"on_death": {
+			"$ref": "#/$defs/expression",
+			"description": "A Molang expression defining the amount of experience rewarded when this entity dies. An array of expressions adds each expression's result together for a final total."
+		},
+		"on_death_array": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/expression",
+				"description": ""
+			},
+			"deprecated": true,
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"$defs": {
+		"expression": {
+			"anyOf": [
+				{
+					"type": "number"
+				},
+				{
+					"$ref": "../../../../../vanilla/definition/molang.json#/$defs/versioned"
+				},
+				{
+					"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"
+				}
+			],
+			"description": ""
+		}
+	},
+	"description": "."
+}

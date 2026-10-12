@@ -1,0 +1,141 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"add": {
+			"$ref": "#/$defs/add"
+		},
+		"begin_transform_sound": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/level_sound.json"
+			},
+			"default": [],
+			"description": "Sound to play when the transformation starts"
+		},
+		"delay": {
+			"$ref": "#/$defs/delay"
+		},
+		"drop_equipment": {
+			"type": "boolean",
+			"default": false,
+			"description": "Cause the entity to drop all equipment upon transformation"
+		},
+		"drop_inventory": {
+			"type": "boolean",
+			"default": false,
+			"description": "Cause the entity to drop all items in inventory upon transformation"
+		},
+		"into": {
+			"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+			"default": "",
+			"description": "Entity Definition that this entity will transform into"
+		},
+		"keep_level": {
+			"type": "boolean",
+			"default": false,
+			"description": "If this entity has trades and has leveled up, it should maintain that level after transformation."
+		},
+		"keep_owner": {
+			"type": "boolean",
+			"default": false,
+			"description": "If this entity is owned by another entity, it should remain owned after transformation."
+		},
+		"preserve_equipment": {
+			"type": "boolean",
+			"default": false,
+			"description": "Cause the entity to keep equipment after going through transformation"
+		},
+		"transformation_sound": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/level_sound.json"
+			},
+			"default": [],
+			"description": "Sound to play when the entity is done transforming"
+		}
+	},
+	"additionalProperties": false,
+	"$defs": {
+		"add": {
+			"type": "object",
+			"properties": {
+				"component_groups": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"default": [],
+					"description": "Names of component groups to add"
+				}
+			},
+			"additionalProperties": false,
+			"description": "List of components to add to the entity after the transformation"
+		},
+		"delay": {
+			"type": "object",
+			"properties": {
+				"block_assist_chance": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1,
+					"default": 0,
+					"description": "Chance that the entity will look for nearby blocks that can speed up the transformation. Value must be between 0.0 and 1.0"
+				},
+				"block_chance": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1,
+					"default": 0,
+					"description": "Chance that, once a block is found, will help speed up the transformation"
+				},
+				"block_max": {
+					"type": "integer",
+					"minimum": 0,
+					"maximum": 2147483647,
+					"default": 0,
+					"description": "Maximum number of blocks the entity will look for to aid in the transformation. If not defined or set to 0, it will be set to the block radius"
+				},
+				"block_radius": {
+					"type": "integer",
+					"minimum": 0,
+					"maximum": 2147483647,
+					"default": 0,
+					"description": "Distance in Blocks that the entity will search for blocks that can help the transformation"
+				},
+				"block_types": {
+					"type": "array",
+					"items": {
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier"
+					},
+					"default": [],
+					"description": "List of blocks that can help the transformation of this entity"
+				},
+				"range_max": {
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"default": 0,
+					"description": "Time in seconds to be added to value to have the maximum random time range value until the entity transforms (if non-zero then the time in seconds before the entity transforms will be random between value+range_min and value+range_max)"
+				},
+				"range_min": {
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"default": 0,
+					"description": "Time in seconds to be added to value to have the minimum random time range value until the entity transforms (if non-zero then the time in seconds before the entity transforms will be random between value+range_min and value+range_max)"
+				},
+				"value": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 3.4028234663852886e38,
+					"default": 0,
+					"description": "Time in seconds before the entity transforms"
+				}
+			},
+			"additionalProperties": false,
+			"description": "Defines the properties of the delay for the transformation"
+		}
+	},
+	"description": "Defines an entity's transformation from the current definition into another"
+}

@@ -1,0 +1,64 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"aggro_sound": {
+			"type": "string",
+			"description": "Sound to occasionally play while defending."
+		},
+		"attack_interval": {
+			"type": "integer",
+			"description": "Time in seconds between attacks"
+		},
+		"attack_interval_min": {
+			"type": "integer",
+			"description": ""
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["move", "look", "jump"],
+				"description": ""
+			},
+			"description": ""
+		},
+		"entity_types": {
+			"anyOf": [
+				{
+					"$ref": "../general.json#/$defs/entity_types"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../general.json#/$defs/entity_types"
+					},
+					"description": "List of entity types that this mob considers valid targets"
+				}
+			],
+			"description": "List of entity types that this mob considers valid targets"
+		},
+		"must_see": {
+			"type": "boolean",
+			"description": "If true, only entities in this mob's viewing range can be selected as targets"
+		},
+		"must_see_forget_duration": {
+			"type": "number",
+			"description": "Determines the amount of time in seconds that this mob will look for a target before forgetting about it and looking for a new one when the target isn't visible any more"
+		},
+		"on_defend_start": {
+			"$ref": "../general.json#/$defs/trigger",
+			"description": "Trigger to be executed when defending begins."
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"within_radius": {
+			"type": "number",
+			"description": "Distance in blocks that the target can be within to launch an attack"
+		}
+	},
+	"description": "Allows the mob to target another mob that hurts an entity it trusts."
+}

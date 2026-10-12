@@ -1,0 +1,68 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"can_get_scared": {
+			"type": "boolean",
+			"description": "If true, the mob can stop being tempted if the player moves too fast while close to this mob."
+		},
+		"can_tempt_vertically": {
+			"type": "boolean",
+			"description": "If true, vertical distance to the player will be considered when tempting."
+		},
+		"can_tempt_while_ridden": {
+			"type": "boolean",
+			"description": "If true, the mob can be tempted even if it has a passenger (i.e. if being ridden)."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["move", "look", "jump"],
+				"description": ""
+			},
+			"description": ""
+		},
+		"items": {
+			"type": "array",
+			"items": {
+				"$ref": "../general.json#/$defs/item_obj"
+			},
+			"description": "List of items that can tempt the mob."
+		},
+		"on_tempt_end": {
+			"$ref": "../general.json#/$defs/trigger",
+			"description": "Event to trigger when this mob stops being tempted."
+		},
+		"on_tempt_start": {
+			"$ref": "../general.json#/$defs/trigger",
+			"description": "Event to trigger when this mob starts being tempted."
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"sound_interval": {
+			"$ref": "../general.json#/$defs/number_or_range",
+			"description": "Range of random ticks to wait between tempt sounds."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"stop_distance": {
+			"type": "number",
+			"description": "The distance at which the mob will stop following the player."
+		},
+		"tempt_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "Sound to play while the mob is being tempted."
+		},
+		"within_radius": {
+			"type": "number",
+			"description": "Distance in blocks this mob can get tempted by a player holding an item they like."
+		}
+	},
+	"description": "Allows a mob to be tempted by a player holding a specific item. Uses pathfinding for movement."
+}

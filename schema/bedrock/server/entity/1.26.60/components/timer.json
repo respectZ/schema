@@ -1,0 +1,53 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"looping": {
+			"$ref": "../../legacy/components/timer.json#/$defs/definition/properties/looping"
+		},
+		"randomInterval": {
+			"$ref": "../../legacy/components/timer.json#/$defs/definition/properties/randomInterval"
+		},
+		"random_time_choices": {
+			"type": "array",
+			"items": {
+				"$ref": "../../legacy/components/timer.json#/$defs/choice"
+			},
+			"default": [],
+			"description": "This is a list of objects, representing one value in seconds that can be picked before firing the event and an optional weight. Incompatible with time."
+		},
+		"time": {
+			"$ref": "#/$defs/time_range",
+			"description": "Amount of time in seconds for the timer. Specified as a pair of numbers (min and max). Incompatible with random_time_choices."
+		},
+		"time_down_event": {
+			"$ref": "../../legacy/general.json#/$defs/trigger",
+			"description": "Event to fire when the time on the timer runs out."
+		}
+	},
+	"additionalProperties": false,
+	"$defs": {
+		"time_range": {
+			"type": "object",
+			"properties": {
+				"max": {
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"default": 0,
+					"description": ""
+				},
+				"min": {
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"default": 0,
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": "Amount of time in seconds for the timer. Can be specified as a number or a pair of numbers (min and max). Incompatible with random_time_choices."
+		}
+	},
+	"description": "Adds a timer after which an event will fire."
+}

@@ -1,0 +1,63 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"can_sleep_while_riding": {
+			"type": "boolean",
+			"description": "If true, the mob will be able to use the sleep goal if riding something"
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["move", "look", "jump"],
+				"description": ""
+			},
+			"description": ""
+		},
+		"cooldown_time": {
+			"type": "number",
+			"description": "Time in seconds the mob has to wait before using the goal again"
+		},
+		"poi_type": {
+			"type": "string",
+			"anyOf": [
+				{
+					"enum": ["bed", "jobsite", "meeting_area"],
+					"description": ""
+				},
+				{
+					"pattern": "^(?:[Bb][Ee][Dd]|[Jj][Oo][Bb][Ss][Ii][Tt][Ee]|[Mm][Ee][Ee][Tt][Ii][Nn][Gg]_[Aa][Rr][Ee][Aa])$(?![\\s\\S])",
+					"description": ""
+				}
+			],
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"sleep_collider_height": {
+			"type": "number",
+			"description": "The height of the mob's collider while sleeping"
+		},
+		"sleep_collider_width": {
+			"type": "number",
+			"description": "The width of the mob's collider while sleeping"
+		},
+		"sleep_y_offset": {
+			"type": "number",
+			"description": "The y offset of the mob's collider while sleeping"
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"timeout_cooldown": {
+			"type": "number",
+			"description": "The cooldown time in seconds before the goal can be reused after a internal failure or timeout condition"
+		}
+	},
+	"description": "Allows mobs that own a bed to in a village to move to and sleep in it."
+}

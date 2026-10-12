@@ -1,0 +1,45 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["move", "look", "jump"],
+				"description": ""
+			},
+			"description": ""
+		},
+		"duration": {
+			"type": "number",
+			"description": "Amount of time in seconds that the mob reacts."
+		},
+		"poi_type": {
+			"type": "string",
+			"anyOf": [
+				{
+					"enum": ["bed", "jobsite", "meeting_area"]
+				},
+				{
+					"pattern": "^(?:[Bb][Ee][Dd]|[Jj][Oo][Bb][Ss][Ii][Tt][Ee]|[Mm][Ee][Ee][Tt][Ii][Nn][Gg]_[Aa][Rr][Ee][Aa])$(?![\\s\\S])"
+				}
+			],
+			"description": "Defines what POI type to hide at."
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"timeout_cooldown": {
+			"type": "number",
+			"description": "The cooldown time in seconds before the goal can be reused after a internal failure or timeout condition."
+		}
+	},
+	"description": "Allows a mob with the hide component to attempt to move to - and hide at - an owned or nearby POI."
+}

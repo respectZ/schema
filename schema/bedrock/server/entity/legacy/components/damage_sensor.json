@@ -1,0 +1,77 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"anyOf": [
+		{
+			"type": "object",
+			"properties": {
+				"triggers": {
+					"anyOf": [
+						{
+							"$ref": "#/$defs/trigger"
+						},
+						{
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/trigger"
+							}
+						}
+					]
+				}
+			},
+			"additionalProperties": false
+		},
+		{
+			"$ref": "#/$defs/trigger"
+		},
+		{
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/trigger"
+			}
+		}
+	],
+	"$defs": {
+		"trigger": {
+			"type": "object",
+			"properties": {
+				"cause": {
+					"$ref": "../../../../../vanilla/server/damage_type.json",
+					"description": "Type of damage that triggers the events."
+				},
+				"damage_modifier": {
+					"type": "number",
+					"default": 0,
+					"description": "A modifier that adds/removes to the base damage received from the specified damage cause. It does not reduce damage to less than 0."
+				},
+				"damage_multiplier": {
+					"type": "number",
+					"default": 1,
+					"description": "A multiplier that modifies the base damage received from the specified damage cause. If \"deals_damage\" is true the multiplier can only reduce the damage the entity will take to a minimum of 1."
+				},
+				"deals_damage": {
+					"type": "boolean",
+					"description": "If true, the damage dealt to the entity will take away health from it, set to false to make the entity ignore that damage."
+				},
+				"event": {
+					"type": "string",
+					"description": ""
+				},
+				"filters": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": ""
+				},
+				"on_damage": {
+					"$ref": "../general.json#/$defs/trigger",
+					"description": "Defines which entities the trigger applies to, and which, if any, event to emit when damaged."
+				},
+				"on_damage_sound_event": {
+					"$ref": "../../../../../vanilla/server/level_sound.json",
+					"description": "Defines what sound to play, if any, when the \"on_damage\" filters are met."
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		}
+	},
+	"description": "\"Defines what events to call when this entity is damaged by specific entities or items."
+}

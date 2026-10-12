@@ -1,0 +1,161 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"anyOf": [
+		{
+			"$ref": "#/$defs/definition"
+		},
+		{
+			"type": "null"
+		}
+	],
+	"$defs": {
+		"definition": {
+			"type": "object",
+			"properties": {
+				"interactions": {
+					"anyOf": [
+						{
+							"anyOf": [
+								{
+									"$ref": "#/$defs/interaction"
+								},
+								{
+									"type": "null"
+								}
+							]
+						},
+						{
+							"type": "array",
+							"items": {
+								"anyOf": [
+									{
+										"$ref": "#/$defs/interaction"
+									},
+									{
+										"type": "null"
+									}
+								]
+							}
+						}
+					],
+					"default": [],
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": "Defines interactions with this entity."
+		},
+		"interaction": {
+			"type": "object",
+			"properties": {
+				"add_items": {
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/add_items"
+				},
+				"admire": {
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/admire"
+				},
+				"barter": {
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/barter"
+				},
+				"cooldown": {
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/cooldown"
+				},
+				"cooldown_after_being_attacked": {
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/cooldown_after_being_attacked"
+				},
+				"drop_item_slot": {
+					"anyOf": [
+						{
+							"type": "string",
+							"enum": [
+								"slot.weapon.mainhand",
+								"slot.weapon.offhand",
+								"slot.armor.head",
+								"slot.armor.chest",
+								"slot.armor.legs",
+								"slot.armor.feet",
+								"slot.armor.body"
+							]
+						},
+						{
+							"type": "string"
+						}
+					],
+					"description": "The entity's slot to remove and drop the item from, if any, upon successful interaction. Inventory slots are denoted by positive numbers. Equipment slots are denoted by 'slot.weapon.mainhand', 'slot.weapon.offhand', 'slot.armor.head', 'slot.armor.chest', 'slot.armor.legs', 'slot.armor.feet' and 'slot.armor.body'."
+				},
+				"drop_item_y_offset": {
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/drop_item_y_offset"
+				},
+				"equip_item_slot": {
+					"type": "string",
+					"anyOf": [
+						{
+							"type": "string",
+							"enum": [
+								"slot.weapon.mainhand",
+								"slot.weapon.offhand",
+								"slot.armor.head",
+								"slot.armor.chest",
+								"slot.armor.legs",
+								"slot.armor.feet",
+								"slot.armor.body"
+							]
+						},
+						{
+							"type": "string"
+						}
+					],
+					"description": "The entity's slot to equip the item to, if any, upon successful interaction. Inventory slots are denoted by positive numbers. Equipment slots are denoted by 'slot.weapon.mainhand', 'slot.weapon.offhand', 'slot.armor.head', 'slot.armor.chest', 'slot.armor.legs', 'slot.armor.feet' and 'slot.armor.body'."
+				},
+				"give_item": {
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/give_item"
+				},
+				"health_amount": {
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/health_amount"
+				},
+				"hurt_item": {
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/hurt_item"
+				},
+				"interact_text": {
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/interact_text"
+				},
+				"on_interact": {
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/on_interact"
+				},
+				"particle_on_start": {
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/particle_on_start"
+				},
+				"play_sounds": {
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/play_sounds"
+				},
+				"repair_entity_item": {
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/repair_entity_item"
+				},
+				"spawn_entities": {
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/spawn_entities"
+				},
+				"spawn_items": {
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/spawn_items"
+				},
+				"swing": {
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/swing"
+				},
+				"take_item": {
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/take_item"
+				},
+				"transform_to_item": {
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/transform_to_item"
+				},
+				"use_item": {
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/use_item"
+				},
+				"vibration": {
+					"$ref": "../../legacy/components/interact.json#/$defs/interaction/properties/vibration",
+					"description": "Vibration to emit when the interaction occurs."
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"description": "Defines interactions with this entity."
+}

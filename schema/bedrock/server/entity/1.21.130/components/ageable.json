@@ -1,87 +1,140 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"title": "Ageable",
-	"description": "Adds a timer for the entity to grow up. It can be accelerated by giving the entity the items it likes as defined by feed_items.",
 	"type": "object",
 	"properties": {
 		"drop_items": {
-			"description": "List of items that are dropped when an entity grows up",
-			"oneOf": [
+			"anyOf": [
+				{
+					"anyOf": [
+						{
+							"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+						},
+						{
+							"type": "object",
+							"properties": {
+								"item": {
+									"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+								}
+							},
+							"required": ["item"],
+							"additionalProperties": false
+						}
+					],
+					"description": "List of items that the entity drops when it grows up."
+				},
 				{
 					"type": "array",
 					"items": {
-						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+						"anyOf": [
+							{
+								"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+							},
+							{
+								"type": "object",
+								"properties": {
+									"item": {
+										"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+									}
+								},
+								"required": ["item"],
+								"additionalProperties": false
+							}
+						]
 					}
-				},
-				{
-					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
 				}
-			]
+			],
+			"description": "List of items that the entity drops when it grows up."
 		},
 		"duration": {
 			"type": "number",
 			"default": 1200,
-			"description": "Length of time before an entity grows up (-1 to always stay a baby)"
-		},
-		"feed_items": {
-			"description": "List of items that can be fed to an entity to age them up. Can be a single item string, an array of strings, or an array of objects with item and growth properties.",
-			"oneOf": [
-				{
-					"type": "array",
-					"items": {
-						"$ref": "#/$defs/feed_items"
-					}
-				},
-				{
-					"type": "array",
-					"items": {
-						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
-					}
-				},
-				{
-					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
-				}
-			]
+			"description": "Amount of time before the entity grows up, -1 for always a baby."
 		},
 		"feedItems": {
+			"$ref": "#/properties/feed_items",
 			"doNotSuggest": true,
-			"$ref": "#/properties/feed_items"
+			"description": ""
 		},
-		"grow_up": {
-			"description": "Event to fire when an entity grows up. Can be an object with event and target properties, or a simple event string.",
-			"oneOf": [
+		"feed_items": {
+			"anyOf": [
 				{
-					"$ref": "../../1.16.0/triggers.json"
+					"anyOf": [
+						{
+							"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+						},
+						{
+							"$ref": "#/$defs/feed_entry"
+						}
+					]
 				},
 				{
-					"type": "string"
+					"type": "array",
+					"items": {
+						"anyOf": [
+							{
+								"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+							},
+							{
+								"$ref": "#/$defs/feed_entry"
+							}
+						]
+					}
 				}
-			]
+			],
+			"description": "List of items that can be fed to the entity. Includes 'item' for the item name, 'growth' to define how much time it grows up by, and 'result_item' that defines what item the feed item will transform to upon successful interaction (Format: itemName:auxValue)."
+		},
+		"grow_up": {
+			"$ref": "../../legacy/general.json#/$defs/trigger",
+			"description": "Event to run when this entity grows up."
 		},
 		"interact_filters": {
 			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
 			"description": "List of conditions to meet so that the entity can be fed."
+		},
+		"on_pause_growth": {
+			"$ref": "../../legacy/general.json#/$defs/trigger",
+			"description": ""
+		},
+		"on_reset_growth": {
+			"$ref": "../../legacy/general.json#/$defs/trigger",
+			"description": ""
+		},
+		"pause_growth_items": {
+			"type": "array",
+			"items": {
+				"$ref": "../../legacy/general.json#/$defs/item_obj"
+			},
+			"description": "List of items that can be fed to the entity to pause growth for baby entities."
+		},
+		"reset_growth_items": {
+			"type": "array",
+			"items": {
+				"$ref": "../../legacy/general.json#/$defs/item_obj"
+			},
+			"description": "List of items that can be used to reset growth for baby entities."
 		}
 	},
 	"$defs": {
-		"feed_items": {
+		"feed_entry": {
 			"type": "object",
 			"properties": {
 				"growth": {
 					"type": "number",
-					"description": "How much the entity ages when fed this item."
+					"default": 0.1,
+					"description": ""
 				},
 				"item": {
-					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
-					"description": "The item identifier."
+					"$ref": "../../../../../vanilla/server/item_descriptor.json",
+					"description": ""
 				},
 				"result_item": {
-					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
-					"description": "The item that is given back to the player when they feed the entity this item. If not specified, the item fed to the entity is returned."
+					"$ref": "../../../../../vanilla/server/item_descriptor.json",
+					"description": ""
 				}
 			},
 			"additionalProperties": false
 		}
 	},
-	"additionalProperties": false
+	"additionalProperties": false,
+	"description": "Adds a timer for the entity to grow up. It can be accelerated by giving the entity the items it likes as defined by feedItems."
 }

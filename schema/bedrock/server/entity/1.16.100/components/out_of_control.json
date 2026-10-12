@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"title": "Out Of Control",
-	"description": "Defines the entity's 'out of control' state.",
-	"type": "object",
-	"properties": {},
-	"additionalProperties": false
-}

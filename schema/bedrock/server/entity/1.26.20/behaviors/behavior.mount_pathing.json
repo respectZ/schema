@@ -1,0 +1,48 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": ["move", "look", "jump"],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"target_dist": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "The distance at which this mob wants to be away from its target"
+		},
+		"track_target": {
+			"type": "boolean",
+			"description": "If true, this mob will chase after the target as long as it's a valid target"
+		}
+	},
+	"description": "Allows the mob to move around on its own while mounted seeking a target to attack."
+}

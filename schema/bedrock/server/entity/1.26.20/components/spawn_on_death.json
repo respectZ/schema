@@ -1,15 +1,39 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"title": "Spawn On Death",
-	"description": "Component for spawning entities when an entity perishes.",
 	"type": "object",
 	"properties": {
 		"additional_spawn_range": {
-			"$ref": "#/$defs/item_intrange",
+			"type": "object",
+			"properties": {
+				"max": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"default": 0,
+					"description": ""
+				},
+				"min": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"default": 0,
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
 			"description": "Additional random range of entities to spawn, defaults to 0, 0 when not set"
 		},
 		"entity_to_spawn": {
-			"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+			"anyOf": [
+				{
+					"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier"
+				},
+				{
+					"type": "string",
+					"enum": ["self"]
+				}
+			],
+			"default": "self",
 			"description": "What entity to spawn, defaults to owning entity when not set"
 		},
 		"filters": {
@@ -23,31 +47,19 @@
 		},
 		"spawn_amount": {
 			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"exclusiveMinimum": 0,
 			"default": 1,
-			"description": "How many entities to spawn, defaults to 1 when not set Value must be > 0."
+			"description": "How many entities to spawn, defaults to 1 when not set"
 		},
 		"spawn_method": {
 			"type": "string",
+			"enum": ["spawned", "born", "summoned"],
 			"default": "spawned",
-			"enum": ["born", "spawned", "summoned"],
 			"description": "Spawn method. born, spawned, or summoned, defaults to spawned when not set"
 		}
 	},
-	"$defs": {
-		"item_intrange": {
-			"type": "object",
-			"properties": {
-				"max": {
-					"type": "integer",
-					"default": 0
-				},
-				"min": {
-					"type": "integer",
-					"default": 0
-				}
-			},
-			"additionalProperties": false
-		}
-	},
-	"additionalProperties": false
+	"additionalProperties": false,
+	"description": "Component for spawning entities when an entity perishes."
 }

@@ -1,0 +1,37 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"admire_item_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "The sound event to play when admiring the item"
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["move", "look", "jump"],
+				"description": ""
+			},
+			"description": ""
+		},
+		"on_admire_item_start": {
+			"$ref": "../general.json#/$defs/trigger",
+			"description": "Event to run when the mob starts admiring an item."
+		},
+		"on_admire_item_stop": {
+			"$ref": "../general.json#/$defs/trigger",
+			"description": "Event to run when the mob stops admiring an item."
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"sound_interval": {
+			"$ref": "../general.json#/$defs/number_or_range",
+			"description": "The range of time in seconds to randomly wait before playing the sound again."
+		}
+	},
+	"description": "Enables the mob to admire items that have been configured as admirable. Must be used in combination with the admire_item component"
+}

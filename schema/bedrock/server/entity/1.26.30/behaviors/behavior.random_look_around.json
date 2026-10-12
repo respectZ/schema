@@ -1,0 +1,69 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": ["move", "look", "jump"],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"look_time": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"max": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"description": ""
+				},
+				"min": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"description": ""
+				}
+			},
+			"description": "The range of time in seconds the mob will stay looking in a random direction before looking elsewhere"
+		},
+		"max_angle_of_view_horizontal": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "The rightmost angle a mob can look at on the horizontal plane with respect to its initial facing direction."
+		},
+		"min_angle_of_view_horizontal": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "The leftmost angle a mob can look at on the horizontal plane with respect to its initial facing direction."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"probability": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "The probability of randomly looking around."
+		}
+	},
+	"description": "Allows the mob to randomly look around."
+}

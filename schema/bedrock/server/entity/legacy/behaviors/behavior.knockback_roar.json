@@ -1,0 +1,93 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"attack_time": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 0.5,
+			"description": "The delay after which the knockback occurs (in seconds)."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"cooldown_time": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 0.10000000149011612,
+			"description": "Time (in seconds) the mob has to wait before using the goal again."
+		},
+		"damage_filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "The list of conditions another entity must meet to be a valid target to apply damage to."
+		},
+		"duration": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 1.0,
+			"description": "The max duration of the roar (in seconds)."
+		},
+		"knockback_damage": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 6,
+			"description": "The damage dealt by the knockback roar."
+		},
+		"knockback_filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "The list of conditions another entity must meet to be a valid target to apply knockback to."
+		},
+		"knockback_height_cap": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 0.4000000059604645,
+			"description": "The maximum height for vertical knockback."
+		},
+		"knockback_horizontal_strength": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 4,
+			"description": "The strength of the horizontal knockback."
+		},
+		"knockback_range": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 4,
+			"description": "The radius (in blocks) of the knockback effect."
+		},
+		"knockback_vertical_strength": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 4,
+			"description": "The strength of the vertical knockback."
+		},
+		"on_roar_end": {
+			"$ref": "../general.json#/$defs/trigger",
+			"description": "Event that is triggered when the roar ends."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows the mob to perform a damaging knockback that affects all nearby entities."
+}

@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"type": "object",
-	"title": "Wants Jockey",
-	"description": "Sets that this entity wants to become a jockey.",
-	"additionalProperties": false,
-	"properties": {}
-}

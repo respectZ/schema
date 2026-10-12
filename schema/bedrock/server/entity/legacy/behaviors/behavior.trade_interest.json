@@ -1,0 +1,41 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"carried_item_switch_time": {
+			"type": "number",
+			"description": "The max time in seconds that the trader will hold an item before attempting to switch for a different item that takes the same trade"
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["move", "look", "jump"],
+				"description": ""
+			},
+			"description": ""
+		},
+		"cooldown": {
+			"type": "number",
+			"description": "The time in seconds before the trader can use this goal again"
+		},
+		"interest_time": {
+			"type": "number",
+			"description": "The max time in seconds that the trader will be interested with showing its trade items"
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"remove_item_time": {
+			"type": "number",
+			"description": "The max time in seconds that the trader will wait when you no longer have items to trade"
+		},
+		"within_radius": {
+			"type": "number",
+			"description": "Distance in blocks this mob can be interested by a player holding an item they like"
+		}
+	},
+	"description": "Allows the mob to look at a player that is holding a tradable item."
+}

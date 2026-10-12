@@ -1,0 +1,97 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"can_pickup_any_item": {
+			"type": "boolean",
+			"description": "If true, the mob can pickup any item"
+		},
+		"can_pickup_to_hand_or_equipment": {
+			"type": "boolean",
+			"description": "If true, the mob can pickup items to its hand or armor slots"
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": ["move", "look", "jump"],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"cooldown_after_being_attacked": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"description": "Time in seconds the mob cannot pickup items after being attacked"
+		},
+		"excluded_items": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/item_descriptor.json#/$defs/latest"
+			},
+			"description": "List of items this mob will not pick up"
+		},
+		"goal_radius": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Distance in blocks within the mob considers it has reached the goal. This is the \"wiggle room\" to stop the AI from bouncing back and forth trying to reach a specific spot"
+		},
+		"max_dist": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"description": "Maximum distance this mob will look for items to pick up"
+		},
+		"on_pickup_item_end": {
+			"$ref": "../../legacy/general.json#/$defs/trigger",
+			"description": "Event to run when this mob either finishes or loses interest in picking up an item"
+		},
+		"on_pickup_item_start": {
+			"$ref": "../../legacy/general.json#/$defs/trigger",
+			"description": "Event to run when this mob moves to pick up an item"
+		},
+		"pickup_based_on_chance": {
+			"type": "boolean",
+			"description": "If true, depending on the difficulty, there is a random chance that the mob may not be able to pickup items"
+		},
+		"pickup_same_items_as_in_hand": {
+			"type": "boolean",
+			"description": "If true, the mob will only pick up items that match what's in their hand"
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"search_height": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"description": "Height in blocks the mob will search for items"
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"track_target": {
+			"type": "boolean",
+			"description": "If true, this mob will chase after the target as long as it's a valid target"
+		}
+	},
+	"description": "Allows the mob to pick up items on the ground."
+}

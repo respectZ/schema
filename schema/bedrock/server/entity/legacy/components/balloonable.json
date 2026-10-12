@@ -1,0 +1,31 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"mass": {
+			"type": "number",
+			"default": 1,
+			"description": ""
+		},
+		"max_distance": {
+			"type": "number",
+			"default": 10,
+			"description": ""
+		},
+		"on_balloon": {
+			"$ref": "../general.json#/$defs/trigger",
+			"description": ""
+		},
+		"on_unballoon": {
+			"$ref": "../general.json#/$defs/trigger",
+			"description": ""
+		},
+		"soft_distance": {
+			"type": "number",
+			"default": 2,
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"description": ""
+}

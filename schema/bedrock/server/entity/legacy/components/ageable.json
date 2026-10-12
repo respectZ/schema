@@ -1,0 +1,148 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"drop_items": {
+			"anyOf": [
+				{
+					"anyOf": [
+						{
+							"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+						},
+						{
+							"type": "object",
+							"properties": {
+								"item": {
+									"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+									"description": ""
+								}
+							},
+							"required": ["item"],
+							"additionalProperties": false
+						}
+					]
+				},
+				{
+					"type": "array",
+					"items": {
+						"anyOf": [
+							{
+								"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+							},
+							{
+								"type": "object",
+								"properties": {
+									"item": {
+										"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+										"description": ""
+									}
+								},
+								"required": ["item"],
+								"additionalProperties": false
+							}
+						]
+					}
+				}
+			],
+			"description": "List of items that the entity drops when it grows up."
+		},
+		"duration": {
+			"type": "number",
+			"default": 1200,
+			"description": "Amount of time before the entity grows up, -1 for always a baby."
+		},
+		"feedItems": {
+			"$ref": "#/properties/feed_items",
+			"doNotSuggest": true,
+			"description": ""
+		},
+		"feed_items": {
+			"anyOf": [
+				{
+					"anyOf": [
+						{
+							"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+						},
+						{
+							"$ref": "#/$defs/feed_entry"
+						}
+					]
+				},
+				{
+					"type": "array",
+					"items": {
+						"anyOf": [
+							{
+								"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+							},
+							{
+								"$ref": "#/$defs/feed_entry"
+							}
+						]
+					}
+				}
+			],
+			"description": "List of items that can be fed to the entity. Includes 'item' for the item name, 'growth' to define how much time it grows up by, and 'result_item' that defines what item the feed item will transform to upon successful interaction (Format: itemName:auxValue)."
+		},
+		"grow_up": {
+			"$ref": "../general.json#/$defs/trigger",
+			"description": "Event to run when this entity grows up."
+		},
+		"interact_filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "List of conditions to meet so that the entity can be fed."
+		},
+		"on_pause_growth": {
+			"$ref": "../general.json#/$defs/trigger",
+			"description": ""
+		},
+		"on_reset_growth": {
+			"$ref": "../general.json#/$defs/trigger",
+			"description": ""
+		},
+		"pause_growth_items": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/item_descriptor.json",
+				"description": "List of items that can be fed to the entity to pause growth for baby entities."
+			},
+			"description": "List of items that can be fed to the entity to pause growth for baby entities."
+		},
+		"reset_growth_items": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/item_descriptor.json",
+				"description": "List of items that can be used to reset growth for baby entities."
+			},
+			"description": "List of items that can be used to reset growth for baby entities."
+		},
+		"transform_to_item": {
+			"$ref": "../../../../../vanilla/server/item_descriptor.json",
+			"description": ""
+		}
+	},
+	"$defs": {
+		"feed_entry": {
+			"type": "object",
+			"properties": {
+				"growth": {
+					"type": "number",
+					"default": 0.1,
+					"description": ""
+				},
+				"item": {
+					"$ref": "../../../../../vanilla/server/item_descriptor.json",
+					"description": ""
+				},
+				"result_item": {
+					"$ref": "../../../../../vanilla/server/item_descriptor.json",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": "List of items that can be fed to the entity. Includes 'item' for the item name, 'growth' to define how much time it grows up by, and 'result_item' that defines what item the feed item will transform to upon successful interaction (Format: itemName:auxValue)."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Adds a timer for the entity to grow up. It can be accelerated by giving the entity the items it likes as defined by feedItems."
+}

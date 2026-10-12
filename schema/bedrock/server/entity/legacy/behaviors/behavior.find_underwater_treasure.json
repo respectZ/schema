@@ -1,0 +1,33 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["move", "look", "jump"],
+				"description": ""
+			},
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"search_range": {
+			"type": "integer",
+			"description": "The range that the mob will search for a treasure chest within a ruin or shipwreck to move towards."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"stop_distance": {
+			"type": "number",
+			"description": "The distance the mob will move before stopping."
+		}
+	},
+	"description": "Allows the mob to move towards the nearest underwater ruin or shipwreck."
+}

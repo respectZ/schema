@@ -1,0 +1,120 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"affected_by_griefing_rule": {
+			"type": "boolean",
+			"description": "If true, whether the goal is affected by the mob griefing game rule."
+		},
+		"can_place": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "Filters for if the entity should try to place its block. Self and Target are set."
+		},
+		"chance": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Chance each tick for the entity to try and place a block."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": ["move", "look", "jump"],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"on_place": {
+			"$ref": "../../legacy/general.json#/$defs/trigger",
+			"description": "Trigger ran if the entity does place its block. Self, Target, and Block are set."
+		},
+		"placeable_carried_blocks": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/block_descriptor.json"
+			},
+			"description": "Block descriptors for which blocks are valid to be placed from the entity's carried item, if empty all blocks are valid."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"randomly_placeable_blocks": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"block": {
+						"$ref": "../../../../../vanilla/server/block_descriptor.json",
+						"description": "Block descriptor for this entry."
+					},
+					"filter": {
+						"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+						"description": "Filter for if this entry should be randomly selected from. Self, Target, and Block are set."
+					},
+					"weight": {
+						"type": "integer",
+						"minimum": -2147483648,
+						"maximum": 2147483647,
+						"description": "Weight for this entry."
+					}
+				},
+				"description": "Weighted block descriptors for which blocks should be randomly placed, if empty the entity will try to place its carried block from placeable_carried_blocks."
+			},
+			"description": "Weighted block descriptors for which blocks should be randomly placed, if empty the entity will try to place its carried block from placeable_carried_blocks."
+		},
+		"xz_range": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"max": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"description": ""
+				},
+				"min": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"description": ""
+				}
+			},
+			"description": "XZ range from which the entity will try and place blocks in."
+		},
+		"y_range": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"max": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"description": ""
+				},
+				"min": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"description": ""
+				}
+			},
+			"description": "Y range from which the entity will try and place blocks in."
+		}
+	},
+	"description": "Allows the entity to place a block."
+}

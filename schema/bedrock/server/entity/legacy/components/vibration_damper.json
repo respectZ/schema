@@ -1,0 +1,7 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false,
+	"description": "Vibrations emitted by an entity with this component will be ignored."
+}

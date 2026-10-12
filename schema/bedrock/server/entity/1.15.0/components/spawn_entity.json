@@ -1,0 +1,5 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$ref": "../../legacy/components/spawn_entity.json#/$defs/wrapped",
+	"description": "Adds a timer after which this entity will spawn another entity or item (similar to vanilla's chicken's egg-laying behavior)."
+}

@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"title": "Is Hidden When Invisible",
-	"description": "The entity can hide from hostile mobs while invisible.",
-	"type": "object",
-	"properties": {},
-	"additionalProperties": false
-}

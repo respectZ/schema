@@ -1,0 +1,13 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"jump_power": {
+			"type": "number",
+			"default": 0.42,
+			"description": "The initial vertical velocity for the jump."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Gives the entity the ability to jump."
+}

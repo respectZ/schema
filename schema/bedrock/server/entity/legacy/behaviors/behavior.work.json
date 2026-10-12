@@ -1,0 +1,74 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"active_time": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": "The amount of ticks the NPC will stay in their the work location"
+		},
+		"can_work_in_rain": {
+			"type": "boolean",
+			"description": "If true, this entity can work when their jobsite POI is being rained on."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"goal_cooldown": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": "The amount of ticks the goal will be on cooldown before it can be used again"
+		},
+		"on_arrival": {
+			"$ref": "../general.json#/$defs/trigger",
+			"description": "Event to run when the mob reaches their jobsite."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		},
+		"sound_delay_max": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": "The max interval in which a sound will play."
+		},
+		"sound_delay_min": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": "The min interval in which a sound will play."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"exclusiveMinimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 0.5,
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"work_in_rain_tolerance": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": "If \"can_work_in_rain\" is false, this is the maximum number of ticks left in the goal where rain will not interrupt the goal"
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows the NPC to use the POI"
+}

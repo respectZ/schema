@@ -1,8 +1,7 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"title": "Uses Uniform Air Drag",
-	"description": "When set, the entity uses uniform air drag instead of the default behavior.",
 	"type": "object",
 	"properties": {},
-	"additionalProperties": false
+	"additionalProperties": false,
+	"description": ""
 }

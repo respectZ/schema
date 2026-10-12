@@ -1,0 +1,59 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["move", "look", "jump"],
+				"description": ""
+			},
+			"description": ""
+		},
+		"damage_sources": {
+			"anyOf": [
+				{
+					"$ref": "../../../../../vanilla/server/damage_type.json"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../../../../vanilla/server/damage_type.json"
+					}
+				}
+			],
+			"description": "The list of Entity Damage Sources that will cause this mob to panic"
+		},
+		"force": {
+			"type": "boolean",
+			"description": "If true, this mob will not stop panicking until it can't move anymore or the goal is removed from it"
+		},
+		"ignore_mob_damage": {
+			"type": "boolean",
+			"description": "If true, the mob will not panic in response to damage from other mobs. This overrides the damage types in \"damage_sources\""
+		},
+		"panic_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "Sound to play while the mob is panicking."
+		},
+		"prefer_water": {
+			"type": "boolean",
+			"description": "If true, the mob will prefer water over land"
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"sound_interval": {
+			"$ref": "../../legacy/general.json#/$defs/number_or_range",
+			"description": "Range of random ticks to wait between playing the panic sound."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		}
+	},
+	"description": "Allows the mob to enter the panic state, which makes it run around and away from the damage source that made it enter this state."
+}

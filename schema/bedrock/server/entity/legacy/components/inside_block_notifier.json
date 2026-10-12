@@ -1,0 +1,37 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"block_list": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/block_event"
+			},
+			"description": "List of blocks, with certain block states, that we are monitoring to see if the entity is inside."
+		}
+	},
+	"additionalProperties": false,
+	"$defs": {
+		"block_event": {
+			"type": "object",
+			"properties": {
+				"block": {
+					"$ref": "../../../../../vanilla/server/block_descriptor.json#/$defs/block_without_tags",
+					"description": ""
+				},
+				"entered_block_event": {
+					"$ref": "../general.json#/$defs/trigger",
+					"description": ""
+				},
+				"exited_block_event": {
+					"$ref": "../general.json#/$defs/trigger",
+					"description": ""
+				}
+			},
+			"required": ["block"],
+			"additionalProperties": false,
+			"description": "List of blocks, with certain block states, that we are monitoring to see if the entity is inside."
+		}
+	},
+	"description": "Verifies whether the entity is inside any of the listed blocks."
+}

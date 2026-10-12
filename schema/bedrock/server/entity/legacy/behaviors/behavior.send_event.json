@@ -1,0 +1,106 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["move", "look", "jump"],
+				"description": ""
+			},
+			"description": ""
+		},
+		"event_choices": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"min_activation_range": {
+						"type": "number",
+						"description": "Minimum distance in blocks the target must be for this spell to activate"
+					},
+					"max_activation_range": {
+						"type": "number",
+						"description": "Maximum distance in blocks the target can be for this spell to activate"
+					},
+					"cooldown_time": {
+						"type": "number",
+						"description": "Time in seconds the mob has to wait before using this spell again"
+					},
+					"weight": {
+						"type": "number",
+						"description": "Relative weight of this spell choice when randomly selected from valid choices"
+					},
+					"cast_duration": {
+						"type": "number",
+						"description": "Time in seconds for the entire event sending process"
+					},
+					"look_at_target": {
+						"type": "boolean",
+						"description": "If true, the mob will face the entity it sends an event to"
+					},
+					"do_casting": {
+						"type": "boolean",
+						"description": "If true, the mob will show a casting animation while sending the event"
+					},
+					"particle_color": {
+						"anyOf": [
+							{
+								"type": "string",
+								"pattern": "#[0-9a-fA-F]{8}"
+							},
+							{
+								"type": "array",
+								"items": {
+									"type": "integer"
+								},
+								"minItems": 3
+							}
+						],
+						"description": "The color of the particles spawned while casting this spell"
+					},
+					"start_sound_event": {
+						"$ref": "../../../../../vanilla/server/level_sound.json",
+						"description": "The sound event to play when this spell starts"
+					},
+					"filters": {
+						"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+						"description": "Conditions that the target must meet to be eligible for receiving the event"
+					},
+					"sequence": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"base_delay": {
+									"type": "number",
+									"description": "Amount of time in seconds before starting this step"
+								},
+								"event": {
+									"type": "string",
+									"description": "The event to send to the entity"
+								},
+								"sound_event": {
+									"$ref": "../../../../../vanilla/server/level_sound.json",
+									"description": "The sound event to play when this step happens"
+								}
+							},
+							"additionalProperties": false
+						},
+						"description": "List of events to send"
+					}
+				},
+				"additionalProperties": false,
+				"description": ""
+			},
+			"description": "List of spell options to select from. One is randomly chosen each time the goal activates."
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		}
+	},
+	"description": "Allows the mob to send an event to another mob."
+}

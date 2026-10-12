@@ -1,0 +1,48 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"duration": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 30,
+			"description": "The duration in seconds that the celebration lasts for."
+		},
+		"fireworks_interval": {
+			"anyOf": [
+				{
+					"$ref": "../general.json#/$defs/number_or_range"
+				},
+				{
+					"type": "null"
+				}
+			],
+			"default": [10, 20],
+			"description": "Minimum and maximum time between firework (positive, in seconds)."
+		},
+		"on_celebration_end_event": {
+			"$ref": "../general.json#/$defs/trigger",
+			"description": "The event to trigger when the goal's duration expires."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows this entity to celebrate surviving a raid by shooting fireworks."
+}

@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"title": "Is Illager Captain",
-	"description": "Sets that this entity is an Illager Captain.",
-	"type": "object",
-	"properties": {},
-	"additionalProperties": false
-}

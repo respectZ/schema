@@ -1,0 +1,107 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"chance_to_start": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 1,
+			"description": ""
+		},
+		"conditional_filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": ""
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": ["move", "look", "jump"],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"damage_causes": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"$ref": "../../../../../vanilla/server/damage_type.json",
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Nn][Oo][Nn][Ee]|[Aa][Ll][Ll]|[Oo][Vv][Ee][Rr][Rr][Ii][Dd][Ee]|[Cc][Oo][Nn][Tt][Aa][Cc][Tt]|[Ee][Nn][Tt][Ii][Tt][Yy]_[Aa][Tt][Tt][Aa][Cc][Kk]|[Pp][Rr][Oo][Jj][Ee][Cc][Tt][Ii][Ll][Ee]|[Ss][Uu][Ff][Ff][Oo][Cc][Aa][Tt][Ii][Oo][Nn]|[Ff][Aa][Ll][Ll]|[Ff][Ii][Rr][Ee]|[Ff][Ii][Rr][Ee]_[Tt][Ii][Cc][Kk]|[Ll][Aa][Vv][Aa]|[Dd][Rr][Oo][Ww][Nn][Ii][Nn][Gg]|[Bb][Ll][Oo][Cc][Kk]_[Ee][Xx][Pp][Ll][Oo][Ss][Ii][Oo][Nn]|[Ee][Nn][Tt][Ii][Tt][Yy]_[Ee][Xx][Pp][Ll][Oo][Ss][Ii][Oo][Nn]|[Vv][Oo][Ii][Dd]|[Ss][Ee][Ll][Ff]_[Dd][Ee][Ss][Tt][Rr][Uu][Cc][Tt]|[Mm][Aa][Gg][Ii][Cc]|[Ww][Ii][Tt][Hh][Ee][Rr]|[Ss][Tt][Aa][Rr][Vv][Ee]|[Aa][Nn][Vv][Ii][Ll]|[Tt][Hh][Oo][Rr][Nn][Ss]|[Ff][Aa][Ll][Ll][Ii][Nn][Gg]_[Bb][Ll][Oo][Cc][Kk]|[Pp][Ii][Ss][Tt][Oo][Nn]|[Ff][Ll][Yy]_[Ii][Nn][Tt][Oo]_[Ww][Aa][Ll][Ll]|[Mm][Aa][Gg][Mm][Aa]|[Ff][Ii][Rr][Ee][Ww][Oo][Rr][Kk][Ss]|[Ll][Ii][Gg][Hh][Tt][Nn][Ii][Nn][Gg]|[Cc][Hh][Aa][Rr][Gg][Ii][Nn][Gg]|[Tt][Ee][Mm][Pp][Ee][Rr][Aa][Tt][Uu][Rr][Ee]|[Ff][Rr][Ee][Ee][Zz][Ii][Nn][Gg]|[Ss][Tt][Aa][Ll][Aa][Cc][Tt][Ii][Tt][Ee]|[Ss][Tt][Aa][Ll][Aa][Gg][Mm][Ii][Tt][Ee]|[Rr][Aa][Mm]_[Aa][Tt][Tt][Aa][Cc][Kk]|[Ss][Oo][Nn][Ii][Cc]_[Bb][Oo][Oo][Mm]|[Cc][Aa][Mm][Pp][Ff][Ii][Rr][Ee]|[Ss][Oo][Uu][Ll]_[Cc][Aa][Mm][Pp][Ff][Ii][Rr][Ee]|[Mm][Aa][Cc][Ee]_[Ss][Mm][Aa][Ss][Hh])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"duration": {
+			"anyOf": [
+				{
+					"type": "number",
+					"minimum": 0,
+					"maximum": 3.4028234663852886e38,
+					"description": ""
+				},
+				{
+					"type": "object",
+					"properties": {
+						"max": {
+							"type": "number",
+							"minimum": 0,
+							"maximum": 3.4028234663852886e38,
+							"description": ""
+						},
+						"min": {
+							"type": "number",
+							"minimum": 0,
+							"maximum": 3.4028234663852886e38,
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": ""
+				}
+			],
+			"description": ""
+		},
+		"hurt_by_cause_memory": {
+			"type": "string",
+			"minLength": 1,
+			"description": ""
+		},
+		"hurt_by_entity_memory": {
+			"type": "string",
+			"minLength": 1,
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"retry_attempt_cooldown": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": ""
+		}
+	},
+	"required": ["hurt_by_cause_memory"],
+	"description": ""
+}

@@ -1,0 +1,7 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false,
+	"description": "Allows the actor to open doors assuming that that flags set up for the component to use in navigation"
+}

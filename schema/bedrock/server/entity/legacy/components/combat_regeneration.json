@@ -1,0 +1,33 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"apply_to_family": {
+			"type": "boolean",
+			"default": false,
+			"description": "Determines if the mob will grant mobs of the same type combat buffs if they kill the target."
+		},
+		"apply_to_self": {
+			"type": "boolean",
+			"default": false,
+			"description": "Determines if the mob will grant itself the combat buffs if it kills the target."
+		},
+		"regeneration_duration": {
+			"anyOf": [
+				{
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647
+				},
+				{
+					"type": "string",
+					"enum": ["infinite"]
+				}
+			],
+			"default": 5,
+			"description": "The duration in seconds of Regeneration I added to the mob. Can also be set to \"infinite\""
+		}
+	},
+	"additionalProperties": false,
+	"description": "Gives Regeneration I and removes Mining Fatigue from the mob that kills the Actor's attack target."
+}

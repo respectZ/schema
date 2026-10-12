@@ -1,0 +1,77 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": ["move", "look", "jump"],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"eat_and_replace_block_pairs": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"eat_block": {
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+						"description": "The block the entity should eat."
+					},
+					"replace_block": {
+						"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+						"description": "The block that should replace the eaten block."
+					}
+				}
+			},
+			"description": "A collection of pairs of blocks; the first (\"eat_block\") is the block the entity should eat, the second (\"replace_block\") is the block that should replace the eaten block."
+		},
+		"on_eat": {
+			"$ref": "../../legacy/general.json#/$defs/trigger",
+			"description": "The event to trigger when the block eating animation has completed."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"success_chance": {
+			"anyOf": [
+				{
+					"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string"
+				},
+				{
+					"$ref": "../../../../../vanilla/definition/molang.json#/$defs/versioned"
+				},
+				{
+					"type": "number"
+				},
+				{
+					"type": "boolean"
+				}
+			],
+			"description": "A molang expression defining the success chance the entity has to consume a block."
+		},
+		"time_until_eat": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "The amount of time (in seconds) it takes for the block to be eaten upon a successful eat attempt."
+		}
+	},
+	"description": "Allows the entity to consume a block, replace the eaten block with another block, and trigger an event as a result."
+}

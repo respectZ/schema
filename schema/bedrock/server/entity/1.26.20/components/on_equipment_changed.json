@@ -1,31 +1,35 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"title": "On Equipment Changed",
-	"description": "Triggers events when equipment is equipped or unequipped.",
 	"type": "object",
 	"properties": {
 		"slots": {
 			"type": "array",
+			"default": [],
 			"items": {
 				"type": "object",
 				"properties": {
-					"slot": {
-						"type": "string",
-						"description": "The equipment slot to watch for changes."
-					},
 					"on_equip": {
-						"$ref": "../../1.16.0/triggers.json",
-						"description": "Event to fire when equipment is equipped to this slot."
+						"type": "string",
+						"default": "",
+						"description": "Event to execute when the slot is changed to a non-empty item."
 					},
 					"on_unequip": {
-						"$ref": "../../1.16.0/triggers.json",
-						"description": "Event to fire when equipment is unequipped from this slot."
+						"type": "string",
+						"default": "",
+						"description": "Event to execute when the slot is changed to an empty item."
+					},
+					"slot": {
+						"$ref": "../../../../../vanilla/server/equipment_slot.json",
+						"default": "slot.weapon.mainhand",
+						"description": "The equipment slot to monitor for changes."
 					}
 				},
-				"additionalProperties": false
+				"additionalProperties": false,
+				"description": ""
 			},
-			"description": "List of equipment slots and their equip/unequip triggers."
+			"description": "A list of slot-specific events to execute when the entity's equipment changes in those slots."
 		}
 	},
-	"additionalProperties": false
+	"additionalProperties": false,
+	"description": "Allows to specify events to execute when equipment is set in the entity's default equipment slots. Doesn't apply to \"minecraft:inventory\", use \"minecraft:equippable\" instead."
 }

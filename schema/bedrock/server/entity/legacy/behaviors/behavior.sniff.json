@@ -1,0 +1,65 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"cooldown_range": {
+			"anyOf": [
+				{
+					"$ref": "../general.json#/$defs/number_or_range"
+				},
+				{
+					"type": "null"
+				}
+			],
+			"default": [3.0, 10.0],
+			"description": "Cooldown range between sniffs in seconds"
+		},
+		"duration": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 1,
+			"description": "Sniffing duration in seconds"
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		},
+		"sniffing_radius": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 5,
+			"description": "Mob detection radius"
+		},
+		"suspicion_radius_horizontal": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 3,
+			"description": "Mob suspicion horizontal radius. When a player is within this radius horizontally, the anger level towards that player is increased"
+		},
+		"suspicion_radius_vertical": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 3,
+			"description": "Mob suspicion vertical radius. When a player is within this radius vertically, the anger level towards that player is increased"
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows this entity to detect the nearest player within \"sniffing_radius\" and update its \"minecraft:suspect_tracking\" component state"
+}

@@ -1,0 +1,70 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": ["move", "look", "jump"],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"listen_time": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"description": "Sets the time an entity should continue delivering items to a noteblock after hearing it."
+		},
+		"on_item_throw": {
+			"$ref": "../../legacy/general.json#/$defs/trigger",
+			"description": "Event(s) to run when this mob throws items."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"reach_block_distance": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Sets the desired distance to be reached before throwing the items towards the block."
+		},
+		"run_speed": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Sets the entity's speed when running toward the block."
+		},
+		"throw_force": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Sets the throw force."
+		},
+		"throw_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "Sound to play when this mob throws an item."
+		},
+		"vertical_throw_mul": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Sets the vertical throw multiplier that is applied on top of the throw force in the vertical direction."
+		}
+	},
+	"description": "The entity will attempt to toss the items from its inventory to a nearby recently played noteblock."
+}

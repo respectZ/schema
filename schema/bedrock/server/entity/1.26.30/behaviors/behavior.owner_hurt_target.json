@@ -1,0 +1,75 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"attack_owner": {
+			"type": "boolean",
+			"description": ""
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": ["move", "look", "jump"],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"entity_types": {
+			"anyOf": [
+				{
+					"$ref": "../../legacy/general.json#/$defs/entity_types"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../legacy/general.json#/$defs/entity_types"
+					}
+				}
+			],
+			"description": "List of entity types that this entity can target if the potential target is hurt by this mob's owner"
+		},
+		"must_reach": {
+			"type": "boolean",
+			"description": ""
+		},
+		"must_see": {
+			"type": "boolean",
+			"description": ""
+		},
+		"must_see_forget_duration": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 3.4028234663852886e38,
+			"description": ""
+		},
+		"persist_time": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 3.4028234663852886e38,
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"description": ""
+		},
+		"within_radius": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 3.4028234663852886e38,
+			"description": ""
+		}
+	},
+	"description": "Allows the mob to target a mob that is hurt by their owner."
+}

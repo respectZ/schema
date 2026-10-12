@@ -1,0 +1,61 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"on_item_throw": {
+			"type": "array",
+			"items": {
+				"$ref": "../general.json#/$defs/trigger"
+			},
+			"default": [],
+			"description": "Event(s) to run when this mob throws items."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		},
+		"reach_mob_distance": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Sets the desired distance to be reached before giving items to owner."
+		},
+		"run_speed": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Sets the entity's speed when running toward the owner."
+		},
+		"throw_force": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Sets the throw force."
+		},
+		"throw_sound": {
+			"type": "string",
+			"description": "Sound to play when this mob throws an item."
+		},
+		"vertical_throw_mul": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Sets the vertical throw multiplier that is applied on top of the throw force in the vertical direction."
+		}
+	},
+	"additionalProperties": false,
+	"description": "The entity will attempt to toss the items from its inventory to its owner."
+}

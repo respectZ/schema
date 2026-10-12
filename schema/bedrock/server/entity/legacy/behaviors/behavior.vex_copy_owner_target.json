@@ -1,0 +1,35 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["move", "look", "jump"],
+				"description": ""
+			},
+			"description": ""
+		},
+		"entity_types": {
+			"anyOf": [
+				{
+					"$ref": "../general.json#/$defs/entity_types"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../general.json#/$defs/entity_types"
+					}
+				}
+			],
+			"description": "List of entities this mob can copy the owner from"
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows the mob to target the same entity its owner is targeting."
+}

@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"cooldown_after_being_attacked": {
+			"$ref": "../../legacy/components/admire_item.json#/properties/cooldown_after_being_attacked",
+			"default": 10
+		},
+		"duration": {
+			"$ref": "../../legacy/components/admire_item.json#/properties/duration",
+			"default": 10
+		}
+	},
+	"additionalProperties": false,
+	"description": "Causes the mob to ignore attackable targets for a given duration."
+}

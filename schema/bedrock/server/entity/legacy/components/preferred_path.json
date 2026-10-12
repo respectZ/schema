@@ -1,0 +1,97 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"anyOf": [
+		{
+			"type": "object",
+			"properties": {
+				"default_block_cost": {
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"default": 0,
+					"description": "Cost for non - preferred blocks"
+				},
+				"jump_cost": {
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"default": 0,
+					"description": "Added cost for jumping up a node"
+				},
+				"max_fall_blocks": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"default": 3,
+					"description": "Distance mob can fall without taking damage"
+				},
+				"preferred_path_blocks": {
+					"anyOf": [
+						{
+							"type": "array",
+							"items": {
+								"$ref": "#/$defs/block_set",
+								"description": ""
+							},
+							"description": ""
+						},
+						{
+							"type": "object",
+							"additionalProperties": {
+								"$ref": "#/$defs/block_set",
+								"description": ""
+							},
+							"description": ""
+						},
+						{
+							"type": "null",
+							"description": ""
+						}
+					],
+					"default": [],
+					"description": "A list of blocks with their associated cost"
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		},
+		{
+			"type": "null",
+			"description": ""
+		}
+	],
+	"$defs": {
+		"block_set": {
+			"type": "object",
+			"properties": {
+				"blocks": {
+					"anyOf": [
+						{
+							"type": "array",
+							"items": {
+								"$ref": "../../../../../vanilla/server/block_descriptor.json",
+								"description": ""
+							},
+							"description": ""
+						},
+						{
+							"type": "null",
+							"description": ""
+						}
+					],
+					"default": [],
+					"description": "List of preferred blocks"
+				},
+				"cost": {
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"description": "Cost for preferred blocks"
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		}
+	},
+	"description": "Specifies costing information for mobs that prefer to walk on preferred paths."
+}

@@ -1,0 +1,71 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"anyOf": [
+		{
+			"$ref": "#/$defs/trigger"
+		},
+		{
+			"type": "array",
+			"items": {
+				"anyOf": [
+					{
+						"$ref": "#/$defs/trigger"
+					},
+					{
+						"$ref": "#/$defs/entry_wrapper"
+					}
+				]
+			}
+		},
+		{
+			"$ref": "#/$defs/root_wrapper"
+		}
+	],
+	"$defs": {
+		"entry_wrapper": {
+			"type": "object",
+			"properties": {
+				"on_environment": {
+					"$ref": "#/$defs/trigger",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"required": ["on_environment"]
+		},
+		"root_wrapper": {
+			"type": "object",
+			"properties": {
+				"on_environment": {
+					"$ref": "#/$defs/triggers",
+					"description": ""
+				},
+				"triggers": {
+					"$ref": "#/$defs/triggers"
+				}
+			},
+			"additionalProperties": false,
+			"required": ["on_environment"],
+			"description": ""
+		},
+		"trigger": {
+			"$ref": "../general.json#/$defs/trigger",
+			"description": ""
+		},
+		"triggers": {
+			"anyOf": [
+				{
+					"$ref": "#/$defs/trigger"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/trigger"
+					}
+				}
+			],
+			"description": "The list of triggers that fire when the environment conditions match the given filter criteria."
+		}
+	},
+	"description": "Creates a trigger based on environment conditions."
+}

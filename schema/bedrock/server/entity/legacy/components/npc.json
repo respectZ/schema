@@ -1,0 +1,142 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"npc_data": {
+			"type": "object",
+			"properties": {
+				"picker_offsets": {
+					"$ref": "#/$defs/offsets",
+					"description": ""
+				},
+				"portrait_offsets": {
+					"$ref": "#/$defs/offsets",
+					"description": ""
+				},
+				"skin_list": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/skin",
+						"description": ""
+					},
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"$defs": {
+		"offsets": {
+			"type": "object",
+			"properties": {
+				"rotate": {
+					"$ref": "#/$defs/vector_zero",
+					"default": [0, 0, 0],
+					"description": ""
+				},
+				"scale": {
+					"$ref": "#/$defs/vector_one",
+					"default": [1, 1, 1],
+					"description": ""
+				},
+				"translate": {
+					"$ref": "#/$defs/vector_zero",
+					"default": [0, 0, 0],
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		},
+		"skin": {
+			"type": "object",
+			"properties": {
+				"mark_variant": {
+					"type": "integer",
+					"description": ""
+				},
+				"variant": {
+					"type": "integer",
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		},
+		"vector_array": {
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"type": "number",
+				"description": ""
+			},
+			"description": ""
+		},
+		"vector_one": {
+			"anyOf": [
+				{
+					"$ref": "#/$defs/vector_array",
+					"description": ""
+				},
+				{
+					"type": "object",
+					"properties": {
+						"x": {
+							"type": "number",
+							"default": 1,
+							"description": ""
+						},
+						"y": {
+							"type": "number",
+							"default": 1,
+							"description": ""
+						},
+						"z": {
+							"type": "number",
+							"default": 1,
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": ""
+				}
+			],
+			"description": ""
+		},
+		"vector_zero": {
+			"anyOf": [
+				{
+					"$ref": "#/$defs/vector_array",
+					"description": ""
+				},
+				{
+					"type": "object",
+					"properties": {
+						"x": {
+							"type": "number",
+							"default": 0,
+							"description": ""
+						},
+						"y": {
+							"type": "number",
+							"default": 0,
+							"description": ""
+						},
+						"z": {
+							"type": "number",
+							"default": 0,
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": ""
+				}
+			],
+			"description": ""
+		}
+	},
+	"description": ""
+}

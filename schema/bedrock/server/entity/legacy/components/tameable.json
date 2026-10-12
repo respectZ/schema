@@ -1,0 +1,84 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"anyOf": [
+		{
+			"type": "object",
+			"properties": {
+				"probability": {
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"default": 1,
+					"description": "The chance of taming the entity with each item use between 0.0 and 1.0, where 1.0 is 100%"
+				},
+				"tameItems": {
+					"$ref": "#/anyOf/0/properties/tame_items",
+					"doNotSuggest": true,
+					"description": ""
+				},
+				"tame_event": {
+					"$ref": "../general.json#/$defs/trigger",
+					"description": "Event to run when this entity becomes tamed"
+				},
+				"tame_items": {
+					"anyOf": [
+						{
+							"anyOf": [
+								{
+									"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+								},
+								{
+									"$ref": "#/$defs/item_pair"
+								}
+							]
+						},
+						{
+							"type": "array",
+							"items": {
+								"anyOf": [
+									{
+										"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+									},
+									{
+										"$ref": "#/$defs/item_pair"
+									}
+								]
+							}
+						}
+					],
+					"default": [],
+					"description": "The list of items that can be used to tame this entity"
+				}
+			},
+			"additionalProperties": false
+		},
+		{
+			"type": "null"
+		}
+	],
+	"$defs": {
+		"item_pair": {
+			"anyOf": [
+				{
+					"type": "object",
+					"properties": {
+						"item": {
+							"$ref": "../../../../../vanilla/server/item_descriptor.json",
+							"description": ""
+						},
+						"result_item": {
+							"$ref": "../../../../../vanilla/server/item_descriptor.json",
+							"description": ""
+						}
+					},
+					"additionalProperties": false
+				},
+				{
+					"type": "null"
+				}
+			],
+			"description": "The list of items that can be used to tame this entity"
+		}
+	},
+	"description": ""
+}

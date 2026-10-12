@@ -1,0 +1,75 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"damage": {
+			"anyOf": [
+				{
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"description": ""
+				},
+				{
+					"type": "object",
+					"properties": {
+						"max": {
+							"type": "number",
+							"minimum": -3.4028234663852886e38,
+							"maximum": 3.4028234663852886e38,
+							"default": 0,
+							"description": ""
+						},
+						"min": {
+							"type": "number",
+							"minimum": -3.4028234663852886e38,
+							"maximum": 3.4028234663852886e38,
+							"default": 0,
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": ""
+				}
+			],
+			"default": 0,
+			"description": "Range of the random amount of damage the melee attack deals. A negative value can heal the entity instead of hurting it."
+		},
+		"effect_amplifier": {
+			"$ref": "../../legacy/components/attack.json#/anyOf/0/properties/effect_amplifier"
+		},
+		"effect_duration": {
+			"anyOf": [
+				{
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"description": ""
+				},
+				{
+					"type": "string",
+					"anyOf": [
+						{
+							"enum": ["infinite"],
+							"description": ""
+						},
+						{
+							"pattern": "^[iI][nN][fF][iI][nN][iI][tT][eE]$",
+							"description": ""
+						}
+					],
+					"minLength": 8,
+					"maxLength": 8,
+					"description": ""
+				}
+			],
+			"default": 0,
+			"description": "Duration in seconds of the status ailment applied to the damaged entity. Can also be \"infinite\"."
+		},
+		"effect_name": {
+			"$ref": "../../legacy/components/attack.json#/anyOf/0/properties/effect_name"
+		}
+	},
+	"additionalProperties": false,
+	"description": "Defines an entity's melee attack and any additional effects on it."
+}

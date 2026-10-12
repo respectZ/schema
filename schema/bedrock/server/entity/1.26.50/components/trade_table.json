@@ -1,0 +1,23 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"convert_trades_economy": {
+			"$ref": "../../legacy/components/trade_table.json#/anyOf/0/properties/convert_trades_economy"
+		},
+		"display_name": {
+			"$ref": "../../legacy/components/trade_table.json#/anyOf/0/properties/display_name"
+		},
+		"new_screen": {
+			"$ref": "../../legacy/components/trade_table.json#/anyOf/0/properties/new_screen"
+		},
+		"persist_trades": {
+			"$ref": "../../legacy/components/trade_table.json#/anyOf/0/properties/persist_trades"
+		},
+		"table": {
+			"$ref": "../../legacy/components/trade_table.json#/anyOf/0/properties/table"
+		}
+	},
+	"additionalProperties": false,
+	"description": "Defines this entity's ability to trade with players."
+}

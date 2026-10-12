@@ -1,0 +1,51 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"default_block_cost": {
+			"$ref": "../../legacy/components/preferred_path.json#/anyOf/0/properties/default_block_cost"
+		},
+		"jump_cost": {
+			"$ref": "../../legacy/components/preferred_path.json#/anyOf/0/properties/jump_cost"
+		},
+		"max_fall_blocks": {
+			"$ref": "../../legacy/components/preferred_path.json#/anyOf/0/properties/max_fall_blocks"
+		},
+		"preferred_path_blocks": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/block_set",
+				"description": ""
+			},
+			"default": [],
+			"description": "A list of blocks with their associated cost"
+		}
+	},
+	"additionalProperties": false,
+	"$defs": {
+		"block_set": {
+			"type": "object",
+			"properties": {
+				"blocks": {
+					"type": "array",
+					"items": {
+						"$ref": "../../../../../vanilla/server/block_descriptor.json",
+						"description": ""
+					},
+					"default": [],
+					"description": "List of preferred blocks"
+				},
+				"cost": {
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"description": "Cost for preferred blocks"
+				}
+			},
+			"required": ["cost"],
+			"additionalProperties": false,
+			"description": ""
+		}
+	},
+	"description": "Specifies costing information for mobs that prefer to walk on preferred paths."
+}

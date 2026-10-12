@@ -1,0 +1,21 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["move", "look", "jump"],
+				"description": ""
+			},
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		}
+	},
+	"description": "Allows the Dragon to fly around in a circle around the center podium. Can only be used by the Ender Dragon."
+}

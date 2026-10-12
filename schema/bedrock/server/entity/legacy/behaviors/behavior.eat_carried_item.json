@@ -1,0 +1,25 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["move", "look", "jump"],
+				"description": ""
+			},
+			"description": ""
+		},
+		"delay_before_eating": {
+			"type": "number",
+			"description": "Time in seconds the mob should wait before eating the item."
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		}
+	},
+	"description": "If the mob is carrying a food item, the mob will eat it and the effects will be applied to the mob."
+}
