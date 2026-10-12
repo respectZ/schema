@@ -31,6 +31,12 @@
 					"properties": { "tags": { "$ref": "../definition/molang.json#/$defs/string" } }
 				},
 				{
+					"type": "object",
+					"required": ["item_tag"],
+					"additionalProperties": false,
+					"properties": { "item_tag": { "$ref": "./tags.json#/$defs/item_tag" } }
+				},
+				{
 					"type": "array",
 					"items": {
 						"allOf": [
