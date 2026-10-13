@@ -543,6 +543,9 @@
 		"minecraft:rotation_locked_to_vehicle": {
 			"$ref": "../../legacy/components/rotation_locked_to_vehicle.json"
 		},
+		"minecraft:scaffolding_climber": {
+			"$ref": "./scaffolding_climber.json"
+		},
 		"minecraft:scale": {
 			"$ref": "../../legacy/components/scale.json"
 		},

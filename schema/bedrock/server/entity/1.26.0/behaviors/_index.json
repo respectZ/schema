@@ -108,6 +108,12 @@
 		"minecraft:behavior.emerge": {
 			"$ref": "../../legacy/behaviors/behavior.emerge.json"
 		},
+		"minecraft:behavior.enderman_leave_block": {
+			"$ref": "../../1.21.100/behaviors/behavior.enderman_leave_block.json"
+		},
+		"minecraft:behavior.enderman_take_block": {
+			"$ref": "../../1.21.100/behaviors/behavior.enderman_take_block.json"
+		},
 		"minecraft:behavior.equip_item": {
 			"$ref": "../../legacy/behaviors/behavior.equip_item.json"
 		},

@@ -193,7 +193,7 @@
 		"aliases": {
 			"deprecated": true,
 			"doNotSuggest": true,
-			"deprecationMessage": "Deprecated as of 1.21.20.",
+			"deprecationMessage": "Deprecated as of 1.21.10.",
 			"type": "object",
 			"description": "You can define aliases for your entity to summon the entity with set entity property values through the `summon` command.",
 			"additionalProperties": {

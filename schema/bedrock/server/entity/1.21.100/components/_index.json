@@ -66,6 +66,9 @@
 		"minecraft:body_rotation_always_follows_head": {
 			"$ref": "../../legacy/components/body_rotation_always_follows_head.json"
 		},
+		"minecraft:body_rotation_axis_aligned": {
+			"$ref": "./body_rotation_axis_aligned.json"
+		},
 		"minecraft:body_rotation_blocked": {
 			"$ref": "../../legacy/components/body_rotation_blocked.json"
 		},
@@ -345,6 +348,9 @@
 		"minecraft:leashable_to": {
 			"$ref": "../../legacy/components/leashable_to.json"
 		},
+		"minecraft:lookat": {
+			"$ref": "../../1.21.40/components/lookat.json"
+		},
 		"minecraft:looked_at": {
 			"$ref": "../../legacy/components/looked_at.json"
 		},
@@ -536,6 +542,9 @@
 		},
 		"minecraft:rotation_locked_to_vehicle": {
 			"$ref": "../../legacy/components/rotation_locked_to_vehicle.json"
+		},
+		"minecraft:scaffolding_climber": {
+			"$ref": "../../1.17.10/components/scaffolding_climber.json"
 		},
 		"minecraft:scale": {
 			"$ref": "../../legacy/components/scale.json"

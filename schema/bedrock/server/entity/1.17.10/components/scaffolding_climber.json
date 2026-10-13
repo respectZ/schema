@@ -1,0 +1,7 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$ref": "../../legacy/components/scaffolding_climber.json",
+	"deprecated": true,
+	"doNotSuggest": true,
+	"deprecationMessage": "Renamed to \"minecraft:block_climber\" in format version 1.17.10."
+}

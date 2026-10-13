@@ -26,9 +26,6 @@
 							},
 							{
 								"$ref": "./behaviors/_index.json"
-							},
-							{
-								"$ref": "../1.8.0/triggers/_index.json"
 							}
 						],
 						"type": "object",
@@ -43,37 +40,15 @@
 						},
 						{
 							"$ref": "./behaviors/_index.json"
-						},
-						{
-							"$ref": "../1.8.0/triggers/_index.json"
 						}
 					],
 					"type": "object"
 				},
 				"description": {
-					"$ref": "../1.16.0/description.json"
+					"$ref": "../1.8.0/_index.json#/properties/minecraft:entity/properties/description"
 				},
 				"events": {
-					"type": "object",
-					"title": "Events",
-					"additionalProperties": {
-						"$ref": "../1.16.0/event.json",
-						"title": "Event Definition"
-					},
-					"properties": {
-						"minecraft:entity_born": {
-							"$ref": "../1.16.0/event.json"
-						},
-						"minecraft:entity_spawned": {
-							"$ref": "../1.16.0/event.json"
-						},
-						"minecraft:entity_transformed": {
-							"$ref": "../1.16.0/event.json"
-						},
-						"minecraft:on_prime": {
-							"$ref": "../1.16.0/event.json"
-						}
-					}
+					"$ref": "../1.8.0/_index.json#/properties/minecraft:entity/properties/events"
 				}
 			}
 		},

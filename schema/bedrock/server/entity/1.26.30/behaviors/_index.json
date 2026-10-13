@@ -108,6 +108,12 @@
 		"minecraft:behavior.emerge": {
 			"$ref": "./behavior.emerge.json"
 		},
+		"minecraft:behavior.enderman_leave_block": {
+			"$ref": "../../1.21.100/behaviors/behavior.enderman_leave_block.json"
+		},
+		"minecraft:behavior.enderman_take_block": {
+			"$ref": "../../1.21.100/behaviors/behavior.enderman_take_block.json"
+		},
 		"minecraft:behavior.equip_item": {
 			"$ref": "../../1.26.20/behaviors/behavior.equip_item.json"
 		},
@@ -152,6 +158,9 @@
 		},
 		"minecraft:behavior.follow_parent": {
 			"$ref": "../../1.26.20/behaviors/behavior.follow_parent.json"
+		},
+		"minecraft:behavior.follow_target_captain": {
+			"$ref": "../../1.26.20/behaviors/behavior.follow_target_captain.json"
 		},
 		"minecraft:behavior.follow_target_leader": {
 			"$ref": "./behavior.follow_target_leader.json"

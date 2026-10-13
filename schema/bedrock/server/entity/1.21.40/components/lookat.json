@@ -1,0 +1,7 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$ref": "../../legacy/components/lookat.json",
+	"deprecated": true,
+	"doNotSuggest": true,
+	"deprecationMessage": "Renamed to \"minecraft:looked_at\" in format version 1.21.100."
+}

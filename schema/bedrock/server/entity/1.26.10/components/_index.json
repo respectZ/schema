@@ -66,6 +66,9 @@
 		"minecraft:body_rotation_always_follows_head": {
 			"$ref": "../../1.21.120/components/body_rotation_always_follows_head.json"
 		},
+		"minecraft:body_rotation_axis_aligned": {
+			"$ref": "../../1.21.100/components/body_rotation_axis_aligned.json"
+		},
 		"minecraft:body_rotation_blocked": {
 			"$ref": "../../1.21.120/components/body_rotation_blocked.json"
 		},
@@ -140,6 +143,9 @@
 		},
 		"minecraft:damage_sensor": {
 			"$ref": "../../1.21.40/components/damage_sensor.json"
+		},
+		"minecraft:dash": {
+			"$ref": "../../1.21.110/components/dash.json"
 		},
 		"minecraft:dash_action": {
 			"$ref": "../../legacy/components/dash_action.json"
@@ -252,6 +258,9 @@
 		"minecraft:ignore_cannot_be_attacked": {
 			"$ref": "../../legacy/components/ignore_cannot_be_attacked.json"
 		},
+		"minecraft:input_air_controlled": {
+			"$ref": "../../1.21.110/components/input_air_controlled.json"
+		},
 		"minecraft:input_ground_controlled": {
 			"$ref": "../../legacy/components/input_ground_controlled.json"
 		},
@@ -338,6 +347,9 @@
 		},
 		"minecraft:leashable_to": {
 			"$ref": "../../legacy/components/leashable_to.json"
+		},
+		"minecraft:lookat": {
+			"$ref": "../../1.21.40/components/lookat.json"
 		},
 		"minecraft:looked_at": {
 			"$ref": "../../legacy/components/looked_at.json"
@@ -501,6 +513,9 @@
 		"minecraft:push_through": {
 			"$ref": "../../legacy/components/push_through.json"
 		},
+		"minecraft:pushable": {
+			"$ref": "./pushable.json"
+		},
 		"minecraft:pushable_by_block": {
 			"$ref": "../../legacy/components/pushable_by_block.json"
 		},
@@ -533,6 +548,9 @@
 		},
 		"minecraft:rotation_locked_to_vehicle": {
 			"$ref": "../../1.21.120/components/rotation_locked_to_vehicle.json"
+		},
+		"minecraft:scaffolding_climber": {
+			"$ref": "../../1.17.10/components/scaffolding_climber.json"
 		},
 		"minecraft:scale": {
 			"$ref": "../../legacy/components/scale.json"
