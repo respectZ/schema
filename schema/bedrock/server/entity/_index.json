@@ -28,6 +28,7 @@
 				"1.20.70",
 				"1.20.80",
 				"1.21.0",
+				"1.21.10",
 				"1.21.20",
 				"1.21.30",
 				"1.21.40",
@@ -104,7 +105,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"const": "1.16.100"
+						"enum": ["1.16.100", "1.17.0"]
 					}
 				}
 			},
@@ -116,19 +117,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"const": "1.17.0"
-					}
-				}
-			},
-			"then": {
-				"$ref": "./1.17.0/_index.json"
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"format_version": {
-						"const": "1.17.10"
+						"enum": ["1.17.10", "1.18.0"]
 					}
 				}
 			},
@@ -140,19 +129,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"const": "1.18.0"
-					}
-				}
-			},
-			"then": {
-				"$ref": "./1.18.0/_index.json"
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"format_version": {
-						"const": "1.18.20"
+						"enum": ["1.18.20", "1.19.0", "1.19.10", "1.19.40"]
 					}
 				}
 			},
@@ -164,108 +141,12 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"const": "1.19.0"
-					}
-				}
-			},
-			"then": {
-				"$ref": "./1.19.0/_index.json"
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"format_version": {
-						"const": "1.19.10"
-					}
-				}
-			},
-			"then": {
-				"$ref": "./1.19.10/_index.json"
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"format_version": {
-						"const": "1.19.40"
-					}
-				}
-			},
-			"then": {
-				"$ref": "./1.19.40/_index.json"
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"format_version": {
-						"const": "1.19.50"
+						"enum": ["1.19.50", "1.19.60", "1.19.80", "1.20.0", "1.20.30", "1.20.50"]
 					}
 				}
 			},
 			"then": {
 				"$ref": "./1.19.50/_index.json"
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"format_version": {
-						"const": "1.19.60"
-					}
-				}
-			},
-			"then": {
-				"$ref": "./1.19.60/_index.json"
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"format_version": {
-						"const": "1.19.80"
-					}
-				}
-			},
-			"then": {
-				"$ref": "./1.19.80/_index.json"
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"format_version": {
-						"const": "1.20.0"
-					}
-				}
-			},
-			"then": {
-				"$ref": "./1.20.0/_index.json"
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"format_version": {
-						"const": "1.20.30"
-					}
-				}
-			},
-			"then": {
-				"$ref": "./1.20.30/_index.json"
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"format_version": {
-						"const": "1.20.50"
-					}
-				}
-			},
-			"then": {
-				"$ref": "./1.20.50/_index.json"
 			}
 		},
 		{
@@ -296,7 +177,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"const": "1.20.80"
+						"enum": ["1.20.80", "1.21.0"]
 					}
 				}
 			},
@@ -308,84 +189,24 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"const": "1.21.0"
+						"enum": ["1.21.10", "1.21.20", "1.21.30"]
 					}
 				}
 			},
 			"then": {
-				"$ref": "./1.21.0/_index.json"
+				"$ref": "./1.21.10/_index.json"
 			}
 		},
 		{
 			"if": {
 				"properties": {
 					"format_version": {
-						"const": "1.21.20"
-					}
-				}
-			},
-			"then": {
-				"$ref": "./1.21.20/_index.json"
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"format_version": {
-						"const": "1.21.30"
-					}
-				}
-			},
-			"then": {
-				"$ref": "./1.21.30/_index.json"
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"format_version": {
-						"const": "1.21.40"
+						"enum": ["1.21.40", "1.21.50", "1.21.60", "1.21.70"]
 					}
 				}
 			},
 			"then": {
 				"$ref": "./1.21.40/_index.json"
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"format_version": {
-						"const": "1.21.50"
-					}
-				}
-			},
-			"then": {
-				"$ref": "./1.21.50/_index.json"
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"format_version": {
-						"const": "1.21.60"
-					}
-				}
-			},
-			"then": {
-				"$ref": "./1.21.60/_index.json"
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"format_version": {
-						"const": "1.21.70"
-					}
-				}
-			},
-			"then": {
-				"$ref": "./1.21.70/_index.json"
 			}
 		},
 		{
@@ -428,24 +249,12 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"const": "1.21.110"
+						"enum": ["1.21.110", "1.21.111"]
 					}
 				}
 			},
 			"then": {
 				"$ref": "./1.21.110/_index.json"
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"format_version": {
-						"const": "1.21.111"
-					}
-				}
-			},
-			"then": {
-				"$ref": "./1.21.111/_index.json"
 			}
 		},
 		{

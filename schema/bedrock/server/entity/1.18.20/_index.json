@@ -7,7 +7,7 @@
 	"properties": {
 		"format_version": {
 			"type": "string",
-			"enum": ["1.18.20"]
+			"enum": ["1.18.20", "1.19.0", "1.19.10", "1.19.40"]
 		},
 		"minecraft:entity": {
 			"type": "object",
@@ -22,7 +22,7 @@
 						"unevaluatedProperties": false,
 						"allOf": [
 							{
-								"$ref": "../1.18.0/components/_index.json"
+								"$ref": "../1.17.10/components/_index.json"
 							},
 							{
 								"$ref": "./behaviors/_index.json"
@@ -35,7 +35,7 @@
 					"unevaluatedProperties": false,
 					"allOf": [
 						{
-							"$ref": "../1.18.0/components/_index.json"
+							"$ref": "../1.17.10/components/_index.json"
 						},
 						{
 							"$ref": "./behaviors/_index.json"

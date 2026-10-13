@@ -7,7 +7,7 @@
 	"properties": {
 		"format_version": {
 			"type": "string",
-			"enum": ["1.16.100"]
+			"enum": ["1.16.100", "1.17.0"]
 		},
 		"minecraft:entity": {
 			"type": "object",

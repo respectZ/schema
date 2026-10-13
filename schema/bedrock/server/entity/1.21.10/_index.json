@@ -1,13 +1,13 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"type": "object",
-	"title": "Minecraft Bedrock Entity 1.21.0",
+	"title": "Minecraft Bedrock Entity 1.21.10",
 	"required": ["format_version", "minecraft:entity"],
 	"additionalProperties": false,
 	"properties": {
 		"format_version": {
 			"type": "string",
-			"enum": ["1.21.0"]
+			"enum": ["1.21.10", "1.21.20", "1.21.30"]
 		},
 		"minecraft:entity": {
 			"type": "object",
@@ -25,7 +25,7 @@
 								"$ref": "../1.20.80/components/_index.json"
 							},
 							{
-								"$ref": "../1.21.0/behaviors/_index.json"
+								"$ref": "../1.20.80/behaviors/_index.json"
 							}
 						],
 						"type": "object"
@@ -38,7 +38,7 @@
 							"$ref": "../1.20.80/components/_index.json"
 						},
 						{
-							"$ref": "../1.21.0/behaviors/_index.json"
+							"$ref": "../1.20.80/behaviors/_index.json"
 						}
 					],
 					"type": "object"
