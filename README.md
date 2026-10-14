@@ -2,6 +2,10 @@
 
 Provides JSON Schemas for Minecraft Bedrock Edition add-on development, with `format_version` versioning.
 
+## compile
+
+Run `bun run compile` to compile the schemas into a single file for each entry point. The compiled schemas are output to the `dist` folder.
+
 ## generator
 
 Used for generating enums for vanilla identifiers and assets such as particle identifiers, sound paths, etc.

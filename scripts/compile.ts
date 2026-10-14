@@ -1,4 +1,5 @@
 import path from "path/posix";
+import { bundleSchema } from "./bundler";
 
 const PACK_PREFIXES = {
 	bp: ["behavior_pack/", "*BP/", "BP_*/", "*bp/", "bp_*/"],
@@ -265,6 +266,18 @@ async function main() {
 		return aMatch.localeCompare(bMatch);
 	});
 	const pkg: Package = await Bun.file("package.json").json();
+	const filepaths = new Map<string, string>();
+	for (const entry of result) {
+		if (filepaths.has(entry.url)) {
+			entry.url = filepaths.get(entry.url)!;
+			continue;
+		}
+		const schema = await bundleSchema(entry.url);
+		const dest = "./" + path.join("dist", Bun.hash(entry.url).toString(36) + ".json");
+		await Bun.write(dest, JSON.stringify(schema));
+		filepaths.set(entry.url, dest);
+		entry.url = dest;
+	}
 	pkg.contributes.jsonValidation = result;
 	await Bun.write("package.json", JSON.stringify(pkg, null, "\t") + "\n");
 }

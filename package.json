@@ -36,7 +36,7 @@
 					"*bp/aim_assist/categories/**/*.{json,jsonc,json5}",
 					"bp_*/aim_assist/categories/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/aim_assist_categories/_index.json"
+				"url": "./dist/280z5zsn3dvom.json"
 			},
 			{
 				"fileMatch": [
@@ -46,7 +46,7 @@
 					"*bp/aim_assist/presets/**/*.{json,jsonc,json5}",
 					"bp_*/aim_assist/presets/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/aim_assist/_index.json"
+				"url": "./dist/hckthqu0xg61.json"
 			},
 			{
 				"fileMatch": [
@@ -56,7 +56,7 @@
 					"*bp/animation_controllers/**/*.{json,jsonc,json5}",
 					"bp_*/animation_controllers/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/animation_controller/_index.json"
+				"url": "./dist/2boyuar3yx5mq.json"
 			},
 			{
 				"fileMatch": [
@@ -66,7 +66,7 @@
 					"*bp/animations/**/*.{json,jsonc,json5}",
 					"bp_*/animations/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/animation/_index.json"
+				"url": "./dist/3brripecgsfrt.json"
 			},
 			{
 				"fileMatch": [
@@ -76,7 +76,7 @@
 					"*bp/biomes/**/*.{json,jsonc,json5}",
 					"bp_*/biomes/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/biome/_index.json"
+				"url": "./dist/37mg7rx0rnlir.json"
 			},
 			{
 				"fileMatch": [
@@ -86,7 +86,7 @@
 					"*bp/blocks/**/*.{json,jsonc,json5}",
 					"bp_*/blocks/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/block/_index.json"
+				"url": "./dist/17mturr4ck5k6.json"
 			},
 			{
 				"fileMatch": [
@@ -96,7 +96,7 @@
 					"*bp/cameras/presets/**/*.{json,jsonc,json5}",
 					"bp_*/cameras/presets/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/camera/_index.json"
+				"url": "./dist/1puulzn9y8vk3.json"
 			},
 			{
 				"fileMatch": [
@@ -106,7 +106,7 @@
 					"*bp/dialogue/**/*.{json,jsonc,json5}",
 					"bp_*/dialogue/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/dialogue/_index.json"
+				"url": "./dist/326jv9bc7amdu.json"
 			},
 			{
 				"fileMatch": [
@@ -116,7 +116,7 @@
 					"*bp/dimensions/**/*.{json,jsonc,json5}",
 					"bp_*/dimensions/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/dimension/_index.json"
+				"url": "./dist/1mvl6f4veag9t.json"
 			},
 			{
 				"fileMatch": [
@@ -126,7 +126,7 @@
 					"*bp/entities/**/*.{json,jsonc,json5}",
 					"bp_*/entities/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/entity/_index.json"
+				"url": "./dist/167ctgrnw7wov.json"
 			},
 			{
 				"fileMatch": [
@@ -136,7 +136,7 @@
 					"*bp/feature_rules/**/*.{json,jsonc,json5}",
 					"bp_*/feature_rules/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/feature_rule/_index.json"
+				"url": "./dist/3gd3jiyz96g25.json"
 			},
 			{
 				"fileMatch": [
@@ -146,7 +146,7 @@
 					"*bp/features/**/*.{json,jsonc,json5}",
 					"bp_*/features/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/features/_index.json"
+				"url": "./dist/107uayhaabgau.json"
 			},
 			{
 				"fileMatch": [
@@ -156,7 +156,7 @@
 					"*bp/item_catalog/crafting_item_catalog.{json,jsonc,json5}",
 					"bp_*/item_catalog/crafting_item_catalog.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/crafting_item_catalog/_index.json"
+				"url": "./dist/1kqp0rns7xbty.json"
 			},
 			{
 				"fileMatch": [
@@ -166,7 +166,7 @@
 					"*bp/items/**/*.{json,jsonc,json5}",
 					"bp_*/items/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/item/_index.json"
+				"url": "./dist/3ptn4e3sqrs8w.json"
 			},
 			{
 				"fileMatch": [
@@ -176,7 +176,7 @@
 					"*bp/loot_tables/**/*.{json,jsonc,json5}",
 					"bp_*/loot_tables/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/loot_table/_index.json"
+				"url": "./dist/261cnxjqrw5uz.json"
 			},
 			{
 				"fileMatch": [
@@ -186,7 +186,7 @@
 					"*bp/manifest.{json,jsonc,json5}",
 					"bp_*/manifest.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/shared/manifest/_index.json"
+				"url": "./dist/1gffnlk445ly0.json"
 			},
 			{
 				"fileMatch": [
@@ -196,7 +196,7 @@
 					"*bp/recipes/**/*.{json,jsonc,json5}",
 					"bp_*/recipes/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/recipe/_index.json"
+				"url": "./dist/36z4u96apnz3u.json"
 			},
 			{
 				"fileMatch": [
@@ -206,7 +206,7 @@
 					"*bp/shapes/**/*.{json,jsonc,json5}",
 					"bp_*/shapes/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/voxel/_index.json"
+				"url": "./dist/23qqff5nusuxk.json"
 			},
 			{
 				"fileMatch": [
@@ -216,7 +216,7 @@
 					"*bp/spawn_rules/**/*.{json,jsonc,json5}",
 					"bp_*/spawn_rules/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/spawn_rule/_index.json"
+				"url": "./dist/2z9maij01ihyg.json"
 			},
 			{
 				"fileMatch": [
@@ -226,7 +226,7 @@
 					"*bp/trading/**/*.{json,jsonc,json5}",
 					"bp_*/trading/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/trading/_index.json"
+				"url": "./dist/2brrtykuahm1i.json"
 			},
 			{
 				"fileMatch": [
@@ -236,7 +236,7 @@
 					"*bp/worldgen/processors/**/*.{json,jsonc,json5}",
 					"bp_*/worldgen/processors/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/worldgen/processor_list/_index.json"
+				"url": "./dist/3oydz8m515qu5.json"
 			},
 			{
 				"fileMatch": [
@@ -246,7 +246,7 @@
 					"*bp/worldgen/structure_sets/**/*.{json,jsonc,json5}",
 					"bp_*/worldgen/structure_sets/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/worldgen/structure_set/_index.json"
+				"url": "./dist/3lb38l38lpmqk.json"
 			},
 			{
 				"fileMatch": [
@@ -256,7 +256,7 @@
 					"*bp/worldgen/structures/**/*.{json,jsonc,json5}",
 					"bp_*/worldgen/structures/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/worldgen/jigsaw_structure/_index.json"
+				"url": "./dist/2w7o1ak63b94f.json"
 			},
 			{
 				"fileMatch": [
@@ -266,7 +266,7 @@
 					"*bp/worldgen/template_pools/**/*.{json,jsonc,json5}",
 					"bp_*/worldgen/template_pools/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/worldgen/template_pool/_index.json"
+				"url": "./dist/3i3nh3fh54lvy.json"
 			},
 			{
 				"fileMatch": [
@@ -276,7 +276,7 @@
 					"*rp/animation_controllers/**/*.{json,jsonc,json5}",
 					"rp_*/animation_controllers/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/animation_controller/_index.json"
+				"url": "./dist/bhvhvf0jhg3a.json"
 			},
 			{
 				"fileMatch": [
@@ -286,7 +286,7 @@
 					"*rp/animations/**/*.{json,jsonc,json5}",
 					"rp_*/animations/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/animation/_index.json"
+				"url": "./dist/1lre2zdnuwl1j.json"
 			},
 			{
 				"fileMatch": [
@@ -296,7 +296,7 @@
 					"*rp/atmospherics/**/*.{json,jsonc,json5}",
 					"rp_*/atmospherics/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/atmospheric/_index.json"
+				"url": "./dist/30moloeacw9sa.json"
 			},
 			{
 				"fileMatch": [
@@ -306,7 +306,7 @@
 					"*rp/attachables/**/*.{json,jsonc,json5}",
 					"rp_*/attachables/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/attachable/_index.json"
+				"url": "./dist/zifnfhfwwbeg.json"
 			},
 			{
 				"fileMatch": [
@@ -316,7 +316,7 @@
 					"*rp/biomes_client.{json,jsonc,json5}",
 					"rp_*/biomes_client.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/biomes_client/_index.json"
+				"url": "./dist/3die4g1pmwhr0.json"
 			},
 			{
 				"fileMatch": [
@@ -326,7 +326,7 @@
 					"*rp/biomes/**/*.{json,jsonc,json5}",
 					"rp_*/biomes/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/biome/_index.json"
+				"url": "./dist/cexrds8lsabv.json"
 			},
 			{
 				"fileMatch": [
@@ -336,7 +336,7 @@
 					"*rp/block_culling/**/*.{json,jsonc,json5}",
 					"rp_*/block_culling/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/block_culling/_index.json"
+				"url": "./dist/ncke8x55mzmj.json"
 			},
 			{
 				"fileMatch": [
@@ -346,7 +346,7 @@
 					"*rp/blocks.{json,jsonc,json5}",
 					"rp_*/blocks.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/blocks/_index.json"
+				"url": "./dist/24gm2nne3b0wf.json"
 			},
 			{
 				"fileMatch": [
@@ -356,7 +356,7 @@
 					"*rp/color_grading/**/*.{json,jsonc,json5}",
 					"rp_*/color_grading/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/color_grading/_index.json"
+				"url": "./dist/1temy4vapwjm3.json"
 			},
 			{
 				"fileMatch": [
@@ -366,7 +366,7 @@
 					"*rp/cubemaps/**/*.{json,jsonc,json5}",
 					"rp_*/cubemaps/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/cubemap/_index.json"
+				"url": "./dist/1e29jatgkrtu3.json"
 			},
 			{
 				"fileMatch": [
@@ -376,7 +376,7 @@
 					"*rp/entity/**/*.{json,jsonc,json5}",
 					"rp_*/entity/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/entity/_index.json"
+				"url": "./dist/2qa45s8e68lfb.json"
 			},
 			{
 				"fileMatch": [
@@ -386,7 +386,7 @@
 					"*rp/fogs/**/*.{json,jsonc,json5}",
 					"rp_*/fogs/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/fog/_index.json"
+				"url": "./dist/1ha5rglktybun.json"
 			},
 			{
 				"fileMatch": [
@@ -396,7 +396,7 @@
 					"*rp/items/**/*.{json,jsonc,json5}",
 					"rp_*/items/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/item/_index.json"
+				"url": "./dist/13u0fcyjmq84n.json"
 			},
 			{
 				"fileMatch": [
@@ -406,7 +406,7 @@
 					"*rp/lighting/global.{json,jsonc,json5}",
 					"rp_*/lighting/global.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/lighting/_index.json"
+				"url": "./dist/3fbv5fmy0zut1.json"
 			},
 			{
 				"fileMatch": [
@@ -416,7 +416,7 @@
 					"*rp/local_lighting/local_lighting.{json,jsonc,json5}",
 					"rp_*/local_lighting/local_lighting.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/local_lighting/_index.json"
+				"url": "./dist/2p7sgd7aqm7ja.json"
 			},
 			{
 				"fileMatch": [
@@ -426,7 +426,7 @@
 					"*rp/manifest.{json,jsonc,json5}",
 					"rp_*/manifest.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/shared/manifest/_index.json"
+				"url": "./dist/1gffnlk445ly0.json"
 			},
 			{
 				"fileMatch": [
@@ -436,7 +436,7 @@
 					"*rp/materials/*.material",
 					"rp_*/materials/*.material"
 				],
-				"url": "./schema/bedrock/client/material/_index.json"
+				"url": "./dist/1r4413fni6un1.json"
 			},
 			{
 				"fileMatch": [
@@ -446,7 +446,7 @@
 					"*rp/models/**/*.geo.{json,jsonc,json5}",
 					"rp_*/models/**/*.geo.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/geometry/_index.json"
+				"url": "./dist/bqw1cj8lvpck.json"
 			},
 			{
 				"fileMatch": [
@@ -456,7 +456,7 @@
 					"*rp/particles/**/*.{json,jsonc,json5}",
 					"rp_*/particles/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/particle/_index.json"
+				"url": "./dist/2o1zemdavetne.json"
 			},
 			{
 				"fileMatch": [
@@ -466,7 +466,7 @@
 					"*rp/pbr/global.{json,jsonc,json5}",
 					"rp_*/pbr/global.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/pbr/_index.json"
+				"url": "./dist/3lnret8grhcb7.json"
 			},
 			{
 				"fileMatch": [
@@ -476,7 +476,7 @@
 					"*rp/point_lights/global.{json,jsonc,json5}",
 					"rp_*/point_lights/global.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/point_lights/_index.json"
+				"url": "./dist/2usqxmfmlfhdl.json"
 			},
 			{
 				"fileMatch": [
@@ -486,7 +486,7 @@
 					"*rp/render_controllers/**/*.{json,jsonc,json5}",
 					"rp_*/render_controllers/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/render_controller/_index.json"
+				"url": "./dist/r6sv6mtf5nwn.json"
 			},
 			{
 				"fileMatch": [
@@ -496,7 +496,7 @@
 					"*rp/shadows/global.{json,jsonc,json5}",
 					"rp_*/shadows/global.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/shadows/_index.json"
+				"url": "./dist/1bnxdimx96cxa.json"
 			},
 			{
 				"fileMatch": [
@@ -506,7 +506,7 @@
 					"*rp/sounds.{json,jsonc,json5}",
 					"rp_*/sounds.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/sounds/_index.json"
+				"url": "./dist/30ng2ynzdpiq9.json"
 			},
 			{
 				"fileMatch": [
@@ -516,7 +516,7 @@
 					"*rp/sounds/music_definitions.{json,jsonc,json5}",
 					"rp_*/sounds/music_definitions.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/music_definitions/_index.json"
+				"url": "./dist/2qp0mdl6h6xo6.json"
 			},
 			{
 				"fileMatch": [
@@ -526,7 +526,7 @@
 					"*rp/sounds/sound_definitions.{json,jsonc,json5}",
 					"rp_*/sounds/sound_definitions.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/sound_definitions/_index.json"
+				"url": "./dist/1xsp90n4rm0hx.json"
 			},
 			{
 				"fileMatch": [
@@ -536,7 +536,7 @@
 					"*rp/texts/languages.{json,jsonc,json5}",
 					"rp_*/texts/languages.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/languages/_index.json"
+				"url": "./dist/3cgvm7ywp9vx4.json"
 			},
 			{
 				"fileMatch": [
@@ -546,7 +546,7 @@
 					"*rp/textures/**/*.texture_set.{json,jsonc,json5}",
 					"rp_*/textures/**/*.texture_set.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/texture_set/_index.json"
+				"url": "./dist/3aged30wiouph.json"
 			},
 			{
 				"fileMatch": [
@@ -556,7 +556,7 @@
 					"*rp/textures/flipbook_textures.{json,jsonc,json5}",
 					"rp_*/textures/flipbook_textures.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/flipbook_textures/_index.json"
+				"url": "./dist/2p8std41e4p17.json"
 			},
 			{
 				"fileMatch": [
@@ -566,7 +566,7 @@
 					"*rp/textures/item_texture.{json,jsonc,json5}",
 					"rp_*/textures/item_texture.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/item_texture/_index.json"
+				"url": "./dist/3cbk17zuktk2n.json"
 			},
 			{
 				"fileMatch": [
@@ -576,7 +576,7 @@
 					"*rp/textures/terrain_texture.{json,jsonc,json5}",
 					"rp_*/textures/terrain_texture.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/terrain_texture/_index.json"
+				"url": "./dist/3rarawk01sw9m.json"
 			},
 			{
 				"fileMatch": [
@@ -586,7 +586,7 @@
 					"*rp/textures/texture_list.{json,jsonc,json5}",
 					"rp_*/textures/texture_list.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/texture_list/_index.json"
+				"url": "./dist/3spklmu2gm70g.json"
 			},
 			{
 				"fileMatch": [
@@ -596,7 +596,7 @@
 					"*rp/water/**/*.{json,jsonc,json5}",
 					"rp_*/water/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/water/_index.json"
+				"url": "./dist/219jj9rsfe4k.json"
 			}
 		]
 	}
