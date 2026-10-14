@@ -80,7 +80,8 @@
 							"components": {
 								"properties": {
 									"minecraft:default_biome": false,
-									"minecraft:dimension_height": false
+									"minecraft:dimension_height": false,
+									"minecraft:clouds": false
 								}
 							}
 						}
@@ -138,6 +139,19 @@
 				},
 				"minecraft:dimension_height": {
 					"$ref": "#/$defs/dimension_height"
+				},
+				"minecraft:clouds": {
+					"type": "object",
+					"description": "Configures cloud rendering in custom dimensions. Requires the Upcoming Creator Features experiment in Minecraft 26.60 previews.",
+					"additionalProperties": false,
+					"required": ["height"],
+					"properties": {
+						"height": {
+							"type": "integer",
+							"minimum": -512,
+							"maximum": 512
+						}
+					}
 				}
 			}
 		},
