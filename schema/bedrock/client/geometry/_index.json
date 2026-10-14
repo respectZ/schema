@@ -74,7 +74,7 @@
 			"if": {
 				"properties": {
 					"format_version": {
-						"enum": ["1.21.0"]
+						"enum": ["1.21.0", "1.26.10"]
 					}
 				}
 			},
