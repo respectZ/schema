@@ -1,0 +1,12 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"title": "Sound Component",
+	"additionalProperties": false,
+	"properties": {
+		"sound": {
+			"$ref": "../../../../../vanilla/client/identifiers.json#/$defs/block_sound_identifier",
+			"description": "Sound group to use for this block."
+		}
+	}
+}

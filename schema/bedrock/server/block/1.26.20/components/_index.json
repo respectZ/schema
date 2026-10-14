@@ -112,6 +112,9 @@
 		},
 		"minecraft:instrument_sound": {
 			"$ref": "instrument_sound.json"
+		},
+		"minecraft:sound": {
+			"$ref": "sound.json"
 		}
 	},
 	"patternProperties": {
