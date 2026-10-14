@@ -2,7 +2,7 @@
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"type": "object",
 	"title": "Conditional List Feature",
-	"description": "Places the first suitable feature within a collection based on conditions.",
+	"description": "Places features within a collection based on conditions evaluated in order.",
 	"additionalProperties": false,
 	"required": ["format_version", "minecraft:conditional_list"],
 	"properties": {
@@ -60,7 +60,7 @@
 					"type": "string",
 					"enum": ["condition_success", "placement_success", "none"],
 					"default": "none",
-					"description": "Optional. Whether to stop on first successful condition or first successful placement. Default is placement_success."
+					"description": "Optional. Whether to stop on the first successful condition or placement, or evaluate every entry with 'none'. Defaults to 'none'."
 				}
 			}
 		}
