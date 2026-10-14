@@ -1,0 +1,54 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Collision Box Component",
+	"description": "Defines the area of the block that collides with entities. If set to true, default values are used. If set to false, the block's collision with entities is disabled.",
+	"oneOf": [
+		{ "type": "boolean" },
+		{
+			"type": "array",
+			"maxItems": 16,
+			"items": { "$ref": "#/$defs/collision_box" }
+		}
+	],
+	"$defs": {
+		"vector": {
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": { "type": "number" }
+		},
+		"bounds_vector": {
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"prefixItems": [
+				{ "type": "number", "minimum": 0, "maximum": 16 },
+				{ "type": "number", "minimum": 0, "maximum": 24 },
+				{ "type": "number", "minimum": 0, "maximum": 16 }
+			],
+			"items": false
+		},
+		"collision_box": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"origin": {
+					"$ref": "#/$defs/vector",
+					"description": "Minimal position of the bounds of the collision box. Specified as [x, y, z] and must be in the range (-8, 0, -8) to (8, 24, 8), inclusive."
+				},
+				"size": {
+					"$ref": "#/$defs/vector",
+					"description": "Size of each side of the collision box. Specified as [x, y, z]. origin + size must be in the range (-8, 0, -8) to (8, 24, 8), inclusive."
+				},
+				"min": {
+					"$ref": "#/$defs/bounds_vector",
+					"description": "Minimal position of the bounds of the collision box. \"min\" is specified as [x, y, z] and must be in the range (0, 0, 0) to (16, 24, 16), inclusive."
+				},
+				"max": {
+					"$ref": "#/$defs/bounds_vector",
+					"description": "Maximum position of the bounds of the collision box. \"max\" is specified as [x, y, z] and must be in the range (0, 0, 0) to (16, 24, 16), inclusive"
+				}
+			}
+		}
+	}
+}
