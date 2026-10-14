@@ -115,6 +115,10 @@
 		{
 			"required": ["minecraft:height_difference_filter_feature"],
 			"$ref": "../1.13.0/height_difference_filter_feature.json"
+		},
+		{
+			"required": ["minecraft:multipart_block_column_feature"],
+			"$ref": "../1.26.50/multipart_block_column_feature.json"
 		}
 	]
 }

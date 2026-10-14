@@ -119,6 +119,10 @@
 		{
 			"required": ["minecraft:multipart_block_column_feature"],
 			"$ref": "../1.26.50/multipart_block_column_feature.json"
+		},
+		{
+			"required": ["minecraft:multi_block_feature"],
+			"$ref": "../1.26.40/multi_block_feature.json"
 		}
 	]
 }
