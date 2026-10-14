@@ -6,7 +6,7 @@
 	"required": ["format_version"],
 	"properties": {
 		"format_version": {
-			"enum": ["1.13.0", "1.21.10", "1.21.40", "1.26.50"]
+			"enum": ["1.13.0", "1.21.10", "1.21.40", "1.26.40", "1.26.50"]
 		}
 	},
 	"allOf": [
@@ -44,6 +44,30 @@
 			},
 			"then": {
 				"$ref": "./1.21.40/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.26.40"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.26.40/_index.json"
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"format_version": {
+						"enum": ["1.26.50"]
+					}
+				}
+			},
+			"then": {
+				"$ref": "./1.26.50/_index.json"
 			}
 		}
 	]
