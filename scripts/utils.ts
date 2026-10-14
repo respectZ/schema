@@ -41,6 +41,10 @@ export async function writeJson(filepath: string, data: unknown): Promise<void> 
 	await file.write(formatted);
 }
 
+export function normalizePath(filepath: string): string {
+	return filepath.replace(/\\/g, "/");
+}
+
 export function getEnv(key: "BEDROCK_PATH" | "MINECRAFT_DATA_PATH"): string {
 	const value = Bun.env[key];
 	if (!value) {
