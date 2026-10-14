@@ -44,6 +44,57 @@
 				{
 					"const": "torso",
 					"description": "The torso/chestplate slot."
+				},
+
+				{
+					"const": 0,
+					"doNotSuggest": true,
+					"description": "Any equipment slot."
+				},
+				{
+					"const": 4,
+					"doNotSuggest": true,
+					"description": "Any armor slot."
+				},
+				{
+					"const": 9,
+					"doNotSuggest": true,
+					"description": "The body slot."
+				},
+				{
+					"const": 8,
+					"doNotSuggest": true,
+					"description": "The feet/boots slot."
+				},
+				{
+					"const": 1,
+					"doNotSuggest": true,
+					"description": "Any hand slot."
+				},
+				{
+					"const": 5,
+					"doNotSuggest": true,
+					"description": "The head/helmet slot."
+				},
+				{
+					"const": 10,
+					"doNotSuggest": true,
+					"description": "The inventory slot."
+				},
+				{
+					"const": 7,
+					"doNotSuggest": true,
+					"description": "The legs/leggings slot."
+				},
+				{
+					"const": 2,
+					"doNotSuggest": true,
+					"description": "The main hand slot."
+				},
+				{
+					"const": 6,
+					"doNotSuggest": true,
+					"description": "The torso/chestplate slot."
 				}
 			]
 		},

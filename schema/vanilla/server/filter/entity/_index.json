@@ -35,6 +35,7 @@
 				"test": {
 					"type": "string",
 					"enum": [
+						"actor_has_item_with_enchantment_in_slot",
 						"actor_health",
 						"all_slots_empty",
 						"any_slot_empty",
@@ -154,6 +155,19 @@
 				}
 			},
 			"allOf": [
+				{
+					"if": {
+						"properties": {
+							"test": {
+								"const": "actor_has_item_with_enchantment_in_slot"
+							}
+						},
+						"required": ["test"]
+					},
+					"then": {
+						"$ref": "./filters/actor_has_item_with_enchantment_in_slot.json"
+					}
+				},
 				{
 					"if": {
 						"properties": {

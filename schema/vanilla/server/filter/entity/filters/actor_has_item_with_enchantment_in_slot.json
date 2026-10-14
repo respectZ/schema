@@ -1,0 +1,20 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"title": "Actor has Item with Enchantment in Slot",
+	"description": "Tests that an actor has an item equipped with a given enchantment.",
+	"properties": {
+		"test": true,
+		"subject": true,
+		"operator": true,
+		"domain": {
+			"$ref": "../../general.json#/$defs/equipment_slot",
+			"default": "any"
+		},
+		"value": {
+			"description": "The enchantment name to test for.",
+			"$ref": "../../../enchantment.json"
+		}
+	},
+	"required": ["value"]
+}
