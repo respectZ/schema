@@ -43,7 +43,7 @@
 						"type": "object",
 						"title": "Conditional Feature",
 						"additionalProperties": false,
-						"required": ["places_feature", "condition"],
+						"required": ["places_feature"],
 						"properties": {
 							"places_feature": {
 								"$ref": "../../../../vanilla/server/feature.json",
@@ -58,7 +58,8 @@
 				},
 				"early_out_scheme": {
 					"type": "string",
-					"enum": ["condition_success", "placement_success"],
+					"enum": ["condition_success", "placement_success", "none"],
+					"default": "none",
 					"description": "Optional. Whether to stop on first successful condition or first successful placement. Default is placement_success."
 				}
 			}
