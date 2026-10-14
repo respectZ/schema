@@ -16,7 +16,7 @@
 		"multi_block_feature": {
 			"type": "object",
 			"additionalProperties": false,
-			"required": ["description"],
+			"required": ["description", "places_block"],
 			"properties": {
 				"description": {
 					"type": "object",

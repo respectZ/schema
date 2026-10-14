@@ -16,7 +16,15 @@
 		"multipart_block_column_feature": {
 			"type": "object",
 			"additionalProperties": false,
-			"required": ["description"],
+			"required": ["description", "tip_block", "frustum_block", "middle_block", "base_block"],
+			"oneOf": [
+				{
+					"required": ["height_range"]
+				},
+				{
+					"required": ["weighted_heights"]
+				}
+			],
 			"properties": {
 				"description": {
 					"type": "object",
@@ -57,6 +65,7 @@
 					"items": {
 						"type": "object",
 						"additionalProperties": false,
+						"required": ["value", "weight"],
 						"properties": {
 							"value": {
 								"type": "integer"
