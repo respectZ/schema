@@ -22,8 +22,8 @@
 		"fmt": "prettier --write .",
 		"create-schema": "bun scripts/schema.ts",
 		"generate": "bun scripts/generator/index.ts",
-		"prepack": "bun run generate && && bun run validate",
-		"compile": "bun scripts/compile.ts && bun run validate",
+		"prepack": "bun run generate && bun run compile",
+		"compile": "bun run validate && bun scripts/compile.ts",
 		"validate": "bun scripts/validator.ts"
 	},
 	"contributes": {

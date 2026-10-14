@@ -16,6 +16,7 @@ import { generateClientLang } from "./client/lang";
 import {
 	generateCommandEnum,
 	generateServerBiomeTag,
+	generateServerEntityComponents,
 	generateServerPaths,
 	generateServerShapes,
 	generateServerTypeFamily,
@@ -627,6 +628,15 @@ const entries: Entry[] = [
 			const { creativeGroups } = await generateClientLang();
 			return {
 				enum: creativeGroups,
+			};
+		},
+	},
+	{
+		filepath: "vanilla/server/entity_component.json",
+		content: async () => {
+			const components = await generateServerEntityComponents();
+			return {
+				enum: components,
 			};
 		},
 	},

@@ -182,8 +182,7 @@
 		"parent_centric_attribute_blending": {
 			"type": "array",
 			"items": {
-				"type": "string",
-				"$comment": "// TODO: generate entity components"
+				"$ref": "../../../../../vanilla/server/entity_component.json"
 			},
 			"description": "List of attributes that should benefit from parent centric attribute blending. For example, horses blend their health, movement, and jump_strength in their offspring."
 		},

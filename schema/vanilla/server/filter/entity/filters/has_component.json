@@ -8,9 +8,7 @@
 		"subject": true,
 		"operator": true,
 		"value": {
-			// TODO: Update list entity components.
-			"description": "A string value.",
-			"type": "string"
+			"$ref": "../../../entity_component.json"
 		}
 	},
 	"required": ["value"]
