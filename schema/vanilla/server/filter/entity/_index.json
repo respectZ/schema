@@ -1685,27 +1685,33 @@
 				},
 				{
 					"const": 0,
-					"description": "Test for equality."
+					"description": "Test for equality.",
+					"doNotSuggest": true
 				},
 				{
 					"const": 1,
-					"description": "Test for inequality."
+					"description": "Test for inequality.",
+					"doNotSuggest": true
 				},
 				{
 					"const": 2,
-					"description": "Test for greater-than the value."
+					"description": "Test for greater-than the value.",
+					"doNotSuggest": true
 				},
 				{
 					"const": 3,
-					"description": "Test for less-than the value."
+					"description": "Test for less-than the value.",
+					"doNotSuggest": true
 				},
 				{
 					"const": 4,
-					"description": "Test for greater-than or equal to the value."
+					"description": "Test for greater-than or equal to the value.",
+					"doNotSuggest": true
 				},
 				{
 					"const": 5,
-					"description": "Test for less-than or equal to the value."
+					"description": "Test for less-than or equal to the value.",
+					"doNotSuggest": true
 				}
 			]
 		}
