@@ -17,6 +17,7 @@ import {
 	generateCommandEnum,
 	generateServerBiomeTag,
 	generateServerPaths,
+	generateServerShapes,
 	generateServerTypeFamily,
 } from "./server";
 import { generateServerBlockStates } from "./server/block_states";
@@ -275,6 +276,7 @@ const entries: Entry[] = [
 			const itemIdentifiers = Object.values(MinecraftItemTypes);
 			const entityIdentifiers = Object.values(MinecraftEntityTypes);
 			const biomeIdentifiers = Object.values(MinecraftBiomeTypes);
+			const shapeIdentifiers = await generateServerShapes();
 			return {
 				$defs: {
 					block_identifier: {
@@ -318,6 +320,17 @@ const entries: Entry[] = [
 							},
 							{
 								enum: biomeIdentifiers,
+							},
+						],
+					},
+					shape_identifier: {
+						anyOf: [
+							{
+								type: "string",
+								maxLength: 256,
+							},
+							{
+								enum: shapeIdentifiers,
 							},
 						],
 					},

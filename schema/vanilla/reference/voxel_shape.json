@@ -6,7 +6,11 @@
 			"maxLength": 256
 		},
 		{
-			"$ref": "../server/voxel_shape.json"
+			"type": "string",
+			"enum": ["minecraft:empty", "minecraft:unit_cube"]
+		},
+		{
+			"$ref": "../server/identifiers.json#/$defs/shape_identifier"
 		}
 	]
 }
