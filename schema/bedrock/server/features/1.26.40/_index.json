@@ -1,14 +1,14 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"type": "object",
-	"title": "Minecraft Bedrock Features 1.26.50",
-	"description": "Schema for feature definition files format version 1.26.50.",
+	"title": "Minecraft Bedrock Features 1.26.40",
+	"description": "Schema for feature definition files format version 1.26.40.",
 	"unevaluatedProperties": false,
 	"required": ["format_version"],
 	"properties": {
 		"format_version": {
 			"type": "string",
-			"enum": ["1.26.50"]
+			"enum": ["1.26.40"]
 		}
 	},
 	"oneOf": [
