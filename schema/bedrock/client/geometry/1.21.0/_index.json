@@ -12,7 +12,7 @@
 		},
 		"format_version": {
 			"type": "string",
-			"enum": ["1.21.0"]
+			"enum": ["1.21.0", "1.26.10"]
 		},
 		"minecraft:geometry": {
 			"type": "array",
