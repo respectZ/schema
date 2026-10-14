@@ -50,6 +50,15 @@
 								"required": ["minecraft:dimension_bounds"]
 							}
 						}
+					},
+					"else": {
+						"properties": {
+							"components": {
+								"properties": {
+									"minecraft:dimension_bounds": false
+								}
+							}
+						}
 					}
 				},
 				{
@@ -58,9 +67,7 @@
 							"description": {
 								"properties": {
 									"identifier": {
-										"not": {
-											"enum": ["minecraft:overworld", "minecraft:nether", "minecraft:the_end"]
-										}
+										"enum": ["minecraft:overworld", "minecraft:nether", "minecraft:the_end"]
 									}
 								},
 								"required": ["identifier"]
@@ -69,6 +76,16 @@
 						"required": ["description"]
 					},
 					"then": {
+						"properties": {
+							"components": {
+								"properties": {
+									"minecraft:default_biome": false,
+									"minecraft:dimension_height": false
+								}
+							}
+						}
+					},
+					"else": {
 						"properties": {
 							"components": {
 								"required": ["minecraft:generation"]
@@ -118,6 +135,9 @@
 							"$ref": "../../../../vanilla/server/identifiers.json#/$defs/biome_identifier"
 						}
 					}
+				},
+				"minecraft:dimension_height": {
+					"$ref": "#/$defs/dimension_height"
 				}
 			}
 		},
@@ -148,6 +168,26 @@
 				"generator_type": {
 					"type": "string",
 					"enum": ["void"]
+				}
+			}
+		},
+		"dimension_height": {
+			"type": "object",
+			"title": "Dimension Height",
+			"description": "Defines the vertical height of a custom dimension.",
+			"required": ["min_y", "height_range"],
+			"additionalProperties": false,
+			"properties": {
+				"min_y": {
+					"type": "integer",
+					"minimum": -512,
+					"maximum": 512
+				},
+				"height_range": {
+					"type": "integer",
+					"minimum": 16,
+					"maximum": 1024,
+					"multipleOf": 16
 				}
 			}
 		}
