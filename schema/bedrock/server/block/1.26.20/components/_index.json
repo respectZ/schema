@@ -109,6 +109,9 @@
 		},
 		"minecraft:tags": {
 			"$ref": "tags.json"
+		},
+		"minecraft:instrument_sound": {
+			"$ref": "instrument_sound.json"
 		}
 	},
 	"patternProperties": {

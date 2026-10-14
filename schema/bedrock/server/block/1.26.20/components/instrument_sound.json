@@ -1,0 +1,51 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"title": "Instrument Sound Component",
+	"description": "This defines what sound will play based on above or below relative position to a note block.\nAn instrument can be assigned to the \"up\" and \"down\" faces where at least one face needs to be defined for the component to be valid.\nIf either face is undefined, or the component is omitted, it will use its default values: \"up\" = \"note.harp\" and \"down\" = \"note.none\".\n\"note.none\" can be used to specify no sound for a face.",
+	"additionalProperties": false,
+	"minProperties": 1,
+	"properties": {
+		"up": {
+			"$ref": "#/$defs/instrument"
+		},
+		"down": {
+			"$ref": "#/$defs/instrument"
+		}
+	},
+	"$defs": {
+		"instrument": {
+			"type": "string",
+			"description": "The instrument sound that plays when the note block is above this block (the block's down face is exposed to the note block). Use \"note.none\" to specify no sound for this face.",
+			"enum": [
+				"note.harp",
+				"note.bd",
+				"note.snare",
+				"note.hat",
+				"note.bassattack",
+				"note.flute",
+				"note.bell",
+				"note.guitar",
+				"note.chime",
+				"note.xylophone",
+				"note.iron_xylophone",
+				"note.cow_bell",
+				"note.didgeridoo",
+				"note.bit",
+				"note.banjo",
+				"note.pling",
+				"note.trumpet",
+				"note.trumpet_exposed",
+				"note.trumpet_weathered",
+				"note.trumpet_oxidized",
+				"note.zombie",
+				"note.skeleton",
+				"note.creeper",
+				"note.enderdragon",
+				"note.witherskeleton",
+				"note.piglin",
+				"note.none"
+			]
+		}
+	}
+}
