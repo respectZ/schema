@@ -6,7 +6,7 @@
 	"required": ["format_version"],
 	"properties": {
 		"format_version": {
-			"oneOf": [
+			"anyOf": [
 				{
 					"enum": ["1.0.0", "1.20.10"]
 				},
