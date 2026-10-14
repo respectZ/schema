@@ -32,6 +32,10 @@
 				"entity_properties"
 			],
 			"description": "The condition type."
+		},
+		"operator": {
+			"type": "string",
+			"enum": ["==", "equals", "!=", "not"]
 		}
 	},
 	"allOf": [
