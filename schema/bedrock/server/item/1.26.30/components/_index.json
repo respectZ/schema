@@ -4,6 +4,7 @@
 	"title": "Components",
 	"description": "Item components",
 	"unevaluatedProperties": false,
+	"minProperties": 1,
 	"properties": {
 		"minecraft:display_name": {
 			"$ref": "../../1.20.0/components/display_name.json"
