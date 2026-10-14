@@ -60,7 +60,8 @@
 				"minecraft:set_stew_effect",
 				"minecraft:set_ominous_bottle_amplifier",
 				"minecraft:set_armor_trim",
-				"minecraft:set_potion"
+				"minecraft:set_potion",
+				"carry_over_block_entity_data"
 			],
 			"description": "The function type."
 		},
@@ -826,6 +827,26 @@
 							"oozing",
 							"infested"
 						]
+					}
+				},
+				"required": ["function"]
+			}
+		},
+		{
+			"if": {
+				"properties": {
+					"function": {
+						"const": "carry_over_block_entity_data"
+					}
+				},
+				"required": ["function"]
+			},
+			"then": {
+				"properties": {
+					"function": true,
+					"dynamic_properties": {
+						"type": "boolean",
+						"default": false
 					}
 				},
 				"required": ["function"]

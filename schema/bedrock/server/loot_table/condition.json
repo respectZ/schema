@@ -29,8 +29,7 @@
 				"float_property",
 				"enum_property",
 				"biome_has_tag",
-				"entity_properties",
-				"carry_over_block_entity_data"
+				"entity_properties"
 			],
 			"description": "The condition type."
 		},
@@ -518,27 +517,6 @@
 				},
 				"additionalProperties": false,
 				"required": ["condition", "entity", "properties"]
-			}
-		},
-		{
-			"if": {
-				"properties": {
-					"condition": {
-						"const": "carry_over_block_entity_data"
-					}
-				},
-				"required": ["condition"]
-			},
-			"then": {
-				"properties": {
-					"condition": true,
-					"dynamic_properties": {
-						"type": "boolean",
-						"default": false
-					}
-				},
-				"additionalProperties": false,
-				"required": ["condition"]
 			}
 		}
 	],
