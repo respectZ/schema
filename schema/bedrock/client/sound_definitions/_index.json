@@ -105,6 +105,10 @@
 					"type": "boolean",
 					"deprecated": true,
 					"description": "Deprecated as of 1.16.0, as all sounds are now loaded on low memory devices."
+				},
+				"allow_concurrent_streaming": {
+					"type": "boolean",
+					"description": "Allow streaming of ordinary sound events to play independent simultaneous instances. Defaults to true in format version 1.26.50 and later."
 				}
 			}
 		}
