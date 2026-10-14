@@ -60,6 +60,28 @@
 					"description": "Rainy weather."
 				},
 				{
+					"const": "snow",
+					"description": "Snowy weather."
+				},
+				{
+					"const": "thunderstorm",
+					"description": "Thunderstorm weather."
+				}
+			]
+		},
+		"weather_type_2": {
+			"title": "Weather Type",
+			"description": "The weather condition to test.",
+			"oneOf": [
+				{
+					"const": "clear",
+					"description": "Clear weather."
+				},
+				{
+					"const": "precipitation",
+					"description": "Rainy weather."
+				},
+				{
 					"const": "thunder",
 					"description": "Thunderstorm weather."
 				}
