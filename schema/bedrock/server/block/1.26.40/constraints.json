@@ -1,0 +1,77 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"allOf": [
+		{
+			"if": {
+				"required": ["description"],
+				"properties": {
+					"description": {
+						"required": ["traits"],
+						"properties": {
+							"traits": { "required": ["minecraft:multi_block"] }
+						}
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"components": { "$ref": "#/$defs/multi_block_components" },
+					"permutations": {
+						"items": {
+							"properties": {
+								"components": { "$ref": "#/$defs/multi_block_components" }
+							}
+						}
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"required": ["description"],
+				"properties": {
+					"description": {
+						"required": ["traits"],
+						"properties": {
+							"traits": {
+								"required": ["minecraft:multi_block"],
+								"properties": {
+									"minecraft:multi_block": {
+										"required": ["direction"],
+										"properties": {
+											"direction": { "enum": ["north", "south", "east", "west"] }
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"components": { "$ref": "#/$defs/horizontal_components" },
+					"permutations": {
+						"items": {
+							"properties": {
+								"components": { "$ref": "#/$defs/horizontal_components" }
+							}
+						}
+					}
+				}
+			}
+		}
+	],
+	"$defs": {
+		"multi_block_components": {
+			"properties": {
+				"minecraft:geometry": {
+					"not": { "type": "object", "required": ["n_way_visual_rotation"] }
+				}
+			}
+		},
+		"horizontal_components": {
+			"not": { "required": ["minecraft:random_offset"] }
+		}
+	}
+}
