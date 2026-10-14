@@ -19,6 +19,9 @@
 				},
 				{
 					"$ref": "#/$defs/logical_filter"
+				},
+				{
+					"$ref": "#/$defs/other_filter"
 				}
 			]
 		},
@@ -1633,6 +1636,40 @@
 					"required": ["none_of"]
 				}
 			]
+		},
+		"other_filter": {
+			"type": "object",
+			"additionalProperties": false,
+			"minProperties": 1,
+			"maxProperties": 1,
+			"properties": {
+				"other_with_families": {
+					"oneOf": [
+						{
+							"$ref": "../../type_family.json"
+						},
+						{
+							"type": "array",
+							"items": {
+								"$ref": "../../type_family.json"
+							}
+						}
+					]
+				},
+				"other_without_families": {
+					"oneOf": [
+						{
+							"$ref": "../../type_family.json"
+						},
+						{
+							"type": "array",
+							"items": {
+								"$ref": "../../type_family.json"
+							}
+						}
+					]
+				}
+			}
 		},
 		"subject": {
 			"title": "Subject",
