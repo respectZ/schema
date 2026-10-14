@@ -400,6 +400,16 @@
 			},
 			{
 				"fileMatch": [
+					"resource_pack/font/**/*.{json,jsonc,json5}",
+					"*RP/font/**/*.{json,jsonc,json5}",
+					"RP_*/font/**/*.{json,jsonc,json5}",
+					"*rp/font/**/*.{json,jsonc,json5}",
+					"rp_*/font/**/*.{json,jsonc,json5}"
+				],
+				"url": "./schema/bedrock/client/font_metadata/_index.json"
+			},
+			{
+				"fileMatch": [
 					"resource_pack/items/**/*.{json,jsonc,json5}",
 					"*RP/items/**/*.{json,jsonc,json5}",
 					"RP_*/items/**/*.{json,jsonc,json5}",

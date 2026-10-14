@@ -110,6 +110,10 @@ const BP_ENTRIES: JsonValidationEntry[] = [
 
 const RP_ENTRIES: JsonValidationEntry[] = [
 	{
+		fileMatch: "font/**/*.{json,jsonc,json5}",
+		url: "./schema/bedrock/client/font_metadata/_index.json",
+	},
+	{
 		fileMatch: "manifest.{json,jsonc,json5}",
 		url: "./schema/bedrock/shared/manifest/_index.json",
 	},

@@ -1,0 +1,21 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"ascii_character_height": {
+			"type": "integer",
+			"minimum": 8,
+			"maximum": 16
+		},
+		"ascii_character_y_offset": {
+			"type": "integer",
+			"minimum": -128,
+			"maximum": 128
+		},
+		"ascii_extended": {
+			"type": "boolean",
+			"default": false
+		}
+	}
+}
