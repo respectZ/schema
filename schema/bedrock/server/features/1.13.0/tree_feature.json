@@ -480,9 +480,8 @@
 			"required": ["trunk_width", "trunk_height", "trunk_block"],
 			"properties": {
 				"trunk_width": {
-					"type": "integer",
-					"minimum": 1,
-					"description": "The width of the tree trunk."
+					"$ref": "../general.json#/$defs/int_range",
+					"description": "The width of the tree trunk, as an integer or an integer range."
 				},
 				"trunk_height": {
 					"$ref": "#/$defs/trunk_height_definition",
