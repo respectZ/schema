@@ -23,7 +23,7 @@ async function main() {
 		console.warn(await file.text());
 		process.exit(1);
 	}
-	await writeJson(input, createSchema(input));
+	await writeJson(input, createSchema());
 }
 
 await main();

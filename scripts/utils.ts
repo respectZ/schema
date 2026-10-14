@@ -14,10 +14,9 @@ import type { RootSchema } from "./types";
  *   $id: "schema/vanilla/client/paths.json"
  * }
  */
-export function createSchema(filepath: string): RootSchema {
+export function createSchema(): RootSchema {
 	return {
 		$schema: "https://json-schema.org/draft/2020-12/schema",
-		$id: filepath,
 	};
 }
 

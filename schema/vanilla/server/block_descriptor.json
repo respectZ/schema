@@ -81,7 +81,19 @@
 						"properties": { "name": { "enum": ["minecraft:acacia_fence"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -244,6 +256,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -432,6 +448,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -630,7 +650,19 @@
 						"properties": { "name": { "enum": ["minecraft:bamboo_fence"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -724,6 +756,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -818,6 +854,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -1102,7 +1142,19 @@
 						"properties": { "name": { "enum": ["minecraft:birch_fence"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -1265,6 +1317,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -1386,10 +1442,63 @@
 				},
 				{
 					"if": {
+						"properties": { "name": { "enum": ["minecraft:black_concrete_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
 						"properties": { "name": { "enum": ["minecraft:black_concrete_powder"] } },
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:black_concrete_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:black_concrete_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -1426,7 +1535,19 @@
 						"properties": { "name": { "enum": ["minecraft:black_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -1441,6 +1562,59 @@
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:black_wool_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:black_wool_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:black_wool_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -1491,6 +1665,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -1596,10 +1774,63 @@
 				},
 				{
 					"if": {
+						"properties": { "name": { "enum": ["minecraft:blue_concrete_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
 						"properties": { "name": { "enum": ["minecraft:blue_concrete_powder"] } },
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:blue_concrete_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:blue_concrete_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -1650,7 +1881,19 @@
 						"properties": { "name": { "enum": ["minecraft:blue_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -1665,6 +1908,59 @@
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:blue_wool_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:blue_wool_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:blue_wool_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -1831,6 +2127,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -1917,10 +2217,63 @@
 				},
 				{
 					"if": {
+						"properties": { "name": { "enum": ["minecraft:brown_concrete_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
 						"properties": { "name": { "enum": ["minecraft:brown_concrete_powder"] } },
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:brown_concrete_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:brown_concrete_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -1983,7 +2336,19 @@
 						"properties": { "name": { "enum": ["minecraft:brown_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -1998,6 +2363,59 @@
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:brown_wool_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:brown_wool_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:brown_wool_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -2397,7 +2815,19 @@
 						"properties": { "name": { "enum": ["minecraft:cherry_fence"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -2560,6 +2990,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -2816,7 +3250,21 @@
 						"properties": { "name": { "enum": ["minecraft:chorus_plant"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_down": { "type": "boolean" },
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_up": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -2867,6 +3315,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -2955,6 +3407,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -3075,6 +3531,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -3337,7 +3797,19 @@
 						"properties": { "name": { "enum": ["minecraft:copper_bars"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -3679,7 +4151,19 @@
 						"properties": { "name": { "enum": ["minecraft:crimson_fence"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -3832,6 +4316,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -3946,6 +4434,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -4078,10 +4570,63 @@
 				},
 				{
 					"if": {
+						"properties": { "name": { "enum": ["minecraft:cyan_concrete_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
 						"properties": { "name": { "enum": ["minecraft:cyan_concrete_powder"] } },
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:cyan_concrete_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:cyan_concrete_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -4118,7 +4663,19 @@
 						"properties": { "name": { "enum": ["minecraft:cyan_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -4133,6 +4690,59 @@
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:cyan_wool_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:cyan_wool_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:cyan_wool_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -4220,7 +4830,19 @@
 						"properties": { "name": { "enum": ["minecraft:dark_oak_fence"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -4383,6 +5005,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -4471,6 +5097,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -4838,6 +5468,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -4982,6 +5616,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -5112,6 +5750,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -5161,6 +5803,25 @@
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:disc_press"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:cardinal_direction": {
+										"type": "string",
+										"enum": ["south", "west", "north", "east"]
+									}
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -6147,6 +6808,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -6313,7 +6978,19 @@
 						"properties": { "name": { "enum": ["minecraft:exposed_copper_bars"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -6475,6 +7152,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -6566,7 +7247,12 @@
 									"age": {
 										"type": "integer",
 										"enum": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-									}
+									},
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_up": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
 								}
 							}
 						}
@@ -6763,7 +7449,19 @@
 						"properties": { "name": { "enum": ["minecraft:glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -6901,6 +7599,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -7008,10 +7710,63 @@
 				},
 				{
 					"if": {
+						"properties": { "name": { "enum": ["minecraft:gray_concrete_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
 						"properties": { "name": { "enum": ["minecraft:gray_concrete_powder"] } },
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:gray_concrete_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:gray_concrete_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7048,7 +7803,19 @@
 						"properties": { "name": { "enum": ["minecraft:gray_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7063,6 +7830,59 @@
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:gray_wool_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:gray_wool_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:gray_wool_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7111,10 +7931,63 @@
 				},
 				{
 					"if": {
+						"properties": { "name": { "enum": ["minecraft:green_concrete_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
 						"properties": { "name": { "enum": ["minecraft:green_concrete_powder"] } },
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:green_concrete_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:green_concrete_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7151,7 +8024,19 @@
 						"properties": { "name": { "enum": ["minecraft:green_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7166,6 +8051,59 @@
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:green_wool_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:green_wool_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:green_wool_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7206,7 +8144,19 @@
 						"properties": { "name": { "enum": ["minecraft:hard_black_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7220,7 +8170,19 @@
 						"properties": { "name": { "enum": ["minecraft:hard_blue_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7234,7 +8196,19 @@
 						"properties": { "name": { "enum": ["minecraft:hard_brown_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7248,7 +8222,19 @@
 						"properties": { "name": { "enum": ["minecraft:hard_cyan_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7262,7 +8248,19 @@
 						"properties": { "name": { "enum": ["minecraft:hard_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7276,7 +8274,19 @@
 						"properties": { "name": { "enum": ["minecraft:hard_gray_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7290,7 +8300,19 @@
 						"properties": { "name": { "enum": ["minecraft:hard_green_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7304,7 +8326,19 @@
 						"properties": { "name": { "enum": ["minecraft:hard_light_blue_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7318,7 +8352,19 @@
 						"properties": { "name": { "enum": ["minecraft:hard_light_gray_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7332,7 +8378,19 @@
 						"properties": { "name": { "enum": ["minecraft:hard_lime_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7346,7 +8404,19 @@
 						"properties": { "name": { "enum": ["minecraft:hard_magenta_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7360,7 +8430,19 @@
 						"properties": { "name": { "enum": ["minecraft:hard_orange_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7374,7 +8456,19 @@
 						"properties": { "name": { "enum": ["minecraft:hard_pink_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7388,7 +8482,19 @@
 						"properties": { "name": { "enum": ["minecraft:hard_purple_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7402,7 +8508,19 @@
 						"properties": { "name": { "enum": ["minecraft:hard_red_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7416,7 +8534,19 @@
 						"properties": { "name": { "enum": ["minecraft:hard_white_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7430,7 +8560,19 @@
 						"properties": { "name": { "enum": ["minecraft:hard_yellow_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7561,6 +8703,46 @@
 				},
 				{
 					"if": {
+						"properties": { "name": { "enum": ["minecraft:ice_crystal"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:block_face": {
+										"type": "string",
+										"enum": ["down", "up", "north", "south", "west", "east"]
+									}
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:icicle"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"attached_bit": { "type": "boolean" },
+									"dripstone_thickness": {
+										"type": "string",
+										"enum": ["tip", "frustum", "middle", "base", "merge"]
+									},
+									"hanging": { "type": "boolean" }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
 						"properties": { "name": { "enum": ["minecraft:infested_chiseled_stone_bricks"] } },
 						"required": ["name"]
 					},
@@ -7620,7 +8802,19 @@
 						"properties": { "name": { "enum": ["minecraft:iron_bars"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7774,7 +8968,19 @@
 						"properties": { "name": { "enum": ["minecraft:jungle_fence"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -7937,6 +9143,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -8362,10 +9572,63 @@
 				},
 				{
 					"if": {
+						"properties": { "name": { "enum": ["minecraft:light_blue_concrete_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
 						"properties": { "name": { "enum": ["minecraft:light_blue_concrete_powder"] } },
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:light_blue_concrete_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:light_blue_concrete_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -8402,7 +9665,19 @@
 						"properties": { "name": { "enum": ["minecraft:light_blue_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -8417,6 +9692,59 @@
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:light_blue_wool_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:light_blue_wool_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:light_blue_wool_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -8465,10 +9793,63 @@
 				},
 				{
 					"if": {
+						"properties": { "name": { "enum": ["minecraft:light_gray_concrete_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
 						"properties": { "name": { "enum": ["minecraft:light_gray_concrete_powder"] } },
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:light_gray_concrete_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:light_gray_concrete_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -8489,7 +9870,19 @@
 						"properties": { "name": { "enum": ["minecraft:light_gray_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -8504,6 +9897,59 @@
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:light_gray_wool_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:light_gray_wool_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:light_gray_wool_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -8606,10 +10052,63 @@
 				},
 				{
 					"if": {
+						"properties": { "name": { "enum": ["minecraft:lime_concrete_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
 						"properties": { "name": { "enum": ["minecraft:lime_concrete_powder"] } },
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:lime_concrete_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:lime_concrete_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -8646,7 +10145,19 @@
 						"properties": { "name": { "enum": ["minecraft:lime_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -8661,6 +10172,59 @@
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:lime_wool_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:lime_wool_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:lime_wool_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -8824,10 +10388,63 @@
 				},
 				{
 					"if": {
+						"properties": { "name": { "enum": ["minecraft:magenta_concrete_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
 						"properties": { "name": { "enum": ["minecraft:magenta_concrete_powder"] } },
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:magenta_concrete_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:magenta_concrete_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -8864,7 +10481,19 @@
 						"properties": { "name": { "enum": ["minecraft:magenta_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -8879,6 +10508,59 @@
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:magenta_wool_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:magenta_wool_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:magenta_wool_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": { "properties": { "name": { "enum": ["minecraft:magma"] } }, "required": ["name"] },
@@ -8944,7 +10626,19 @@
 						"properties": { "name": { "enum": ["minecraft:mangrove_fence"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -9117,6 +10811,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -9318,6 +11016,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -9399,6 +11101,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -9491,6 +11197,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -9605,7 +11315,19 @@
 						"properties": { "name": { "enum": ["minecraft:nether_brick_fence"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -9633,6 +11355,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -9768,6 +11494,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -9803,7 +11533,19 @@
 						"properties": { "name": { "enum": ["minecraft:oak_fence"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -9926,6 +11668,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -10042,10 +11788,63 @@
 				},
 				{
 					"if": {
+						"properties": { "name": { "enum": ["minecraft:orange_concrete_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
 						"properties": { "name": { "enum": ["minecraft:orange_concrete_powder"] } },
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:orange_concrete_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:orange_concrete_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -10058,6 +11857,23 @@
 								"additionalProperties": false,
 								"properties": {
 									"facing_direction": { "type": "integer", "enum": [0, 1, 2, 3, 4, 5] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:orange_poplar_leaves"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"persistent_bit": { "type": "boolean" },
+									"update_bit": { "type": "boolean" }
 								}
 							}
 						}
@@ -10082,7 +11898,19 @@
 						"properties": { "name": { "enum": ["minecraft:orange_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -10104,6 +11932,59 @@
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:orange_wool_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:orange_wool_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:orange_wool_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -10131,7 +12012,19 @@
 						"properties": { "name": { "enum": ["minecraft:oxidized_copper_bars"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -10293,6 +12186,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -10460,7 +12357,19 @@
 						"properties": { "name": { "enum": ["minecraft:pale_oak_fence"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -10623,6 +12532,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -10817,10 +12730,63 @@
 				},
 				{
 					"if": {
+						"properties": { "name": { "enum": ["minecraft:pink_concrete_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
 						"properties": { "name": { "enum": ["minecraft:pink_concrete_powder"] } },
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:pink_concrete_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:pink_concrete_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -10877,7 +12843,19 @@
 						"properties": { "name": { "enum": ["minecraft:pink_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -10899,6 +12877,59 @@
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:pink_wool_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:pink_wool_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:pink_wool_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -11055,6 +13086,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -11127,6 +13162,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -11251,6 +13290,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -11339,6 +13382,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -11427,6 +13474,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -11515,6 +13566,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -11571,6 +13626,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -11627,6 +13686,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -11715,6 +13778,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -11750,6 +13817,302 @@
 									},
 									"wall_post_bit": { "type": "boolean" }
 								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:poplar_button"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"button_pressed_bit": { "type": "boolean" },
+									"facing_direction": { "type": "integer", "enum": [0, 1, 2, 3, 4, 5] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:poplar_door"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"door_hinge_bit": { "type": "boolean" },
+									"minecraft:cardinal_direction": {
+										"type": "string",
+										"enum": ["south", "west", "north", "east"]
+									},
+									"open_bit": { "type": "boolean" },
+									"upper_block_bit": { "type": "boolean" }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:poplar_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:poplar_fence"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:poplar_fence_gate"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"in_wall_bit": { "type": "boolean" },
+									"minecraft:cardinal_direction": {
+										"type": "string",
+										"enum": ["south", "west", "north", "east"]
+									},
+									"open_bit": { "type": "boolean" }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:poplar_hanging_sign"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"attached_bit": { "type": "boolean" },
+									"facing_direction": { "type": "integer", "enum": [0, 1, 2, 3, 4, 5] },
+									"ground_sign_direction": {
+										"type": "integer",
+										"enum": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+									},
+									"hanging": { "type": "boolean" }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:poplar_log"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": { "pillar_axis": { "type": "string", "enum": ["y", "x", "z"] } }
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:poplar_planks"] } },
+						"required": ["name"]
+					},
+					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:poplar_pressure_plate"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"redstone_signal": {
+										"type": "integer",
+										"enum": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+									}
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:poplar_sapling"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": { "age_bit": { "type": "boolean" } }
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:poplar_shelf"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:cardinal_direction": {
+										"type": "string",
+										"enum": ["south", "west", "north", "east"]
+									},
+									"powered_bit": { "type": "boolean" },
+									"powered_shelf_type": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:poplar_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:poplar_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:poplar_standing_sign"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"ground_sign_direction": {
+										"type": "integer",
+										"enum": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+									}
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:poplar_trapdoor"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"direction": { "type": "integer", "enum": [0, 1, 2, 3] },
+									"open_bit": { "type": "boolean" },
+									"upside_down_bit": { "type": "boolean" }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:poplar_wall_sign"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"facing_direction": { "type": "integer", "enum": [0, 1, 2, 3, 4, 5] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:poplar_wood"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": { "pillar_axis": { "type": "string", "enum": ["y", "x", "z"] } }
 							}
 						}
 					}
@@ -11909,6 +14272,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -11958,6 +14325,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -12080,10 +14451,63 @@
 				},
 				{
 					"if": {
+						"properties": { "name": { "enum": ["minecraft:purple_concrete_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
 						"properties": { "name": { "enum": ["minecraft:purple_concrete_powder"] } },
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:purple_concrete_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:purple_concrete_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -12120,7 +14544,19 @@
 						"properties": { "name": { "enum": ["minecraft:purple_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -12135,6 +14571,59 @@
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:purple_wool_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:purple_wool_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:purple_wool_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -12206,6 +14695,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -12297,6 +14790,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -12385,10 +14882,63 @@
 				},
 				{
 					"if": {
+						"properties": { "name": { "enum": ["minecraft:red_concrete_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
 						"properties": { "name": { "enum": ["minecraft:red_concrete_powder"] } },
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:red_concrete_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:red_concrete_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -12481,6 +15031,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -12515,6 +15069,23 @@
 										"enum": ["none", "short", "tall"]
 									},
 									"wall_post_bit": { "type": "boolean" }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:red_poplar_leaves"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"persistent_bit": { "type": "boolean" },
+									"update_bit": { "type": "boolean" }
 								}
 							}
 						}
@@ -12576,6 +15147,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -12617,6 +15192,13 @@
 				},
 				{
 					"if": {
+						"properties": { "name": { "enum": ["minecraft:red_shrub"] } },
+						"required": ["name"]
+					},
+					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
 						"properties": { "name": { "enum": ["minecraft:red_shulker_box"] } },
 						"required": ["name"]
 					},
@@ -12634,7 +15216,19 @@
 						"properties": { "name": { "enum": ["minecraft:red_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -12656,6 +15250,59 @@
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:red_wool_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:red_wool_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:red_wool_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -12707,10 +15354,14 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"redstone_east": { "type": "string", "enum": ["none", "side", "up"] },
+									"redstone_north": { "type": "string", "enum": ["none", "side", "up"] },
 									"redstone_signal": {
 										"type": "integer",
 										"enum": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-									}
+									},
+									"redstone_south": { "type": "string", "enum": ["none", "side", "up"] },
+									"redstone_west": { "type": "string", "enum": ["none", "side", "up"] }
 								}
 							}
 						}
@@ -12805,6 +15456,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -12958,6 +15613,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -13124,6 +15783,26 @@
 									"sea_grass_type": {
 										"type": "string",
 										"enum": ["default", "double_top", "double_bot"]
+									}
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:shelf_mushroom"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"growth": { "type": "integer", "enum": [0, 1, 2, 3, 4, 5, 6, 7] },
+									"minecraft:cardinal_direction": {
+										"type": "string",
+										"enum": ["south", "west", "north", "east"]
 									}
 								}
 							}
@@ -13315,6 +15994,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -13371,6 +16054,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -13427,6 +16114,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -13673,7 +16364,19 @@
 						"properties": { "name": { "enum": ["minecraft:spruce_fence"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -13836,6 +16539,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -14026,6 +16733,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -14118,6 +16829,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -14139,6 +16854,27 @@
 										"type": "string",
 										"enum": ["south", "west", "north", "east"]
 									}
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:straw_bed"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"head_piece_bit": { "type": "boolean" },
+									"minecraft:cardinal_direction": {
+										"type": "string",
+										"enum": ["south", "west", "north", "east"]
+									},
+									"occupied_bit": { "type": "boolean" }
 								}
 							}
 						}
@@ -14412,6 +17148,34 @@
 				},
 				{
 					"if": {
+						"properties": { "name": { "enum": ["minecraft:stripped_poplar_log"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": { "pillar_axis": { "type": "string", "enum": ["y", "x", "z"] } }
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:stripped_poplar_wood"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": { "pillar_axis": { "type": "string", "enum": ["y", "x", "z"] } }
+							}
+						}
+					}
+				},
+				{
+					"if": {
 						"properties": { "name": { "enum": ["minecraft:stripped_spruce_log"] } },
 						"required": ["name"]
 					},
@@ -14541,6 +17305,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -14649,6 +17417,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -14899,6 +17671,10 @@
 								"properties": {
 									"attached_bit": { "type": "boolean" },
 									"disarmed_bit": { "type": "boolean" },
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" },
 									"powered_bit": { "type": "boolean" },
 									"suspended_bit": { "type": "boolean" }
 								}
@@ -15012,6 +17788,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -15100,6 +17880,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -15434,7 +18218,19 @@
 						"properties": { "name": { "enum": ["minecraft:warped_fence"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -15587,6 +18383,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -15710,7 +18510,19 @@
 						"properties": { "name": { "enum": ["minecraft:waxed_copper_bars"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -15872,6 +18684,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -15914,7 +18730,19 @@
 						"properties": { "name": { "enum": ["minecraft:waxed_exposed_copper_bars"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -16076,6 +18904,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -16154,7 +18986,19 @@
 						"properties": { "name": { "enum": ["minecraft:waxed_oxidized_copper_bars"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -16316,6 +19160,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -16377,7 +19225,19 @@
 						"properties": { "name": { "enum": ["minecraft:waxed_weathered_copper_bars"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -16539,6 +19399,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -16600,7 +19464,19 @@
 						"properties": { "name": { "enum": ["minecraft:weathered_copper_bars"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -16762,6 +19638,10 @@
 							"states": {
 								"additionalProperties": false,
 								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
 									"upside_down_bit": { "type": "boolean" },
 									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
 								}
@@ -16893,10 +19773,63 @@
 				},
 				{
 					"if": {
+						"properties": { "name": { "enum": ["minecraft:white_concrete_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
 						"properties": { "name": { "enum": ["minecraft:white_concrete_powder"] } },
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:white_concrete_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:white_concrete_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -16933,7 +19866,19 @@
 						"properties": { "name": { "enum": ["minecraft:white_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -16955,6 +19900,59 @@
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:white_wool_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:white_wool_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:white_wool_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -17104,10 +20102,63 @@
 				},
 				{
 					"if": {
+						"properties": { "name": { "enum": ["minecraft:yellow_concrete_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
 						"properties": { "name": { "enum": ["minecraft:yellow_concrete_powder"] } },
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:yellow_concrete_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:yellow_concrete_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -17120,6 +20171,23 @@
 								"additionalProperties": false,
 								"properties": {
 									"facing_direction": { "type": "integer", "enum": [0, 1, 2, 3, 4, 5] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:yellow_poplar_leaves"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"persistent_bit": { "type": "boolean" },
+									"update_bit": { "type": "boolean" }
 								}
 							}
 						}
@@ -17144,7 +20212,19 @@
 						"properties": { "name": { "enum": ["minecraft:yellow_stained_glass_pane"] } },
 						"required": ["name"]
 					},
-					"then": { "properties": { "states": false } }
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:connection_east": { "type": "boolean" },
+									"minecraft:connection_north": { "type": "boolean" },
+									"minecraft:connection_south": { "type": "boolean" },
+									"minecraft:connection_west": { "type": "boolean" }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
@@ -17159,6 +20239,59 @@
 						"required": ["name"]
 					},
 					"then": { "properties": { "states": false } }
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:yellow_wool_double_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:yellow_wool_slab"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:vertical_half": { "type": "string", "enum": ["bottom", "top"] }
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": { "name": { "enum": ["minecraft:yellow_wool_stairs"] } },
+						"required": ["name"]
+					},
+					"then": {
+						"properties": {
+							"states": {
+								"additionalProperties": false,
+								"properties": {
+									"minecraft:corner": {
+										"type": "string",
+										"enum": ["none", "inner_left", "inner_right", "outer_left", "outer_right"]
+									},
+									"upside_down_bit": { "type": "boolean" },
+									"weirdo_direction": { "type": "integer", "enum": [0, 1, 2, 3] }
+								}
+							}
+						}
+					}
 				},
 				{
 					"if": {
