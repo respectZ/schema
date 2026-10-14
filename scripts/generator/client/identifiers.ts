@@ -135,30 +135,30 @@ export async function generateClientIdentifiers() {
 		CommonBedrockSchema<"minecraft:atmosphere_settings">
 	>({
 		type: "rp",
-		source: "data",
-		pattern: "*/atmospherics/**/*.json",
+		source: "bedrock-samples",
+		pattern: "atmospherics/**/*.json",
 		transform: (content) => content["minecraft:atmosphere_settings"].description.identifier,
 	}).then((arrays) => Array.from(new Set(arrays.sort())));
 	const colorGradingIdentifiers = await getBedrockJSON<
 		CommonBedrockSchema<"minecraft:color_grading_settings">
 	>({
 		type: "rp",
-		source: "data",
-		pattern: "*/color_grading/**/*.json",
+		source: "bedrock-samples",
+		pattern: "color_grading/**/*.json",
 		transform: (content) => content["minecraft:color_grading_settings"].description.identifier,
 	}).then((arrays) => Array.from(new Set(arrays.sort())));
 	const lightingIdentifiers = await getBedrockJSON<
 		CommonBedrockSchema<"minecraft:lighting_settings">
 	>({
 		type: "rp",
-		source: "data",
-		pattern: "*/lighting/**/*.json",
+		source: "bedrock-samples",
+		pattern: "lighting/**/*.json",
 		transform: (content) => content["minecraft:lighting_settings"].description.identifier,
 	}).then((arrays) => Array.from(new Set(arrays.sort())));
 	const waterIdentifiers = await getBedrockJSON<CommonBedrockSchema<"minecraft:water_settings">>({
 		type: "rp",
-		source: "data",
-		pattern: "*/water/**/*.json",
+		source: "bedrock-samples",
+		pattern: "water/**/*.json",
 		transform: (content) => content["minecraft:water_settings"].description.identifier,
 	}).then((arrays) => Array.from(new Set(arrays.sort())));
 	return {
