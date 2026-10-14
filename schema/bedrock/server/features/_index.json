@@ -6,7 +6,7 @@
 	"required": ["format_version"],
 	"properties": {
 		"format_version": {
-			"enum": ["1.13.0", "1.21.10", "1.21.40"]
+			"enum": ["1.13.0", "1.21.10", "1.21.40", "1.26.50"]
 		}
 	},
 	"allOf": [
