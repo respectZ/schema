@@ -987,11 +987,7 @@
 								"description": "Weight for this leaf block option."
 							}
 						],
-						"items": [
-							{
-								"$ref": "../../../../vanilla/server/block_descriptor.json"
-							}
-						]
+						"items": false
 					}
 				},
 				"canopy_decoration": {
@@ -1189,11 +1185,7 @@
 								"description": "Weight for this leaf block option."
 							}
 						],
-						"items": [
-							{
-								"$ref": "../../../../vanilla/server/block_descriptor.json"
-							}
-						]
+						"items": false
 					}
 				}
 			}

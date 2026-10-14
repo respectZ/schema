@@ -89,11 +89,7 @@
 								"description": "Weight for random selection."
 							}
 						],
-						"items": [
-							{
-								"$ref": "../../../../vanilla/server/block_descriptor.json"
-							}
-						]
+						"items": false
 					}
 				},
 				"head_blocks": {
