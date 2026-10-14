@@ -216,7 +216,7 @@
 					"*bp/sounds/sound_definitions.{json,jsonc,json5}",
 					"bp_*/sounds/sound_definitions.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/server/sound_definitions/_index.json"
+				"url": "./dist/12yj1g1rphp7v.json"
 			},
 			{
 				"fileMatch": [
@@ -471,7 +471,7 @@
 					"*rp/subpacks/*/font/**/*.{json,jsonc,json5}",
 					"rp_*/subpacks/*/font/**/*.{json,jsonc,json5}"
 				],
-				"url": "./schema/bedrock/client/font_metadata/_index.json"
+				"url": "./dist/3vbunsre1dg82.json"
 			},
 			{
 				"fileMatch": [
