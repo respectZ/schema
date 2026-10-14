@@ -51,7 +51,8 @@
 			},
 			"then": {
 				"properties": {
-					"condition": true
+					"condition": true,
+					"operator": true
 				},
 				"additionalProperties": false,
 				"required": ["condition"]
@@ -68,7 +69,8 @@
 			},
 			"then": {
 				"properties": {
-					"condition": true
+					"condition": true,
+					"operator": true
 				},
 				"additionalProperties": false,
 				"required": ["condition"]
@@ -90,7 +92,8 @@
 						"type": "string",
 						"description": "The entity type that must have killed the target.",
 						"$ref": "../../../vanilla/server/identifiers.json#/$defs/entity_identifier"
-					}
+					},
+					"operator": true
 				},
 				"additionalProperties": false,
 				"required": ["condition"]
@@ -112,7 +115,8 @@
 						"type": "string",
 						"description": "The entity type that must have damaged the target.",
 						"$ref": "../../../vanilla/server/identifiers.json#/$defs/entity_identifier"
-					}
+					},
+					"operator": true
 				},
 				"additionalProperties": false,
 				"required": ["condition"]
@@ -134,7 +138,8 @@
 						"type": "string",
 						"description": "The entity type that the target must be a passenger of.",
 						"$ref": "../../../vanilla/server/identifiers.json#/$defs/entity_identifier"
-					}
+					},
+					"operator": true
 				},
 				"additionalProperties": false,
 				"required": ["condition"]
@@ -156,7 +161,8 @@
 						"type": "string",
 						"description": "The entity type that must have been killed.",
 						"$ref": "../../../vanilla/server/identifiers.json#/$defs/entity_identifier"
-					}
+					},
+					"operator": true
 				},
 				"additionalProperties": false,
 				"required": ["condition"]
@@ -177,7 +183,8 @@
 					"chance": {
 						"type": "number",
 						"description": "The base probability (0.0-1.0)."
-					}
+					},
+					"operator": true
 				},
 				"additionalProperties": false,
 				"required": ["condition", "chance"]
@@ -202,7 +209,8 @@
 					"looting_multiplier": {
 						"type": "number",
 						"description": "Additional chance per looting level."
-					}
+					},
+					"operator": true
 				},
 				"additionalProperties": false,
 				"required": ["condition", "chance", "looting_multiplier"]
@@ -239,7 +247,8 @@
 					"hard": {
 						"type": "number",
 						"description": "Probability on hard difficulty."
-					}
+					},
+					"operator": true
 				},
 				"additionalProperties": false,
 				"required": ["condition"]
@@ -262,7 +271,8 @@
 						"minimum": 0,
 						"maximum": 1,
 						"default": 0
-					}
+					},
+					"operator": true
 				},
 				"additionalProperties": false,
 				"required": ["condition"]
@@ -283,7 +293,8 @@
 					"value": {
 						"type": "integer",
 						"description": "The variant value to match."
-					}
+					},
+					"operator": true
 				},
 				"additionalProperties": false,
 				"required": ["condition", "value"]
@@ -304,7 +315,8 @@
 					"value": {
 						"type": "integer",
 						"description": "The variant value to match."
-					}
+					},
+					"operator": true
 				},
 				"additionalProperties": false,
 				"required": ["condition", "value"]
@@ -325,7 +337,8 @@
 					"match_tool": {
 						"$ref": "#/$defs/match_tool",
 						"description": "The tool item properties to match."
-					}
+					},
+					"operator": true
 				},
 				"additionalProperties": false,
 				"required": ["condition", "match_tool"]
@@ -346,7 +359,8 @@
 					"domain": {
 						"type": "string",
 						"description": "Property name to check."
-					}
+					},
+					"operator": true
 				},
 				"additionalProperties": false,
 				"required": ["condition", "domain"]
@@ -371,7 +385,8 @@
 					"value": {
 						"type": "boolean",
 						"description": "The boolean value to match."
-					}
+					},
+					"operator": true
 				},
 				"additionalProperties": false,
 				"required": ["condition", "domain"]
@@ -396,7 +411,8 @@
 					"value": {
 						"type": "integer",
 						"description": "The integer value to match."
-					}
+					},
+					"operator": true
 				},
 				"additionalProperties": false,
 				"required": ["condition", "domain"]
@@ -421,7 +437,8 @@
 					"value": {
 						"type": "number",
 						"description": "The float value to match."
-					}
+					},
+					"operator": true
 				},
 				"additionalProperties": false,
 				"required": ["condition", "domain"]
@@ -446,7 +463,8 @@
 					"value": {
 						"type": "string",
 						"description": "The enum value to match."
-					}
+					},
+					"operator": true
 				},
 				"additionalProperties": false,
 				"required": ["condition", "domain"]
@@ -468,7 +486,8 @@
 						"type": "string",
 						"description": "The biome tag to check for.",
 						"$ref": "../../../vanilla/server/tags.json#/$defs/biome_tag"
-					}
+					},
+					"operator": true
 				},
 				"additionalProperties": false,
 				"required": ["condition", "tag"]
@@ -494,7 +513,8 @@
 					"properties": {
 						"$ref": "#/$defs/entity_properties",
 						"description": "The entity properties to match."
-					}
+					},
+					"operator": true
 				},
 				"additionalProperties": false,
 				"required": ["condition", "entity", "properties"]
