@@ -7,6 +7,10 @@ const PACK_PREFIXES = {
 
 const BP_ENTRIES: JsonValidationEntry[] = [
 	{
+		fileMatch: "sounds/sound_definitions.{json,jsonc,json5}",
+		url: "./schema/bedrock/server/sound_definitions/_index.json",
+	},
+	{
 		fileMatch: "manifest.{json,jsonc,json5}",
 		url: "./schema/bedrock/shared/manifest/_index.json",
 	},

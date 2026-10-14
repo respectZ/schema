@@ -1,0 +1,100 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"required": ["format_version", "minecraft:server_sound_definitions"],
+	"properties": {
+		"format_version": {
+			"type": "string",
+			"enum": ["beta", "1.26.60"],
+			"default": "1.26.60"
+		},
+		"minecraft:server_sound_definitions": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/sound_definition"
+			}
+		}
+	},
+	"$defs": {
+		"sound_definition": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["sound_event_name"],
+			"properties": {
+				"sound_event_name": {
+					"$ref": "../../../vanilla/definition/identifier.json#/$defs/no_minecraft"
+				},
+				"duration_info": {
+					"$ref": "#/$defs/duration_info"
+				},
+				"music_info": {
+					"$ref": "#/$defs/music_info"
+				},
+				"tags": {
+					"type": "object",
+					"additionalProperties": {
+						"$ref": "#/$defs/tag_values"
+					}
+				},
+				"broadcast_range": {
+					"type": "number",
+					"description": "Optional XZ range in blocks for broadcast sounds. Delivery is also limited by the player's loaded chunks and view distance."
+				}
+			}
+		},
+		"duration_info": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["mode", "seconds"],
+			"properties": {
+				"mode": {
+					"type": "string",
+					"enum": ["game_time", "real_time"],
+					"description": "Tracks playback by game ticks or by wall-clock time."
+				},
+				"seconds": {
+					"type": "number",
+					"description": "Duration of the sound in seconds."
+				}
+			}
+		},
+		"music_info": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"genres": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"moods": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"artist": {
+					"$ref": "../../../vanilla/client/lang_keys.json"
+				},
+				"title": {
+					"$ref": "../../../vanilla/client/lang_keys.json"
+				}
+			}
+		},
+		"tag_values": {
+			"oneOf": [
+				{
+					"type": "string"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				}
+			]
+		}
+	}
+}
