@@ -17,14 +17,7 @@
 			"type": "object",
 			"additionalProperties": false,
 			"required": ["description", "tip_block", "frustum_block", "middle_block", "base_block"],
-			"oneOf": [
-				{
-					"required": ["height_range"]
-				},
-				{
-					"required": ["weighted_heights"]
-				}
-			],
+			"oneOf": [{ "required": ["height_range"] }, { "required": ["weighted_heights"] }],
 			"properties": {
 				"description": {
 					"type": "object",
@@ -80,7 +73,8 @@
 				},
 				"direction": {
 					"type": "string",
-					"enum": ["up", "down", "north", "south", "east", "west"],
+					"pattern": "^([uU][pP]|[dD][oO][wW][nN]|[nN][oO][rR][tT][hH]|[sS][oO][uU][tT][hH]|[eE][aA][sS][tT]|[wW][eE][sS][tT])$",
+					"examples": ["up", "down", "north", "south", "east", "west"],
 					"default": "up",
 					"description": "The direction of the column. If omitted then it will default to 'UP'"
 				},
