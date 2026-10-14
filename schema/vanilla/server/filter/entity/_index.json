@@ -1552,104 +1552,57 @@
 			"title": "Logical Filter",
 			"description": "A logical combination of filters.",
 			"type": "object",
-			"oneOf": [
-				{
-					"properties": {
-						"AND": {
-							"type": "array",
-							"items": {
-								"$ref": "#/$defs/filter_item"
-							}
-						}
-					},
-					"additionalProperties": false,
-					"required": ["AND"]
+			"additionalProperties": false,
+			"properties": {
+				"AND": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/filter_item"
+					}
 				},
-				{
-					"properties": {
-						"all": {
-							"type": "array",
-							"items": {
-								"$ref": "#/$defs/filter_item"
-							}
-						}
-					},
-					"additionalProperties": false,
-					"required": ["all"]
+				"all": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/filter_item"
+					}
 				},
-				{
-					"properties": {
-						"all_of": {
-							"type": "array",
-							"items": {
-								"$ref": "#/$defs/filter_item"
-							}
-						}
-					},
-					"additionalProperties": false,
-					"required": ["all_of"]
+				"all_of": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/filter_item"
+					}
 				},
-				{
-					"properties": {
-						"OR": {
-							"type": "array",
-							"items": {
-								"$ref": "#/$defs/filter_item"
-							}
-						}
-					},
-					"additionalProperties": false,
-					"required": ["OR"]
+				"OR": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/filter_item"
+					}
 				},
-				{
-					"properties": {
-						"any": {
-							"type": "array",
-							"items": {
-								"$ref": "#/$defs/filter_item"
-							}
-						}
-					},
-					"additionalProperties": false,
-					"required": ["any"]
+				"any": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/filter_item"
+					}
 				},
-				{
-					"properties": {
-						"any_of": {
-							"type": "array",
-							"items": {
-								"$ref": "#/$defs/filter_item"
-							}
-						}
-					},
-					"additionalProperties": false,
-					"required": ["any_of"]
+				"any_of": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/filter_item"
+					}
 				},
-				{
-					"properties": {
-						"NOT": {
-							"type": "array",
-							"items": {
-								"$ref": "#/$defs/filter_item"
-							}
-						}
-					},
-					"additionalProperties": false,
-					"required": ["NOT"]
+				"NOT": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/filter_item"
+					}
 				},
-				{
-					"properties": {
-						"none_of": {
-							"type": "array",
-							"items": {
-								"$ref": "#/$defs/filter_item"
-							}
-						}
-					},
-					"additionalProperties": false,
-					"required": ["none_of"]
+				"none_of": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/filter_item"
+					}
 				}
-			]
+			}
 		},
 		"other_filter": {
 			"type": "object",
