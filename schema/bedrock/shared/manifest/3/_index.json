@@ -97,6 +97,12 @@
 					"type": "string",
 					"description": "Scope for resource pack usage.",
 					"enum": ["world", "global", "any"]
+				},
+				"pack_optimization_version": {
+					"$ref": "#/$defs/semver"
+				},
+				"platform_locked": {
+					"type": "boolean"
 				}
 			}
 		},
@@ -387,6 +393,48 @@
 				}
 			}
 		},
+		"settings_multiselect": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["type", "text", "name", "options", "defaults"],
+			"properties": {
+				"type": {
+					"const": "multiselect"
+				},
+				"text": {
+					"type": "string"
+				},
+				"name": {
+					"$ref": "../../../../vanilla/definition/identifier.json"
+				},
+				"options": {
+					"type": "array",
+					"minItems": 2,
+					"items": {
+						"type": "object",
+						"additionalProperties": false,
+						"required": ["name", "text"],
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"text": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"defaults": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"selection_text": {
+					"type": "string"
+				}
+			}
+		},
 		"settings": {
 			"type": "array",
 			"description": "Ordered list of settings entries.",
@@ -403,6 +451,9 @@
 					},
 					{
 						"$ref": "#/$defs/settings_dropdown"
+					},
+					{
+						"$ref": "#/$defs/settings_multiselect"
 					}
 				]
 			}
