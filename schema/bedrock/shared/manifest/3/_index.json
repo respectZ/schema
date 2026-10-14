@@ -405,7 +405,7 @@
 					"type": "string"
 				},
 				"name": {
-					"$ref": "../../../../vanilla/definition/identifier.json"
+					"$ref": "../../../../vanilla/definition/identifier.json#/$defs/no_minecraft"
 				},
 				"options": {
 					"type": "array",
@@ -422,13 +422,15 @@
 								"type": "string"
 							}
 						}
-					}
+					},
+					"maxItems": 20
 				},
 				"defaults": {
 					"type": "array",
 					"items": {
 						"type": "string"
-					}
+					},
+					"maxItems": 20
 				},
 				"selection_text": {
 					"type": "string"
