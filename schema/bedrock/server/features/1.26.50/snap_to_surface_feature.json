@@ -2,7 +2,7 @@
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"type": "object",
 	"title": "Snap To Surface Feature",
-	"description": "Snaps the y-value of a feature placement position to the floor or the ceiling within the provided vertical search range.",
+	"description": "Snaps a feature placement position to a floor, ceiling, or wall within the provided search range.",
 	"additionalProperties": false,
 	"required": ["format_version", "minecraft:snap_to_surface_feature"],
 	"properties": {
@@ -19,7 +19,7 @@
 			"title": "Snap To Surface Feature Definition",
 			"description": "A single Snap To Surface Feature Definition.",
 			"additionalProperties": false,
-			"required": ["description", "feature_to_snap", "vertical_search_range"],
+			"required": ["description", "feature_to_snap", "search_range"],
 			"properties": {
 				"description": {
 					"type": "object",
@@ -40,12 +40,12 @@
 				"search_range": {
 					"type": "integer",
 					"minimum": 1,
-					"description": "Range to search for a floor or ceiling for snapping the feature."
+					"description": "Range to search for a floor, ceiling, or wall for snapping the feature."
 				},
 				"surface": {
 					"type": "string",
 					"enum": ["ceiling", "floor", "random_horizontal", "wall"],
-					"description": "Optional. Defines the surface that the y-value of the placement position will be snapped to. Valid values: 'ceiling', 'floor', 'random_horizontal'. Defaults to 'floor'."
+					"description": "Optional. Defines the surface that the placement position will be snapped to. Valid values: 'ceiling', 'floor', 'random_horizontal', 'wall'. Defaults to 'floor'."
 				},
 				"allow_air_placement": {
 					"type": "boolean",
