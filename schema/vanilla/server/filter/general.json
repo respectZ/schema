@@ -94,9 +94,6 @@
 				{
 					"const": "target",
 					"description": "The caller's current target."
-				},
-				{
-					"enum": ["baby", "holder", "item"]
 				}
 			]
 		}
