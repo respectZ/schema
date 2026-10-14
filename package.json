@@ -284,7 +284,12 @@
 					"*RP/animation_controllers/**/*.{json,jsonc,json5}",
 					"RP_*/animation_controllers/**/*.{json,jsonc,json5}",
 					"*rp/animation_controllers/**/*.{json,jsonc,json5}",
-					"rp_*/animation_controllers/**/*.{json,jsonc,json5}"
+					"rp_*/animation_controllers/**/*.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/animation_controllers/**/*.{json,jsonc,json5}",
+					"*RP/subpacks/*/animation_controllers/**/*.{json,jsonc,json5}",
+					"RP_*/subpacks/*/animation_controllers/**/*.{json,jsonc,json5}",
+					"*rp/subpacks/*/animation_controllers/**/*.{json,jsonc,json5}",
+					"rp_*/subpacks/*/animation_controllers/**/*.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/animation_controller/_index.json"
 			},
@@ -294,7 +299,12 @@
 					"*RP/animations/**/*.{json,jsonc,json5}",
 					"RP_*/animations/**/*.{json,jsonc,json5}",
 					"*rp/animations/**/*.{json,jsonc,json5}",
-					"rp_*/animations/**/*.{json,jsonc,json5}"
+					"rp_*/animations/**/*.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/animations/**/*.{json,jsonc,json5}",
+					"*RP/subpacks/*/animations/**/*.{json,jsonc,json5}",
+					"RP_*/subpacks/*/animations/**/*.{json,jsonc,json5}",
+					"*rp/subpacks/*/animations/**/*.{json,jsonc,json5}",
+					"rp_*/subpacks/*/animations/**/*.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/animation/_index.json"
 			},
@@ -304,7 +314,12 @@
 					"*RP/atmospherics/**/*.{json,jsonc,json5}",
 					"RP_*/atmospherics/**/*.{json,jsonc,json5}",
 					"*rp/atmospherics/**/*.{json,jsonc,json5}",
-					"rp_*/atmospherics/**/*.{json,jsonc,json5}"
+					"rp_*/atmospherics/**/*.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/atmospherics/**/*.{json,jsonc,json5}",
+					"*RP/subpacks/*/atmospherics/**/*.{json,jsonc,json5}",
+					"RP_*/subpacks/*/atmospherics/**/*.{json,jsonc,json5}",
+					"*rp/subpacks/*/atmospherics/**/*.{json,jsonc,json5}",
+					"rp_*/subpacks/*/atmospherics/**/*.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/atmospheric/_index.json"
 			},
@@ -314,7 +329,12 @@
 					"*RP/attachables/**/*.{json,jsonc,json5}",
 					"RP_*/attachables/**/*.{json,jsonc,json5}",
 					"*rp/attachables/**/*.{json,jsonc,json5}",
-					"rp_*/attachables/**/*.{json,jsonc,json5}"
+					"rp_*/attachables/**/*.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/attachables/**/*.{json,jsonc,json5}",
+					"*RP/subpacks/*/attachables/**/*.{json,jsonc,json5}",
+					"RP_*/subpacks/*/attachables/**/*.{json,jsonc,json5}",
+					"*rp/subpacks/*/attachables/**/*.{json,jsonc,json5}",
+					"rp_*/subpacks/*/attachables/**/*.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/attachable/_index.json"
 			},
@@ -324,7 +344,12 @@
 					"*RP/biomes_client.{json,jsonc,json5}",
 					"RP_*/biomes_client.{json,jsonc,json5}",
 					"*rp/biomes_client.{json,jsonc,json5}",
-					"rp_*/biomes_client.{json,jsonc,json5}"
+					"rp_*/biomes_client.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/biomes_client.{json,jsonc,json5}",
+					"*RP/subpacks/*/biomes_client.{json,jsonc,json5}",
+					"RP_*/subpacks/*/biomes_client.{json,jsonc,json5}",
+					"*rp/subpacks/*/biomes_client.{json,jsonc,json5}",
+					"rp_*/subpacks/*/biomes_client.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/biomes_client/_index.json"
 			},
@@ -334,7 +359,12 @@
 					"*RP/biomes/**/*.{json,jsonc,json5}",
 					"RP_*/biomes/**/*.{json,jsonc,json5}",
 					"*rp/biomes/**/*.{json,jsonc,json5}",
-					"rp_*/biomes/**/*.{json,jsonc,json5}"
+					"rp_*/biomes/**/*.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/biomes/**/*.{json,jsonc,json5}",
+					"*RP/subpacks/*/biomes/**/*.{json,jsonc,json5}",
+					"RP_*/subpacks/*/biomes/**/*.{json,jsonc,json5}",
+					"*rp/subpacks/*/biomes/**/*.{json,jsonc,json5}",
+					"rp_*/subpacks/*/biomes/**/*.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/biome/_index.json"
 			},
@@ -344,7 +374,12 @@
 					"*RP/block_culling/**/*.{json,jsonc,json5}",
 					"RP_*/block_culling/**/*.{json,jsonc,json5}",
 					"*rp/block_culling/**/*.{json,jsonc,json5}",
-					"rp_*/block_culling/**/*.{json,jsonc,json5}"
+					"rp_*/block_culling/**/*.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/block_culling/**/*.{json,jsonc,json5}",
+					"*RP/subpacks/*/block_culling/**/*.{json,jsonc,json5}",
+					"RP_*/subpacks/*/block_culling/**/*.{json,jsonc,json5}",
+					"*rp/subpacks/*/block_culling/**/*.{json,jsonc,json5}",
+					"rp_*/subpacks/*/block_culling/**/*.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/block_culling/_index.json"
 			},
@@ -354,7 +389,12 @@
 					"*RP/blocks.{json,jsonc,json5}",
 					"RP_*/blocks.{json,jsonc,json5}",
 					"*rp/blocks.{json,jsonc,json5}",
-					"rp_*/blocks.{json,jsonc,json5}"
+					"rp_*/blocks.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/blocks.{json,jsonc,json5}",
+					"*RP/subpacks/*/blocks.{json,jsonc,json5}",
+					"RP_*/subpacks/*/blocks.{json,jsonc,json5}",
+					"*rp/subpacks/*/blocks.{json,jsonc,json5}",
+					"rp_*/subpacks/*/blocks.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/blocks/_index.json"
 			},
@@ -364,7 +404,12 @@
 					"*RP/color_grading/**/*.{json,jsonc,json5}",
 					"RP_*/color_grading/**/*.{json,jsonc,json5}",
 					"*rp/color_grading/**/*.{json,jsonc,json5}",
-					"rp_*/color_grading/**/*.{json,jsonc,json5}"
+					"rp_*/color_grading/**/*.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/color_grading/**/*.{json,jsonc,json5}",
+					"*RP/subpacks/*/color_grading/**/*.{json,jsonc,json5}",
+					"RP_*/subpacks/*/color_grading/**/*.{json,jsonc,json5}",
+					"*rp/subpacks/*/color_grading/**/*.{json,jsonc,json5}",
+					"rp_*/subpacks/*/color_grading/**/*.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/color_grading/_index.json"
 			},
@@ -374,7 +419,12 @@
 					"*RP/cubemaps/**/*.{json,jsonc,json5}",
 					"RP_*/cubemaps/**/*.{json,jsonc,json5}",
 					"*rp/cubemaps/**/*.{json,jsonc,json5}",
-					"rp_*/cubemaps/**/*.{json,jsonc,json5}"
+					"rp_*/cubemaps/**/*.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/cubemaps/**/*.{json,jsonc,json5}",
+					"*RP/subpacks/*/cubemaps/**/*.{json,jsonc,json5}",
+					"RP_*/subpacks/*/cubemaps/**/*.{json,jsonc,json5}",
+					"*rp/subpacks/*/cubemaps/**/*.{json,jsonc,json5}",
+					"rp_*/subpacks/*/cubemaps/**/*.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/cubemap/_index.json"
 			},
@@ -384,7 +434,12 @@
 					"*RP/entity/**/*.{json,jsonc,json5}",
 					"RP_*/entity/**/*.{json,jsonc,json5}",
 					"*rp/entity/**/*.{json,jsonc,json5}",
-					"rp_*/entity/**/*.{json,jsonc,json5}"
+					"rp_*/entity/**/*.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/entity/**/*.{json,jsonc,json5}",
+					"*RP/subpacks/*/entity/**/*.{json,jsonc,json5}",
+					"RP_*/subpacks/*/entity/**/*.{json,jsonc,json5}",
+					"*rp/subpacks/*/entity/**/*.{json,jsonc,json5}",
+					"rp_*/subpacks/*/entity/**/*.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/entity/_index.json"
 			},
@@ -394,7 +449,12 @@
 					"*RP/fogs/**/*.{json,jsonc,json5}",
 					"RP_*/fogs/**/*.{json,jsonc,json5}",
 					"*rp/fogs/**/*.{json,jsonc,json5}",
-					"rp_*/fogs/**/*.{json,jsonc,json5}"
+					"rp_*/fogs/**/*.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/fogs/**/*.{json,jsonc,json5}",
+					"*RP/subpacks/*/fogs/**/*.{json,jsonc,json5}",
+					"RP_*/subpacks/*/fogs/**/*.{json,jsonc,json5}",
+					"*rp/subpacks/*/fogs/**/*.{json,jsonc,json5}",
+					"rp_*/subpacks/*/fogs/**/*.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/fog/_index.json"
 			},
@@ -404,7 +464,12 @@
 					"*RP/font/**/*.{json,jsonc,json5}",
 					"RP_*/font/**/*.{json,jsonc,json5}",
 					"*rp/font/**/*.{json,jsonc,json5}",
-					"rp_*/font/**/*.{json,jsonc,json5}"
+					"rp_*/font/**/*.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/font/**/*.{json,jsonc,json5}",
+					"*RP/subpacks/*/font/**/*.{json,jsonc,json5}",
+					"RP_*/subpacks/*/font/**/*.{json,jsonc,json5}",
+					"*rp/subpacks/*/font/**/*.{json,jsonc,json5}",
+					"rp_*/subpacks/*/font/**/*.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/font_metadata/_index.json"
 			},
@@ -414,7 +479,12 @@
 					"*RP/items/**/*.{json,jsonc,json5}",
 					"RP_*/items/**/*.{json,jsonc,json5}",
 					"*rp/items/**/*.{json,jsonc,json5}",
-					"rp_*/items/**/*.{json,jsonc,json5}"
+					"rp_*/items/**/*.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/items/**/*.{json,jsonc,json5}",
+					"*RP/subpacks/*/items/**/*.{json,jsonc,json5}",
+					"RP_*/subpacks/*/items/**/*.{json,jsonc,json5}",
+					"*rp/subpacks/*/items/**/*.{json,jsonc,json5}",
+					"rp_*/subpacks/*/items/**/*.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/item/_index.json"
 			},
@@ -424,7 +494,12 @@
 					"*RP/lighting/global.{json,jsonc,json5}",
 					"RP_*/lighting/global.{json,jsonc,json5}",
 					"*rp/lighting/global.{json,jsonc,json5}",
-					"rp_*/lighting/global.{json,jsonc,json5}"
+					"rp_*/lighting/global.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/lighting/global.{json,jsonc,json5}",
+					"*RP/subpacks/*/lighting/global.{json,jsonc,json5}",
+					"RP_*/subpacks/*/lighting/global.{json,jsonc,json5}",
+					"*rp/subpacks/*/lighting/global.{json,jsonc,json5}",
+					"rp_*/subpacks/*/lighting/global.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/lighting/_index.json"
 			},
@@ -434,7 +509,12 @@
 					"*RP/local_lighting/local_lighting.{json,jsonc,json5}",
 					"RP_*/local_lighting/local_lighting.{json,jsonc,json5}",
 					"*rp/local_lighting/local_lighting.{json,jsonc,json5}",
-					"rp_*/local_lighting/local_lighting.{json,jsonc,json5}"
+					"rp_*/local_lighting/local_lighting.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/local_lighting/local_lighting.{json,jsonc,json5}",
+					"*RP/subpacks/*/local_lighting/local_lighting.{json,jsonc,json5}",
+					"RP_*/subpacks/*/local_lighting/local_lighting.{json,jsonc,json5}",
+					"*rp/subpacks/*/local_lighting/local_lighting.{json,jsonc,json5}",
+					"rp_*/subpacks/*/local_lighting/local_lighting.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/local_lighting/_index.json"
 			},
@@ -454,7 +534,12 @@
 					"*RP/materials/*.material",
 					"RP_*/materials/*.material",
 					"*rp/materials/*.material",
-					"rp_*/materials/*.material"
+					"rp_*/materials/*.material",
+					"resource_pack/subpacks/*/materials/*.material",
+					"*RP/subpacks/*/materials/*.material",
+					"RP_*/subpacks/*/materials/*.material",
+					"*rp/subpacks/*/materials/*.material",
+					"rp_*/subpacks/*/materials/*.material"
 				],
 				"url": "./schema/bedrock/client/material/_index.json"
 			},
@@ -464,7 +549,12 @@
 					"*RP/models/**/*.geo.{json,jsonc,json5}",
 					"RP_*/models/**/*.geo.{json,jsonc,json5}",
 					"*rp/models/**/*.geo.{json,jsonc,json5}",
-					"rp_*/models/**/*.geo.{json,jsonc,json5}"
+					"rp_*/models/**/*.geo.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/models/**/*.geo.{json,jsonc,json5}",
+					"*RP/subpacks/*/models/**/*.geo.{json,jsonc,json5}",
+					"RP_*/subpacks/*/models/**/*.geo.{json,jsonc,json5}",
+					"*rp/subpacks/*/models/**/*.geo.{json,jsonc,json5}",
+					"rp_*/subpacks/*/models/**/*.geo.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/geometry/_index.json"
 			},
@@ -474,7 +564,12 @@
 					"*RP/particles/**/*.{json,jsonc,json5}",
 					"RP_*/particles/**/*.{json,jsonc,json5}",
 					"*rp/particles/**/*.{json,jsonc,json5}",
-					"rp_*/particles/**/*.{json,jsonc,json5}"
+					"rp_*/particles/**/*.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/particles/**/*.{json,jsonc,json5}",
+					"*RP/subpacks/*/particles/**/*.{json,jsonc,json5}",
+					"RP_*/subpacks/*/particles/**/*.{json,jsonc,json5}",
+					"*rp/subpacks/*/particles/**/*.{json,jsonc,json5}",
+					"rp_*/subpacks/*/particles/**/*.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/particle/_index.json"
 			},
@@ -484,7 +579,12 @@
 					"*RP/pbr/global.{json,jsonc,json5}",
 					"RP_*/pbr/global.{json,jsonc,json5}",
 					"*rp/pbr/global.{json,jsonc,json5}",
-					"rp_*/pbr/global.{json,jsonc,json5}"
+					"rp_*/pbr/global.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/pbr/global.{json,jsonc,json5}",
+					"*RP/subpacks/*/pbr/global.{json,jsonc,json5}",
+					"RP_*/subpacks/*/pbr/global.{json,jsonc,json5}",
+					"*rp/subpacks/*/pbr/global.{json,jsonc,json5}",
+					"rp_*/subpacks/*/pbr/global.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/pbr/_index.json"
 			},
@@ -494,7 +594,12 @@
 					"*RP/point_lights/global.{json,jsonc,json5}",
 					"RP_*/point_lights/global.{json,jsonc,json5}",
 					"*rp/point_lights/global.{json,jsonc,json5}",
-					"rp_*/point_lights/global.{json,jsonc,json5}"
+					"rp_*/point_lights/global.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/point_lights/global.{json,jsonc,json5}",
+					"*RP/subpacks/*/point_lights/global.{json,jsonc,json5}",
+					"RP_*/subpacks/*/point_lights/global.{json,jsonc,json5}",
+					"*rp/subpacks/*/point_lights/global.{json,jsonc,json5}",
+					"rp_*/subpacks/*/point_lights/global.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/point_lights/_index.json"
 			},
@@ -504,7 +609,12 @@
 					"*RP/render_controllers/**/*.{json,jsonc,json5}",
 					"RP_*/render_controllers/**/*.{json,jsonc,json5}",
 					"*rp/render_controllers/**/*.{json,jsonc,json5}",
-					"rp_*/render_controllers/**/*.{json,jsonc,json5}"
+					"rp_*/render_controllers/**/*.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/render_controllers/**/*.{json,jsonc,json5}",
+					"*RP/subpacks/*/render_controllers/**/*.{json,jsonc,json5}",
+					"RP_*/subpacks/*/render_controllers/**/*.{json,jsonc,json5}",
+					"*rp/subpacks/*/render_controllers/**/*.{json,jsonc,json5}",
+					"rp_*/subpacks/*/render_controllers/**/*.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/render_controller/_index.json"
 			},
@@ -514,7 +624,12 @@
 					"*RP/shadows/global.{json,jsonc,json5}",
 					"RP_*/shadows/global.{json,jsonc,json5}",
 					"*rp/shadows/global.{json,jsonc,json5}",
-					"rp_*/shadows/global.{json,jsonc,json5}"
+					"rp_*/shadows/global.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/shadows/global.{json,jsonc,json5}",
+					"*RP/subpacks/*/shadows/global.{json,jsonc,json5}",
+					"RP_*/subpacks/*/shadows/global.{json,jsonc,json5}",
+					"*rp/subpacks/*/shadows/global.{json,jsonc,json5}",
+					"rp_*/subpacks/*/shadows/global.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/shadows/_index.json"
 			},
@@ -524,7 +639,12 @@
 					"*RP/sounds.{json,jsonc,json5}",
 					"RP_*/sounds.{json,jsonc,json5}",
 					"*rp/sounds.{json,jsonc,json5}",
-					"rp_*/sounds.{json,jsonc,json5}"
+					"rp_*/sounds.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/sounds.{json,jsonc,json5}",
+					"*RP/subpacks/*/sounds.{json,jsonc,json5}",
+					"RP_*/subpacks/*/sounds.{json,jsonc,json5}",
+					"*rp/subpacks/*/sounds.{json,jsonc,json5}",
+					"rp_*/subpacks/*/sounds.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/sounds/_index.json"
 			},
@@ -534,7 +654,12 @@
 					"*RP/sounds/music_definitions.{json,jsonc,json5}",
 					"RP_*/sounds/music_definitions.{json,jsonc,json5}",
 					"*rp/sounds/music_definitions.{json,jsonc,json5}",
-					"rp_*/sounds/music_definitions.{json,jsonc,json5}"
+					"rp_*/sounds/music_definitions.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/sounds/music_definitions.{json,jsonc,json5}",
+					"*RP/subpacks/*/sounds/music_definitions.{json,jsonc,json5}",
+					"RP_*/subpacks/*/sounds/music_definitions.{json,jsonc,json5}",
+					"*rp/subpacks/*/sounds/music_definitions.{json,jsonc,json5}",
+					"rp_*/subpacks/*/sounds/music_definitions.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/music_definitions/_index.json"
 			},
@@ -544,7 +669,12 @@
 					"*RP/sounds/sound_definitions.{json,jsonc,json5}",
 					"RP_*/sounds/sound_definitions.{json,jsonc,json5}",
 					"*rp/sounds/sound_definitions.{json,jsonc,json5}",
-					"rp_*/sounds/sound_definitions.{json,jsonc,json5}"
+					"rp_*/sounds/sound_definitions.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/sounds/sound_definitions.{json,jsonc,json5}",
+					"*RP/subpacks/*/sounds/sound_definitions.{json,jsonc,json5}",
+					"RP_*/subpacks/*/sounds/sound_definitions.{json,jsonc,json5}",
+					"*rp/subpacks/*/sounds/sound_definitions.{json,jsonc,json5}",
+					"rp_*/subpacks/*/sounds/sound_definitions.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/sound_definitions/_index.json"
 			},
@@ -554,7 +684,12 @@
 					"*RP/texts/languages.{json,jsonc,json5}",
 					"RP_*/texts/languages.{json,jsonc,json5}",
 					"*rp/texts/languages.{json,jsonc,json5}",
-					"rp_*/texts/languages.{json,jsonc,json5}"
+					"rp_*/texts/languages.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/texts/languages.{json,jsonc,json5}",
+					"*RP/subpacks/*/texts/languages.{json,jsonc,json5}",
+					"RP_*/subpacks/*/texts/languages.{json,jsonc,json5}",
+					"*rp/subpacks/*/texts/languages.{json,jsonc,json5}",
+					"rp_*/subpacks/*/texts/languages.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/languages/_index.json"
 			},
@@ -564,7 +699,12 @@
 					"*RP/textures/**/*.texture_set.{json,jsonc,json5}",
 					"RP_*/textures/**/*.texture_set.{json,jsonc,json5}",
 					"*rp/textures/**/*.texture_set.{json,jsonc,json5}",
-					"rp_*/textures/**/*.texture_set.{json,jsonc,json5}"
+					"rp_*/textures/**/*.texture_set.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/textures/**/*.texture_set.{json,jsonc,json5}",
+					"*RP/subpacks/*/textures/**/*.texture_set.{json,jsonc,json5}",
+					"RP_*/subpacks/*/textures/**/*.texture_set.{json,jsonc,json5}",
+					"*rp/subpacks/*/textures/**/*.texture_set.{json,jsonc,json5}",
+					"rp_*/subpacks/*/textures/**/*.texture_set.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/texture_set/_index.json"
 			},
@@ -574,7 +714,12 @@
 					"*RP/textures/flipbook_textures.{json,jsonc,json5}",
 					"RP_*/textures/flipbook_textures.{json,jsonc,json5}",
 					"*rp/textures/flipbook_textures.{json,jsonc,json5}",
-					"rp_*/textures/flipbook_textures.{json,jsonc,json5}"
+					"rp_*/textures/flipbook_textures.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/textures/flipbook_textures.{json,jsonc,json5}",
+					"*RP/subpacks/*/textures/flipbook_textures.{json,jsonc,json5}",
+					"RP_*/subpacks/*/textures/flipbook_textures.{json,jsonc,json5}",
+					"*rp/subpacks/*/textures/flipbook_textures.{json,jsonc,json5}",
+					"rp_*/subpacks/*/textures/flipbook_textures.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/flipbook_textures/_index.json"
 			},
@@ -584,7 +729,12 @@
 					"*RP/textures/item_texture.{json,jsonc,json5}",
 					"RP_*/textures/item_texture.{json,jsonc,json5}",
 					"*rp/textures/item_texture.{json,jsonc,json5}",
-					"rp_*/textures/item_texture.{json,jsonc,json5}"
+					"rp_*/textures/item_texture.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/textures/item_texture.{json,jsonc,json5}",
+					"*RP/subpacks/*/textures/item_texture.{json,jsonc,json5}",
+					"RP_*/subpacks/*/textures/item_texture.{json,jsonc,json5}",
+					"*rp/subpacks/*/textures/item_texture.{json,jsonc,json5}",
+					"rp_*/subpacks/*/textures/item_texture.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/item_texture/_index.json"
 			},
@@ -594,7 +744,12 @@
 					"*RP/textures/terrain_texture.{json,jsonc,json5}",
 					"RP_*/textures/terrain_texture.{json,jsonc,json5}",
 					"*rp/textures/terrain_texture.{json,jsonc,json5}",
-					"rp_*/textures/terrain_texture.{json,jsonc,json5}"
+					"rp_*/textures/terrain_texture.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/textures/terrain_texture.{json,jsonc,json5}",
+					"*RP/subpacks/*/textures/terrain_texture.{json,jsonc,json5}",
+					"RP_*/subpacks/*/textures/terrain_texture.{json,jsonc,json5}",
+					"*rp/subpacks/*/textures/terrain_texture.{json,jsonc,json5}",
+					"rp_*/subpacks/*/textures/terrain_texture.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/terrain_texture/_index.json"
 			},
@@ -604,7 +759,12 @@
 					"*RP/textures/texture_list.{json,jsonc,json5}",
 					"RP_*/textures/texture_list.{json,jsonc,json5}",
 					"*rp/textures/texture_list.{json,jsonc,json5}",
-					"rp_*/textures/texture_list.{json,jsonc,json5}"
+					"rp_*/textures/texture_list.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/textures/texture_list.{json,jsonc,json5}",
+					"*RP/subpacks/*/textures/texture_list.{json,jsonc,json5}",
+					"RP_*/subpacks/*/textures/texture_list.{json,jsonc,json5}",
+					"*rp/subpacks/*/textures/texture_list.{json,jsonc,json5}",
+					"rp_*/subpacks/*/textures/texture_list.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/texture_list/_index.json"
 			},
@@ -614,7 +774,12 @@
 					"*RP/water/**/*.{json,jsonc,json5}",
 					"RP_*/water/**/*.{json,jsonc,json5}",
 					"*rp/water/**/*.{json,jsonc,json5}",
-					"rp_*/water/**/*.{json,jsonc,json5}"
+					"rp_*/water/**/*.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/water/**/*.{json,jsonc,json5}",
+					"*RP/subpacks/*/water/**/*.{json,jsonc,json5}",
+					"RP_*/subpacks/*/water/**/*.{json,jsonc,json5}",
+					"*rp/subpacks/*/water/**/*.{json,jsonc,json5}",
+					"rp_*/subpacks/*/water/**/*.{json,jsonc,json5}"
 				],
 				"url": "./schema/bedrock/client/water/_index.json"
 			}

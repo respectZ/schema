@@ -248,14 +248,15 @@ const RP_ENTRIES: JsonValidationEntry[] = [
 ];
 
 function mapFileMatch(type: keyof typeof PACK_PREFIXES, entry: JsonValidationEntry) {
-	const prefixes = type === "bp" ? PACK_PREFIXES.bp : PACK_PREFIXES.rp;
-	if (Array.isArray(entry.fileMatch)) {
-		entry.fileMatch = entry.fileMatch.flatMap((fileMatch) =>
-			prefixes.map((prefix) => path.join(prefix, fileMatch)),
-		);
-		return entry;
-	}
-	entry.fileMatch = prefixes.map((prefix) => path.join(prefix, entry.fileMatch as string));
+	const prefixes = PACK_PREFIXES[type];
+	const fileMatches = Array.isArray(entry.fileMatch) ? entry.fileMatch : [entry.fileMatch];
+	entry.fileMatch = fileMatches.flatMap((fileMatch) => {
+		const matches = prefixes.map((prefix) => path.join(prefix, fileMatch));
+		if (type === "rp" && !fileMatch.startsWith("manifest.")) {
+			matches.push(...prefixes.map((prefix) => path.join(prefix, "subpacks/*", fileMatch)));
+		}
+		return matches;
+	});
 	return entry;
 }
 
