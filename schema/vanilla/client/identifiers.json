@@ -4507,7 +4507,11 @@
 						"geometry.zombie.baby",
 						"geometry.zombie.drowned",
 						"geometry.zombie.drowned.v1.16",
-						"geometry.zombie_nautilus_coral"
+						"geometry.zombie_nautilus_coral",
+						"minecraft:geometry.shelf_mushroom_large",
+						"minecraft:geometry.shelf_mushroom_small",
+						"minecraft:geometry.straw_bed_foot",
+						"minecraft:geometry.straw_bed_head"
 					]
 				}
 			]

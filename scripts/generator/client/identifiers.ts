@@ -84,7 +84,7 @@ export async function generateClientIdentifiers() {
 	const geometryIdentifiers = await getBedrockJSON<unknown, string[]>({
 		type: "rp",
 		source: "bedrock-samples",
-		pattern: "models/entity/**/*.json",
+		pattern: "models/*/**/*.json",
 		transform: (content) => {
 			if (isLegacyGeometry(content)) {
 				const keys: string[] = [];
