@@ -115,6 +115,9 @@
 		},
 		"minecraft:sound": {
 			"$ref": "sound.json"
+		},
+		"minecraft:block_entity": {
+			"$ref": "block_entity.json"
 		}
 	},
 	"patternProperties": {
