@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"value": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": "The Palette Color value of the entity."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Defines the entity's color. Only works on vanilla entities that have predefined color values (sheep, llama, shulker)."
+}

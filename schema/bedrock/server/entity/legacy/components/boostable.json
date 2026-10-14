@@ -1,0 +1,81 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"boost_items": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/boost_item"
+			},
+			"description": "List of items that can be used to boost while riding this entity. Each item has the following properties:"
+		},
+		"duration": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 3,
+			"description": "Time in seconds for the boost."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 1.35,
+			"description": "Factor by which the entity's normal speed increases. E.g. 2.0 means go twice as fast. Requires \"format_version\" of 1.20 or more, otherwise the value 1.35 will be used."
+		}
+	},
+	"additionalProperties": false,
+	"$defs": {
+		"boost_item": {
+			"type": "object",
+			"properties": {
+				"damage": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"default": 1,
+					"description": "This is the damage that the item will take each time it is used."
+				},
+				"item": {
+					"$ref": "../general.json#/$defs/item_obj",
+					"description": "Name of the item that can be used to boost."
+				},
+				"item_damage": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"deprecated": true,
+					"doNotSuggest": true,
+					"description": ""
+				},
+				"replaceItem": {
+					"$ref": "#/$defs/boost_item/properties/replace_item",
+					"doNotSuggest": true,
+					"description": ""
+				},
+				"replace_item": {
+					"anyOf": [
+						{
+							"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier"
+						},
+						{
+							"type": "object",
+							"properties": {
+								"item": {
+									"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+									"description": ""
+								}
+							},
+							"required": ["item"],
+							"additionalProperties": false
+						}
+					],
+					"description": "The item used to boost will become this item once it is used up."
+				}
+			},
+			"additionalProperties": false,
+			"description": "List of items that can be used to boost while riding this entity. Each item has the following properties:"
+		}
+	},
+	"description": "Defines the conditions and behavior of a rideable entity's boost."
+}

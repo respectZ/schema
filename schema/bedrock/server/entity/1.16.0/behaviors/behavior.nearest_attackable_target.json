@@ -1,0 +1,140 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"attack_interval": {
+			"anyOf": [
+				{
+					"anyOf": [
+						{
+							"$ref": "../../legacy/general.json#/$defs/number_or_range"
+						},
+						{
+							"type": "null"
+						}
+					]
+				},
+				{
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38
+				}
+			],
+			"description": "Time range (in seconds) between searching for an attack target, range is in (0, \"attack_interval\"]. Only used if \"attack_interval\" is greater than 0, otherwise \"scan_interval\" is used."
+		},
+		"attack_owner": {
+			"type": "boolean",
+			"description": "If true, this entity can attack its owner."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"entity_types": {
+			"anyOf": [
+				{
+					"$ref": "../../legacy/general.json#/$defs/entity_types"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../legacy/general.json#/$defs/entity_types"
+					}
+				}
+			],
+			"description": "Filters which types of targets are valid for this entity."
+		},
+		"must_reach": {
+			"type": "boolean",
+			"description": "If true, this entity requires a path to the target."
+		},
+		"must_see": {
+			"type": "boolean",
+			"description": "Determines if target-validity requires this entity to be in range only, or both in range and in sight."
+		},
+		"must_see_forget_duration": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 3.0,
+			"description": "Time (in seconds) the target must not be seen by this entity to become invalid. Used only if \"must_see\" is true."
+		},
+		"persist_time": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 0.0,
+			"description": "Time (in seconds) this entity can continue attacking the target after the target is no longer valid."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		},
+		"reselect_targets": {
+			"type": "boolean",
+			"description": "Allows the attacking entity to update the nearest target, otherwise a target is only reselected after each \"scan_interval\" or \"attack_interval\"."
+		},
+		"scan_interval": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 10,
+			"description": "If \"attack_interval\" is 0 or isn't declared, then between attacks: scanning for a new target occurs every amount of ticks equal to \"scan_interval\", minimum value is 1. Values under 10 can affect performance."
+		},
+		"set_persistent": {
+			"type": "boolean",
+			"description": "Allows the actor to be set to persist upon targeting a player"
+		},
+		"target_acquisition_probability": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Probability (0.0 to 1.0) that this entity will accept a found target. Checked each time a valid target is found during scanning. "
+		},
+		"target_invisible_multiplier": {
+			"type": "number",
+			"exclusiveMinimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 0.699999988079071,
+			"description": "Multiplied with the target's armor coverage percentage to modify \"max_dist\" when detecting an invisible target."
+		},
+		"target_search_height": {
+			"type": "number",
+			"minimum": -1.0,
+			"maximum": 3.4028234663852886e38,
+			"default": -1.0,
+			"description": "Maximum vertical target-search distance, if it's greater than the target type's \"max_dist\". A negative value defaults to \"entity_types\" greatest \"max_dist\"."
+		},
+		"target_sneak_visibility_multiplier": {
+			"type": "number",
+			"exclusiveMinimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 0.800000011920929,
+			"description": "Multiplied with the target type's \"max_dist\" when trying to detect a sneaking target."
+		},
+		"within_radius": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 0.0,
+			"description": "Maximum distance this entity can be from the target when following it, otherwise the target becomes invalid. This value is only used if the entity doesn't declare \"minecraft:follow_range\"."
+		},
+		"attack_interval_min": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows an entity to attack the closest target within a given subset of specific target types."
+}

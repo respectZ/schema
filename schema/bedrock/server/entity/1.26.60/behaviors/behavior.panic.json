@@ -1,0 +1,80 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": ["move", "look", "jump"],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"damage_sources": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/damage_type.json"
+			},
+			"description": "The list of Entity Damage Sources that will cause this mob to panic"
+		},
+		"force": {
+			"type": "boolean",
+			"description": "If true, this mob will not stop panicking until it can't move anymore or the goal is removed from it"
+		},
+		"ignore_mob_damage": {
+			"type": "boolean",
+			"description": "If true, the mob will not panic in response to damage from other mobs. This overrides the damage types in \"damage_sources\""
+		},
+		"panic_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "Sound to play while the mob is panicking."
+		},
+		"prefer_water": {
+			"type": "boolean",
+			"description": "If true, the mob will prefer water over land"
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"sound_interval": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"max": {
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"description": ""
+				},
+				"min": {
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"description": ""
+				}
+			},
+			"description": "Range of random ticks to wait between playing the panic sound."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		}
+	},
+	"description": "Allows the mob to enter the panic state, which makes it run around and away from the damage source that made it enter this state."
+}

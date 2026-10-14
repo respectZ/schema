@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"sit_event": {
+			"$ref": "../general.json#/$defs/trigger",
+			"description": "Event to run when the entity enters the 'sit' state"
+		},
+		"stand_event": {
+			"$ref": "../general.json#/$defs/trigger",
+			"description": "Event to run when the entity exits the 'sit' state"
+		}
+	},
+	"additionalProperties": false,
+	"description": "Defines the entity's 'sit' state."
+}

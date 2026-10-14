@@ -1,0 +1,80 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"anyOf": [
+		{
+			"$ref": "#/$defs/definition"
+		},
+		{
+			"type": "null"
+		}
+	],
+	"$defs": {
+		"definition": {
+			"type": "object",
+			"properties": {
+				"slots": {
+					"type": "array",
+					"items": {
+						"anyOf": [
+							{
+								"$ref": "#/$defs/slot"
+							},
+							{
+								"type": "null"
+							}
+						]
+					},
+					"default": []
+				}
+			},
+			"additionalProperties": false,
+			"description": "Defines an entity's behavior for having items equipped to it."
+		},
+		"slot": {
+			"type": "object",
+			"properties": {
+				"accepted_items": {
+					"anyOf": [
+						{
+							"$ref": "../../../../../vanilla/server/item_descriptor.json"
+						},
+						{
+							"type": "array",
+							"items": {
+								"$ref": "../../../../../vanilla/server/item_descriptor.json"
+							}
+						}
+					],
+					"description": "The list of items that can go in this slot."
+				},
+				"interact_text": {
+					"type": "string",
+					"default": "",
+					"description": "Text to be displayed when the entity can be equipped with this item when playing with Touch-screen controls."
+				},
+				"item": {
+					"$ref": "../../../../../vanilla/server/item_descriptor.json",
+					"description": "Identifier of the item that can be equipped for this slot."
+				},
+				"on_equip": {
+					"$ref": "../general.json#/$defs/trigger",
+					"description": "Event to trigger when this entity is equipped with this item."
+				},
+				"on_unequip": {
+					"$ref": "../general.json#/$defs/trigger",
+					"description": "Event to trigger when this item is removed from this entity."
+				},
+				"slot": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"default": 0,
+					"description": "The slot number of this slot."
+				}
+			},
+			"additionalProperties": false,
+			"description": "List of slots and the item that can be equipped."
+		}
+	},
+	"description": "Defines an entity's behavior for having items equipped to it."
+}

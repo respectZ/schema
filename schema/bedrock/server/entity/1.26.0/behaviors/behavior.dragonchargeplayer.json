@@ -1,0 +1,75 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"active_speed": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 3.4028234663852886e38,
+			"description": "The speed this entity moves when this behavior has started or while it's active."
+		},
+		"continue_charge_threshold_time": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "If the dragon is outside the \"target_zone\" for longer than \"continue_charge_threshold_time\" seconds, the charge is canceled."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": ["move", "look", "jump"],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"flight_speed": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 3.4028234663852886e38,
+			"description": "The speed this entity moves while this behavior is not active."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"target_zone": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"max": {
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"description": ""
+				},
+				"min": {
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"description": ""
+				}
+			},
+			"description": "Minimum and maximum distance, from the target, this entity can use this behavior."
+		},
+		"turn_speed": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 3.4028234663852886e38,
+			"description": "The speed at which this entity turns while using this behavior."
+		}
+	},
+	"description": "Allows this entity to attack a player by charging at them. The player is chosen by the \"minecraft:behavior.dragonscanning\". Can only be used by the Ender Dragon."
+}

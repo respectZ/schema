@@ -1,0 +1,14 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"damage_per_hurt": {
+			"$ref": "../../legacy/components/damage_over_time.json#/properties/damage_per_hurt"
+		},
+		"time_between_hurt": {
+			"$ref": "../../legacy/components/damage_over_time.json#/properties/time_between_hurt"
+		}
+	},
+	"additionalProperties": false,
+	"description": "Applies defined amount of damage to the entity at specified intervals."
+}

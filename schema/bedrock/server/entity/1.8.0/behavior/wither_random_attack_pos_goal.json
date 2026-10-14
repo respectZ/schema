@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"type": "object",
-	"title": "Behavior Wither Random Attack Pos Goal",
-	"description": "Allows the wither to launch random attacks. Can only be used by the Wither Boss.",
-	"additionalProperties": false,
-	"properties": {}
-}

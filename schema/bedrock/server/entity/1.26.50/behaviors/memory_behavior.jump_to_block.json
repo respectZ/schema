@@ -1,0 +1,130 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"chance_to_start": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 1,
+			"description": ""
+		},
+		"conditional_filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": ""
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": ["move", "look", "jump"],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"duration": {
+			"anyOf": [
+				{
+					"type": "number",
+					"minimum": 0,
+					"maximum": 3.4028234663852886e38,
+					"description": ""
+				},
+				{
+					"type": "object",
+					"properties": {
+						"max": {
+							"type": "number",
+							"minimum": 0,
+							"maximum": 3.4028234663852886e38,
+							"description": ""
+						},
+						"min": {
+							"type": "number",
+							"minimum": 0,
+							"maximum": 3.4028234663852886e38,
+							"description": ""
+						}
+					},
+					"additionalProperties": false,
+					"description": ""
+				}
+			],
+			"description": ""
+		},
+		"jump_velocity_memory": {
+			"type": "string",
+			"minLength": 1,
+			"description": ""
+		},
+		"on_complete": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"event": {
+						"type": "string",
+						"default": "",
+						"description": ""
+					},
+					"filters": {
+						"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+						"description": ""
+					},
+					"target": {
+						"type": "string",
+						"anyOf": [
+							{
+								"$ref": "../../../../../vanilla/server/filter/general.json#/$defs/filter_subject",
+								"description": ""
+							},
+							{
+								"pattern": "^(?:[sS][eE][lL][fF]|[oO][tT][hH][eE][rR]|[pP][lL][aA][yY][eE][rR]|[tT][aA][rR][gG][eE][tT]|[pP][aA][rR][eE][nN][tT]|[bB][aA][bB][yY]|[bB][lL][oO][cC][kK]|[dD][aA][mM][aA][gG][eE][rR]|[hH][oO][lL][dD][eE][rR]|[iI][tT][eE][mM])$(?![\\s\\S])",
+								"description": ""
+							}
+						],
+						"default": "self",
+						"description": ""
+					}
+				},
+				"additionalProperties": false,
+				"description": ""
+			},
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"retry_attempt_cooldown": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": ""
+		},
+		"scale_factor": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": ""
+		},
+		"target_blockpos_memory": {
+			"type": "string",
+			"minLength": 1,
+			"description": ""
+		}
+	},
+	"required": ["jump_velocity_memory", "target_blockpos_memory"],
+	"description": ""
+}

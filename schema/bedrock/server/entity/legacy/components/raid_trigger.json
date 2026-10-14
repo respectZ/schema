@@ -1,0 +1,12 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"triggered_event": {
+			"$ref": "../general.json#/$defs/trigger",
+			"description": "Event to run when a raid is triggered on the village."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Attempts to trigger a raid at the entity's location."
+}

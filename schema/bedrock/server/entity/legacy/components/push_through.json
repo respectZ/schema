@@ -1,0 +1,13 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"value": {
+			"type": "number",
+			"default": 0,
+			"description": "The value of the entity's push-through, in blocks."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Sets the distance through which the entity can push through."
+}

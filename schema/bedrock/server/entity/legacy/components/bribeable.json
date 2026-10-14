@@ -1,0 +1,29 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"bribe_cooldown": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 2,
+			"description": "Time in seconds before the Entity can be bribed again."
+		},
+		"bribe_items": {
+			"anyOf": [
+				{
+					"$ref": "../general.json#/$defs/item_obj"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../general.json#/$defs/item_obj"
+					}
+				}
+			],
+			"description": "The list of items that can be used to bribe the entity."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Defines the way an entity can get into the 'bribed' state."
+}

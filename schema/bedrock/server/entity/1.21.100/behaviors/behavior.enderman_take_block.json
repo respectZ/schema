@@ -1,0 +1,7 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$ref": "../../legacy/behaviors/behavior.enderman_take_block.json",
+	"deprecated": true,
+	"doNotSuggest": true,
+	"deprecationMessage": "Renamed to \"minecraft:behavior.take_block\" in format version 1.21.100."
+}

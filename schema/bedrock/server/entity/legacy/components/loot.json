@@ -1,0 +1,12 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"table": {
+			"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
+			"description": "The path to the loot table, relative to the Behavior Pack's root."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Sets the loot table for what items this entity drops upon death."
+}

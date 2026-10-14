@@ -1,0 +1,55 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"cooldown_range": {
+			"anyOf": [
+				{
+					"$ref": "../general.json#/$defs/number_or_range"
+				},
+				{
+					"type": "null"
+				}
+			],
+			"description": "Goal cooldown range in seconds. If specified, the cooldown will have to elapse even before the goal can be selected for the first time."
+		},
+		"duration_range": {
+			"anyOf": [
+				{
+					"$ref": "../general.json#/$defs/number_or_range"
+				},
+				{
+					"type": "null"
+				}
+			],
+			"description": "Goal duration range in seconds."
+		},
+		"on_end": {
+			"$ref": "../general.json#/$defs/trigger",
+			"description": "Event(s) to run when the goal ends."
+		},
+		"on_start": {
+			"$ref": "../general.json#/$defs/trigger",
+			"description": "Event(s) to run when the goal starts."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"description": "Fires an event when this behavior starts, then waits for a duration before stopping. When stopping due to that timeout or due to being interrupted by another behavior, fires another event. query.timer_flag_1 will return 1.0 on both the client and server when this behavior is running, and 0.0 otherwise."
+}

@@ -4,16 +4,24 @@
 	"description": "The damage type to test.",
 	"oneOf": [
 		{
+			"const": "all",
+			"description": "All damage types."
+		},
+		{
 			"const": "anvil",
 			"description": "Anvil damage."
 		},
 		{
-			"const": "attack",
-			"description": "Attack damage."
-		},
-		{
 			"const": "block_explosion",
 			"description": "Block explosion damage."
+		},
+		{
+			"const": "campfire",
+			"description": "Campfire damage."
+		},
+		{
+			"const": "charging",
+			"description": "Charging damage."
 		},
 		{
 			"const": "contact",
@@ -22,6 +30,10 @@
 		{
 			"const": "drowning",
 			"description": "Drowning damage."
+		},
+		{
+			"const": "entity_attack",
+			"description": "Entity attack damage."
 		},
 		{
 			"const": "entity_explosion",
@@ -36,10 +48,6 @@
 			"description": "Falling block damage."
 		},
 		{
-			"const": "fatal",
-			"description": "Any damage which kills the subject."
-		},
-		{
 			"const": "fire",
 			"description": "Fire damage."
 		},
@@ -48,16 +56,36 @@
 			"description": "Fire tick damage."
 		},
 		{
+			"const": "fireworks",
+			"description": "Fireworks damage."
+		},
+		{
 			"const": "fly_into_wall",
 			"description": "Fly into wall damage."
+		},
+		{
+			"const": "freezing",
+			"description": "Freezing damage."
 		},
 		{
 			"const": "lava",
 			"description": "Lava damage."
 		},
 		{
+			"const": "lightning",
+			"description": "Lightning damage."
+		},
+		{
+			"const": "mace_smash",
+			"description": "Mace smash damage."
+		},
+		{
 			"const": "magic",
 			"description": "Magic damage."
+		},
+		{
+			"const": "magma",
+			"description": "Magma damage."
 		},
 		{
 			"const": "none",
@@ -76,12 +104,20 @@
 			"description": "Projectile damage."
 		},
 		{
+			"const": "ram_attack",
+			"description": "Ram attack damage."
+		},
+		{
 			"const": "self_destruct",
 			"description": "Self destruct damage."
 		},
 		{
 			"const": "sonic_boom",
 			"description": "Sonic boom damage."
+		},
+		{
+			"const": "soul_campfire",
+			"description": "Soul campfire damage."
 		},
 		{
 			"const": "stalactite",
@@ -98,6 +134,10 @@
 		{
 			"const": "suffocation",
 			"description": "Suffocation damage."
+		},
+		{
+			"const": "temperature",
+			"description": "Temperature damage."
 		},
 		{
 			"const": "thorns",

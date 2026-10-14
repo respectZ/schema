@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"type": "object",
-	"title": "Behavior Dragonholdingpattern",
-	"description": "Allows the Dragon to fly around in a circle around the center podium. Can only be used by the Ender Dragon.",
-	"additionalProperties": false,
-	"properties": {}
-}

@@ -1,0 +1,7 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$ref": "../../legacy/behaviors/behavior.follow_target_captain.json",
+	"deprecated": true,
+	"doNotSuggest": true,
+	"deprecationMessage": "Renamed to \"minecraft:behavior.follow_target_leader\" in format version 1.26.20."
+}

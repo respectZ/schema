@@ -1,0 +1,45 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"angle_of_view_horizontal": {
+			"type": "integer",
+			"description": "The angle in degrees that the mob can see rotated on the Y-axis (left-right)."
+		},
+		"angle_of_view_vertical": {
+			"type": "integer",
+			"description": "The angle in degrees that the mob can see rotated on the X-axis (up-down)."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["move", "look", "jump"],
+				"description": ""
+			},
+			"description": ""
+		},
+		"look_distance": {
+			"type": "number",
+			"description": "The distance in blocks from which the entity will look at the nearest entity."
+		},
+		"max_look_time": {
+			"type": "integer",
+			"description": ""
+		},
+		"min_look_time": {
+			"type": "integer",
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"probability": {
+			"type": "number",
+			"description": "The probability of looking at the target. A value of 1.00 is 100%."
+		}
+	},
+	"description": "Allows the mob to look at the player they are trading with."
+}

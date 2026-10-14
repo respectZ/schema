@@ -1,0 +1,158 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"attack_cooldown": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 0.5,
+			"description": "The cooldown time in seconds before this goal can be used again."
+		},
+		"attack_range": {
+			"anyOf": [
+				{
+					"$ref": "../general.json#/$defs/number_or_range"
+				},
+				{
+					"type": "null"
+				}
+			],
+			"description": "Target needs to be within this range for the attack to happen."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "Conditions that need to be met for the behavior to start."
+		},
+		"max_head_rotation_x": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 30.0,
+			"description": "Maximum head rotation (in degrees), on the X-axis, that this entity can apply while trying to look at the target."
+		},
+		"max_head_rotation_y": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 30.0,
+			"description": "Maximum head rotation (in degrees), on the Y-axis, that this entity can apply while trying to look at the target."
+		},
+		"owner_anchor": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"description": "Entity anchor for the projectile spawn location."
+		},
+		"owner_offset": {
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"type": "number"
+					},
+					"maxItems": 3
+				},
+				{
+					"type": "object",
+					"properties": {
+						"x": {
+							"type": "number",
+							"description": ""
+						},
+						"y": {
+							"type": "number",
+							"description": ""
+						},
+						"z": {
+							"type": "number",
+							"description": ""
+						}
+					},
+					"additionalProperties": false
+				}
+			],
+			"description": "Offset vector from the owner_anchor."
+		},
+		"post_shoot_delay": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 0.20000000298023224,
+			"description": "Time in seconds between firing the projectile and ending the goal."
+		},
+		"pre_shoot_delay": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 0.75,
+			"description": "Time in seconds before firing the projectile."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		},
+		"projectile_def": {
+			"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+			"description": "Actor definition to use as projectile for the ranged attack. The actor must be a projectile. This field is required for the goal to be usable."
+		},
+		"ranged_fov": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 90.0,
+			"description": "Field of view (in degrees) when using sensing to detect a target for attack."
+		},
+		"target_anchor": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"description": "Entity anchor for projectile target."
+		},
+		"target_offset": {
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"type": "number"
+					},
+					"maxItems": 3
+				},
+				{
+					"type": "object",
+					"properties": {
+						"x": {
+							"type": "number",
+							"description": ""
+						},
+						"y": {
+							"type": "number",
+							"description": ""
+						},
+						"z": {
+							"type": "number",
+							"description": ""
+						}
+					},
+					"additionalProperties": false
+				}
+			],
+			"description": "Offset vector from the target_anchor."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows an entity to attack by firing a shot with a delay. Anchor and offset parameters of this component overrides the anchor and offset from projectile component."
+}

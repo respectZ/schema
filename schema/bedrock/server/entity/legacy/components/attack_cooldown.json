@@ -1,0 +1,44 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"attack_cooldown_complete_event": {
+			"$ref": "../general.json#/$defs/trigger",
+			"description": "Event to be run when the cooldown is complete."
+		},
+		"attack_cooldown_time": {
+			"anyOf": [
+				{
+					"type": "number"
+				},
+				{
+					"type": "array",
+					"items": {
+						"type": "number"
+					},
+					"minItems": 2,
+					"maxItems": 2
+				},
+				{
+					"type": "object",
+					"properties": {
+						"range_max": {
+							"type": "number",
+							"description": ""
+						},
+						"range_min": {
+							"type": "number",
+							"description": ""
+						}
+					},
+					"required": ["range_max", "range_min"],
+					"additionalProperties": false
+				}
+			],
+			"default": [0, 1],
+			"description": "Amount of time in seconds for the cooldown. Can be specified as a number or a pair of numbers (min and max)."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Adds a cooldown to a mob. The intention of this cooldown is to be used to prevent the mob from attempting to aquire new attack targets."
+}

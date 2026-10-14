@@ -1,0 +1,112 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": ["move", "look", "jump"],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"items": {
+			"type": "array",
+			"items": {
+				"anyOf": [
+					{
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"name": {
+								"anyOf": [
+									{
+										"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/item_identifier",
+										"description": ""
+									},
+									{
+										"type": "string",
+										"description": ""
+									}
+								],
+								"description": ""
+							}
+						},
+						"patternProperties": {
+							"^[\\s\\S]*$": {
+								"type": "string",
+								"description": ""
+							}
+						},
+						"description": "List of items that this mob likes"
+					},
+					{
+						"type": "array",
+						"items": {
+							"type": "object",
+							"additionalProperties": false,
+							"properties": {
+								"key": {
+									"type": "string",
+									"description": ""
+								},
+								"value": {
+									"type": "string",
+									"description": ""
+								}
+							},
+							"required": ["key", "value"],
+							"description": "List of items that this mob likes"
+						},
+						"description": "List of items that this mob likes"
+					}
+				],
+				"description": "List of items that this mob likes"
+			},
+			"description": "List of items that this mob likes"
+		},
+		"look_distance": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Distance in blocks the mob will beg from"
+		},
+		"look_time": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"max": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"description": ""
+				},
+				"min": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"description": ""
+				}
+			},
+			"description": "The range of time in seconds this mob will stare at the player holding a food they like, begging for it"
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		}
+	},
+	"description": "Allows this mob to look at and follow the player that holds food they like."
+}

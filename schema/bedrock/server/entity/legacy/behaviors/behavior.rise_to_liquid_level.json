@@ -1,0 +1,33 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["move", "look", "jump"],
+				"description": ""
+			},
+			"description": ""
+		},
+		"liquid_y_offset": {
+			"type": "number",
+			"description": "Target distance down from the liquid surface. i.e. Positive values move the target Y down."
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"rise_delta": {
+			"type": "number",
+			"description": "Movement up in Y per tick when below the liquid surface."
+		},
+		"sink_delta": {
+			"type": "number",
+			"description": "Movement down in Y per tick when above the liquid surface."
+		}
+	},
+	"description": "Allows the mob to stay at a certain level when in liquid."
+}

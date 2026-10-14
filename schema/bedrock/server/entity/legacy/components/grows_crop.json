@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"chance": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 0,
+			"description": "Value between 0-1. Chance of success per tick"
+		},
+		"charges": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 10,
+			"description": "Number of charges"
+		}
+	},
+	"additionalProperties": false,
+	"description": "Could increase crop growth when entity walks over crop"
+}

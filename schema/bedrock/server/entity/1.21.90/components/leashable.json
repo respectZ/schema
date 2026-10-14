@@ -1,0 +1,83 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"anyOf": [
+		{
+			"type": "object",
+			"properties": {
+				"can_be_cut": {
+					"type": "boolean",
+					"default": true,
+					"description": "If true, players can cut both incoming and outgoing leashes by using shears on the entity."
+				},
+				"can_be_stolen": {
+					"type": "boolean",
+					"default": true,
+					"description": "If true, players can leash this entity even if it is already leashed to another entity."
+				},
+				"on_leash": {
+					"$ref": "../../1.21.80/components/leashable.json#/anyOf/0/properties/on_leash"
+				},
+				"on_unleash": {
+					"$ref": "../../1.21.80/components/leashable.json#/anyOf/0/properties/on_unleash"
+				},
+				"on_unleash_interact_only": {
+					"$ref": "../../1.21.80/components/leashable.json#/anyOf/0/properties/on_unleash_interact_only"
+				},
+				"presets": {
+					"type": "array",
+					"items": {
+						"$ref": "#/$defs/preset"
+					},
+					"default": [],
+					"description": "Defines how this entity behaves when leashed to another entity. The first preset which \"filter\" conditions are met will be applied; if none match, a default configuration is used instead."
+				},
+				"unleash_on_removal": {
+					"$ref": "../../1.21.80/components/leashable.json#/anyOf/0/properties/unleash_on_removal"
+				}
+			},
+			"additionalProperties": false
+		},
+		{
+			"type": "null"
+		}
+	],
+	"$defs": {
+		"preset": {
+			"anyOf": [
+				{
+					"type": "object",
+					"properties": {
+						"filter": {
+							"$ref": "../../legacy/components/leashable.json#/$defs/preset/anyOf/0/properties/filter"
+						},
+						"hard_distance": {
+							"$ref": "../../legacy/components/leashable.json#/$defs/float",
+							"default": 7,
+							"description": "Distance (in blocks) over which the entity starts being pulled towards the leash holder with a spring-like force. Entities can enter and stay in vehicles if the leash is stretched under this distance, but will dismount once it exceeds it."
+						},
+						"max_distance": {
+							"$ref": "../../legacy/components/leashable.json#/$defs/float",
+							"default": 12,
+							"description": "Distance in blocks at which the leash breaks."
+						},
+						"rotation_adjustment": {
+							"$ref": "../../legacy/components/leashable.json#/$defs/preset/anyOf/0/properties/rotation_adjustment"
+						},
+						"soft_distance": {
+							"$ref": "../../legacy/components/leashable.json#/$defs/preset/anyOf/0/properties/soft_distance"
+						},
+						"spring_type": {
+							"$ref": "../../legacy/components/leashable.json#/$defs/spring_type",
+							"default": "dampened"
+						}
+					},
+					"additionalProperties": false
+				},
+				{
+					"type": "null"
+				}
+			]
+		}
+	},
+	"description": "Allows this entity to be leashed and defines the conditions and events for this entity when is leashed."
+}

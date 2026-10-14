@@ -1,0 +1,7 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {},
+	"additionalProperties": false,
+	"description": "When set, the entity will render even when invisible. Appropriate rendering behavior can then be specified in the corresponding \"minecraft:client_entity\"."
+}

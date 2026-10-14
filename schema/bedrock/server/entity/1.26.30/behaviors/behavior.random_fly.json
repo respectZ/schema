@@ -1,0 +1,63 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"can_land_on_trees": {
+			"type": "boolean",
+			"description": "If true, the mob can stop flying and land on a tree instead of the ground"
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": ["move", "look", "jump"],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"interval": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"deprecated": true,
+			"doNotSuggest": true,
+			"deprecationMessage": "Deprecated since format version 1.26.30.",
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"xz_dist": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"description": "Distance in blocks on ground that the mob will look for a new spot to move to. Must be at least 1"
+		},
+		"y_dist": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"description": "Distance in blocks that the mob will look up or down for a new spot to move to. Must be at least 1"
+		}
+	},
+	"description": "Allows a mob to randomly fly around."
+}

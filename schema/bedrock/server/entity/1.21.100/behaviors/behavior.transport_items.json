@@ -1,0 +1,135 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"allow_simultaneous_interaction": {
+			"type": "boolean",
+			"description": "When true the mob will wait until a container is not used by other entities before starting to interact with it."
+		},
+		"allowed_items": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/item_descriptor.json#/$defs/latest"
+			},
+			"description": "A list of item descriptors that are the only items the mob is allowed to transport. If this and \"disallowed_items\" are both empty, then all items are allowed. If non-empty \"disallowed_items\" must be empty."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": ["move", "look", "jump"],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"destination_container_types": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/block_descriptor.json"
+			},
+			"description": "A list of block descriptors that should be a container type to put items in."
+		},
+		"disallowed_items": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/item_descriptor.json#/$defs/latest",
+				"description": ""
+			},
+			"description": "A list of item descriptors that are the mob is not allowed to transport. If non-empty \"allowed_items\" must be empty."
+		},
+		"idle_cooldown": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 4294967295,
+			"description": "When the mob cannot find a container in which to get or put items, the goal will stop being active for this amount of time in seconds."
+		},
+		"initial_cooldown": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 4294967295,
+			"description": "How long the mob will wait after spawning or getting the goal added before the goal can start."
+		},
+		"interaction_time": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 3.4028234663852886e38,
+			"description": "The amount of time in seconds spent interacting with the containers."
+		},
+		"max_stack_size": {
+			"type": "integer",
+			"minimum": 1.0,
+			"maximum": 64.0,
+			"description": "The maximum stack size that the mob will try to take from a container."
+		},
+		"max_visited_containers": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 4294967295,
+			"description": "The maximum number of containers that the mob will try to take/place items from before going on cooldown and starting over."
+		},
+		"place_strategy": {
+			"type": "string",
+			"anyOf": [
+				{
+					"enum": ["any", "with_matching", "with_matching_or_empty"],
+					"description": ""
+				},
+				{
+					"pattern": "^(?:[Aa][Nn][Yy]|[Ww][Ii][Tt][Hh]_[Mm][Aa][Tt][Cc][Hh][Ii][Nn][Gg]|[Ww][Ii][Tt][Hh]_[Mm][Aa][Tt][Cc][Hh][Ii][Nn][Gg]_[Oo][Rr]_[Ee][Mm][Pp][Tt][Yy])$(?![\\s\\S])",
+					"description": ""
+				}
+			],
+			"description": "The strategy to use for placing the transported item. Any - always place if there is room, With matching - place if there is a matching item in the container, With matching or empty - like With matching but will also place in empty containers"
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"search_distance": {
+			"type": "array",
+			"items": {
+				"type": "number",
+				"minimum": -3.4028234663852886e38,
+				"maximum": 3.4028234663852886e38,
+				"description": ""
+			},
+			"minItems": 2,
+			"maxItems": 2,
+			"description": "The maximum search distance horizontally and vertically at which to find containers for taking or placing items."
+		},
+		"search_strategy": {
+			"type": "string",
+			"anyOf": [
+				{
+					"enum": ["nearest", "random"],
+					"description": ""
+				},
+				{
+					"pattern": "^(?:[Nn][Ee][Aa][Rr][Ee][Ss][Tt]|[Rr][Aa][Nn][Dd][Oo][Mm])$(?![\\s\\S])",
+					"description": ""
+				}
+			],
+			"description": "The strategy to use for finding source or destination containers. The nearest valid container or a random valid container in range."
+		},
+		"source_container_types": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/block_descriptor.json"
+			},
+			"description": "A list of block descriptors that should be a container type to get items from."
+		}
+	},
+	"description": "A behavior that enables a mob to transport items from and to containers."
+}

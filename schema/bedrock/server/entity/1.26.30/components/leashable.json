@@ -1,0 +1,38 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"anyOf": [
+		{
+			"type": "object",
+			"properties": {
+				"can_be_cut": {
+					"$ref": "../../1.21.90/components/leashable.json#/anyOf/0/properties/can_be_cut"
+				},
+				"can_be_stolen": {
+					"$ref": "../../1.21.90/components/leashable.json#/anyOf/0/properties/can_be_stolen"
+				},
+				"on_leash": {
+					"$ref": "../../1.21.90/components/leashable.json#/anyOf/0/properties/on_leash"
+				},
+				"on_unleash": {
+					"$ref": "../../1.21.90/components/leashable.json#/anyOf/0/properties/on_unleash"
+				},
+				"on_unleash_interact_only": {
+					"$ref": "../../1.21.90/components/leashable.json#/anyOf/0/properties/on_unleash_interact_only"
+				},
+				"presets": {
+					"$ref": "../../1.21.90/components/leashable.json#/anyOf/0/properties/presets"
+				},
+				"unleash_on_removal": {
+					"type": "boolean",
+					"default": true,
+					"description": "If true, the entity is unleashed when the component is removed."
+				}
+			},
+			"additionalProperties": false
+		},
+		{
+			"type": "null"
+		}
+	],
+	"description": "Allows this entity to be leashed and defines the conditions and events for this entity when is leashed."
+}

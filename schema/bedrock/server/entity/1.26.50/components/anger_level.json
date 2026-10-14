@@ -1,0 +1,62 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"anger_decrement_interval": {
+			"$ref": "../../legacy/components/anger_level.json#/properties/anger_decrement_interval"
+		},
+		"angry_boost": {
+			"$ref": "../../legacy/components/anger_level.json#/properties/angry_boost"
+		},
+		"angry_threshold": {
+			"$ref": "../../legacy/components/anger_level.json#/properties/angry_threshold"
+		},
+		"default_annoyingness": {
+			"$ref": "../../legacy/components/anger_level.json#/properties/default_annoyingness",
+			"minimum": 0
+		},
+		"default_projectile_annoyingness": {
+			"$ref": "../../legacy/components/anger_level.json#/properties/default_projectile_annoyingness",
+			"minimum": 0
+		},
+		"max_anger": {
+			"$ref": "../../legacy/components/anger_level.json#/properties/max_anger"
+		},
+		"nuisance_filter": {
+			"$ref": "../../legacy/components/anger_level.json#/properties/nuisance_filter"
+		},
+		"on_increase_sounds": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"condition": {
+						"anyOf": [
+							{
+								"type": "number"
+							},
+							{
+								"$ref": "../../../../../vanilla/definition/molang.json#/$defs/versioned"
+							},
+							{
+								"$ref": "../../../../../vanilla/definition/molang.json#/$defs/expression"
+							}
+						],
+						"description": "A Molang expression describing under which conditions to play this sound, given that the entity was provoked."
+					},
+					"sound": {
+						"$ref": "../../legacy/components/anger_level.json#/properties/on_increase_sounds/items/properties/sound"
+					}
+				},
+				"required": ["condition", "sound"],
+				"additionalProperties": false
+			},
+			"description": "Sounds to play when the entity is getting provoked. Evaluated in order. First matching condition wins."
+		},
+		"remove_targets_below_angry_threshold": {
+			"$ref": "../../legacy/components/anger_level.json#/properties/remove_targets_below_angry_threshold"
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows this entity to track anger towards a set of nuisances."
+}

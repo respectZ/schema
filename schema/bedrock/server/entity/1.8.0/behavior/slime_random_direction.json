@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"type": "object",
-	"title": "Behavior Slime Random Direction",
-	"description": "Can only be used by Slimes and Magma Cubes. Allows the mob to move in random directions like a slime.",
-	"additionalProperties": false,
-	"properties": {}
-}

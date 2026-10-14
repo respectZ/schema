@@ -1,13 +1,12 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"enum": [
-		"slot.saddle",
+		"slot.weapon.mainhand",
 		"slot.weapon.offhand",
-		"slot.armor",
 		"slot.armor.head",
-		"slot.chest",
 		"slot.armor.chest",
 		"slot.armor.legs",
-		"slot.armor.feet"
+		"slot.armor.feet",
+		"slot.armor.body"
 	]
 }

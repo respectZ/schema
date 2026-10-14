@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"type": "object",
-	"title": "Behavior Stay While Sitting",
-	"description": "Allows the mob to stay put while it is in a sitting state instead of doing something else.",
-	"additionalProperties": false,
-	"properties": {}
-}

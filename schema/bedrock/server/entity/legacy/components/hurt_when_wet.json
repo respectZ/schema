@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"anyOf": [
+		{
+			"type": "boolean",
+			"description": ""
+		},
+		{
+			"type": "object",
+			"properties": {
+				"value": {
+					"type": ["boolean", "number"],
+					"description": ""
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		}
+	],
+	"deprecated": true,
+	"description": ""
+}

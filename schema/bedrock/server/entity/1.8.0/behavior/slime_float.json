@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"type": "object",
-	"title": "Behavior Slime Float",
-	"description": "Can only be used by Slimes and Magma Cubes. Controls their ability to float in water / lava.",
-	"additionalProperties": false,
-	"properties": {}
-}

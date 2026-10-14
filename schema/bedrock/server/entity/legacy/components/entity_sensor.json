@@ -1,0 +1,117 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"event": {
+			"type": "string",
+			"description": "Event to fire when the conditions are met."
+		},
+		"event_filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "The set of conditions that must be satisfied to fire the event."
+		},
+		"find_players_only": {
+			"type": "boolean",
+			"default": false,
+			"description": "Limits the search to Players only for all subsensors."
+		},
+		"maximum_count": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": -1,
+			"description": "The maximum number of entities that must pass the filter conditions for the event to send."
+		},
+		"minimum_count": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 1,
+			"description": "The minimum number of entities that must pass the filter conditions for the event to send."
+		},
+		"relative_range": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true the subsensors' range is additive on top of the entity's size."
+		},
+		"require_all": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true requires all nearby entities to pass the filter conditions for the events to send."
+		},
+		"sensor_range": {
+			"$ref": "#/$defs/range",
+			"description": ""
+		},
+		"subsensors": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/subsensor"
+			},
+			"description": "The list of subsensors which sense for entities and emit events when all their conditions are met."
+		}
+	},
+	"additionalProperties": false,
+	"$defs": {
+		"axis": {
+			"type": "number",
+			"minimum": 1.1754943508222875e-38,
+			"maximum": 3.4028234663852886e38,
+			"description": ""
+		},
+		"range": {
+			"type": "number",
+			"minimum": 1.1754943508222875e-38,
+			"maximum": 3.4028234663852886e38,
+			"default": 10,
+			"description": "The maximum horizontal and vertical distance another entity can be from this and have the filters checked against it."
+		},
+		"subsensor": {
+			"type": "object",
+			"properties": {
+				"cooldown": {
+					"type": "number",
+					"default": -1,
+					"description": "How many seconds should elapse before the subsensor can once again sense for entities. The cooldown is applied on top of the base 1 tick (0.05 seconds) delay. Negative values will result in no cooldown being used."
+				},
+				"event": {
+					"type": "string",
+					"description": "Event to fire when the conditions are met."
+				},
+				"event_filters": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": "The set of conditions that must be satisfied to fire the event."
+				},
+				"maximum_count": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"default": -1,
+					"description": "The maximum number of entities that must pass the filter conditions for the event to send."
+				},
+				"minimum_count": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"default": 1,
+					"description": "The minimum number of entities that must pass the filter conditions for the event to send."
+				},
+				"range": {
+					"$ref": "#/$defs/range"
+				},
+				"require_all": {
+					"type": "boolean",
+					"default": false,
+					"description": "If true requires all nearby entities to pass the filter conditions for the events to send."
+				},
+				"y_offset": {
+					"type": "number",
+					"default": 0,
+					"description": "Vertical offset applied to the entity's position when computing the distance from other entities."
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"description": "A component that owns multiple subsensors, each one firing an event when a set of conditions are met by other entities within the defined range."
+}

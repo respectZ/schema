@@ -1,0 +1,34 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"knockback_strength": {
+			"type": "number",
+			"default": 3,
+			"description": "The strength with which blocking entities should be knocked back"
+		},
+		"reaction_choices": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"value": {
+						"$ref": "../general.json#/$defs/trigger",
+						"description": ""
+					},
+					"weight": {
+						"type": "integer",
+						"minimum": -2147483648,
+						"maximum": 2147483647,
+						"default": 0,
+						"description": ""
+					}
+				},
+				"additionalProperties": false
+			},
+			"description": "A list of weighted responses to the melee attack being blocked"
+		}
+	},
+	"additionalProperties": false,
+	"description": "Defines the ravager's response to their melee attack being blocked."
+}

@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"type": "object",
-	"title": "Behavior Dragonflaming",
-	"description": "Allows the dragon to use its flame breath attack. Can only be used by the Ender Dragon.",
-	"additionalProperties": false,
-	"properties": {}
-}

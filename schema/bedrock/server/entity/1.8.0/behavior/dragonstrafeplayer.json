@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"type": "object",
-	"title": "Behavior Dragonstrafeplayer",
-	"description": "Allows the dragon to fly around looking for a player and shoot fireballs at them. Can only be used by the Ender Dragon.",
-	"additionalProperties": false,
-	"properties": {}
-}

@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"type": "object",
-	"title": "Behavior Peek",
-	"description": "Allows the mob to peek out. This is what the shulker uses to look out of its shell.",
-	"additionalProperties": false,
-	"properties": {}
-}

@@ -1,0 +1,20 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"break_time": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 12,
+			"description": "The time in seconds required to break through doors."
+		},
+		"min_difficulty": {
+			"$ref": "../../../../../vanilla/server/filter/entity/filters/is_difficulty.json#/properties/value",
+			"default": "hard",
+			"description": "The minimum difficulty that the world must be on for this entity to break doors."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows the actor to break doors assuming that that flags set up for the component to use in navigation"
+}

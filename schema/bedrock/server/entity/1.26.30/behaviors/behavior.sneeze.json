@@ -1,0 +1,88 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": ["move", "look", "jump"],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"cooldown_time": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Time in seconds the mob has to wait before using the goal again"
+		},
+		"drop_item_chance": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "The probability that the mob will drop an item when it sneezes."
+		},
+		"entity_types": {
+			"anyOf": [
+				{
+					"$ref": "../../legacy/general.json#/$defs/entity_types"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../legacy/general.json#/$defs/entity_types"
+					}
+				}
+			],
+			"description": "List of entity types this mob will startle (cause to jump) when it sneezes."
+		},
+		"loot_table": {
+			"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
+			"description": "Loot table to select dropped items from."
+		},
+		"prepare_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "Sound to play when the sneeze is about to happen."
+		},
+		"prepare_time": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "The time in seconds that the mob takes to prepare to sneeze (while the prepare_sound is playing)."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"probability": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "The probability of sneezing. A value of 1.00 is 100%"
+		},
+		"sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "Sound to play when the sneeze occurs."
+		},
+		"within_radius": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Distance in blocks that mobs will be startled."
+		}
+	},
+	"description": "Allows the mob to stop and sneeze possibly startling nearby mobs and dropping an item."
+}

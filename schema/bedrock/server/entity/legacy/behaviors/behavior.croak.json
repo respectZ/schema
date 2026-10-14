@@ -1,0 +1,53 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"duration": {
+			"anyOf": [
+				{
+					"$ref": "../general.json#/$defs/number_or_range"
+				},
+				{
+					"type": "null"
+				}
+			],
+			"default": [4.5, 4.5],
+			"description": "Random range in seconds after which the croaking stops. Can also be a constant."
+		},
+		"filters": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "Conditions for the behavior to start and keep running. The interval between runs only starts after passing the filters."
+		},
+		"interval": {
+			"anyOf": [
+				{
+					"$ref": "../general.json#/$defs/number_or_range"
+				},
+				{
+					"type": "null"
+				}
+			],
+			"default": [10, 20],
+			"description": "Random range in seconds between runs of this behavior. Can also be a constant."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows the entity to croak at a random time interval with configurable conditions."
+}

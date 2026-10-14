@@ -1,0 +1,74 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"add_effects": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/added_effect",
+				"description": ""
+			},
+			"default": [],
+			"description": "The effects to add to the entity after adding this component."
+		},
+		"remove_effects": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/effect_type.json",
+				"description": ""
+			},
+			"description": "The identifiers of effects to remove from the entity after adding this component."
+		}
+	},
+	"additionalProperties": false,
+	"$defs": {
+		"added_effect": {
+			"type": "object",
+			"properties": {
+				"ambient": {
+					"type": "boolean",
+					"default": false,
+					"description": "Whether the effect is ambient."
+				},
+				"amplifier": {
+					"type": "integer",
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"default": 0,
+					"description": "The amplifier of the effect."
+				},
+				"display_on_screen_animation": {
+					"type": "boolean",
+					"default": false,
+					"description": "Whether the effect displays an on-screen animation."
+				},
+				"duration": {
+					"anyOf": [
+						{
+							"type": "number"
+						},
+						{
+							"type": "string",
+							"enum": ["infinite"]
+						}
+					],
+					"default": 0,
+					"description": "The duration of the effect in seconds, or \"infinite\"."
+				},
+				"effect": {
+					"$ref": "../../../../../vanilla/server/effect_type.json",
+					"default": "",
+					"description": "The name of the effect to apply."
+				},
+				"visible": {
+					"type": "boolean",
+					"default": true,
+					"description": "Whether the effect is visible."
+				}
+			},
+			"additionalProperties": false,
+			"description": ""
+		}
+	},
+	"description": "Defines the mob effects to add to and remove from the entity."
+}

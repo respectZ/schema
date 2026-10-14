@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"type": "object",
-	"title": "Behavior Receive Love",
-	"description": "Allows the villager to stop so another villager can breed with it. Can only be used by a Villager.",
-	"additionalProperties": false,
-	"properties": {}
-}

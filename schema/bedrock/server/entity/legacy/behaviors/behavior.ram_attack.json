@@ -1,0 +1,100 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"baby_knockback_modifier": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 0,
+			"description": "The modifier to knockback that babies have."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"cooldown_range": {
+			"anyOf": [
+				{
+					"$ref": "../general.json#/$defs/number_or_range"
+				},
+				{
+					"type": "null"
+				}
+			],
+			"description": "Minimum and maximum cooldown time-range (positive, in seconds) between each attempted ram attack."
+		},
+		"knockback_force": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 0,
+			"description": "The force of the knockback of the ram attack."
+		},
+		"knockback_height": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 0,
+			"description": "The height of the knockback of the ram attack."
+		},
+		"min_ram_distance": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": "The minimum distance at which the mob can start a ram attack."
+		},
+		"on_start": {
+			"type": "array",
+			"items": {
+				"$ref": "../general.json#/$defs/trigger"
+			},
+			"description": "The event to trigger when attacking"
+		},
+		"pre_ram_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "The sound to play when an entity is about to perform a ram attack."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		},
+		"ram_distance": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": "The distance at which the mob start to run with ram speed."
+		},
+		"ram_impact_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "The sound to play when an entity is impacting on a ram attack."
+		},
+		"ram_speed": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 0,
+			"description": "Sets the entity's speed when charging toward the target."
+		},
+		"run_speed": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 0,
+			"description": "Sets the entity's speed when running toward the target."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows this entity to damage a target by using a running attack."
+}

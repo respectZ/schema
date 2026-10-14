@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"type": "object",
-	"title": "Behavior Controlled By Player",
-	"description": "Allows the mob to be controlled by the player.",
-	"additionalProperties": false,
-	"properties": {}
-}

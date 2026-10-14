@@ -1,0 +1,90 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"fast_skip_data": {
+			"$ref": "#/$defs/fast_skip_data",
+			"default": {
+				"animation_duration": 1,
+				"distance_scale": 1,
+				"height": 0.1,
+				"jump_delay": 30
+			}
+		},
+		"regular_skip_data": {
+			"$ref": "#/$defs/regular_skip_data",
+			"default": {
+				"animation_duration": 1,
+				"distance_scale": 1,
+				"height": 0.1,
+				"jump_delay": 30
+			}
+		}
+	},
+	"additionalProperties": false,
+	"$defs": {
+		"fast_skip_data": {
+			"type": "object",
+			"properties": {
+				"animation_duration": {
+					"type": "integer",
+					"default": 1,
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"description": "Duration of the jump animation."
+				},
+				"distance_scale": {
+					"type": "number",
+					"default": 1,
+					"description": "The multiplier applied to horizontal velocity when jumping."
+				},
+				"height": {
+					"type": "number",
+					"default": 0.1,
+					"description": "The force applied vertically when jumping."
+				},
+				"jump_delay": {
+					"type": "integer",
+					"default": 30,
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"description": "Amount of ticks between sequential jumps."
+				}
+			},
+			"additionalProperties": false,
+			"description": "The jump data used for the fast skip."
+		},
+		"regular_skip_data": {
+			"type": "object",
+			"properties": {
+				"animation_duration": {
+					"type": "integer",
+					"default": 1,
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"description": "Duration of the jump animation."
+				},
+				"distance_scale": {
+					"type": "number",
+					"default": 1,
+					"description": "The multiplier applied to horizontal velocity when jumping."
+				},
+				"height": {
+					"type": "number",
+					"default": 0.1,
+					"description": "The force applied vertically when jumping."
+				},
+				"jump_delay": {
+					"type": "integer",
+					"default": 30,
+					"minimum": -2147483648,
+					"maximum": 2147483647,
+					"description": "Amount of ticks between sequential jumps."
+				}
+			},
+			"additionalProperties": false,
+			"description": "The jump data used for the regular skip."
+		}
+	},
+	"description": "Defines a dynamic type jump control that will change jump properties based on the speed modifier of the mob.Requires `minecraft:movement.skip` to be used."
+}

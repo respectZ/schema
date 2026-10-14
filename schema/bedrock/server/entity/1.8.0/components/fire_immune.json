@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"type": "object",
-	"title": "Fire Immune",
-	"description": "Sets that this entity doesn't take damage from fire.",
-	"additionalProperties": false,
-	"properties": {}
-}

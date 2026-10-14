@@ -1,0 +1,45 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["move", "look", "jump"],
+				"description": ""
+			},
+			"description": ""
+		},
+		"goal_radius": {
+			"type": "number",
+			"description": "Distance in blocks within the mob considers it has reached the goal. This is the \"wiggle room\" to stop the AI from bouncing back and forth trying to reach a specific spot"
+		},
+		"priority": {
+			"type": "integer",
+			"description": ""
+		},
+		"search_count": {
+			"type": "integer",
+			"description": "The number of blocks each tick that the mob will check within its search range and height for a valid block to move to. A value of 0 will have the mob check every block within range in one tick"
+		},
+		"search_height": {
+			"type": "integer",
+			"description": "Height in blocks the mob will look for lava to move towards"
+		},
+		"search_range": {
+			"type": "integer",
+			"description": "The distance in blocks it will look for lava to move towards"
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"timeout_cooldown": {
+			"type": "number",
+			"description": ""
+		}
+	},
+	"description": "Allows the mob to move back into lava when on land."
+}

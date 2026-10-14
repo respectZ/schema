@@ -1,0 +1,131 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"anyOf": [
+		{
+			"$ref": "#/$defs/entry"
+		},
+		{
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/entry"
+			}
+		},
+		{
+			"$ref": "#/$defs/wrapped"
+		}
+	],
+	"$defs": {
+		"entry": {
+			"anyOf": [
+				{
+					"type": "object",
+					"properties": {
+						"filters": {
+							"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+							"description": "If present, the specified entity will only spawn if the filter evaluates to true."
+						},
+						"max_wait_time": {
+							"type": "integer",
+							"minimum": -2147483648,
+							"maximum": 2147483647,
+							"default": 600,
+							"description": "Maximum amount of time to randomly wait in seconds before another entity is spawned."
+						},
+						"min_wait_time": {
+							"type": "integer",
+							"minimum": -2147483648,
+							"maximum": 2147483647,
+							"default": 300,
+							"description": "Minimum amount of time to randomly wait in seconds before another entity is spawned."
+						},
+						"num_to_spawn": {
+							"type": "integer",
+							"minimum": -2147483648,
+							"maximum": 2147483647,
+							"default": 1,
+							"description": "The number of entities of this type to spawn each time that this triggers."
+						},
+						"should_leash": {
+							"type": "boolean",
+							"default": false,
+							"description": "If true, this the spawned entity will be leashed to the parent."
+						},
+						"single_use": {
+							"type": "boolean",
+							"default": false,
+							"description": "If true, this component will only ever spawn the specified entity once."
+						},
+						"spawn_entity": {
+							"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/entity_identifier",
+							"default": "",
+							"description": "Identifier of the entity to spawn, leave empty to spawn the item defined by \"spawn_item\" instead."
+						},
+						"spawn_event": {
+							"type": "string",
+							"default": "minecraft:entity_born",
+							"description": "Event to call on the spawned entity when it spawns."
+						},
+						"spawn_item": {
+							"$ref": "../../../../../vanilla/server/item_descriptor.json",
+							"default": "minecraft:egg",
+							"description": "Item identifier of the item to spawn."
+						},
+						"spawn_item_event": {
+							"$ref": "../general.json#/$defs/trigger",
+							"default": {},
+							"description": "Event to call on this entity when the item is spawned."
+						},
+						"spawn_method": {
+							"type": "string",
+							"default": "born",
+							"description": "Method to use to spawn the entity."
+						},
+						"spawn_sound": {
+							"$ref": "../../../../../vanilla/server/level_sound.json",
+							"default": "plop",
+							"description": "Identifier of the sound effect to play when the entity is spawned."
+						}
+					},
+					"additionalProperties": false
+				},
+				{
+					"type": "null"
+				}
+			],
+			"description": ""
+		},
+		"wrapped": {
+			"anyOf": [
+				{
+					"type": "object",
+					"properties": {
+						"entities": {
+							"anyOf": [
+								{
+									"$ref": "#/$defs/entry",
+									"description": ""
+								},
+								{
+									"type": "array",
+									"items": {
+										"$ref": "#/$defs/entry",
+										"description": ""
+									},
+									"description": ""
+								}
+							],
+							"default": [],
+							"description": ""
+						}
+					},
+					"additionalProperties": false
+				},
+				{
+					"type": "null"
+				}
+			],
+			"description": ""
+		}
+	},
+	"description": "Adds a timer after which this entity will spawn another entity or item (similar to vanilla's chicken's egg-laying behavior)."
+}

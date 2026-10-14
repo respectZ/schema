@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"triggers": {
+			"anyOf": [
+				{
+					"$ref": "../../legacy/general.json#/$defs/trigger"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../legacy/general.json#/$defs/trigger"
+					}
+				}
+			],
+			"description": "The list of triggers that fire when the environment conditions match the given filter criteria."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Creates a trigger based on environment conditions."
+}

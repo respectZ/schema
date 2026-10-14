@@ -1,0 +1,88 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"anger_decrement_interval": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 1,
+			"description": "Anger level will decay over time. Defines how often anger towards all nuisances will be decreased by one."
+		},
+		"angry_boost": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 20,
+			"description": "Anger boost applied to angry threshold when mob gets angry."
+		},
+		"angry_threshold": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 80,
+			"description": "Threshold that define when the mob is considered angry at a nuisance."
+		},
+		"default_annoyingness": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": "The default amount of annoyingness for any given nuisance. Specifies how much to raise anger level on each provocation."
+		},
+		"default_projectile_annoyingness": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": "The default amount of annoyingness for any given nuisance that is a projectile. Specifies how much to raise anger level on each provocation."
+		},
+		"max_anger": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 100,
+			"description": "The maximum anger level that can be reached. Applies to any nuisance."
+		},
+		"nuisance_filter": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": "Filter that is applied to determine if a mob can be a nuisance."
+		},
+		"on_increase_sounds": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"condition": {
+						"anyOf": [
+							{
+								"$ref": "../../../../../vanilla/definition/molang.json#/$defs/string"
+							},
+							{
+								"type": "number"
+							},
+							{
+								"type": "boolean"
+							}
+						],
+						"description": "A Molang expression describing under which conditions to play this sound, given that the entity was provoked."
+					},
+					"sound": {
+						"$ref": "../../../../../vanilla/server/level_sound.json",
+						"description": "The sound to play."
+					}
+				},
+				"additionalProperties": false,
+				"description": "Sounds to play when the entity is getting provoked. Evaluated in order. First matching condition wins."
+			},
+			"description": "Sounds to play when the entity is getting provoked. Evaluated in order. First matching condition wins."
+		},
+		"remove_targets_below_angry_threshold": {
+			"type": "boolean",
+			"default": true,
+			"description": "Defines if the mob should remove target if it falls below 'angry' threshold."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows this entity to track anger towards a set of nuisances."
+}

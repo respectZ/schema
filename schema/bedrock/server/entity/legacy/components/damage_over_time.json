@@ -1,0 +1,28 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"damagePerHurt": {
+			"$ref": "#/properties/damage_per_hurt"
+		},
+		"damage_per_hurt": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 1,
+			"description": "Amount of damage caused each hurt."
+		},
+		"timeBetweenHurt": {
+			"$ref": "#/properties/time_between_hurt"
+		},
+		"time_between_hurt": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 0,
+			"description": "Time in seconds between damage."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Applies defined amount of damage to the entity at specified intervals."
+}

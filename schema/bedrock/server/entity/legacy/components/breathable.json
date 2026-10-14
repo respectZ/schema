@@ -1,0 +1,132 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"breatheBlocks": {
+			"$ref": "#/properties/breathe_blocks",
+			"doNotSuggest": true,
+			"description": ""
+		},
+		"breathe_blocks": {
+			"anyOf": [
+				{
+					"$ref": "../../../../../vanilla/server/block_descriptor.json"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../../../../vanilla/server/block_descriptor.json"
+					}
+				}
+			],
+			"description": "List of blocks this entity can breathe in, in addition to the other \"breathes\" parameters."
+		},
+		"breathesAir": {
+			"$ref": "#/properties/breathes_air",
+			"doNotSuggest": true,
+			"description": ""
+		},
+		"breathesLava": {
+			"$ref": "#/properties/breathes_lava",
+			"doNotSuggest": true,
+			"description": ""
+		},
+		"breathesSolids": {
+			"$ref": "#/properties/breathes_solids",
+			"doNotSuggest": true,
+			"description": ""
+		},
+		"breathesWater": {
+			"$ref": "#/properties/breathes_water",
+			"doNotSuggest": true,
+			"description": ""
+		},
+		"breathes_air": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true, this entity can breathe in air."
+		},
+		"breathes_lava": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true, this entity can breathe in lava."
+		},
+		"breathes_solids": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, this entity can breathe in solid blocks."
+		},
+		"breathes_water": {
+			"type": "boolean",
+			"default": false,
+			"description": "If true, this entity can breathe in water."
+		},
+		"generatesBubbles": {
+			"$ref": "#/properties/generates_bubbles",
+			"doNotSuggest": true,
+			"description": ""
+		},
+		"generates_bubbles": {
+			"type": "boolean",
+			"default": true,
+			"description": "If true, this entity will have visible bubbles while in water."
+		},
+		"inhaleTime": {
+			"$ref": "#/properties/inhale_time",
+			"doNotSuggest": true,
+			"description": ""
+		},
+		"inhale_time": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 0,
+			"description": "Time in seconds to recover breath to maximum."
+		},
+		"nonBreatheBlocks": {
+			"$ref": "#/properties/non_breathe_blocks",
+			"doNotSuggest": true,
+			"description": ""
+		},
+		"non_breathe_blocks": {
+			"anyOf": [
+				{
+					"$ref": "../../../../../vanilla/server/block_descriptor.json"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../../../../../vanilla/server/block_descriptor.json"
+					}
+				}
+			],
+			"description": "List of blocks this entity can't breathe in, in addition to the other \"breathes\" parameters."
+		},
+		"suffocateTime": {
+			"$ref": "#/properties/suffocate_time",
+			"doNotSuggest": true,
+			"description": ""
+		},
+		"suffocate_time": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": -20,
+			"description": "Time in seconds between suffocation damage."
+		},
+		"totalSupply": {
+			"$ref": "#/properties/total_supply",
+			"doNotSuggest": true,
+			"description": ""
+		},
+		"total_supply": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 15,
+			"description": "Time in seconds the entity can hold its breath."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Defines what blocks this entity can breathe in and gives them the ability to suffocate."
+}

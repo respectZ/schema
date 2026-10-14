@@ -1637,64 +1637,7 @@
 		"subject": {
 			"title": "Subject",
 			"description": "The subject of this filter test.",
-			"oneOf": [
-				{
-					"const": "block",
-					"description": "The block involved with the interaction."
-				},
-				{
-					"const": "damager",
-					"description": "The damaging actor involved with the interaction."
-				},
-				{
-					"const": "other",
-					"description": "The other member of an interaction, not the caller."
-				},
-				{
-					"const": "parent",
-					"description": "The caller's current parent."
-				},
-				{
-					"const": "player",
-					"description": "The player involved with the interaction."
-				},
-				{
-					"const": "self",
-					"description": "The entity or object calling the test"
-				},
-				{
-					"const": "target",
-					"description": "The caller's current target."
-				},
-				{
-					"const": 6,
-					"description": "The block involved with the interaction."
-				},
-				{
-					"const": 7,
-					"description": "The damaging actor involved with the interaction."
-				},
-				{
-					"const": 1,
-					"description": "The other member of an interaction, not the caller."
-				},
-				{
-					"const": 4,
-					"description": "The caller's current parent."
-				},
-				{
-					"const": 2,
-					"description": "The player involved with the interaction."
-				},
-				{
-					"const": 0,
-					"description": "The entity or object calling the test"
-				},
-				{
-					"const": 3,
-					"description": "The caller's current target."
-				}
-			]
+			"$ref": "../general.json#/$defs/filter_subject"
 		},
 		"operator": {
 			"title": "Operator",
@@ -1742,27 +1685,33 @@
 				},
 				{
 					"const": 0,
-					"description": "Test for equality."
+					"description": "Test for equality.",
+					"doNotSuggest": true
 				},
 				{
 					"const": 1,
-					"description": "Test for inequality."
+					"description": "Test for inequality.",
+					"doNotSuggest": true
 				},
 				{
 					"const": 2,
-					"description": "Test for greater-than the value."
+					"description": "Test for greater-than the value.",
+					"doNotSuggest": true
 				},
 				{
 					"const": 3,
-					"description": "Test for less-than the value."
+					"description": "Test for less-than the value.",
+					"doNotSuggest": true
 				},
 				{
 					"const": 4,
-					"description": "Test for greater-than or equal to the value."
+					"description": "Test for greater-than or equal to the value.",
+					"doNotSuggest": true
 				},
 				{
 					"const": 5,
-					"description": "Test for less-than or equal to the value."
+					"description": "Test for less-than or equal to the value.",
+					"doNotSuggest": true
 				}
 			]
 		}

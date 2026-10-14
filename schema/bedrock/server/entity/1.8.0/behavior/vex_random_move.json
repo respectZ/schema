@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"type": "object",
-	"title": "Behavior Vex Random Move",
-	"description": "Allows the mob to move around randomly like the Vex.",
-	"additionalProperties": false,
-	"properties": {}
-}

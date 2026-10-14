@@ -1,0 +1,72 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"affected_by_griefing_rule": {
+			"type": "boolean",
+			"description": ""
+		},
+		"can_place": {
+			"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+			"description": ""
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"on_place": {
+			"$ref": "../general.json#/$defs/trigger",
+			"description": ""
+		},
+		"placeable_carried_blocks": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/block_descriptor.json",
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		},
+		"randomly_placeable_blocks": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"block": {
+						"$ref": "../../../../../vanilla/server/block_descriptor.json",
+						"description": ""
+					},
+					"filter": {
+						"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+						"description": ""
+					},
+					"weight": {
+						"type": "integer",
+						"minimum": -2147483648,
+						"maximum": 2147483647,
+						"description": ""
+					}
+				},
+				"additionalProperties": false,
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows the enderman to drop a block they are carrying. Can only be used by Endermen."
+}

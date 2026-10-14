@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"type": "object",
-	"title": "Behavior Squid Flee",
-	"description": "Allows the squid to swim away. Can only be used by the Squid.",
-	"additionalProperties": false,
-	"properties": {}
-}

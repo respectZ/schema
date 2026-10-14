@@ -1,0 +1,48 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"$defs": {
+		"preset": {
+			"type": "object",
+			"properties": {
+				"check_if_target_is_immersed_in_water": {
+					"type": "boolean",
+					"default": false,
+					"description": "Whether or not the target should be fully immersed in water for the knockback rules to apply."
+				},
+				"filter": {
+					"$ref": "../../../../../vanilla/server/filter/entity/_index.json",
+					"description": "Filter for the entity type that will be affected by these knockback rules."
+				},
+				"horizontal_power": {
+					"type": "number",
+					"default": 1,
+					"description": "Power with which a target should be knocked backwards."
+				},
+				"vertical_power": {
+					"type": "number",
+					"default": 0.4,
+					"description": "Power with which a target should be knocked upwards."
+				},
+				"vertical_velocity_cap": {
+					"type": "number",
+					"default": 0.4,
+					"description": "Maximum allowed Y velocity after target's knockback rules have been evaluated."
+				}
+			},
+			"additionalProperties": false,
+			"description": "Intance of rules definition."
+		}
+	},
+	"properties": {
+		"presets": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/preset"
+			},
+			"description": "Array of rules instances defining how knockback should be applied to the entity."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Defines how an entity applies knockback."
+}

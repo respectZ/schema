@@ -1,0 +1,7 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$ref": "../../legacy/components/body_rotation_axis_aligned.json",
+	"deprecated": true,
+	"doNotSuggest": true,
+	"deprecationMessage": "Renamed to \"minecraft:rotation_axis_aligned\" in format version 1.21.100."
+}

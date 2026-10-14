@@ -1,0 +1,100 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"can_get_scared": {
+			"type": "boolean",
+			"description": "If true, the mob can stop being tempted if the player moves too fast while close to this mob."
+		},
+		"can_tempt_vertically": {
+			"type": "boolean",
+			"description": "If true, vertical distance to the player will be considered when tempting."
+		},
+		"can_tempt_while_ridden": {
+			"type": "boolean",
+			"description": "If true, the mob can be tempted even if it has a passenger (i.e. if being ridden)."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": ["move", "look", "jump"],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"items": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/item_descriptor.json#/$defs/latest"
+			},
+			"description": "List of items that can tempt the mob."
+		},
+		"on_tempt_end": {
+			"$ref": "../../legacy/general.json#/$defs/trigger",
+			"description": "Event to trigger when this mob stops being tempted."
+		},
+		"on_tempt_start": {
+			"$ref": "../../legacy/general.json#/$defs/trigger",
+			"description": "Event to trigger when this mob starts being tempted."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"sound_interval": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"max": {
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"description": ""
+				},
+				"min": {
+					"type": "number",
+					"minimum": -3.4028234663852886e38,
+					"maximum": 3.4028234663852886e38,
+					"description": ""
+				}
+			},
+			"description": "Range of random ticks to wait between tempt sounds."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"stop_distance": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "The distance at which the mob will stop following the player."
+		},
+		"tempt_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "Sound to play while the mob is being tempted."
+		},
+		"within_radius": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Distance in blocks this mob can get tempted by a player holding an item they like."
+		}
+	},
+	"description": "Allows a mob to be tempted by a player holding a specific item. Uses point-to-point movement. Designed for mobs that are floating (e.g. use the \"minecraft:navigation.float\" component)."
+}

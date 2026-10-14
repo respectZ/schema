@@ -1,0 +1,86 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"can_sleep_while_riding": {
+			"type": "boolean",
+			"description": "If true, the mob will be able to use the sleep goal if riding something"
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": ["move", "look", "jump"],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"cooldown_time": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "Time in seconds the mob has to wait before using the goal again"
+		},
+		"poi_type": {
+			"type": "string",
+			"anyOf": [
+				{
+					"enum": ["bed", "meeting_area", "jobsite"],
+					"description": ""
+				},
+				{
+					"pattern": "^(?:[Bb][Ee][Dd]|[Mm][Ee][Ee][Tt][Ii][Nn][Gg]_[Aa][Rr][Ee][Aa]|[Jj][Oo][Bb][Ss][Ii][Tt][Ee])$(?![\\s\\S])",
+					"description": ""
+				}
+			],
+			"description": ""
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"sleep_collider_height": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "The height of the mob's collider while sleeping"
+		},
+		"sleep_collider_width": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "The width of the mob's collider while sleeping"
+		},
+		"sleep_y_offset": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "The y offset of the mob's collider while sleeping"
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 3.4028234663852886e38,
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"timeout_cooldown": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"description": "The cooldown time in seconds before the goal can be reused after a internal failure or timeout condition"
+		}
+	},
+	"description": "Allows mobs that own a bed to in a village to move to and sleep in it."
+}

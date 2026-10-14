@@ -1,0 +1,62 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"block_distance": {
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/block_distance"
+		},
+		"block_weight": {
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/block_weight"
+		},
+		"breach_influence": {
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/breach_influence"
+		},
+		"cohesion_threshold": {
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/cohesion_threshold"
+		},
+		"cohesion_weight": {
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/cohesion_weight"
+		},
+		"goal_weight": {
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/goal_weight"
+		},
+		"high_flock_limit": {
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/high_flock_limit"
+		},
+		"in_water": {
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/in_water"
+		},
+		"influence_radius": {
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/influence_radius"
+		},
+		"innner_cohesion_threshold": {
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/innner_cohesion_threshold"
+		},
+		"loner_chance": {
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/loner_chance"
+		},
+		"low_flock_limit": {
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/low_flock_limit"
+		},
+		"match_variants": {
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/match_variants"
+		},
+		"max_height": {
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/max_height"
+		},
+		"min_height": {
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/min_height"
+		},
+		"separation_threshold": {
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/separation_threshold"
+		},
+		"separation_weight": {
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/separation_weight"
+		},
+		"use_center_of_mass": {
+			"$ref": "../../legacy/components/flocking.json#/anyOf/0/properties/use_center_of_mass"
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows entities to flock in groups in water or not."
+}

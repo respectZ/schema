@@ -1,0 +1,7 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$ref": "../../legacy/components/pushable.json",
+	"deprecated": true,
+	"doNotSuggest": true,
+	"deprecationMessage": "Split into \"minecraft:pushable_by_entity\" and \"minecraft:pushable_by_block\" in format version 1.26.10."
+}

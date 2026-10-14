@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"type": "object",
-	"title": "Behavior Trade With Player",
-	"description": "Allows the player to trade with this mob.",
-	"additionalProperties": false,
-	"properties": {}
-}

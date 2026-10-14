@@ -1,0 +1,95 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"catch_up_multiplier": {
+			"type": "number",
+			"exclusiveMinimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 2.5,
+			"description": "The multiplier this entity's speed is modified by when matching another entity's direction."
+		},
+		"catch_up_threshold": {
+			"type": "number",
+			"exclusiveMinimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 12.0,
+			"description": "Distance, from the entity being followed, at which this entity will speed up to reach that entity."
+		},
+		"chance_to_stop": {
+			"type": "number",
+			"exclusiveMinimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 0.0333000011742115,
+			"description": "Percent chance to stop following the current entity, if they're riding another entity or they're not swimming. 1.0 = 100%"
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"entity_types": {
+			"type": "array",
+			"items": {
+				"$ref": "../general.json#/$defs/entity_types"
+			},
+			"description": "Filters which types of entities are valid to follow."
+		},
+		"match_direction_threshold": {
+			"type": "number",
+			"exclusiveMinimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 2.0,
+			"description": "Distance, from the entity being followed, at which this entity will try to match that entity's direction"
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		},
+		"search_range": {
+			"type": "number",
+			"exclusiveMinimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 20.0,
+			"description": "Radius around this entity to search for another entity to follow."
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"exclusiveMinimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 1.5,
+			"description": "The multiplier this entity's speed is modified by when trying to catch up to the entity being followed."
+		},
+		"state_check_interval": {
+			"type": "number",
+			"minimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 0.5,
+			"description": "Time (in seconds) between checks to determine if this entity should catch up to the entity being followed or match the direction of the entity being followed."
+		},
+		"stop_distance": {
+			"type": "number",
+			"exclusiveMinimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 5.0,
+			"description": "Distance, from the entity being followed, at which this entity will stop following that entity."
+		},
+		"success_rate": {
+			"type": "number",
+			"exclusiveMinimum": 0.0,
+			"maximum": 3.4028234663852886e38,
+			"default": 0.10000000149011612,
+			"description": "Percent chance to start following another entity, if not already doing so. 1.0 = 100%"
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows the entity follow another entity. Both entities must be swimming [ie, in water]."
+}

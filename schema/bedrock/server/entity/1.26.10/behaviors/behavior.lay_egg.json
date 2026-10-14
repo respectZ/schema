@@ -1,0 +1,106 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"allow_laying_from_below": {
+			"type": "boolean",
+			"description": "Allows the mob to lay its eggs from below the target if it can't get there. This is useful if the target block is water with air above, since mobs may not be able to get to the air block above water."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"anyOf": [
+					{
+						"enum": ["move", "look", "jump"],
+						"description": ""
+					},
+					{
+						"pattern": "^(?:[Mm][Oo][Vv][Ee]|[Ll][Oo][Oo][Kk]|[Jj][Uu][Mm][Pp])$(?![\\s\\S])",
+						"description": ""
+					}
+				],
+				"description": ""
+			},
+			"description": ""
+		},
+		"egg_type": {
+			"$ref": "../../../../../vanilla/server/identifiers.json#/$defs/block_identifier",
+			"description": "Block type for the egg to lay. If this is a turtle egg, the number of eggs in the block is randomly set."
+		},
+		"goal_radius": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"exclusiveMinimum": 0,
+			"description": "Distance in blocks within the mob considers it has reached the goal. This is the \"wiggle room\" to stop the AI from bouncing back and forth trying to reach a specific spot"
+		},
+		"lay_egg_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "Name of the sound event played when laying the egg. Defaults to lay_egg, which is used for Turtles."
+		},
+		"lay_seconds": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 3.4028234663852886e38,
+			"description": "Duration of the laying egg process in seconds."
+		},
+		"on_lay": {
+			"$ref": "../../legacy/general.json#/$defs/trigger",
+			"description": "Event to run when this mob lays the egg."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"search_count": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": ""
+		},
+		"search_height": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"exclusiveMinimum": 0,
+			"description": "Height in blocks the mob will look for a target block to move towards"
+		},
+		"search_range": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"exclusiveMinimum": 0,
+			"description": "The distance in blocks it will look for a target block to move towards"
+		},
+		"speed_multiplier": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 3.4028234663852886e38,
+			"description": "Movement speed multiplier of the mob when using this AI Goal"
+		},
+		"target_blocks": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/block_descriptor.json"
+			},
+			"description": "Blocks that the mob can lay its eggs on top of."
+		},
+		"target_materials_above_block": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["air", "water", "lava"]
+			},
+			"description": "Types of materials that can exist above the target block. Valid types are Air, Water, and Lava."
+		},
+		"use_default_animation": {
+			"type": "boolean",
+			"description": "Specifies if the default lay-egg animation should be played when the egg is placed or not."
+		}
+	},
+	"description": "Allows the mob to lay an egg block on certain types of blocks if the mob is pregnant."
+}

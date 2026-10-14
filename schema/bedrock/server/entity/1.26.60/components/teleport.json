@@ -1,0 +1,47 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"dark_teleport_chance": {
+			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/dark_teleport_chance"
+		},
+		"light_teleport_chance": {
+			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/light_teleport_chance"
+		},
+		"max_random_teleport_time": {
+			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/max_random_teleport_time"
+		},
+		"min_random_teleport_time": {
+			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/min_random_teleport_time"
+		},
+		"projectile_filter": {
+			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/projectile_filter"
+		},
+		"random_teleport_cube": {
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"type": "number",
+				"minimum": -3.4028234663852886e38,
+				"maximum": 3.4028234663852886e38
+			},
+			"default": [32, 16, 32],
+			"description": "Entity will teleport to a random position within the area defined by this cube"
+		},
+		"random_teleports": {
+			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/random_teleports"
+		},
+		"target_distance": {
+			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/target_distance"
+		},
+		"target_teleport_chance": {
+			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/target_teleport_chance"
+		},
+		"teleports_on_projectile_hit": {
+			"$ref": "../../legacy/components/teleport.json#/$defs/definition/properties/teleports_on_projectile_hit"
+		}
+	},
+	"additionalProperties": false,
+	"description": "Defines an entity's teleporting behavior."
+}

@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"type": "object",
-	"title": "Behavior Enderman Take Block",
-	"description": "Allows the enderman to take a block and carry it around. Can only be used by Endermen.",
-	"additionalProperties": false,
-	"properties": {}
-}

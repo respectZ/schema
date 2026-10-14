@@ -1,0 +1,88 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"allowSitting": {
+			"$ref": "#/properties/allow_sitting",
+			"doNotSuggest": true
+		},
+		"allow_sitting": {
+			"$ref": "../../legacy/components/breedable.json#/properties/allow_sitting"
+		},
+		"blend_attributes": {
+			"$ref": "../../legacy/components/offspring.json#/properties/blend_attributes"
+		},
+		"breedCooldown": {
+			"$ref": "#/properties/breed_cooldown",
+			"doNotSuggest": true
+		},
+		"breedItems": {
+			"$ref": "#/properties/breed_items",
+			"doNotSuggest": true
+		},
+		"breed_cooldown": {
+			"$ref": "../../legacy/components/breedable.json#/properties/breed_cooldown"
+		},
+		"breed_items": {
+			"$ref": "../../legacy/components/breedable.json#/properties/breed_items"
+		},
+		"breeds_with": {
+			"$ref": "../../legacy/components/breedable.json#/properties/breeds_with"
+		},
+		"causes_pregnancy": {
+			"$ref": "../../legacy/components/breedable.json#/properties/causes_pregnancy"
+		},
+		"combine_parent_colors": {
+			"$ref": "../../legacy/components/breedable.json#/properties/combine_parent_colors"
+		},
+		"deny_parents_variant": {
+			"$ref": "../../legacy/components/breedable.json#/properties/deny_parents_variant"
+		},
+		"environment_requirements": {
+			"$ref": "../../legacy/components/breedable.json#/properties/environment_requirements"
+		},
+		"extraBabyChance": {
+			"$ref": "#/properties/extra_baby_chance",
+			"doNotSuggest": true
+		},
+		"extra_baby_chance": {
+			"$ref": "../../legacy/components/breedable.json#/properties/extra_baby_chance"
+		},
+		"inherit_tamed": {
+			"$ref": "../../legacy/components/offspring.json#/properties/inherit_tamed"
+		},
+		"love_filters": {
+			"$ref": "../../legacy/components/breedable.json#/properties/love_filters"
+		},
+		"mutation_factor": {
+			"$ref": "../../legacy/components/offspring.json#/properties/mutation_factor"
+		},
+		"mutation_strategy": {
+			"$ref": "../../legacy/components/offspring.json#/properties/mutation_strategy"
+		},
+		"parent_centric_attribute_blending": {
+			"$ref": "../../legacy/components/offspring.json#/properties/parent_centric_attribute_blending"
+		},
+		"property_inheritance": {
+			"$ref": "../../legacy/components/offspring.json#/properties/property_inheritance"
+		},
+		"random_extra_variant_mutation_interval": {
+			"$ref": "../../legacy/components/offspring.json#/properties/random_extra_variant_mutation_interval"
+		},
+		"random_variant_mutation_interval": {
+			"$ref": "../../legacy/components/offspring.json#/properties/random_variant_mutation_interval"
+		},
+		"requireTame": {
+			"$ref": "#/properties/require_tame",
+			"doNotSuggest": true
+		},
+		"require_full_health": {
+			"$ref": "../../legacy/components/breedable.json#/properties/require_full_health"
+		},
+		"require_tame": {
+			"$ref": "../../legacy/components/breedable.json#/properties/require_tame"
+		}
+	},
+	"additionalProperties": false,
+	"description": "Defines the way an entity can get into the 'love' state. The entity should also have the \"minecraft:offspring\" component to define how the offspring is created if not using \"causes_pregnancy\". Runs the \"minecraft:entity_born\" event on the created offspring."
+}

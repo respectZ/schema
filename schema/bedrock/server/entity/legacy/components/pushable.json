@@ -1,0 +1,18 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"is_pushable": {
+			"type": "boolean",
+			"default": true,
+			"description": ""
+		},
+		"is_pushable_by_piston": {
+			"type": "boolean",
+			"default": true,
+			"description": "Allows the entity to be pushed by certain blocks, like Shulker Boxes and Pistons."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows an entity to be pushed by other entities."
+}

@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"type": "object",
-	"title": "Behavior Offer Flower",
-	"description": "Allows the mob to offer the player a flower like the Iron Golem does.",
-	"additionalProperties": false,
-	"properties": {}
-}

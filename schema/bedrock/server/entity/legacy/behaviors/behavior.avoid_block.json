@@ -1,0 +1,89 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"avoid_block_sound": {
+			"$ref": "../../../../../vanilla/server/level_sound.json",
+			"description": "The sound event to play when the mob is avoiding a block."
+		},
+		"control_flags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": ["jump", "look", "move"],
+				"description": ""
+			},
+			"default": [],
+			"description": ""
+		},
+		"on_escape": {
+			"type": "array",
+			"items": {
+				"$ref": "../general.json#/$defs/trigger"
+			},
+			"description": "Escape trigger."
+		},
+		"priority": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": ""
+		},
+		"search_height": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": "Maximum distance to look for a block in y."
+		},
+		"search_range": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": "Maximum distance to look for a block in xz."
+		},
+		"sound_interval": {
+			"anyOf": [
+				{
+					"$ref": "../general.json#/$defs/number_or_range"
+				},
+				{
+					"type": "null"
+				}
+			],
+			"description": "The range of time in seconds to randomly wait before playing the sound again."
+		},
+		"sprint_speed_modifier": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 0,
+			"description": "Modifier for sprint speed. 1.0 means keep the regular speed, while higher numbers make the sprint speed faster."
+		},
+		"target_blocks": {
+			"type": "array",
+			"items": {
+				"$ref": "../../../../../vanilla/server/block_descriptor.json"
+			},
+			"description": "List of block types this mob avoids."
+		},
+		"tick_interval": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647,
+			"default": 0,
+			"description": "Should start tick interval."
+		},
+		"walk_speed_modifier": {
+			"type": "number",
+			"minimum": -3.4028234663852886e38,
+			"maximum": 3.4028234663852886e38,
+			"default": 0,
+			"description": "Modifier for walking speed. 1.0 means keep the regular speed, while higher numbers make the walking speed faster."
+		}
+	},
+	"additionalProperties": false,
+	"description": "Allows this entity to avoid certain blocks."
+}

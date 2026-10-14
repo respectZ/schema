@@ -1,0 +1,54 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"anyOf": [
+		{
+			"type": "object",
+			"properties": {
+				"convert_trades_economy": {
+					"$ref": "../../legacy/components/economy_trade_table.json#/anyOf/0/properties/convert_trades_economy"
+				},
+				"cured_discount": {
+					"$ref": "../../legacy/components/economy_trade_table.json#/anyOf/0/properties/cured_discount"
+				},
+				"display_name": {
+					"$ref": "../../legacy/components/economy_trade_table.json#/anyOf/0/properties/display_name"
+				},
+				"hero_demand_discount": {
+					"$ref": "../../legacy/components/economy_trade_table.json#/anyOf/0/properties/hero_demand_discount"
+				},
+				"max_cured_discount": {
+					"$ref": "../../legacy/components/economy_trade_table.json#/anyOf/0/properties/max_cured_discount"
+				},
+				"max_nearby_cured_discount": {
+					"$ref": "../../legacy/components/economy_trade_table.json#/anyOf/0/properties/max_nearby_cured_discount"
+				},
+				"nearby_cured_discount": {
+					"$ref": "../../legacy/components/economy_trade_table.json#/anyOf/0/properties/nearby_cured_discount"
+				},
+				"new_screen": {
+					"$ref": "../../legacy/components/economy_trade_table.json#/anyOf/0/properties/new_screen"
+				},
+				"persist_trades": {
+					"$ref": "../../legacy/components/economy_trade_table.json#/anyOf/0/properties/persist_trades"
+				},
+				"show_trade_screen": {
+					"$ref": "../../legacy/components/economy_trade_table.json#/anyOf/0/properties/show_trade_screen"
+				},
+				"table": {
+					"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
+					"description": "Path to the trade table JSON that defines available offers."
+				},
+				"use_legacy_price_formula": {
+					"type": "boolean",
+					"default": false,
+					"description": "Whether legacy price calculations are used instead of the newer pricing formula."
+				}
+			},
+			"additionalProperties": false
+		},
+		{
+			"type": "null"
+		}
+	],
+	"description": "Defines this entity's ability to trade with players."
+}

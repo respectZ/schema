@@ -1,8 +1,0 @@
-{
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"type": "object",
-	"title": "Behavior Player Ride Tamed",
-	"description": "Allows the mob to be ridden by the player after being tamed.",
-	"additionalProperties": false,
-	"properties": {}
-}
