@@ -15,7 +15,7 @@
 			"title": "Item",
 			"description": "Root item object",
 			"additionalProperties": false,
-			"required": ["description"],
+			"required": ["description", "components"],
 			"properties": {
 				"description": {
 					"type": "object",
