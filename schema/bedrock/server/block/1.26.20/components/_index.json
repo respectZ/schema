@@ -80,7 +80,7 @@
 		"minecraft:precipitation_interactions": {
 			"$ref": "../../1.21.130/components/precipitation_interactions.json"
 		},
-		"miencraft:connection_rule": {
+		"minecraft:connection_rule": {
 			"$ref": "../../1.26.0/components/connection_rule.json"
 		},
 		"minecraft:leashable": {
