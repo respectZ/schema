@@ -2,6 +2,8 @@
 
 Provides JSON Schemas for Minecraft Bedrock Edition add-on development, with `format_version` versioning.
 
+Minecraft version: v1.26.60.29-preview
+
 ## compile
 
 Run `bun run compile` to compile the schemas into a single file for each entry point. The compiled schemas are output to the `dist` folder.
