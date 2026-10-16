@@ -1,0 +1,53 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "The skins.json file is the core metadata file that defines all skins within a skin pack.",
+	"required": ["serialize_name", "localization_name", "skins"],
+	"additionalProperties": false,
+	"properties": {
+		"serialize_name": {
+			"type": "string",
+			"description": "The unique identifier used for serialization and as the base for localization keys"
+		},
+		"localization_name": {
+			"type": "string",
+			"description": "The localization key identifier that maps to the skin pack's display name"
+		},
+		"skins": {
+			"type": "array",
+			"description": "An array of skin objects defining individual skins in the pack",
+			"minItems": 1,
+			"items": {
+				"$ref": "#/$defs/skin"
+			}
+		}
+	},
+	"$defs": {
+		"skin": {
+			"type": "object",
+			"description": "An individual skin definition within a skin pack.",
+			"required": ["localization_name", "geometry", "texture", "type"],
+			"additionalProperties": false,
+			"properties": {
+				"localization_name": {
+					"type": "string",
+					"description": "The localization key for this individual skin's display name"
+				},
+				"geometry": {
+					"type": "string",
+					"description": "The player model geometry this skin applies to",
+					"enum": ["geometry.humanoid.custom", "geometry.humanoid.customSlim"]
+				},
+				"texture": {
+					"type": "string",
+					"description": "The filename of the PNG texture file"
+				},
+				"type": {
+					"type": "string",
+					"description": "The skin accessibility type",
+					"enum": ["free", "paid"]
+				}
+			}
+		}
+	}
+}

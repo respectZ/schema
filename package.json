@@ -490,16 +490,16 @@
 			},
 			{
 				"fileMatch": [
-					"resource_pack/lighting/global.{json,jsonc,json5}",
-					"*RP/lighting/global.{json,jsonc,json5}",
-					"RP_*/lighting/global.{json,jsonc,json5}",
-					"*rp/lighting/global.{json,jsonc,json5}",
-					"rp_*/lighting/global.{json,jsonc,json5}",
-					"resource_pack/subpacks/*/lighting/global.{json,jsonc,json5}",
-					"*RP/subpacks/*/lighting/global.{json,jsonc,json5}",
-					"RP_*/subpacks/*/lighting/global.{json,jsonc,json5}",
-					"*rp/subpacks/*/lighting/global.{json,jsonc,json5}",
-					"rp_*/subpacks/*/lighting/global.{json,jsonc,json5}"
+					"resource_pack/lighting/**/*.{json,jsonc,json5}",
+					"*RP/lighting/**/*.{json,jsonc,json5}",
+					"RP_*/lighting/**/*.{json,jsonc,json5}",
+					"*rp/lighting/**/*.{json,jsonc,json5}",
+					"rp_*/lighting/**/*.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/lighting/**/*.{json,jsonc,json5}",
+					"*RP/subpacks/*/lighting/**/*.{json,jsonc,json5}",
+					"RP_*/subpacks/*/lighting/**/*.{json,jsonc,json5}",
+					"*rp/subpacks/*/lighting/**/*.{json,jsonc,json5}",
+					"rp_*/subpacks/*/lighting/**/*.{json,jsonc,json5}"
 				],
 				"url": "./dist/3fbv5fmy0zut1.json"
 			},
@@ -545,16 +545,16 @@
 			},
 			{
 				"fileMatch": [
-					"resource_pack/models/**/*.geo.{json,jsonc,json5}",
-					"*RP/models/**/*.geo.{json,jsonc,json5}",
-					"RP_*/models/**/*.geo.{json,jsonc,json5}",
-					"*rp/models/**/*.geo.{json,jsonc,json5}",
-					"rp_*/models/**/*.geo.{json,jsonc,json5}",
-					"resource_pack/subpacks/*/models/**/*.geo.{json,jsonc,json5}",
-					"*RP/subpacks/*/models/**/*.geo.{json,jsonc,json5}",
-					"RP_*/subpacks/*/models/**/*.geo.{json,jsonc,json5}",
-					"*rp/subpacks/*/models/**/*.geo.{json,jsonc,json5}",
-					"rp_*/subpacks/*/models/**/*.geo.{json,jsonc,json5}"
+					"resource_pack/models/**/*.{json,jsonc,json5}",
+					"*RP/models/**/*.{json,jsonc,json5}",
+					"RP_*/models/**/*.{json,jsonc,json5}",
+					"*rp/models/**/*.{json,jsonc,json5}",
+					"rp_*/models/**/*.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/models/**/*.{json,jsonc,json5}",
+					"*RP/subpacks/*/models/**/*.{json,jsonc,json5}",
+					"RP_*/subpacks/*/models/**/*.{json,jsonc,json5}",
+					"*rp/subpacks/*/models/**/*.{json,jsonc,json5}",
+					"rp_*/subpacks/*/models/**/*.{json,jsonc,json5}"
 				],
 				"url": "./dist/bqw1cj8lvpck.json"
 			},
@@ -862,6 +862,12 @@
 					"rp_*/subpacks/*/water/**/*.{json,jsonc,json5}"
 				],
 				"url": "./dist/219jj9rsfe4k.json"
+			},
+			{
+				"fileMatch": [
+					"skin_pack/skins.{json,jsonc,json5}"
+				],
+				"url": "./dist/29q6kz0dlfdx.json"
 			}
 		]
 	}

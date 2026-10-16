@@ -4,6 +4,7 @@ import { bundleSchema } from "./bundler";
 const PACK_PREFIXES = {
 	bp: ["behavior_pack/", "*BP/", "BP_*/", "*bp/", "bp_*/"],
 	rp: ["resource_pack/", "*RP/", "RP_*/", "*rp/", "rp_*/"],
+	sp: ["skin_pack/"],
 };
 
 const BP_ENTRIES: JsonValidationEntry[] = [
@@ -268,6 +269,13 @@ const RP_ENTRIES: JsonValidationEntry[] = [
 	},
 ];
 
+const SP_ENTRIES: JsonValidationEntry[] = [
+	{
+		fileMatch: "skins.{json,jsonc,json5}",
+		url: "./schema/bedrock/client/skins/_index.json",
+	},
+];
+
 function mapFileMatch(type: keyof typeof PACK_PREFIXES, entry: JsonValidationEntry) {
 	const prefixes = PACK_PREFIXES[type];
 	const fileMatches = Array.isArray(entry.fileMatch) ? entry.fileMatch : [entry.fileMatch];
@@ -300,6 +308,9 @@ async function main() {
 	}
 	for (const entry of RP_ENTRIES) {
 		result.push(mapFileMatch("rp", entry));
+	}
+	for (const entry of SP_ENTRIES) {
+		result.push(mapFileMatch("sp", entry));
 	}
 	result.sort((a, b) => {
 		const aMatch = Array.isArray(a.fileMatch) ? a.fileMatch[0] : a.fileMatch;
