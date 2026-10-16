@@ -8,7 +8,7 @@
 	"properties": {
 		"format_version": {
 			"$ref": "../../../../vanilla/definition/format_version.json",
-			"const": "1.21.60"
+			"enum": ["1.21.60", "1.21.70", "1.21.80"]
 		},
 		"minecraft:item": {
 			"type": "object",
