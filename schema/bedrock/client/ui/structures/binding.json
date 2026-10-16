@@ -1,0 +1,87 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"patternProperties": {
+		"^\\$": {}
+	},
+	"allOf": [
+		{
+			"if": {
+				"required": ["binding_type"],
+				"properties": {
+					"binding_type": {
+						"const": "collection"
+					}
+				}
+			},
+			"then": {
+				"required": ["binding_name", "binding_collection_name"]
+			}
+		},
+		{
+			"if": {
+				"required": ["binding_type"],
+				"properties": {
+					"binding_type": {
+						"const": "view"
+					}
+				}
+			},
+			"then": {
+				"required": ["source_property_name", "target_property_name"]
+			}
+		},
+		{
+			"not": {
+				"required": ["resolve_ancestor_scope", "resolve_sibling_scope"],
+				"properties": {
+					"resolve_ancestor_scope": {
+						"const": true
+					},
+					"resolve_sibling_scope": {
+						"const": true
+					}
+				}
+			}
+		}
+	],
+	"properties": {
+		"binding_name": {
+			"type": "string"
+		},
+		"binding_name_override": {
+			"type": "string"
+		},
+		"binding_collection_name": {
+			"type": "string"
+		},
+		"binding_collection_prefix": {
+			"type": "string"
+		},
+		"source_control_name": {
+			"type": "string"
+		},
+		"source_property_name": {
+			"type": "string"
+		},
+		"target_property_name": {
+			"type": "string"
+		},
+		"binding_type": {
+			"$ref": "../values/enums.json#/$defs/binding_type"
+		},
+		"binding_condition": {
+			"$ref": "../values/enums.json#/$defs/binding_condition"
+		},
+		"resolve_ancestor_scope": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"resolve_sibling_scope": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"ignored": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		}
+	}
+}

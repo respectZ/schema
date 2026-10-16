@@ -1,0 +1,79 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"focus_container": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"use_last_focus": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"focus_wrap_enabled": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"focus_navigation_mode_up": {
+			"type": "string"
+		},
+		"focus_container_custom_up": {
+			"anyOf": [
+				{
+					"type": "string"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../structures/focus_mapping.json"
+					}
+				}
+			]
+		},
+		"focus_navigation_mode_down": {
+			"type": "string"
+		},
+		"focus_container_custom_down": {
+			"anyOf": [
+				{
+					"type": "string"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../structures/focus_mapping.json"
+					}
+				}
+			]
+		},
+		"focus_navigation_mode_left": {
+			"type": "string"
+		},
+		"focus_container_custom_left": {
+			"anyOf": [
+				{
+					"type": "string"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../structures/focus_mapping.json"
+					}
+				}
+			]
+		},
+		"focus_navigation_mode_right": {
+			"type": "string"
+		},
+		"focus_container_custom_right": {
+			"anyOf": [
+				{
+					"type": "string"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../structures/focus_mapping.json"
+					}
+				}
+			]
+		}
+	}
+}

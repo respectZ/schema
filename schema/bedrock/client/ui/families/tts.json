@@ -1,0 +1,60 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"tts_ignore_count": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"tts_ignore_subsections": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"tts_inherit_siblings": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"tts_message_interruptible": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"tts_play_on_unchanged_focus_control": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"tts_skip_children": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"tts_skip_enumeration": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"tts_skip_message": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"ttsSectionContainer": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"tts_control_type_order_priority": {
+			"$ref": "../values/scalar.json#/$defs/integer"
+		},
+		"tts_value_order_priority": {
+			"$ref": "../values/scalar.json#/$defs/integer"
+		},
+		"tts_index_order": {
+			"$ref": "../values/scalar.json#/$defs/integer"
+		},
+		"tts_index_priority": {
+			"$ref": "../values/scalar.json#/$defs/integer"
+		},
+		"tts_name": {
+			"type": "string"
+		},
+		"tts_control_header": {
+			"type": "string"
+		},
+		"tts_section_header": {
+			"type": "string"
+		},
+		"tts_message_interruptible_id": {
+			"type": "string"
+		},
+		"tts_override_control_value": {
+			"type": "string"
+		}
+	}
+}

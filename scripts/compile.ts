@@ -111,6 +111,22 @@ const BP_ENTRIES: JsonValidationEntry[] = [
 
 const RP_ENTRIES: JsonValidationEntry[] = [
 	{
+		fileMatch: "ui/_ui_defs.{json,jsonc,json5}",
+		url: "./schema/bedrock/client/ui/ui_defs.json",
+	},
+	{
+		fileMatch: "ui/_global_variables.{json,jsonc,json5}",
+		url: "./schema/bedrock/client/ui/global_variables.json",
+	},
+	{
+		fileMatch: [
+			"ui/**/*.{json,jsonc,json5}",
+			"!ui/_ui_defs.{json,jsonc,json5}",
+			"!ui/_global_variables.{json,jsonc,json5}",
+		],
+		url: "./schema/bedrock/client/ui/_index.json",
+	},
+	{
 		fileMatch: "font/**/*.{json,jsonc,json5}",
 		url: "./schema/bedrock/client/font_metadata/_index.json",
 	},
@@ -252,9 +268,21 @@ function mapFileMatch(type: keyof typeof PACK_PREFIXES, entry: JsonValidationEnt
 	const prefixes = PACK_PREFIXES[type];
 	const fileMatches = Array.isArray(entry.fileMatch) ? entry.fileMatch : [entry.fileMatch];
 	entry.fileMatch = fileMatches.flatMap((fileMatch) => {
-		const matches = prefixes.map((prefix) => path.join(prefix, fileMatch));
+		const matches = prefixes.map((prefix) => {
+			if (fileMatch.startsWith("!")) {
+				return "!" + path.join(prefix, fileMatch.slice(1));
+			}
+			return path.join(prefix, fileMatch);
+		});
 		if (type === "rp" && !fileMatch.startsWith("manifest.")) {
-			matches.push(...prefixes.map((prefix) => path.join(prefix, "subpacks/*", fileMatch)));
+			matches.push(
+				...prefixes.map((prefix) => {
+					if (fileMatch.startsWith("!")) {
+						return "!" + path.join(prefix, "subpacks/*", fileMatch.slice(1));
+					}
+					return path.join(prefix, "subpacks/*", fileMatch);
+				}),
+			);
 		}
 		return matches;
 	});

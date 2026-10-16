@@ -1,0 +1,49 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"focus_enabled": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"focus_magnet_enabled": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"focus_wrap_enabled": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"reset_on_focus_lost": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"focus_identifier": {
+			"type": "string"
+		},
+		"focus_change_down": {
+			"type": "string"
+		},
+		"focus_change_up": {
+			"type": "string"
+		},
+		"focus_change_left": {
+			"type": "string"
+		},
+		"focus_change_right": {
+			"type": "string"
+		},
+		"default_focus_precedence": {
+			"$ref": "../values/scalar.json#/$defs/integer"
+		},
+		"focus_mapping": {
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../structures/focus_mapping.json"
+					}
+				},
+				{
+					"$ref": "../values/scalar.json#/$defs/runtime"
+				}
+			]
+		}
+	}
+}

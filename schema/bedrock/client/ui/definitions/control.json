@@ -1,0 +1,196 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"not": {
+		"required": ["anim_type"]
+	},
+	"allOf": [
+		{
+			"if": {
+				"required": ["type"],
+				"properties": {
+					"type": {
+						"const": "panel"
+					}
+				}
+			},
+			"then": {
+				"$ref": "../controls/panel.json"
+			}
+		},
+		{
+			"if": {
+				"required": ["type"],
+				"properties": {
+					"type": {
+						"const": "image"
+					}
+				}
+			},
+			"then": {
+				"$ref": "../controls/image.json"
+			}
+		},
+		{
+			"if": {
+				"required": ["type"],
+				"properties": {
+					"type": {
+						"const": "label"
+					}
+				}
+			},
+			"then": {
+				"$ref": "../controls/label.json"
+			}
+		},
+		{
+			"if": {
+				"required": ["type"],
+				"properties": {
+					"type": {
+						"const": "button"
+					}
+				}
+			},
+			"then": {
+				"$ref": "../controls/button.json"
+			}
+		},
+		{
+			"if": {
+				"required": ["type"],
+				"properties": {
+					"type": {
+						"enum": [
+							"custom",
+							"collection_panel",
+							"dropdown",
+							"edit_box",
+							"factory",
+							"grid",
+							"input_panel",
+							"screen",
+							"scrollbar_box",
+							"scroll_track",
+							"scroll_view",
+							"selection_wheel",
+							"slider",
+							"slider_box",
+							"stack_panel",
+							"toggle",
+							"image_cycler",
+							"label_cycler",
+							"grid_page_indicator",
+							"tooltip_trigger"
+						]
+					}
+				}
+			},
+			"then": {
+				"type": "object",
+				"additionalProperties": true,
+				"allOf": [
+					{
+						"$ref": "../families/common.json"
+					},
+					{
+						"$ref": "../families/layout.json"
+					},
+					{
+						"$ref": "../families/focus_container.json"
+					}
+				]
+			}
+		},
+		{
+			"if": {
+				"required": ["type"],
+				"properties": {
+					"type": {
+						"const": "custom"
+					}
+				}
+			},
+			"then": {
+				"properties": {
+					"renderer": {
+						"anyOf": [
+							{
+								"enum": [
+									"equipment_preview_renderer",
+									"web_view_renderer",
+									"horse_heart_renderer",
+									"gradient_renderer",
+									"actor_portrait_renderer",
+									"editor_volume_highlight_renderer",
+									"hotbar_slots_renderer",
+									"credits_renderer",
+									"mob_effects_renderer",
+									"editor_compass_renderer",
+									"bubbles_renderer",
+									"progress_indicator_renderer",
+									"cursor_renderer",
+									"armor_renderer",
+									"hunger_renderer",
+									"hotbar_renderer",
+									"horse_jump_renderer",
+									"bundle_tooltip_renderer",
+									"editor_gizmo_renderer",
+									"hotbar_cooldown_renderer",
+									"banner_pattern_renderer",
+									"bohr_model_renderer",
+									"dash_renderer",
+									"animated_gif_renderer",
+									"vignette_renderer",
+									"3d_structure_renderer",
+									"profile_image_renderer",
+									"qr_code_renderer",
+									"camera_renderer",
+									"panorama_renderer"
+								]
+							},
+							{
+								"$ref": "../values/scalar.json#/$defs/runtime"
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"anyOf": [
+					{
+						"not": {
+							"required": ["type"]
+						}
+					},
+					{
+						"required": ["type"],
+						"properties": {
+							"type": {
+								"$ref": "../values/scalar.json#/$defs/runtime"
+							}
+						}
+					}
+				]
+			},
+			"then": {
+				"$ref": "./inherited.json"
+			}
+		}
+	],
+	"properties": {
+		"type": {
+			"anyOf": [
+				{
+					"$ref": "../values/enums.json#/$defs/control_type"
+				},
+				{
+					"$ref": "../values/scalar.json#/$defs/runtime"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,53 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$defs": {
+		"runtime": {
+			"type": "string",
+			"pattern": "^\\s*(?:[$#][^\\r\\n]+|\\([\\s\\S]*\\))\\s*$"
+		},
+		"boolean": {
+			"anyOf": [
+				{
+					"type": "boolean"
+				},
+				{
+					"$ref": "#/$defs/runtime"
+				}
+			]
+		},
+		"number": {
+			"anyOf": [
+				{
+					"type": "number"
+				},
+				{
+					"$ref": "#/$defs/runtime"
+				}
+			]
+		},
+		"integer": {
+			"anyOf": [
+				{
+					"type": "integer"
+				},
+				{
+					"$ref": "#/$defs/runtime"
+				}
+			]
+		},
+		"string": {
+			"type": "string"
+		},
+		"animated_number": {
+			"anyOf": [
+				{
+					"$ref": "#/$defs/number"
+				},
+				{
+					"type": "string",
+					"pattern": "^@.+"
+				}
+			]
+		}
+	}
+}

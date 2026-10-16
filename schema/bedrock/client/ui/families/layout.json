@@ -1,0 +1,55 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"size": {
+			"$ref": "../values/layout.json#/$defs/value"
+		},
+		"min_size": {
+			"$ref": "../values/layout.json#/$defs/value"
+		},
+		"max_size": {
+			"$ref": "../values/layout.json#/$defs/value"
+		},
+		"offset": {
+			"$ref": "../values/layout.json#/$defs/value"
+		},
+		"anchor_from": {
+			"$ref": "../values/enums.json#/$defs/anchor"
+		},
+		"anchor_to": {
+			"$ref": "../values/enums.json#/$defs/anchor"
+		},
+		"contained": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"follows_cursor": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"follows_cursor_inside_parent": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"inherit_max_sibling_width": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"inherit_max_sibling_height": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"draggable": {
+			"anyOf": [
+				{
+					"enum": ["not_draggable", "horizontal", "vertical", "both"]
+				},
+				{
+					"$ref": "../values/scalar.json#/$defs/runtime"
+				}
+			]
+		},
+		"priority": {
+			"$ref": "../values/scalar.json#/$defs/integer"
+		},
+		"priority_rule": {
+			"type": "string"
+		}
+	}
+}

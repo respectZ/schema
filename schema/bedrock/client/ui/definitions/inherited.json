@@ -1,0 +1,48 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": true,
+	"allOf": [
+		{
+			"$ref": "../families/common.json"
+		},
+		{
+			"$ref": "../families/layout.json"
+		},
+		{
+			"$ref": "../families/sprite.json"
+		},
+		{
+			"$ref": "../families/text.json"
+		},
+		{
+			"$ref": "../families/input.json"
+		},
+		{
+			"$ref": "../families/focus.json"
+		},
+		{
+			"$ref": "../families/focus_container.json"
+		},
+		{
+			"$ref": "../families/button.json"
+		},
+		{
+			"$ref": "../families/sounds.json"
+		},
+		{
+			"$ref": "../families/tts.json"
+		}
+	],
+	"not": {
+		"required": ["anim_type"]
+	},
+	"patternProperties": {
+		"^\\$": {}
+	},
+	"properties": {
+		"type": {
+			"$ref": "../values/scalar.json#/$defs/runtime"
+		}
+	}
+}

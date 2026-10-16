@@ -10,7 +10,7 @@ import {
 } from "@minecraft/vanilla-data";
 import path from "path/posix";
 import { createSchema, readJson, writeJson } from "../utils";
-import { generateClientPaths } from "./client";
+import { generateClientPaths, generateClientUIVariables } from "./client";
 import { generateClientIdentifiers } from "./client/identifiers";
 import { generateClientLang } from "./client/lang";
 import {
@@ -267,6 +267,15 @@ const entries: Entry[] = [
 						enum: langKeys,
 					},
 				],
+			};
+		},
+	},
+	{
+		filepath: "vanilla/client/ui_global_variables.json",
+		content: async () => {
+			const uiVariables = await generateClientUIVariables();
+			return {
+				enum: uiVariables,
 			};
 		},
 	},

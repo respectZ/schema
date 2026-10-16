@@ -1,0 +1,65 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"required": ["anim_type"],
+	"allOf": [
+		{
+			"$ref": "./common.json"
+		}
+	],
+	"patternProperties": {
+		"^\\$": {}
+	},
+	"additionalProperties": true,
+	"properties": {
+		"anim_type": {
+			"anyOf": [
+				{
+					"enum": [
+						"alpha",
+						"clip",
+						"color",
+						"flip_book",
+						"aseprite_flip_book",
+						"offset",
+						"size",
+						"uv",
+						"wait"
+					]
+				},
+				{
+					"$ref": "../values/scalar.json#/$defs/runtime"
+				}
+			]
+		},
+		"from": {
+			"anyOf": [
+				{
+					"$ref": "../values/scalar.json#/$defs/number"
+				},
+				{
+					"$ref": "../values/color.json"
+				},
+				{
+					"$ref": "../values/layout.json#/$defs/value"
+				}
+			]
+		},
+		"to": {
+			"anyOf": [
+				{
+					"$ref": "../values/scalar.json#/$defs/number"
+				},
+				{
+					"$ref": "../values/color.json"
+				},
+				{
+					"$ref": "../values/layout.json#/$defs/value"
+				}
+			]
+		},
+		"orientation": {
+			"type": "string"
+		}
+	}
+}

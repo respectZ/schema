@@ -149,12 +149,9 @@ export async function bundleSchema(entryPoint: string): Promise<Schema> {
 			}
 
 			const targetSchema = await loadSchema(targetPath);
-			// If the reference is to the root schema itself, we can skip it
-			if (ref === "#" && targetPath === entryPoint) {
-				continue;
-			}
-			// Reference it's own json by path
-			if (path.join(ref) === entryPoint) {
+			// References back to the entry document must remain references rather
+			// than inserting the root object into its own bundled $defs.
+			if (targetPath === entryPoint && fragment === "") {
 				node.$ref = "#";
 				continue;
 			}

@@ -1,0 +1,59 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"anyOf": [
+		{
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"type": "object",
+						"patternProperties": {
+							"^\\$": {}
+						},
+						"additionalProperties": true,
+						"properties": {
+							"requires": {
+								"anyOf": [
+									{
+										"type": "boolean"
+									},
+									{
+										"type": "number"
+									},
+									{
+										"type": "string"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"type": "object",
+					"patternProperties": {
+						"^\\$": {}
+					},
+					"additionalProperties": true,
+					"properties": {
+						"requires": {
+							"anyOf": [
+								{
+									"type": "boolean"
+								},
+								{
+									"type": "number"
+								},
+								{
+									"type": "string"
+								}
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"$ref": "../values/scalar.json#/$defs/runtime"
+		}
+	]
+}

@@ -1,0 +1,43 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"patternProperties": {
+		"^\\$": {}
+	},
+	"properties": {
+		"from_button_id": {
+			"type": "string"
+		},
+		"to_button_id": {
+			"type": "string"
+		},
+		"mapping_type": {
+			"type": "string"
+		},
+		"scope": {
+			"type": "string"
+		},
+		"input_mode_condition": {
+			"type": "string"
+		},
+		"ignored": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"handle_select": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"handle_deselect": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"consume_event": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"button_up_right_of_first_refusal": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"ignore_input_scope": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		}
+	}
+}

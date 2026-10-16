@@ -1,0 +1,67 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"text": {
+			"type": "string"
+		},
+		"text_tts": {
+			"type": "string"
+		},
+		"font_type": {
+			"type": "string"
+		},
+		"backup_font_type": {
+			"type": "string"
+		},
+		"shadow": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"localize": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"enable_profanity_filter": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"hide_hyphen": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"notify_ellipses_sibling": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"font_scale_factor": {
+			"$ref": "../values/scalar.json#/$defs/number"
+		},
+		"line_padding": {
+			"$ref": "../values/scalar.json#/$defs/number"
+		},
+		"locked_alpha": {
+			"$ref": "../values/scalar.json#/$defs/number"
+		},
+		"font_size": {
+			"$ref": "../values/enums.json#/$defs/font_size"
+		},
+		"text_alignment": {
+			"$ref": "../values/enums.json#/$defs/text_alignment"
+		},
+		"color": {
+			"$ref": "../values/color.json"
+		},
+		"locked_color": {
+			"$ref": "../values/color.json"
+		},
+		"notify_on_ellipses": {
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				{
+					"$ref": "../values/scalar.json#/$defs/runtime"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,103 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$defs": {
+		"control_type": {
+			"enum": [
+				"button",
+				"custom",
+				"collection_panel",
+				"dropdown",
+				"edit_box",
+				"factory",
+				"grid",
+				"image",
+				"input_panel",
+				"label",
+				"panel",
+				"screen",
+				"scrollbar_box",
+				"scroll_track",
+				"scroll_view",
+				"selection_wheel",
+				"slider",
+				"slider_box",
+				"stack_panel",
+				"toggle",
+				"image_cycler",
+				"label_cycler",
+				"grid_page_indicator",
+				"tooltip_trigger"
+			]
+		},
+		"anchor": {
+			"anyOf": [
+				{
+					"enum": [
+						"top_left",
+						"top_middle",
+						"top_right",
+						"left_middle",
+						"center",
+						"right_middle",
+						"bottom_left",
+						"bottom_middle",
+						"bottom_right"
+					]
+				},
+				{
+					"$ref": "../values/scalar.json#/$defs/runtime"
+				}
+			]
+		},
+		"font_size": {
+			"anyOf": [
+				{
+					"enum": ["small", "normal", "large", "extra_large"]
+				},
+				{
+					"$ref": "../values/scalar.json#/$defs/runtime"
+				}
+			]
+		},
+		"text_alignment": {
+			"anyOf": [
+				{
+					"enum": ["left", "center", "right"]
+				},
+				{
+					"$ref": "../values/scalar.json#/$defs/runtime"
+				}
+			]
+		},
+		"clip_direction": {
+			"anyOf": [
+				{
+					"enum": ["left", "right", "up", "down", "center"]
+				},
+				{
+					"$ref": "../values/scalar.json#/$defs/runtime"
+				}
+			]
+		},
+		"binding_type": {
+			"anyOf": [
+				{
+					"enum": ["none", "global", "collection", "collection_details", "view"]
+				},
+				{
+					"$ref": "../values/scalar.json#/$defs/runtime"
+				}
+			]
+		},
+		"binding_condition": {
+			"anyOf": [
+				{
+					"enum": ["none", "once", "always", "always_when_visible", "visible", "visibility_changed"]
+				},
+				{
+					"$ref": "../values/scalar.json#/$defs/runtime"
+				}
+			]
+		}
+	}
+}

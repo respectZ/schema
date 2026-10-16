@@ -1,0 +1,160 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"visible": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"enabled": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"ignored": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"selected": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"propagate_alpha": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"clips_children": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"allow_clipping": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"enable_scissor_test": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"alpha": {
+			"$ref": "../values/scalar.json#/$defs/animated_number"
+		},
+		"layer": {
+			"$ref": "../values/scalar.json#/$defs/integer"
+		},
+		"clip_offset": {
+			"$ref": "../values/layout.json#/$defs/numeric_pair"
+		},
+		"clip_state_change_event": {
+			"type": "string"
+		},
+		"property_bag": {
+			"anyOf": [
+				{
+					"type": "object",
+					"additionalProperties": true
+				},
+				{
+					"$ref": "../values/scalar.json#/$defs/runtime"
+				}
+			]
+		},
+		"property_bag_for_children": {
+			"anyOf": [
+				{
+					"type": "object",
+					"additionalProperties": true
+				},
+				{
+					"$ref": "../values/scalar.json#/$defs/runtime"
+				}
+			]
+		},
+		"controls": {
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"type": "object",
+						"minProperties": 1,
+						"maxProperties": 1,
+						"additionalProperties": {
+							"$ref": "../definitions/control.json"
+						}
+					}
+				},
+				{
+					"$ref": "../values/scalar.json#/$defs/runtime"
+				}
+			]
+		},
+		"variables": {
+			"$ref": "../definitions/variables.json"
+		},
+		"bindings": {
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../structures/binding.json"
+					}
+				},
+				{
+					"$ref": "../values/scalar.json#/$defs/runtime"
+				}
+			]
+		},
+		"anims": {
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../values/reference.json#/$defs/animation_or_runtime"
+					}
+				},
+				{
+					"$ref": "../values/scalar.json#/$defs/runtime"
+				}
+			]
+		},
+		"disable_anim_fast_forward": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"animation_reset_name": {
+			"type": "string"
+		},
+		"use_anchored_offset": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"collection_index": {
+			"$ref": "../values/scalar.json#/$defs/integer"
+		},
+		"grid_position": {
+			"$ref": "../values/layout.json#/$defs/integer_pair"
+		},
+		"factory": {
+			"anyOf": [
+				{
+					"$ref": "../structures/factory.json"
+				},
+				{
+					"$ref": "../values/scalar.json#/$defs/runtime"
+				}
+			]
+		},
+		"debug": {
+			"anyOf": [
+				{
+					"type": "boolean"
+				},
+				{
+					"type": "string"
+				}
+			]
+		},
+		"modifications": {
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"type": "object",
+						"additionalProperties": true
+					}
+				},
+				{
+					"$ref": "../values/scalar.json#/$defs/runtime"
+				}
+			]
+		}
+	}
+}

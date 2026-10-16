@@ -1,0 +1,21 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"default_control": {
+			"type": "string"
+		},
+		"hover_control": {
+			"type": "string"
+		},
+		"pressed_control": {
+			"type": "string"
+		},
+		"locked_control": {
+			"type": "string"
+		},
+		"consume_event": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		}
+	}
+}

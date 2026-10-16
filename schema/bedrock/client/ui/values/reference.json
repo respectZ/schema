@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$defs": {
+		"control": {
+			"type": "string"
+		},
+		"animation": {
+			"type": "string",
+			"pattern": "^@.+"
+		},
+		"animation_or_runtime": {
+			"anyOf": [
+				{
+					"$ref": "#/$defs/animation"
+				},
+				{
+					"$ref": "./scalar.json#/$defs/runtime"
+				}
+			]
+		}
+	}
+}

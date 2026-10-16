@@ -1,0 +1,73 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"bilinear": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"clip_pixelperfect": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"color_corrected": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"default_size_scales_to_ratio": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"fill": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"force_texture_reload": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"grayscale": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"keep_ratio": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"pixel_perfect": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"allow_debug_missing_texture": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"tiled": {
+			"anyOf": [
+				{
+					"$ref": "../values/scalar.json#/$defs/boolean"
+				},
+				{
+					"enum": ["x", "y", "xy"]
+				}
+			]
+		},
+		"texture": {
+			"type": "string"
+		},
+		"texture_file_system": {
+			"type": "string"
+		},
+		"zip_folder": {
+			"type": "string"
+		},
+		"color": {
+			"$ref": "../values/color.json"
+		},
+		"uv": {
+			"$ref": "../values/layout.json#/$defs/value"
+		},
+		"uv_size": {
+			"$ref": "../values/layout.json#/$defs/value"
+		},
+		"tiled_scale": {
+			"$ref": "../values/layout.json#/$defs/numeric_pair"
+		},
+		"clip_direction": {
+			"$ref": "../values/enums.json#/$defs/clip_direction"
+		},
+		"clip_ratio": {
+			"$ref": "../values/scalar.json#/$defs/animated_number"
+		}
+	}
+}

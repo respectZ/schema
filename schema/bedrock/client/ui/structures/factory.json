@@ -1,0 +1,48 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"patternProperties": {
+		"^\\$": {}
+	},
+	"properties": {
+		"name": {
+			"type": "string"
+		},
+		"control_name": {
+			"type": "string"
+		},
+		"control_ids": {
+			"anyOf": [
+				{
+					"type": "object",
+					"additionalProperties": {
+						"type": "string"
+					}
+				},
+				{
+					"$ref": "../values/scalar.json#/$defs/runtime"
+				}
+			]
+		},
+		"factory_variables": {
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				{
+					"$ref": "../values/scalar.json#/$defs/runtime"
+				}
+			]
+		},
+		"insert_location": {
+			"type": "string"
+		},
+		"max_children_size": {
+			"$ref": "../values/scalar.json#/$defs/integer"
+		}
+	}
+}

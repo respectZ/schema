@@ -1,0 +1,91 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"next": {
+			"type": "string"
+		},
+		"destroy_at_end": {
+			"type": "string"
+		},
+		"end_event": {
+			"type": "string"
+		},
+		"play_event": {
+			"type": "string"
+		},
+		"reset_event": {
+			"type": "string"
+		},
+		"easing": {
+			"anyOf": [
+				{
+					"enum": [
+						"linear",
+						"spring",
+						"in_quad",
+						"out_quad",
+						"in_out_quad",
+						"in_cubic",
+						"out_cubic",
+						"in_out_cubic",
+						"in_quart",
+						"out_quart",
+						"in_out_quart",
+						"in_quint",
+						"out_quint",
+						"in_out_quint",
+						"in_sine",
+						"out_sine",
+						"in_out_sine",
+						"in_expo",
+						"out_expo",
+						"in_out_expo",
+						"in_circ",
+						"out_circ",
+						"in_out_circ",
+						"in_bounce",
+						"out_bounce",
+						"in_out_bounce",
+						"in_back",
+						"out_back",
+						"in_out_back",
+						"in_elastic",
+						"out_elastic",
+						"in_out_elastic"
+					]
+				},
+				{
+					"$ref": "../values/scalar.json#/$defs/runtime"
+				}
+			]
+		},
+		"resettable": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"wait_until_rendered_to_play": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"looping": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"reversible": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"scale_from_starting_alpha": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"duration": {
+			"$ref": "../values/scalar.json#/$defs/number"
+		},
+		"fps": {
+			"$ref": "../values/scalar.json#/$defs/number"
+		},
+		"frame_count": {
+			"$ref": "../values/scalar.json#/$defs/number"
+		},
+		"frame_step": {
+			"$ref": "../values/scalar.json#/$defs/number"
+		}
+	}
+}

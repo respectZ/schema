@@ -1,0 +1,65 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$defs": {
+		"axis": {
+			"anyOf": [
+				{
+					"type": "number"
+				},
+				{
+					"type": "string"
+				}
+			]
+		},
+		"pair": {
+			"type": "array",
+			"maxItems": 2,
+			"items": {
+				"$ref": "#/$defs/axis"
+			}
+		},
+		"value": {
+			"anyOf": [
+				{
+					"$ref": "#/$defs/pair"
+				},
+				{
+					"$ref": "./scalar.json#/$defs/runtime"
+				},
+				{
+					"$ref": "./reference.json#/$defs/animation"
+				}
+			]
+		},
+		"numeric_pair": {
+			"anyOf": [
+				{
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {
+						"$ref": "./scalar.json#/$defs/number"
+					}
+				},
+				{
+					"$ref": "./scalar.json#/$defs/runtime"
+				}
+			]
+		},
+		"integer_pair": {
+			"anyOf": [
+				{
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {
+						"$ref": "./scalar.json#/$defs/integer"
+					}
+				},
+				{
+					"$ref": "./scalar.json#/$defs/runtime"
+				}
+			]
+		}
+	}
+}

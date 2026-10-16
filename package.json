@@ -770,6 +770,71 @@
 			},
 			{
 				"fileMatch": [
+					"resource_pack/ui/_global_variables.{json,jsonc,json5}",
+					"*RP/ui/_global_variables.{json,jsonc,json5}",
+					"RP_*/ui/_global_variables.{json,jsonc,json5}",
+					"*rp/ui/_global_variables.{json,jsonc,json5}",
+					"rp_*/ui/_global_variables.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/ui/_global_variables.{json,jsonc,json5}",
+					"*RP/subpacks/*/ui/_global_variables.{json,jsonc,json5}",
+					"RP_*/subpacks/*/ui/_global_variables.{json,jsonc,json5}",
+					"*rp/subpacks/*/ui/_global_variables.{json,jsonc,json5}",
+					"rp_*/subpacks/*/ui/_global_variables.{json,jsonc,json5}"
+				],
+				"url": "./dist/18f08vnssox78.json"
+			},
+			{
+				"fileMatch": [
+					"resource_pack/ui/_ui_defs.{json,jsonc,json5}",
+					"*RP/ui/_ui_defs.{json,jsonc,json5}",
+					"RP_*/ui/_ui_defs.{json,jsonc,json5}",
+					"*rp/ui/_ui_defs.{json,jsonc,json5}",
+					"rp_*/ui/_ui_defs.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/ui/_ui_defs.{json,jsonc,json5}",
+					"*RP/subpacks/*/ui/_ui_defs.{json,jsonc,json5}",
+					"RP_*/subpacks/*/ui/_ui_defs.{json,jsonc,json5}",
+					"*rp/subpacks/*/ui/_ui_defs.{json,jsonc,json5}",
+					"rp_*/subpacks/*/ui/_ui_defs.{json,jsonc,json5}"
+				],
+				"url": "./dist/3ao9epw3zsj2a.json"
+			},
+			{
+				"fileMatch": [
+					"resource_pack/ui/**/*.{json,jsonc,json5}",
+					"*RP/ui/**/*.{json,jsonc,json5}",
+					"RP_*/ui/**/*.{json,jsonc,json5}",
+					"*rp/ui/**/*.{json,jsonc,json5}",
+					"rp_*/ui/**/*.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/ui/**/*.{json,jsonc,json5}",
+					"*RP/subpacks/*/ui/**/*.{json,jsonc,json5}",
+					"RP_*/subpacks/*/ui/**/*.{json,jsonc,json5}",
+					"*rp/subpacks/*/ui/**/*.{json,jsonc,json5}",
+					"rp_*/subpacks/*/ui/**/*.{json,jsonc,json5}",
+					"!resource_pack/ui/_ui_defs.{json,jsonc,json5}",
+					"!*RP/ui/_ui_defs.{json,jsonc,json5}",
+					"!RP_*/ui/_ui_defs.{json,jsonc,json5}",
+					"!*rp/ui/_ui_defs.{json,jsonc,json5}",
+					"!rp_*/ui/_ui_defs.{json,jsonc,json5}",
+					"!resource_pack/subpacks/*/ui/_ui_defs.{json,jsonc,json5}",
+					"!*RP/subpacks/*/ui/_ui_defs.{json,jsonc,json5}",
+					"!RP_*/subpacks/*/ui/_ui_defs.{json,jsonc,json5}",
+					"!*rp/subpacks/*/ui/_ui_defs.{json,jsonc,json5}",
+					"!rp_*/subpacks/*/ui/_ui_defs.{json,jsonc,json5}",
+					"!resource_pack/ui/_global_variables.{json,jsonc,json5}",
+					"!*RP/ui/_global_variables.{json,jsonc,json5}",
+					"!RP_*/ui/_global_variables.{json,jsonc,json5}",
+					"!*rp/ui/_global_variables.{json,jsonc,json5}",
+					"!rp_*/ui/_global_variables.{json,jsonc,json5}",
+					"!resource_pack/subpacks/*/ui/_global_variables.{json,jsonc,json5}",
+					"!*RP/subpacks/*/ui/_global_variables.{json,jsonc,json5}",
+					"!RP_*/subpacks/*/ui/_global_variables.{json,jsonc,json5}",
+					"!*rp/subpacks/*/ui/_global_variables.{json,jsonc,json5}",
+					"!rp_*/subpacks/*/ui/_global_variables.{json,jsonc,json5}"
+				],
+				"url": "./dist/9okwb4geqo5t.json"
+			},
+			{
+				"fileMatch": [
 					"resource_pack/water/**/*.{json,jsonc,json5}",
 					"*RP/water/**/*.{json,jsonc,json5}",
 					"RP_*/water/**/*.{json,jsonc,json5}",

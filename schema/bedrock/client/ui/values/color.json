@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"anyOf": [
+		{
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 4,
+			"items": {
+				"$ref": "./scalar.json#/$defs/number"
+			}
+		},
+		{
+			"type": "string"
+		}
+	]
+}

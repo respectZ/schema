@@ -1,0 +1,64 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"properties": {
+		"always_listen_to_input": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"always_handle_controller_direction": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"always_handle_pointer": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"hover_enabled": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"prevent_touch_input": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"consume_hover_events": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"consume_event": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"handle_select": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"handle_deselect": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"button_up_right_of_first_refusal": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"ignore_input_scope": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"modal": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"inline_modal": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		},
+		"button_mappings": {
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../structures/button_mapping.json"
+					}
+				},
+				{
+					"$ref": "../values/scalar.json#/$defs/runtime"
+				}
+			]
+		},
+		"alternate_input_scope": {
+			"type": "string"
+		},
+		"gamepad_deflection_mode": {
+			"$ref": "../values/scalar.json#/$defs/boolean"
+		}
+	}
+}

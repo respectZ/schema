@@ -15,18 +15,6 @@ const isGeometry = (data: unknown): data is Geometries => {
 	return "minecraft:geometry" in data && Array.isArray(data["minecraft:geometry"]);
 };
 
-const getIdentifierFromSchema = (obj: unknown, key: string): string => {
-	if (typeof obj !== "object" || obj === null) {
-		throw new Error(`Expected an object but got ${typeof obj}`);
-	}
-	// @ts-expect-error: unknown type
-	const value = obj[key]?.description?.identifier;
-	if (typeof value !== "string") {
-		throw new Error(`Expected a string identifier but got ${typeof value}`);
-	}
-	return value;
-};
-
 export async function generateClientIdentifiers() {
 	const particleIdentifiers = await getBedrockJSON<Particle>({
 		type: "rp",

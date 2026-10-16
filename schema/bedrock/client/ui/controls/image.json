@@ -1,0 +1,28 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"required": ["type"],
+	"allOf": [
+		{
+			"$ref": "../families/common.json"
+		},
+		{
+			"$ref": "../families/layout.json"
+		},
+		{
+			"$ref": "../families/focus_container.json"
+		},
+		{
+			"$ref": "../families/sprite.json"
+		}
+	],
+	"patternProperties": {
+		"^\\$": {}
+	},
+	"unevaluatedProperties": false,
+	"properties": {
+		"type": {
+			"const": "image"
+		}
+	}
+}

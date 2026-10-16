@@ -1,0 +1,25 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"sound_name": {
+			"type": "string"
+		},
+		"sound_volume": {
+			"$ref": "../values/scalar.json#/$defs/number"
+		},
+		"sound_pitch": {
+			"$ref": "../values/scalar.json#/$defs/number"
+		},
+		"min_seconds_between_plays": {
+			"$ref": "../values/scalar.json#/$defs/number"
+		},
+		"event_type": {
+			"type": "string"
+		},
+		"button_name": {
+			"type": "string"
+		}
+	}
+}
