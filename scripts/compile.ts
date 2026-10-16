@@ -9,6 +9,10 @@ const PACK_PREFIXES = {
 
 const BP_ENTRIES: JsonValidationEntry[] = [
 	{
+		fileMatch: "functions/tick.{json,jsonc,json5}",
+		url: "./schema/bedrock/server/functions/tick.json",
+	},
+	{
 		fileMatch: "sounds/sound_definitions.{json,jsonc,json5}",
 		url: "./schema/bedrock/server/sound_definitions/_index.json",
 	},
