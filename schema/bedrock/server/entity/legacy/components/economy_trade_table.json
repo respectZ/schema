@@ -121,7 +121,7 @@
 					"description": "Whether interacting with this trader opens the trade screen."
 				},
 				"table": {
-					"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path",
+					"$ref": "../../../../../vanilla/server/paths.json#/$defs/trading_path",
 					"default": "",
 					"description": "Path to the trade table JSON that defines available offers."
 				},
