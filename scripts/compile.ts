@@ -211,7 +211,7 @@ const RP_ENTRIES: JsonValidationEntry[] = [
 		url: "./schema/bedrock/client/languages/_index.json",
 	},
 	{
-		fileMatch: "lighting/global.{json,jsonc,json5}",
+		fileMatch: "lighting/**/*.{json,jsonc,json5}",
 		url: "./schema/bedrock/client/lighting/_index.json",
 	},
 	{
