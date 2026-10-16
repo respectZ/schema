@@ -3,5 +3,5 @@
 	"type": "string",
 	"title": "Loot Component",
 	"description": "The path to the loot table, relative to the behavior pack. Path string is limited to 256 characters",
-	"maxLength": 256
+	"$ref": "../../../../../vanilla/server/paths.json#/$defs/loot_table_path"
 }
