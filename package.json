@@ -680,6 +680,21 @@
 			},
 			{
 				"fileMatch": [
+					"resource_pack/splashes.{json,jsonc,json5}",
+					"*RP/splashes.{json,jsonc,json5}",
+					"RP_*/splashes.{json,jsonc,json5}",
+					"*rp/splashes.{json,jsonc,json5}",
+					"rp_*/splashes.{json,jsonc,json5}",
+					"resource_pack/subpacks/*/splashes.{json,jsonc,json5}",
+					"*RP/subpacks/*/splashes.{json,jsonc,json5}",
+					"RP_*/subpacks/*/splashes.{json,jsonc,json5}",
+					"*rp/subpacks/*/splashes.{json,jsonc,json5}",
+					"rp_*/subpacks/*/splashes.{json,jsonc,json5}"
+				],
+				"url": "./dist/1woz8evxzg3j3.json"
+			},
+			{
+				"fileMatch": [
 					"resource_pack/texts/languages.{json,jsonc,json5}",
 					"*RP/texts/languages.{json,jsonc,json5}",
 					"RP_*/texts/languages.{json,jsonc,json5}",

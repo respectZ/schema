@@ -111,6 +111,10 @@ const BP_ENTRIES: JsonValidationEntry[] = [
 
 const RP_ENTRIES: JsonValidationEntry[] = [
 	{
+		fileMatch: "splashes.{json,jsonc,json5}",
+		url: "./schema/bedrock/client/splashes/_index.json",
+	},
+	{
 		fileMatch: "ui/_ui_defs.{json,jsonc,json5}",
 		url: "./schema/bedrock/client/ui/ui_defs.json",
 	},

@@ -1,0 +1,80 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"type": "object",
+	"description": "The splashes.json file defines loading-screen splash texts for a resource pack.",
+	"additionalProperties": false,
+	"properties": {
+		"canMerge": {
+			"type": "boolean",
+			"default": false,
+			"description": "The `canMerge` parameter determines whether the game will show vanilla splash texts alongside custom splash texts. If you set this parameter to `true`, the splash text will be chosen from both vanilla splash texts and custom splash texts. If you omit this parameter or set it to `false`, the splash text will be chosen only from custom splash texts."
+		},
+		"splashes": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"conditional": {
+			"type": "array",
+			"items": {
+				"$ref": "#/$defs/conditional_entry"
+			}
+		}
+	},
+	"$defs": {
+		"conditional_entry": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"requires": {
+					"$ref": "#/$defs/requires"
+				},
+				"splashes": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"requires": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"trialMode": {
+					"type": "boolean"
+				},
+				"platforms": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"examples": ["Android", "iOS", "Windows"]
+					}
+				},
+				"treatments": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"stores": {
+					"type": "array",
+					"items": {
+						"type": "string",
+						"examples": [
+							"ios.store",
+							"android.googleplay",
+							"android.amazonappstore",
+							"nx.store",
+							"ps5.store",
+							"xboxone.store",
+							"uwp.store",
+							"onestore.store"
+						]
+					}
+				}
+			}
+		}
+	}
+}
