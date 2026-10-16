@@ -29,8 +29,7 @@
 					"description": "Determines lava fire consideration. \"always\" includes this block when lava attempts to spread fire\"\n\t\t\t\t\t\" (triggered by adjacent block changes), but normal fire-placement rules still apply. \"never\" excludes\"\n\t\t\t\t\t\" this block from that check.",
 					"enum": ["always", "never"]
 				}
-			},
-			"required": ["catch_chance_modifier", "destroy_chance_modifier"]
+			}
 		}
 	]
 }
