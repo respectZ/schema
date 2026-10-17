@@ -108,10 +108,12 @@
 							{
 								"type": "object",
 								"propertyNames": {
-									"pattern": "controller\\.render\\..+$"
+									"pattern": "^controller\\.render\\..+$"
 								},
-								"additionalProperties": {
-									"$ref": "../../../../vanilla/definition/molang.json#/$defs/condition"
+								"if": {
+									"propertyNames": {
+										"$ref": "../../../../vanilla/client/identifiers.json#/$defs/render_controller_identifier/anyOf/1"
+									}
 								}
 							}
 						]
