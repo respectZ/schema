@@ -4,13 +4,11 @@
 		"string": {
 			"title": "Molang string",
 			"description": "A simple Molang expression represented as a string.",
-			"type": "string",
-			"default": ""
+			"type": "string"
 		},
 		"versioned": {
 			"title": "Versioned Molang expression",
 			"description": "A Molang expression with an associated version number.",
-			"default": "",
 			"type": "object",
 			"properties": {
 				"expression": {
@@ -27,7 +25,6 @@
 		"expression": {
 			"title": "Molang expression",
 			"description": "Molang expressions can be either a string, a number, or an object with an expression and version.",
-			"default": "",
 			"oneOf": [
 				{
 					"$ref": "#/$defs/string"
