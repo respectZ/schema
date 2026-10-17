@@ -34,13 +34,40 @@
 					"additionalProperties": false,
 					"properties": {
 						"geometries": {
-							"$ref": "#/$defs/array"
+							"type": "object",
+							"propertyNames": {
+								"pattern": "^[aA]rray\\.[a-zA-Z0-9_.:-]+$"
+							},
+							"additionalProperties": {
+								"type": "array",
+								"items": {
+									"$ref": "#/$defs/geometry_ref"
+								}
+							}
 						},
 						"materials": {
-							"$ref": "#/$defs/array"
+							"type": "object",
+							"propertyNames": {
+								"pattern": "^[aA]rray\\.[a-zA-Z0-9_.:-]+$"
+							},
+							"additionalProperties": {
+								"type": "array",
+								"items": {
+									"$ref": "#/$defs/material_ref"
+								}
+							}
 						},
 						"textures": {
-							"$ref": "#/$defs/array"
+							"type": "object",
+							"propertyNames": {
+								"pattern": "^[aA]rray\\.[a-zA-Z0-9_.:-]+$"
+							},
+							"additionalProperties": {
+								"type": "array",
+								"items": {
+									"$ref": "#/$defs/texture_ref"
+								}
+							}
 						}
 					}
 				},
@@ -51,7 +78,7 @@
 					"type": "boolean"
 				},
 				"geometry": {
-					"$ref": "../../../vanilla/definition/molang.json#/$defs/string"
+					"$ref": "#/$defs/geometry_ref"
 				},
 				"ignore_lighting": {
 					"type": "boolean"
@@ -66,11 +93,10 @@
 					"type": "array",
 					"items": {
 						"type": "object",
-						"propertyNames": {
-							"pattern": "^[a-zA-Z0-9_.:*]+$"
-						},
-						"additionalProperties": {
-							"type": "string"
+						"patternProperties": {
+							"^[a-zA-Z0-9_.:*]+$": {
+								"$ref": "#/$defs/material_ref"
+							}
 						}
 					}
 				},
@@ -98,23 +124,11 @@
 				"textures": {
 					"type": "array",
 					"items": {
-						"type": "string"
+						"$ref": "#/$defs/texture_ref"
 					}
 				},
 				"uv_anim": {
 					"$ref": "#/$defs/uv_anim"
-				}
-			}
-		},
-		"array": {
-			"type": "object",
-			"propertyNames": {
-				"pattern": "^[aA]rray\\.[a-zA-Z0-9_.:-]+$"
-			},
-			"additionalProperties": {
-				"type": "array",
-				"items": {
-					"$ref": "../../../vanilla/definition/molang.json#/$defs/string"
 				}
 			}
 		},
@@ -167,6 +181,18 @@
 					}
 				}
 			}
+		},
+		"geometry_ref": {
+			"$ref": "../../../vanilla/definition/molang.json#/$defs/string",
+			"default": "Geometry.default"
+		},
+		"texture_ref": {
+			"$ref": "../../../vanilla/definition/molang.json#/$defs/string",
+			"default": "Texture.default"
+		},
+		"material_ref": {
+			"$ref": "../../../vanilla/definition/molang.json#/$defs/string",
+			"default": "Material.default"
 		}
 	}
 }
